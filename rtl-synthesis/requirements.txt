@@ -1,0 +1,11 @@
+# Optional route to Yosys: the WebAssembly build in a virtual environment.
+#
+# Install with:  ./setup_tools.sh --wasm
+# Run with:      YOSYS=.venv/bin/yowasp-yosys ./run_synth.sh demo_counter.sv demo_counter
+#
+# The pinned version matters. Yosys releases change how ABC maps cells, so two versions report
+# different cell counts and different areas for the same file. Pin the version, and write the version
+# into every report you publish, or the numbers stop being comparable.
+#
+# The package installs the command as `yowasp-yosys`, not `yosys`.
+yowasp-yosys==0.70.0.0.post1259

@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+*.egg-info/
+
+# Vivado and Xilinx tool noise
+.Xil/
+*.jou
+*.str
+vivado*.log
+*.xpr
+*.dcp
+*.runs/
+*.cache/
+*.hw/
+*.sim/
+*.ip_user_files/
+*.gen/
+*.xsa
+*.srcs/
+
+# Bitstreams, overlays, and exported hardware (rebuild or attach to a release)
+*.bit
+*.bit.bin
+*.dtbo
+*.ltx
+
+# Cadence tool noise
+*.cdslck
+*.svf
+INNOVUS/
+genus.cmd
+innovus.cmd
+xcelium.d/
+
+# Yosys and OpenROAD working files
+synth_out/
+
+# Local toolchain installed by rtl-synthesis/setup_tools.sh (about 80 MB unpacked, fetched on demand)
+rtl-synthesis/debs/
+rtl-synthesis/debroot/
+
+# Simulation build products
+*.vvp
+*.vcd
+
+# PDK and fetched toolchains (large, fetched on demand)
+pdk/
+sky130*/
+openlane/
+*.lib
+*.lib.gz
+*.db
