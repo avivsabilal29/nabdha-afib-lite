@@ -1,0 +1,15 @@
+Design         : design_template (template/design_template.sv)
+RTL revision   : e96a8af (branch raihan/rtl-synthesis-blok)
+Library        : sky130_fd_sc_hd (428 cells described)
+Corner         : tt_025C_1v80 (typical, 25 C, 1.80 V)
+Tool           : yosys 0.33 (git sha1 2584903a060), route B
+Run at         : 2026-10-18T22:14:31+0700
+Cells          : 71 (flops 36, combinational 35)
+Area           : 939.65 um^2 (flops 720.69, combinational 218.96)
+Flop share     : 76.7 percent
+Unmapped cells : none ("is unknown" = 0 in log)
+Timing         : not measured here / official timing from Cadence Genus on-site (ICDeC)
+Notes          : Matches the Route B reference figures in TASK_BRIEF.md exactly.
+                 Log: reports/design_template.native.20261018.log
+                 Netlist: reports/design_template.native.20261018.json
+                 234 dfflibmap warnings (scan/enable flops sdf*/edf*/sedf* skipped) are expected and harmless.

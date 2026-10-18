@@ -1,0 +1,1311 @@
+{
+  "creator": "Yosys 0.33 (git sha1 2584903a060)",
+  "modules": {
+    "design_template": {
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": "template/design_template.sv:20.1-67.10"
+      },
+      "ports": {
+        "clk_i": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "rst_ni": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "s_tdata": {
+          "direction": "input",
+          "bits": [ 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 ]
+        },
+        "s_tvalid": {
+          "direction": "input",
+          "bits": [ 20 ]
+        },
+        "s_tlast": {
+          "direction": "input",
+          "bits": [ 21 ]
+        },
+        "out_valid": {
+          "direction": "output",
+          "bits": [ 22 ]
+        },
+        "out_class": {
+          "direction": "output",
+          "bits": [ "0", 23 ]
+        },
+        "out_conf": {
+          "direction": "output",
+          "bits": [ 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39 ]
+        }
+      },
+      "cells": {
+        "$abc$223$auto$blifparse.cc:386:parse_blif$224": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__and2_0",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 3 ],
+            "B": [ 21 ],
+            "X": [ 40 ]
+          }
+        },
+        "$abc$223$auto$blifparse.cc:386:parse_blif$225": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__and2_0",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 3 ],
+            "B": [ 41 ],
+            "X": [ 42 ]
+          }
+        },
+        "$abc$223$auto$blifparse.cc:386:parse_blif$226": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__and3_1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 43 ],
+            "B": [ 3 ],
+            "C": [ 44 ],
+            "X": [ 45 ]
+          }
+        },
+        "$abc$223$auto$blifparse.cc:386:parse_blif$227": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__and3_1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 43 ],
+            "B": [ 3 ],
+            "C": [ 46 ],
+            "X": [ 47 ]
+          }
+        },
+        "$abc$223$auto$blifparse.cc:386:parse_blif$228": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__and3_1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 43 ],
+            "B": [ 3 ],
+            "C": [ 48 ],
+            "X": [ 49 ]
+          }
+        },
+        "$abc$223$auto$blifparse.cc:386:parse_blif$229": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__and3_1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 43 ],
+            "B": [ 3 ],
+            "C": [ 50 ],
+            "X": [ 51 ]
+          }
+        },
+        "$abc$223$auto$blifparse.cc:386:parse_blif$230": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__and3_1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 43 ],
+            "B": [ 3 ],
+            "C": [ 52 ],
+            "X": [ 53 ]
+          }
+        },
+        "$abc$223$auto$blifparse.cc:386:parse_blif$231": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__and3_1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 43 ],
+            "B": [ 3 ],
+            "C": [ 54 ],
+            "X": [ 55 ]
+          }
+        },
+        "$abc$223$auto$blifparse.cc:386:parse_blif$232": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__and3_1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 43 ],
+            "B": [ 3 ],
+            "C": [ 56 ],
+            "X": [ 57 ]
+          }
+        },
+        "$abc$223$auto$blifparse.cc:386:parse_blif$233": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__and3_1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 43 ],
+            "B": [ 3 ],
+            "C": [ 58 ],
+            "X": [ 59 ]
+          }
+        },
+        "$abc$223$auto$blifparse.cc:386:parse_blif$234": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__and3_1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 43 ],
+            "B": [ 3 ],
+            "C": [ 60 ],
+            "X": [ 61 ]
+          }
+        },
+        "$abc$223$auto$blifparse.cc:386:parse_blif$235": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__and3_1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 43 ],
+            "B": [ 3 ],
+            "C": [ 62 ],
+            "X": [ 63 ]
+          }
+        },
+        "$abc$223$auto$blifparse.cc:386:parse_blif$236": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__and3_1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 43 ],
+            "B": [ 3 ],
+            "C": [ 64 ],
+            "X": [ 65 ]
+          }
+        },
+        "$abc$223$auto$blifparse.cc:386:parse_blif$237": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__and3_1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 43 ],
+            "B": [ 3 ],
+            "C": [ 66 ],
+            "X": [ 67 ]
+          }
+        },
+        "$abc$223$auto$blifparse.cc:386:parse_blif$238": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__and3_1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 43 ],
+            "B": [ 3 ],
+            "C": [ 68 ],
+            "X": [ 69 ]
+          }
+        },
+        "$abc$223$auto$blifparse.cc:386:parse_blif$239": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__and3_1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 43 ],
+            "B": [ 3 ],
+            "C": [ 70 ],
+            "X": [ 71 ]
+          }
+        },
+        "$abc$223$auto$blifparse.cc:386:parse_blif$240": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__and3_1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 43 ],
+            "B": [ 3 ],
+            "C": [ 72 ],
+            "X": [ 73 ]
+          }
+        },
+        "$abc$223$auto$blifparse.cc:386:parse_blif$241": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__and3_1",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 43 ],
+            "B": [ 3 ],
+            "C": [ 74 ],
+            "X": [ 75 ]
+          }
+        },
+        "$abc$223$auto$blifparse.cc:386:parse_blif$242": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__and2_0",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 3 ],
+            "B": [ 4 ],
+            "X": [ 76 ]
+          }
+        },
+        "$abc$223$auto$blifparse.cc:386:parse_blif$243": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__and2_0",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 3 ],
+            "B": [ 5 ],
+            "X": [ 77 ]
+          }
+        },
+        "$abc$223$auto$blifparse.cc:386:parse_blif$244": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__and2_0",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 3 ],
+            "B": [ 6 ],
+            "X": [ 78 ]
+          }
+        },
+        "$abc$223$auto$blifparse.cc:386:parse_blif$245": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__and2_0",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 3 ],
+            "B": [ 7 ],
+            "X": [ 79 ]
+          }
+        },
+        "$abc$223$auto$blifparse.cc:386:parse_blif$246": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__and2_0",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 3 ],
+            "B": [ 8 ],
+            "X": [ 80 ]
+          }
+        },
+        "$abc$223$auto$blifparse.cc:386:parse_blif$247": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__and2_0",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 3 ],
+            "B": [ 9 ],
+            "X": [ 81 ]
+          }
+        },
+        "$abc$223$auto$blifparse.cc:386:parse_blif$248": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__and2_0",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 3 ],
+            "B": [ 10 ],
+            "X": [ 82 ]
+          }
+        },
+        "$abc$223$auto$blifparse.cc:386:parse_blif$249": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__and2_0",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 3 ],
+            "B": [ 11 ],
+            "X": [ 83 ]
+          }
+        },
+        "$abc$223$auto$blifparse.cc:386:parse_blif$250": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__and2_0",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 3 ],
+            "B": [ 12 ],
+            "X": [ 84 ]
+          }
+        },
+        "$abc$223$auto$blifparse.cc:386:parse_blif$251": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__and2_0",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 3 ],
+            "B": [ 13 ],
+            "X": [ 85 ]
+          }
+        },
+        "$abc$223$auto$blifparse.cc:386:parse_blif$252": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__and2_0",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 3 ],
+            "B": [ 14 ],
+            "X": [ 86 ]
+          }
+        },
+        "$abc$223$auto$blifparse.cc:386:parse_blif$253": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__and2_0",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 3 ],
+            "B": [ 15 ],
+            "X": [ 87 ]
+          }
+        },
+        "$abc$223$auto$blifparse.cc:386:parse_blif$254": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__and2_0",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 3 ],
+            "B": [ 16 ],
+            "X": [ 88 ]
+          }
+        },
+        "$abc$223$auto$blifparse.cc:386:parse_blif$255": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__and2_0",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 3 ],
+            "B": [ 17 ],
+            "X": [ 89 ]
+          }
+        },
+        "$abc$223$auto$blifparse.cc:386:parse_blif$256": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__and2_0",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 3 ],
+            "B": [ 18 ],
+            "X": [ 90 ]
+          }
+        },
+        "$abc$223$auto$blifparse.cc:386:parse_blif$257": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__and2_0",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 3 ],
+            "B": [ 19 ],
+            "X": [ 91 ]
+          }
+        },
+        "$abc$223$auto$blifparse.cc:386:parse_blif$258": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__and2_0",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "connections": {
+            "A": [ 3 ],
+            "B": [ 20 ],
+            "X": [ 92 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$113": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__dfxtp_1",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "template/design_template.sv:43.5-65.8"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 3 ],
+            "Q": [ 23 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$116": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__dfxtp_1",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "template/design_template.sv:43.5-65.8"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 40 ],
+            "Q": [ 43 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$117": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__dfxtp_1",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "template/design_template.sv:43.5-65.8"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 42 ],
+            "Q": [ 22 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$118": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__dfxtp_1",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "template/design_template.sv:43.5-65.8"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 45 ],
+            "Q": [ 24 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$119": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__dfxtp_1",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "template/design_template.sv:43.5-65.8"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 47 ],
+            "Q": [ 25 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$120": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__dfxtp_1",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "template/design_template.sv:43.5-65.8"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 49 ],
+            "Q": [ 26 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$121": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__dfxtp_1",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "template/design_template.sv:43.5-65.8"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 51 ],
+            "Q": [ 27 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$122": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__dfxtp_1",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "template/design_template.sv:43.5-65.8"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 53 ],
+            "Q": [ 28 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$123": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__dfxtp_1",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "template/design_template.sv:43.5-65.8"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 55 ],
+            "Q": [ 29 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$124": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__dfxtp_1",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "template/design_template.sv:43.5-65.8"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 57 ],
+            "Q": [ 30 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$125": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__dfxtp_1",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "template/design_template.sv:43.5-65.8"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 59 ],
+            "Q": [ 31 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$126": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__dfxtp_1",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "template/design_template.sv:43.5-65.8"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 61 ],
+            "Q": [ 32 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$127": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__dfxtp_1",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "template/design_template.sv:43.5-65.8"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 63 ],
+            "Q": [ 33 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$128": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__dfxtp_1",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "template/design_template.sv:43.5-65.8"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 65 ],
+            "Q": [ 34 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$129": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__dfxtp_1",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "template/design_template.sv:43.5-65.8"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 67 ],
+            "Q": [ 35 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$130": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__dfxtp_1",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "template/design_template.sv:43.5-65.8"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 69 ],
+            "Q": [ 36 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$131": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__dfxtp_1",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "template/design_template.sv:43.5-65.8"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 71 ],
+            "Q": [ 37 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$132": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__dfxtp_1",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "template/design_template.sv:43.5-65.8"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 73 ],
+            "Q": [ 38 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$133": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__dfxtp_1",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "template/design_template.sv:43.5-65.8"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 75 ],
+            "Q": [ 39 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$134": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__dfxtp_1",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "template/design_template.sv:43.5-65.8"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 76 ],
+            "Q": [ 44 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$135": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__dfxtp_1",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "template/design_template.sv:43.5-65.8"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 77 ],
+            "Q": [ 46 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$136": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__dfxtp_1",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "template/design_template.sv:43.5-65.8"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 78 ],
+            "Q": [ 48 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$137": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__dfxtp_1",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "template/design_template.sv:43.5-65.8"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 79 ],
+            "Q": [ 50 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$138": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__dfxtp_1",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "template/design_template.sv:43.5-65.8"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 80 ],
+            "Q": [ 52 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$139": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__dfxtp_1",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "template/design_template.sv:43.5-65.8"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 81 ],
+            "Q": [ 54 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$140": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__dfxtp_1",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "template/design_template.sv:43.5-65.8"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 82 ],
+            "Q": [ 56 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$141": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__dfxtp_1",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "template/design_template.sv:43.5-65.8"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 83 ],
+            "Q": [ 58 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$142": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__dfxtp_1",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "template/design_template.sv:43.5-65.8"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 84 ],
+            "Q": [ 60 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$143": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__dfxtp_1",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "template/design_template.sv:43.5-65.8"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 85 ],
+            "Q": [ 62 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$144": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__dfxtp_1",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "template/design_template.sv:43.5-65.8"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 86 ],
+            "Q": [ 64 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$145": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__dfxtp_1",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "template/design_template.sv:43.5-65.8"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 87 ],
+            "Q": [ 66 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$146": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__dfxtp_1",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "template/design_template.sv:43.5-65.8"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 88 ],
+            "Q": [ 68 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$147": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__dfxtp_1",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "template/design_template.sv:43.5-65.8"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 89 ],
+            "Q": [ 70 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$148": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__dfxtp_1",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "template/design_template.sv:43.5-65.8"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 90 ],
+            "Q": [ 72 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$149": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__dfxtp_1",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "template/design_template.sv:43.5-65.8"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 91 ],
+            "Q": [ 74 ]
+          }
+        },
+        "$auto$ff.cc:266:slice$150": {
+          "hide_name": 1,
+          "type": "sky130_fd_sc_hd__dfxtp_1",
+          "parameters": {
+          },
+          "attributes": {
+            "src": "template/design_template.sv:43.5-65.8"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 92 ],
+            "Q": [ 41 ]
+          }
+        }
+      },
+      "netnames": {
+        "$abc$223$auto$rtlil.cc:2609:MuxGate$154": {
+          "hide_name": 1,
+          "bits": [ 40 ],
+          "attributes": {
+          }
+        },
+        "$abc$223$auto$rtlil.cc:2609:MuxGate$156": {
+          "hide_name": 1,
+          "bits": [ 42 ],
+          "attributes": {
+          }
+        },
+        "$abc$223$auto$rtlil.cc:2609:MuxGate$158": {
+          "hide_name": 1,
+          "bits": [ 45 ],
+          "attributes": {
+          }
+        },
+        "$abc$223$auto$rtlil.cc:2609:MuxGate$160": {
+          "hide_name": 1,
+          "bits": [ 47 ],
+          "attributes": {
+          }
+        },
+        "$abc$223$auto$rtlil.cc:2609:MuxGate$162": {
+          "hide_name": 1,
+          "bits": [ 49 ],
+          "attributes": {
+          }
+        },
+        "$abc$223$auto$rtlil.cc:2609:MuxGate$164": {
+          "hide_name": 1,
+          "bits": [ 51 ],
+          "attributes": {
+          }
+        },
+        "$abc$223$auto$rtlil.cc:2609:MuxGate$166": {
+          "hide_name": 1,
+          "bits": [ 53 ],
+          "attributes": {
+          }
+        },
+        "$abc$223$auto$rtlil.cc:2609:MuxGate$168": {
+          "hide_name": 1,
+          "bits": [ 55 ],
+          "attributes": {
+          }
+        },
+        "$abc$223$auto$rtlil.cc:2609:MuxGate$170": {
+          "hide_name": 1,
+          "bits": [ 57 ],
+          "attributes": {
+          }
+        },
+        "$abc$223$auto$rtlil.cc:2609:MuxGate$172": {
+          "hide_name": 1,
+          "bits": [ 59 ],
+          "attributes": {
+          }
+        },
+        "$abc$223$auto$rtlil.cc:2609:MuxGate$174": {
+          "hide_name": 1,
+          "bits": [ 61 ],
+          "attributes": {
+          }
+        },
+        "$abc$223$auto$rtlil.cc:2609:MuxGate$176": {
+          "hide_name": 1,
+          "bits": [ 63 ],
+          "attributes": {
+          }
+        },
+        "$abc$223$auto$rtlil.cc:2609:MuxGate$178": {
+          "hide_name": 1,
+          "bits": [ 65 ],
+          "attributes": {
+          }
+        },
+        "$abc$223$auto$rtlil.cc:2609:MuxGate$180": {
+          "hide_name": 1,
+          "bits": [ 67 ],
+          "attributes": {
+          }
+        },
+        "$abc$223$auto$rtlil.cc:2609:MuxGate$182": {
+          "hide_name": 1,
+          "bits": [ 69 ],
+          "attributes": {
+          }
+        },
+        "$abc$223$auto$rtlil.cc:2609:MuxGate$184": {
+          "hide_name": 1,
+          "bits": [ 71 ],
+          "attributes": {
+          }
+        },
+        "$abc$223$auto$rtlil.cc:2609:MuxGate$186": {
+          "hide_name": 1,
+          "bits": [ 73 ],
+          "attributes": {
+          }
+        },
+        "$abc$223$auto$rtlil.cc:2609:MuxGate$188": {
+          "hide_name": 1,
+          "bits": [ 75 ],
+          "attributes": {
+          }
+        },
+        "$abc$223$auto$rtlil.cc:2609:MuxGate$190": {
+          "hide_name": 1,
+          "bits": [ 76 ],
+          "attributes": {
+          }
+        },
+        "$abc$223$auto$rtlil.cc:2609:MuxGate$192": {
+          "hide_name": 1,
+          "bits": [ 77 ],
+          "attributes": {
+          }
+        },
+        "$abc$223$auto$rtlil.cc:2609:MuxGate$194": {
+          "hide_name": 1,
+          "bits": [ 78 ],
+          "attributes": {
+          }
+        },
+        "$abc$223$auto$rtlil.cc:2609:MuxGate$196": {
+          "hide_name": 1,
+          "bits": [ 79 ],
+          "attributes": {
+          }
+        },
+        "$abc$223$auto$rtlil.cc:2609:MuxGate$198": {
+          "hide_name": 1,
+          "bits": [ 80 ],
+          "attributes": {
+          }
+        },
+        "$abc$223$auto$rtlil.cc:2609:MuxGate$200": {
+          "hide_name": 1,
+          "bits": [ 81 ],
+          "attributes": {
+          }
+        },
+        "$abc$223$auto$rtlil.cc:2609:MuxGate$202": {
+          "hide_name": 1,
+          "bits": [ 82 ],
+          "attributes": {
+          }
+        },
+        "$abc$223$auto$rtlil.cc:2609:MuxGate$204": {
+          "hide_name": 1,
+          "bits": [ 83 ],
+          "attributes": {
+          }
+        },
+        "$abc$223$auto$rtlil.cc:2609:MuxGate$206": {
+          "hide_name": 1,
+          "bits": [ 84 ],
+          "attributes": {
+          }
+        },
+        "$abc$223$auto$rtlil.cc:2609:MuxGate$208": {
+          "hide_name": 1,
+          "bits": [ 85 ],
+          "attributes": {
+          }
+        },
+        "$abc$223$auto$rtlil.cc:2609:MuxGate$210": {
+          "hide_name": 1,
+          "bits": [ 86 ],
+          "attributes": {
+          }
+        },
+        "$abc$223$auto$rtlil.cc:2609:MuxGate$212": {
+          "hide_name": 1,
+          "bits": [ 87 ],
+          "attributes": {
+          }
+        },
+        "$abc$223$auto$rtlil.cc:2609:MuxGate$214": {
+          "hide_name": 1,
+          "bits": [ 88 ],
+          "attributes": {
+          }
+        },
+        "$abc$223$auto$rtlil.cc:2609:MuxGate$216": {
+          "hide_name": 1,
+          "bits": [ 89 ],
+          "attributes": {
+          }
+        },
+        "$abc$223$auto$rtlil.cc:2609:MuxGate$218": {
+          "hide_name": 1,
+          "bits": [ 90 ],
+          "attributes": {
+          }
+        },
+        "$abc$223$auto$rtlil.cc:2609:MuxGate$220": {
+          "hide_name": 1,
+          "bits": [ 91 ],
+          "attributes": {
+          }
+        },
+        "$abc$223$auto$rtlil.cc:2609:MuxGate$222": {
+          "hide_name": 1,
+          "bits": [ 92 ],
+          "attributes": {
+          }
+        },
+        "clk_i": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "template/design_template.sv:21.24-21.29"
+          }
+        },
+        "last_q": {
+          "hide_name": 0,
+          "bits": [ 43 ],
+          "attributes": {
+            "src": "template/design_template.sv:41.16-41.22"
+          }
+        },
+        "out_class": {
+          "hide_name": 0,
+          "bits": [ "0", 23 ],
+          "attributes": {
+            "src": "template/design_template.sv:31.24-31.33"
+          }
+        },
+        "out_conf": {
+          "hide_name": 0,
+          "bits": [ 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39 ],
+          "attributes": {
+            "src": "template/design_template.sv:32.24-32.32"
+          }
+        },
+        "out_valid": {
+          "hide_name": 0,
+          "bits": [ 22 ],
+          "attributes": {
+            "src": "template/design_template.sv:30.24-30.33"
+          }
+        },
+        "rst_ni": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "template/design_template.sv:22.24-22.30"
+          }
+        },
+        "s_tdata": {
+          "hide_name": 0,
+          "bits": [ 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 ],
+          "attributes": {
+            "src": "template/design_template.sv:25.24-25.31"
+          }
+        },
+        "s_tlast": {
+          "hide_name": 0,
+          "bits": [ 21 ],
+          "attributes": {
+            "src": "template/design_template.sv:27.24-27.31"
+          }
+        },
+        "s_tvalid": {
+          "hide_name": 0,
+          "bits": [ 20 ],
+          "attributes": {
+            "src": "template/design_template.sv:26.24-26.32"
+          }
+        },
+        "sample_q": {
+          "hide_name": 0,
+          "bits": [ 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74 ],
+          "attributes": {
+            "src": "template/design_template.sv:39.16-39.24"
+          }
+        },
+        "valid_q": {
+          "hide_name": 0,
+          "bits": [ 41 ],
+          "attributes": {
+            "src": "template/design_template.sv:40.16-40.23"
+          }
+        }
+      }
+    }
+  }
+}
