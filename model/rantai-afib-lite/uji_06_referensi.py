@@ -34,10 +34,10 @@ The core rate is locked at 250 Hz. NSRDB runs at 128 Hz and MITDB at 360 Hz, so 
 are 128/250 and 360/250, which reduce to 64/125 and 36/25. Neither denominator is a power of
 two, and that has two consequences which are reported here and not hidden.
 
-1. The frozen LinearResampler of adapter.py refuses both ratios, because it raises when the
-   interpolation weight denominator is not a power of two. Its refusal is a check in this
-   file, and the resampler that is actually used lives in this file, which is a deviation
-   from the frozen path and is reported as a finding.
+1. The frozen LinearResampler of adapter.py accepts both ratios since 20 October 2026, through
+   an exact integer path for a denominator that is not a power of two. The resampler that is
+   actually used by this gate still lives in this file, so that every number measured before
+   that fix stays reproducible, and the two are compared on acceptance and on the ratio here.
 2. The method used here is exact rational linear interpolation on the locked count, the same
    method the frozen resampler uses, and it needs a multiplication by a weight of up to 124
    counts and a division by 125, respectively a multiplication by a weight of up to 24 and a
@@ -763,20 +763,26 @@ def main():
           "the header reader of this file agrees with the frozen read_header on the AFDB "
           "records",
           "identical record and channel fields on the AFDB headers, which carry no comment line")
-    frozen_refuses = []
+    frozen_agrees = []
     for rec in RECORDS:
         if rec["db"] == "afdb":
             continue
+        mine_rec, mine_ch = read_header_skip_comments(rec["path"].with_suffix(".hea"))
         try:
-            A.read_header(rec["path"].with_suffix(".hea"))
-            frozen_refuses.append("%s parsed" % rec["key"])
+            frozen_rec, frozen_ch = A.read_header(rec["path"].with_suffix(".hea"))
+            same = (frozen_rec == mine_rec) and all(
+                abs(fc["gain"] - c["gain"]) < 1e-9 and abs(fc["zero"] - c["zero"]) < 1e-9
+                and fc["fmt"] == c["fmt"] and fc["desc"] == c["desc"] and fc["res"] == c["res"]
+                for fc, c in zip(frozen_ch, mine_ch))
+            frozen_agrees.append("%s parsed, agrees %s" % (rec["key"], same))
         except Exception as exc:                                    # noqa: BLE001
-            frozen_refuses.append("%s refused (%s)" % (rec["key"], exc))
-    baris(all("refused" in s for s in frozen_refuses),
-          "the frozen read_header refuses the NSRDB and the MITDB headers",
-          "; ".join(frozen_refuses) + ". Both headers carry a comment line and the frozen "
-          "reader reads every non empty line as a channel line of a frozen file, so this gate "
-          "reads those two headers itself and reports it as a finding")
+            frozen_agrees.append("%s refused (%s)" % (rec["key"], exc))
+    baris(all("parsed, agrees True" in s for s in frozen_agrees),
+          "the frozen read_header parses the NSRDB and the MITDB headers and agrees with this "
+          "file on every field",
+          "; ".join(frozen_agrees) + ". The comment line filter of 20 October 2026 is in the "
+          "frozen reader. This file keeps its own reader so that every number measured before "
+          "the fix stays reproducible, and the two readers are compared here on every field")
     baseline_ok = (len(baseline_rows) == len(RECORDS)
                    and all(np.isfinite(b["median_counts"]) and np.isfinite(b["diff_mv"])
                            for _r, _h, _c, b, _ct in baseline_rows))
@@ -788,17 +794,20 @@ def main():
 
     # ------------------------------------------------------------------ stage 3, resampler
     kepala("stage 3, the resampler for rates other than the locked 250 Hz, and its multiplier")
-    refused = []
+    accepted = []
     for rate in (128, 360):
         try:
-            A.LinearResampler(rate, int(FS_KERNEL))
-            refused.append("%d Hz to 250 Hz was accepted" % rate)
+            res = A.LinearResampler(rate, int(FS_KERNEL))
+            accepted.append("%d Hz to 250 Hz accepted, ratio %d per %d" % (rate, res.num, res.den))
         except ValueError as exc:
-            refused.append("%d Hz to 250 Hz refused (%s)" % (rate, exc))
-    baris(all("refused" in s for s in refused),
-          "the frozen LinearResampler refuses both non power of two ratios",
-          "; ".join(refused) + ". The resampler used by this gate therefore lives in this file, "
-          "and that deviation is a finding")
+            accepted.append("%d Hz to 250 Hz refused (%s)" % (rate, exc))
+    baris(all("accepted" in s for s in accepted),
+          "the frozen LinearResampler accepts both non power of two ratios through its general "
+          "integer path",
+          "; ".join(accepted) + ". The exact rational path of 20 October 2026 is in the frozen "
+          "resampler, the power of two path is proven bit identical by the adapter gate over "
+          "900000, 450000 and 225000 output words, and this file keeps its own resampler so "
+          "that every number measured before the fix stays reproducible")
     costs = {}
     for rate in (128, 360):
         resampler = RationalLinearResampler(rate, int(FS_KERNEL))

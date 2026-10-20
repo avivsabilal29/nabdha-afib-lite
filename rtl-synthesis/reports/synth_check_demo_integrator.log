@@ -30,7 +30,7 @@
     abc -liberty sky130_fd_sc_hd__tt_025C_1v80.lib;
     opt_clean;
     stat -liberty sky130_fd_sc_hd__tt_025C_1v80.lib;
-    write_json reports/demo_integrator.native.20261019.json
+    write_json reports/demo_integrator.native.20261020.json
 ' --
 
 1. Executing Verilog-2005 frontend: demo_integrator.sv
@@ -1266,7 +1266,7 @@ ABC: ABC command line: "source <abc-temp-dir>/abc.script".
 ABC: 
 ABC: + read_blif <abc-temp-dir>/input.blif 
 ABC: + read_lib -w /home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl-synthesis/sky130_fd_sc_hd__tt_025C_1v80.lib 
-ABC: Parsing finished successfully.  Parsing time =     0.13 sec
+ABC: Parsing finished successfully.  Parsing time =     0.12 sec
 ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_12" without logic function.
 ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_3" without logic function.
 ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_4" without logic function.
@@ -1361,8 +1361,8 @@ ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxbp_2
 ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_1".
 ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_2".
 ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_4".
-ABC: Library "sky130_fd_sc_hd__tt_025C_1v80" from "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl-synthesis/sky130_fd_sc_hd__tt_025C_1v80.lib" has 334 cells (94 skipped: 63 seq; 13 tri-state; 18 no func; 0 dont_use).  Time =     0.19 sec
-ABC: Memory =   19.81 MB. Time =     0.19 sec
+ABC: Library "sky130_fd_sc_hd__tt_025C_1v80" from "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl-synthesis/sky130_fd_sc_hd__tt_025C_1v80.lib" has 334 cells (94 skipped: 63 seq; 13 tri-state; 18 no func; 0 dont_use).  Time =     0.18 sec
+ABC: Memory =   19.81 MB. Time =     0.18 sec
 ABC: Warning: Detected 9 multi-output gates (for example, "sky130_fd_sc_hd__fa_1").
 ABC: + strash 
 ABC: + &get -n 
@@ -1497,18 +1497,18 @@ Removed 0 unused cells and 6306 unused wires.
 8. Executing JSON backend.
 
 Warnings: 27 unique messages, 235 total
-End of script. Logfile hash: 15ac546e5d, CPU: user 16.86s system 0.26s, MEM: 378.68 MB peak
+End of script. Logfile hash: 15a9370445, CPU: user 13.48s system 0.22s, MEM: 378.96 MB peak
 Yosys 0.33 (git sha1 2584903a060)
-Time spent: 24% 1x techmap (4 sec), 23% 81x opt_expr (4 sec), ...
+Time spent: 27% 1x techmap (4 sec), 22% 81x opt_expr (3 sec), ...
 tool     : Yosys 0.33 (git sha1 2584903a060)
 route    : native
 source   : demo_integrator.sv
 library  : sky130_fd_sc_hd__tt_025C_1v80.lib
-run at   : 2026-10-19T13:37:22+0700
-log      : reports/demo_integrator.native.20261019.log
-netlist  : reports/demo_integrator.native.20261019.json
+run at   : 2026-10-20T17:46:07+0700
+log      : reports/demo_integrator.native.20261020.log
+netlist  : reports/demo_integrator.native.20261020.json
 
-netlist       : reports/demo_integrator.native.20261019.json
+netlist       : reports/demo_integrator.native.20261020.json
 library       : sky130_fd_sc_hd__tt_025C_1v80.lib  (428 cells described)
 cells mapped  : 1885  (flip-flops 482, combinational 1403)
 area          : 20275.70 um^2   (flops 9649.25 um^2, combinational 10626.44 um^2)

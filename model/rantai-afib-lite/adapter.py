@@ -112,9 +112,14 @@ def read_header(hea_path):
     bits, the zero level, the initial value and the signal name. A declared gain of zero
     means the WFDB default of 200 counts per millivolt, and that is what the fixture
     recording 04015 carries.
+    A header carries comment lines that start with '#' after the record line and after the
+    channel lines, for instance the '# 32 M' age line of an NSRDB record and the two
+    '# Aldomet, Inderal' medication lines of an MITDB record. They are skipped exactly like
+    blank lines. Without that skip the last one is read as a channel row, its trailing
+    field 'M' reaches the float() of gain, and the whole header is refused.
     """
     rows = [line.split() for line in pathlib.Path(hea_path).read_text().splitlines()
-            if line.strip()]
+            if line.strip() and not line.strip().startswith("#")]
     first = rows[0]
     record = {"name": first[0], "n_sig": int(first[1]), "fs": float(first[2]),
               "n_samples": int(first[3])}
@@ -587,6 +592,21 @@ def block_words(block, channel=0):
     return v >> ATTYS_WORD_SHIFT
 
 
+def _rounded_div(s, den):
+    """Exact round half away from zero of the rational s/den, in integers only.
+
+    The general path of LinearResampler. The numerator s is the already cross multiplied
+    weight sum a * (den - rem) + b * rem, so s/den is the interpolated word as an exact
+    rational and this function rounds it without ever forming a float and without losing a
+    bit. The rounding rule is half away from zero.
+    """
+    sign = -1 if s < 0 else 1
+    q, r = divmod(abs(s), den)
+    if 2 * r >= den:
+        q += 1
+    return sign * q
+
+
 class LinearResampler:
     """Exact rational linear interpolation of the locked 16 bit word between two rates.
 
@@ -595,21 +615,39 @@ class LinearResampler:
 
     Chosen: linear interpolation between the two nearest device samples, in integer
     arithmetic on the 16 bit word, with the fractional weight written as an exact rational.
+    Two paths inside one method, and the ratio r_in / r_out decides which one:
+
+    fast path        the reduced denominator is a power of two, so the weight rem/den is
+                     0, 1/2, 1/4 and so on. The declared device rates 125, 250 and 500
+                     against 250 reduce to 1/2, 1/1 and 2/1, so they take this path, the
+                     arithmetic is a shift and an add, and no bit of it was touched by the
+                     general path below.
+    general path     the reduced denominator is not a power of two, which is what a 128 Hz
+                     or a 360 Hz recording against the 250 Hz core gives: den 125 with num
+                     64, and den 25 with num 36. The weight is still an exact rational, the
+                     product a * (den - rem) + b * rem is still cross multiplied in integers,
+                     and the single rounding is _rounded_div, half away from zero. There is
+                     still no float and no multiplier is needed to state the weight, only the
+                     cross multiplication the fast path already used.
 
     Reasons. The three declared device rates are 125, 250 and 500 Hz against a 250 Hz core,
     so the ratio reduces to 1/2, 1/1 and 2/1 and every interpolation weight is a power of
-    two fraction, 0, 1/2 or 1. The resampler is therefore a shift and an add: no hard
+    two fraction, 0, 1/2 or 1. On that path the resampler is a shift and an add: no hard
     multiplier, no floating point, and nothing that a bit width has to absorb. It is also
     exactly invertible at 125 to 250 and at 500 to 250, which is what makes the equality
     between the Attys paths and the dataset path provable instead of approximate. A
     windowed sinc or polyphase FIR would be sharper, but it needs multipliers in the
-    hardware path and the three declared rates do not need it.
+    hardware path and the three declared rates do not need it. The general path carries a
+    denominator that is not a power of two, so its interpolation weight cannot be written as
+    a shift; it keeps the cross multiplication and states that explicitly instead of
+    refusing the rate.
 
     Known limit, stated and not hidden: this is interpolation, not a resampling filter.
     Careful decimation from 500 Hz to 250 Hz would also need an anti alias filter. The
     effective analog bandwidth of the Attys front end is not measured on this machine, so
     no anti alias filter is added and the aliasing error of the real 500 Hz path is left
-    unmeasured rather than claimed to be zero.
+    unmeasured rather than claimed to be zero. The same holds for the general path: 128 Hz
+    and 360 Hz recordings are interpolated to 250 Hz and no anti alias filter is applied.
     """
 
     def __init__(self, rate_in, rate_out):
@@ -617,9 +655,11 @@ class LinearResampler:
         g = math.gcd(rate_in, rate_out)
         self.num = rate_in // g  # input samples per output sample, times den
         self.den = rate_out // g
-        if self.den & (self.den - 1):
-            raise ValueError("the interpolation weight denominator %d is not a power of two, "
-                             "so the weights would need a hard multiplier" % (self.den,))
+        # The fast path flag. den is a power of two exactly for the declared device rates
+        # 125, 250 and 500 against 250, and only the arithmetic of that path is the shift
+        # and add this class was written around. den 125 (128 Hz) and den 25 (360 Hz) are
+        # not powers of two and take the general path in drain().
+        self.pow2 = (self.den & (self.den - 1)) == 0
         self.rate_in = rate_in
         self.rate_out = rate_out
         self.n_in = 0
@@ -670,9 +710,21 @@ class LinearResampler:
                 w, g, u = a, ga, ua
             else:
                 b, gb, ub = self._at(p + 1)
+                # The weight is rem/den in both paths and the sum is cross multiplied in
+                # integers in both paths. Only the rounding of s/den differs, and for a
+                # power of two den the two forms below are the same number: den is even so
+                # den // 2 is the exact half and floor((s + den/2) / den) is half away from
+                # zero, which is exactly what _rounded_div computes. The fast path is left
+                # as it was, character for character, so 125, 250 and 500 Hz are bit
+                # identical to the resampler before the general path was added.
                 s = a * (self.den - rem) + b * rem
-                w = (s + self.den // 2) // self.den if s >= 0 \
-                    else -((-s + self.den // 2) // self.den)
+                if self.pow2:
+                    w = (s + self.den // 2) // self.den if s >= 0 \
+                        else -((-s + self.den // 2) // self.den)
+                else:
+                    # General path, den not a power of two, den 125 at 128 Hz and den 25 at
+                    # 360 Hz. Exact integer arithmetic, no float, no new rounding error.
+                    w = _rounded_div(s, self.den)
                 g = ga and gb
                 u = ua or ub
             self.n_out += 1
