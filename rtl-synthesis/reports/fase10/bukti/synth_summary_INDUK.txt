@@ -1,0 +1,41 @@
+===== acq_frontend =====
+rc=0
+   Number of cells:               2999
+   Chip area for module '\acq_frontend': 34307.904000
+area          : 34307.90 um^2   (flops 23042.10 um^2, combinational 11265.80 um^2)
+flop share    : 67.2 percent of the area
+===== bandpass =====
+rc=0
+   Number of cells:               4855
+   Chip area for module '\bandpass': 41508.560000
+area          : 41508.56 um^2   (flops 22101.20 um^2, combinational 19407.36 um^2)
+flop share    : 53.2 percent of the area
+===== derivative =====
+rc=0
+   Number of cells:               1348
+   Chip area for module '\derivative': 11176.969600
+area          : 11176.97 um^2   (flops 5485.26 um^2, combinational 5691.71 um^2)
+flop share    : 49.1 percent of the area
+===== square =====
+rc=0
+   Number of cells:               1257
+   Chip area for module '\square': 9994.585600
+area          : 9994.59 um^2   (flops 1461.40 um^2, combinational 8533.18 um^2)
+flop share    : 14.6 percent of the area
+===== integrator =====
+rc=0
+   Number of cells:               4241
+   Chip area for module '\integrator': 48878.128000
+area          : 48878.13 um^2   (flops 25084.06 um^2, combinational 23794.07 um^2)
+flop share    : 51.3 percent of the area
+===== peak_detect =====
+rc=143
+===== t_rule =====
+rc=143
+===== rr_series =====
+rc=0
+   Number of cells:               9650
+   Chip area for module '\rr_series': 80597.299200
+area          : 80597.30 um^2   (flops 25003.98 um^2, combinational 55593.32 um^2)
+flop share    : 31.0 percent of the area
+===== features =====

@@ -1,0 +1,12 @@
+# Cek oracle sintetis: maksimum jendela dari kolom turunan vs kolom kem emas
+posisi diperiksa = 5453, beda = 0, contoh pertama = []
+nilai terbesar kolom kem emas = 4194303, tertinggi yang dapat diwakili porta W_TW = 8388607
+spike terbesar di kolom turunan = 4194303 = 2**22-1, jauh di bawah rail laporan
+
+# Sebab 2048 dari 16777216 pada grid yang sama dengan teorema 8 model beku
+pasangan berbeda (silang vs geser) = 2048 dari 16777216
+dengan kem_qrs ganjil = 2048, dengan kem_qrs genap = 0
+lima contoh (kem_qrs, kem) = [(1, 0), (3, 1), (5, 2), (7, 3), (9, 4)], yaitu kem = (kem_qrs-1)/2 = floor(kem_qrs/2)
+pada titik itu rute float (kem < kem_qrs/2.0) bernilai salah dan bentuk geser benar,
+sehingga rute float sama dengan bentuk silang: 0 beda (04015.grid.full.out)
+exit=0

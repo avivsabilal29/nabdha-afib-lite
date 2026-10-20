@@ -1,3 +1,0 @@
-read_rtlil ../../database/design.il
-mutate -mode const1 -module acq_frontend -cell $procmux$134 -port A -portbit 1 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
-write_verilog -norename mutated.v

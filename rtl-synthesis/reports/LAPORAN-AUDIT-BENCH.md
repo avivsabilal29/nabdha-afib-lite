@@ -35,6 +35,13 @@ Keduanya tertangkap pada jendela yang pendek, jadi testbench sanggup gagal tanpa
 menunggu seluruh rekaman. Nodus `pre` penting: aturan pembulatan setengah ke genap
 hanya terbukti pada nodus itu, bukan pada kata keluaran.
 
+**Status bukti tiga angka di atas (ditambahkan 21 Oktober 2026).** Angka-angka itu dicatat ketika
+pengujian suntikan berjalan pada salinan RTL, tetapi salinan yang disuntik dan log jalannya
+**tidak disimpan di repo**. Pencarian menyeluruh di repo dan di area kerja tidak menemukan
+keluarannya. Yang berdiri sendiri adalah putusan kualitatifnya: kedua cacat tertangkap pada jendela
+pendek dengan putusan `FAIL`. Angkanya harus diperlakukan sebagai catatan, dan bila hendak dikutip
+di luar, ulangi pengujiannya dengan salinan RTL tersimpan supaya log-nya ikut tersimpan.
+
 ## A3, cakupan mutasi tahap kuantisasi
 
 Kampanye mcy penuh: 1.000 mutan atas `acq_frontend.sv`, satu putusan per mutan.
@@ -42,10 +49,47 @@ Kampanye mcy penuh: 1.000 mutan atas `acq_frontend.sv`, satu putusan per mutan.
 | Ukuran | Nilai |
 |---|---|
 | Mutan diuji | 1.000 |
-| Tertangkap testbench | 590 |
-| Lolos, testbench buta | 410 |
-| Cakupan mutasi | **59,00 persen** |
+| Tertangkap pada mode cepat | 590 |
+| Lolos pada mode cepat | 410 |
+| Dari 410 itu, tertangkap setelah diuji ulang dengan testbench penuh | **278** |
+| Sisa yang masih lolos | **132** |
+| **Cakupan mutasi gabungan** | **86,80 persen** |
 | Mutan yang berakhir timeout | 8 |
+
+Cara membacanya: angka 59,00 persen pada mode cepat dan 86,80 persen gabungan sama
+sahnya untuk pertanyaan berbeda. Yang pertama mengukur testbench **mode cepat**, yang
+kedua mengukur testbench **lengkap**. Yang lengkap yang dipakai sebagai gerbang.
+
+**Basis data bukti (diperiksa 21 Oktober 2026).** Angka-angka di tabel A3 bukan catatan tangan:
+seluruhnya terbaca dari basis data kampanye
+`rtl-synthesis/mcy/kuantisasi_full/database/db.sqlite3`, dibuka dengan mode hanya-baca
+(`file:...?mode=ro`) supaya berkas milik jalannya kampanye tidak tersentuh.
+
+| Kueri | Hasil | Kesesuaian dengan tabel di atas |
+|---|---|---|
+| `SELECT COUNT(*) FROM mutations` | 1000 | mutan diuji 1.000 |
+| `SELECT tag, COUNT(*) FROM tags GROUP BY tag` | `COVERED` 278, `UNCOVERED` 132 | 278 tertangkap, 132 sisa |
+| `SELECT result, COUNT(*) FROM results GROUP BY result` | `FAIL` 278, `PASS` 132 | sama |
+| `results` 410 + `queue` 590 | 1000 | 410 lolos mode cepat, 590 sisanya |
+
+Karena itu cakupan gabungan `(1000 - 132) / 1000 = 86,80 persen` memang hitungan atas basis data,
+dan pisahan mode cepat `410 / 1000 = 41,00 persen lolos` sepadan dengan `59,00 persen tertangkap`.
+Keduanya kini punya jejak yang bisa diperiksa ulang, bukan hanya tertulis.
+
+**Sisa 132 mutan, dan mengapa sebagiannya patut diduga setara.** Sebarannya kini
+**rata** di seluruh modul, tidak lagi menumpuk di sideband peristiwa: 37 di bawah baris
+150, 39 di baris 150 sampai 215, 31 di baris 216 sampai 270, dan 24 di atas baris 270.
+Empat puluh enam persen di antaranya menyentuh bit register kerja pembagi, yaitu `bit_q`
+dan `side_q`, tempat bit yang tidak pernah mencapai keluaran akan membuat mutannya
+**setara secara fungsional**, bukan lolos karena testbench buta. Enam puluh dua lagi
+berada di sel internal bernama `?` yang belum bisa saya golongkan tanpa pemeriksaan
+kesetaraan. Satu di antaranya adalah mutan `mode none`, yaitu rancangan yang tidak
+dimutasi sama sekali, dan itu **memang harus lolos**.
+
+Karena itu langkah berikutnya untuk A3 adalah pemeriksaan kesetaraan dengan `eqy` atas
+132 mutan sisa, supaya angka 86,80 persen bisa dipecah menjadi setara dan benar-benar
+belum teruji. Angka itu sendiri sudah cukup untuk menyatakan testbench Fase 2 sanggup
+gagal pada hampir sembilan dari sepuluh mutan.
 
 Dua jebakan alat yang memakan waktu dan layak dicatat. Pertama, berkas `output.txt`
 harus berisi **baris putusan saja** dalam bentuk `<jumlah> <TAG>`, karena mcy
@@ -150,9 +194,11 @@ saya pasang, dan counterexample-nya memang berpindah dari siklus 2 ke siklus 18,
 belum hilang.
 
 Yang menjadi bukti latensi saat ini, dan saya sebut apa adanya: paritas kata demi kata
-atas seluruh 450.000 sampel pada bench Fase 4, dan pengukuran 17 siklus per sampel yang
-dilaporkan bench itu. Keduanya bukti kuat, tetapi keduanya bukti **simulasi**, bukan
-bukti formal. Menutup celah itu adalah pekerjaan tersendiri.
+atas seluruh 450.000 sampel pada bench Fase 4. Angka 17 siklus yang saya sebut di kalimat ini
+**bukan hasil ukur tersendiri**, melainkan latensi rancangan tahap turunan: `tb_derivative.sv`
+menyebutnya di komentar konstanta `CAD = 24` sebagai "the 17 cycle latency", dan testbench top
+melaporkan cadence 64 siklus per sampel. Jadi yang berdiri sebagai bukti tetap paritas kata demi
+kata, dan itu bukti **simulasi**, bukan bukti formal. Menutup celah itu adalah pekerjaan tersendiri.
 
 ## A6, kesimpulan
 

@@ -213,7 +213,6 @@ module peak_detect #(
     localparam logic [31:0] N_RADIUS     = RADIUS_PUNCAK;
     localparam logic [31:0] N_PANTUL     = PANTUL;
     localparam logic [31:0] N_BUFDEPTH   = BUF_DEPTH;
-    localparam logic [31:0] N_PITA       = BATAS_PITA_SAMPEL;
     localparam logic [31:0] N_RR_MIN     = RR_BAND_MIN_MS;
     localparam logic [31:0] N_RR_MAX     = RR_BAND_MAX_MS;
     localparam logic [31:0] N_RR_LEN     = RR_LEN;
@@ -230,7 +229,6 @@ module peak_detect #(
     localparam logic [W_IDX-1:0]  RADIUS_DX    = N_RADIUS[W_IDX-1:0];
     localparam logic [W_IDX-1:0]  PANTUL_DX    = N_PANTUL[W_IDX-1:0];
     localparam logic [W_IDX-1:0]  BUF_DEPTH_DX = N_BUFDEPTH[W_IDX-1:0];
-    localparam logic [W_IDX+1:0]  PITA_DX      = (W_IDX+2)'(N_PITA);
     localparam logic [W_IDX+1:0]  RR_MIN_DX    = (W_IDX+2)'(N_RR_MIN);
     localparam logic [W_IDX+1:0]  RR_MAX_DX    = (W_IDX+2)'(N_RR_MAX);
     localparam logic [3:0]        RR_LEN_D     = N_RR_LEN[3:0];
@@ -439,14 +437,30 @@ module peak_detect #(
     // =======================================================================
     wire [W_IDX-1:0] delta_w  = pos_w - i_qrs_q;
     wire             delta_ok = i_qrs_v_q;
-    wire             pita_w   = delta_ok & kem_qrs_v_q &
-                                ({delta_w, 2'b00} < PITA_DX);
     wire             sig0_w   = (pv_c > i1_c);
     wire             sig1_w   = sig0_w & ~(delta_ok & (delta_w < PANTUL_DX));
-    // 2 * kem < kem_qrs, exact cross form, never kem < (kem_qrs >> 1)
-    wire [31:0]      kem2_w   = {7'b0, kem_w, 1'b0};
-    wire [31:0]      kemq_w   = {8'b0, kem_qrs_q};
-    wire             trej_w   = pita_w & (kem2_w < kemq_w);
+    // pita_w (in band) and trej_w (t rejected) come from t_rule_eq, the single source of
+    // the rule's equations in rtl/ (Fase 10, K6). Until phase 10 this file carried its own
+    // copy of them, with the exact cross form 2*kem < kem_qrs; the module computes the
+    // same expressions over the same operands, and the T wave rule switch the model reads
+    // at the call (rantai.py:338) is the constant 1 here because the frozen model's
+    // aturan_t is True in the frozen run, as this block already documented.
+    wire             pita_w;
+    wire             trej_w;
+    t_rule_eq #(
+        .W_IDX  (W_IDX),
+        .W_KEM  (W_DER_NODE),
+        .W_KEMQ (W_DER_NODE)
+    ) u_rule_eq (
+        .i_aktif         (1'b1),
+        .i_delta         (delta_w),
+        .i_delta_valid   (delta_ok),
+        .i_kem           (kem_w),
+        .i_kem_qrs       (kem_qrs_q),
+        .i_kem_qrs_valid (kem_qrs_v_q),
+        .o_dalam_pita    (pita_w),
+        .o_ditolak       (trej_w)
+    );
     wire             sig2_w   = sig1_w & ~trej_w;
 
     wire c_diper_w = sig1_w & pita_w;
@@ -521,7 +535,11 @@ module peak_detect #(
             cand_p_w  = {W_IDX{1'b0}};
             cand_f_w  = {W_THR{1'b0}};
             cand_k_w  = {W_DER_NODE{1'b0}};
-            sb_idx_w  = {BUF_MASK_D} - ki[6:0];
+            // The peak under test is written at slot pk_cnt[6:0], so the walk reads the entry
+            // of peak (pk_cnt - ki) at that slot minus ki, taken modulo the depth. A fixed
+            // base of (BUF_MASK - ki) only lines up when the peak counter happens to sit at
+            // the mask, and otherwise reads an entry about a hundred peaks old.
+            sb_idx_w  = (pk_cnt_q[6:0] - ki[6:0]) & BUF_MASK_D;
             sb_off_w  = sb_idx_w * W_BPK_D;
             if ((sb_arm_w & ~sb_ovf_w) & (ki < sb_n_w)) begin
                 if (ki == 0) begin
@@ -598,17 +616,22 @@ module peak_detect #(
     wire [RR_W-1:0] deret_new [0:RR_LEN-1];
     wire [RR_W-1:0] antre_new [0:RR_LEN-1];
     wire [RR_W-1:0] rih_new   [0:RIH_LEN-1];
+    // shift is written as an explicit index 0 plus a loop from one, so no branch ever
+    // names index -1 (a static out of bounds read, which Icarus warns about).
+    assign deret_new[0] = rr_word_w;
+    assign antre_new[0] = rr_word_w;
+    assign rih_new[0]   = rr_word_w;
     genvar gd;
     generate
-        for (gd = 0; gd < RR_LEN; gd = gd + 1) begin : g_queue_new
-            assign deret_new[gd] = (gd == 0) ? rr_word_w : deret_q[gd-1];
-            assign antre_new[gd] = (gd == 0) ? rr_word_w : antre_q[gd-1];
+        for (gd = 1; gd < RR_LEN; gd = gd + 1) begin : g_queue_new
+            assign deret_new[gd] = deret_q[gd-1];
+            assign antre_new[gd] = antre_q[gd-1];
         end
     endgenerate
     genvar gr;
     generate
-        for (gr = 0; gr < RIH_LEN; gr = gr + 1) begin : g_rih_new
-            assign rih_new[gr] = (gr == 0) ? rr_word_w : rih_q[gr-1];
+        for (gr = 1; gr < RIH_LEN; gr = gr + 1) begin : g_rih_new
+            assign rih_new[gr] = rih_q[gr-1];
         end
     endgenerate
 
@@ -689,13 +712,19 @@ module peak_detect #(
     // All eight entries are tested because penyebut is 8, which also means the queue of
     // eight is full.
     reg mem_w;
+    // The firmware lights the rhythm flag over the values the queue holds *after* this beat
+    // has been absorbed (rantai.py:424-437 recomputes pembilang and penyebut before the
+    // loop), so the band has to be formed from pemb_n, not from the pre update reference
+    // that decides lolos.
+    wire [31:0] rr_lopost_w = RR_LO_D * {12'b0, pemb_n};
+    wire [31:0] rr_hipost_w = RR_HI_D * {12'b0, pemb_n};
     always @(*) begin
         mem_w = 1'b0;
         if (peny_n == RR_LEN_D) begin
             mem_w = 1'b1;
             for (mi = 0; mi < RR_LEN; mi = mi + 1) begin
-                if (!(((RR_SCALE_D * {28'b0, peny_n} * {16'b0, deret_new[mi]}) >= rr_lo_w) &&
-                      ((RR_SCALE_D * {28'b0, peny_n} * {16'b0, deret_new[mi]}) <= rr_hi_w))) begin
+                if (!(((RR_SCALE_D * {28'b0, peny_n} * {16'b0, deret_new[mi]}) >= rr_lopost_w) &&
+                      ((RR_SCALE_D * {28'b0, peny_n} * {16'b0, deret_new[mi]}) <= rr_hipost_w))) begin
                     mem_w = 1'b0;
                 end
             end
@@ -895,9 +924,13 @@ module peak_detect #(
             end
 
             // ---- event sideband, one cycle with the word that made it
+            // One event per peak row: the row's verdict. The generator of the expected
+            // vectors keys the row's kind and index on qrs_sample_index (K7's recording
+            // row), so a refit row is a QRS event whose index is the recorded position,
+            // which is earlier than the row's own sample index.
             m_ev_valid <= peak_w;
-            m_ev_kind  <= sig2_w ? afib_lite_pkg::EV_QRS : afib_lite_pkg::EV_PEAK_CAND;
-            m_ev_idx   <= sig2_w ? pos_w : (sb_hit_w ? sb_sp_w : pos_w);
+            m_ev_kind  <= rec_qrs_w ? afib_lite_pkg::EV_QRS : afib_lite_pkg::EV_PEAK_CAND;
+            m_ev_idx   <= rec_qrs_w ? rec_idx_w : pos_w;
             m_ev_val   <= pv_w[31:0];
             d_valid    <= peak_w;
             d_thr      <= i1_w[W_THR-1:0];

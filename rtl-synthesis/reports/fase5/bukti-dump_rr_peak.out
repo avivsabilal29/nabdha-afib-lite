@@ -1,0 +1,36 @@
+PK  975 pos   91015 i1  49244565 i2  24622282 iqrs   90803 delta    212 pemb    6080 peny  8 ra1     640 ra2     760 gagal  0 jeda 11 semai 12 deret  8 antre  8 riw 32 gate 0
+   -> after: pemb    6200 peny  8 ra1     659 gagal  0 jeda 12 semai 12 cari 1
+PK  976 pos   91111 i1  64278551 i2  32139275 iqrs   91015 delta     96 pemb    6200 peny  8 ra1     659 ra2     775 gagal  0 jeda 12 semai 12 deret  8 antre  8 riw 32 gate 0
+   -> after: pemb    6200 peny  8 ra1     659 gagal  0 jeda 12 semai 12 cari 1
+PK  977 pos   91293 i1  63525819 i2  31762909 iqrs   91015 delta    278 pemb    6200 peny  8 ra1     659 ra2     775 gagal  0 jeda 12 semai 12 deret  8 antre  8 riw 32 gate 0
+   -> after: pemb    6200 peny  8 ra1     726 gagal  1 jeda 13 semai 12 cari 1
+PK  978 pos   91343 i1 153293604 i2  76646802 iqrs   91293 delta     50 pemb    6200 peny  8 ra1     726 ra2     775 gagal  1 jeda 13 semai 12 deret  8 antre  8 riw 32 gate 0
+   -> after: pemb    6200 peny  8 ra1     726 gagal  1 jeda 13 semai 12 cari 1
+PK  979 pos   91407 i1 184754897 i2  92377448 iqrs   91343 delta     64 pemb    6200 peny  8 ra1     726 ra2     775 gagal  1 jeda 13 semai 12 deret  8 antre  8 riw 32 gate 0
+   -> after: pemb    6200 peny  8 ra1     726 gagal  1 jeda 13 semai 12 cari 1
+PK  980 pos   91481 i1 190421069 i2  95210534 iqrs   91343 delta    138 pemb    6200 peny  8 ra1     726 ra2     775 gagal  1 jeda 13 semai 12 deret  8 antre  8 riw 32 gate 0
+   -> after: pemb    6200 peny  8 ra1     726 gagal  1 jeda 13 semai 12 cari 1
+PK  981 pos   91611 i1 189320250 i2  94660125 iqrs   91343 delta    268 pemb    6200 peny  8 ra1     726 ra2     775 gagal  1 jeda 13 semai 12 deret  8 antre  8 riw 32 gate 0
+   -> after: pemb    6200 peny  8 ra1     726 gagal  1 jeda 13 semai 12 cari 1
+PK  982 pos   91681 i1 197634271 i2  98817135 iqrs   91343 delta    338 pemb    6200 peny  8 ra1     726 ra2     775 gagal  1 jeda 13 semai 12 deret  8 antre  8 riw 32 gate 1
+   -> after: pemb    6200 peny  8 ra1     791 gagal  2 jeda 14 semai 12 cari 2
+PK  983 pos   91807 i1 157394329 i2  78697164 iqrs   91611 delta    196 pemb    6200 peny  8 ra1     791 ra2     775 gagal  2 jeda 14 semai 12 deret  8 antre  8 riw 32 gate 0
+   -> after: pemb    6200 peny  8 ra1     791 gagal  2 jeda 14 semai 12 cari 2
+PK  984 pos   91879 i1 167295513 i2  83647756 iqrs   91611 delta    268 pemb    6200 peny  8 ra1     791 ra2     775 gagal  2 jeda 14 semai 12 deret  8 antre  8 riw 32 gate 0
+   -> after: pemb    6200 peny  8 ra1     791 gagal  2 jeda 14 semai 12 cari 2
+PK  985 pos   92001 i1 164633524 i2  82316762 iqrs   91611 delta    390 pemb    6200 peny  8 ra1     791 ra2     775 gagal  2 jeda 14 semai 12 deret  8 antre  8 riw 32 gate 1
+   -> after: pemb    6200 peny  8 ra1     919 gagal  3 jeda 15 semai 12 cari 3
+PK  986 pos   92073 i1 149236087 i2  74618043 iqrs   92001 delta     72 pemb    6200 peny  8 ra1     919 ra2     775 gagal  3 jeda 15 semai 12 deret  8 antre  8 riw 32 gate 0
+   -> after: pemb    6200 peny  8 ra1     919 gagal  3 jeda 15 semai 12 cari 3
+PK  987 pos   92203 i1 145275108 i2  72637554 iqrs   92001 delta    202 pemb    6200 peny  8 ra1     919 ra2     775 gagal  3 jeda 15 semai 12 deret  8 antre  8 riw 32 gate 0
+   -> after: pemb    6200 peny  8 ra1     919 gagal  3 jeda 15 semai 12 cari 3
+PK  988 pos   92279 i1 152588085 i2  76294042 iqrs   92001 delta    278 pemb    6200 peny  8 ra1     919 ra2     775 gagal  3 jeda 15 semai 12 deret  8 antre  8 riw 32 gate 0
+   -> after: pemb    6200 peny  8 ra1     919 gagal  3 jeda 15 semai 12 cari 3
+PK  989 pos   92413 i1 148567254 i2  74283627 iqrs   92001 delta    412 pemb    6200 peny  8 ra1     919 ra2     775 gagal  3 jeda 15 semai 12 deret  8 antre  8 riw 32 gate 1
+   -> after: pemb    6200 peny  8 ra1    1092 gagal  4 jeda 16 semai 12 cari 4
+PK  990 pos   92475 i1 136975421 i2  68487710 iqrs   92413 delta     62 pemb    6200 peny  8 ra1    1092 ra2     775 gagal  4 jeda 16 semai 12 deret  8 antre  8 riw 32 gate 0
+   -> after: pemb    6200 peny  8 ra1    1092 gagal  4 jeda 16 semai 12 cari 4
+PK  991 pos   92599 i1 132510721 i2  66255360 iqrs   92413 delta    186 pemb    6200 peny  8 ra1    1092 ra2     775 gagal  4 jeda 16 semai 12 deret  8 antre  8 riw 32 gate 0
+   -> after: pemb    6216 peny  8 ra1    1087 gagal  0 jeda 17 semai 12 cari 4
+PK  992 pos   92671 i1 126018209 i2  63009104 iqrs   92599 delta     72 pemb    6216 peny  8 ra1    1087 ra2     777 gagal  0 jeda 17 semai 12 deret  8 antre  8 riw 32 gate 0
+   -> after: pemb    6216 peny  8 ra1    1087 gagal  0 jeda 17 semai 12 cari 4

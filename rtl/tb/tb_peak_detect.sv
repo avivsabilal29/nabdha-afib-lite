@@ -75,6 +75,7 @@ module tb_peak_detect;
     reg [31:0] exp_pkf    [0:P_MAX-1];
     reg [31:0] exp_i1     [0:P_MAX-1];
     reg [31:0] exp_isqrs  [0:P_MAX-1];
+    reg [31:0] exp_qrsidx [0:P_MAX-1];
     reg [31:0] exp_kind   [0:P_MAX-1];
     reg [31:0] exp_amb    [0:A_MAX-1];
 
@@ -141,6 +142,23 @@ module tb_peak_detect;
     );
 
     // -----------------------------------------------------------------------
+    // The event bus cannot express the four way census: its frozen vocabulary has one code
+    // for a beat and one for a rejected peak. The class is therefore rebuilt from the
+    // additive flag word, word 11 of d_dbg, whose bits 0, 2 and 3 line up one for one with
+    // the golden columns signal, t_rejected and search_back. All six walk rows carry
+    // signal 0, so the walk bit is tested first, and the rebuild is checked against the
+    // same three golden columns in the vector generator.
+    // -----------------------------------------------------------------------
+    function [1:0] cls_of(input [2:0] flags);   // {search_back, t_rejected, signal}
+        if (flags[2])      cls_of = 2'd1;   // qrs_search_back
+        else if (flags[0]) cls_of = 2'd0;   // qrs
+        else if (flags[1]) cls_of = 2'd2;   // rejected_t
+        else               cls_of = 2'd3;   // noise
+    endfunction
+
+    wire [1:0] cls_w = cls_of({d_dbg[11*32 + 3], d_dbg[11*32 + 2], d_dbg[11*32]});
+
+    // -----------------------------------------------------------------------
     // scrutinee state
     // -----------------------------------------------------------------------
     integer limit_n;
@@ -155,12 +173,15 @@ module tb_peak_detect;
     integer mm_idx,   mm_val,   mm_kind;
     integer mm_thr,   mm_pk;
     integer mm_fwd_i, mm_fwd_d, mm_fwd_u, mm_fwd_t;
+    integer mm_cls;
+    integer mm_idx_beat;
     integer dbg_v_n;
     reg     done;
 
     reg [31:0] ev_kind_census [0:3];   // qrs, qrs_search_back, rejected_t, noise
     reg [31:0] ev_loaded_census [0:3];
     reg [31:0] ev_beat_seen;
+    reg [31:0] flag_census [0:3];
 
     // -----------------------------------------------------------------------
     // clock
@@ -196,6 +217,7 @@ module tb_peak_detect;
         $sformat(fpath, "%0s/04015.puncak.i1.hex",     vdir); $readmemh(fpath, exp_i1);
         $sformat(fpath, "%0s/04015.puncak.isqrs.hex",  vdir); $readmemh(fpath, exp_isqrs);
         $sformat(fpath, "%0s/04015.puncak.eventkind.hex", vdir); $readmemh(fpath, exp_kind);
+        $sformat(fpath, "%0s/04015.puncak.qrsidx.hex", vdir); $readmemh(fpath, exp_qrsidx);
         $sformat(fpath, "%0s/04015.ambang_akhir.hex",  vdir); $readmemh(fpath, exp_amb);
 
         $sformat(fpath, "%0s/04015.jendela.hex", gdir); $readmemh(fpath, mem_win);
@@ -213,6 +235,8 @@ module tb_peak_detect;
 
         mm_idx = 0; mm_val = 0; mm_kind = 0; mm_thr = 0; mm_pk = 0;
         mm_fwd_i = 0; mm_fwd_d = 0; mm_fwd_u = 0; mm_fwd_t = 0; dbg_v_n = 0;
+        mm_cls = 0; mm_idx_beat = 0;
+        for (i = 0; i < 4; i = i + 1) flag_census[i] = 32'd0;
         done = 1'b0;
         ev_n = 0; dv_n = 0; out_n = 0; drive_n = 0; ovf_n = 0; ev_beat_seen = 32'd0;
         for (i = 0; i < 4; i = i + 1) ev_kind_census[i] = 32'd0;
@@ -289,6 +313,19 @@ module tb_peak_detect;
                                  ev_n, m_ev_kind, exp_isqrs[ev_n]);
                 end
                 if (m_ev_kind == afib_lite_pkg::EV_QRS) ev_beat_seen <= ev_beat_seen + 32'd1;
+                // four way class parity against the golden event_kind column
+                if (cls_w !== exp_kind[ev_n][1:0]) begin
+                    mm_cls <= mm_cls + 1;
+                    if (mm_cls <= 5)
+                        $display("tb_peak_detect: class ev %0d got %0d want %0d",
+                                 ev_n, cls_w, exp_kind[ev_n][1:0]);
+                end
+                flag_census[cls_w] <= flag_census[cls_w] + 32'd1;
+                // a walk row: the golden table carries the peak position in sample_index and the
+                // beat position in qrs_sample_index; record when the event carries the beat
+                if ((cls_w == 2'd1) && (m_ev_idx == exp_qrsidx[ev_n][W_IDX-1:0]) &&
+                    (m_ev_idx !== exp_pos[ev_n][W_IDX-1:0]))
+                    mm_idx_beat <= mm_idx_beat + 32'd1;
                 case (m_ev_kind)
                     afib_lite_pkg::EV_QRS:       ev_kind_census[0] <= ev_kind_census[0] + 32'd1;
                     afib_lite_pkg::EV_PEAK_CAND: ev_kind_census[1] <= ev_kind_census[1] + 32'd1;
@@ -350,6 +387,11 @@ module tb_peak_detect;
                  mm_idx, mm_val, mm_kind, mm_thr, mm_pk);
         $display("tb_peak_detect: forwarded word mismatches idx %0d data %0d user %0d last %0d, d_dbg_valid pulses %0d",
                  mm_fwd_i, mm_fwd_d, mm_fwd_u, mm_fwd_t, dbg_v_n);
+        $display("tb_peak_detect: four way class checkpoints %0d, class mismatches %0d", ev_n, mm_cls);
+        $display("tb_peak_detect: flag word census {qrs %0d, search_back %0d, rejected_t %0d, noise %0d}",
+                 flag_census[0], flag_census[1], flag_census[2], flag_census[3]);
+        $display("tb_peak_detect: walk rows carrying the beat index instead of the peak index %0d",
+                 mm_idx_beat);
         $display("tb_peak_detect: o_beat_count %0d", o_beat_count);
         $display("tb_peak_detect: m_overflow cycles %0d (0 expected, reported not gated)", ovf_n);
 
@@ -401,6 +443,10 @@ module tb_peak_detect;
             $display("tb_peak_detect: FAIL introspection d_thr %0d d_pk %0d", mm_thr, mm_pk);
             $fatal(1);
         end
+        if (mm_cls != 0) begin
+            $display("tb_peak_detect: FAIL four way class mismatches %0d", mm_cls);
+            $fatal(1);
+        end
         if ((mm_fwd_i != 0) || (mm_fwd_d != 0) || (mm_fwd_u != 0) || (mm_fwd_t != 0)) begin
             $display("tb_peak_detect: FAIL word forwarding idx %0d data %0d user %0d last %0d",
                      mm_fwd_i, mm_fwd_d, mm_fwd_u, mm_fwd_t);
@@ -417,6 +463,12 @@ module tb_peak_detect;
             end
             if (o_beat_count != 32'd2596) begin
                 $display("tb_peak_detect: FAIL o_beat_count got %0d want 2596", o_beat_count);
+                $fatal(1);
+            end
+            if (flag_census[0] != 32'd2590 || flag_census[1] != 32'd6 ||
+                flag_census[2] != 32'd1909 || flag_census[3] != 32'd272) begin
+                $display("tb_peak_detect: FAIL flag census {qrs %0d, search_back %0d, rejected_t %0d, noise %0d} want {2590, 6, 1909, 272}",
+                         flag_census[0], flag_census[1], flag_census[2], flag_census[3]);
                 $fatal(1);
             end
             if (ninetofnine != 1) begin

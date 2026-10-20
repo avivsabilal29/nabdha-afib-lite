@@ -196,6 +196,7 @@ module tb_puncak;
     integer mism_flag;
     integer mism_kind;
     integer mism_evidx;
+    integer mism_n;     // peaks whose details were printed
     integer mism_evval;
     integer mism_qrs;
     integer mism_td;
@@ -303,6 +304,19 @@ module tb_puncak;
                 // the golden i2 column is the frozen i1 shifted down by SHIFT_I2, plan 4.4
                 if ((mem_i1[npk] >> 1) !== mem_i2[npk])             mism_i2_data <= mism_i2_data + 1;
                 if (mem_evidx[npk] !== mem_pos[npk])                idx_moved <= idx_moved + 1;
+                // first mismatch details, so a divergence can be located without a probe
+                if ((m_ev_kind !== mem_kind[npk][2:0]) ||
+                    (m_ev_idx !== mem_evidx[npk]) ||
+                    ((d_dbg[DBG_FLAGS*32 +: 32] & 32'h1F) !== (mem_flag[npk] & 32'h1F)) ||
+                    ({{2{1'b0}}, d_thr} !== mem_i1[npk])) begin
+                    if (mism_n < 8) begin
+                        mism_n <= mism_n + 1;
+                        $display("MISM peak#%0d pos dut=%0d gold=%0d i1 dut=%0d gold=%0d flag dut=%02x gold=%02x kind dut=%0d gold=%0d evidx dut=%0d gold=%0d",
+                                 npk, d_dbg[DBG_POS*32 +: 32], mem_pos[npk], {{2{1'b0}}, d_thr}, mem_i1[npk],
+                                 d_dbg[DBG_FLAGS*32 +: 32] & 32'h1F, mem_flag[npk] & 32'h1F,
+                                 m_ev_kind, mem_kind[npk][2:0], m_ev_idx, mem_evidx[npk]);
+                    end
+                end
                 if (mem_flag[npk][0]) flag_signal <= flag_signal + 1;
                 if (mem_flag[npk][1]) flag_inband <= flag_inband + 1;
                 if (mem_flag[npk][2]) flag_trej   <= flag_trej + 1;
@@ -338,12 +352,10 @@ module tb_puncak;
         limit_n = N_MAX;
         if (!$value$plusargs("LIMIT=%d", limit_n)) limit_n = N_MAX;
         if (!$value$plusargs("VECTOR=%s", vdir)) begin
-            $display("tb_puncak: FAIL no +VECTOR (want the Fase 0 column directory)");
-            $finish;
+            $fatal(1, "tb_puncak: FAIL no +VECTOR (want the Fase 0 column directory)");
         end
         if (!$value$plusargs("EXPECT=%s", edir)) begin
-            $display("tb_puncak: FAIL no +EXPECT (want the Fase 5 vector directory)");
-            $finish;
+            $fatal(1, "tb_puncak: FAIL no +EXPECT (want the Fase 5 vector directory)");
         end
         $sformat(f_tmp, "%0s/04015.jendela.hex",     vdir);   $readmemh(f_tmp, mem_win);
         $sformat(f_tmp, "%0s/04015.hp.hex",          vdir);   $readmemh(f_tmp, mem_hp);
@@ -401,6 +413,7 @@ module tb_puncak;
         mism_flag  = 0;
         mism_kind  = 0;
         mism_evidx = 0;
+        mism_n     = 0;
         mism_evval = 0;
         mism_qrs   = 0;
         mism_td    = 0;
@@ -433,9 +446,8 @@ module tb_puncak;
                  pk_max, qrs_max, amb_max);
 
         if ((pk_max > PK_CAP) || (qrs_max > QRS_CAP) || (limit_n > N_MAX)) begin
-            $display("tb_puncak: FAIL capacity or limit out of range (pk_cap %0d qrs_cap %0d)",
-                     PK_CAP, QRS_CAP);
-            $finish;
+            $fatal(1, "tb_puncak: FAIL capacity or limit out of range (pk_cap %0d qrs_cap %0d)",
+                   PK_CAP, QRS_CAP);
         end
 
         cyc_limit = (limit_n + 1) * CAD + 20000;
@@ -487,16 +499,23 @@ module tb_puncak;
         $display("tb_puncak: ambang_state mismatches = %0d", amb_mism);
         $display("tb_puncak: mismatches = %0d", mism_total);
 
-        if ((npk == exp_pk) && (exp_pk > 0) &&
+        if ((phase == PH_DONE) && (npk == exp_pk) && (exp_pk > 0) &&
             (nqrs == exp_qrs) && (exp_qrs > 0) &&
             (nout == limit_n) && (mism_total == 0) && (nonmono == 0) &&
             (ovf_rise == 0) && (o_beat_count === exp_qrs) &&
             (amb_mism == 0) && ((limit_n != N_MAX) || (npk == pk_max))) begin
             $display("tb_puncak: PASS");
+            $finish;
         end else begin
-            $display("tb_puncak: FAIL");
+            // Repository convention: a gate violation has to leave a non zero exit status, so
+            // the failure path raises $fatal after printing the same summary the passing run
+            // prints. A run that merely $finish es is indistinguishable from a pass by exit
+            // status alone.
+            $display("tb_puncak: FAIL phase=%0d npk=%0d/%0d nqrs=%0d/%0d nout=%0d/%0d mism=%0d amb=%0d nonmono=%0d ovf=%0d",
+                     phase, npk, exp_pk, nqrs, exp_qrs, nout, limit_n,
+                     mism_total, amb_mism, nonmono, ovf_rise);
+            $fatal(1, "tb_puncak: gate violation, see the counters above");
         end
-        $finish;
     end
 
 endmodule

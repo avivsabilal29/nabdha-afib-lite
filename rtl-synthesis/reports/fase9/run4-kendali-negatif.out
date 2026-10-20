@@ -1,0 +1,17 @@
+run_sim.sh: tb=../rtl/tb/tb_klasifier.sv sources=2 plusargs=3
+  plusargs forwarded to vvp: +VECTOR=../rtl/tb/vektor/fase9 +RATIO_CODE=0 +ENT_CODE=0
+  compiled first (packages): ../rtl/afib_lite_pkg.sv
+== tb_klasifier, Fase 9, record 04015, vectors ../rtl/tb/vektor/fase9 ==
+INFO tb_klasifier: vector words above their width: 0
+INFO tb_klasifier: counts vector marked 602 raw 588, afib 95 and normal 507
+INFO tb_klasifier: raw afib 95 normal 493, single arm windows 602, mutasi fired 594
+INFO tb_klasifier: +RATIO_CODE, parity ratio threshold injected from the command line
+INFO tb_klasifier: +ENT_CODE, parity entropy threshold injected from the command line
+INFO tb_klasifier: parity ratio code 0
+INFO tb_klasifier: parity entropy code 0
+INFO tb_klasifier: marked arm 0xf, raw arm 0x7, single arm 0x2
+OK   tb_klasifier: reset and disabled stage read undecided, no decision (D2)
+INFO tb_klasifier: measured latency = 1 cycles, DUT parameter = 1
+FATAL tb_klasifier: probe decision: class 2 want 1, win_idx 0 want 0, d_class 2
+FATAL: ../rtl/tb/tb_klasifier.sv:489: tb_klasifier: probe decision
+       Time: 146  Scope: tb_klasifier

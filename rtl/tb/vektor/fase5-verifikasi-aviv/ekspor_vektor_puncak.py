@@ -17,7 +17,9 @@
 #   envelope_value  -> expected m_ev_val
 #   filtered_peak   -> expected d_pk  (the frozen port list has no d_peak_val; see below)
 #   i1              -> expected d_thr
-#   event_kind      -> expected m_ev_kind class (beat vs rejected)
+#   signal          -> expected m_ev_kind (EV_QRS iff signal is 1, the six walk rows carry 0)
+#   event_kind      -> expected four way class, checked against the flag word word 11
+#   qrs_sample_index-> the beat position a walk row carries instead of the peak position
 #
 # eventkind.hex coding (the CSV's event_kind, 4 way):
 #   0 qrs, 1 qrs_search_back, 2 rejected_t, 3 noise
@@ -61,7 +63,8 @@ def main():
     pkf = [int(r["filtered_peak"]) for r in rows]
     i1 = [int(r["i1"]) for r in rows]
     kind = [r["event_kind"] for r in rows]
-    isqrs = [1 if k in BEAT else 0 for k in kind]
+    isqrs = [int(r["signal"]) for r in rows]
+    qrsidx = [int(r["qrs_sample_index"]) if r["qrs_sample_index"] else 0 for r in rows]
 
     man = json.load(open(os.path.join(SRC, "04015.manifest.fase5.json")))
     amb = None
@@ -82,6 +85,7 @@ def main():
     outs.append(write_hex("04015.puncak.pkf.hex", pkf))
     outs.append(write_hex("04015.puncak.i1.hex", i1))
     outs.append(write_hex("04015.puncak.isqrs.hex", isqrs))
+    outs.append(write_hex("04015.puncak.qrsidx.hex", qrsidx))
     outs.append(write_hex("04015.puncak.eventkind.hex", [KIND_CODE[k] for k in kind]))
     outs.append(write_hex("04015.ambang_akhir.hex", [int(v) for v in amb]))
 
@@ -89,10 +93,25 @@ def main():
     for k in kind:
         census[k] = census.get(k, 0) + 1
 
+    # cross check: the four way census rebuilt from the golden flag columns (signal,
+    # t_rejected, search_back) must equal the census of the event_kind column. This is the
+    # mapping the bench uses to read the design's additive flag word.
+    def cls_of(r):
+        if r["search_back"] == "1":   return "qrs_search_back"
+        if r["signal"] == "1":        return "qrs"
+        if r["t_rejected"] == "1":    return "rejected_t"
+        return "noise"
+    census_flags = {}
+    for r in rows:
+        k2 = cls_of(r)
+        census_flags[k2] = census_flags.get(k2, 0) + 1
+
     ev = {
         "peaks": n,
         "qrs": sum(isqrs),
         "census_4way": census,
+        "census_4way_from_flags": census_flags,
+        "census_from_flags_matches_event_kind": census == census_flags,
         "pos_first": pos[0], "pos_last": pos[-1],
         "pos_monotone": all(pos[i] < pos[i + 1] for i in range(n - 1)),
         "pv_max": max(pv), "pv_min": min(pv),
@@ -108,6 +127,7 @@ def main():
 
     print("peaks %d  qrs %d" % (n, ev["qrs"]))
     print("census_4way %s" % census)
+    print("census_4way_from_flags %s match %s" % (census_flags, census == census_flags))
     print("pos %d .. %d monotone %s" % (pos[0], pos[-1], ev["pos_monotone"]))
     print("pv %d .. %d" % (ev["pv_min"], ev["pv_max"]))
     print("pkf %d .. %d" % (ev["pkf_min"], ev["pkf_max"]))

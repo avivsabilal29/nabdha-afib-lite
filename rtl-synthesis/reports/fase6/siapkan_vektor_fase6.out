@@ -1,0 +1,63 @@
+== siapkan_vektor_fase6 ==
+rr.csv   [/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtlplan2/fase5/04015.rr.csv]
+peaks.csv[/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtlplan2/fase5/04015.peaks.csv]
+OK   frozen model sha256                            90df6e5b457307d37158a96b6dbedb4e72be03f35349769a858918f6314f1fe5
+INFO package band 250..2000 ms, long ceiling 3000 ms
+INFO qrs flag rows 2596, of which blank index 2, index filled with flag 0 2
+OK   qrs series length                              2596
+OK   qrs series strictly ascending                  True
+OK   qrs amplitude words                            2596
+OK   qrs amplitude words fit 32 bits                True
+OK   interval rows                                  2595
+OK   interval rows == qrs - 1                       2595
+OK   rr_ms equals (qrs[i+1]-qrs[i])<<2              True
+OK   row sample pair equals the qrs column          True
+OK   marks recomputed from the frozen model         True
+OK   mark census                                    [2186, 397, 9, 3]
+OK   corrected entries                              2983
+OK   corrected entries == keep + gap + 2*split      2983
+OK   one hot mask equals the mark                   True
+OK   every mark value is exercised                  True
+OK   in band intervals driven (langkah)             2586
+OK   reseed count (semai)                           26
+OK   menyala count (penanda)                        1202
+OK   baris rows                                     2579
+OK   last step whose queue is not full              24
+OK   queue length after step 24 is 8 everywhere     True
+OK   queue length of step 25                        8
+INFO queue length at step 24 = 7, at step 25 = 8, full rows 2562 of 2586
+INFO intervals above 3000 ms: 3 at rows [439, 440, 1107]
+wrote 04015.qrs.hex                  2596 words
+wrote 04015.qrsval.hex               2596 words
+wrote 04015.rr.hex                   2595 words
+wrote 04015.rr.smp.hex               2595 words
+wrote 04015.rr.mark.hex              2595 words
+wrote 04015.rr.mask.hex              2595 words
+wrote 04015.rrstep.ra1.hex           2586 words
+wrote 04015.rrstep.ra2.hex           2586 words
+wrote 04015.rrstep.antre.hex         2586 words
+wrote 04015.rrstep.menyala.hex       2586 words
+wrote 04015.rrstep.disemai.hex       2586 words
+wrote 04015.rrstep.riwayat.hex       2586 words
+wrote 04015.rrstep.gagal.hex         2586 words
+wrote 04015.rrstep.jeda.hex          2586 words
+wrote 04015.rrstep.rr.hex            2586 words
+INFO counts rr_intervals               2595
+INFO counts rr_corrected_entries       2983
+INFO counts census_keep                2186
+INFO counts census_split               397
+INFO counts census_drop                9
+INFO counts census_gap                 3
+INFO counts qrs_count                  2596
+INFO counts rr_steps                   2586
+INFO counts semai_total                26
+INFO counts penanda_total              1202
+INFO counts last_step_queue_not_full   24
+INFO counts queue_len_step_25          8
+INFO counts long_over_ceiling          3
+INFO counts rr_max_ms                  51064
+INFO counts rr_min_ms                  200
+INFO counts steps_queue_full           2562
+wrote 04015.fase6.counts.hex           16 words
+checks failed: 0
+PASS

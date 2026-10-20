@@ -1,0 +1,20 @@
+run_lint.sh: top=tb_gelombang_t sources=3 timing=1
+  ../rtl/afib_lite_pkg.sv
+  ../rtl/tb/tb_gelombang_t.sv
+  ../rtl/t_rule.sv
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_gelombang_t.sv:283:37: Operator SUB expects 32 bits on the RHS, but RHS's VARREF 'v' generates 24 bits.
+                                                        : ... note: In instance 'tb_gelombang_t'
+  283 |             f_mag = v[W_DER-1] ? (0 - v) : v;
+      |                                     ^
+                      ... For warning description see https://verilator.org/warn/WIDTHEXPAND?v=5.020
+                      ... Use "/* verilator lint_off WIDTHEXPAND */" and lint_on around source to disable this message.
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_gelombang_t.sv:283:32: Operator COND expects 32 bits on the Conditional False, but Conditional False's VARREF 'v' generates 24 bits.
+                                                        : ... note: In instance 'tb_gelombang_t'
+  283 |             f_mag = v[W_DER-1] ? (0 - v) : v;
+      |                                ^
+%Warning-UNUSEDSIGNAL: ../rtl/tb/tb_gelombang_t.sv:275:62: Bits of signal are not used: 'kemq'[0]
+                                                         : ... note: In instance 'tb_gelombang_t'
+  275 |                                            input [W_DER-1:0] kemq);
+      |                                                              ^~~~
+%Error: Exiting due to 3 warning(s)
+exit=1

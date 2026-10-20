@@ -1,0 +1,47 @@
+run_sim.sh: tb=../rtl/tb/tb_gelombang_t.sv sources=2 plusargs=1
+  plusargs forwarded to vvp: +VECTOR=../rtl/tb/vektor/fase7
+  compiled first (packages): ../rtl/afib_lite_pkg.sv
+tb_gelombang_t: vectors = ../rtl/tb/vektor/fase7
+tb_gelombang_t: limit   = 450000 of 450000 frames
+tb_gelombang_t: peaks   = 4777, sint words = 60000, stair rows = 16396
+tb_gelombang_t: fixture minimum peak spacing = 30 samples
+tb_gelombang_t: PH_REAL starts, 4777 of 4777 peaks expected to report
+tb_gelombang_t: PH_SINT starts, 5452 sampled positions expected
+tb_gelombang_t: PH_STAIR starts, 16396 rows expected
+tb_gelombang_t: PH_OVR starts, 3 peaks expected to be served
+tb_gelombang_t: PH_REAL words presented   = 450000
+tb_gelombang_t: PH_REAL peak pulses       = 4777 of 4777
+tb_gelombang_t: PH_REAL verdicts          = 4777 of 4777 expected
+tb_gelombang_t: PH_REAL in band verdicts  = 2029
+tb_gelombang_t: PH_REAL rejected verdicts = 1909
+tb_gelombang_t: PH_REAL slopes with bit 22 set = 0
+tb_gelombang_t: PH_REAL overlay mismatches = 0
+tb_gelombang_t: PH_REAL kem mismatches    = 0
+tb_gelombang_t: PH_REAL dalam_pita mismatches = 0
+tb_gelombang_t: PH_REAL reject mismatches = 0
+tb_gelombang_t: PH_REAL cross vs float route differences = 0
+tb_gelombang_t: PH_REAL cross vs forbidden shift differences = 0
+tb_gelombang_t: PH_REAL overflow pulses   = 0
+tb_gelombang_t: PH_REAL overrun cycles    = 0
+tb_gelombang_t: PH_SINT verdicts          = 5452 of 5452 expected
+tb_gelombang_t: PH_SINT index mismatches  = 0
+tb_gelombang_t: PH_SINT kem mismatches    = 0
+tb_gelombang_t: PH_STAIR verdicts         = 16396 of 16396 expected
+tb_gelombang_t: PH_STAIR index mismatches = 0
+tb_gelombang_t: PH_STAIR kem mismatches   = 0
+tb_gelombang_t: PH_STAIR dalam_pita mismatches = 0
+tb_gelombang_t: PH_STAIR reject mismatches = 0
+tb_gelombang_t: PH_STAIR cross vs float differences = 0 of 16396 rows
+tb_gelombang_t: PH_STAIR cross vs forbidden shift differences = 2048, vector expects 2048
+tb_gelombang_t: PH_STAIR grid rows cross vs float differences = 0, vector expects 0
+tb_gelombang_t: PH_STAIR saturation flag mismatches = 0 (rail rows = 1)
+tb_gelombang_t: PH_OVR verdicts           = 3 of 3 expected
+tb_gelombang_t: PH_OVR index mismatches   = 0
+tb_gelombang_t: PH_OVR kem mismatches     = 0
+tb_gelombang_t: PH_OVR overrun before the tight pair = 0
+tb_gelombang_t: PH_OVR overrun seen after = 41
+tb_gelombang_t: measured latency = 30 accepted words, expected 30, bad = 0
+tb_gelombang_t: words compared = 26628 (real 4777 + sint 5452 + stair 16396 + ovr 3)
+tb_gelombang_t: mismatches = 0 out of 26628
+tb_gelombang_t: PASS
+../rtl/tb/tb_gelombang_t.sv:783: $finish called at 46868665 (1s)

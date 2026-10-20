@@ -1,0 +1,80 @@
+run_lint.sh: top=tb_gelombang_t sources=3 timing=1
+  ../rtl/afib_lite_pkg.sv
+  ../rtl/tb/tb_gelombang_t.sv
+  ../rtl/t_rule.sv
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_gelombang_t.sv:492:38: Operator LT expects 24 bits on the LHS, but LHS's VARREF 'm_tdata' generates 23 bits.
+                                                        : ... note: In instance 'tb_gelombang_t'
+  492 |                             (m_tdata < (mem_kq[r_vr][W_DER-1:0] >> 1));
+      |                                      ^
+                      ... For warning description see https://verilator.org/warn/WIDTHEXPAND?v=5.020
+                      ... Use "/* verilator lint_off WIDTHEXPAND */" and lint_on around source to disable this message.
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_gelombang_t.sv:524:25: Operator ASSIGN expects 32 bits on the Assign RHS, but Assign RHS's SIGNED generates 24 bits.
+                                                        : ... note: In instance 'tb_gelombang_t'
+  524 |                 der_s   = $signed(mem_sder[g_vr][W_DER-1:0]);
+      |                         ^
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_gelombang_t.sv:536:42: Operator LT expects 24 bits on the LHS, but LHS's VARREF 'm_tdata' generates 23 bits.
+                                                        : ... note: In instance 'tb_gelombang_t'
+  536 |                                 (m_tdata < (mem_ssp[g_vr][W_DER-1:0] >> 1));
+      |                                          ^
+%Warning-UNUSEDSIGNAL: ../rtl/tb/tb_gelombang_t.sv:203:13: Bits of signal are not used: 'blk'[31:15]
+                                                         : ... note: In instance 'tb_gelombang_t'
+  203 |     integer blk;
+      |             ^~~
+%Warning-BLKSEQ: ../rtl/tb/tb_gelombang_t.sv:398:33: Blocking assignment '=' in sequential logic process
+                                                   : ... Suggest using delayed assignment '<='
+  398 |                             blk = stair_word / BLOCK;
+      |                                 ^
+%Warning-BLKSEQ: ../rtl/tb/tb_gelombang_t.sv:399:33: Blocking assignment '=' in sequential logic process
+                                                   : ... Suggest using delayed assignment '<='
+  399 |                             off = stair_word % BLOCK;
+      |                                 ^
+%Warning-BLKSEQ: ../rtl/tb/tb_gelombang_t.sv:485:21: Blocking assignment '=' in sequential logic process
+                                                   : ... Suggest using delayed assignment '<='
+  485 |                 kf  = $itor(m_tdata);
+      |                     ^
+%Warning-BLKSEQ: ../rtl/tb/tb_gelombang_t.sv:486:21: Blocking assignment '=' in sequential logic process
+                                                   : ... Suggest using delayed assignment '<='
+  486 |                 spf = $itor(mem_kq[r_vr][W_DER-1:0]);
+      |                     ^
+%Warning-BLKSEQ: ../rtl/tb/tb_gelombang_t.sv:487:27: Blocking assignment '=' in sequential logic process
+                                                   : ... Suggest using delayed assignment '<='
+  487 |                 rej_float = (mem_flag[r_vr][F_INBAND] != 0) && (kf < (spf / 2.0));
+      |                           ^
+%Warning-BLKSEQ: ../rtl/tb/tb_gelombang_t.sv:491:27: Blocking assignment '=' in sequential logic process
+                                                   : ... Suggest using delayed assignment '<='
+  491 |                 rej_shift = (mem_flag[r_vr][F_INBAND] != 0) &&
+      |                           ^
+%Warning-BLKSEQ: ../rtl/tb/tb_gelombang_t.sv:515:21: Blocking assignment '=' in sequential logic process
+                                                   : ... Suggest using delayed assignment '<='
+  515 |                 kf  = $itor(m_tdata);
+      |                     ^
+%Warning-BLKSEQ: ../rtl/tb/tb_gelombang_t.sv:516:21: Blocking assignment '=' in sequential logic process
+                                                   : ... Suggest using delayed assignment '<='
+  516 |                 spf = $itor(mem_ssp[g_vr][W_DER-1:0]);
+      |                     ^
+%Warning-BLKSEQ: ../rtl/tb/tb_gelombang_t.sv:524:25: Blocking assignment '=' in sequential logic process
+                                                   : ... Suggest using delayed assignment '<='
+  524 |                 der_s   = $signed(mem_sder[g_vr][W_DER-1:0]);
+      |                         ^
+%Warning-BLKSEQ: ../rtl/tb/tb_gelombang_t.sv:525:25: Blocking assignment '=' in sequential logic process
+                                                   : ... Suggest using delayed assignment '<='
+  525 |                 der_mag = (der_s < 0) ? (0 - der_s) : der_s;
+      |                         ^
+%Warning-BLKSEQ: ../rtl/tb/tb_gelombang_t.sv:526:26: Blocking assignment '=' in sequential logic process
+                                                   : ... Suggest using delayed assignment '<='
+  526 |                 der_rail = (der_mag > KEM_RAIL);
+      |                          ^
+%Warning-BLKSEQ: ../rtl/tb/tb_gelombang_t.sv:527:25: Blocking assignment '=' in sequential logic process
+                                                   : ... Suggest using delayed assignment '<='
+  527 |                 exp_kem = der_rail ? KEM_RAIL[W_TW-1:0] : der_mag[W_TW-1:0];
+      |                         ^
+%Warning-BLKSEQ: ../rtl/tb/tb_gelombang_t.sv:531:27: Blocking assignment '=' in sequential logic process
+                                                   : ... Suggest using delayed assignment '<='
+  531 |                 rej_float = (mem_sflg[g_vr][S_INBAND] != 0) && (kf < (spf / 2.0));
+      |                           ^
+%Warning-BLKSEQ: ../rtl/tb/tb_gelombang_t.sv:535:31: Blocking assignment '=' in sequential logic process
+                                                   : ... Suggest using delayed assignment '<='
+  535 |                     rej_shift = (mem_sflg[g_vr][S_INBAND] != 0) &&
+      |                               ^
+%Error: Exiting due to 18 warning(s)
+exit=1

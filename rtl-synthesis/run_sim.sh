@@ -66,7 +66,14 @@ for a in "$@"; do
 done
 
 mkdir -p reports/sim
-OUT="reports/sim/$(basename "${TB%.sv}").vvp"
+# Fase 10 hardening (21 October 2026). The defect: OUT was a fixed path, so two runs
+# started in the same second -- the two arms of the Fase 10 gate -- both wrote
+# reports/sim/tb_top.vvp. The second iverilog truncated the first one's netlist and vvp
+# died with `words.cc:377: __compile_net(...): Assertion `array_label ? array!=0 : true'
+# failed.' (rc 134, SIGABRT), which reads like an RTL fault but is a harness collision.
+# SIM_OUT lets a caller give each concurrent run its own netlist. The default is the old
+# path, byte for byte, so every documented command line and every earlier run is unchanged.
+OUT="${SIM_OUT:-reports/sim/$(basename "${TB%.sv}").vvp}"
 
 echo "run_sim.sh: tb=$TB sources=${#SOURCES[@]} plusargs=${#PLUSARGS[@]}"
 if [ "${#PLUSARGS[@]}" -gt 0 ]; then

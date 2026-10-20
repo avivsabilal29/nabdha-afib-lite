@@ -1,0 +1,50 @@
+run_sim.sh: tb=../rtl/tb/tb_rr.sv sources=2 plusargs=1
+  plusargs forwarded to vvp: +VECTOR=../rtl/tb/vektor/fase6/mutasi-negatif
+  compiled first (packages): ../rtl/afib_lite_pkg.sv
+== tb_rr, Fase 6, record 04015 ==
+tb_rr: vectors = ../rtl/tb/vektor/fase6/mutasi-negatif
+tb_rr: every golden word is defined (38862 columns read)
+tb_rr: golden intervals 2595, beats 2596, steps 2586
+tb_rr: golden census keep/split/drop/gap = 2186/397/9/3, corrected entries 2983
+tb_rr: golden queue not full through step 24, queue at step 25 = 8
+tb_rr: golden columns consistent (mask one hot, step intervals in band)
+tb_rr: phase A, golden QRS series, 2596 beats offered
+MISM interval=99 d_rr_ms dut=952 gold=953
+MISM interval=99 m_rr_last dut=952 gold=953
+MISM step row 100 carries interval 952, the driven one is 953
+tb_rr: beats offered = 2596
+tb_rr: intervals published = 2595
+tb_rr: intervals compared = 2595
+tb_rr: interval mismatches = 4 out of 2595
+tb_rr: steps committed = 2586
+tb_rr: step rows compared = 2586
+tb_rr: step mismatches = 0 out of 2586
+tb_rr: rr_ms=1 m_rr_last=1 sample distance=0 mismatches
+tb_rr: mark=0 mask out of range=0 event kind/idx/val=0/0/1
+tb_rr: beat amplitude mismatch = 0
+tb_rr: ra1/ra2/queue/menyala/disemai mismatch = 0/0/0/0/0
+tb_rr: history/fail/pace/step index mismatch = 0/0/0/0
+tb_rr: eight window length mismatch = 0
+tb_rr: mark census dut = 2186 397 9 3
+tb_rr: mark census gold = 2186 397 9 3
+tb_rr: events rr=2595 window=1 other=0
+tb_rr: golden queue length at step 24 = 7, at step 25 = 8, last step not full = 24
+tb_rr: golden steps after 24 whose queue is not full = 0, queue full at step 24 = 0
+tb_rr: o_rr_long_count = 3, golden intervals above the ceiling = 3
+tb_rr: end of run counters: steps = 2586, reseeds = 26, menyala total = 1202
+tb_rr: sa flags: ms sat 0, smp sat 0, quotient over 0, ra1 over 0, remainder over 0
+tb_rr: poll timeouts = 0
+tb_rr: phase B, constant train, 40 beats at 200 samples = 800 ms
+tb_rr: phase B steps = 39, first step whose queue is full = 15
+tb_rr: phase B queue length at step 24 = 8
+tb_rr: phase B steps after 24 whose queue is not full = 0
+tb_rr: phase B ra1/ra2 mismatches = 0, menyala mismatches = 0
+tb_rr: phase B mismatches = 0 out of 39
+tb_rr: phase C, the gap mark, the passthrough and the counters
+tb_rr: phase C train intervals = 9, long intervals = 1, counter = 1, expected = 1
+tb_rr: phase C long counter after the clear pulse = 0
+tb_rr: phase C gap events = 1, window events = 1
+tb_rr: mismatches = 4 out of 5220
+tb_rr: checks: intervals 2595, step rows 2586, synthetic steps 39
+FATAL: ../rtl/tb/tb_rr.sv:820: tb_rr: gate violation, see the counters above
+       Time: 1486376  Scope: tb_rr

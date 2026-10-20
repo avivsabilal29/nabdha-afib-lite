@@ -1,0 +1,34 @@
+run_sim.sh: tb=../rtl/tb/tb_fitur.sv sources=2 plusargs=2
+  plusargs forwarded to vvp: +VECTOR=/home/avivsabilalm/.hermes/cache/scratch/fase8/nc1 +LIMIT=40
+  compiled first (packages): ../rtl/afib_lite_pkg.sv
+tb_fitur: vectors   = /home/avivsabilalm/.hermes/cache/scratch/fase8/nc1
+tb_fitur: limit     = 40 of 2595 intervals
+tb_fitur: SMOKE run, the full count gate is not claimed
+tb_fitur: arm A emissions = 2 of 638, pass 2 = 2
+tb_fitur: arm B emissions = 2 of 624, pass 2 = 2
+tb_fitur: arm A golden rows compared = 2 of 602, pass 2 = 2
+tb_fitur: arm B golden rows compared = 2 of 588, pass 2 = 2
+tb_fitur: d mismatches          = 1
+tb_fitur: histogram mismatches  = 0
+tb_fitur: pNN50 count mismatch  = 0
+tb_fitur: pNN50 code mismatch   = 0
+tb_fitur: four code mismatches  = 0
+tb_fitur: sample_end mismatch   = 0
+tb_fitur: ev_kind mismatch      = 0
+tb_fitur: ev_val high bits      = 0
+tb_fitur: d_valid pulse mismatch= 0
+tb_fitur: windows dropped (ovf) = 0
+tb_fitur: range gate count wrong= 0
+tb_fitur: oracle words unknown  = 0
+tb_fitur: arm B rows over 1 LSB = 0 (worst 0 LSB)
+tb_fitur: comparisons run       = 2 arm A + 2 arm B
+tb_fitur: digest A pass1/pass2  = fafd7cea / fafd7cea
+tb_fitur: digest B pass1/pass2  = 1b810c2a / 1b810c2a
+tb_fitur: mismatches = 1 out of 4
+tb_fitur: SKIP full stream gate, 40 of 2595 intervals fed
+tb_fitur: SKIP arm A emission count gate, 2 seen of 638
+tb_fitur: SKIP arm B emission count gate, 2 seen of 624
+tb_fitur: SKIP golden row count gate, arm A 2 of 602, arm B 2 of 588
+tb_fitur: SKIP range gate end count gate
+FATAL: ../rtl/tb/tb_fitur.sv:499: tb_fitur: smoke comparison failed
+       Time: 70965  Scope: tb_fitur

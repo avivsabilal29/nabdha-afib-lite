@@ -1,0 +1,4 @@
+run_lint.sh: top=classifier sources=2 timing=0
+  ../rtl/afib_lite_pkg.sv
+  ../rtl/classifier.sv
+lint clean: top=classifier sources=2 (/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl-synthesis/debroot/usr/bin/verilator_bin)

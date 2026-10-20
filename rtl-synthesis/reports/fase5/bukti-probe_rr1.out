@@ -1,0 +1,21 @@
+run_sim.sh: tb=/home/avivsabilalm/.hermes/cache/scratch/fase5/tb_probe.sv sources=2 plusargs=0
+  compiled first (packages): ../rtl/afib_lite_pkg.sv
+/home/avivsabilalm/.hermes/cache/scratch/fase5/tb_probe.sv:18: warning: Port 26 (d_dbg) of peak_detect expects 448 bits, got 512.
+/home/avivsabilalm/.hermes/cache/scratch/fase5/tb_probe.sv:18:        : Padding 64 high bits of the expression.
+PROBE feed=91320 pos=91293 arm=0 ovf=0 w14=00000000 w15=00000000 flags=00000001 kind/idx=0032d2a2
+PROBE feed=91370 pos=91343 arm=0 ovf=0 w14=00000000 w15=00000000 flags=00000003 kind/idx=003cf942
+PROBE feed=91434 pos=91407 arm=0 ovf=0 w14=00000000 w15=00000000 flags=00000006 kind/idx=000d09d0
+PROBE feed=91508 pos=91481 arm=0 ovf=0 w14=00000000 w15=00000000 flags=00000000 kind/idx=00020606
+PROBE feed=91638 pos=91611 arm=0 ovf=0 w14=00000000 w15=00000000 flags=00000000 kind/idx=001017ac
+PROBE feed=91708 pos=91681 arm=1 ovf=0 w14=00000000 w15=00000000 flags=00000000 kind/idx=00027182
+PROBE feed=91834 pos=91807 arm=1 ovf=0 w14=00000000 w15=00000000 flags=00000018 kind/idx=00121e94
+PROBE feed=91906 pos=91879 arm=0 ovf=0 w14=00000000 w15=00000000 flags=00000006 kind/idx=0002bf2c
+PROBE feed=92028 pos=92001 arm=0 ovf=0 w14=00000000 w15=00000000 flags=00000000 kind/idx=0013460c
+PROBE feed=92100 pos=92073 arm=0 ovf=0 w14=00000000 w15=00000000 flags=00000000 kind/idx=0001c3dc
+PROBE feed=92230 pos=92203 arm=1 ovf=0 w14=00000000 w15=00000000 flags=00000018 kind/idx=0011be7a
+PROBE feed=92306 pos=92279 arm=0 ovf=0 w14=00000000 w15=00000000 flags=00000006 kind/idx=00032c64
+PROBE feed=92440 pos=92413 arm=0 ovf=0 w14=00000000 w15=00000000 flags=00000000 kind/idx=00079f8a
+PROBE feed=92502 pos=92475 arm=0 ovf=0 w14=00000000 w15=00000000 flags=00000000 kind/idx=0003fe4e
+PROBE done beats=473
+/home/avivsabilalm/.hermes/cache/scratch/fase5/tb_probe.sv:59: $finish called at 1852070 (1s)
+rc=0 done

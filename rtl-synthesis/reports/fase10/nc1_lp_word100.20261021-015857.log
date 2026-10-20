@@ -1,0 +1,66 @@
+run_sim.sh: tb=../rtl/tb/tb_top.sv sources=14 plusargs=7
+  plusargs forwarded to vvp: +VECTOR=/home/avivsabilalm/.hermes/cache/scratch/neg/data100 +STIM=/home/avivsabilalm/.hermes/cache/scratch/neg/data100/04015.stimulus.hex +EXPECT=../rtl/tb/vektor/fase5 +RRVEC=../rtl/tb/vektor/fase6 +CLVEC=../rtl/tb/vektor/fase9 +F8VEC=../rtl/tb/vektor/fase8 +LIMIT=6000
+  compiled first (packages): ../rtl/afib_lite_pkg.sv ../rtl/afib_lite_pkg.sv
+WARNING: ../rtl/tb/tb_top.sv:674: $readmemh(../rtl/tb/vektor/fase5/04015.ambang_state.hex): Not enough words in the file for the requested range [0:15].
+WARNING: ../rtl/tb/tb_top.sv:675: $readmemh(../rtl/tb/vektor/fase5/04015.qrs.hex): Not enough words in the file for the requested range [0:8191].
+WARNING: ../rtl/tb/tb_top.sv:676: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.pos.hex): Not enough words in the file for the requested range [0:8191].
+WARNING: ../rtl/tb/tb_top.sv:677: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.pv.hex): Not enough words in the file for the requested range [0:8191].
+WARNING: ../rtl/tb/tb_top.sv:678: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.pkf.hex): Not enough words in the file for the requested range [0:8191].
+WARNING: ../rtl/tb/tb_top.sv:679: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.kem.hex): Not enough words in the file for the requested range [0:8191].
+WARNING: ../rtl/tb/tb_top.sv:680: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.i1.hex): Not enough words in the file for the requested range [0:8191].
+WARNING: ../rtl/tb/tb_top.sv:681: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.i2.hex): Not enough words in the file for the requested range [0:8191].
+WARNING: ../rtl/tb/tb_top.sv:682: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.flag.hex): Not enough words in the file for the requested range [0:8191].
+WARNING: ../rtl/tb/tb_top.sv:683: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.evidx.hex): Not enough words in the file for the requested range [0:8191].
+WARNING: ../rtl/tb/tb_top.sv:684: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.kind.hex): Not enough words in the file for the requested range [0:8191].
+WARNING: ../rtl/tb/tb_top.sv:686: $readmemh(../rtl/tb/vektor/fase6/04015.rr.hex): Not enough words in the file for the requested range [0:8191].
+WARNING: ../rtl/tb/tb_top.sv:687: $readmemh(../rtl/tb/vektor/fase6/04015.rr.mark.hex): Not enough words in the file for the requested range [0:8191].
+WARNING: ../rtl/tb/tb_top.sv:688: $readmemh(../rtl/tb/vektor/fase6/04015.rr.smp.hex): Not enough words in the file for the requested range [0:8191].
+WARNING: ../rtl/tb/tb_top.sv:689: $readmemh(../rtl/tb/vektor/fase6/04015.fase6.counts.hex): Not enough words in the file for the requested range [0:31].
+WARNING: ../rtl/tb/tb_top.sv:691: $readmemh(../rtl/tb/vektor/fase9/04015.fase9.counts.hex): Not enough words in the file for the requested range [0:31].
+WARNING: ../rtl/tb/tb_top.sv:696: $readmemh(../rtl/tb/vektor/fase8/04015.fase8.map.marked.hex): Not enough words in the file for the requested range [0:4095].
+WARNING: ../rtl/tb/tb_top.sv:702: $readmemh(../rtl/tb/vektor/fase9/04015.mentah.asli.hex): Not enough words in the file for the requested range [0:1023].
+WARNING: ../rtl/tb/tb_top.sv:703: $readmemh(../rtl/tb/vektor/fase9/04015.berpenanda.asli.hex): Not enough words in the file for the requested range [0:1023].
+WARNING: ../rtl/tb/tb_top.sv:704: $readmemh(../rtl/tb/vektor/fase9/04015.berpenanda.kelas.hex): Not enough words in the file for the requested range [0:1023].
+WARNING: ../rtl/tb/tb_top.sv:705: $readmemh(../rtl/tb/vektor/fase9/04015.berpenanda.qr.hex): Not enough words in the file for the requested range [0:1023].
+WARNING: ../rtl/tb/tb_top.sv:706: $readmemh(../rtl/tb/vektor/fase9/04015.berpenanda.qe.hex): Not enough words in the file for the requested range [0:1023].
+tb_top: Fase 0 columns = /home/avivsabilalm/.hermes/cache/scratch/neg/data100
+tb_top: stimulus       = /home/avivsabilalm/.hermes/cache/scratch/neg/data100/04015.stimulus.hex
+tb_top: Fase 5 vectors = ../rtl/tb/vektor/fase5
+tb_top: Fase 6 vectors = ../rtl/tb/vektor/fase6
+tb_top: Fase 9 vectors = ../rtl/tb/vektor/fase9
+tb_top: Fase 8 row bridge = ../rtl/tb/vektor/fase8 (two words per emission: window sample end, golden row, FFFFFFFF when there is no golden row)
+tb_top: arm            = marked (code 0xf, thresholds 33 63)
+tb_top: limit          = 6000 of 450000 frames
+tb_top: golden peaks = 4777 qrs = 2596 ambang_state = 9 windows = 602 fired = 189
+tb_top: golden rows in range: peaks = 63 qrs = 33 t_rejected = 29
+tb_top: cadence = 64 cycles per sample
+MISM stage1 ord=100 dut=-122384 (0xfffe21f0) gold=-122383 (0xfffe21f1)
+SKIP tb_top: ambang_state, o_beat_count, window counts, o_sample_idx and the t_rule census are end of record gates, not checked on a short run
+tb_top: words compared: masukan16=6000 lp=6000 hp=6000 turunan=6000 kuadrat=6000 jendela=6000
+tb_top: data mismatches: masukan16=0 lp=1 hp=0 turunan=0 kuadrat=0 jendela=0
+tb_top: index mismatches: masukan16=0 lp=0 hp=0 turunan=0 kuadrat=0 jendela=0
+tb_top: peaks dut=63 expected=63, qrs dut=33 expected=33, o_beat_count=33
+tb_top: peak mismatches pos=0 kem=0 flags=0 i1=0 pkf=0 kind=0 evidx=0 evval=0 qrs=0 i2_model=0
+tb_top: ambang_state mismatches = 0, beat/count mismatches = 0, peak print rows = 0
+tb_top: rr interval=0 mark=0 sample distance=0 mismatches, intervals dut=32 golden=2595
+tb_top: unit bridge: ratio 33 user -> 10813 code (golden code 10813), entropy 63 user -> 10322 code (golden code 10322)
+tb_top: classifier emissions dut=1, golden rows compared=1 of 602, emissions without a golden row=0
+tb_top: windows compared dut=1 expected=602 o_window_count=1; class=0 wi=0 qr=0 qe=0 mismatches (plus 0 non gated lag notes)
+tb_top: confidence max=171 nonzero=1 of 1 decisions (no golden column; reported, not gated)
+tb_top: triage census dut fired=0 TP=0 FP=0 FN=0 TN=1 | golden fired=189 TP=95 FP=94 FN=0 TN=413
+tb_top: feature events m_ev_valid=1, golden windows=602
+tb_top: t_rule peak pulses=63 of 63 peaks, rejected=29, golden t_rejected in range=29, overrun cycles=0, stale=0
+tb_top: status o_gap_count=0 o_clamp_count=0 o_rr_long_count=0 o_sample_idx=6000 o_irq=0x01
+tb_top: port witness mismatches = 0, m_overflow cycles = 0
+tb_top: AXI witness, idle because this bench drives no traffic: awready=1 wready=1 arready=1 bresp=0 rresp=0 rdata=0x00000000
+tb_top: unknown golden words used = 0
+tb_top: unknown t_rule inputs at peak pulses = 0 of 63 pulses (must be 0: the two engine comparison on the verdict path is only valid once no input is unknown)
+tb_top: CK_STREAM = ab18c19f60a931fc
+tb_top: CK_PEAK   = 0044690e3222d4be
+tb_top: CK_DOWN   = 0919bc4096f0c1db
+tb_top: CK_EVENT  = c16fa2a20f1f45fb
+tb_top: end of stream slack: frames fed=6000, stage outputs masukan16=6000 lp=6000 turunan=6000 kuadrat=6000 jendela=6000 (the last frame of each stage is still in its pipeline at teardown)
+tb_top: total mismatches = 1
+tb_top: FAIL total=1 unknown=0 words masukan16=6000 lp=6000 hp=6000 turunan=6000 kuadrat=6000 jendela=6000 twp=63 stale=0
+FATAL: ../rtl/tb/tb_top.sv:984: tb_top: gate violation, see the counters above
+       Time: 3870125  Scope: tb_top

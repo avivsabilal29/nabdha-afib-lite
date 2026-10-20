@@ -1,0 +1,11 @@
+run_lint.sh: top=t_rule sources=2 timing=0
+  ../rtl/afib_lite_pkg.sv
+  ../rtl/t_rule.sv
+%Warning-UNUSEDSIGNAL: ../rtl/t_rule.sv:209:32: Bits of signal are not used: 'vq_kem'[24:23]
+                                              : ... note: In instance 't_rule'
+  209 |     reg [N_MAG-1:0]            vq_kem;
+      |                                ^~~~~~
+                       ... For warning description see https://verilator.org/warn/UNUSEDSIGNAL?v=5.020
+                       ... Use "/* verilator lint_off UNUSEDSIGNAL */" and lint_on around source to disable this message.
+%Error: Exiting due to 1 warning(s)
+exit=1

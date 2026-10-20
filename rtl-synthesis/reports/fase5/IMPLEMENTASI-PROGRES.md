@@ -152,3 +152,144 @@ pernah turun, `m_overflow`.
 
 `reports/fase5/sim-lengkap-01.out` (450.000 sampel) dan ulangannya
 `sim-lengkap-02.out` untuk bukti determinisme.
+
+## 8. Dua kesalahan yang ditemukan dan diperbaiki sebelum jalan penuh
+
+1. **Bendera luapan palsu.** Percobaan pertama menyalakan `m_overflow` pada puncak
+   pertama. Sebabnya: rel pembelitan saya menyertakan bit carry dari
+   `med_sum_w[RR_W]`, padahal carry itu sah (jumlah dua nilai median 16 bit boleh
+   mencapai 2**17 dan memang terjadi pada siklus tanpa denyut, ketika kata interval
+   masih sampah). Perbaikan: `med_w` dijadikan 17 bit penuh (`med_sum_w >> 1`),
+   carry median dikeluarkan dari daftar rel, dan `antre_sum_rs` disesuaikan.
+   Bukti: `sim-4000-02.out` (bendera 0) dan `sim-40000-01.out` (bendera 0).
+2. **Lebar entri penampan kandidat.** Entri pertama saya 119 bit
+   (`pos 32 + pv 33 + pk_f 30 + kem 24`). Rencana 38 baris 1854 menganggarkan
+   **112 bit** per entri. 112 bit (32 + 32 + 24 + 24) tidak cukup: `pk_f` pada
+   rekaman ini mencapai 18.865.152 > 2**24, jadi bidang 24 bit akan memotongnya dan
+   pemilihan penelusuran balik bisa salah. Entri saya sekarang **114 bit**
+   (`pos 32 + pv 32 + pk_f 26 + kem 24`): 32 bit untuk posisi (W_IDX beku), 32 bit
+   untuk kata amplop (bagian tak bertanda dari node W_WIN), 26 bit untuk besar `hp`
+   (W_HP beku) dan 24 bit untuk besar turunan. Bit tanda amplop yang tidak terpakai
+   ikut diawasi rel. Selisih terhadap rencana: +2 bit per entri (+256 bit, 1,8 persen
+   pada kelompok itu), dilaporkan sebagai penyimpangan.
+3. **Peringatan simulator dihapus.** Tiga peringatan Icarus "out of bounds array
+   access ... [-1]" dari gelung generate penggeser antrean. Diganti dengan satu
+   penugasan indeks 0 plus gelung mulai dari 1, sehingga tidak ada cabang yang
+   menyebut indeks -1. Sim sekarang nol peringatan.
+
+## 9. Cacah flip-flop (gerbang keempat)
+
+`reports/fase5/hitung_ff.py` (baca-saja atas `rtl/peak_detect.sv` dan paket)
+menghitung tiap penampan sebagai kedalaman kali lebar, seperti aturan D1 rencana 38.
+Keluaran penuh: `reports/fase5/hitung_ff.out`.
+
+```
+penampan kandidat penelusuran balik (bpk_vec)                              14.592
+garis tunda jalur data (sel_vec 54x33, hp_vec 52x26, bes_vec 45x24)         4.214
+sub-tahap RR (deret, antre, rih, ra1, pemb, peny, semai, gagal, jeda)         962
+pelacak fitur dan QRS (i_qrs, i_qrs_pk, kem_qrs, benderanya)                   91
+state ambang adaptif (spki, npki, spkf, npkf)                                 132
+introspeksi aditif (dbg_q, dbg_valid_q)                                       449
+pencacah ambang_state (delapan kali 32 bit)                                    256
+pemindai amplop dan pencacah puncak (scan_q, pk_cnt_q)                          64
+keluaran aliran dan sisi (m_*, d_thr, d_pk, o_beat_count)                      237
+TOTAL                                                                       20.997
+anggaran state seluruh rantai di rencana 38 (baris 1850-1858)              25.640
+```
+
+Tidak ada state tanpa batas: setiap penampan punya kedalaman tetap dari model dan
+tidak ada indeks yang berasal dari data (D1). Tiga kelompok rencana tidak ada di modul
+ini karena memang bukan miliknya: empat dari tujuh ring jalur data, jendela fitur dan
+histogram (modul fitur), dan penampan keluaran keputusan. Dua kelompok ada di sini
+tetapi tidak dianggarkan sebagai milik `peak_detect`: pencacah `ambang_state` (256 bit,
+memang wajib oleh gerbang) dan bus introspeksi `d_dbg` (449 bit, aditif).
+
+## 10. Penyimpangan yang dilaporkan
+
+1. `s_hp` (26 bit) dan `s_besaran` (24 bit) ditambahkan sebagai **masukan aditif**,
+   murni tambahan di akhir daftar porta. Alasannya di bagian 2.
+2. `d_dbg` (448 bit) dan `d_dbg_valid` ditambahkan sebagai **keluaran introspeksi
+   aditif** di akhir daftar porta. Alasannya di bagian 2.
+3. Konstanta Fase 5 dideklarasikan sebagai `localparam` di dalam modul, bukan di paket
+   (paket bukan berkas saya).
+4. Entri penampan kandidat 114 bit, bukan 112 bit, dengan alasan di bagian 8.2.
+5. Garis tunda `hp` dan turunan dibangun **di dalam modul ini**, padahal rencana
+   menempatkannya di modul jalur data. Sebabnya daftar porta beku tidak membawa kedua
+   deret itu, sementara `pk_f` dan `kem` wajib untuk empat unsur `ambang_state`, kolom
+   `in_band`/`t_rejected` dan aturan gelombang T.
+
+## 11. Tiga kesalahan berikutnya, ditemukan dengan mengukur (bukan menebak)
+
+Jalan penuh pertama (450.000) gagal: `peak i1 mismatches 509`, `kind 5`, `ev_idx 5`,
+`qrs 2591 dari 2596`, `ambang_state` meleset di elemen 1, 6 dan 7
+(`cari_mundur` 9 lawan 6, `semai` 27 lawan 26, `penanda` 1196 lawan 1202). Isolasi
+dilakukan dengan memperkecil `+LIMIT` dan menambah pencetak ketidakcocokan pertama di
+testbench (`MISM peak#...`), lalu membandingkan keadaan internal dengan model beku
+melalui skrip `~/.hermes/cache/scratch/fase5/dump_rr_peak.py`, yang mencetak
+`pembilang, penyebut, ra1, gagal, jeda, semai` dan hasil gerbang
+`200*delta*penyebut > 83*pembilang` pada setiap puncak (nilainya identik dengan CSV emas
+karena memakai fungsi beku yang sama).
+
+1. **Keluaran `m_ev_kind` salah untuk baris refit.** Puncak yang merekam QRS lewat
+   penelusuran balik harus memancarkan `EV_QRS` dengan indeks = posisi yang direkam
+   (lebih awal dari posisi puncaknya), bukan `EV_PEAK_CAND`. Bukti: `+LIMIT=90000`
+   menyisakan tepat **satu** ketidakcocokan, `MISM peak#921 pos=86121 kind dut=2
+   gold=1 flag=0x18` — posisi, `i1`, `evidx` dan bendera sudah cocok semua. Setelah
+   diperbaiki, `+LIMIT=100000` lulus penuh.
+2. **Indeks baca penampan kandidat salah saat melingkar.** Penulisan memakai slot
+   `pk_cnt[6:0]`, tetapi penelusuran balik membaca mulai dari `BUF_MASK - ki`, yang hanya
+   sejajar ketika `pk_cnt` kebetulan ada di topeng. Akibatnya setiap langkah `ki >= 1`
+   membaca entri puncak sekitar 100 langkah yang lalu: refit yang kandidatnya puncak itu
+   sendiri (`ki = 0`, kasus yang ditangani khusus) masih berhasil, yang kandidatnya
+   puncak lain selalu gagal. Itu tepat pola yang terlihat: refit 86121 berhasil, refit
+   91681 gagal, dan puncak 91807 justru menggelar refit palsu karena `i_qrs` tidak
+   bergerak. Perbaikan: `(pk_cnt_q[6:0] - ki[6:0]) & BUF_MASK_D`. Setelah perbaikan,
+   `+LIMIT=100000` mengembalikan `MISM` nol baris, `qrs 515 dari 515`, `i1 0`,
+   `qrs index out of order 0`.
+3. **Bendera ritme dihitung terhadap acuan yang salah.** `penanda` pada jalan penuh
+   pertama 1195 lawan 1202 (kurang 7). Isi gelung `mem_w` membandingkan deret delapan
+   interval terhadap pita yang dibentuk dari `rr_lo_w`/`rr_hi_w`, yaitu acuan **sebelum**
+   pembaruan antrean, sedangkan model (`rantai.py:424-437`) menghitung ulang
+   `pembilang`/`penyebut` sesudah denyut itu diserap, baru menguji delapan nilai.
+   Perbaikan: pita dihitung dari `pemb_n` (`rr_lopost_w`, `rr_hipost_w`). Puncak, `qrs`,
+   dan `cari_mundur` tidak terpengaruh: nilainya sudah sama sebelum perbaikan ini.
+
+Setelah ketiga perbaikan, jalan penuh 450.000 pada revisi terakhir memberi
+`peaks dut 4777`, `qrs dut 2596`, `words compared 450000 of 450000`,
+`peak position mismatches 0`, `mismatches 0`, dan 9 dari 9 unsur `ambang_state`.
+
+4. **Peringatan simulator dihapus** (lihat bagian 8.3).
+
+Skrip diagnostik yang dipakai disimpan bersama di
+`~/.hermes/cache/scratch/fase5/` (`tb_probe.sv`, `pd_dbg.sv`, `dump_rr_peak.py`,
+`probe_rr2.out`) dan disalin ke `reports/fase5/` sebagai bukti.
+
+## 12. Bendera ritme (`penanda`) dan kontrol negatif (putaran audit agen induk)
+
+1. Dugaan pita acuan diuji dengan `~/.hermes/cache/scratch/fase5/uji_penanda.py`, yang
+   membungkus `rantai.rr` dan menghitung dua versi aturan pada setiap denyut berderet
+   penuh. Selisih antar-aturan keluar **tepat 7** (post 1194 lawan pre 1187) — sama dengan
+   kekurangan `penanda` pada jalan penuh revisi pertama (1195 lawan 1202) — dan perbedaan
+   pertama ada di denyut ke-50, puncak ke-149, sampel 14571, jadi **bukan** setelah 100k.
+   Catatan: jalan pendek 100k memang tidak pernah memeriksa sembilan unsur `ambang_state`
+   (kepala testbench baris 31-34), sehingga "100k bersih" bukan bukti apa pun untuk
+   `penanda`.
+2. Jalur gagal testbench diubah ke `$fatal(1, ...)` (empat tempat) dan kondisi lulus
+   ditambah `phase == PH_DONE`. Kontrol negatif pertama **kosong**: yang dirusak hanya
+   `04015.ambang_state.hex`, satu-satunya larik yang dilewati jalan pendek, jadi hasilnya
+   tetap PASS. Kontrol yang sah merusak satu kata larik per-puncak
+   (`04015.puncak.i1.hex`, `010a0f9b` menjadi `010a0f9a`) pada salinan di luar repo, dan
+   hasilnya `mismatches = 1`, `FAIL`, `FATAL ... gate violation`, `rc=1` (log
+   `reports/fase5/sim-negatif-02.out`).
+3. Dua jalan penuh terakhir pada revisi yang diserahkan (`sim-lengkap-05.out` 00:05:04 dan
+   `sim-lengkap-06.out` 00:11:59) keduanya `PASS`, dan 42 baris ringkasan keduanya
+   byte-identik (md5 `31d65bf7b00c54c8c961bdd9c27dca9b`), sama dengan pasangan sebelumnya
+   (`sim-lengkap-03/04`).
+4. `sim-lengkap-02.out` mati di tengah karena `pkill -f "tb_puncak.vvp"` milik saya sendiri
+   ikut menyerang shell yang menjalankannya; pasangan determinisme yang sah adalah
+   `sim-lengkap-04` dan `sim-lengkap-06`.
+
+
+
+
+

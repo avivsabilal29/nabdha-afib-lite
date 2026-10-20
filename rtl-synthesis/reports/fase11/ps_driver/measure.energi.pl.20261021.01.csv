@@ -1,0 +1,6 @@
+jalur,ukur,run_ke,iters,elapsed_s,infer_per_s,mode,laju_sampel_hz,jendela_denyut,langkah_denyut,latensi_tapis_sampel,latensi_tapis_ms,latensi_keputusan_s,daya_diam_w,daya_aktif_w,delta_daya_w,energi_per_inferensi_uj,rail,suhu_ruang_c,suhu_soc_c,gap,ovf,fifo_flag,catatan
+pl,energi,1,1,5.0,0,burst,250,32,4,40.11,160.44,,,,,,som_ina260,,,0,0,0,"mock run, no board, power columns empty on purpose"
+pl,energi,2,1,5.0,0,burst,250,32,4,40.11,160.44,,,,,,som_ina260,,,0,0,0,"mock run, no board, power columns empty on purpose"
+pl,energi,3,1,5.0,0,burst,250,32,4,40.11,160.44,,,,,,som_ina260,,,0,0,0,"mock run, no board, power columns empty on purpose"
+pl,energi,4,1,5.0,0,burst,250,32,4,40.11,160.44,,,,,,som_ina260,,,0,0,0,"mock run, no board, power columns empty on purpose"
+pl,energi,5,1,5.0,0,burst,250,32,4,40.11,160.44,,,,,,som_ina260,,,0,0,0,"mock run, no board, power columns empty on purpose"

@@ -26,24 +26,4 @@ run_lint.sh: top=afib_lite_top sources=13 timing=0
 %Warning-PINMISSING: ../rtl/afib_lite_top.sv:398:17: Cell has missing pin: 'd_dbg_valid'
   398 |     peak_detect u_peak_detect (
       |                 ^~~~~~~~~~~~~
-%Warning-WIDTHTRUNC: ../rtl/peak_detect.sv:220:35: Operator VAR 'PAD_TO_IDX2' expects 4 bits on the Initial value, but Initial value's SUB generates 32 bits.
-                                                 : ... note: In instance 'afib_lite_top.u_peak_detect'
-  220 |     localparam logic [3:0]        PAD_TO_IDX2 = W_IDX + 2 - 32;    
-      |                                   ^~~~~~~~~~~
-%Warning-WIDTHCONCAT: ../rtl/peak_detect.sv:224:70: Unsized numbers/parameters not allowed in concatenations.
-                                                  : ... note: In instance 'afib_lite_top.u_peak_detect'
-  224 |     localparam logic [W_IDX+1:0]  PITA_DX      = {{PAD_TO_IDX2{1'b0}}, N_PITA[31:0]};
-      |                                                                      ^
-%Warning-WIDTHCONCAT: ../rtl/peak_detect.sv:225:70: Unsized numbers/parameters not allowed in concatenations.
-                                                  : ... note: In instance 'afib_lite_top.u_peak_detect'
-  225 |     localparam logic [W_IDX+1:0]  RR_MIN_DX    = {{PAD_TO_IDX2{1'b0}}, N_RR_MIN[31:0]};
-      |                                                                      ^
-%Warning-WIDTHCONCAT: ../rtl/peak_detect.sv:226:70: Unsized numbers/parameters not allowed in concatenations.
-                                                  : ... note: In instance 'afib_lite_top.u_peak_detect'
-  226 |     localparam logic [W_IDX+1:0]  RR_MAX_DX    = {{PAD_TO_IDX2{1'b0}}, N_RR_MAX[31:0]};
-      |                                                                      ^
-%Warning-UNUSEDSIGNAL: ../rtl/peak_detect.sv:663:21: Bits of signal are not used: 'med_sum_w'[0]
-                                                   : ... note: In instance 'afib_lite_top.u_peak_detect'
-  663 |     wire [RR_W:0]   med_sum_w = {1'b0, med_vlo_w} + {1'b0, med_vhi_w};
-      |                     ^~~~~~~~~
-%Error: Exiting due to 9 warning(s)
+%Error: Exiting due to 4 warning(s)

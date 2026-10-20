@@ -1,0 +1,7 @@
+beats with a full deret (checked)      = 2557
+langkah (all in band beats)            = 2592
+penanda under the post update band     = 1194   (model state says 1194)
+penanda under the pre update band      = 1187   (first RTL revision gave 1195)
+difference post minus pre              = 7
+first disagreement at checked beat #50 (peak index 149, sample 14571): post 1 pre 0   [pemb_pre 5248 peny_pre 8 ra1_post 823]
+rc=0

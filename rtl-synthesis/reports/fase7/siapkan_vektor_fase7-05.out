@@ -1,0 +1,16 @@
+CHECK model maks_mutlak vs peaks.csv slope: mismatches = 0 of 4777
+CHECK driven delta vs peaks.csv sample_delta: differ = 2599 (of which 6 have a nonzero csv value; the csv writes 0 on the QRS rows themselves)
+CHECK delta_valid & kem_qrs_valid & (delta<<2 < 360) vs peaks.csv in_band: mismatches = 0 of 4777 (in_band ones = 2029)
+CHECK in_band and (2*kem < kem_qrs) vs peaks.csv t_rejected: mismatches = 0 of 4777 (t_rejected ones = 1909)
+real in band pairs checked by the rule = 106, cross vs shift differ = 0, cross vs float differ = 0
+grid of the frozen model theorem (uji_00_teorema.py:766-777, doc 06 section 4.1)
+grid: s and s_prev both 0..4095, pairs = 16777216
+cross form 2*s < s_prev vs float route s < s_prev/2.0 : differ = 0
+cross form 2*s < s_prev vs forbidden shift s < (s_prev >> 1) : differ = 2048
+cross form vs exact rational (Fraction), 200000 random pairs : differ = 0
+fraction of the grid where the shift route differs = 2048/16777216 = 0.00012207
+synthetic line: 60000 words, 5453 sampled positions, max golden kem = 4194303
+turunan.hex copy identical to the frozen column: True
+counts: {'frames': 450000, 'peaks': 4777, 'peaks_usable': 4777, 'sint_words': 60000, 'sint_pos': 5453, 'grid_rows': 16382, 'edge_rows': 14, 'stair_rows': 16396, 'grid_shift_differ_sim': 2048, 'grid_float_differ_sim': 0, 'sint_pos_usable': 5452}
+wrote 16 files to rtl/tb/vektor/fase7
+exit=0

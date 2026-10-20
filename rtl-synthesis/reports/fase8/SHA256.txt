@@ -1,0 +1,31 @@
+# sha256 seluruh berkas yang ditulis subagent Fase 8, dihitung 2026-10-21T01:10:04+07:00
+# dari akar repo: /home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite
+a6de59095fbc15a09549fc1c0518c571446274df2599e3b35f9269c4c69b2675  rtl/features.sv
+26da322cbefbeb869255fce2dd877826aec6a608f8db004de104c8249edd9690  rtl/tb/tb_fitur.sv
+00af060409f917722170121f2093f63b6c77111937c4457d150b03ff540eb536  rtl/tb/vektor/fase8/04015.fase8.gold.bins.hex
+13d4feef19b3299796e633e5a28b4cfdf5ee654ba8589d66e84fd99e0fed1fc5  rtl/tb/vektor/fase8/04015.fase8.gold.code.hex
+bb2e38d0a07d5d309f18e801c0ad7335364edb6ef6a80241abf170ed00b00e4c  rtl/tb/vektor/fase8/04015.fase8.gold.d.hex
+d87e7976ca2a05f9606526d0da58d7ddc58f98a3a9ed11bad496d062f94d9460  rtl/tb/vektor/fase8/04015.fase8.gold.raw.hex
+cba5be4da12be130531c47553239ba94f1003346af8a3895e94c539d2f30915b  rtl/tb/vektor/fase8/04015.fase8.manifest.json
+c13d75a56b31ef32759882e0e014356bd39ea759257017d45342b2f10c3b3216  rtl/tb/vektor/fase8/04015.fase8.map.marked.hex
+652b3fd0fe56eb98acc7469f0b82fea9c3d624f0b1e04e34823e7eeefc70de6d  rtl/tb/vektor/fase8/04015.fase8.map.raw.hex
+0a19111f430e9036a681153fca390cda62d58ca4bb8965da732d7742c4474c89  rtl/tb/vektor/fase8/04015.fase8.rr.hex
+b72735ca211a3c76b9839d76cf44f025fcf65a0f83d3178e05d100ef91328473  rtl/tb/vektor/fase8/04015.fase8.sample.hex
+5d02930f6130d414c4e7e455acc37164bc71b923f3c6341cf61ccff4c2dadc2f  rtl/tb/vektor/fase8/04015.fase8.tables.txt
+026ab9e0cf6038a69c2284a91296c6b935db5f11ac638bbfdd5919181875c499  rtl/tb/vektor/fase8/ekspor_vektor_fase8.py
+14765c7a8e64deeebe230552ffc796fbb533e600fd8ed80c003104d3e26e03e4  rtl-synthesis/reports/fase8/PROGRES.md
+31e64f4bd314dae11252a26903880d8be14ec587391fe033d093f7850b369b13  rtl-synthesis/reports/fase8/jalan-penuh-1-20261021-004418.log
+31e64f4bd314dae11252a26903880d8be14ec587391fe033d093f7850b369b13  rtl-synthesis/reports/fase8/jalan-penuh-2-20261021-004418.log
+9f3d93f703dc4772c43db069d330014cec489e06297a4087387e9f6721494b4f  rtl-synthesis/reports/fase8/sim-full.log
+9d9e6da9d678fbf921ce7f03431f50359aff52b0d691657fd5123411d270d615  rtl-synthesis/reports/fase8/sim-nc1.log
+b6fee4cc8e91dbecd9b6041160d734c3e0ddddadfbc0e947bd226e186b834cef  rtl-synthesis/reports/fase8/sim-nc2.log
+729cb152ac811f3201f393f3270590ff823ec4f36d2078a067df9fb3d5110087  rtl-synthesis/reports/fase8/sim-nc3.log
+d5accb8b8c5f570fe0ec510cdc816654d2f60a9522996f93bce58fef7ef309a1  rtl-synthesis/reports/fase8/sim-nc4.log
+d2d16df41fedc24bcea8139c95832d254b1d90e714f26f4a7316951ce26f0a10  rtl-synthesis/reports/fase8/sim-nc5.log
+79ea6810ca2d8c93410ea4099230dda0d7c114367c81a7acab2ba44ca268dba9  rtl-synthesis/reports/fase8/sim-nc6.log
+4b1c0b3e920d78b61fcde1416c49cf301549e9277f52de4969c50417f8b88e4c  rtl-synthesis/reports/fase8/sim-smoke.log
+174c4397a0b4337800c1aa2fd96e7b8879c6081af7f0281070b3f8da2e5140a2  rtl-synthesis/reports/fase8/jalan-penuh-1-20261021-004418.log.rc
+ecc6ed5402cfb7b8602c78a3e85b134dd86bc0ba2163f0c013a3e5b3b8f7a7b4  rtl-synthesis/reports/fase8/jalan-penuh-2-20261021-004418.log.rc
+a558b5bcf16fd36d86dec1847b030ec37dc59fc01b625fee20fc131b0da5c3cb  rtl-synthesis/reports/fase8/.jalan-terakhir
+b266bd4f26a3a6484fe49322301768b965754c045f248dda8abddf3f0ddcbcfb  rtl-synthesis/reports/LAPORAN-FASE8.md
+90df6e5b457307d37158a96b6dbedb4e72be03f35349769a858918f6314f1fe5  model/rantai-afib-lite/rantai.py

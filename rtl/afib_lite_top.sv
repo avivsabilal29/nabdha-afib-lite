@@ -231,6 +231,36 @@ module afib_lite_top #(
     wire [W_CONF-1:0] cl_d_conf;
     wire [31:0]       cl_window_count;
 
+    // ---------------------------------------------------------- Fase 10 signal sources
+    // K1: peak_detect reads the high pass word and the slope word of the peak's OWN sample
+    // index. Neither fits the frozen 43 row port list, and s_tdata (33 bit) is fully used by
+    // the window word, so both are carried here out of the data path: the bandpass high pass
+    // tap and the derivative output, kept in an index addressed ring that is the model's
+    // ring_hp / ring_besaran (rantai.py:933-935). Real words only, no tie off, no constant.
+    wire              pk_dbg_valid;
+    wire [447:0]      pk_dbg;
+    wire [W_HP-1:0]   pk_s_hp;
+    wire [W_DER-1:0]  pk_s_bes;
+
+    // the t_rule reference stream: the derivative stream held back so that the peak pulse
+    // can land on the very accepted word whose sample index is the peak index
+    wire              dly_valid;
+    wire [W_DER-1:0]  dly_word;
+    wire [W_IDX-1:0]  dly_idx;
+    wire [W_TUSER-1:0] dly_user;
+    wire              dly_last;
+    wire              peak_pulse;
+    wire [W_IDX-1:0]  peak_delta_w;
+    wire [W_DER-1:0]  peak_kemq_w;
+    wire              peak_dvalid_w;
+    wire              peak_kvalid_w;
+
+    // t_rule additive outputs (Fase 7 interface, K6)
+    wire              tw_peak_valid;
+    wire [W_IDX-1:0]  tw_peak_idx;
+    wire              tw_dalam_pita;
+    wire              tw_overrun;
+
     // register file outputs
     wire              r_enable, r_clear;
     wire [W_RATE_DIV-1:0] r_rate_div;
@@ -250,6 +280,31 @@ module afib_lite_top #(
     wire [7:0]            cfg_window_beats  = (i_window_beats  != 8'd0)  ? i_window_beats  : r_window_beats;
     wire                  cfg_enable        = i_enable | r_enable;
     wire                  cfg_clear         = i_clear_counters | r_clear;
+
+    // ------------------------------------------------------------------ Fase 10 unit bridge
+    // The frozen register map (D8) carries RATIO_THRESH as a 16 bit field in 1/200 units and
+    // ENTROPY_THRESH in 1/100 units, reset 33 and 63, and the PS driver of Fase 11 writes
+    // those user units. classifier.sv compares its threshold port straight against a Q1.16
+    // ratio word and a Q1.14 entropy word, so the two units have to be bridged here, at the
+    // top boundary: neither the frozen register map nor the gated classifier is touched.
+    //
+    // The bridge is exact and measured, not invented: 33 * 65536 / 200 = 10813 and
+    // 63 * 16384 / 100 = 10322, which are the two codes Fase 9 had to inject to reach
+    // parity. The rounding form is used because 63 * 16384 / 100 = 10321.92 truncates to
+    // 10321 while 10322 is the measured operating point. Fase 11 measured the two units to
+    // be the same operating point: |33*65536 - 10813*200| = 88 <= 200 and
+    // |63*16384 - 10322*100| = 8 <= 100.
+    wire [31:0] ratio_bridge_w =
+        (({16'd0, cfg_ratio_thresh} * 32'd65536) + 32'd100) / 32'd200;
+    wire [31:0] entropy_bridge_w =
+        (({16'd0, cfg_entropy_thresh} * 32'd16384) + 32'd50) / 32'd100;
+    // The widest field value (65535) gives 21474 for the ratio, so the top half is never needed;
+    // it is still driven and read, as a saturation, instead of left dangling: an unread bit is
+    // a warning and, worse, room for a silent truncation later.
+    wire [15:0] cfg_ratio_code   = (ratio_bridge_w[31:16]   != 16'd0) ? 16'hFFFF
+                                                                     : ratio_bridge_w[15:0];
+    wire [15:0] cfg_entropy_code = (entropy_bridge_w[31:16] != 16'd0) ? 16'hFFFF
+                                                                     : entropy_bridge_w[15:0];
 
     // ---------------------------------------------------------------- sticky flags
     wire any_ovf = a_ovf | b_ovf | c_ovf | d_ovf | e_ovf | p_ovf | tw_ovf;
@@ -291,6 +346,150 @@ module afib_lite_top #(
     // o_irq bit order follows the table row: b0 window done, b1 gap, b2 clamp,
     // b3 FIFO overflow, b4 long interval.
     assign o_irq = {rr_long_seen_q, fifo_ovf_seen_q, clamp_seen_q, gap_seen_q, win_done_seen_q};
+
+    // ---------------------------------------------------------------- Fase 10 wiring
+    // The two reference rings. An entry is addressed by the sample index modulo the depth,
+    // exactly as the model addresses ring_hp and ring_besaran, so the high pass and slope
+    // words that reach peak_detect always belong to the index the window word carries,
+    // whatever the pipeline offset between the three streams is. Depth 8 covers the measured
+    // lag of 3 accepted words (bandpass -> derivative -> square -> integrator) with margin,
+    // and one write per accepted word means two live entries can never collide.
+    localparam int unsigned RING_AW    = 3;
+    localparam int unsigned RING_DEPTH = 1 << RING_AW;
+
+    // The t_rule reference stream is the derivative stream held back by TRU_DELAY accepted
+    // words. peak_detect decides a peak at sample index pos only when its own input word
+    // carries pos + RADIUS_PUNCAK (rantai.py:983-994), and the derivative word of a given
+    // index runs two accepted words ahead of that input, so at the decision the word with
+    // index pos is 29 accepted words old. Holding the stream back by RADIUS_PUNCAK + 2 plus
+    // TRU_MARGIN puts the decision in time to pulse that very word: the rule then fills its
+    // own 37 word line with pos-18 .. pos+18, which is the window the model scans
+    // (rantai.py:330-333). TRU_MARGIN is only a lead; the match is an index comparison, so
+    // the wiring does not depend on the two ages agreeing exactly.
+    localparam int unsigned RADIUS_PUNCAK = 27;   // rantai.py:55, the peak picker radius
+    localparam int unsigned TRU_MARGIN    = 5;    // the payload needs a lead over its word
+    localparam int unsigned TRU_DELAY     = RADIUS_PUNCAK + 2 + TRU_MARGIN;   // 34
+
+    // d_dbg word map of peak_detect (rtl/peak_detect.sv, DBG_* block)
+    localparam int unsigned DBG_KEM_W = 10;
+    localparam int unsigned DBG_POS_W = 12;
+
+    integer wi;
+
+    reg  [W_HP-1:0]  ring_hp  [0:RING_DEPTH-1];
+    reg  [W_DER-1:0] ring_bes [0:RING_DEPTH-1];
+
+    reg  [TRU_DELAY*W_DER-1:0]   dly_data_q;
+    reg  [TRU_DELAY*W_IDX-1:0]   dly_idx_q;
+    reg  [TRU_DELAY*W_TUSER-1:0] dly_user_q;
+    reg  [TRU_DELAY-1:0]         dly_last_q;
+    reg  [TRU_DELAY-1:0]         dly_vld_q;
+
+    // the captured peak payload: the model's pos, delta and kem_qrs for the candidate the
+    // rule is called with (rantai.py:664, :338-340)
+    reg  [W_IDX-1:0]  peak_pos_q;
+    reg  [W_IDX-1:0]  peak_delta_q;
+    reg  [W_DER-1:0]  peak_kemq_q;
+    reg               peak_pend_q;
+    reg               peak_dvalid_q;
+    reg               peak_kvalid_q;
+
+    // the recorded QRS the rule measures against, tracked from peak_detect's event sideband
+    // (one event per peak row, the recorded index of K2)
+    reg  [W_IDX-1:0]  qrs_idx_q;
+    reg               qrs_idx_v_q;
+    reg  [W_DER-1:0]  qrs_kem_q;
+    reg               qrs_kem_v_q;
+
+    reg  [31:0]       peak_pulse_cnt_q;
+    reg  [31:0]       peak_stale_cnt_q;
+
+    assign pk_s_hp   = ring_hp [e_idx[RING_AW-1:0]];
+    assign pk_s_bes  = ring_bes[e_idx[RING_AW-1:0]];
+
+    assign dly_valid = dly_vld_q[TRU_DELAY-1];
+    assign dly_word  = dly_data_q[(TRU_DELAY-1)*W_DER +: W_DER];
+    assign dly_idx   = dly_idx_q [(TRU_DELAY-1)*W_IDX +: W_IDX];
+    assign dly_user  = dly_user_q[(TRU_DELAY-1)*W_TUSER +: W_TUSER];
+    assign dly_last  = dly_last_q[TRU_DELAY-1];
+    assign peak_delta_w  = peak_delta_q;
+    assign peak_kemq_w   = peak_kemq_q;
+    assign peak_dvalid_w = peak_dvalid_q;
+    assign peak_kvalid_w = peak_kvalid_q;
+    // the pulse lands on the accepted word whose sample index is the captured peak index,
+    // so the rule's report index and its window both belong to that peak
+    assign peak_pulse = dly_valid & peak_pend_q & (dly_idx == peak_pos_q);
+
+    wire [W_IDX-1:0] dbg_pos_w = pk_dbg[DBG_POS_W*32 +: 32];
+    wire [W_DER-1:0] dbg_kem_w = pk_dbg[DBG_KEM_W*32 +: W_DER];
+
+    always @(posedge clk_i) begin
+        if (!rst_ni) begin
+            for (wi = 0; wi < RING_DEPTH; wi = wi + 1) begin
+                ring_hp[wi]  <= {W_HP{1'b0}};
+                ring_bes[wi] <= {W_DER{1'b0}};
+            end
+            dly_data_q    <= {(TRU_DELAY*W_DER){1'b0}};
+            dly_idx_q     <= {(TRU_DELAY*W_IDX){1'b0}};
+            dly_user_q    <= {(TRU_DELAY*W_TUSER){1'b0}};
+            dly_last_q    <= {TRU_DELAY{1'b0}};
+            dly_vld_q     <= {TRU_DELAY{1'b0}};
+            peak_pos_q    <= {W_IDX{1'b0}};
+            peak_delta_q  <= {W_IDX{1'b0}};
+            peak_kemq_q   <= {W_DER{1'b0}};
+            peak_pend_q   <= 1'b0;
+            peak_dvalid_q <= 1'b0;
+            peak_kvalid_q <= 1'b0;
+            qrs_idx_q     <= {W_IDX{1'b0}};
+            qrs_idx_v_q   <= 1'b0;
+            qrs_kem_q     <= {W_DER{1'b0}};
+            qrs_kem_v_q   <= 1'b0;
+            peak_pulse_cnt_q <= 32'd0;
+            peak_stale_cnt_q <= 32'd0;
+        end else if (cfg_clear) begin
+            peak_pulse_cnt_q <= 32'd0;
+            peak_stale_cnt_q <= 32'd0;
+        end else begin
+            // the reference rings: one write per accepted word, addressed by the index the
+            // producing word carries (the model's ring write, rantai.py:933-935)
+            if (b_valid) ring_hp [b_idx[RING_AW-1:0]] <= b_hp;
+            if (c_valid) ring_bes[c_idx[RING_AW-1:0]] <= c_der;
+
+            // the derivative stream delayed for the rule, shifted on accepted words only, so
+            // the line depth is in accepted words and not in clocks
+            if (c_valid) begin
+                dly_data_q <= {dly_data_q[(TRU_DELAY-1)*W_DER-1:0], c_word};
+                dly_idx_q  <= {dly_idx_q [(TRU_DELAY-1)*W_IDX-1:0], c_idx};
+                dly_user_q <= {dly_user_q[(TRU_DELAY-1)*W_TUSER-1:0], c_user};
+                dly_last_q <= {dly_last_q[TRU_DELAY-2:0], c_last};
+                dly_vld_q  <= {dly_vld_q [TRU_DELAY-2:0], 1'b1};
+            end
+
+            // the recorded QRS series: the pre update reference of every delta and kem_qrs
+            if (p_ev_valid & (p_ev_kind == afib_lite_pkg::EV_QRS)) begin
+                qrs_idx_q   <= p_ev_idx;
+                qrs_idx_v_q <= 1'b1;
+                qrs_kem_q   <= dbg_kem_w;
+                qrs_kem_v_q <= 1'b1;
+            end
+
+            // the pulse, then the capture, so a peak that arrives on the same cycle keeps
+            // its payload pending instead of losing it
+            if (peak_pulse) begin
+                peak_pend_q      <= 1'b0;
+                peak_pulse_cnt_q <= peak_pulse_cnt_q + 32'd1;
+            end
+            if (pk_dbg_valid) begin
+                if (peak_pend_q & ~peak_pulse) peak_stale_cnt_q <= peak_stale_cnt_q + 32'd1;
+                peak_pend_q   <= 1'b1;
+                peak_pos_q    <= dbg_pos_w;
+                peak_delta_q  <= dbg_pos_w - qrs_idx_q;
+                peak_dvalid_q <= qrs_idx_v_q;
+                peak_kemq_q   <= qrs_kem_q;
+                peak_kvalid_q <= qrs_kem_v_q;
+            end
+        end
+    end
 
     // ---------------------------------------------------------------- status word
     // Every tap and every stage valid flag reaches the outside, either through the
@@ -341,6 +540,34 @@ module afib_lite_top #(
             8'd25:   o_dbg_val_w = {{(32-W_TUSER){1'b0}}, tw_user};
             8'd26:   o_dbg_val_w = tw_idx;
             8'd27:   o_dbg_val_w = rr_ev_val;
+            // Fase 10: peak_detect's 14 introspection words, its valid pulse, the t_rule
+            // additive outputs, the pulse bookkeeping and the two ring outputs. Selectors
+            // 32..56, every one a 32 bit view so the width of the mux does not move.
+            8'd32:   o_dbg_val_w = pk_dbg[0*32  +: 32];
+            8'd33:   o_dbg_val_w = pk_dbg[1*32  +: 32];
+            8'd34:   o_dbg_val_w = pk_dbg[2*32  +: 32];
+            8'd35:   o_dbg_val_w = pk_dbg[3*32  +: 32];
+            8'd36:   o_dbg_val_w = pk_dbg[4*32  +: 32];
+            8'd37:   o_dbg_val_w = pk_dbg[5*32  +: 32];
+            8'd38:   o_dbg_val_w = pk_dbg[6*32  +: 32];
+            8'd39:   o_dbg_val_w = pk_dbg[7*32  +: 32];
+            8'd40:   o_dbg_val_w = pk_dbg[8*32  +: 32];
+            8'd41:   o_dbg_val_w = pk_dbg[9*32  +: 32];
+            8'd42:   o_dbg_val_w = pk_dbg[10*32 +: 32];
+            8'd43:   o_dbg_val_w = pk_dbg[11*32 +: 32];
+            8'd44:   o_dbg_val_w = pk_dbg[12*32 +: 32];
+            8'd45:   o_dbg_val_w = pk_dbg[13*32 +: 32];
+            8'd46:   o_dbg_val_w = {31'd0, pk_dbg_valid};
+            8'd47:   o_dbg_val_w = {31'd0, tw_peak_valid};
+            8'd48:   o_dbg_val_w = tw_peak_idx;
+            8'd49:   o_dbg_val_w = {31'd0, tw_dalam_pita};
+            8'd50:   o_dbg_val_w = {31'd0, tw_overrun};
+            8'd51:   o_dbg_val_w = peak_pulse_cnt_q;
+            8'd52:   o_dbg_val_w = peak_stale_cnt_q;
+            8'd53:   o_dbg_val_w = {{(32-W_HP){pk_s_hp[W_HP-1]}}, pk_s_hp};
+            8'd54:   o_dbg_val_w = {{(32-W_DER){pk_s_bes[W_DER-1]}}, pk_s_bes};
+            8'd55:   o_dbg_val_w = dly_idx;
+            8'd56:   o_dbg_val_w = {{(32-W_DER){dly_word[W_DER-1]}}, dly_word};
             default: o_dbg_val_w = {29'd0, tw_reject, p_dvalid, cl_dvalid};
         endcase
     end
@@ -404,18 +631,28 @@ module afib_lite_top #(
         .m_tuser(p_user), .m_sample_idx(p_idx),
         .m_ev_valid(p_ev_valid), .m_ev_kind(p_ev_kind), .m_ev_idx(p_ev_idx), .m_ev_val(p_ev_val),
         .d_valid(p_dvalid), .d_thr(p_thr), .d_pk(p_pk),
-        .o_beat_count(o_beat_count)
+        .o_beat_count(o_beat_count),
+        // Fase 5 additive ports (K1): fed from the data path's own hp and slope streams
+        // through the index addressed rings above, never from a tie off
+        .s_hp(pk_s_hp), .s_besaran(pk_s_bes),
+        .d_dbg(pk_dbg), .d_dbg_valid(pk_dbg_valid)
     );
 
     t_rule u_t_rule (
         .clk_i, .rst_ni,
-        .s_tdata(c_word), .s_tvalid(c_valid), .s_tlast(c_last), .s_tuser(c_user),
-        .s_sample_idx(c_idx),
+        .s_tdata(dly_word), .s_tvalid(dly_valid), .s_tlast(dly_last), .s_tuser(dly_user),
+        .s_sample_idx(dly_idx),
         .i_rule_enable(cfg_arm_select[2]),
         .m_tdata(tw_word), .m_tvalid(tw_valid), .m_overflow(tw_ovf), .m_tlast(tw_last),
         .m_tuser(tw_user), .m_sample_idx(tw_idx),
         .o_reject(tw_reject),
-        .d_valid(tw_dvalid), .d_tw(tw_dtw)
+        .d_valid(tw_dvalid), .d_tw(tw_dtw),
+        // Fase 7 additive interface (K6): the peak candidate pulse and the model's delta and
+        // kem_qrs, rebuilt here from peak_detect's own published rows and event sideband
+        .i_peak_valid(peak_pulse), .i_delta(peak_delta_w), .i_delta_valid(peak_dvalid_w),
+        .i_kem_qrs(peak_kemq_w), .i_kem_qrs_valid(peak_kvalid_w),
+        .o_peak_valid(tw_peak_valid), .o_peak_idx(tw_peak_idx),
+        .o_dalam_pita(tw_dalam_pita), .o_overrun(tw_overrun)
     );
 
     rr_series u_rr_series (
@@ -431,10 +668,15 @@ module afib_lite_top #(
 
     features u_features (
         .clk_i, .rst_ni,
-        .s_valid(p_ev_valid & (p_ev_kind == afib_lite_pkg::EV_QRS)),
-        .s_rr_ms(p_ev_val[W_RR_MS-1:0]),
+        // the interval stream of rr_series: EV_RR carries the interval in milliseconds
+        // (rr_series.sv:695) and the index of the beat that closed it (rr_series.sv:694), and
+        // m_rr_mark is latched in the same clock (rr_series.sv:688). Feeding peak_detect's QRS
+        // event here instead would hand this layer the beat amplitude as if it were an
+        // interval (peak_detect.sv:920), and no window would pass the range gate.
+        .s_valid(rr_ev_valid & (rr_ev_kind == afib_lite_pkg::EV_RR)),
+        .s_rr_ms(rr_ev_val[W_RR_MS-1:0]),
         .s_rr_mark(rr_mark),
-        .s_window_idx(p_ev_idx),
+        .s_window_idx(rr_ev_idx),
         .i_enable(cfg_enable), .i_clear_counters(cfg_clear),
         .i_arm_select(cfg_arm_select),
         .i_window_step(cfg_window_step), .i_window_beats(cfg_window_beats),
@@ -446,7 +688,7 @@ module afib_lite_top #(
         .clk_i, .rst_ni,
         .f_valid(f_dvalid), .f_ratio(f_ratio), .f_ent(f_ent), .f_win_idx(f_ev_idx),
         .i_enable(cfg_enable), .i_clear_counters(cfg_clear),
-        .i_ratio_thresh(cfg_ratio_thresh), .i_entropy_thresh(cfg_entropy_thresh),
+        .i_ratio_thresh(cfg_ratio_code), .i_entropy_thresh(cfg_entropy_code),
         .i_arm_select(cfg_arm_select),
         .m_dvalid(cl_dvalid), .m_class(cl_class), .m_conf(cl_conf), .m_win_idx(cl_win_idx),
         .d_class(cl_d_class), .d_conf(cl_d_conf),

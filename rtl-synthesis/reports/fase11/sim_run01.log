@@ -1,0 +1,179 @@
+run_sim.sh: tb=../rtl/tb/tb_regs_axi.sv sources=2 plusargs=1
+  plusargs forwarded to vvp: +VECTOR=../rtl/tb/vektor/fase11
+  compiled first (packages): ../rtl/afib_lite_pkg.sv
+INFO  vector directory from +VECTOR
+== tb_regs_axi, Fase 11, register map of plan 38 section 8.5 ==
+INFO  vector dir [../rtl/tb/vektor/fase11]
+INFO  map slots in the vector: 38, frozen: 36
+OK   vector map slot count 38
+OK   vector frozen slot count 36
+OK   vector marked windows 602
+OK   vector raw windows 588
+OK   map table matches the map vectors 0
+-- reset: every slot of the map, and the frozen outputs --
+reset slot comparisons: 38
+reset mismatches: 0
+OK   reset value mismatches 0
+OK   o_arm_select reset 15
+OK   o_arm_select reset low bits 15
+OK   o_ratio_thresh reset 33
+OK   o_entropy_thresh reset 63
+OK   o_rate_div reset 399999
+OK   o_window_step reset 4
+OK   o_window_beats reset 32
+OK   o_enable reset 0
+OK   o_clear_counters reset 0
+OK   VERSION_ID reset 65537
+OK   VERSION_ID is not zero
+OK   STATUS follows i_status 1
+OK   STATUS follows i_status again 2779054080
+-- round trip: every writable slot, six patterns --
+OK   write response always OKAY
+round trip comparisons: 180
+round trip mismatches: 0
+read only slot comparisons: 120
+read only slot mismatches: 0
+OK   round trip mismatches 0
+OK   read only slot mismatches 0
+OK   o_enable after CTRL b0 1
+OK   o_clear_counters after CTRL b2 1
+OK   o_ratio_thresh field 4660
+OK   o_entropy_thresh field 22136
+OK   o_arm_select field 10
+OK   o_rate_div field 1048575
+OK   o_window_step field 8
+OK   o_window_beats field 64
+OK   RATE_DIV read equals write 1048575
+-- partial strobe writes on every writable slot --
+MISMATCH mirror before partial slot 0 addr 0x00 got=0x00000000 mirror=0xffff0000
+MISMATCH byte lane slot 0 addr 0x00 strb=0001 got=0x00000044 want=0xffff0044
+MISMATCH byte lane slot 0 addr 0x00 strb=0010 got=0x00003344 want=0xffff3344
+MISMATCH byte lane slot 0 addr 0x00 strb=0100 got=0x00223344 want=0xff223344
+MISMATCH mirror before partial slot 15 addr 0x3c got=0x00001234 mirror=0xffff0000
+MISMATCH byte lane slot 15 addr 0x3c strb=0001 got=0x00001244 want=0xffff0044
+MISMATCH mirror before partial slot 16 addr 0x40 got=0x00005678 mirror=0xffff0000
+MISMATCH mirror before partial slot 17 addr 0x44 got=0x0000000a mirror=0xffff0000
+MISMATCH mirror before partial slot 21 addr 0x54 got=0x000fffff mirror=0xffff0000
+MISMATCH mirror before partial slot 36 addr 0x90 got=0x00000008 mirror=0xffff0000
+MISMATCH mirror before partial slot 37 addr 0x94 got=0x00000040 mirror=0xffff0000
+byte lane comparisons: 90
+byte lane mismatches: 28
+FAIL byte lane mismatches got=28 want=0
+OK   zero strobe write is answered
+OK   zero strobe write changes nothing 2779077210
+OK   zero strobe sample word is answered
+OK   zero strobe sample word is not counted 0
+-- write only slots and the ingest counters --
+FAIL SAMPLE_IN_STATUS counts one word got=2 want=1
+OK   SAMPLE_IN_STATUS level is zero, no FIFO here 0
+FAIL MARKER_LAST carries the mark got=0 want=1
+OK   clamp count from the mark 1
+FAIL clamp count from the word rule got=1 want=2
+OK   MARKER_LAST cleared with the word 0
+OK   gap count from the gap mark 1
+FAIL clamp count unchanged by a low word got=1 want=2
+FAIL three words received got=6 want=3
+OK   FIFO_OVF_COUNT stays zero 0
+OK   clear counters clears the word count 0
+OK   clear counters clears clamp 0
+OK   clear counters clears gap 0
+-- IRQ_STATUS and the write one to clear of IRQ_CLEAR --
+OK   IRQ_STATUS follows i_irq 31
+OK   IRQ_CLEAR clears the four low sources 16
+OK   IRQ_CLEAR reads zero 0
+OK   IRQ_STATUS follows i_irq down 0
+OK   a cleared source stays cleared while i_irq holds it 16
+-- unmapped addresses --
+unmapped comparisons: 56
+unmapped mismatches: 0
+OK   unmapped mismatches 0
+-- read and write in the same cycle --
+OK   simultaneous write answered
+OK   simultaneous read answered
+FAIL simultaneous read returns the pre write value got=305419896 want=2779077210
+OK   the write landed 305419896
+OK   simultaneous write, other address, answered
+OK   simultaneous read, other address, answered
+OK   VERSION_ID read during a write 65537
+OK   SCRATCH after the second pair 4277009102
+-- triage arm runs against the arm fixtures --
+OK   RATIO_THRESH reset read from the bus 33
+OK   ENTROPY_THRESH reset read from the bus 63
+FAIL threshold vector ratio code got=33 want=10813
+FAIL threshold vector entropy code got=63 want=10322
+OK   ARM_SELECT default read back 15
+OK   o_arm_select default 15
+OK   b3 set selects the marked source 1
+OK   b2 set keeps the T wave arm 1
+MISMATCH arm run berpenanda window 0 got=2 want=1
+MISMATCH arm run berpenanda window 1 got=2 want=1
+MISMATCH arm run berpenanda window 2 got=2 want=1
+arm run berpenanda arm=0x0f windows=602 fired=594 TP=95 FP=499 FN=0 TN=8
+OK   berpenanda windows 602
+FAIL berpenanda fired got=594 want=189
+OK   berpenanda TP 95
+FAIL berpenanda FP got=499 want=94
+OK   berpenanda FN 0
+FAIL berpenanda TN got=8 want=413
+OK   ARM_SELECT T rule off read back 11
+OK   o_arm_select T rule off 11
+OK   b2 cleared 0
+OK   b3 kept 1
+MISMATCH arm run t_off window 0 got=2 want=1
+MISMATCH arm run t_off window 1 got=2 want=1
+MISMATCH arm run t_off window 2 got=2 want=1
+arm run t_off      arm=0x0b windows=588 fired=580 TP=95 FP=485 FN=0 TN=8
+OK   t_off windows 588
+FAIL t_off fired got=580 want=183
+OK   t_off TP 95
+FAIL t_off FP got=485 want=88
+OK   t_off FN 0
+FAIL t_off TN got=8 want=405
+OK   ARM_SELECT raw source read back 7
+OK   b3 cleared 0
+MISMATCH arm run mentah window 0 got=2 want=1
+MISMATCH arm run mentah window 1 got=2 want=1
+MISMATCH arm run mentah window 2 got=2 want=1
+arm run mentah     arm=0x07 windows=588 fired=580 TP=95 FP=485 FN=0 TN=8
+FAIL mentah fired got=580 want=183
+OK   mentah windows 588
+OK   the T rule arm changes the arm
+OK   the T rule arm changes the fired count
+OK   both arms keep every AFIB window, marked 0
+OK   both arms keep every AFIB window, raw 0
+OK   marked arm AFIB windows 95
+OK   ARM_SELECT single arm read back 2
+FAIL arm run tunggal: bit 3 of ARM_SELECT is 0 for source 1
+MISMATCH arm run tunggal window 0 got=2 want=1
+MISMATCH arm run tunggal window 1 got=2 want=1
+MISMATCH arm run tunggal window 2 got=2 want=1
+arm run tunggal    arm=0x02 windows=602 fired=594
+FAIL single arm fired got=594 want=191
+OK   ENTROPY_THRESH field holds bit 15 32768
+FAIL arm run guard: bit 3 of ARM_SELECT is 0 for source 1
+arm run guard      arm=0x02 ent=0x00008000 windows=602 fired=0
+OK   guard run fired 0
+OK   guard run fired is zero 0
+OK   ARM_SELECT either arm read back 31
+OK   b4 decides the combination 1
+MISMATCH arm run either window 16 got=2 want=1
+MISMATCH arm run either window 73 got=2 want=1
+MISMATCH arm run either window 74 got=2 want=1
+arm run either     arm=0x1f windows=602 fired=602 TP=95 FP=507
+FAIL either arm fired got=602 want=299
+OK   either arm TP 95
+FAIL either arm FP got=507 want=204
+OK   the disjunction fires at least as often as the conjunction
+arm comparisons: 3584
+arm mismatches: 1905
+FAIL arm mismatches got=1905 want=0
+OK   ARM_SELECT restored 15
+OK   RATIO_THRESH restored 33
+OK   ENTROPY_THRESH restored 63
+checks: 113
+words compared: 4068
+mismatches = 1933 out of 4068
+failures: 22
+gate: FAIL, see the lines above
+FATAL: ../rtl/tb/tb_regs_axi.sv:1063: tb_regs_axi: 1933 mismatches, 22 failures
+       Time: 23236  Scope: tb_regs_axi

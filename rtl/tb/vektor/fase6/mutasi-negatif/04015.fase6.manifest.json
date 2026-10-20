@@ -1,0 +1,69 @@
+{
+ "phase": 6,
+ "generator": "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/tb/vektor/fase6/siapkan_vektor_fase6.py",
+ "counts_layout": [
+  "rr_intervals",
+  "rr_corrected_entries",
+  "census_keep",
+  "census_split",
+  "census_drop",
+  "census_gap",
+  "qrs_count",
+  "rr_steps",
+  "semai_total",
+  "penanda_total",
+  "last_step_queue_not_full",
+  "queue_len_step_25",
+  "long_over_ceiling",
+  "rr_max_ms",
+  "rr_min_ms",
+  "steps_queue_full"
+ ],
+ "counts": {
+  "rr_intervals": 2595,
+  "rr_corrected_entries": 2983,
+  "census_keep": 2186,
+  "census_split": 397,
+  "census_drop": 9,
+  "census_gap": 3,
+  "qrs_count": 2596,
+  "rr_steps": 2586,
+  "semai_total": 26,
+  "penanda_total": 1202,
+  "last_step_queue_not_full": 24,
+  "queue_len_step_25": 8,
+  "long_over_ceiling": 3,
+  "rr_max_ms": 51064,
+  "rr_min_ms": 200,
+  "steps_queue_full": 2562
+ },
+ "inputs_sha256": {
+  "04015.rr.csv": "4b4bb9e90340a436cba59b3b8fb3a7e80b208a4174fbb3b024f60dedd4992382",
+  "04015.peaks.csv": "500e6c0b8065544a220bc6c9a08fe64669137c7aa97d2e9a33c6bdf8d31e13a9",
+  "04015.manifest.fase5.json": "e2bc01b8a31f6e19140a6b95d977f7244123d4cdd214cbac394e98dbb39cd387",
+  "afib_lite_pkg.sv": "3ea2ab5ceb63361ddba773e255935817a8e4ab198bf0a8fe685bc25d315c397e"
+ },
+ "frozen_model_sha256": {
+  "rantai.py": "90df6e5b457307d37158a96b6dbedb4e72be03f35349769a858918f6314f1fe5"
+ },
+ "anchors": {
+  "manifest_counts_rr_intervals": 2595,
+  "manifest_counts_rr_corrected_entries": 2983,
+  "manifest_counts_rr_mark_census": [
+   2186,
+   397,
+   9,
+   3
+  ],
+  "manifest_counts_qrs": 2596,
+  "manifest_ambang_state_langkah": 2586,
+  "manifest_ambang_state_semai": 26,
+  "manifest_ambang_state_penanda": 1202,
+  "note": "the locked stage sidecar columns (ra1 ra2 antre menyala disemai riwayat gagal jeda) do not exist as CSV columns in the Fase 5 export; they are recomputed here by running the frozen model over the same raw interval series the CSV carries, and the three anchored counts above are what ties that recomputation to the frozen manifest"
+ },
+ "package_constants_used": {
+  "RR_BAND_MIN_MS": 250,
+  "RR_BAND_MAX_MS": 2000,
+  "RR_LONG_MS": 3000
+ }
+}

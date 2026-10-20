@@ -1,0 +1,19 @@
+run_sim.sh: tb=../rtl/tb/tb_puncak.sv sources=2 plusargs=2
+  plusargs forwarded to vvp: +VECTOR=../rtlplan2/fase0 +EXPECT=../rtl/tb/vektor/fase5
+  compiled first (packages): ../rtl/afib_lite_pkg.sv
+WARNING: ../rtl/tb/tb_puncak.sv:366: $readmemh(../rtl/tb/vektor/fase5/04015.ambang_state.hex): Not enough words in the file for the requested range [0:15].
+WARNING: ../rtl/tb/tb_puncak.sv:367: $readmemh(../rtl/tb/vektor/fase5/04015.qrs.hex): Not enough words in the file for the requested range [0:8191].
+WARNING: ../rtl/tb/tb_puncak.sv:368: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.pos.hex): Not enough words in the file for the requested range [0:16383].
+WARNING: ../rtl/tb/tb_puncak.sv:369: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.pv.hex): Not enough words in the file for the requested range [0:16383].
+WARNING: ../rtl/tb/tb_puncak.sv:370: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.pkf.hex): Not enough words in the file for the requested range [0:16383].
+WARNING: ../rtl/tb/tb_puncak.sv:371: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.kem.hex): Not enough words in the file for the requested range [0:16383].
+WARNING: ../rtl/tb/tb_puncak.sv:372: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.i1.hex): Not enough words in the file for the requested range [0:16383].
+WARNING: ../rtl/tb/tb_puncak.sv:373: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.i2.hex): Not enough words in the file for the requested range [0:16383].
+WARNING: ../rtl/tb/tb_puncak.sv:374: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.flag.hex): Not enough words in the file for the requested range [0:16383].
+WARNING: ../rtl/tb/tb_puncak.sv:375: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.evidx.hex): Not enough words in the file for the requested range [0:16383].
+WARNING: ../rtl/tb/tb_puncak.sv:376: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.kind.hex): Not enough words in the file for the requested range [0:16383].
+tb_puncak: vectors = ../rtlplan2/fase0
+tb_puncak: expected = ../rtl/tb/vektor/fase5
+tb_puncak: limit   = 450000 of 450000 frames
+tb_puncak: golden peaks = 4777, qrs = 2596, ambang_state words = 9
+run2_rc=0 end 23:43:03

@@ -1,0 +1,14 @@
+run_sim.sh: tb=../rtl/tb/tb_fitur.sv sources=2 plusargs=2
+  plusargs forwarded to vvp: +VECTOR=/home/avivsabilalm/.hermes/cache/scratch/fase8/nc4 +LIMIT=40
+  compiled first (packages): ../rtl/afib_lite_pkg.sv
+ERROR: ../rtl/tb/tb_fitur.sv:390: $readmemh: Unable to open /home/avivsabilalm/.hermes/cache/scratch/fase8/nc4/04015.fase8.rr.hex for reading.
+ERROR: ../rtl/tb/tb_fitur.sv:391: $readmemh: Unable to open /home/avivsabilalm/.hermes/cache/scratch/fase8/nc4/04015.fase8.sample.hex for reading.
+ERROR: ../rtl/tb/tb_fitur.sv:392: $readmemh: Unable to open /home/avivsabilalm/.hermes/cache/scratch/fase8/nc4/04015.fase8.gold.d.hex for reading.
+ERROR: ../rtl/tb/tb_fitur.sv:393: $readmemh: Unable to open /home/avivsabilalm/.hermes/cache/scratch/fase8/nc4/04015.fase8.gold.bins.hex for reading.
+ERROR: ../rtl/tb/tb_fitur.sv:394: $readmemh: Unable to open /home/avivsabilalm/.hermes/cache/scratch/fase8/nc4/04015.fase8.gold.code.hex for reading.
+ERROR: ../rtl/tb/tb_fitur.sv:395: $readmemh: Unable to open /home/avivsabilalm/.hermes/cache/scratch/fase8/nc4/04015.fase8.gold.raw.hex for reading.
+ERROR: ../rtl/tb/tb_fitur.sv:396: $readmemh: Unable to open /home/avivsabilalm/.hermes/cache/scratch/fase8/nc4/04015.fase8.map.marked.hex for reading.
+ERROR: ../rtl/tb/tb_fitur.sv:397: $readmemh: Unable to open /home/avivsabilalm/.hermes/cache/scratch/fase8/nc4/04015.fase8.map.raw.hex for reading.
+tb_fitur: FAIL 8 vector tables are X at their ends in /home/avivsabilalm/.hermes/cache/scratch/fase8/nc4
+FATAL: ../rtl/tb/tb_fitur.sv:414: tb_fitur: golden vectors missing or short, the gate cannot be measured
+       Time: 0  Scope: tb_fitur

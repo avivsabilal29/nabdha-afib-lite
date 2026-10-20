@@ -1,0 +1,4 @@
+run_lint.sh: top=rr_series sources=2 timing=0
+  ../rtl/afib_lite_pkg.sv
+  ../rtl/rr_series.sv
+lint clean: top=rr_series sources=2 (/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl-synthesis/debroot/usr/bin/verilator_bin)

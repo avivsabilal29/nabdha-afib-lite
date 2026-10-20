@@ -1,0 +1,9 @@
+run_lint.sh: top=tb_gelombang_t sources=3 timing=1
+  ../rtl/afib_lite_pkg.sv
+  ../rtl/tb/tb_gelombang_t.sv
+  ../rtl/t_rule.sv
+%Error: ../rtl/tb/tb_gelombang_t.sv:58:1: Unknown verilator comment: '/*verilator raises TIMESCALEMOD on a file level timescale here.*/'
+   58 | /*verilator raises TIMESCALEMOD on a file level timescale here.*/ 
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+%Error: Exiting due to 1 error(s)
+exit=1
