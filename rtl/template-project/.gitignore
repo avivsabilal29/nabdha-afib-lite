@@ -1,0 +1,3 @@
+# Products of flow.sh. Regenerate with ./flow.sh all, never commit them.
+build/
+reports/

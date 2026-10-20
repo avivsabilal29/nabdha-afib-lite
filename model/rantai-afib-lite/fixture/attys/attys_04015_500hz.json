@@ -1,0 +1,15 @@
+{
+  "bottom_bits": "8 bits of uniform noise, not ECG",
+  "channels": 2,
+  "format": "attys 24 bit two channel frames, channel 0 first, little endian",
+  "frame_bytes": 6,
+  "frames": 900000,
+  "front_end_counts": 4096,
+  "rate_hz": 500,
+  "rate_variant": "synthetic conversion from 250 Hz, see rate_variant()",
+  "real": "the recording and its locked 16 bit words",
+  "seed": 20261019,
+  "sha256": "c95cf96c31b82d14c503dcae977315fcda5ecdc3304a2fef43f461079beb7654",
+  "source_record": "/home/avivsabilalm/.hermes/cache/scratch/afib/afdb_local/04015",
+  "synthetic": "frames, ladder, noise, block boundaries, rate variants, gap table"
+}

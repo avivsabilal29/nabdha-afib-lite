@@ -1,0 +1,4 @@
+VCD info: dumpfile reports/sim/tb_kv260_smoke.vcd opened for output.
+counter bergerak: 1 -> 11
+PASS: tb_kv260_smoke
+/home/avivsabilalm/.hermes/cache/scratch/kv260-runbook/tb_kv260_smoke.sv:66: $finish called at 186000 (1ps)

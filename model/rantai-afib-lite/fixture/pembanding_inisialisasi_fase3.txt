@@ -1,0 +1,69 @@
+# Comparison variant, threshold started from the maximum of the first 500 samples
+# following the phase 3 notebook. This variant is NOT the frozen fixture.
+# Report produced by model/rantai-afib-lite/s0_bekukan_acuan.py
+
+## Why the variant is a different pipeline, not only a different initialization
+
+The phase 5 notebook function jalankan() builds SPKI, NPKI, SPKF and NPKF inside its
+own body and starts them from zero. It has no argument that accepts an initial value,
+so a two second initialization cannot be injected into it without editing its
+arithmetic, which is forbidden. The variant therefore runs the phase 3 notebook
+pipeline as that notebook runs it, and it differs from pipeline A in three ways at
+once. The measured differences below are the difference of the whole phase 3 pipeline,
+not of the initialization alone. The initialization alone is measured separately at
+the end of this file, on the phase 5 peak series, through the phase 3 function
+jalankan_ambang() that owns that initialization.
+
+| aspect | pipeline A (frozen fixture) | variant B (phase 3 pipeline) |
+|---|---|---|
+| filter chain | rantai_tapis() phase 5, recursive low-pass equation (3) | rantai_tapis__fase3() phase 3, closed form FIR moving average |
+| envelope window | selubung_bergantian(), alternating 37 and 38 samples | jendela_jumlah(sq, 38), fixed 38 samples |
+| peak picker | puncak_radius(sel, 27) | deteksi_puncak(), scipy find_peaks, distance 50 samples |
+| threshold start | zero, warms up | maximum of the first 500 samples of the envelope |
+| halving | mode_half default "tidak" | mode_potong "kriteria" through BATAS_RR_TIDAK_TERATUR |
+| T wave rule | on, ATURAN_T_BAWAAN True | absent, the phase 3 notebook has no T wave rule |
+
+## Measured on AFDB 04015, first 450000 frames
+
+| quantity | pipeline A | variant B |
+|---|---|---|
+| candidate peaks | 4777 | 4805 |
+| beats with the T wave rule on | 2596 | 2620 (no T wave rule in phase 3) |
+| beats with the T wave rule off | 2603 | 2599 (no halving, mode_potong tetap) |
+| RR intervals | 2595 | 2618 |
+| decision windows (32 beats, step 4) | 588 | not measurable, see note |
+| window features | 588 rows x 4 columns | not measurable, see note |
+| derived ratio threshold | 0.000 | not measurable, see note |
+| derived entropy threshold | 0.69 | not measurable, see note |
+| accuracy at derived thresholds | 0.9014 | not measurable, see note |
+
+Note on the missing variant B window metrics: the phase 3 function tata_cara_ambang()
+returns counters only, n_qrs, n_jendela, n_searchback, and the threshold traces, but it
+does not return the beat positions. The 32 beat decision windows are built from beat
+positions, so they cannot be produced from the phase 3 pipeline without rewriting the
+loop, which is out of scope here. They are reported as not measurable rather than
+guessed.
+
+The RR window count of variant B, 2618, is the count of RR intervals that the phase 3
+function evaluated with the P3-3 irregular rhythm criterion, and it is a different
+quantity from the 32 beat decision window count of pipeline A, 588.
+
+## Initialization alone, measured on the phase 5 peak series
+
+The phase 3 function jalankan_ambang() is run on the phase 5 peak values
+(the envelope sampled at the 4777 peaks of pipeline A), twice: once with
+cara_init "maksimum dua detik" over the first 6 peaks, the number of phase 5 peaks
+inside the first 500 samples, and once with cara_init "nol".
+
+| initialization | peaks above the first threshold | of | first threshold value |
+|---|---|---|---|
+| maximum of the first 6 peaks | 1862 | 4777 | 199883730.0 |
+| zero | 1864 | 4777 | 6246366.5 |
+
+Difference: -2 peaks, that is -2.
+
+## Phase 3 pipeline counters, from the notebook itself for comparison
+
+The phase 3 notebook reports on the same recording: 4805 candidate peaks, 2618 RR
+windows tested, 2620 beats with the criterion, 2599 beats without halving, 1801
+halving activations, and search back activations 1 with the criterion.
