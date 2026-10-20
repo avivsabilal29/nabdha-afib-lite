@@ -1,0 +1,1 @@
+../rtl/afib_lite_top.sv:314:5-10: Use 'always_comb' instead of 'always @*'. [Style: combinational-logic] [always-comb]

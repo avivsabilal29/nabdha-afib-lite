@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+<testsuite timestamp="2026-10-20T22:19:18" hostname="parkee" package="derivative_latency" id="0" name="latency" tests="3" errors="0" failures="2" time="0" skipped="2">
+<properties>
+<property name="os" value="Linux"/>
+<property name="expect" value="PASS"/>
+<property name="status" value="FAIL"/>
+</properties>
+<testcase classname="latency" name="build execution" time="0">
+<failure type="FAIL" message="Task returned status FAIL." />
+</testcase>
+<testcase classname="latency" name="Property ASSERT in derivative_latency at derivative_latency.sv:83.53-83.70" time="0" type="ASSERT" location="derivative_latency.sv:83.53-83.70" id="_witness_.check_derivative_latency_sv_83_assert_50">
+<skipped />
+</testcase>
+<testcase classname="latency" name="Property ASSERT in derivative_latency at derivative_latency.sv:86.60-86.77" time="0" type="ASSERT" location="derivative_latency.sv:86.60-86.77" id="_witness_.check_derivative_latency_sv_86_assert_54" tracefile="engine_0/trace.vcd">
+<failure type="ASSERT" message="Property ASSERT in derivative_latency at derivative_latency.sv:86.60-86.77 failed. Trace file: engine_0/trace.vcd" />
+</testcase>
+<testcase classname="latency" name="Property COVER in derivative_latency at derivative_latency.sv:89.39-89.55" time="0" type="COVER" location="derivative_latency.sv:89.39-89.55" id="_witness_.check_derivative_latency_sv_89_cover_56">
+<skipped />
+</testcase>
+<system-out>SBY 22:19:17 [derivative_latency_latency] Removing directory '/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl-synthesis/sby/derivative_latency_latency'.
+SBY 22:19:17 [derivative_latency_latency] Copy '/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl-synthesis/sby/derivative_latency.sv' to '/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl-synthesis/sby/derivative_latency_latency/src/derivative_latency.sv'.
+SBY 22:19:17 [derivative_latency_latency] engine_0: smtbmc
+SBY 22:19:17 [derivative_latency_latency] base: starting process &quot;cd derivative_latency_latency/src; yosys -ql ../model/design.log ../model/design.ys&quot;
+SBY 22:19:17 [derivative_latency_latency] base: Warning: Replacing memory \x_hist_q with list of registers. See /home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:187
+SBY 22:19:18 [derivative_latency_latency] base: finished (returncode=0)
+SBY 22:19:18 [derivative_latency_latency] prep: starting process &quot;cd derivative_latency_latency/model; yosys -ql design_prep.log design_prep.ys&quot;
+SBY 22:19:18 [derivative_latency_latency] prep: finished (returncode=0)
+SBY 22:19:18 [derivative_latency_latency] smt2: starting process &quot;cd derivative_latency_latency/model; yosys -ql design_smt2.log design_smt2.ys&quot;
+SBY 22:19:18 [derivative_latency_latency] smt2: finished (returncode=0)
+SBY 22:19:18 [derivative_latency_latency] engine_0: starting process &quot;cd derivative_latency_latency; yosys-smtbmc --presat --unroll --noprogress -t 30  --append 0 --dump-vcd engine_0/trace.vcd --dump-yw engine_0/trace.yw --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2&quot;
+SBY 22:19:18 [derivative_latency_latency] engine_0: ##   0:00:00  Solver: yices
+SBY 22:19:18 [derivative_latency_latency] engine_0: ##   0:00:00  Checking assumptions in step 0..
+SBY 22:19:18 [derivative_latency_latency] engine_0: ##   0:00:00  Checking assertions in step 0..
+SBY 22:19:18 [derivative_latency_latency] engine_0: ##   0:00:00  Checking assumptions in step 1..
+SBY 22:19:18 [derivative_latency_latency] engine_0: ##   0:00:00  Checking assertions in step 1..
+SBY 22:19:18 [derivative_latency_latency] engine_0: ##   0:00:00  Checking assumptions in step 2..
+SBY 22:19:18 [derivative_latency_latency] engine_0: ##   0:00:00  Checking assertions in step 2..
+SBY 22:19:18 [derivative_latency_latency] engine_0: ##   0:00:00  Checking assumptions in step 3..
+SBY 22:19:18 [derivative_latency_latency] engine_0: ##   0:00:00  Checking assertions in step 3..
+SBY 22:19:18 [derivative_latency_latency] engine_0: ##   0:00:00  Checking assumptions in step 4..
+SBY 22:19:18 [derivative_latency_latency] engine_0: ##   0:00:00  Checking assertions in step 4..
+SBY 22:19:18 [derivative_latency_latency] engine_0: ##   0:00:00  Checking assumptions in step 5..
+SBY 22:19:18 [derivative_latency_latency] engine_0: ##   0:00:00  Checking assertions in step 5..
+SBY 22:19:18 [derivative_latency_latency] engine_0: ##   0:00:00  Checking assumptions in step 6..
+SBY 22:19:18 [derivative_latency_latency] engine_0: ##   0:00:00  Checking assertions in step 6..
+SBY 22:19:18 [derivative_latency_latency] engine_0: ##   0:00:00  Checking assumptions in step 7..
+SBY 22:19:18 [derivative_latency_latency] engine_0: ##   0:00:00  Checking assertions in step 7..
+SBY 22:19:18 [derivative_latency_latency] engine_0: ##   0:00:00  Checking assumptions in step 8..
+SBY 22:19:18 [derivative_latency_latency] engine_0: ##   0:00:00  Checking assertions in step 8..
+SBY 22:19:18 [derivative_latency_latency] engine_0: ##   0:00:00  Checking assumptions in step 9..
+SBY 22:19:18 [derivative_latency_latency] engine_0: ##   0:00:00  Checking assertions in step 9..
+SBY 22:19:18 [derivative_latency_latency] engine_0: ##   0:00:00  Checking assumptions in step 10..
+SBY 22:19:18 [derivative_latency_latency] engine_0: ##   0:00:00  Checking assertions in step 10..
+SBY 22:19:18 [derivative_latency_latency] engine_0: ##   0:00:00  Checking assumptions in step 11..
+SBY 22:19:18 [derivative_latency_latency] engine_0: ##   0:00:00  Checking assertions in step 11..
+SBY 22:19:18 [derivative_latency_latency] engine_0: ##   0:00:00  Checking assumptions in step 12..
+SBY 22:19:18 [derivative_latency_latency] engine_0: ##   0:00:00  Checking assertions in step 12..
+SBY 22:19:18 [derivative_latency_latency] engine_0: ##   0:00:00  Checking assumptions in step 13..
+SBY 22:19:18 [derivative_latency_latency] engine_0: ##   0:00:00  Checking assertions in step 13..
+SBY 22:19:18 [derivative_latency_latency] engine_0: ##   0:00:00  Checking assumptions in step 14..
+SBY 22:19:18 [derivative_latency_latency] engine_0: ##   0:00:00  Checking assertions in step 14..
+SBY 22:19:18 [derivative_latency_latency] engine_0: ##   0:00:00  Checking assumptions in step 15..
+SBY 22:19:18 [derivative_latency_latency] engine_0: ##   0:00:00  Checking assertions in step 15..
+SBY 22:19:18 [derivative_latency_latency] engine_0: ##   0:00:00  Checking assumptions in step 16..
+SBY 22:19:18 [derivative_latency_latency] engine_0: ##   0:00:00  Checking assertions in step 16..
+SBY 22:19:18 [derivative_latency_latency] engine_0: ##   0:00:00  Checking assumptions in step 17..
+SBY 22:19:18 [derivative_latency_latency] engine_0: ##   0:00:00  Checking assertions in step 17..
+SBY 22:19:18 [derivative_latency_latency] engine_0: ##   0:00:00  Checking assumptions in step 18..
+SBY 22:19:18 [derivative_latency_latency] engine_0: ##   0:00:00  Checking assertions in step 18..
+SBY 22:19:18 [derivative_latency_latency] engine_0: ##   0:00:00  BMC failed!
+SBY 22:19:18 [derivative_latency_latency] engine_0: ##   0:00:00  Assert failed in derivative_latency: derivative_latency.sv:86.60-86.77 (_witness_.check_derivative_latency_sv_86_assert_54)
+SBY 22:19:18 [derivative_latency_latency] engine_0: ##   0:00:00  Writing trace to VCD file: engine_0/trace.vcd
+SBY 22:19:18 [derivative_latency_latency] engine_0: ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace_tb.v
+SBY 22:19:18 [derivative_latency_latency] engine_0: ##   0:00:00  Writing trace to constraints file: engine_0/trace.smtc
+SBY 22:19:18 [derivative_latency_latency] engine_0: ##   0:00:00  Writing trace to Yosys witness file: engine_0/trace.yw
+SBY 22:19:18 [derivative_latency_latency] engine_0: ##   0:00:00  Status: failed
+SBY 22:19:18 [derivative_latency_latency] engine_0: finished (returncode=1)
+SBY 22:19:18 [derivative_latency_latency] engine_0: Status returned by engine: FAIL
+SBY 22:19:18 [derivative_latency_latency] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 22:19:18 [derivative_latency_latency] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 22:19:18 [derivative_latency_latency] summary: engine_0 (smtbmc) returned FAIL
+SBY 22:19:18 [derivative_latency_latency] summary: counterexample trace: derivative_latency_latency/engine_0/trace.vcd
+SBY 22:19:18 [derivative_latency_latency] summary:   failed assertion derivative_latency._witness_.check_derivative_latency_sv_86_assert_54 at derivative_latency.sv:86.60-86.77 step 18
+SBY 22:19:18 [derivative_latency_latency] DONE (FAIL, rc=2)
+</system-out>
+<system-err>
+</system-err>
+</testsuite>
+</testsuites>

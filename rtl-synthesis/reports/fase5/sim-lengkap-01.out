@@ -1,0 +1,22 @@
+run_sim.sh: tb=../rtl/tb/tb_puncak.sv sources=2 plusargs=2
+  plusargs forwarded to vvp: +VECTOR=../rtlplan2/fase0 +EXPECT=../rtl/tb/vektor/fase5
+  compiled first (packages): ../rtl/afib_lite_pkg.sv
+../rtl/peak_detect.sv:602: warning: returning 'bx for out of bounds array access deret_q[-1].
+../rtl/peak_detect.sv:603: warning: returning 'bx for out of bounds array access antre_q[-1].
+../rtl/peak_detect.sv:609: warning: returning 'bx for out of bounds array access rih_q[-1].
+WARNING: ../rtl/tb/tb_puncak.sv:352: $readmemh(../rtl/tb/vektor/fase5/04015.ambang_state.hex): Not enough words in the file for the requested range [0:15].
+WARNING: ../rtl/tb/tb_puncak.sv:353: $readmemh(../rtl/tb/vektor/fase5/04015.qrs.hex): Not enough words in the file for the requested range [0:8191].
+WARNING: ../rtl/tb/tb_puncak.sv:354: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.pos.hex): Not enough words in the file for the requested range [0:16383].
+WARNING: ../rtl/tb/tb_puncak.sv:355: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.pv.hex): Not enough words in the file for the requested range [0:16383].
+WARNING: ../rtl/tb/tb_puncak.sv:356: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.pkf.hex): Not enough words in the file for the requested range [0:16383].
+WARNING: ../rtl/tb/tb_puncak.sv:357: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.kem.hex): Not enough words in the file for the requested range [0:16383].
+WARNING: ../rtl/tb/tb_puncak.sv:358: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.i1.hex): Not enough words in the file for the requested range [0:16383].
+WARNING: ../rtl/tb/tb_puncak.sv:359: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.i2.hex): Not enough words in the file for the requested range [0:16383].
+WARNING: ../rtl/tb/tb_puncak.sv:360: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.flag.hex): Not enough words in the file for the requested range [0:16383].
+WARNING: ../rtl/tb/tb_puncak.sv:361: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.evidx.hex): Not enough words in the file for the requested range [0:16383].
+WARNING: ../rtl/tb/tb_puncak.sv:362: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.kind.hex): Not enough words in the file for the requested range [0:16383].
+tb_puncak: vectors = ../rtlplan2/fase0
+tb_puncak: expected = ../rtl/tb/vektor/fase5
+tb_puncak: limit   = 450000 of 450000 frames
+tb_puncak: golden peaks = 4777, qrs = 2596, ambang_state words = 9
+FULLRUN1_EXIT=143

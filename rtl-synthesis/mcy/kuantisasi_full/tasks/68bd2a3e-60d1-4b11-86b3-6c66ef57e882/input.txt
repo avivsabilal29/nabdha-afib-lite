@@ -1,0 +1,1 @@
+1 mutate -mode cnot1 -module acq_frontend -cell $procmux$263 -port B -portbit 12 -ctrlbit 18 -wire side_q[0] -wirebit 12 -src ../../../rtl/acq_frontend.sv:167.22-167.28 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20

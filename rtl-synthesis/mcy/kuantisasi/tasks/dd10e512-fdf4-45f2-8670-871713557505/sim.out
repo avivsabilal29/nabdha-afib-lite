@@ -1,0 +1,29 @@
+INFO  short run, +LIMIT=20000, record wide gates are skipped
+INFO  mutation mode, the timing and gap sections are skipped
+== tb_kuantisasi, Fase 2, record 04015 ==
+INFO  manifest [/home/avivsabilalm/.hermes/cache/scratch/rtlplan2/fase0/04015.manifest.json]
+INFO  vector   [/home/avivsabilalm/.hermes/cache/scratch/rtlplan2/fase0/04015.masukan16.hex]
+INFO  stimulus [/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/tb/vektor/04015.stimulus.hex]
+INFO  golden column lines: 450000
+INFO  manifest frames=450000 words_per_column=450000
+INFO  manifest clamp=402 gap=0
+INFO  manifest weak=8817 uncertain=0
+counts swept: 4095
+distinct words over the sweep: 2001
+counts up to 1000: 2001
+injective up to 1000: 1
+counts at the rail word: 2096
+counts exactly on the rail: 2
+tie c=-1500 even=-3070 away=-3071 word=-32752
+tie c=-500 even=-1024 away=-1024 word=-16384
+tie c=500 even=1024 away=1024 word=16384
+tie c=1500 even=3070 away=3071 word=32752
+tie counts found: 4
+pipeline latency measured: 15
+OK   pipeline latency 15
+counts driven: 4095
+count mismatches: 0
+pre node mismatches: 0
+OK   counts emitted 4095
+OK   pre node mismatches 0
+INFO  stimulus lines: 450000

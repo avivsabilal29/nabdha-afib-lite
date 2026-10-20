@@ -1,0 +1,2 @@
+read_rtlil database/design.il
+mutate -list 1000 -seed 757506495 -none -o database/mutations.txt -s database/sources.txt

@@ -1,0 +1,1 @@
+1 mutate -mode const0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:240$or$29 -port Y -portbit 0 -wire gap_bit -wirebit 1 -src ../../../rtl/acq_frontend.sv:240.58-240.79

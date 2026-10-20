@@ -225,6 +225,17 @@ selection in registers instead of constants. Full table with fields is in the va
 | 0x64 | `ID_EXPECT` | 32 | RO | 0x41464942 | constant "AFIB" for address-decode testing |
 | 0x68 | `GAP_THRESH` | 16 | RW | 1000 | samples of silence that count as a gap |
 
+> Fase 1 note, added 20 October 2026 by the Fase 1 phase, because this section contradicts the
+> plan of record. The map above is the repo's earlier map. Vault doc 38 section 3.4 and vault
+> doc 36 section 3.4 carry a 36 slot map, and the D8 owner decision of 20 October 2026 froze
+> that map after resolving nine offset collisions. In the frozen map `RATE_DIV` is 0x54 and
+> `THRESH_SCALE` is 0x58, which are the two addresses the two window parameter rows above
+> occupy. The frozen map also has no slot at all for `WINDOW_STEP` or `WINDOW_BEATS`, so their
+> home is still an owner decision and this file is deliberately left unchanged: the collision is
+> reported in `rtl-synthesis/reports/LAPORAN-FASE1.md` section 6. `rtl/regs_axi.sv` follows the
+> doc 38 / D8 map and keeps the two window values at 0x90 and 0x94, flagged there as
+> provisional on top of the frozen map.
+
 ## 5. File layout
 
 ```
@@ -245,6 +256,13 @@ rtl/
   afib_lite_top.sv     top level, wires the blocks and the sample path.
   tb/                  one testbench per block plus the integration testbench.
 ```
+
+> Fase 1 note, added 20 October 2026 by the Fase 1 phase, because this section contradicts the
+> plan of record. The tree above has eleven modules and folds the T-wave rule into
+> `peak_detect.sv`, while plan doc 38 section 3.4 gives the rule its own file `t_rule.sv`. The
+> Fase 1 skeletons follow the plan, so `rtl/` now holds `t_rule.sv` as the twelfth module, listed
+> as an addition to this tree. See `rtl-synthesis/reports/LAPORAN-FASE1.md` section 6. This file
+> is otherwise left unchanged.
 
 Synthesis and simulation live in `rtl-synthesis/`. Board files live in `fpga/`. Do not add a second
 copy of a runner script inside `rtl/`.

@@ -66,3 +66,10 @@ model/math-equation-afib/gate-cache/
 # Kalau memang perlu ikut, tambahkan dengan git add -f.
 dataset/*.dat
 dataset/**/*.dat
+
+# Vektor emas, tabel rujukan fase, dan dokumen rencana di rtlplan/ + rtlplan2/ (sekitar 121 MB).
+# Sumber kebenaran tiap fase: fase 5 dan seterusnya membandingkan RTL terhadap vektor di sini,
+# jadi berkasnya wajib ada di mesin, tetapi terlalu besar untuk git. Laporan fase yang perlu
+# ter-versi tetap ditulis di rtl-synthesis/reports/LAPORAN-FASE<n>.md, bukan di sini.
+rtlplan/
+rtlplan2/

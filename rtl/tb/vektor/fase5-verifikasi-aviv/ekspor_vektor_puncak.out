@@ -1,0 +1,15 @@
+peaks 4777  qrs 2596
+census_4way {'qrs': 2590, 'rejected_t': 1909, 'noise': 272, 'qrs_search_back': 6}
+pos 91 .. 449899 monotone True
+pv 38623 .. 3105281786
+pkf 50912 .. 18865152
+i1 0 .. 206147681
+ambang_state [29, 6, 112, 6, 106, 0, 26, 1202, 2586] (from brief (not found in manifest))
+peaks.csv sha256 500e6c0b8065544a220bc6c9a08fe64669137c7aa97d2e9a33c6bdf8d31e13a9
+  04015.ambang_akhir.hex           sha256 e8032e25cb41eea26e47edcfc5e1003e
+  04015.puncak.eventkind.hex       sha256 5fe07ded030378aadac89d65289e1c44
+  04015.puncak.i1.hex              sha256 e4518eb1051bb12d140dd454110af490
+  04015.puncak.isqrs.hex           sha256 9c4065a953361bc93b96834603fc5065
+  04015.puncak.pkf.hex             sha256 5239077e42b06828893e698d21e834f7
+  04015.puncak.pos.hex             sha256 ef950fbf9a453e841b8ea306f7c60a23
+  04015.puncak.pv.hex              sha256 3dc8e376f8fb90d0bea672eeedb60915

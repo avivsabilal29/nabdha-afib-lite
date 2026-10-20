@@ -1,0 +1,42 @@
+{
+  "ambang_state": [
+    29,
+    6,
+    112,
+    6,
+    106,
+    0,
+    26,
+    1202,
+    2586
+  ],
+  "ambang_state_source": "brief (not found in manifest)",
+  "census_4way": {
+    "noise": 272,
+    "qrs": 2590,
+    "qrs_search_back": 6,
+    "rejected_t": 1909
+  },
+  "i1_max": 206147681,
+  "i1_min": 0,
+  "out": {
+    "04015.ambang_akhir.hex": "e8032e25cb41eea26e47edcfc5e1003ea72ef4c11aa1ac736fe656576784b0d8",
+    "04015.puncak.eventkind.hex": "5fe07ded030378aadac89d65289e1c44bf36d118e8a68f15a1d0c7f9ab279ed2",
+    "04015.puncak.i1.hex": "e4518eb1051bb12d140dd454110af49047ea78d575672211489899d6b9e044ca",
+    "04015.puncak.isqrs.hex": "9c4065a953361bc93b96834603fc506507b3d0fca5630cdc0ccc2ebf979ef9d0",
+    "04015.puncak.pkf.hex": "5239077e42b06828893e698d21e834f7ed6ec9893827b5137b539e3f667fe27e",
+    "04015.puncak.pos.hex": "ef950fbf9a453e841b8ea306f7c60a2358e00faf19a26054c096349dd95a33b4",
+    "04015.puncak.pv.hex": "3dc8e376f8fb90d0bea672eeedb60915749df00c4637c68f6ff3bdacaab09b03"
+  },
+  "peaks": 4777,
+  "pkf_max": 18865152,
+  "pkf_min": 50912,
+  "pos_first": 91,
+  "pos_last": 449899,
+  "pos_monotone": true,
+  "pv_max": 3105281786,
+  "pv_min": 38623,
+  "qrs": 2596,
+  "src": "/home/avivsabilalm/.hermes/cache/scratch/rtlplan2/fase5/04015.peaks.csv",
+  "src_sha256": "500e6c0b8065544a220bc6c9a08fe64669137c7aa97d2e9a33c6bdf8d31e13a9"
+}

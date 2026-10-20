@@ -1,0 +1,108 @@
+run_lint.sh: top=peak_detect sources=2 timing=0
+  ../rtl/afib_lite_pkg.sv
+  ../rtl/peak_detect.sv
+%Warning-WIDTHEXPAND: ../rtl/peak_detect.sv:204:38: Operator VAR 'PITA_DX' expects 34 bits on the Initial value, but Initial value's VARREF 'BATAS_PITA_SAMPEL' generates 32 bits.
+                                                  : ... note: In instance 'peak_detect'
+  204 |     localparam logic [W_IDX+1:0]     PITA_DX      = BATAS_PITA_SAMPEL;
+      |                                      ^~~~~~~
+                      ... For warning description see https://verilator.org/warn/WIDTHEXPAND?v=5.020
+                      ... Use "/* verilator lint_off WIDTHEXPAND */" and lint_on around source to disable this message.
+%Warning-WIDTHEXPAND: ../rtl/peak_detect.sv:205:38: Operator VAR 'RR_MIN_DX' expects 34 bits on the Initial value, but Initial value's VARREF 'RR_BAND_MIN_MS' generates 32 bits.
+                                                  : ... note: In instance 'peak_detect'
+  205 |     localparam logic [W_IDX+1:0]     RR_MIN_DX    = RR_BAND_MIN_MS;
+      |                                      ^~~~~~~~~
+%Warning-WIDTHEXPAND: ../rtl/peak_detect.sv:206:38: Operator VAR 'RR_MAX_DX' expects 34 bits on the Initial value, but Initial value's VARREF 'RR_BAND_MAX_MS' generates 32 bits.
+                                                  : ... note: In instance 'peak_detect'
+  206 |     localparam logic [W_IDX+1:0]     RR_MAX_DX    = RR_BAND_MAX_MS;
+      |                                      ^~~~~~~~~
+%Warning-WIDTHTRUNC: ../rtl/peak_detect.sv:207:38: Operator VAR 'RR_LEN_D' expects 4 bits on the Initial value, but Initial value's VARREF 'RR_LEN' generates 32 bits.
+                                                 : ... note: In instance 'peak_detect'
+  207 |     localparam logic [3:0]           RR_LEN_D     = RR_LEN;
+      |                                      ^~~~~~~~
+%Warning-WIDTHTRUNC: ../rtl/peak_detect.sv:216:38: Operator VAR 'W_BPK_D' expects 14 bits on the Initial value, but Initial value's VARREF 'W_BPK' generates 32 bits.
+                                                 : ... note: In instance 'peak_detect'
+  216 |     localparam logic [13:0]          W_BPK_D      = W_BPK;
+      |                                      ^~~~~~~
+%Warning-WIDTHTRUNC: ../rtl/peak_detect.sv:217:38: Operator VAR 'BUF_MASK_D' expects 7 bits on the Initial value, but Initial value's SUB generates 32 bits.
+                                                 : ... note: In instance 'peak_detect'
+  217 |     localparam logic [6:0]           BUF_MASK_D   = BUF_DEPTH - 1;
+      |                                      ^~~~~~~~~~
+%Warning-WIDTHEXPAND: ../rtl/peak_detect.sv:383:34: Operator ASSIGNW expects 35 bits on the Assign RHS, but Assign RHS's SIGNED generates 34 bits.
+                                                  : ... note: In instance 'peak_detect'
+  383 |     wire signed [W_CMP-1:0] pv_c = $signed({1'b0, pv_w});
+      |                                  ^
+%Warning-WIDTHEXPAND: ../rtl/peak_detect.sv:384:35: Operator ASSIGNW expects 35 bits on the Assign RHS, but Assign RHS's SIGNED generates 27 bits.
+                                                  : ... note: In instance 'peak_detect'
+  384 |     wire signed [W_CMP-1:0] pkf_c = $signed({1'b0, pk_f_w});
+      |                                   ^
+%Warning-WIDTHEXPAND: ../rtl/peak_detect.sv:488:30: Operator ASSIGN expects 30 bits on the Assign RHS, but Assign RHS's VARREF 'pk_f_w' generates 26 bits.
+                                                  : ... note: In instance 'peak_detect'
+  488 |                     cand_f_w = pk_f_w;
+      |                              ^
+%Warning-WIDTHEXPAND: ../rtl/peak_detect.sv:492:30: Operator ASSIGN expects 35 bits on the Assign RHS, but Assign RHS's SIGNED generates 34 bits.
+                                                  : ... note: In instance 'peak_detect'
+  492 |                     cand_v_w = $signed({1'b0, sb_ent_w[BPK_PV_L +: W_WIN]});
+      |                              ^
+%Warning-WIDTHTRUNC: ../rtl/peak_detect.sv:630:33: Bit extraction of array[31:0] requires 5 bit index, not 6 bits.
+                                                 : ... note: In instance 'peak_detect'
+  630 |     wire [RR_W-1:0] med_w = (srt[med_lo_w] + srt[med_hi_w]) >> 1;
+      |                                 ^
+%Warning-WIDTHTRUNC: ../rtl/peak_detect.sv:630:49: Bit extraction of array[31:0] requires 5 bit index, not 6 bits.
+                                                 : ... note: In instance 'peak_detect'
+  630 |     wire [RR_W-1:0] med_w = (srt[med_lo_w] + srt[med_hi_w]) >> 1;
+      |                                                 ^
+%Warning-WIDTHTRUNC: ../rtl/peak_detect.sv:639:39: Operator ASSIGNW expects 20 bits on the Assign RHS, but Assign RHS's REPLICATE generates 24 bits.
+                                                 : ... note: In instance 'peak_detect'
+  639 |     wire [RR_SUM_W-1:0] antre_sum_rs  = {5'b0, med_w, 3'b000};    
+      |                                       ^
+%Warning-WIDTHEXPAND: ../rtl/peak_detect.sv:763:57: Operator ASSIGNDLY expects 119 bits on the Assign RHS, but Assign RHS's REPLICATE generates 115 bits.
+                                                  : ... note: In instance 'peak_detect'
+  763 |                 bpk_vec[pk_cnt_q[6:0]*W_BPK_D +: W_BPK] <= {kem_w, pk_f_w, pv_w, pos_w};
+      |                                                         ^~
+%Warning-WIDTHCONCAT: ../rtl/peak_detect.sv:725:45: More than a 8k bit replication is probably wrong: 15232
+                                                  : ... note: In instance 'peak_detect'
+  725 |             bpk_vec      <= {BUF_DEPTH*W_BPK{1'b0}};
+      |                                             ^
+%Warning-UNUSEDSIGNAL: ../rtl/peak_detect.sv:420:29: Bits of signal are not used: 'spki_sig_w'[33]
+                                                   : ... note: In instance 'peak_detect'
+  420 |     wire signed [W_ACC-1:0] spki_sig_w  = spki_x + ((pv_e - spki_x) >>> SHIFT_SPKI);
+      |                             ^~~~~~~~~~
+%Warning-UNUSEDSIGNAL: ../rtl/peak_detect.sv:421:29: Bits of signal are not used: 'spkf_sig_w'[33]
+                                                   : ... note: In instance 'peak_detect'
+  421 |     wire signed [W_ACC-1:0] spkf_sig_w  = pkf_gt_f1_w
+      |                             ^~~~~~~~~~
+%Warning-UNUSEDSIGNAL: ../rtl/peak_detect.sv:424:29: Bits of signal are not used: 'npkf_sig_w'[33]
+                                                   : ... note: In instance 'peak_detect'
+  424 |     wire signed [W_ACC-1:0] npkf_sig_w  = pkf_gt_f1_w
+      |                             ^~~~~~~~~~
+%Warning-UNUSEDSIGNAL: ../rtl/peak_detect.sv:431:29: Bits of signal are not used: 'npki_nse_w'[33]
+                                                   : ... note: In instance 'peak_detect'
+  431 |     wire signed [W_ACC-1:0] npki_nse_w = npki_x + ((pv_e - npki_x) >>> SHIFT_SPKI);
+      |                             ^~~~~~~~~~
+%Warning-UNUSEDSIGNAL: ../rtl/peak_detect.sv:518:29: Bits of signal are not used: 'spki_sb_w'[33]
+                                                   : ... note: In instance 'peak_detect'
+  518 |     wire signed [W_ACC-1:0] spki_sb_w = spki_x + ((sbv_e - spki_x) >>> SHIFT_REFIT);
+      |                             ^~~~~~~~~
+%Warning-UNUSEDSIGNAL: ../rtl/peak_detect.sv:519:29: Bits of signal are not used: 'spkf_sb_w'[33]
+                                                   : ... note: In instance 'peak_detect'
+  519 |     wire signed [W_ACC-1:0] spkf_sb_w = sbvf_gt_f1_w
+      |                             ^~~~~~~~~
+%Warning-UNUSEDSIGNAL: ../rtl/peak_detect.sv:522:29: Bits of signal are not used: 'npkf_sb_w'[33]
+                                                   : ... note: In instance 'peak_detect'
+  522 |     wire signed [W_ACC-1:0] npkf_sb_w = sbvf_gt_f1_w
+      |                             ^~~~~~~~~
+%Warning-UNUSEDSIGNAL: ../rtl/peak_detect.sv:628:21: Bits of signal are not used: 'med_hi_w'[5]
+                                                   : ... note: In instance 'peak_detect'
+  628 |     wire [5:0]      med_hi_w = rih_len_n >> 1;
+      |                     ^~~~~~~~
+%Warning-UNUSEDSIGNAL: ../rtl/peak_detect.sv:629:21: Bits of signal are not used: 'med_lo_w'[5]
+                                                   : ... note: In instance 'peak_detect'
+  629 |     wire [5:0]      med_lo_w = (rih_len_n - 6'd1) >> 1;
+      |                     ^~~~~~~~
+%Warning-UNOPTFLAT: ../rtl/peak_detect.sv:600:21: Signal unoptimizable: Circular combinational logic: 'peak_detect.snet'
+  600 |     wire [RR_W-1:0] snet [0:RIH_LEN*RIH_LEN-1];
+      |                     ^~~~
+                    ../rtl/peak_detect.sv:600:21:      Example path: peak_detect.snet
+                    ../rtl/peak_detect.sv:617:50:      Example path: ASSIGNW
+                    ../rtl/peak_detect.sv:600:21:      Example path: peak_detect.snet
+%Error: Exiting due to 25 warning(s)

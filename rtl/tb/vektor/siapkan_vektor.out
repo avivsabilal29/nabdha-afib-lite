@@ -1,0 +1,52 @@
+vector   : /home/avivsabilalm/.hermes/cache/scratch/rtlplan2/fase0/04015.masukan16.hex
+manifest : /home/avivsabilalm/.hermes/cache/scratch/rtlplan2/fase0/04015.manifest.json
+record   : /home/avivsabilalm/.hermes/cache/scratch/afib/afdb_local/04015
+model    : /home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/model/rantai-afib-lite
+
+gate 1: integer quantiser against np.rint over -4095 to 4095
+  counts swept          : 8191
+  mismatches against np.rint: 0
+  tie counts in 0 to 4095: [-3500, -2500, -1500, -500, 500, 1500, 2500, 3500]
+  tie c= -3500 pre= -7164 word=-32752
+  tie c= -2500 pre= -5118 word=-32752
+  tie c= -1500 pre= -3070 word=-32752
+  tie c=  -500 pre= -1024 word=-16384
+  tie c=   500 pre=  1024 word= 16384
+  tie c=  1500 pre=  3070 word= 32752
+  tie c=  2500 pre=  5118 word= 32752
+  tie c=  3500 pre=  7164 word= 32752
+
+golden words            : 450000, min -29776 max 32752
+golden at the rail      : 406
+manifest frames         : 450000, columns 6
+manifest markers        : {'clamp': 402, 'gap': 0, 'weak': 8817, 'uncertain': 0}
+
+record 04015              : fmt 212, gain 200.0 counts per mV, zero 0.0
+counts read             : 450000, min -909 max 1287
+  note: the count of the RTL is c = count - zero, this header has zero 0
+
+gate 2: the quantiser of every record count against the golden column
+  words compared        : 450000
+  mismatches            : 0
+
+gate 3: the clamp census of the record
+  clipped, strict pre test  : 402
+  exactly on the rail       : 4
+  counts with |c| == 1000   : 4
+  manifest clamp marker     : 402
+  rail words of the column  : 406
+  rail words minus clipped  : 4
+
+gate 4: the weak marker, recomputed from the word column alone
+  weak from the word column : 8817
+  weak from adapter markers : 8817
+  manifest weak marker      : 8817
+  the two masks are equal   : True
+
+stimulus written        : /home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/tb/vektor/04015.stimulus.hex
+  lines                 : 450000
+  bytes                 : 2250000
+  format                : 4 hex digits, marker nibble then 12 bit count
+  markers written       : {'clamp': 402, 'gap': 0, 'weak': 8817, 'uncertain': 0}
+
+gate: PASS, the stimulus reproduces the golden column and its censuses

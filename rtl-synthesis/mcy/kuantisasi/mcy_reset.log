@@ -1,0 +1,16 @@
+==> Reset database
+  -> Reading configuration file.
+  -> Connecting to database.
+  -> Remove 'tasks' subdirectory.
+  -> Update mutations.
+  -> Getting database statistics.
+Database contains 0 cached results.
+Queued 1000 "test_sim" tests.
+  -> Print report
+survived (bench blind): 0
+killed (bench caught it): 0
+mutation coverage: 0.00%
+==> Initialize database
+  -> Reading configuration file.
+  -> Checking database existance.
+==> ERROR : Found existing database directory.

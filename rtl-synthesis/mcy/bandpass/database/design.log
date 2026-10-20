@@ -1,0 +1,509 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.70+157 (git sha1 af9f71e51, Release, Clang /usr/bin/clang++ 21.1.8)
+
+-- Executing script file `database/design.ys' --
+
+1. Executing Verilog-2005 frontend: ../../../rtl/afib_lite_pkg.sv
+Parsing SystemVerilog input from `../../../rtl/afib_lite_pkg.sv' to AST representation.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: ../../../rtl/bandpass.sv
+Parsing SystemVerilog input from `../../../rtl/bandpass.sv' to AST representation.
+Storing AST representation for module `$abstract\bandpass'.
+Successfully finished Verilog frontend.
+
+3. Executing PREP pass.
+
+3.1. Executing HIERARCHY pass (managing design hierarchy).
+
+3.2. Executing AST frontend in derive mode using pre-parsed AST for module `\bandpass'.
+Generating RTLIL representation for module `\bandpass'.
+Warning: Replacing memory \lp_hist_q with list of registers. See ../../../rtl/bandpass.sv:171
+Warning: Replacing memory \x_hist_q with list of registers. See ../../../rtl/bandpass.sv:170
+
+3.2.1. Analyzing design hierarchy..
+Top module:  \bandpass
+
+3.2.2. Analyzing design hierarchy..
+Top module:  \bandpass
+Removing unused module `$abstract\bandpass'.
+Removed 1 unused modules.
+
+3.3. Executing PROC pass (convert processes to netlists).
+
+3.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 6 switch rules as full_case in process $../../../rtl/bandpass.sv:167$proc$43 in module bandpass.
+Marked 1 switch rules as full_case in process $../../../rtl/bandpass.sv:139$proc$20 in module bandpass.
+Removed a total of 0 dead cases.
+
+3.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 2 redundant assignments.
+Promoted 3 assignments to connections.
+
+3.3.4. Executing PROC_INIT pass (extract init attributes).
+
+3.3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+3.3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~8 debug messages>
+
+3.3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+     1/73: $4\k[31:0]
+     2/73: $3\k[31:0]
+     3/73: $2\k[31:0]
+     4/73: $0\d_valid[0:0]
+     5/73: $0\m_tvalid[0:0]
+     6/73: $1\k[31:0]
+     7/73: $0\lp_hist_q[31][21:0]
+     8/73: $0\lp_hist_q[30][21:0]
+     9/73: $0\lp_hist_q[29][21:0]
+    10/73: $0\lp_hist_q[28][21:0]
+    11/73: $0\lp_hist_q[27][21:0]
+    12/73: $0\lp_hist_q[26][21:0]
+    13/73: $0\lp_hist_q[25][21:0]
+    14/73: $0\lp_hist_q[24][21:0]
+    15/73: $0\lp_hist_q[23][21:0]
+    16/73: $0\lp_hist_q[22][21:0]
+    17/73: $0\lp_hist_q[21][21:0]
+    18/73: $0\lp_hist_q[20][21:0]
+    19/73: $0\lp_hist_q[19][21:0]
+    20/73: $0\lp_hist_q[18][21:0]
+    21/73: $0\lp_hist_q[17][21:0]
+    22/73: $0\lp_hist_q[16][21:0]
+    23/73: $0\lp_hist_q[15][21:0]
+    24/73: $0\lp_hist_q[14][21:0]
+    25/73: $0\lp_hist_q[13][21:0]
+    26/73: $0\lp_hist_q[12][21:0]
+    27/73: $0\lp_hist_q[11][21:0]
+    28/73: $0\lp_hist_q[10][21:0]
+    29/73: $0\lp_hist_q[9][21:0]
+    30/73: $0\lp_hist_q[8][21:0]
+    31/73: $0\lp_hist_q[7][21:0]
+    32/73: $0\lp_hist_q[6][21:0]
+    33/73: $0\lp_hist_q[5][21:0]
+    34/73: $0\lp_hist_q[4][21:0]
+    35/73: $0\lp_hist_q[3][21:0]
+    36/73: $0\lp_hist_q[2][21:0]
+    37/73: $0\lp_hist_q[1][21:0]
+    38/73: $0\lp_hist_q[0][21:0]
+    39/73: $0\x_hist_q[11][15:0]
+    40/73: $0\x_hist_q[10][15:0]
+    41/73: $0\x_hist_q[9][15:0]
+    42/73: $0\x_hist_q[8][15:0]
+    43/73: $0\x_hist_q[7][15:0]
+    44/73: $0\x_hist_q[6][15:0]
+    45/73: $0\x_hist_q[5][15:0]
+    46/73: $0\x_hist_q[4][15:0]
+    47/73: $0\x_hist_q[3][15:0]
+    48/73: $0\x_hist_q[2][15:0]
+    49/73: $0\x_hist_q[1][15:0]
+    50/73: $0\x_hist_q[0][15:0]
+    51/73: $0\idx_q[31:0]
+    52/73: $0\tuser_q[7:0]
+    53/73: $0\last_q[0:0]
+    54/73: $0\hp_pass_q[1:0]
+    55/73: $0\lp_slice_q[1:0]
+    56/73: $0\lp_pass_q[1:0]
+    57/73: $0\st_q[1:0]
+    58/73: $0\ovf_q[0:0]
+    59/73: $0\acc_hp_q[26:0]
+    60/73: $0\hp_y_q[25:0]
+    61/73: $0\acc_cy_q[0:0]
+    62/73: $0\acc_hi_q[4:0]
+    63/73: $0\acc_mid_q[8:0]
+    64/73: $0\acc_lo_q[8:0]
+    65/73: $0\lp_out_q[21:0]
+    66/73: $0\x_hold_q[15:0]
+    67/73: $0\d_hp[25:0]
+    68/73: $0\d_lp[21:0]
+    69/73: $0\m_sample_idx[31:0]
+    70/73: $0\m_tuser[7:0]
+    71/73: $0\m_tlast[0:0]
+    72/73: $0\m_overflow[0:0]
+    73/73: $0\m_tdata[25:0]
+Creating decoders for process `\bandpass.$../../../rtl/bandpass.sv:139$proc$20'.
+     1/2: $1\sl_b[8:0]
+     2/2: $1\sl_a[8:0]
+
+3.3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\bandpass.\sl_a' from process `\bandpass.$../../../rtl/bandpass.sv:139$proc$20'.
+No latch inferred for signal `\bandpass.\sl_b' from process `\bandpass.$../../../rtl/bandpass.sv:139$proc$20'.
+
+3.3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\bandpass.\m_tdata' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$790' with positive edge clock.
+Creating register for signal `\bandpass.\m_tvalid' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$791' with positive edge clock.
+Creating register for signal `\bandpass.\m_overflow' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$792' with positive edge clock.
+Creating register for signal `\bandpass.\m_tlast' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$793' with positive edge clock.
+Creating register for signal `\bandpass.\m_tuser' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$794' with positive edge clock.
+Creating register for signal `\bandpass.\m_sample_idx' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$795' with positive edge clock.
+Creating register for signal `\bandpass.\d_valid' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$796' with positive edge clock.
+Creating register for signal `\bandpass.\d_lp' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$797' with positive edge clock.
+Creating register for signal `\bandpass.\d_hp' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$798' with positive edge clock.
+Creating register for signal `\bandpass.\x_hold_q' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$799' with positive edge clock.
+Creating register for signal `\bandpass.\lp_out_q' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$800' with positive edge clock.
+Creating register for signal `\bandpass.\acc_lo_q' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$801' with positive edge clock.
+Creating register for signal `\bandpass.\acc_mid_q' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$802' with positive edge clock.
+Creating register for signal `\bandpass.\acc_hi_q' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$803' with positive edge clock.
+Creating register for signal `\bandpass.\acc_cy_q' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$804' with positive edge clock.
+Creating register for signal `\bandpass.\hp_y_q' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$805' with positive edge clock.
+Creating register for signal `\bandpass.\acc_hp_q' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$806' with positive edge clock.
+Creating register for signal `\bandpass.\ovf_q' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$807' with positive edge clock.
+Creating register for signal `\bandpass.\st_q' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$808' with positive edge clock.
+Creating register for signal `\bandpass.\lp_pass_q' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$809' with positive edge clock.
+Creating register for signal `\bandpass.\lp_slice_q' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$810' with positive edge clock.
+Creating register for signal `\bandpass.\hp_pass_q' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$811' with positive edge clock.
+Creating register for signal `\bandpass.\last_q' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$812' with positive edge clock.
+Creating register for signal `\bandpass.\tuser_q' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$813' with positive edge clock.
+Creating register for signal `\bandpass.\idx_q' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$814' with positive edge clock.
+Creating register for signal `\bandpass.\k' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$815' with positive edge clock.
+Creating register for signal `\bandpass.\x_hist_q[0]' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$816' with positive edge clock.
+Creating register for signal `\bandpass.\x_hist_q[1]' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$817' with positive edge clock.
+Creating register for signal `\bandpass.\x_hist_q[2]' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$818' with positive edge clock.
+Creating register for signal `\bandpass.\x_hist_q[3]' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$819' with positive edge clock.
+Creating register for signal `\bandpass.\x_hist_q[4]' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$820' with positive edge clock.
+Creating register for signal `\bandpass.\x_hist_q[5]' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$821' with positive edge clock.
+Creating register for signal `\bandpass.\x_hist_q[6]' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$822' with positive edge clock.
+Creating register for signal `\bandpass.\x_hist_q[7]' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$823' with positive edge clock.
+Creating register for signal `\bandpass.\x_hist_q[8]' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$824' with positive edge clock.
+Creating register for signal `\bandpass.\x_hist_q[9]' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$825' with positive edge clock.
+Creating register for signal `\bandpass.\x_hist_q[10]' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$826' with positive edge clock.
+Creating register for signal `\bandpass.\x_hist_q[11]' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$827' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[0]' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$828' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[1]' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$829' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[2]' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$830' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[3]' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$831' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[4]' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$832' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[5]' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$833' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[6]' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$834' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[7]' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$835' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[8]' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$836' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[9]' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$837' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[10]' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$838' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[11]' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$839' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[12]' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$840' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[13]' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$841' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[14]' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$842' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[15]' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$843' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[16]' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$844' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[17]' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$845' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[18]' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$846' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[19]' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$847' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[20]' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$848' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[21]' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$849' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[22]' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$850' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[23]' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$851' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[24]' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$852' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[25]' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$853' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[26]' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$854' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[27]' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$855' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[28]' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$856' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[29]' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$857' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[30]' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$858' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[31]' using process `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+  created $dff cell `$procdff$859' with positive edge clock.
+
+3.3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 7 empty switches in `\bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+Removing empty process `bandpass.$../../../rtl/bandpass.sv:167$proc$43'.
+Found and cleaned up 1 empty switch in `\bandpass.$../../../rtl/bandpass.sv:139$proc$20'.
+Removing empty process `bandpass.$../../../rtl/bandpass.sv:139$proc$20'.
+Cleaned up 8 empty switches.
+
+3.3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module bandpass.
+<suppressed ~150 debug messages>
+
+3.4. Executing FUTURE pass.
+
+3.5. Executing OPT_EXPR pass (perform const folding).
+Optimizing module bandpass.
+
+3.6. Executing CHECK pass (checking for obvious problems).
+Checking module bandpass...
+Found and reported 0 problems.
+
+3.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \bandpass..
+Removed 16 unused cells and 253 unused wires.
+<suppressed ~18 debug messages>
+
+3.8. Executing OPT pass (performing simple optimizations).
+
+3.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module bandpass.
+
+3.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\bandpass'.
+Computing hashes of 451 cells of `\bandpass'.
+Finding duplicate cells in `\bandpass'.
+Computing hashes of 321 cells of `\bandpass'.
+Finding duplicate cells in `\bandpass'.
+<suppressed ~390 debug messages>
+Removed a total of 130 cells.
+
+3.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \bandpass..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~317 debug messages>
+
+3.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \bandpass.
+    New ctrl vector for $pmux cell $procmux$630: $auto$opt_reduce.cc:137:opt_pmux$861
+    New ctrl vector for $pmux cell $procmux$416: $auto$opt_reduce.cc:137:opt_pmux$863
+    New ctrl vector for $pmux cell $procmux$406: $auto$opt_reduce.cc:137:opt_pmux$865
+    New ctrl vector for $pmux cell $procmux$396: $auto$opt_reduce.cc:137:opt_pmux$867
+    New ctrl vector for $pmux cell $procmux$386: $auto$opt_reduce.cc:137:opt_pmux$869
+    New ctrl vector for $pmux cell $procmux$376: $auto$opt_reduce.cc:137:opt_pmux$871
+    New ctrl vector for $pmux cell $procmux$776: $auto$opt_reduce.cc:137:opt_pmux$873
+    New ctrl vector for $pmux cell $procmux$366: $auto$opt_reduce.cc:137:opt_pmux$875
+    New ctrl vector for $pmux cell $procmux$356: $auto$opt_reduce.cc:137:opt_pmux$877
+    New ctrl vector for $pmux cell $procmux$766: $auto$opt_reduce.cc:137:opt_pmux$879
+    New ctrl vector for $pmux cell $procmux$346: $auto$opt_reduce.cc:137:opt_pmux$881
+    New ctrl vector for $pmux cell $procmux$336: $auto$opt_reduce.cc:137:opt_pmux$883
+    New ctrl vector for $pmux cell $procmux$326: $auto$opt_reduce.cc:137:opt_pmux$885
+    New ctrl vector for $pmux cell $procmux$756: $auto$opt_reduce.cc:137:opt_pmux$887
+    New ctrl vector for $pmux cell $procmux$316: $auto$opt_reduce.cc:137:opt_pmux$889
+    New ctrl vector for $pmux cell $procmux$306: $auto$opt_reduce.cc:137:opt_pmux$891
+    New ctrl vector for $pmux cell $procmux$746: $auto$opt_reduce.cc:137:opt_pmux$893
+    New ctrl vector for $pmux cell $procmux$296: $auto$opt_reduce.cc:137:opt_pmux$895
+    New ctrl vector for $pmux cell $procmux$286: $auto$opt_reduce.cc:137:opt_pmux$897
+    New ctrl vector for $pmux cell $procmux$276: $auto$opt_reduce.cc:137:opt_pmux$899
+    New ctrl vector for $pmux cell $procmux$736: $auto$opt_reduce.cc:137:opt_pmux$901
+    New ctrl vector for $pmux cell $procmux$266: $auto$opt_reduce.cc:137:opt_pmux$903
+    New ctrl vector for $pmux cell $procmux$256: $auto$opt_reduce.cc:137:opt_pmux$905
+    New ctrl vector for $pmux cell $procmux$726: $auto$opt_reduce.cc:137:opt_pmux$907
+    New ctrl vector for $pmux cell $procmux$246: $auto$opt_reduce.cc:137:opt_pmux$909
+    New ctrl vector for $pmux cell $procmux$236: $auto$opt_reduce.cc:137:opt_pmux$911
+    New ctrl vector for $pmux cell $procmux$226: $auto$opt_reduce.cc:137:opt_pmux$913
+    New ctrl vector for $pmux cell $procmux$716: $auto$opt_reduce.cc:137:opt_pmux$915
+    New ctrl vector for $pmux cell $procmux$216: $auto$opt_reduce.cc:137:opt_pmux$917
+    New ctrl vector for $pmux cell $procmux$206: $auto$opt_reduce.cc:137:opt_pmux$919
+    New ctrl vector for $pmux cell $procmux$196: $auto$opt_reduce.cc:137:opt_pmux$921
+    New ctrl vector for $pmux cell $procmux$186: $auto$opt_reduce.cc:137:opt_pmux$923
+    New ctrl vector for $pmux cell $procmux$176: $auto$opt_reduce.cc:137:opt_pmux$925
+    New ctrl vector for $pmux cell $procmux$166: $auto$opt_reduce.cc:137:opt_pmux$927
+    New ctrl vector for $pmux cell $procmux$156: $auto$opt_reduce.cc:137:opt_pmux$929
+    New ctrl vector for $pmux cell $procmux$146: $auto$opt_reduce.cc:137:opt_pmux$931
+    New ctrl vector for $pmux cell $procmux$136: $auto$opt_reduce.cc:137:opt_pmux$933
+    New ctrl vector for $pmux cell $procmux$126: $auto$opt_reduce.cc:137:opt_pmux$935
+    New ctrl vector for $pmux cell $procmux$116: $auto$opt_reduce.cc:137:opt_pmux$937
+    New ctrl vector for $pmux cell $procmux$106: $auto$opt_reduce.cc:137:opt_pmux$939
+    New ctrl vector for $pmux cell $procmux$667: $auto$opt_reduce.cc:137:opt_pmux$941
+    New ctrl vector for $pmux cell $procmux$93: $auto$opt_reduce.cc:137:opt_pmux$943
+    New ctrl vector for $pmux cell $procmux$83: $auto$opt_reduce.cc:137:opt_pmux$945
+    New ctrl vector for $pmux cell $procmux$650: $auto$opt_reduce.cc:137:opt_pmux$947
+    New ctrl vector for $pmux cell $procmux$640: $auto$opt_reduce.cc:137:opt_pmux$949
+  Optimizing cells in module \bandpass.
+Performed a total of 45 changes.
+
+3.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\bandpass'.
+Computing hashes of 366 cells of `\bandpass'.
+Finding duplicate cells in `\bandpass'.
+Computing hashes of 322 cells of `\bandpass'.
+Finding duplicate cells in `\bandpass'.
+Computing hashes of 321 cells of `\bandpass'.
+Finding duplicate cells in `\bandpass'.
+Computing hashes of 320 cells of `\bandpass'.
+Finding duplicate cells in `\bandpass'.
+<suppressed ~138 debug messages>
+Removed a total of 46 cells.
+
+3.8.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \bandpass..
+Removed 0 unused cells and 176 unused wires.
+<suppressed ~1 debug messages>
+
+3.8.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module bandpass.
+
+3.8.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.8.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \bandpass..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~313 debug messages>
+
+3.8.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \bandpass.
+Performed a total of 0 changes.
+
+3.8.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\bandpass'.
+Computing hashes of 320 cells of `\bandpass'.
+Finding duplicate cells in `\bandpass'.
+Removed a total of 0 cells.
+
+3.8.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \bandpass..
+
+3.8.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module bandpass.
+
+3.8.14. Finished fast OPT passes. (There is nothing left to do.)
+
+3.9. Executing WREDUCE pass (reducing word size of cells).
+Removed top 1 bits (of 2) from port B of cell bandpass.$../../../rtl/bandpass.sv:134$eq$15 ($eq).
+Removed top 1 bits (of 10) from port A of cell bandpass.$../../../rtl/bandpass.sv:148$add$21 ($add).
+Removed top 1 bits (of 10) from port B of cell bandpass.$../../../rtl/bandpass.sv:148$add$21 ($add).
+Removed top 9 bits (of 10) from port B of cell bandpass.$../../../rtl/bandpass.sv:148$add$22 ($add).
+Removed top 1 bits (of 2) from port B of cell bandpass.$../../../rtl/bandpass.sv:158$eq$28 ($eq).
+Removed top 26 bits (of 27) from mux cell bandpass.$../../../rtl/bandpass.sv:159$ternary$34 ($mux).
+Removed top 26 bits (of 27) from port B of cell bandpass.$../../../rtl/bandpass.sv:160$add$36 ($add).
+Removed top 1 bits (of 2) from port B of cell bandpass.$../../../rtl/bandpass.sv:228$add$46 ($add).
+Removed top 1 bits (of 2) from port B of cell bandpass.$../../../rtl/bandpass.sv:230$add$47 ($add).
+Removed top 1 bits (of 2) from port B of cell bandpass.$../../../rtl/bandpass.sv:236$add$49 ($add).
+Removed top 1 bits (of 2) from port B of cell bandpass.$procmux$777_CMP0 ($eq).
+Removed top 1 bits (of 2) from port B of cell bandpass.$procmux$788_CMP0 ($eq).
+Removed top 26 bits (of 27) from wire bandpass.hp_add_c.
+
+3.10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \bandpass..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+3.11. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+3.12. Executing OPT pass (performing simple optimizations).
+
+3.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module bandpass.
+
+3.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\bandpass'.
+Computing hashes of 320 cells of `\bandpass'.
+Finding duplicate cells in `\bandpass'.
+Removed a total of 0 cells.
+
+3.12.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \bandpass..
+
+3.12.4. Finished fast OPT passes.
+
+3.13. Executing SORT pass.
+
+3.14. Printing statistics.
+
+=== bandpass ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      340 wires
+     5595 wire bits
+      103 public wires
+     1777 public wire bits
+       16 ports
+      178 port bits
+      320 cells
+        7   $add
+       69   $dff
+        7   $eq
+        1   $logic_and
+        4   $logic_not
+        1   $logic_or
+      215   $mux
+        1   $ne
+        5   $not
+        1   $or
+        6   $pmux
+        2   $reduce_or
+        1   $xor
+
+3.15. Executing CHECK pass (checking for obvious problems).
+Checking module bandpass...
+Found and reported 0 problems.
+
+4. Executing RTLIL backend.
+Output filename: database/design.il
+
+Warnings: 2 unique messages, 2 total
+End of script. Logfile hash: a57e38e8be, time: 0.19s, user: 0.16s, system: 0.02s, MEM: 23.03 MB peak
+Yosys 0.70+157 (git sha1 af9f71e51, Release, Clang /usr/bin/clang++ 21.1.8)
+Time spent: 21% 5x opt_clean (0 sec), 14% 2x check (0 sec), ...

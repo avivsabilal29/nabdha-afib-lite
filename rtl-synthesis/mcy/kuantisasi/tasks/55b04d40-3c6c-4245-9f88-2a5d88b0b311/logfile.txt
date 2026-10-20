@@ -1,0 +1,20 @@
+task 55b04d40-3c6c-4245-9f88-2a5d88b0b311 (test_sim)
+  1 546 mutate -mode inv -module acq_frontend -cell $procmux$289 -port A -portbit 24 -src ../../../rtl/acq_frontend.sv:310.13-310.20 -src ../../../rtl/acq_frontend.sv:310.9-325.12
++ echo '1 ERROR'
++ REPO=/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite
++ DEB=/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl-synthesis/debroot/usr/bin
++ IVLDIR=/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl-synthesis/debroot/usr/lib/x86_64-linux-gnu/ivl
++ F0=/home/avivsabilalm/.hermes/cache/scratch/rtlplan2/fase0
++ bash /home/avivsabilalm/eda/oss-cad-suite/libexec/../share/mcy/scripts/create_mutated.sh
++ /home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl-synthesis/debroot/usr/bin/iverilog -B /home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl-synthesis/debroot/usr/lib/x86_64-linux-gnu/ivl -g2012 -o sim.vvp /home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/afib_lite_pkg.sv /home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/tb/tb_kuantisasi.sv mutated.v
++ TIMEOUT_S=120
++ timeout 120 /home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl-synthesis/debroot/usr/bin/vvp sim.vvp +VECTOR=/home/avivsabilalm/.hermes/cache/scratch/rtlplan2/fase0/04015.masukan16.hex +MANIFEST=/home/avivsabilalm/.hermes/cache/scratch/rtlplan2/fase0/04015.manifest.json +STIM=/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/tb/vektor/04015.stimulus.hex +LIMIT=20000 +MUT=1
++ sim_rc=124
++ '[' 124 -eq 124 ']'
++ echo 'TIMEOUT after 120s, counted as a kill'
++ tee output.txt
+TIMEOUT after 120s, counted as a kill
++ echo '1 FAIL'
++ tee -a output.txt
+1 FAIL
++ exit 0

@@ -1,0 +1,871 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.70+157 (git sha1 af9f71e51, Release, Clang /usr/bin/clang++ 21.1.8)
+
+-- Executing script file `database/design.ys' --
+
+1. Executing Verilog-2005 frontend: ../../../rtl/afib_lite_pkg.sv
+Parsing SystemVerilog input from `../../../rtl/afib_lite_pkg.sv' to AST representation.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: ../../../rtl/acq_frontend.sv
+Parsing SystemVerilog input from `../../../rtl/acq_frontend.sv' to AST representation.
+Storing AST representation for module `$abstract\acq_frontend'.
+Successfully finished Verilog frontend.
+
+3. Executing PREP pass.
+
+3.1. Executing HIERARCHY pass (managing design hierarchy).
+
+3.2. Executing AST frontend in derive mode using pre-parsed AST for module `\acq_frontend'.
+Generating RTLIL representation for module `\acq_frontend'.
+Warning: Replacing memory \side_q with list of registers. See ../../../rtl/acq_frontend.sv:178
+Warning: Replacing memory \bit_q with list of registers. See ../../../rtl/acq_frontend.sv:177
+Warning: Replacing memory \quo_q with list of registers. See ../../../rtl/acq_frontend.sv:176
+Warning: Replacing memory \rem_q with list of registers. See ../../../rtl/acq_frontend.sv:175
+
+3.2.1. Analyzing design hierarchy..
+Top module:  \acq_frontend
+
+3.2.2. Analyzing design hierarchy..
+Top module:  \acq_frontend
+Removing unused module `$abstract\acq_frontend'.
+Removed 1 unused modules.
+
+3.3. Executing PROC pass (convert processes to netlists).
+
+3.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+3.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $../../../rtl/acq_frontend.sv:195$proc$114 in module acq_frontend.
+Marked 1 switch rules as full_case in process $../../../rtl/acq_frontend.sv:195$proc$109 in module acq_frontend.
+Marked 1 switch rules as full_case in process $../../../rtl/acq_frontend.sv:195$proc$104 in module acq_frontend.
+Marked 1 switch rules as full_case in process $../../../rtl/acq_frontend.sv:195$proc$99 in module acq_frontend.
+Marked 1 switch rules as full_case in process $../../../rtl/acq_frontend.sv:195$proc$94 in module acq_frontend.
+Marked 1 switch rules as full_case in process $../../../rtl/acq_frontend.sv:195$proc$89 in module acq_frontend.
+Marked 1 switch rules as full_case in process $../../../rtl/acq_frontend.sv:195$proc$84 in module acq_frontend.
+Marked 1 switch rules as full_case in process $../../../rtl/acq_frontend.sv:195$proc$79 in module acq_frontend.
+Marked 1 switch rules as full_case in process $../../../rtl/acq_frontend.sv:195$proc$74 in module acq_frontend.
+Marked 1 switch rules as full_case in process $../../../rtl/acq_frontend.sv:195$proc$69 in module acq_frontend.
+Marked 1 switch rules as full_case in process $../../../rtl/acq_frontend.sv:195$proc$64 in module acq_frontend.
+Marked 1 switch rules as full_case in process $../../../rtl/acq_frontend.sv:195$proc$59 in module acq_frontend.
+Marked 1 switch rules as full_case in process $../../../rtl/acq_frontend.sv:195$proc$54 in module acq_frontend.
+Marked 2 switch rules as full_case in process $../../../rtl/acq_frontend.sv:309$proc$47 in module acq_frontend.
+Marked 2 switch rules as full_case in process $../../../rtl/acq_frontend.sv:255$proc$38 in module acq_frontend.
+Marked 3 switch rules as full_case in process $../../../rtl/acq_frontend.sv:246$proc$33 in module acq_frontend.
+Marked 1 switch rules as full_case in process $../../../rtl/acq_frontend.sv:173$proc$11 in module acq_frontend.
+Removed a total of 0 dead cases.
+
+3.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 73 redundant assignments.
+Promoted 0 assignments to connections.
+
+3.3.4. Executing PROC_INIT pass (extract init attributes).
+
+3.3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+3.3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~23 debug messages>
+
+3.3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$114'.
+     1/4: $0\side_q[13][43:0]
+     2/4: $0\bit_q[13][12:0]
+     3/4: $0\quo_q[13][12:0]
+     4/4: $0\rem_q[13][10:0]
+Creating decoders for process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$109'.
+     1/4: $0\side_q[12][43:0]
+     2/4: $0\bit_q[12][12:0]
+     3/4: $0\quo_q[12][12:0]
+     4/4: $0\rem_q[12][10:0]
+Creating decoders for process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$104'.
+     1/4: $0\side_q[11][43:0]
+     2/4: $0\bit_q[11][12:0]
+     3/4: $0\quo_q[11][12:0]
+     4/4: $0\rem_q[11][10:0]
+Creating decoders for process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$99'.
+     1/4: $0\side_q[10][43:0]
+     2/4: $0\bit_q[10][12:0]
+     3/4: $0\quo_q[10][12:0]
+     4/4: $0\rem_q[10][10:0]
+Creating decoders for process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$94'.
+     1/4: $0\side_q[9][43:0]
+     2/4: $0\bit_q[9][12:0]
+     3/4: $0\quo_q[9][12:0]
+     4/4: $0\rem_q[9][10:0]
+Creating decoders for process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$89'.
+     1/4: $0\side_q[8][43:0]
+     2/4: $0\bit_q[8][12:0]
+     3/4: $0\quo_q[8][12:0]
+     4/4: $0\rem_q[8][10:0]
+Creating decoders for process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$84'.
+     1/4: $0\side_q[7][43:0]
+     2/4: $0\bit_q[7][12:0]
+     3/4: $0\quo_q[7][12:0]
+     4/4: $0\rem_q[7][10:0]
+Creating decoders for process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$79'.
+     1/4: $0\side_q[6][43:0]
+     2/4: $0\bit_q[6][12:0]
+     3/4: $0\quo_q[6][12:0]
+     4/4: $0\rem_q[6][10:0]
+Creating decoders for process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$74'.
+     1/4: $0\side_q[5][43:0]
+     2/4: $0\bit_q[5][12:0]
+     3/4: $0\quo_q[5][12:0]
+     4/4: $0\rem_q[5][10:0]
+Creating decoders for process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$69'.
+     1/4: $0\side_q[4][43:0]
+     2/4: $0\bit_q[4][12:0]
+     3/4: $0\quo_q[4][12:0]
+     4/4: $0\rem_q[4][10:0]
+Creating decoders for process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$64'.
+     1/4: $0\side_q[3][43:0]
+     2/4: $0\bit_q[3][12:0]
+     3/4: $0\quo_q[3][12:0]
+     4/4: $0\rem_q[3][10:0]
+Creating decoders for process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$59'.
+     1/4: $0\side_q[2][43:0]
+     2/4: $0\bit_q[2][12:0]
+     3/4: $0\quo_q[2][12:0]
+     4/4: $0\rem_q[2][10:0]
+Creating decoders for process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$54'.
+     1/4: $0\side_q[1][43:0]
+     2/4: $0\bit_q[1][12:0]
+     3/4: $0\quo_q[1][12:0]
+     4/4: $0\rem_q[1][10:0]
+Creating decoders for process `\acq_frontend.$../../../rtl/acq_frontend.sv:309$proc$47'.
+     1/3: $0\sample_en_q[0:0]
+     2/3: $0\rate_cnt_q[19:0]
+     3/3: $0\sample_idx_q[31:0]
+Creating decoders for process `\acq_frontend.$../../../rtl/acq_frontend.sv:255$proc$38'.
+     1/15: $0\o_clamp_count[31:0]
+     2/15: $0\o_gap_count[31:0]
+     3/15: $0\o_sample_idx[31:0]
+     4/15: $0\d_word[15:0]
+     5/15: $0\d_valid[0:0]
+     6/15: $0\m_ev_val[31:0]
+     7/15: $0\m_ev_idx[31:0]
+     8/15: $0\m_ev_kind[2:0]
+     9/15: $0\m_ev_valid[0:0]
+    10/15: $0\m_sample_idx[31:0]
+    11/15: $0\m_tuser[7:0]
+    12/15: $0\m_tlast[0:0]
+    13/15: $0\m_overflow[0:0]
+    14/15: $0\m_tvalid[0:0]
+    15/15: $0\m_tdata[15:0]
+Creating decoders for process `\acq_frontend.$../../../rtl/acq_frontend.sv:246$proc$33'.
+     1/1: $0\gap_span_q[7:0]
+Creating decoders for process `\acq_frontend.$../../../rtl/acq_frontend.sv:173$proc$11'.
+     1/4: $0\side_q[0][43:0]
+     2/4: $0\bit_q[0][12:0]
+     3/4: $0\quo_q[0][12:0]
+     4/4: $0\rem_q[0][10:0]
+
+3.3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+3.3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\acq_frontend.\rem_q[13]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$114'.
+  created $dff cell `$procdff$366' with positive edge clock.
+Creating register for signal `\acq_frontend.\quo_q[13]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$114'.
+  created $dff cell `$procdff$367' with positive edge clock.
+Creating register for signal `\acq_frontend.\bit_q[13]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$114'.
+  created $dff cell `$procdff$368' with positive edge clock.
+Creating register for signal `\acq_frontend.\side_q[13]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$114'.
+  created $dff cell `$procdff$369' with positive edge clock.
+Creating register for signal `\acq_frontend.\rem_q[12]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$109'.
+  created $dff cell `$procdff$370' with positive edge clock.
+Creating register for signal `\acq_frontend.\quo_q[12]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$109'.
+  created $dff cell `$procdff$371' with positive edge clock.
+Creating register for signal `\acq_frontend.\bit_q[12]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$109'.
+  created $dff cell `$procdff$372' with positive edge clock.
+Creating register for signal `\acq_frontend.\side_q[12]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$109'.
+  created $dff cell `$procdff$373' with positive edge clock.
+Creating register for signal `\acq_frontend.\rem_q[11]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$104'.
+  created $dff cell `$procdff$374' with positive edge clock.
+Creating register for signal `\acq_frontend.\quo_q[11]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$104'.
+  created $dff cell `$procdff$375' with positive edge clock.
+Creating register for signal `\acq_frontend.\bit_q[11]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$104'.
+  created $dff cell `$procdff$376' with positive edge clock.
+Creating register for signal `\acq_frontend.\side_q[11]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$104'.
+  created $dff cell `$procdff$377' with positive edge clock.
+Creating register for signal `\acq_frontend.\rem_q[10]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$99'.
+  created $dff cell `$procdff$378' with positive edge clock.
+Creating register for signal `\acq_frontend.\quo_q[10]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$99'.
+  created $dff cell `$procdff$379' with positive edge clock.
+Creating register for signal `\acq_frontend.\bit_q[10]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$99'.
+  created $dff cell `$procdff$380' with positive edge clock.
+Creating register for signal `\acq_frontend.\side_q[10]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$99'.
+  created $dff cell `$procdff$381' with positive edge clock.
+Creating register for signal `\acq_frontend.\rem_q[9]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$94'.
+  created $dff cell `$procdff$382' with positive edge clock.
+Creating register for signal `\acq_frontend.\quo_q[9]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$94'.
+  created $dff cell `$procdff$383' with positive edge clock.
+Creating register for signal `\acq_frontend.\bit_q[9]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$94'.
+  created $dff cell `$procdff$384' with positive edge clock.
+Creating register for signal `\acq_frontend.\side_q[9]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$94'.
+  created $dff cell `$procdff$385' with positive edge clock.
+Creating register for signal `\acq_frontend.\rem_q[8]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$89'.
+  created $dff cell `$procdff$386' with positive edge clock.
+Creating register for signal `\acq_frontend.\quo_q[8]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$89'.
+  created $dff cell `$procdff$387' with positive edge clock.
+Creating register for signal `\acq_frontend.\bit_q[8]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$89'.
+  created $dff cell `$procdff$388' with positive edge clock.
+Creating register for signal `\acq_frontend.\side_q[8]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$89'.
+  created $dff cell `$procdff$389' with positive edge clock.
+Creating register for signal `\acq_frontend.\rem_q[7]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$84'.
+  created $dff cell `$procdff$390' with positive edge clock.
+Creating register for signal `\acq_frontend.\quo_q[7]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$84'.
+  created $dff cell `$procdff$391' with positive edge clock.
+Creating register for signal `\acq_frontend.\bit_q[7]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$84'.
+  created $dff cell `$procdff$392' with positive edge clock.
+Creating register for signal `\acq_frontend.\side_q[7]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$84'.
+  created $dff cell `$procdff$393' with positive edge clock.
+Creating register for signal `\acq_frontend.\rem_q[6]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$79'.
+  created $dff cell `$procdff$394' with positive edge clock.
+Creating register for signal `\acq_frontend.\quo_q[6]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$79'.
+  created $dff cell `$procdff$395' with positive edge clock.
+Creating register for signal `\acq_frontend.\bit_q[6]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$79'.
+  created $dff cell `$procdff$396' with positive edge clock.
+Creating register for signal `\acq_frontend.\side_q[6]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$79'.
+  created $dff cell `$procdff$397' with positive edge clock.
+Creating register for signal `\acq_frontend.\rem_q[5]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$74'.
+  created $dff cell `$procdff$398' with positive edge clock.
+Creating register for signal `\acq_frontend.\quo_q[5]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$74'.
+  created $dff cell `$procdff$399' with positive edge clock.
+Creating register for signal `\acq_frontend.\bit_q[5]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$74'.
+  created $dff cell `$procdff$400' with positive edge clock.
+Creating register for signal `\acq_frontend.\side_q[5]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$74'.
+  created $dff cell `$procdff$401' with positive edge clock.
+Creating register for signal `\acq_frontend.\rem_q[4]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$69'.
+  created $dff cell `$procdff$402' with positive edge clock.
+Creating register for signal `\acq_frontend.\quo_q[4]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$69'.
+  created $dff cell `$procdff$403' with positive edge clock.
+Creating register for signal `\acq_frontend.\bit_q[4]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$69'.
+  created $dff cell `$procdff$404' with positive edge clock.
+Creating register for signal `\acq_frontend.\side_q[4]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$69'.
+  created $dff cell `$procdff$405' with positive edge clock.
+Creating register for signal `\acq_frontend.\rem_q[3]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$64'.
+  created $dff cell `$procdff$406' with positive edge clock.
+Creating register for signal `\acq_frontend.\quo_q[3]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$64'.
+  created $dff cell `$procdff$407' with positive edge clock.
+Creating register for signal `\acq_frontend.\bit_q[3]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$64'.
+  created $dff cell `$procdff$408' with positive edge clock.
+Creating register for signal `\acq_frontend.\side_q[3]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$64'.
+  created $dff cell `$procdff$409' with positive edge clock.
+Creating register for signal `\acq_frontend.\rem_q[2]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$59'.
+  created $dff cell `$procdff$410' with positive edge clock.
+Creating register for signal `\acq_frontend.\quo_q[2]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$59'.
+  created $dff cell `$procdff$411' with positive edge clock.
+Creating register for signal `\acq_frontend.\bit_q[2]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$59'.
+  created $dff cell `$procdff$412' with positive edge clock.
+Creating register for signal `\acq_frontend.\side_q[2]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$59'.
+  created $dff cell `$procdff$413' with positive edge clock.
+Creating register for signal `\acq_frontend.\rem_q[1]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$54'.
+  created $dff cell `$procdff$414' with positive edge clock.
+Creating register for signal `\acq_frontend.\quo_q[1]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$54'.
+  created $dff cell `$procdff$415' with positive edge clock.
+Creating register for signal `\acq_frontend.\bit_q[1]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$54'.
+  created $dff cell `$procdff$416' with positive edge clock.
+Creating register for signal `\acq_frontend.\side_q[1]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$54'.
+  created $dff cell `$procdff$417' with positive edge clock.
+Creating register for signal `\acq_frontend.\rate_cnt_q' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:309$proc$47'.
+  created $dff cell `$procdff$418' with positive edge clock.
+Creating register for signal `\acq_frontend.\sample_idx_q' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:309$proc$47'.
+  created $dff cell `$procdff$419' with positive edge clock.
+Creating register for signal `\acq_frontend.\sample_en_q' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:309$proc$47'.
+  created $dff cell `$procdff$420' with positive edge clock.
+Creating register for signal `\acq_frontend.\m_tdata' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:255$proc$38'.
+  created $dff cell `$procdff$421' with positive edge clock.
+Creating register for signal `\acq_frontend.\m_tvalid' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:255$proc$38'.
+  created $dff cell `$procdff$422' with positive edge clock.
+Creating register for signal `\acq_frontend.\m_overflow' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:255$proc$38'.
+  created $dff cell `$procdff$423' with positive edge clock.
+Creating register for signal `\acq_frontend.\m_tlast' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:255$proc$38'.
+  created $dff cell `$procdff$424' with positive edge clock.
+Creating register for signal `\acq_frontend.\m_tuser' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:255$proc$38'.
+  created $dff cell `$procdff$425' with positive edge clock.
+Creating register for signal `\acq_frontend.\m_sample_idx' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:255$proc$38'.
+  created $dff cell `$procdff$426' with positive edge clock.
+Creating register for signal `\acq_frontend.\m_ev_valid' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:255$proc$38'.
+  created $dff cell `$procdff$427' with positive edge clock.
+Creating register for signal `\acq_frontend.\m_ev_kind' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:255$proc$38'.
+  created $dff cell `$procdff$428' with positive edge clock.
+Creating register for signal `\acq_frontend.\m_ev_idx' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:255$proc$38'.
+  created $dff cell `$procdff$429' with positive edge clock.
+Creating register for signal `\acq_frontend.\m_ev_val' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:255$proc$38'.
+  created $dff cell `$procdff$430' with positive edge clock.
+Creating register for signal `\acq_frontend.\d_valid' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:255$proc$38'.
+  created $dff cell `$procdff$431' with positive edge clock.
+Creating register for signal `\acq_frontend.\d_word' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:255$proc$38'.
+  created $dff cell `$procdff$432' with positive edge clock.
+Creating register for signal `\acq_frontend.\o_sample_idx' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:255$proc$38'.
+  created $dff cell `$procdff$433' with positive edge clock.
+Creating register for signal `\acq_frontend.\o_gap_count' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:255$proc$38'.
+  created $dff cell `$procdff$434' with positive edge clock.
+Creating register for signal `\acq_frontend.\o_clamp_count' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:255$proc$38'.
+  created $dff cell `$procdff$435' with positive edge clock.
+Creating register for signal `\acq_frontend.\gap_span_q' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:246$proc$33'.
+  created $dff cell `$procdff$436' with positive edge clock.
+Creating register for signal `\acq_frontend.\rem_q[0]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:173$proc$11'.
+  created $dff cell `$procdff$437' with positive edge clock.
+Creating register for signal `\acq_frontend.\quo_q[0]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:173$proc$11'.
+  created $dff cell `$procdff$438' with positive edge clock.
+Creating register for signal `\acq_frontend.\bit_q[0]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:173$proc$11'.
+  created $dff cell `$procdff$439' with positive edge clock.
+Creating register for signal `\acq_frontend.\side_q[0]' using process `\acq_frontend.$../../../rtl/acq_frontend.sv:173$proc$11'.
+  created $dff cell `$procdff$440' with positive edge clock.
+
+3.3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+3.3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$114'.
+Removing empty process `acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$114'.
+Found and cleaned up 1 empty switch in `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$109'.
+Removing empty process `acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$109'.
+Found and cleaned up 1 empty switch in `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$104'.
+Removing empty process `acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$104'.
+Found and cleaned up 1 empty switch in `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$99'.
+Removing empty process `acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$99'.
+Found and cleaned up 1 empty switch in `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$94'.
+Removing empty process `acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$94'.
+Found and cleaned up 1 empty switch in `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$89'.
+Removing empty process `acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$89'.
+Found and cleaned up 1 empty switch in `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$84'.
+Removing empty process `acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$84'.
+Found and cleaned up 1 empty switch in `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$79'.
+Removing empty process `acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$79'.
+Found and cleaned up 1 empty switch in `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$74'.
+Removing empty process `acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$74'.
+Found and cleaned up 1 empty switch in `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$69'.
+Removing empty process `acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$69'.
+Found and cleaned up 1 empty switch in `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$64'.
+Removing empty process `acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$64'.
+Found and cleaned up 1 empty switch in `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$59'.
+Removing empty process `acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$59'.
+Found and cleaned up 1 empty switch in `\acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$54'.
+Removing empty process `acq_frontend.$../../../rtl/acq_frontend.sv:195$proc$54'.
+Found and cleaned up 3 empty switches in `\acq_frontend.$../../../rtl/acq_frontend.sv:309$proc$47'.
+Removing empty process `acq_frontend.$../../../rtl/acq_frontend.sv:309$proc$47'.
+Found and cleaned up 2 empty switches in `\acq_frontend.$../../../rtl/acq_frontend.sv:255$proc$38'.
+Removing empty process `acq_frontend.$../../../rtl/acq_frontend.sv:255$proc$38'.
+Found and cleaned up 4 empty switches in `\acq_frontend.$../../../rtl/acq_frontend.sv:246$proc$33'.
+Removing empty process `acq_frontend.$../../../rtl/acq_frontend.sv:246$proc$33'.
+Found and cleaned up 1 empty switch in `\acq_frontend.$../../../rtl/acq_frontend.sv:173$proc$11'.
+Removing empty process `acq_frontend.$../../../rtl/acq_frontend.sv:173$proc$11'.
+Cleaned up 23 empty switches.
+
+3.3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acq_frontend.
+<suppressed ~80 debug messages>
+
+3.4. Executing FUTURE pass.
+
+3.5. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acq_frontend.
+
+3.6. Executing CHECK pass (checking for obvious problems).
+Checking module acq_frontend...
+Found and reported 0 problems.
+
+3.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acq_frontend..
+Removed 19 unused cells and 209 unused wires.
+<suppressed ~21 debug messages>
+
+3.8. Executing OPT pass (performing simple optimizations).
+
+3.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acq_frontend.
+
+3.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\acq_frontend'.
+Computing hashes of 233 cells of `\acq_frontend'.
+Finding duplicate cells in `\acq_frontend'.
+Computing hashes of 232 cells of `\acq_frontend'.
+Finding duplicate cells in `\acq_frontend'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+3.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \acq_frontend..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+      Replacing known input bits on port A of cell $../../../rtl/acq_frontend.sv:155$ternary$4: \prod_s -> { 1'0 \prod_s [21:0] }
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~184 debug messages>
+
+3.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \acq_frontend.
+Performed a total of 0 changes.
+
+3.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\acq_frontend'.
+Computing hashes of 232 cells of `\acq_frontend'.
+Finding duplicate cells in `\acq_frontend'.
+Computing hashes of 229 cells of `\acq_frontend'.
+Finding duplicate cells in `\acq_frontend'.
+<suppressed ~9 debug messages>
+Removed a total of 3 cells.
+
+3.8.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acq_frontend..
+Removed 0 unused cells and 4 unused wires.
+<suppressed ~1 debug messages>
+
+3.8.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acq_frontend.
+
+3.8.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+3.8.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \acq_frontend..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~173 debug messages>
+
+3.8.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \acq_frontend.
+Performed a total of 0 changes.
+
+3.8.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\acq_frontend'.
+Computing hashes of 229 cells of `\acq_frontend'.
+Finding duplicate cells in `\acq_frontend'.
+Removed a total of 0 cells.
+
+3.8.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acq_frontend..
+
+3.8.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acq_frontend.
+
+3.8.14. Finished fast OPT passes. (There is nothing left to do.)
+
+3.9. Executing WREDUCE pass (reducing word size of cells).
+Removed top 11 bits (of 23) from port B of cell acq_frontend.$../../../rtl/acq_frontend.sv:154$sub$2 ($sub).
+Removed top 21 bits (of 32) from port A of cell acq_frontend.$../../../rtl/acq_frontend.sv:220$gt$13 ($gt).
+Removed top 23 bits (of 32) from port B of cell acq_frontend.$../../../rtl/acq_frontend.sv:220$gt$13 ($gt).
+Removed top 2 bits (of 11) from port B of cell acq_frontend.$../../../rtl/acq_frontend.sv:221$eq$14 ($eq).
+Removed top 1 bits (of 15) from port A of cell acq_frontend.$../../../rtl/acq_frontend.sv:225$neg$19 ($neg).
+Converting cell acq_frontend.$../../../rtl/acq_frontend.sv:225$neg$19 ($neg) from signed to unsigned.
+Removed top 1 bits (of 14) from port A of cell acq_frontend.$../../../rtl/acq_frontend.sv:225$neg$19 ($neg).
+Removed top 3 bits (of 15) from port B of cell acq_frontend.$../../../rtl/acq_frontend.sv:226$gt$21 ($gt).
+Removed top 3 bits (of 15) from port B of cell acq_frontend.$../../../rtl/acq_frontend.sv:226$lt$22 ($lt).
+Removed top 3 bits (of 15) from mux cell acq_frontend.$../../../rtl/acq_frontend.sv:227$ternary$25 ($mux).
+Removed top 7 bits (of 8) from port B of cell acq_frontend.$../../../rtl/acq_frontend.sv:242$or$31 ($or).
+Removed top 6 bits (of 8) from port B of cell acq_frontend.$../../../rtl/acq_frontend.sv:242$or$32 ($or).
+Removed top 7 bits (of 8) from port B of cell acq_frontend.$../../../rtl/acq_frontend.sv:251$sub$37 ($sub).
+Removed top 31 bits (of 32) from port B of cell acq_frontend.$../../../rtl/acq_frontend.sv:297$add$42 ($add).
+Removed top 31 bits (of 32) from port B of cell acq_frontend.$../../../rtl/acq_frontend.sv:299$add$45 ($add).
+Removed top 19 bits (of 20) from port B of cell acq_frontend.$../../../rtl/acq_frontend.sv:319$add$50 ($add).
+Removed top 31 bits (of 32) from port B of cell acq_frontend.$../../../rtl/acq_frontend.sv:324$add$52 ($add).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$../../../rtl/acq_frontend.sv:194$ge$53 ($ge).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$56 ($sub).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$../../../rtl/acq_frontend.sv:194$ge$58 ($ge).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$61 ($sub).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$../../../rtl/acq_frontend.sv:194$ge$63 ($ge).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$66 ($sub).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$../../../rtl/acq_frontend.sv:194$ge$68 ($ge).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$71 ($sub).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$../../../rtl/acq_frontend.sv:194$ge$73 ($ge).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$76 ($sub).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$../../../rtl/acq_frontend.sv:194$ge$78 ($ge).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$81 ($sub).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$../../../rtl/acq_frontend.sv:194$ge$83 ($ge).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$86 ($sub).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$../../../rtl/acq_frontend.sv:194$ge$88 ($ge).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$91 ($sub).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$../../../rtl/acq_frontend.sv:194$ge$93 ($ge).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$96 ($sub).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$../../../rtl/acq_frontend.sv:194$ge$98 ($ge).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$101 ($sub).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$../../../rtl/acq_frontend.sv:194$ge$103 ($ge).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$106 ($sub).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$../../../rtl/acq_frontend.sv:194$ge$108 ($ge).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$111 ($sub).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$../../../rtl/acq_frontend.sv:194$ge$113 ($ge).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$116 ($sub).
+Removed top 1 bits (of 11) from mux cell acq_frontend.$procmux$364 ($mux).
+Removed top 1 bits (of 11) from FF cell acq_frontend.$procdff$370 ($dff).
+Removed top 1 bits (of 13) from FF cell acq_frontend.$procdff$371 ($dff).
+Removed top 1 bits (of 11) from FF cell acq_frontend.$procdff$374 ($dff).
+Removed top 1 bits (of 13) from FF cell acq_frontend.$procdff$375 ($dff).
+Removed top 1 bits (of 11) from FF cell acq_frontend.$procdff$378 ($dff).
+Removed top 1 bits (of 13) from FF cell acq_frontend.$procdff$379 ($dff).
+Removed top 1 bits (of 11) from FF cell acq_frontend.$procdff$382 ($dff).
+Removed top 1 bits (of 13) from FF cell acq_frontend.$procdff$383 ($dff).
+Removed top 1 bits (of 11) from FF cell acq_frontend.$procdff$386 ($dff).
+Removed top 1 bits (of 13) from FF cell acq_frontend.$procdff$387 ($dff).
+Removed top 1 bits (of 11) from FF cell acq_frontend.$procdff$390 ($dff).
+Removed top 1 bits (of 13) from FF cell acq_frontend.$procdff$391 ($dff).
+Removed top 1 bits (of 11) from FF cell acq_frontend.$procdff$394 ($dff).
+Removed top 1 bits (of 13) from FF cell acq_frontend.$procdff$395 ($dff).
+Removed top 1 bits (of 11) from FF cell acq_frontend.$procdff$398 ($dff).
+Removed top 1 bits (of 13) from FF cell acq_frontend.$procdff$399 ($dff).
+Removed top 1 bits (of 11) from FF cell acq_frontend.$procdff$402 ($dff).
+Removed top 1 bits (of 13) from FF cell acq_frontend.$procdff$403 ($dff).
+Removed top 1 bits (of 11) from FF cell acq_frontend.$procdff$406 ($dff).
+Removed top 1 bits (of 13) from FF cell acq_frontend.$procdff$407 ($dff).
+Removed top 1 bits (of 11) from FF cell acq_frontend.$procdff$410 ($dff).
+Removed top 1 bits (of 13) from FF cell acq_frontend.$procdff$411 ($dff).
+Removed top 1 bits (of 11) from FF cell acq_frontend.$procdff$414 ($dff).
+Removed top 1 bits (of 13) from FF cell acq_frontend.$procdff$415 ($dff).
+Removed top 1 bits (of 11) from FF cell acq_frontend.$procdff$437 ($dff).
+Removed top 1 bits (of 13) from FF cell acq_frontend.$procdff$438 ($dff).
+Removed top 3 bits (of 15) from mux cell acq_frontend.$../../../rtl/acq_frontend.sv:227$ternary$24 ($mux).
+Removed top 1 bits (of 13) from mux cell acq_frontend.$procmux$137 ($mux).
+Removed top 1 bits (of 11) from mux cell acq_frontend.$procmux$140 ($mux).
+Removed top 1 bits (of 13) from mux cell acq_frontend.$procmux$149 ($mux).
+Removed top 1 bits (of 11) from mux cell acq_frontend.$procmux$152 ($mux).
+Removed top 1 bits (of 13) from mux cell acq_frontend.$procmux$161 ($mux).
+Removed top 1 bits (of 11) from mux cell acq_frontend.$procmux$164 ($mux).
+Removed top 1 bits (of 13) from mux cell acq_frontend.$procmux$173 ($mux).
+Removed top 1 bits (of 11) from mux cell acq_frontend.$procmux$176 ($mux).
+Removed top 1 bits (of 13) from mux cell acq_frontend.$procmux$185 ($mux).
+Removed top 1 bits (of 11) from mux cell acq_frontend.$procmux$188 ($mux).
+Removed top 1 bits (of 13) from mux cell acq_frontend.$procmux$197 ($mux).
+Removed top 1 bits (of 11) from mux cell acq_frontend.$procmux$200 ($mux).
+Removed top 1 bits (of 13) from mux cell acq_frontend.$procmux$209 ($mux).
+Removed top 1 bits (of 11) from mux cell acq_frontend.$procmux$212 ($mux).
+Removed top 1 bits (of 13) from mux cell acq_frontend.$procmux$221 ($mux).
+Removed top 1 bits (of 11) from mux cell acq_frontend.$procmux$224 ($mux).
+Removed top 1 bits (of 13) from mux cell acq_frontend.$procmux$233 ($mux).
+Removed top 1 bits (of 11) from mux cell acq_frontend.$procmux$236 ($mux).
+Removed top 1 bits (of 13) from mux cell acq_frontend.$procmux$245 ($mux).
+Removed top 1 bits (of 11) from mux cell acq_frontend.$procmux$248 ($mux).
+Removed top 1 bits (of 13) from mux cell acq_frontend.$procmux$257 ($mux).
+Removed top 1 bits (of 11) from mux cell acq_frontend.$procmux$260 ($mux).
+Removed top 1 bits (of 13) from mux cell acq_frontend.$procmux$269 ($mux).
+Removed top 1 bits (of 11) from mux cell acq_frontend.$procmux$272 ($mux).
+Removed top 1 bits (of 12) from FF cell acq_frontend.$procdff$375 ($dff).
+Removed top 1 bits (of 12) from FF cell acq_frontend.$procdff$379 ($dff).
+Removed top 1 bits (of 12) from FF cell acq_frontend.$procdff$383 ($dff).
+Removed top 1 bits (of 12) from FF cell acq_frontend.$procdff$387 ($dff).
+Removed top 1 bits (of 12) from FF cell acq_frontend.$procdff$391 ($dff).
+Removed top 1 bits (of 12) from FF cell acq_frontend.$procdff$395 ($dff).
+Removed top 1 bits (of 12) from FF cell acq_frontend.$procdff$399 ($dff).
+Removed top 1 bits (of 12) from FF cell acq_frontend.$procdff$403 ($dff).
+Removed top 1 bits (of 12) from FF cell acq_frontend.$procdff$407 ($dff).
+Removed top 1 bits (of 12) from FF cell acq_frontend.$procdff$411 ($dff).
+Removed top 1 bits (of 12) from FF cell acq_frontend.$procdff$415 ($dff).
+Removed top 1 bits (of 12) from FF cell acq_frontend.$procdff$438 ($dff).
+Removed top 1 bits (of 11) from mux cell acq_frontend.$../../../rtl/acq_frontend.sv:202$ternary$57 ($mux).
+Removed top 1 bits (of 11) from mux cell acq_frontend.$../../../rtl/acq_frontend.sv:202$ternary$62 ($mux).
+Removed top 1 bits (of 11) from mux cell acq_frontend.$../../../rtl/acq_frontend.sv:202$ternary$67 ($mux).
+Removed top 1 bits (of 11) from mux cell acq_frontend.$../../../rtl/acq_frontend.sv:202$ternary$72 ($mux).
+Removed top 1 bits (of 11) from mux cell acq_frontend.$../../../rtl/acq_frontend.sv:202$ternary$77 ($mux).
+Removed top 1 bits (of 11) from mux cell acq_frontend.$../../../rtl/acq_frontend.sv:202$ternary$82 ($mux).
+Removed top 1 bits (of 11) from mux cell acq_frontend.$../../../rtl/acq_frontend.sv:202$ternary$87 ($mux).
+Removed top 1 bits (of 11) from mux cell acq_frontend.$../../../rtl/acq_frontend.sv:202$ternary$92 ($mux).
+Removed top 1 bits (of 11) from mux cell acq_frontend.$../../../rtl/acq_frontend.sv:202$ternary$97 ($mux).
+Removed top 1 bits (of 11) from mux cell acq_frontend.$../../../rtl/acq_frontend.sv:202$ternary$102 ($mux).
+Removed top 1 bits (of 11) from mux cell acq_frontend.$../../../rtl/acq_frontend.sv:202$ternary$107 ($mux).
+Removed top 1 bits (of 11) from mux cell acq_frontend.$../../../rtl/acq_frontend.sv:202$ternary$112 ($mux).
+Removed top 1 bits (of 12) from mux cell acq_frontend.$procmux$149 ($mux).
+Removed top 1 bits (of 12) from mux cell acq_frontend.$procmux$161 ($mux).
+Removed top 1 bits (of 12) from mux cell acq_frontend.$procmux$173 ($mux).
+Removed top 1 bits (of 12) from mux cell acq_frontend.$procmux$185 ($mux).
+Removed top 1 bits (of 12) from mux cell acq_frontend.$procmux$197 ($mux).
+Removed top 1 bits (of 12) from mux cell acq_frontend.$procmux$209 ($mux).
+Removed top 1 bits (of 12) from mux cell acq_frontend.$procmux$221 ($mux).
+Removed top 1 bits (of 12) from mux cell acq_frontend.$procmux$233 ($mux).
+Removed top 1 bits (of 12) from mux cell acq_frontend.$procmux$245 ($mux).
+Removed top 1 bits (of 12) from mux cell acq_frontend.$procmux$257 ($mux).
+Removed top 1 bits (of 12) from mux cell acq_frontend.$procmux$269 ($mux).
+Removed top 1 bits (of 11) from FF cell acq_frontend.$procdff$379 ($dff).
+Removed top 1 bits (of 11) from FF cell acq_frontend.$procdff$383 ($dff).
+Removed top 1 bits (of 11) from FF cell acq_frontend.$procdff$387 ($dff).
+Removed top 1 bits (of 11) from FF cell acq_frontend.$procdff$391 ($dff).
+Removed top 1 bits (of 11) from FF cell acq_frontend.$procdff$395 ($dff).
+Removed top 1 bits (of 11) from FF cell acq_frontend.$procdff$399 ($dff).
+Removed top 1 bits (of 11) from FF cell acq_frontend.$procdff$403 ($dff).
+Removed top 1 bits (of 11) from FF cell acq_frontend.$procdff$407 ($dff).
+Removed top 1 bits (of 11) from FF cell acq_frontend.$procdff$411 ($dff).
+Removed top 1 bits (of 11) from FF cell acq_frontend.$procdff$415 ($dff).
+Removed top 1 bits (of 11) from FF cell acq_frontend.$procdff$438 ($dff).
+Removed top 1 bits (of 11) from port Y of cell acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$56 ($sub).
+Removed top 1 bits (of 11) from port A of cell acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$56 ($sub).
+Removed top 1 bits (of 11) from port Y of cell acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$61 ($sub).
+Removed top 1 bits (of 11) from port A of cell acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$61 ($sub).
+Removed top 1 bits (of 11) from port Y of cell acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$66 ($sub).
+Removed top 1 bits (of 11) from port A of cell acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$66 ($sub).
+Removed top 1 bits (of 11) from port Y of cell acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$71 ($sub).
+Removed top 1 bits (of 11) from port A of cell acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$71 ($sub).
+Removed top 1 bits (of 11) from port Y of cell acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$76 ($sub).
+Removed top 1 bits (of 11) from port A of cell acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$76 ($sub).
+Removed top 1 bits (of 11) from port Y of cell acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$81 ($sub).
+Removed top 1 bits (of 11) from port A of cell acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$81 ($sub).
+Removed top 1 bits (of 11) from port Y of cell acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$86 ($sub).
+Removed top 1 bits (of 11) from port A of cell acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$86 ($sub).
+Removed top 1 bits (of 11) from port Y of cell acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$91 ($sub).
+Removed top 1 bits (of 11) from port A of cell acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$91 ($sub).
+Removed top 1 bits (of 11) from port Y of cell acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$96 ($sub).
+Removed top 1 bits (of 11) from port A of cell acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$96 ($sub).
+Removed top 1 bits (of 11) from port Y of cell acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$101 ($sub).
+Removed top 1 bits (of 11) from port A of cell acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$101 ($sub).
+Removed top 1 bits (of 11) from port Y of cell acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$106 ($sub).
+Removed top 1 bits (of 11) from port A of cell acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$106 ($sub).
+Removed top 1 bits (of 11) from port Y of cell acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$111 ($sub).
+Removed top 1 bits (of 11) from port A of cell acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$111 ($sub).
+Removed top 1 bits (of 11) from mux cell acq_frontend.$procmux$161 ($mux).
+Removed top 1 bits (of 11) from mux cell acq_frontend.$procmux$173 ($mux).
+Removed top 1 bits (of 11) from mux cell acq_frontend.$procmux$185 ($mux).
+Removed top 1 bits (of 11) from mux cell acq_frontend.$procmux$197 ($mux).
+Removed top 1 bits (of 11) from mux cell acq_frontend.$procmux$209 ($mux).
+Removed top 1 bits (of 11) from mux cell acq_frontend.$procmux$221 ($mux).
+Removed top 1 bits (of 11) from mux cell acq_frontend.$procmux$233 ($mux).
+Removed top 1 bits (of 11) from mux cell acq_frontend.$procmux$245 ($mux).
+Removed top 1 bits (of 11) from mux cell acq_frontend.$procmux$257 ($mux).
+Removed top 1 bits (of 11) from mux cell acq_frontend.$procmux$269 ($mux).
+Removed top 1 bits (of 10) from FF cell acq_frontend.$procdff$383 ($dff).
+Removed top 1 bits (of 10) from FF cell acq_frontend.$procdff$387 ($dff).
+Removed top 1 bits (of 10) from FF cell acq_frontend.$procdff$391 ($dff).
+Removed top 1 bits (of 10) from FF cell acq_frontend.$procdff$395 ($dff).
+Removed top 1 bits (of 10) from FF cell acq_frontend.$procdff$399 ($dff).
+Removed top 1 bits (of 10) from FF cell acq_frontend.$procdff$403 ($dff).
+Removed top 1 bits (of 10) from FF cell acq_frontend.$procdff$407 ($dff).
+Removed top 1 bits (of 10) from FF cell acq_frontend.$procdff$411 ($dff).
+Removed top 1 bits (of 10) from FF cell acq_frontend.$procdff$415 ($dff).
+Removed top 1 bits (of 10) from FF cell acq_frontend.$procdff$438 ($dff).
+Removed top 1 bits (of 10) from mux cell acq_frontend.$procmux$173 ($mux).
+Removed top 1 bits (of 10) from mux cell acq_frontend.$procmux$185 ($mux).
+Removed top 1 bits (of 10) from mux cell acq_frontend.$procmux$197 ($mux).
+Removed top 1 bits (of 10) from mux cell acq_frontend.$procmux$209 ($mux).
+Removed top 1 bits (of 10) from mux cell acq_frontend.$procmux$221 ($mux).
+Removed top 1 bits (of 10) from mux cell acq_frontend.$procmux$233 ($mux).
+Removed top 1 bits (of 10) from mux cell acq_frontend.$procmux$245 ($mux).
+Removed top 1 bits (of 10) from mux cell acq_frontend.$procmux$257 ($mux).
+Removed top 1 bits (of 10) from mux cell acq_frontend.$procmux$269 ($mux).
+Removed top 1 bits (of 9) from FF cell acq_frontend.$procdff$387 ($dff).
+Removed top 1 bits (of 9) from FF cell acq_frontend.$procdff$391 ($dff).
+Removed top 1 bits (of 9) from FF cell acq_frontend.$procdff$395 ($dff).
+Removed top 1 bits (of 9) from FF cell acq_frontend.$procdff$399 ($dff).
+Removed top 1 bits (of 9) from FF cell acq_frontend.$procdff$403 ($dff).
+Removed top 1 bits (of 9) from FF cell acq_frontend.$procdff$407 ($dff).
+Removed top 1 bits (of 9) from FF cell acq_frontend.$procdff$411 ($dff).
+Removed top 1 bits (of 9) from FF cell acq_frontend.$procdff$415 ($dff).
+Removed top 1 bits (of 9) from FF cell acq_frontend.$procdff$438 ($dff).
+Removed top 1 bits (of 9) from mux cell acq_frontend.$procmux$185 ($mux).
+Removed top 1 bits (of 9) from mux cell acq_frontend.$procmux$197 ($mux).
+Removed top 1 bits (of 9) from mux cell acq_frontend.$procmux$209 ($mux).
+Removed top 1 bits (of 9) from mux cell acq_frontend.$procmux$221 ($mux).
+Removed top 1 bits (of 9) from mux cell acq_frontend.$procmux$233 ($mux).
+Removed top 1 bits (of 9) from mux cell acq_frontend.$procmux$245 ($mux).
+Removed top 1 bits (of 9) from mux cell acq_frontend.$procmux$257 ($mux).
+Removed top 1 bits (of 9) from mux cell acq_frontend.$procmux$269 ($mux).
+Removed top 1 bits (of 8) from FF cell acq_frontend.$procdff$391 ($dff).
+Removed top 1 bits (of 8) from FF cell acq_frontend.$procdff$395 ($dff).
+Removed top 1 bits (of 8) from FF cell acq_frontend.$procdff$399 ($dff).
+Removed top 1 bits (of 8) from FF cell acq_frontend.$procdff$403 ($dff).
+Removed top 1 bits (of 8) from FF cell acq_frontend.$procdff$407 ($dff).
+Removed top 1 bits (of 8) from FF cell acq_frontend.$procdff$411 ($dff).
+Removed top 1 bits (of 8) from FF cell acq_frontend.$procdff$415 ($dff).
+Removed top 1 bits (of 8) from FF cell acq_frontend.$procdff$438 ($dff).
+Removed top 1 bits (of 8) from mux cell acq_frontend.$procmux$197 ($mux).
+Removed top 1 bits (of 8) from mux cell acq_frontend.$procmux$209 ($mux).
+Removed top 1 bits (of 8) from mux cell acq_frontend.$procmux$221 ($mux).
+Removed top 1 bits (of 8) from mux cell acq_frontend.$procmux$233 ($mux).
+Removed top 1 bits (of 8) from mux cell acq_frontend.$procmux$245 ($mux).
+Removed top 1 bits (of 8) from mux cell acq_frontend.$procmux$257 ($mux).
+Removed top 1 bits (of 8) from mux cell acq_frontend.$procmux$269 ($mux).
+Removed top 1 bits (of 7) from FF cell acq_frontend.$procdff$395 ($dff).
+Removed top 1 bits (of 7) from FF cell acq_frontend.$procdff$399 ($dff).
+Removed top 1 bits (of 7) from FF cell acq_frontend.$procdff$403 ($dff).
+Removed top 1 bits (of 7) from FF cell acq_frontend.$procdff$407 ($dff).
+Removed top 1 bits (of 7) from FF cell acq_frontend.$procdff$411 ($dff).
+Removed top 1 bits (of 7) from FF cell acq_frontend.$procdff$415 ($dff).
+Removed top 1 bits (of 7) from FF cell acq_frontend.$procdff$438 ($dff).
+Removed top 1 bits (of 7) from mux cell acq_frontend.$procmux$209 ($mux).
+Removed top 1 bits (of 7) from mux cell acq_frontend.$procmux$221 ($mux).
+Removed top 1 bits (of 7) from mux cell acq_frontend.$procmux$233 ($mux).
+Removed top 1 bits (of 7) from mux cell acq_frontend.$procmux$245 ($mux).
+Removed top 1 bits (of 7) from mux cell acq_frontend.$procmux$257 ($mux).
+Removed top 1 bits (of 7) from mux cell acq_frontend.$procmux$269 ($mux).
+Removed top 1 bits (of 6) from FF cell acq_frontend.$procdff$399 ($dff).
+Removed top 1 bits (of 6) from FF cell acq_frontend.$procdff$403 ($dff).
+Removed top 1 bits (of 6) from FF cell acq_frontend.$procdff$407 ($dff).
+Removed top 1 bits (of 6) from FF cell acq_frontend.$procdff$411 ($dff).
+Removed top 1 bits (of 6) from FF cell acq_frontend.$procdff$415 ($dff).
+Removed top 1 bits (of 6) from FF cell acq_frontend.$procdff$438 ($dff).
+Removed top 1 bits (of 6) from mux cell acq_frontend.$procmux$221 ($mux).
+Removed top 1 bits (of 6) from mux cell acq_frontend.$procmux$233 ($mux).
+Removed top 1 bits (of 6) from mux cell acq_frontend.$procmux$245 ($mux).
+Removed top 1 bits (of 6) from mux cell acq_frontend.$procmux$257 ($mux).
+Removed top 1 bits (of 6) from mux cell acq_frontend.$procmux$269 ($mux).
+Removed top 1 bits (of 5) from FF cell acq_frontend.$procdff$403 ($dff).
+Removed top 1 bits (of 5) from FF cell acq_frontend.$procdff$407 ($dff).
+Removed top 1 bits (of 5) from FF cell acq_frontend.$procdff$411 ($dff).
+Removed top 1 bits (of 5) from FF cell acq_frontend.$procdff$415 ($dff).
+Removed top 1 bits (of 5) from FF cell acq_frontend.$procdff$438 ($dff).
+Removed top 1 bits (of 5) from mux cell acq_frontend.$procmux$233 ($mux).
+Removed top 1 bits (of 5) from mux cell acq_frontend.$procmux$245 ($mux).
+Removed top 1 bits (of 5) from mux cell acq_frontend.$procmux$257 ($mux).
+Removed top 1 bits (of 5) from mux cell acq_frontend.$procmux$269 ($mux).
+Removed top 1 bits (of 4) from FF cell acq_frontend.$procdff$407 ($dff).
+Removed top 1 bits (of 4) from FF cell acq_frontend.$procdff$411 ($dff).
+Removed top 1 bits (of 4) from FF cell acq_frontend.$procdff$415 ($dff).
+Removed top 1 bits (of 4) from FF cell acq_frontend.$procdff$438 ($dff).
+Removed top 1 bits (of 4) from mux cell acq_frontend.$procmux$245 ($mux).
+Removed top 1 bits (of 4) from mux cell acq_frontend.$procmux$257 ($mux).
+Removed top 1 bits (of 4) from mux cell acq_frontend.$procmux$269 ($mux).
+Removed top 1 bits (of 3) from FF cell acq_frontend.$procdff$411 ($dff).
+Removed top 1 bits (of 3) from FF cell acq_frontend.$procdff$415 ($dff).
+Removed top 1 bits (of 3) from FF cell acq_frontend.$procdff$438 ($dff).
+Removed top 1 bits (of 3) from mux cell acq_frontend.$procmux$257 ($mux).
+Removed top 1 bits (of 3) from mux cell acq_frontend.$procmux$269 ($mux).
+Removed top 1 bits (of 2) from FF cell acq_frontend.$procdff$415 ($dff).
+Removed top 1 bits (of 2) from FF cell acq_frontend.$procdff$438 ($dff).
+Removed top 1 bits (of 2) from mux cell acq_frontend.$procmux$269 ($mux).
+Removed cell acq_frontend.$procdff$438 ($dff).
+Removed top 1 bits (of 11) from wire acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$86_Y.
+Removed top 1 bits (of 11) from wire acq_frontend.$../../../rtl/acq_frontend.sv:202$ternary$112_Y.
+Removed top 6 bits (of 13) from wire acq_frontend.$0\quo_q[7][12:0].
+Removed top 1 bits (of 11) from wire acq_frontend.$0\rem_q[7][10:0].
+Removed top 1 bits (of 11) from wire acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$111_Y.
+Removed top 1 bits (of 11) from wire acq_frontend.$../../../rtl/acq_frontend.sv:202$ternary$82_Y.
+Removed top 1 bits (of 11) from wire acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$81_Y.
+Removed top 7 bits (of 13) from wire acq_frontend.$0\quo_q[6][12:0].
+Removed top 1 bits (of 11) from wire acq_frontend.$0\rem_q[6][10:0].
+Removed top 1 bits (of 11) from wire acq_frontend.$../../../rtl/acq_frontend.sv:202$ternary$77_Y.
+Removed top 1 bits (of 11) from wire acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$76_Y.
+Removed top 8 bits (of 13) from wire acq_frontend.$0\quo_q[5][12:0].
+Removed top 1 bits (of 11) from wire acq_frontend.$0\rem_q[5][10:0].
+Removed top 1 bits (of 11) from wire acq_frontend.$../../../rtl/acq_frontend.sv:202$ternary$72_Y.
+Removed top 1 bits (of 11) from wire acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$71_Y.
+Removed top 1 bits (of 13) from wire acq_frontend.$0\quo_q[12][12:0].
+Removed top 9 bits (of 13) from wire acq_frontend.$0\quo_q[4][12:0].
+Removed top 1 bits (of 11) from wire acq_frontend.$0\rem_q[4][10:0].
+Removed top 1 bits (of 11) from wire acq_frontend.$0\rem_q[12][10:0].
+Removed top 1 bits (of 11) from wire acq_frontend.$../../../rtl/acq_frontend.sv:202$ternary$67_Y.
+Removed top 1 bits (of 11) from wire acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$66_Y.
+Removed top 10 bits (of 13) from wire acq_frontend.$0\quo_q[3][12:0].
+Removed top 1 bits (of 11) from wire acq_frontend.$0\rem_q[3][10:0].
+Removed top 1 bits (of 11) from wire acq_frontend.$../../../rtl/acq_frontend.sv:202$ternary$107_Y.
+Removed top 1 bits (of 11) from wire acq_frontend.$../../../rtl/acq_frontend.sv:202$ternary$62_Y.
+Removed top 1 bits (of 11) from wire acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$61_Y.
+Removed top 1 bits (of 11) from wire acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$106_Y.
+Removed top 11 bits (of 13) from wire acq_frontend.$0\quo_q[2][12:0].
+Removed top 1 bits (of 11) from wire acq_frontend.$0\rem_q[2][10:0].
+Removed top 1 bits (of 11) from wire acq_frontend.$../../../rtl/acq_frontend.sv:202$ternary$57_Y.
+Removed top 1 bits (of 11) from wire acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$56_Y.
+Removed top 12 bits (of 13) from wire acq_frontend.$0\quo_q[1][12:0].
+Removed top 1 bits (of 11) from wire acq_frontend.$0\rem_q[1][10:0].
+Removed top 2 bits (of 13) from wire acq_frontend.$0\quo_q[11][12:0].
+Removed top 1 bits (of 11) from wire acq_frontend.$0\rem_q[11][10:0].
+Removed top 1 bits (of 11) from wire acq_frontend.$../../../rtl/acq_frontend.sv:202$ternary$102_Y.
+Removed top 1 bits (of 11) from wire acq_frontend.$../../../rtl/acq_frontend.sv:202$ternary$87_Y.
+Removed top 1 bits (of 11) from wire acq_frontend.$0\rem_q[8][10:0].
+Removed top 5 bits (of 13) from wire acq_frontend.$0\quo_q[8][12:0].
+Removed top 1 bits (of 11) from wire acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$101_Y.
+Removed top 3 bits (of 13) from wire acq_frontend.$0\quo_q[10][12:0].
+Removed top 1 bits (of 11) from wire acq_frontend.$0\rem_q[10][10:0].
+Removed top 1 bits (of 11) from wire acq_frontend.$../../../rtl/acq_frontend.sv:202$ternary$97_Y.
+Removed top 3 bits (of 15) from wire acq_frontend.$../../../rtl/acq_frontend.sv:227$ternary$24_Y.
+Removed top 1 bits (of 11) from wire acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$96_Y.
+Removed top 1 bits (of 11) from wire acq_frontend.$0\rem_q[0][10:0].
+Removed top 4 bits (of 13) from wire acq_frontend.$0\quo_q[9][12:0].
+Removed top 1 bits (of 11) from wire acq_frontend.$0\rem_q[9][10:0].
+Removed top 1 bits (of 11) from wire acq_frontend.$../../../rtl/acq_frontend.sv:202$ternary$92_Y.
+Removed top 1 bits (of 11) from wire acq_frontend.$../../../rtl/acq_frontend.sv:202$sub$91_Y.
+Removed top 1 bits (of 13) from wire acq_frontend.quo_q[12].
+Removed top 2 bits (of 13) from wire acq_frontend.quo_q[11].
+Removed top 3 bits (of 13) from wire acq_frontend.quo_q[10].
+Removed top 4 bits (of 13) from wire acq_frontend.quo_q[9].
+Removed top 5 bits (of 13) from wire acq_frontend.quo_q[8].
+Removed top 6 bits (of 13) from wire acq_frontend.quo_q[7].
+Removed top 7 bits (of 13) from wire acq_frontend.quo_q[6].
+Removed top 8 bits (of 13) from wire acq_frontend.quo_q[5].
+Removed top 9 bits (of 13) from wire acq_frontend.quo_q[4].
+Removed top 10 bits (of 13) from wire acq_frontend.quo_q[3].
+Removed top 11 bits (of 13) from wire acq_frontend.quo_q[2].
+Removed top 12 bits (of 13) from wire acq_frontend.quo_q[1].
+Removed top 1 bits (of 11) from wire acq_frontend.rem_q[12].
+Removed top 1 bits (of 11) from wire acq_frontend.rem_q[11].
+Removed top 1 bits (of 11) from wire acq_frontend.rem_q[10].
+Removed top 1 bits (of 11) from wire acq_frontend.rem_q[9].
+Removed top 1 bits (of 11) from wire acq_frontend.rem_q[8].
+Removed top 1 bits (of 11) from wire acq_frontend.rem_q[7].
+Removed top 1 bits (of 11) from wire acq_frontend.rem_q[6].
+Removed top 1 bits (of 11) from wire acq_frontend.rem_q[5].
+Removed top 1 bits (of 11) from wire acq_frontend.rem_q[4].
+Removed top 1 bits (of 11) from wire acq_frontend.rem_q[3].
+Removed top 1 bits (of 11) from wire acq_frontend.rem_q[2].
+Removed top 1 bits (of 11) from wire acq_frontend.rem_q[1].
+Removed top 1 bits (of 11) from wire acq_frontend.rem_q[0].
+Removed top 6 bits (of 8) from wire acq_frontend.gap_bit.
+Removed top 4 bits (of 16) from wire acq_frontend.pre_w.
+Removed top 3 bits (of 15) from wire acq_frontend.pre_cl.
+
+3.10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acq_frontend..
+Removed 0 unused cells and 79 unused wires.
+<suppressed ~2 debug messages>
+
+3.11. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+3.12. Executing OPT pass (performing simple optimizations).
+
+3.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acq_frontend.
+
+3.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\acq_frontend'.
+Computing hashes of 228 cells of `\acq_frontend'.
+Finding duplicate cells in `\acq_frontend'.
+Removed a total of 0 cells.
+
+3.12.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acq_frontend..
+
+3.12.4. Finished fast OPT passes.
+
+3.13. Executing SORT pass.
+
+3.14. Printing statistics.
+
+=== acq_frontend ===
+
+        +----------Local Count, excluding submodules.
+        | 
+      265 wires
+     3727 wire bits
+      138 public wires
+     1783 public wire bits
+       24 ports
+      290 port bits
+      228 cells
+        5   $add
+        7   $and
+       73   $dff
+        1   $eq
+       14   $ge
+        2   $gt
+        1   $logic_and
+        1   $lt
+       99   $mux
+        2   $neg
+        1   $not
+        6   $or
+        1   $reduce_bool
+       15   $sub
+
+3.15. Executing CHECK pass (checking for obvious problems).
+Checking module acq_frontend...
+Found and reported 0 problems.
+
+4. Executing RTLIL backend.
+Output filename: database/design.il
+
+Warnings: 4 unique messages, 4 total
+End of script. Logfile hash: adc1fdaf83, time: 0.10s, user: 0.10s, system: 0.01s, MEM: 21.54 MB peak
+Yosys 0.70+157 (git sha1 af9f71e51, Release, Clang /usr/bin/clang++ 21.1.8)
+Time spent: 22% 1x hierarchy (0 sec), 21% 5x opt_clean (0 sec), ...

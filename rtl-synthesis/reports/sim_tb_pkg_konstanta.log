@@ -1,0 +1,88 @@
+run_sim.sh: tb=../rtl/tb/tb_pkg_konstanta.sv sources=1 plusargs=0
+  compiled first (packages): ../rtl/afib_lite_pkg.sv
+INFO  manifest path [/home/avivsabilalm/.hermes/cache/scratch/rtlplan2/fase0/04015.manifest.json]
+INFO  manifest lines read 171
+INFO  columns parsed min=6 max=6 words_above_2p31=6
+INFO  column[0] masukan16 min=-29776      max=32752       signed_width=16
+INFO  column[1] lp        min=-1061200    max=1179072     signed_width=22
+INFO  column[2] hp        min=-16974032   max=19286208    signed_width=26
+INFO  column[3] turunan   min=-4792318    max=3831762     signed_width=24
+INFO  column[4] kuadrat   min=0           max=350438400   signed_width=30
+INFO  column[5] jendela   min=0           max=3105281786  signed_width=33
+CHECK width.masukan16            got=16           want=16           diffs=0  PASS src=doc36 2.2 columns.masukan16
+CHECK width.lp                   got=22           want=22           diffs=0  PASS src=doc36 2.2 columns.lp
+CHECK width.hp                   got=26           want=26           diffs=0  PASS src=doc36 2.2 columns.hp
+CHECK width.turunan              got=24           want=24           diffs=0  PASS src=doc36 2.2 columns.turunan
+CHECK width.kuadrat              got=30           want=30           diffs=0  PASS src=doc36 2.2 columns.kuadrat
+CHECK width.jendela              got=33           want=33           diffs=0  PASS src=doc36 2.2 columns.jendela
+BOUND fit.masukan16.max          got=32752        <= lim=32767        excess=0  PASS src=W_IN top
+BOUND fit.masukan16.min          got=29776        <= lim=32768        excess=0  PASS src=W_IN bottom
+BOUND fit.lp.max                 got=1179072      <= lim=2097151      excess=0  PASS src=W_LP top
+BOUND fit.lp.min                 got=1061200      <= lim=2097152      excess=0  PASS src=W_LP bottom
+BOUND fit.hp.max                 got=19286208     <= lim=33554431     excess=0  PASS src=W_HP top
+BOUND fit.hp.min                 got=16974032     <= lim=33554432     excess=0  PASS src=W_HP bottom
+BOUND fit.turunan.max            got=3831762      <= lim=8388607      excess=0  PASS src=W_DER top
+BOUND fit.turunan.min            got=4792318      <= lim=8388608      excess=0  PASS src=W_DER bottom
+BOUND fit.kuadrat.max            got=350438400    <= lim=536870911    excess=0  PASS src=W_SQ top
+BOUND fit.jendela.max            got=3105281786   <= lim=4294967295   excess=0  PASS src=W_WIN top
+CHECK clamp.word.max             got=32752        want=32752        diffs=0  PASS src=CLAMP_WORD vs columns.masukan16.max
+BOUND clamp.min.inside           got=29776        <= lim=32752        excess=0  PASS src=columns.masukan16.min inside CLAMP_WORD
+CHECK square.from.derivative     got=350438400    want=350438400    diffs=0  PASS src=kuadrat.max vs (turunan.min >>> SHIFT_DER)**2
+BOUND square.limit               got=18720        <= lim=56503        excess=0  PASS src=shifted derivative inside SQ_LIMIT
+BOUND window.sum.upper           got=3105281786   <= lim=13316659200  excess=0  PASS src=N_WIN * kuadrat.max
+BOUND window.sum.lower           got=350438400    <= lim=3105281786   excess=0  PASS src=kuadrat.max
+BOUND window.worst.case          got=3105281786   <= lim=121318382342 excess=0  PASS src=N_WIN * SQ_LIMIT**2, doc 36 2.4
+CHECK rate.divider               got=400000       want=400000       diffs=0  PASS src=RATE_DIV_RST vs manifest rate_hz
+CHECK rate.divider.width         got=20           want=20           diffs=0  PASS src=D12: 399999 needs 19 bit, the field is declared 20
+CHECK window.above_2p31          got=1            want=1            diffs=0  PASS src=jendela holds words at or above 2**31, doc 36 2.2 unsigned column
+CHECK stream.total_words         got=2700000      want=2700000      diffs=0  PASS src=gate.total_words
+CHECK stream.words_per_column    got=450000       want=450000       diffs=0  PASS src=gate.words_per_column
+CHECK stream.bytes_per_word      got=9            want=9            diffs=0  PASS src=format.bytes_per_word
+CHECK stream.column_count        got=6            want=6            diffs=0  PASS src=count of parsed min lines
+CHECK stream.min_max_pairs       got=6            want=6            diffs=0  PASS src=count of parsed max lines
+CHECK stream.above_2p31_fields   got=6            want=6            diffs=0  PASS src=count of words_above_2p31 fields
+CHECK adapter.mismatches         got=0            want=0            diffs=0  PASS src=adapter_check.mismatches
+CHECK adapter.fixture_words      got=450000       want=450000       diffs=0  PASS src=adapter_check.fixture_masukan16_words
+CHECK clamp.word.identity        got=32752        want=32752        diffs=0  PASS src=CLAMP_COUNT << SHIFT_IN
+CHECK rr.max.identity            got=65535        want=65535        diffs=0  PASS src=2**W_RR_MS - 1
+CHECK thresh.scale.identity      got=256          want=256          diffs=0  PASS src=2**SHIFT_DER
+CHECK window.pair.identity       got=38           want=38           diffs=0  PASS src=N_WIN_ALT + 1
+CHECK derivative.worst.identity  got=25           want=25           diffs=0  PASS src=W_DER + 1
+CHECK window.worst.identity      got=37           want=37           diffs=0  PASS src=doc 36 2.4 states 121318382342 is 37 bit
+BOUND rr.long.inside.max         got=3000         <= lim=65535        excess=0  PASS src=RR_LONG_MS inside W_RR_MS
+CHECK bits.word_in_t             got=16           want=16           diffs=0  PASS src=group 4 vs group 1
+CHECK bits.lp_t                  got=22           want=22           diffs=0  PASS src=group 4 vs group 1
+CHECK bits.hp_t                  got=26           want=26           diffs=0  PASS src=group 4 vs group 1
+CHECK bits.der_t                 got=24           want=24           diffs=0  PASS src=group 4 vs group 1
+CHECK bits.sq_t                  got=30           want=30           diffs=0  PASS src=group 4 vs group 1
+CHECK bits.win_t                 got=33           want=33           diffs=0  PASS src=group 4 vs group 1
+CHECK bits.thr_t                 got=30           want=30           diffs=0  PASS src=group 4 vs group 1
+CHECK bits.rr_ms_t               got=16           want=16           diffs=0  PASS src=group 4 vs group 1
+CHECK bits.idx_t                 got=32           want=32           diffs=0  PASS src=group 4 vs group 1
+CHECK bits.tuser_t               got=8            want=8            diffs=0  PASS src=group 4 vs group 1
+CHECK bits.conf_t                got=16           want=16           diffs=0  PASS src=group 4 vs group 1
+CHECK enum.kelas.base            got=0            want=0            diffs=0  PASS src=D2 reset value 0
+CHECK enum.kelas.step1           got=1            want=1            diffs=0  PASS src=D2
+CHECK enum.kelas.step2           got=1            want=1            diffs=0  PASS src=D2
+CHECK enum.event.base            got=0            want=0            diffs=0  PASS src=plan 3.2 m_ev_kind
+CHECK enum.event.qrs             got=1            want=1            diffs=0  PASS src=plan 3.2 m_ev_kind
+CHECK enum.event.window          got=1            want=1            diffs=0  PASS src=plan 3.2 m_ev_kind
+CHECK enum.rnd.base              got=0            want=0            diffs=0  PASS src=plan 3.4 group 3 order
+CHECK enum.mark.base             got=0            want=0            diffs=0  PASS src=doc 36 2.7 four marks
+CHECK enum.mark.gap.last         got=1            want=1            diffs=0  PASS src=doc 36 2.7 four marks
+CHECK rst.arm.four.lit           got=1            want=1            diffs=0  PASS src=D8 four arms lit after reset
+CHECK rst.window.beats           got=32           want=32           diffs=0  PASS src=D5 lock
+CHECK rst.window.step            got=4            want=4            diffs=0  PASS src=D5 lock
+CHECK rst.ratio.thresh           got=33           want=33           diffs=0  PASS src=D8 P1 0.165 in 1/200 units
+CHECK rst.entropy.thresh         got=63           want=63           diffs=0  PASS src=D8 P1 0.63 in 1/100 units
+CHECK conf.full.scale            got=1000         want=1000         diffs=0  PASS src=D2b
+CHECK gap.recovery               got=131          want=131          diffs=0  PASS src=doc 36 3.6 chain of stage delays
+REVIEW square.bound.width        got=32           other=30           not counted src=SQ_LIMIT**2 needs 32 bit, W_SQ is 30: owner decision needed
+REVIEW searchback.width          got=30           other=23           not counted src=no width parameter for the search_back word, doc 36 2.2.1 binding 30
+REVIEW buffer.depths             got=128          other=8            not counted src=no witness in the manifest or doc 36, owner decision
+REVIEW rr.samples.width          got=15           other=16           not counted src=no witness in doc 36, TASK_BRIEF 2.1 fixes 15
+REVIEW feature.widths.other      got=77           other=16           not counted src=sum of the four feature widths, doc 36 5.5 binding column
+checks: 68
+review lines: 5
+bit differences: 0
+../rtl/tb/tb_pkg_konstanta.sv:436: $finish called at 0 (1ps)

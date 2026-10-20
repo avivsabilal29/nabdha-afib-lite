@@ -1,0 +1,3 @@
+read_rtlil ../../database/design.il
+mutate -mode cnot1 -module acq_frontend -cell $procdff$403 -port Q -portbit 3 -ctrlbit 2 -wire quo_q[4] -wirebit 3 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+write_verilog -norename mutated.v

@@ -1,0 +1,23 @@
+==> Run all tasks from queue
+  -> Reading configuration file.
+  -> Connecting to database.
+  ==> Running task 937a04cc-dddb-4a1a-9a1b-89d433031795 (test_sim)
+ 1 114 mutate -mode const1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:323$logic_and$51 -port Y -portbit 0 -src ../../../rtl/acq_frontend.sv:323.17-323.40
+  ==> Running task d1a701c1-db72-4c19-b070-0985b1fe39da (test_sim)
+ 1 247 mutate -mode const0 -module acq_frontend -cell $procdff$420 -port Q -portbit 0 -wire sample_en_q -wirebit 0 -src ../../../rtl/acq_frontend.sv:128.26-128.37 -src ../../../rtl/acq_frontend.sv:309.5-326.8
+  ==> Running task e3ef5947-f835-41ee-8f5b-82fb1ee72b85 (test_sim)
+ 1 309 mutate -mode const1 -module acq_frontend -cell $procmux$289 -port B -portbit 2 -src ../../../rtl/acq_frontend.sv:310.13-310.20 -src ../../../rtl/acq_frontend.sv:310.9-325.12
+  ==> Running task 28c9891c-fd17-4b8b-94a5-b81592fc47bd (test_sim)
+ 1 368 mutate -mode inv -module acq_frontend -cell $procdff$420 -port Q -portbit 0 -wire sample_en_q -wirebit 0 -src ../../../rtl/acq_frontend.sv:128.26-128.37 -src ../../../rtl/acq_frontend.sv:309.5-326.8
+  ==> Running task a66adf0d-9f58-458e-8915-33f7ca9d6ad4 (test_sim)
+ 1 394 mutate -mode const1 -module acq_frontend -cell $procmux$286 -port A -portbit 14 -src ../../../rtl/acq_frontend.sv:323.17-323.40 -src ../../../rtl/acq_frontend.sv:323.13-324.74
+  ==> Running task 55b04d40-3c6c-4245-9f88-2a5d88b0b311 (test_sim)
+ 1 546 mutate -mode inv -module acq_frontend -cell $procmux$289 -port A -portbit 24 -src ../../../rtl/acq_frontend.sv:310.13-310.20 -src ../../../rtl/acq_frontend.sv:310.9-325.12
+  ==> Running task 1cc4c863-632b-47b9-b24d-440c183a2c4e (test_sim)
+ 1 625 mutate -mode const1 -module acq_frontend -cell $procdff$419 -port Q -portbit 29 -wire sample_idx_q -wirebit 29 -src ../../../rtl/acq_frontend.sv:127.26-127.38 -src ../../../rtl/acq_frontend.sv:309.5-326.8
+  ==> Running task e23c13b9-6aa4-4fcd-9b8a-fbc6bc5999a0 (test_sim)
+ 1 666 mutate -mode inv -module acq_frontend -cell $procmux$286 -port Y -portbit 31 -src ../../../rtl/acq_frontend.sv:323.17-323.40 -src ../../../rtl/acq_frontend.sv:323.13-324.74
+  ==> Finishing task 937a04cc-dddb-4a1a-9a1b-89d433031795 (test_sim)
+==> ERROR : Invalid line format in file tasks/937a04cc-dddb-4a1a-9a1b-89d433031795/output.txt
+  -> Remove 'RUNNING' status for tasks from queue.
+rc=1

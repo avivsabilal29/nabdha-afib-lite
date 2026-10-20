@@ -1,0 +1,751 @@
+==> Run all tasks from queue
+  -> Reading configuration file.
+  -> Connecting to database.
+  ==> Running task 9a27be66-553a-4dc0-845d-de5602bce70a (test_sim)
+ 1 115 mutate -mode const1 -module acq_frontend -cell $procdff$429 -port Q -portbit 27 -wire m_ev_idx -wirebit 27 -src ../../../rtl/acq_frontend.sv:93.37-93.45 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Running task a3f4bff6-8bcb-4762-a749-ba74219332ac (test_sim)
+ 1 116 mutate -mode const1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:158$and$5 -port Y -portbit 0 -wire gap_marker_in -wirebit 0 -src ../../../rtl/acq_frontend.sv:158.10-158.23 -src ../../../rtl/acq_frontend.sv:158.26-158.75
+  ==> Running task 39bc5e31-2d64-4c4a-a1e3-b147664fcf4b (test_sim)
+ 1 117 mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:225$ternary$20 -port Y -portbit 13 -wire pre_raw -wirebit 13 -src ../../../rtl/acq_frontend.sv:225.29-225.36 -src ../../../rtl/acq_frontend.sv:225.39-225.70
+  ==> Running task 07035049-1411-432d-bb7a-978da24382c3 (test_sim)
+ 1 118 mutate -mode inv -module acq_frontend -cell $procdff$389 -port Q -portbit 9 -wire side_q[8] -wirebit 9 -src ../../../rtl/acq_frontend.sv:167.22-167.28 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Running task 01af57e3-dec7-4d78-8a6b-3549dd7c79cb (test_sim)
+ 1 119 mutate -mode cnot0 -module acq_frontend -cell $procdff$391 -port Q -portbit 2 -ctrlbit 0 -wire quo_q[7] -wirebit 2 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Running task 10ad6715-7778-4c7d-bd7d-66ed64d61325 (test_sim)
+ 1 122 mutate -mode const0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:240$or$29 -port Y -portbit 0 -wire gap_bit -wirebit 1 -src ../../../rtl/acq_frontend.sv:240.58-240.79
+  ==> Finishing task 9a27be66-553a-4dc0-845d-de5602bce70a (test_sim)
+  1 115 PASS mutate -mode const1 -module acq_frontend -cell $procdff$429 -port Q -portbit 27 -wire m_ev_idx -wirebit 27 -src ../../../rtl/acq_frontend.sv:93.37-93.45 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Running task 21f07719-b9fc-4ff7-9090-08d4d26b802b (test_sim)
+ 1 123 mutate -mode const1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:226$lt$22 -port A -portbit 2 -src ../../../rtl/acq_frontend.sv:226.58-226.80
+  ==> Finishing task 10ad6715-7778-4c7d-bd7d-66ed64d61325 (test_sim)
+  1 122 FAIL mutate -mode const0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:240$or$29 -port Y -portbit 0 -wire gap_bit -wirebit 1 -src ../../../rtl/acq_frontend.sv:240.58-240.79
+  ==> Running task b6ae5718-2bae-4219-9e77-e12b4ae20275 (test_sim)
+ 1 129 mutate -mode const1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:222$and$15 -port Y -portbit 0 -src ../../../rtl/acq_frontend.sv:222.46-222.64
+  ==> Finishing task 07035049-1411-432d-bb7a-978da24382c3 (test_sim)
+  1 118 FAIL mutate -mode inv -module acq_frontend -cell $procdff$389 -port Q -portbit 9 -wire side_q[8] -wirebit 9 -src ../../../rtl/acq_frontend.sv:167.22-167.28 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Running task 9883547e-8b3d-45dd-844e-5d9beb9cb9a5 (test_sim)
+ 1 131 mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:159$and$6 -port B -portbit 0 -src ../../../rtl/acq_frontend.sv:159.26-159.48
+  ==> Finishing task 01af57e3-dec7-4d78-8a6b-3549dd7c79cb (test_sim)
+  1 119 FAIL mutate -mode cnot0 -module acq_frontend -cell $procdff$391 -port Q -portbit 2 -ctrlbit 0 -wire quo_q[7] -wirebit 2 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Running task 69250401-7eb1-422f-8af2-f680e550abff (test_sim)
+ 1 132 mutate -mode const1 -module acq_frontend -cell $procdff$371 -port Q -portbit 6 -wire quo_q[12] -wirebit 6 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Finishing task 39bc5e31-2d64-4c4a-a1e3-b147664fcf4b (test_sim)
+  1 117 FAIL mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:225$ternary$20 -port Y -portbit 13 -wire pre_raw -wirebit 13 -src ../../../rtl/acq_frontend.sv:225.29-225.36 -src ../../../rtl/acq_frontend.sv:225.39-225.70
+  ==> Running task 06bcb879-bdda-4985-b810-4100e6d8faa4 (test_sim)
+ 1 133 mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:221$eq$14 -port Y -portbit 0 -wire rnd_tie -wirebit 0 -src ../../../rtl/acq_frontend.sv:221.22-221.29 -src ../../../rtl/acq_frontend.sv:221.34-221.55
+  ==> Finishing task a3f4bff6-8bcb-4762-a749-ba74219332ac (test_sim)
+  1 116 FAIL mutate -mode const1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:158$and$5 -port Y -portbit 0 -wire gap_marker_in -wirebit 0 -src ../../../rtl/acq_frontend.sv:158.10-158.23 -src ../../../rtl/acq_frontend.sv:158.26-158.75
+  ==> Running task ef4c670d-4da1-431b-a5ac-fdb89373bb12 (test_sim)
+ 1 135 mutate -mode const0 -module acq_frontend -cell $procmux$167 -port B -portbit 10 -wire side_q[8] -wirebit 10 -src ../../../rtl/acq_frontend.sv:167.22-167.28 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Finishing task 21f07719-b9fc-4ff7-9090-08d4d26b802b (test_sim)
+  1 123 PASS mutate -mode const1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:226$lt$22 -port A -portbit 2 -src ../../../rtl/acq_frontend.sv:226.58-226.80
+  ==> Running task 796b9188-d180-48cf-961c-79c9f9a00e3c (test_sim)
+ 1 137 mutate -mode const0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:194$ge$68 -port Y -portbit 0 -wire g_langkah[3].enough -wirebit 0 -src ../../../rtl/acq_frontend.sv:194.30-194.36 -src ../../../rtl/acq_frontend.sv:194.41-194.60
+  ==> Finishing task 9883547e-8b3d-45dd-844e-5d9beb9cb9a5 (test_sim)
+  1 131 FAIL mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:159$and$6 -port B -portbit 0 -src ../../../rtl/acq_frontend.sv:159.26-159.48
+  ==> Running task a2cc0865-55d1-477a-a752-f4566cc5341f (test_sim)
+ 1 138 mutate -mode inv -module acq_frontend -cell $procmux$356 -port B -portbit 34 -wire s_tlast -wirebit 0 -src ../../../rtl/acq_frontend.sv:74.37-74.44 -src ../../../rtl/acq_frontend.sv:174.13-174.20 -src ../../../rtl/acq_frontend.sv:174.9-184.12
+  ==> Finishing task b6ae5718-2bae-4219-9e77-e12b4ae20275 (test_sim)
+  1 129 FAIL mutate -mode const1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:222$and$15 -port Y -portbit 0 -src ../../../rtl/acq_frontend.sv:222.46-222.64
+  ==> Running task 79777635-4c8d-41b7-be47-884066c27b8b (test_sim)
+ 1 139 mutate -mode const0 -module acq_frontend -cell $procmux$342 -port B -portbit 15 -wire word_f -wirebit 15 -src ../../../rtl/acq_frontend.sv:233.29-233.35 -src ../../../rtl/acq_frontend.sv:256.13-256.20 -src ../../../rtl/acq_frontend.sv:256.9-301.12
+  ==> Finishing task ef4c670d-4da1-431b-a5ac-fdb89373bb12 (test_sim)
+  1 135 FAIL mutate -mode const0 -module acq_frontend -cell $procmux$167 -port B -portbit 10 -wire side_q[8] -wirebit 10 -src ../../../rtl/acq_frontend.sv:167.22-167.28 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Running task 8e9f4935-24a8-4da6-bddf-7393c5b73408 (test_sim)
+ 1 142 mutate -mode const1 -module acq_frontend -cell $procdff$422 -port Q -portbit 0 -wire m_tvalid -wirebit 0 -src ../../../rtl/acq_frontend.sv:84.37-84.45 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Finishing task 06bcb879-bdda-4985-b810-4100e6d8faa4 (test_sim)
+  1 133 FAIL mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:221$eq$14 -port Y -portbit 0 -wire rnd_tie -wirebit 0 -src ../../../rtl/acq_frontend.sv:221.22-221.29 -src ../../../rtl/acq_frontend.sv:221.34-221.55
+  ==> Running task 9e7634f7-d7dd-433d-9d25-4086d4b5102c (test_sim)
+ 1 149 mutate -mode const0 -module acq_frontend -cell $procdff$391 -port Q -portbit 5 -wire quo_q[7] -wirebit 5 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Finishing task 69250401-7eb1-422f-8af2-f680e550abff (test_sim)
+  1 132 FAIL mutate -mode const1 -module acq_frontend -cell $procdff$371 -port Q -portbit 6 -wire quo_q[12] -wirebit 6 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Running task d4c272a4-6a55-45fa-a680-3aaff4e8f272 (test_sim)
+ 1 158 mutate -mode const0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:297$add$42 -port Y -portbit 31 -src ../../../rtl/acq_frontend.sv:297.37-297.56
+  ==> Finishing task 796b9188-d180-48cf-961c-79c9f9a00e3c (test_sim)
+  1 137 FAIL mutate -mode const0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:194$ge$68 -port Y -portbit 0 -wire g_langkah[3].enough -wirebit 0 -src ../../../rtl/acq_frontend.sv:194.30-194.36 -src ../../../rtl/acq_frontend.sv:194.41-194.60
+  ==> Running task e0ef9661-9eaa-4397-8d64-c366f102ee7e (test_sim)
+ 1 165 mutate -mode cnot0 -module acq_frontend -cell $procdff$369 -port Q -portbit 34 -ctrlbit 26 -wire side_q[13] -wirebit 34 -src ../../../rtl/acq_frontend.sv:167.22-167.28 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Finishing task a2cc0865-55d1-477a-a752-f4566cc5341f (test_sim)
+  1 138 FAIL mutate -mode inv -module acq_frontend -cell $procmux$356 -port B -portbit 34 -wire s_tlast -wirebit 0 -src ../../../rtl/acq_frontend.sv:74.37-74.44 -src ../../../rtl/acq_frontend.sv:174.13-174.20 -src ../../../rtl/acq_frontend.sv:174.9-184.12
+  ==> Finishing task 79777635-4c8d-41b7-be47-884066c27b8b (test_sim)
+  1 139 FAIL mutate -mode const0 -module acq_frontend -cell $procmux$342 -port B -portbit 15 -wire word_f -wirebit 15 -src ../../../rtl/acq_frontend.sv:233.29-233.35 -src ../../../rtl/acq_frontend.sv:256.13-256.20 -src ../../../rtl/acq_frontend.sv:256.9-301.12
+  ==> Running task 1097a958-daa8-4a2c-b30f-e3286b88fd32 (test_sim)
+ 1 166 mutate -mode inv -module acq_frontend -cell $procmux$353 -port A -portbit 1 -src ../../../rtl/acq_frontend.sv:247.13-247.20 -src ../../../rtl/acq_frontend.sv:247.9-251.70
+  ==> Running task 42f4bb8d-baaa-48af-8bd4-d6ecb0511970 (test_sim)
+ 1 167 mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:194$ge$83 -port Y -portbit 0 -wire g_langkah[6].enough -wirebit 0 -src ../../../rtl/acq_frontend.sv:194.30-194.36 -src ../../../rtl/acq_frontend.sv:194.41-194.60
+  ==> Finishing task 8e9f4935-24a8-4da6-bddf-7393c5b73408 (test_sim)
+  1 142 FAIL mutate -mode const1 -module acq_frontend -cell $procdff$422 -port Q -portbit 0 -wire m_tvalid -wirebit 0 -src ../../../rtl/acq_frontend.sv:84.37-84.45 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Running task 3dbaa894-db51-45cb-b35c-8f9df4e8f2f5 (test_sim)
+ 1 170 mutate -mode cnot1 -module acq_frontend -cell $procdff$380 -port Q -portbit 1 -ctrlbit 6 -wire bit_q[10] -wirebit 1 -src ../../../rtl/acq_frontend.sv:166.22-166.27 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Finishing task d4c272a4-6a55-45fa-a680-3aaff4e8f272 (test_sim)
+  1 158 PASS mutate -mode const0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:297$add$42 -port Y -portbit 31 -src ../../../rtl/acq_frontend.sv:297.37-297.56
+  ==> Running task 931c068d-686c-4d2b-abc5-b54cd5376776 (test_sim)
+ 1 172 mutate -mode cnot0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:155$neg$3 -port A -portbit 9 -ctrlbit 8 -src ../../../rtl/acq_frontend.sv:155.59-155.66
+  ==> Finishing task 9e7634f7-d7dd-433d-9d25-4086d4b5102c (test_sim)
+  1 149 FAIL mutate -mode const0 -module acq_frontend -cell $procdff$391 -port Q -portbit 5 -wire quo_q[7] -wirebit 5 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Running task 8454d755-7689-45d6-8a79-34c6c68d21ff (test_sim)
+ 1 174 mutate -mode const1 -module acq_frontend -cell $procmux$344 -port Y -portbit 5 -src ../../../rtl/acq_frontend.sv:250.18-250.63 -src ../../../rtl/acq_frontend.sv:250.14-251.70
+  ==> Finishing task e0ef9661-9eaa-4397-8d64-c366f102ee7e (test_sim)
+  1 165 FAIL mutate -mode cnot0 -module acq_frontend -cell $procdff$369 -port Q -portbit 34 -ctrlbit 26 -wire side_q[13] -wirebit 34 -src ../../../rtl/acq_frontend.sv:167.22-167.28 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Running task 948d35b1-02e6-4895-b851-8afa9e111f65 (test_sim)
+ 1 177 mutate -mode cnot0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:297$add$42 -port Y -portbit 30 -ctrlbit 10 -src ../../../rtl/acq_frontend.sv:297.37-297.56
+  ==> Finishing task 42f4bb8d-baaa-48af-8bd4-d6ecb0511970 (test_sim)
+  1 167 FAIL mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:194$ge$83 -port Y -portbit 0 -wire g_langkah[6].enough -wirebit 0 -src ../../../rtl/acq_frontend.sv:194.30-194.36 -src ../../../rtl/acq_frontend.sv:194.41-194.60
+  ==> Finishing task 3dbaa894-db51-45cb-b35c-8f9df4e8f2f5 (test_sim)
+  1 170 PASS mutate -mode cnot1 -module acq_frontend -cell $procdff$380 -port Q -portbit 1 -ctrlbit 6 -wire bit_q[10] -wirebit 1 -src ../../../rtl/acq_frontend.sv:166.22-166.27 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Running task 5af5c709-78df-4b40-9742-f65cd87891c1 (test_sim)
+ 1 178 mutate -mode inv -module acq_frontend -cell $procmux$170 -port B -portbit 4 -wire bit_q[8] -wirebit 3 -src ../../../rtl/acq_frontend.sv:166.22-166.27 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Running task f6e100a5-19da-42ff-9a16-56ec104b4cf6 (test_sim)
+ 1 180 mutate -mode cnot1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:222$add$17 -port A -portbit 0 -ctrlbit 6 -src ../../../rtl/acq_frontend.sv:222.70-222.82
+  ==> Finishing task 1097a958-daa8-4a2c-b30f-e3286b88fd32 (test_sim)
+  1 166 FAIL mutate -mode inv -module acq_frontend -cell $procmux$353 -port A -portbit 1 -src ../../../rtl/acq_frontend.sv:247.13-247.20 -src ../../../rtl/acq_frontend.sv:247.9-251.70
+  ==> Running task e819aa55-10b6-4c13-beb0-17f3c019ed28 (test_sim)
+ 1 181 mutate -mode cnot0 -module acq_frontend -cell $procdff$386 -port Q -portbit 2 -ctrlbit 8 -wire g_langkah[8].shifted -wirebit 3 -src ../../../rtl/acq_frontend.sv:193.30-193.37 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Finishing task 8454d755-7689-45d6-8a79-34c6c68d21ff (test_sim)
+  1 174 FAIL mutate -mode const1 -module acq_frontend -cell $procmux$344 -port Y -portbit 5 -src ../../../rtl/acq_frontend.sv:250.18-250.63 -src ../../../rtl/acq_frontend.sv:250.14-251.70
+  ==> Running task 4e3b6473-ea76-4b58-9376-bea40194aadb (test_sim)
+ 1 183 mutate -mode const0 -module acq_frontend -cell $procdff$421 -port Q -portbit 0 -wire m_tdata -wirebit 0 -src ../../../rtl/acq_frontend.sv:83.37-83.44 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Finishing task 931c068d-686c-4d2b-abc5-b54cd5376776 (test_sim)
+  1 172 FAIL mutate -mode cnot0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:155$neg$3 -port A -portbit 9 -ctrlbit 8 -src ../../../rtl/acq_frontend.sv:155.59-155.66
+  ==> Running task 39950ec9-e7ec-4906-add5-9f5dc397d2a3 (test_sim)
+ 1 188 mutate -mode const1 -module acq_frontend -cell $procmux$281 -port B -portbit 11 -src ../../../rtl/acq_frontend.sv:315.17-315.41 -src ../../../rtl/acq_frontend.sv:315.13-321.16
+  ==> Finishing task 948d35b1-02e6-4895-b851-8afa9e111f65 (test_sim)
+  1 177 PASS mutate -mode cnot0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:297$add$42 -port Y -portbit 30 -ctrlbit 10 -src ../../../rtl/acq_frontend.sv:297.37-297.56
+  ==> Running task 644ab432-01eb-43f0-859b-032f1d58c81d (test_sim)
+ 1 190 mutate -mode cnot1 -module acq_frontend -cell $procmux$251 -port B -portbit 23 -ctrlbit 15 -wire side_q[1] -wirebit 23 -src ../../../rtl/acq_frontend.sv:167.22-167.28 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Finishing task e819aa55-10b6-4c13-beb0-17f3c019ed28 (test_sim)
+  1 181 FAIL mutate -mode cnot0 -module acq_frontend -cell $procdff$386 -port Q -portbit 2 -ctrlbit 8 -wire g_langkah[8].shifted -wirebit 3 -src ../../../rtl/acq_frontend.sv:193.30-193.37 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Running task 3eddbb0e-b136-41dc-81b2-9e310e31b5b8 (test_sim)
+ 1 193 mutate -mode cnot0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:242$or$32 -port Y -portbit 6 -ctrlbit 5 -wire out_mark -wirebit 6 -src ../../../rtl/acq_frontend.sv:242.24-242.32 -src ../../../rtl/acq_frontend.sv:242.35-242.63
+  ==> Finishing task f6e100a5-19da-42ff-9a16-56ec104b4cf6 (test_sim)
+  1 180 FAIL mutate -mode cnot1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:222$add$17 -port A -portbit 0 -ctrlbit 6 -src ../../../rtl/acq_frontend.sv:222.70-222.82
+  ==> Running task 2de94a45-fd8c-4599-b5a1-75be8bb8d0f1 (test_sim)
+ 1 194 mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:280$ternary$41 -port A -portbit 2 -src ../../../rtl/acq_frontend.sv:280.30-281.85
+  ==> Finishing task 5af5c709-78df-4b40-9742-f65cd87891c1 (test_sim)
+  1 178 PASS mutate -mode inv -module acq_frontend -cell $procmux$170 -port B -portbit 4 -wire bit_q[8] -wirebit 3 -src ../../../rtl/acq_frontend.sv:166.22-166.27 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Running task 45b192c9-f2b7-4013-a83e-bc8503d52ff2 (test_sim)
+ 1 197 mutate -mode inv -module acq_frontend -cell $procdff$425 -port Q -portbit 6 -wire m_tuser -wirebit 6 -src ../../../rtl/acq_frontend.sv:87.37-87.44 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Finishing task 39950ec9-e7ec-4906-add5-9f5dc397d2a3 (test_sim)
+  1 188 FAIL mutate -mode const1 -module acq_frontend -cell $procmux$281 -port B -portbit 11 -src ../../../rtl/acq_frontend.sv:315.17-315.41 -src ../../../rtl/acq_frontend.sv:315.13-321.16
+  ==> Running task 4b41e2f2-18de-4ed9-ac75-a2dc05dc564c (test_sim)
+ 1 199 mutate -mode inv -module acq_frontend -cell $procdff$433 -port Q -portbit 18 -wire o_sample_idx -wirebit 18 -src ../../../rtl/acq_frontend.sv:101.37-101.49 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Finishing task 4e3b6473-ea76-4b58-9376-bea40194aadb (test_sim)
+  1 183 PASS mutate -mode const0 -module acq_frontend -cell $procdff$421 -port Q -portbit 0 -wire m_tdata -wirebit 0 -src ../../../rtl/acq_frontend.sv:83.37-83.44 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Running task a6e4911b-487c-40c5-80f1-0808b5e2c983 (test_sim)
+ 1 200 mutate -mode cnot1 -module acq_frontend -cell $procmux$194 -port B -portbit 11 -ctrlbit 9 -wire bit_q[6] -wirebit 10 -src ../../../rtl/acq_frontend.sv:166.22-166.27 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Finishing task 644ab432-01eb-43f0-859b-032f1d58c81d (test_sim)
+  1 190 PASS mutate -mode cnot1 -module acq_frontend -cell $procmux$251 -port B -portbit 23 -ctrlbit 15 -wire side_q[1] -wirebit 23 -src ../../../rtl/acq_frontend.sv:167.22-167.28 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Running task c316b438-a9e0-4c58-b865-2095700ec20b (test_sim)
+ 1 201 mutate -mode const1 -module acq_frontend -cell $procmux$260 -port A -portbit 1 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Finishing task 3eddbb0e-b136-41dc-81b2-9e310e31b5b8 (test_sim)
+  1 193 PASS mutate -mode cnot0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:242$or$32 -port Y -portbit 6 -ctrlbit 5 -wire out_mark -wirebit 6 -src ../../../rtl/acq_frontend.sv:242.24-242.32 -src ../../../rtl/acq_frontend.sv:242.35-242.63
+  ==> Running task f6e7b0a9-7dba-4527-96ac-ad18308066c0 (test_sim)
+ 1 203 mutate -mode inv -module acq_frontend -cell $procdff$426 -port Q -portbit 9 -wire m_sample_idx -wirebit 9 -src ../../../rtl/acq_frontend.sv:88.37-88.49 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Finishing task 2de94a45-fd8c-4599-b5a1-75be8bb8d0f1 (test_sim)
+  1 194 PASS mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:280$ternary$41 -port A -portbit 2 -src ../../../rtl/acq_frontend.sv:280.30-281.85
+  ==> Running task a20be4aa-6781-4f6d-b7ca-e0d6b402b386 (test_sim)
+ 1 208 mutate -mode const0 -module acq_frontend -cell $procmux$359 -port B -portbit 11 -wire prod_mag -wirebit 11 -src ../../../rtl/acq_frontend.sv:155.29-155.37 -src ../../../rtl/acq_frontend.sv:174.13-174.20 -src ../../../rtl/acq_frontend.sv:174.9-184.12
+  ==> Finishing task 45b192c9-f2b7-4013-a83e-bc8503d52ff2 (test_sim)
+  1 197 PASS mutate -mode inv -module acq_frontend -cell $procdff$425 -port Q -portbit 6 -wire m_tuser -wirebit 6 -src ../../../rtl/acq_frontend.sv:87.37-87.44 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Running task 98636ab7-df94-4aa6-9e00-a2983e4b030d (test_sim)
+ 1 214 mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:319$add$50 -port A -portbit 6 -src ../../../rtl/acq_frontend.sv:319.32-319.75
+  ==> Finishing task 4b41e2f2-18de-4ed9-ac75-a2dc05dc564c (test_sim)
+  1 199 FAIL mutate -mode inv -module acq_frontend -cell $procdff$433 -port Q -portbit 18 -wire o_sample_idx -wirebit 18 -src ../../../rtl/acq_frontend.sv:101.37-101.49 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Running task 7dd206db-bcd1-44a8-810a-80a2bd37edb8 (test_sim)
+ 1 216 mutate -mode inv -module acq_frontend -cell $procmux$215 -port B -portbit 26 -wire side_q[4] -wirebit 26 -src ../../../rtl/acq_frontend.sv:167.22-167.28 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Finishing task a6e4911b-487c-40c5-80f1-0808b5e2c983 (test_sim)
+  1 200 FAIL mutate -mode cnot1 -module acq_frontend -cell $procmux$194 -port B -portbit 11 -ctrlbit 9 -wire bit_q[6] -wirebit 10 -src ../../../rtl/acq_frontend.sv:166.22-166.27 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Running task 1d480990-93e4-46c6-bc33-671a95f0750e (test_sim)
+ 1 222 mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:225$neg$19 -port Y -portbit 8 -src ../../../rtl/acq_frontend.sv:225.51-225.59
+  ==> Finishing task c316b438-a9e0-4c58-b865-2095700ec20b (test_sim)
+  1 201 PASS mutate -mode const1 -module acq_frontend -cell $procmux$260 -port A -portbit 1 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Running task 745ccb70-60ea-4e89-99be-28b76f26e209 (test_sim)
+ 1 223 mutate -mode cnot1 -module acq_frontend -cell $procmux$353 -port Y -portbit 6 -ctrlbit 3 -src ../../../rtl/acq_frontend.sv:247.13-247.20 -src ../../../rtl/acq_frontend.sv:247.9-251.70
+  ==> Finishing task f6e7b0a9-7dba-4527-96ac-ad18308066c0 (test_sim)
+  1 203 FAIL mutate -mode inv -module acq_frontend -cell $procdff$426 -port Q -portbit 9 -wire m_sample_idx -wirebit 9 -src ../../../rtl/acq_frontend.sv:88.37-88.49 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Running task 6e7b3bab-fa62-4466-9096-7a9a66635a48 (test_sim)
+ 1 224 mutate -mode cnot1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:251$sub$37 -port Y -portbit 0 -ctrlbit 2 -src ../../../rtl/acq_frontend.sv:251.27-251.69
+  ==> Finishing task a20be4aa-6781-4f6d-b7ca-e0d6b402b386 (test_sim)
+  1 208 FAIL mutate -mode const0 -module acq_frontend -cell $procmux$359 -port B -portbit 11 -wire prod_mag -wirebit 11 -src ../../../rtl/acq_frontend.sv:155.29-155.37 -src ../../../rtl/acq_frontend.sv:174.13-174.20 -src ../../../rtl/acq_frontend.sv:174.9-184.12
+  ==> Running task e8af76a1-71b9-47fa-85d1-768c6ae37d27 (test_sim)
+ 1 226 mutate -mode const1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:225$ternary$20 -port Y -portbit 6 -wire pre_raw -wirebit 6 -src ../../../rtl/acq_frontend.sv:225.29-225.36 -src ../../../rtl/acq_frontend.sv:225.39-225.70
+  ==> Finishing task 98636ab7-df94-4aa6-9e00-a2983e4b030d (test_sim)
+  1 214 FAIL mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:319$add$50 -port A -portbit 6 -src ../../../rtl/acq_frontend.sv:319.32-319.75
+  ==> Running task 4e561a6e-1a3d-451f-ba65-7d2c07d77a37 (test_sim)
+ 1 228 mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:222$ternary$18 -port Y -portbit 8 -wire quo_rnd -wirebit 8 -src ../../../rtl/acq_frontend.sv:222.22-222.29 -src ../../../rtl/acq_frontend.sv:222.33-222.91
+  ==> Finishing task 1d480990-93e4-46c6-bc33-671a95f0750e (test_sim)
+  1 222 FAIL mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:225$neg$19 -port Y -portbit 8 -src ../../../rtl/acq_frontend.sv:225.51-225.59
+  ==> Running task 7d12647d-e9db-4362-8378-e911d23f9c5d (test_sim)
+ 1 229 mutate -mode const0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:227$ternary$24 -port Y -portbit 2 -src ../../../rtl/acq_frontend.sv:227.49-227.84
+  ==> Finishing task 7dd206db-bcd1-44a8-810a-80a2bd37edb8 (test_sim)
+  1 216 FAIL mutate -mode inv -module acq_frontend -cell $procmux$215 -port B -portbit 26 -wire side_q[4] -wirebit 26 -src ../../../rtl/acq_frontend.sv:167.22-167.28 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Running task fa3ada40-2f5f-4b6c-94fa-cac41b851095 (test_sim)
+ 1 233 mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:194$ge$98 -port Y -portbit 0 -wire g_langkah[9].enough -wirebit 0 -src ../../../rtl/acq_frontend.sv:194.30-194.36 -src ../../../rtl/acq_frontend.sv:194.41-194.60
+  ==> Finishing task 745ccb70-60ea-4e89-99be-28b76f26e209 (test_sim)
+  1 223 PASS mutate -mode cnot1 -module acq_frontend -cell $procmux$353 -port Y -portbit 6 -ctrlbit 3 -src ../../../rtl/acq_frontend.sv:247.13-247.20 -src ../../../rtl/acq_frontend.sv:247.9-251.70
+  ==> Running task 92c28150-e27e-4a6e-bb4c-5bfb420e35d3 (test_sim)
+ 1 235 mutate -mode cnot1 -module acq_frontend -cell $procdff$433 -port Q -portbit 5 -ctrlbit 8 -wire o_sample_idx -wirebit 5 -src ../../../rtl/acq_frontend.sv:101.37-101.49 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Finishing task 6e7b3bab-fa62-4466-9096-7a9a66635a48 (test_sim)
+  1 224 FAIL mutate -mode cnot1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:251$sub$37 -port Y -portbit 0 -ctrlbit 2 -src ../../../rtl/acq_frontend.sv:251.27-251.69
+  ==> Running task 82505f49-42ac-4dea-8a8e-c332b97eedd9 (test_sim)
+ 1 240 mutate -mode const1 -module acq_frontend -cell $procdff$366 -port Q -portbit 0 -wire rem_wide -wirebit 0 -src ../../../rtl/acq_frontend.sv:219.22-219.30 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Finishing task e8af76a1-71b9-47fa-85d1-768c6ae37d27 (test_sim)
+  1 226 FAIL mutate -mode const1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:225$ternary$20 -port Y -portbit 6 -wire pre_raw -wirebit 6 -src ../../../rtl/acq_frontend.sv:225.29-225.36 -src ../../../rtl/acq_frontend.sv:225.39-225.70
+  ==> Running task b70460e3-9384-4fc0-b0b7-baf82f764522 (test_sim)
+ 1 242 mutate -mode const1 -module acq_frontend -cell $procdff$426 -port Q -portbit 24 -wire m_sample_idx -wirebit 24 -src ../../../rtl/acq_frontend.sv:88.37-88.49 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Finishing task 4e561a6e-1a3d-451f-ba65-7d2c07d77a37 (test_sim)
+  1 228 FAIL mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:222$ternary$18 -port Y -portbit 8 -wire quo_rnd -wirebit 8 -src ../../../rtl/acq_frontend.sv:222.22-222.29 -src ../../../rtl/acq_frontend.sv:222.33-222.91
+  ==> Running task f64abb10-bfd4-4df0-8a69-bbb3e8da0b6a (test_sim)
+ 1 244 mutate -mode const1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:194$ge$83 -port Y -portbit 0 -wire g_langkah[6].enough -wirebit 0 -src ../../../rtl/acq_frontend.sv:194.30-194.36 -src ../../../rtl/acq_frontend.sv:194.41-194.60
+  ==> Finishing task fa3ada40-2f5f-4b6c-94fa-cac41b851095 (test_sim)
+  1 233 FAIL mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:194$ge$98 -port Y -portbit 0 -wire g_langkah[9].enough -wirebit 0 -src ../../../rtl/acq_frontend.sv:194.30-194.36 -src ../../../rtl/acq_frontend.sv:194.41-194.60
+  ==> Running task d3ae9b55-123c-4e90-8337-04b78eaf527d (test_sim)
+ 1 248 mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:159$and$6 -port A -portbit 0 -src ../../../rtl/acq_frontend.sv:159.26-159.48
+  ==> Finishing task 7d12647d-e9db-4362-8378-e911d23f9c5d (test_sim)
+  1 229 PASS mutate -mode const0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:227$ternary$24 -port Y -portbit 2 -src ../../../rtl/acq_frontend.sv:227.49-227.84
+  ==> Running task 5d34ace7-006d-41ee-b798-c5ecb5829d94 (test_sim)
+ 1 251 mutate -mode cnot1 -module acq_frontend -cell $procdff$366 -port Q -portbit 6 -ctrlbit 0 -wire rem_wide -wirebit 6 -src ../../../rtl/acq_frontend.sv:219.22-219.30 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Finishing task 82505f49-42ac-4dea-8a8e-c332b97eedd9 (test_sim)
+  1 240 FAIL mutate -mode const1 -module acq_frontend -cell $procdff$366 -port Q -portbit 0 -wire rem_wide -wirebit 0 -src ../../../rtl/acq_frontend.sv:219.22-219.30 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Running task c4a1b735-7aa6-4d16-88ff-02bdd9156167 (test_sim)
+ 1 254 mutate -mode const0 -module acq_frontend -cell $procdff$423 -port Q -portbit 0 -wire m_overflow -wirebit 0 -src ../../../rtl/acq_frontend.sv:85.37-85.47 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Finishing task 92c28150-e27e-4a6e-bb4c-5bfb420e35d3 (test_sim)
+  1 235 PASS mutate -mode cnot1 -module acq_frontend -cell $procdff$433 -port Q -portbit 5 -ctrlbit 8 -wire o_sample_idx -wirebit 5 -src ../../../rtl/acq_frontend.sv:101.37-101.49 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Running task 1ed26696-6f44-475b-a412-6bd14048baa4 (test_sim)
+ 1 255 mutate -mode const1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:159$not$7 -port A -portbit 0 -src ../../../rtl/acq_frontend.sv:159.51-159.60
+  ==> Finishing task b70460e3-9384-4fc0-b0b7-baf82f764522 (test_sim)
+  1 242 FAIL mutate -mode const1 -module acq_frontend -cell $procdff$426 -port Q -portbit 24 -wire m_sample_idx -wirebit 24 -src ../../../rtl/acq_frontend.sv:88.37-88.49 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Running task ec90146b-c446-487d-a611-6d1740ae68df (test_sim)
+ 1 259 mutate -mode const1 -module acq_frontend -cell $procdff$429 -port Q -portbit 24 -wire m_ev_idx -wirebit 24 -src ../../../rtl/acq_frontend.sv:93.37-93.45 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Finishing task f64abb10-bfd4-4df0-8a69-bbb3e8da0b6a (test_sim)
+  1 244 FAIL mutate -mode const1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:194$ge$83 -port Y -portbit 0 -wire g_langkah[6].enough -wirebit 0 -src ../../../rtl/acq_frontend.sv:194.30-194.36 -src ../../../rtl/acq_frontend.sv:194.41-194.60
+  ==> Running task bfff1ba7-9769-4f57-bb2f-62ba31ffb40e (test_sim)
+ 1 261 mutate -mode inv -module acq_frontend -cell $procmux$215 -port B -portbit 12 -wire side_q[4] -wirebit 12 -src ../../../rtl/acq_frontend.sv:167.22-167.28 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Finishing task 5d34ace7-006d-41ee-b798-c5ecb5829d94 (test_sim)
+  1 251 FAIL mutate -mode cnot1 -module acq_frontend -cell $procdff$366 -port Q -portbit 6 -ctrlbit 0 -wire rem_wide -wirebit 6 -src ../../../rtl/acq_frontend.sv:219.22-219.30 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Running task ab34e735-93e0-4c3e-b2b6-59b4235068bb (test_sim)
+ 1 263 mutate -mode const1 -module acq_frontend -cell $procmux$158 -port B -portbit 2 -wire bit_q[9] -wirebit 1 -src ../../../rtl/acq_frontend.sv:166.22-166.27 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Finishing task d3ae9b55-123c-4e90-8337-04b78eaf527d (test_sim)
+  1 248 FAIL mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:159$and$6 -port A -portbit 0 -src ../../../rtl/acq_frontend.sv:159.26-159.48
+  ==> Running task d306fdac-65ef-43bf-ada0-5569737f3262 (test_sim)
+ 1 265 mutate -mode const1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:160$or$9 -port B -portbit 0 -wire gap_lost_in -wirebit 0 -src ../../../rtl/acq_frontend.sv:159.10-159.21 -src ../../../rtl/acq_frontend.sv:160.26-160.53
+  ==> Finishing task 1ed26696-6f44-475b-a412-6bd14048baa4 (test_sim)
+  1 255 FAIL mutate -mode const1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:159$not$7 -port A -portbit 0 -src ../../../rtl/acq_frontend.sv:159.51-159.60
+  ==> Running task 111188c0-afea-4047-a14c-f36e4d92280d (test_sim)
+ 1 266 mutate -mode const0 -module acq_frontend -cell $procdff$434 -port Q -portbit 29 -wire o_gap_count -wirebit 29 -src ../../../rtl/acq_frontend.sv:102.37-102.48 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Finishing task c4a1b735-7aa6-4d16-88ff-02bdd9156167 (test_sim)
+  1 254 PASS mutate -mode const0 -module acq_frontend -cell $procdff$423 -port Q -portbit 0 -wire m_overflow -wirebit 0 -src ../../../rtl/acq_frontend.sv:85.37-85.47 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Running task 8c4034f3-95ee-4ace-93cb-55896653039c (test_sim)
+ 1 271 mutate -mode const0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:158$and$5 -port B -portbit 0 -src ../../../rtl/acq_frontend.sv:158.26-158.75
+  ==> Finishing task ec90146b-c446-487d-a611-6d1740ae68df (test_sim)
+  1 259 PASS mutate -mode const1 -module acq_frontend -cell $procdff$429 -port Q -portbit 24 -wire m_ev_idx -wirebit 24 -src ../../../rtl/acq_frontend.sv:93.37-93.45 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Running task df2e5aa8-3a08-4f05-9cb2-b1102d6048c0 (test_sim)
+ 1 272 mutate -mode const1 -module acq_frontend -cell $procdff$431 -port Q -portbit 0 -wire d_valid -wirebit 0 -src ../../../rtl/acq_frontend.sv:97.37-97.44 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Finishing task bfff1ba7-9769-4f57-bb2f-62ba31ffb40e (test_sim)
+  1 261 FAIL mutate -mode inv -module acq_frontend -cell $procmux$215 -port B -portbit 12 -wire side_q[4] -wirebit 12 -src ../../../rtl/acq_frontend.sv:167.22-167.28 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Finishing task ab34e735-93e0-4c3e-b2b6-59b4235068bb (test_sim)
+  1 263 PASS mutate -mode const1 -module acq_frontend -cell $procmux$158 -port B -portbit 2 -wire bit_q[9] -wirebit 1 -src ../../../rtl/acq_frontend.sv:166.22-166.27 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Running task e945c05d-548d-47bf-bc53-0ee8e53d16ea (test_sim)
+ 1 273 mutate -mode cnot0 -module acq_frontend -cell $procmux$356 -port B -portbit 34 -ctrlbit 35 -wire s_tlast -wirebit 0 -src ../../../rtl/acq_frontend.sv:74.37-74.44 -src ../../../rtl/acq_frontend.sv:174.13-174.20 -src ../../../rtl/acq_frontend.sv:174.9-184.12
+  ==> Running task b72535f2-066f-4fb4-94df-83fa0176f106 (test_sim)
+ 1 274 mutate -mode const1 -module acq_frontend -cell $procdff$373 -port Q -portbit 15 -wire side_q[12] -wirebit 15 -src ../../../rtl/acq_frontend.sv:167.22-167.28 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Finishing task d306fdac-65ef-43bf-ada0-5569737f3262 (test_sim)
+  1 265 FAIL mutate -mode const1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:160$or$9 -port B -portbit 0 -wire gap_lost_in -wirebit 0 -src ../../../rtl/acq_frontend.sv:159.10-159.21 -src ../../../rtl/acq_frontend.sv:160.26-160.53
+  ==> Running task 07da324e-d4cb-441b-a7d4-10987746f8ad (test_sim)
+ 1 276 mutate -mode const0 -module acq_frontend -cell $procdff$369 -port Q -portbit 42 -wire side_q[13] -wirebit 42 -src ../../../rtl/acq_frontend.sv:167.22-167.28 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Finishing task 111188c0-afea-4047-a14c-f36e4d92280d (test_sim)
+  1 266 PASS mutate -mode const0 -module acq_frontend -cell $procdff$434 -port Q -portbit 29 -wire o_gap_count -wirebit 29 -src ../../../rtl/acq_frontend.sv:102.37-102.48 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Running task c2c6545d-bcd7-41e2-9c9f-062dc8fc3d88 (test_sim)
+ 1 277 mutate -mode const1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:194$ge$53 -port Y -portbit 0 -wire g_langkah[0].enough -wirebit 0 -src ../../../rtl/acq_frontend.sv:194.30-194.36 -src ../../../rtl/acq_frontend.sv:194.41-194.60
+  ==> Finishing task 8c4034f3-95ee-4ace-93cb-55896653039c (test_sim)
+  1 271 PASS mutate -mode const0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:158$and$5 -port B -portbit 0 -src ../../../rtl/acq_frontend.sv:158.26-158.75
+  ==> Running task 638544c8-fc9e-49ec-9132-4a9b81317b6e (test_sim)
+ 1 279 mutate -mode const0 -module acq_frontend -cell $procdff$431 -port Q -portbit 0 -wire d_valid -wirebit 0 -src ../../../rtl/acq_frontend.sv:97.37-97.44 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Finishing task df2e5aa8-3a08-4f05-9cb2-b1102d6048c0 (test_sim)
+  1 272 PASS mutate -mode const1 -module acq_frontend -cell $procdff$431 -port Q -portbit 0 -wire d_valid -wirebit 0 -src ../../../rtl/acq_frontend.sv:97.37-97.44 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Running task 73060fed-7d9f-4fd0-91ca-da42124d16e2 (test_sim)
+ 1 280 mutate -mode cnot0 -module acq_frontend -cell $procmux$179 -port B -portbit 39 -ctrlbit 34 -wire side_q[7] -wirebit 39 -src ../../../rtl/acq_frontend.sv:167.22-167.28 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Finishing task b72535f2-066f-4fb4-94df-83fa0176f106 (test_sim)
+  1 274 FAIL mutate -mode const1 -module acq_frontend -cell $procdff$373 -port Q -portbit 15 -wire side_q[12] -wirebit 15 -src ../../../rtl/acq_frontend.sv:167.22-167.28 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Running task 0fa1b056-9e4f-4511-bd56-5af586be5fcd (test_sim)
+ 1 283 mutate -mode const1 -module acq_frontend -cell $procmux$167 -port B -portbit 31 -wire side_q[8] -wirebit 31 -src ../../../rtl/acq_frontend.sv:167.22-167.28 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Finishing task e945c05d-548d-47bf-bc53-0ee8e53d16ea (test_sim)
+  1 273 FAIL mutate -mode cnot0 -module acq_frontend -cell $procmux$356 -port B -portbit 34 -ctrlbit 35 -wire s_tlast -wirebit 0 -src ../../../rtl/acq_frontend.sv:74.37-74.44 -src ../../../rtl/acq_frontend.sv:174.13-174.20 -src ../../../rtl/acq_frontend.sv:174.9-184.12
+  ==> Running task 055173d1-9c36-4911-ac43-1cc210c5b7f9 (test_sim)
+ 1 285 mutate -mode cnot0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:194$ge$53 -port A -portbit 10 -ctrlbit 3 -wire g_langkah[0].shifted -wirebit 10 -src ../../../rtl/acq_frontend.sv:193.30-193.37 -src ../../../rtl/acq_frontend.sv:194.41-194.60
+  ==> Finishing task 07da324e-d4cb-441b-a7d4-10987746f8ad (test_sim)
+  1 276 PASS mutate -mode const0 -module acq_frontend -cell $procdff$369 -port Q -portbit 42 -wire side_q[13] -wirebit 42 -src ../../../rtl/acq_frontend.sv:167.22-167.28 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Running task 11f0a094-bb43-4d0f-86f9-4e6c59ee15bf (test_sim)
+ 1 290 mutate -mode inv -module acq_frontend -cell $procdff$427 -port Q -portbit 0 -wire m_ev_valid -wirebit 0 -src ../../../rtl/acq_frontend.sv:91.37-91.47 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Finishing task 638544c8-fc9e-49ec-9132-4a9b81317b6e (test_sim)
+  1 279 FAIL mutate -mode const0 -module acq_frontend -cell $procdff$431 -port Q -portbit 0 -wire d_valid -wirebit 0 -src ../../../rtl/acq_frontend.sv:97.37-97.44 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Running task 2dc4a737-4a06-4983-b1f3-95368f6f92a3 (test_sim)
+ 1 292 mutate -mode const0 -module acq_frontend -cell $procdff$422 -port CLK -portbit 0 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Finishing task c2c6545d-bcd7-41e2-9c9f-062dc8fc3d88 (test_sim)
+  1 277 FAIL mutate -mode const1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:194$ge$53 -port Y -portbit 0 -wire g_langkah[0].enough -wirebit 0 -src ../../../rtl/acq_frontend.sv:194.30-194.36 -src ../../../rtl/acq_frontend.sv:194.41-194.60
+  ==> Running task a09c78ae-3ab2-40ae-a0a6-ea33c9e34da8 (test_sim)
+ 1 297 mutate -mode const1 -module acq_frontend -cell $procdff$372 -port Q -portbit 1 -wire bit_q[12] -wirebit 1 -src ../../../rtl/acq_frontend.sv:166.22-166.27 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Finishing task 73060fed-7d9f-4fd0-91ca-da42124d16e2 (test_sim)
+  1 280 PASS mutate -mode cnot0 -module acq_frontend -cell $procmux$179 -port B -portbit 39 -ctrlbit 34 -wire side_q[7] -wirebit 39 -src ../../../rtl/acq_frontend.sv:167.22-167.28 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Running task b48449aa-dbdf-463d-af08-1880d8288b58 (test_sim)
+ 1 303 mutate -mode const1 -module acq_frontend -cell $procdff$413 -port Q -portbit 12 -wire side_q[2] -wirebit 12 -src ../../../rtl/acq_frontend.sv:167.22-167.28 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Finishing task 0fa1b056-9e4f-4511-bd56-5af586be5fcd (test_sim)
+  1 283 FAIL mutate -mode const1 -module acq_frontend -cell $procmux$167 -port B -portbit 31 -wire side_q[8] -wirebit 31 -src ../../../rtl/acq_frontend.sv:167.22-167.28 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Running task 2ca38997-c9ab-4711-b9bc-2c7eb8477b30 (test_sim)
+ 1 304 mutate -mode cnot1 -module acq_frontend -cell $procmux$218 -port B -portbit 7 -ctrlbit 3 -wire bit_q[4] -wirebit 6 -src ../../../rtl/acq_frontend.sv:166.22-166.27 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Finishing task 055173d1-9c36-4911-ac43-1cc210c5b7f9 (test_sim)
+  1 285 FAIL mutate -mode cnot0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:194$ge$53 -port A -portbit 10 -ctrlbit 3 -wire g_langkah[0].shifted -wirebit 10 -src ../../../rtl/acq_frontend.sv:193.30-193.37 -src ../../../rtl/acq_frontend.sv:194.41-194.60
+  ==> Running task c811afa0-64a7-4c5c-a722-49ec0a09af36 (test_sim)
+ 1 310 mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:240$or$29 -port B -portbit 0 -src ../../../rtl/acq_frontend.sv:240.58-240.79
+  ==> Finishing task 11f0a094-bb43-4d0f-86f9-4e6c59ee15bf (test_sim)
+  1 290 FAIL mutate -mode inv -module acq_frontend -cell $procdff$427 -port Q -portbit 0 -wire m_ev_valid -wirebit 0 -src ../../../rtl/acq_frontend.sv:91.37-91.47 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Running task 25e9df67-73a8-4988-9c09-df04568ab0d0 (test_sim)
+ 1 311 mutate -mode inv -module acq_frontend -cell $procmux$350 -port B -portbit 7 -src ../../../rtl/acq_frontend.sv:248.18-248.34 -src ../../../rtl/acq_frontend.sv:248.14-251.70
+  ==> Finishing task 2dc4a737-4a06-4983-b1f3-95368f6f92a3 (test_sim)
+  1 292 FAIL mutate -mode const0 -module acq_frontend -cell $procdff$422 -port CLK -portbit 0 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Running task 1a037915-a193-4a9a-a773-f4b7762fd5ab (test_sim)
+ 1 313 mutate -mode const1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:158$and$5 -port A -portbit 0 -src ../../../rtl/acq_frontend.sv:158.26-158.75
+  ==> Finishing task a09c78ae-3ab2-40ae-a0a6-ea33c9e34da8 (test_sim)
+  1 297 PASS mutate -mode const1 -module acq_frontend -cell $procdff$372 -port Q -portbit 1 -wire bit_q[12] -wirebit 1 -src ../../../rtl/acq_frontend.sv:166.22-166.27 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Finishing task b48449aa-dbdf-463d-af08-1880d8288b58 (test_sim)
+  1 303 FAIL mutate -mode const1 -module acq_frontend -cell $procdff$413 -port Q -portbit 12 -wire side_q[2] -wirebit 12 -src ../../../rtl/acq_frontend.sv:167.22-167.28 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Running task 4122bd43-b927-401e-977b-a91780ba1ec6 (test_sim)
+ 1 314 mutate -mode cnot1 -module acq_frontend -cell $procdff$408 -port Q -portbit 4 -ctrlbit 9 -wire bit_q[3] -wirebit 4 -src ../../../rtl/acq_frontend.sv:166.22-166.27 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Running task 0cb6b952-b231-4043-8fe2-e972523c2102 (test_sim)
+ 1 315 mutate -mode cnot1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:298$ternary$46 -port B -portbit 30 -ctrlbit 4 -src ../../../rtl/acq_frontend.sv:298.34-299.75
+  ==> Finishing task c811afa0-64a7-4c5c-a722-49ec0a09af36 (test_sim)
+  1 310 FAIL mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:240$or$29 -port B -portbit 0 -src ../../../rtl/acq_frontend.sv:240.58-240.79
+  ==> Running task f778c373-c55c-40f5-9913-7988ae285abe (test_sim)
+ 1 316 mutate -mode inv -module acq_frontend -cell $procmux$242 -port B -portbit 5 -wire bit_q[2] -wirebit 4 -src ../../../rtl/acq_frontend.sv:166.22-166.27 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Finishing task 2ca38997-c9ab-4711-b9bc-2c7eb8477b30 (test_sim)
+  1 304 PASS mutate -mode cnot1 -module acq_frontend -cell $procmux$218 -port B -portbit 7 -ctrlbit 3 -wire bit_q[4] -wirebit 6 -src ../../../rtl/acq_frontend.sv:166.22-166.27 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Running task 2b2601e6-2fb5-4f58-9fc2-4a3f7c0ebc6f (test_sim)
+ 1 317 mutate -mode const1 -module acq_frontend -cell $procdff$427 -port Q -portbit 0 -wire m_ev_valid -wirebit 0 -src ../../../rtl/acq_frontend.sv:91.37-91.47 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Finishing task 25e9df67-73a8-4988-9c09-df04568ab0d0 (test_sim)
+  1 311 PASS mutate -mode inv -module acq_frontend -cell $procmux$350 -port B -portbit 7 -src ../../../rtl/acq_frontend.sv:248.18-248.34 -src ../../../rtl/acq_frontend.sv:248.14-251.70
+  ==> Running task 1f8284c7-4660-4bca-b181-e4d327f99efa (test_sim)
+ 1 324 mutate -mode cnot1 -module acq_frontend -cell $procdff$410 -port Q -portbit 3 -ctrlbit 2 -wire g_langkah[2].shifted -wirebit 4 -src ../../../rtl/acq_frontend.sv:193.30-193.37 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Finishing task 1a037915-a193-4a9a-a773-f4b7762fd5ab (test_sim)
+  1 313 PASS mutate -mode const1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:158$and$5 -port A -portbit 0 -src ../../../rtl/acq_frontend.sv:158.26-158.75
+  ==> Running task 1f3a153d-5502-4dd2-a52d-f40809ebf47b (test_sim)
+ 1 327 mutate -mode const1 -module acq_frontend -cell $procdff$385 -port Q -portbit 16 -wire side_q[9] -wirebit 16 -src ../../../rtl/acq_frontend.sv:167.22-167.28 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Finishing task 4122bd43-b927-401e-977b-a91780ba1ec6 (test_sim)
+  1 314 FAIL mutate -mode cnot1 -module acq_frontend -cell $procdff$408 -port Q -portbit 4 -ctrlbit 9 -wire bit_q[3] -wirebit 4 -src ../../../rtl/acq_frontend.sv:166.22-166.27 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Running task 15908071-c69f-4cd3-a14a-c764b81c9226 (test_sim)
+ 1 331 mutate -mode const1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:226$lt$22 -port A -portbit 14 -src ../../../rtl/acq_frontend.sv:226.58-226.80
+  ==> Finishing task 0cb6b952-b231-4043-8fe2-e972523c2102 (test_sim)
+  1 315 PASS mutate -mode cnot1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:298$ternary$46 -port B -portbit 30 -ctrlbit 4 -src ../../../rtl/acq_frontend.sv:298.34-299.75
+  ==> Running task 5ba55fc6-dda4-4794-a385-071acc781af6 (test_sim)
+ 1 336 mutate -mode const0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:297$add$42 -port A -portbit 8 -src ../../../rtl/acq_frontend.sv:297.37-297.56
+  ==> Finishing task f778c373-c55c-40f5-9913-7988ae285abe (test_sim)
+  1 316 FAIL mutate -mode inv -module acq_frontend -cell $procmux$242 -port B -portbit 5 -wire bit_q[2] -wirebit 4 -src ../../../rtl/acq_frontend.sv:166.22-166.27 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Running task 11388905-519e-4ff0-bf9c-41acd5bad2c0 (test_sim)
+ 1 337 mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:251$sub$37 -port B -portbit 0 -src ../../../rtl/acq_frontend.sv:251.27-251.69
+  ==> Finishing task 2b2601e6-2fb5-4f58-9fc2-4a3f7c0ebc6f (test_sim)
+  1 317 FAIL mutate -mode const1 -module acq_frontend -cell $procdff$427 -port Q -portbit 0 -wire m_ev_valid -wirebit 0 -src ../../../rtl/acq_frontend.sv:91.37-91.47 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Running task aeeb0bb0-e485-4ff7-a3f9-c91f6ad826ac (test_sim)
+ 1 339 mutate -mode cnot1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:227$ternary$25 -port A -portbit 5 -ctrlbit 9 -src ../../../rtl/acq_frontend.sv:227.38-227.95
+  ==> Finishing task 1f8284c7-4660-4bca-b181-e4d327f99efa (test_sim)
+  1 324 FAIL mutate -mode cnot1 -module acq_frontend -cell $procdff$410 -port Q -portbit 3 -ctrlbit 2 -wire g_langkah[2].shifted -wirebit 4 -src ../../../rtl/acq_frontend.sv:193.30-193.37 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Running task 4695a334-6ce5-498c-a5c7-ef628da84267 (test_sim)
+ 1 345 mutate -mode const1 -module acq_frontend -cell $procdff$418 -port Q -portbit 13 -wire rate_cnt_q -wirebit 13 -src ../../../rtl/acq_frontend.sv:126.26-126.36 -src ../../../rtl/acq_frontend.sv:309.5-326.8
+  ==> Finishing task 1f3a153d-5502-4dd2-a52d-f40809ebf47b (test_sim)
+  1 327 FAIL mutate -mode const1 -module acq_frontend -cell $procdff$385 -port Q -portbit 16 -wire side_q[9] -wirebit 16 -src ../../../rtl/acq_frontend.sv:167.22-167.28 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Running task 20d8e80a-4b16-4d17-bb62-3695ad2dc9fe (test_sim)
+ 1 347 mutate -mode const0 -module acq_frontend -cell $procdff$401 -port Q -portbit 35 -wire side_q[5] -wirebit 35 -src ../../../rtl/acq_frontend.sv:167.22-167.28 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Finishing task 15908071-c69f-4cd3-a14a-c764b81c9226 (test_sim)
+  1 331 FAIL mutate -mode const1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:226$lt$22 -port A -portbit 14 -src ../../../rtl/acq_frontend.sv:226.58-226.80
+  ==> Finishing task 5ba55fc6-dda4-4794-a385-071acc781af6 (test_sim)
+  1 336 PASS mutate -mode const0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:297$add$42 -port A -portbit 8 -src ../../../rtl/acq_frontend.sv:297.37-297.56
+  ==> Running task 41b52f15-0a0f-473e-9e06-74aa086e5ed9 (test_sim)
+ 1 349 mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:226$gt$21 -port B -portbit 6 -src ../../../rtl/acq_frontend.sv:226.34-226.53
+  ==> Running task ccec9e1d-3f65-4d5a-9b16-789c27ea3393 (test_sim)
+ 1 350 mutate -mode const1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:222$and$15 -port A -portbit 0 -wire rnd_tie -wirebit 0 -src ../../../rtl/acq_frontend.sv:221.22-221.29 -src ../../../rtl/acq_frontend.sv:222.46-222.64
+  ==> Finishing task aeeb0bb0-e485-4ff7-a3f9-c91f6ad826ac (test_sim)
+  1 339 FAIL mutate -mode cnot1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:227$ternary$25 -port A -portbit 5 -ctrlbit 9 -src ../../../rtl/acq_frontend.sv:227.38-227.95
+  ==> Running task e0d66fea-abc8-46af-87aa-582e6e4529cf (test_sim)
+ 1 351 mutate -mode const0 -module acq_frontend -cell $procdff$422 -port Q -portbit 0 -wire m_tvalid -wirebit 0 -src ../../../rtl/acq_frontend.sv:84.37-84.45 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Finishing task 11388905-519e-4ff0-bf9c-41acd5bad2c0 (test_sim)
+  1 337 FAIL mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:251$sub$37 -port B -portbit 0 -src ../../../rtl/acq_frontend.sv:251.27-251.69
+  ==> Running task cac46c32-1aa2-4509-89ae-63cc3d8ed10b (test_sim)
+ 1 353 mutate -mode cnot0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:242$or$31 -port A -portbit 6 -ctrlbit 0 -wire side_q[13] -wirebit 42 -src ../../../rtl/acq_frontend.sv:167.22-167.28 -src ../../../rtl/acq_frontend.sv:242.35-242.53
+  ==> Finishing task 4695a334-6ce5-498c-a5c7-ef628da84267 (test_sim)
+  1 345 FAIL mutate -mode const1 -module acq_frontend -cell $procdff$418 -port Q -portbit 13 -wire rate_cnt_q -wirebit 13 -src ../../../rtl/acq_frontend.sv:126.26-126.36 -src ../../../rtl/acq_frontend.sv:309.5-326.8
+  ==> Running task 7aaf0218-fb5e-4d2f-8cf8-efd1ed6e14fa (test_sim)
+ 1 355 mutate -mode inv -module acq_frontend -cell $procdff$423 -port Q -portbit 0 -wire m_overflow -wirebit 0 -src ../../../rtl/acq_frontend.sv:85.37-85.47 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Finishing task 20d8e80a-4b16-4d17-bb62-3695ad2dc9fe (test_sim)
+  1 347 FAIL mutate -mode const0 -module acq_frontend -cell $procdff$401 -port Q -portbit 35 -wire side_q[5] -wirebit 35 -src ../../../rtl/acq_frontend.sv:167.22-167.28 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Running task 4de395fb-58ab-4d7d-9566-9d5084f046c9 (test_sim)
+ 1 363 mutate -mode inv -module acq_frontend -cell $procdff$429 -port Q -portbit 16 -wire m_ev_idx -wirebit 16 -src ../../../rtl/acq_frontend.sv:93.37-93.45 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Finishing task 41b52f15-0a0f-473e-9e06-74aa086e5ed9 (test_sim)
+  1 349 PASS mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:226$gt$21 -port B -portbit 6 -src ../../../rtl/acq_frontend.sv:226.34-226.53
+  ==> Running task 869e6a43-1d44-4b0b-811c-22cbfaa91906 (test_sim)
+ 1 364 mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:222$or$16 -port A -portbit 0 -wire rnd_high -wirebit 0 -src ../../../rtl/acq_frontend.sv:220.22-220.30 -src ../../../rtl/acq_frontend.sv:222.34-222.65
+  ==> Finishing task ccec9e1d-3f65-4d5a-9b16-789c27ea3393 (test_sim)
+  1 350 FAIL mutate -mode const1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:222$and$15 -port A -portbit 0 -wire rnd_tie -wirebit 0 -src ../../../rtl/acq_frontend.sv:221.22-221.29 -src ../../../rtl/acq_frontend.sv:222.46-222.64
+  ==> Running task 52348f32-eff4-4b3c-833a-514fb5350884 (test_sim)
+ 1 369 mutate -mode const1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:159$and$8 -port B -portbit 0 -src ../../../rtl/acq_frontend.sv:159.26-159.60
+  ==> Finishing task e0d66fea-abc8-46af-87aa-582e6e4529cf (test_sim)
+  1 351 FAIL mutate -mode const0 -module acq_frontend -cell $procdff$422 -port Q -portbit 0 -wire m_tvalid -wirebit 0 -src ../../../rtl/acq_frontend.sv:84.37-84.45 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Running task dc0efa8b-e6c8-4547-ad62-81b393a2d542 (test_sim)
+ 1 371 mutate -mode cnot0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:225$ternary$20 -port Y -portbit 10 -ctrlbit 1 -wire pre_raw -wirebit 10 -src ../../../rtl/acq_frontend.sv:225.29-225.36 -src ../../../rtl/acq_frontend.sv:225.39-225.70
+  ==> Finishing task cac46c32-1aa2-4509-89ae-63cc3d8ed10b (test_sim)
+  1 353 PASS mutate -mode cnot0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:242$or$31 -port A -portbit 6 -ctrlbit 0 -wire side_q[13] -wirebit 42 -src ../../../rtl/acq_frontend.sv:167.22-167.28 -src ../../../rtl/acq_frontend.sv:242.35-242.53
+  ==> Running task f8601c14-9f83-4c74-9af7-79105ecdaa4d (test_sim)
+ 1 372 mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:158$and$5 -port Y -portbit 0 -wire gap_marker_in -wirebit 0 -src ../../../rtl/acq_frontend.sv:158.10-158.23 -src ../../../rtl/acq_frontend.sv:158.26-158.75
+  ==> Finishing task 7aaf0218-fb5e-4d2f-8cf8-efd1ed6e14fa (test_sim)
+  1 355 FAIL mutate -mode inv -module acq_frontend -cell $procdff$423 -port Q -portbit 0 -wire m_overflow -wirebit 0 -src ../../../rtl/acq_frontend.sv:85.37-85.47 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Running task 6c8fe86e-48ea-4a46-a60d-3f08333a61e3 (test_sim)
+ 1 374 mutate -mode cnot0 -module acq_frontend -cell $procdff$425 -port Q -portbit 2 -ctrlbit 0 -wire m_tuser -wirebit 2 -src ../../../rtl/acq_frontend.sv:87.37-87.44 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Finishing task 4de395fb-58ab-4d7d-9566-9d5084f046c9 (test_sim)
+  1 363 PASS mutate -mode inv -module acq_frontend -cell $procdff$429 -port Q -portbit 16 -wire m_ev_idx -wirebit 16 -src ../../../rtl/acq_frontend.sv:93.37-93.45 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Running task 026c90ab-7dda-4217-8237-a9ed23b0b461 (test_sim)
+ 1 377 mutate -mode const1 -module acq_frontend -cell $procmux$292 -port B -portbit 0 -src ../../../rtl/acq_frontend.sv:290.17-290.33 -src ../../../rtl/acq_frontend.sv:290.13-300.16
+  ==> Finishing task 52348f32-eff4-4b3c-833a-514fb5350884 (test_sim)
+  1 369 FAIL mutate -mode const1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:159$and$8 -port B -portbit 0 -src ../../../rtl/acq_frontend.sv:159.26-159.60
+  ==> Running task e6e97f50-73a4-4f9c-bc02-60de46bb6c00 (test_sim)
+ 1 381 mutate -mode inv -module acq_frontend -cell $procmux$170 -port B -portbit 2 -wire bit_q[8] -wirebit 1 -src ../../../rtl/acq_frontend.sv:166.22-166.27 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Finishing task 869e6a43-1d44-4b0b-811c-22cbfaa91906 (test_sim)
+  1 364 FAIL mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:222$or$16 -port A -portbit 0 -wire rnd_high -wirebit 0 -src ../../../rtl/acq_frontend.sv:220.22-220.30 -src ../../../rtl/acq_frontend.sv:222.34-222.65
+  ==> Running task b461e986-b3ed-47cf-8d0b-b334551b6bbf (test_sim)
+ 1 382 mutate -mode const0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:161$and$10 -port Y -portbit 0 -wire valid_in -wirebit 0 -src ../../../rtl/acq_frontend.sv:161.10-161.18 -src ../../../rtl/acq_frontend.sv:161.26-161.45
+  ==> Finishing task dc0efa8b-e6c8-4547-ad62-81b393a2d542 (test_sim)
+  1 371 FAIL mutate -mode cnot0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:225$ternary$20 -port Y -portbit 10 -ctrlbit 1 -wire pre_raw -wirebit 10 -src ../../../rtl/acq_frontend.sv:225.29-225.36 -src ../../../rtl/acq_frontend.sv:225.39-225.70
+  ==> Running task 406cf318-7cc3-4182-9e39-3e5b2a9dee76 (test_sim)
+ 1 384 mutate -mode const0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:158$and$5 -port Y -portbit 0 -wire gap_marker_in -wirebit 0 -src ../../../rtl/acq_frontend.sv:158.10-158.23 -src ../../../rtl/acq_frontend.sv:158.26-158.75
+  ==> Finishing task f8601c14-9f83-4c74-9af7-79105ecdaa4d (test_sim)
+  1 372 FAIL mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:158$and$5 -port Y -portbit 0 -wire gap_marker_in -wirebit 0 -src ../../../rtl/acq_frontend.sv:158.10-158.23 -src ../../../rtl/acq_frontend.sv:158.26-158.75
+  ==> Running task 4449a34a-00ae-4e82-b6ec-25d82cdaefa2 (test_sim)
+ 1 386 mutate -mode const0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:160$or$9 -port B -portbit 0 -wire gap_lost_in -wirebit 0 -src ../../../rtl/acq_frontend.sv:159.10-159.21 -src ../../../rtl/acq_frontend.sv:160.26-160.53
+  ==> Finishing task 6c8fe86e-48ea-4a46-a60d-3f08333a61e3 (test_sim)
+  1 374 FAIL mutate -mode cnot0 -module acq_frontend -cell $procdff$425 -port Q -portbit 2 -ctrlbit 0 -wire m_tuser -wirebit 2 -src ../../../rtl/acq_frontend.sv:87.37-87.44 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Running task fac0856c-a89b-410e-8a87-39d329978720 (test_sim)
+ 1 387 mutate -mode const0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:194$ge$83 -port A -portbit 10 -wire g_langkah[6].shifted -wirebit 10 -src ../../../rtl/acq_frontend.sv:193.30-193.37 -src ../../../rtl/acq_frontend.sv:194.41-194.60
+  ==> Finishing task 026c90ab-7dda-4217-8237-a9ed23b0b461 (test_sim)
+  1 377 PASS mutate -mode const1 -module acq_frontend -cell $procmux$292 -port B -portbit 0 -src ../../../rtl/acq_frontend.sv:290.17-290.33 -src ../../../rtl/acq_frontend.sv:290.13-300.16
+  ==> Running task 2091458c-a141-4b7f-82b4-e515cd94e91f (test_sim)
+ 1 389 mutate -mode cnot1 -module acq_frontend -cell $procdff$430 -port Q -portbit 2 -ctrlbit 11 -wire m_ev_val -wirebit 2 -src ../../../rtl/acq_frontend.sv:94.37-94.45 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Finishing task e6e97f50-73a4-4f9c-bc02-60de46bb6c00 (test_sim)
+  1 381 PASS mutate -mode inv -module acq_frontend -cell $procmux$170 -port B -portbit 2 -wire bit_q[8] -wirebit 1 -src ../../../rtl/acq_frontend.sv:166.22-166.27 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Running task 10ddbdae-1c1a-4144-887c-e42cba682ce6 (test_sim)
+ 1 390 mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:250$ne$35 -port Y -portbit 0 -wire gap_span_on -wirebit 0 -src ../../../rtl/acq_frontend.sv:238.24-238.35 -src ../../../rtl/acq_frontend.sv:250.31-250.62
+  ==> Finishing task b461e986-b3ed-47cf-8d0b-b334551b6bbf (test_sim)
+  1 382 FAIL mutate -mode const0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:161$and$10 -port Y -portbit 0 -wire valid_in -wirebit 0 -src ../../../rtl/acq_frontend.sv:161.10-161.18 -src ../../../rtl/acq_frontend.sv:161.26-161.45
+  ==> Running task afd1a5c0-b0f9-4dd9-ab5a-5c7783b7fe35 (test_sim)
+ 1 392 mutate -mode inv -module acq_frontend -cell $procdff$420 -port Q -portbit 0 -wire sample_en_q -wirebit 0 -src ../../../rtl/acq_frontend.sv:128.26-128.37 -src ../../../rtl/acq_frontend.sv:309.5-326.8
+  ==> Finishing task 406cf318-7cc3-4182-9e39-3e5b2a9dee76 (test_sim)
+  1 384 PASS mutate -mode const0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:158$and$5 -port Y -portbit 0 -wire gap_marker_in -wirebit 0 -src ../../../rtl/acq_frontend.sv:158.10-158.23 -src ../../../rtl/acq_frontend.sv:158.26-158.75
+  ==> Running task d85e5666-a96e-4837-a838-83f9bd16ee9b (test_sim)
+ 1 397 mutate -mode cnot0 -module acq_frontend -cell $procdff$414 -port Q -portbit 9 -ctrlbit 2 -wire g_langkah[1].shifted -wirebit 10 -src ../../../rtl/acq_frontend.sv:193.30-193.37 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Finishing task 4449a34a-00ae-4e82-b6ec-25d82cdaefa2 (test_sim)
+  1 386 FAIL mutate -mode const0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:160$or$9 -port B -portbit 0 -wire gap_lost_in -wirebit 0 -src ../../../rtl/acq_frontend.sv:159.10-159.21 -src ../../../rtl/acq_frontend.sv:160.26-160.53
+  ==> Running task d5850568-579a-4939-8afc-a1b019c013a1 (test_sim)
+ 1 406 mutate -mode const0 -module acq_frontend -cell $procdff$418 -port Q -portbit 8 -wire rate_cnt_q -wirebit 8 -src ../../../rtl/acq_frontend.sv:126.26-126.36 -src ../../../rtl/acq_frontend.sv:309.5-326.8
+  ==> Finishing task fac0856c-a89b-410e-8a87-39d329978720 (test_sim)
+  1 387 FAIL mutate -mode const0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:194$ge$83 -port A -portbit 10 -wire g_langkah[6].shifted -wirebit 10 -src ../../../rtl/acq_frontend.sv:193.30-193.37 -src ../../../rtl/acq_frontend.sv:194.41-194.60
+  ==> Running task db4a8b82-7a8b-4c20-9628-2dd14b434961 (test_sim)
+ 1 407 mutate -mode const1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:160$or$9 -port Y -portbit 0 -wire gap_ev_in -wirebit 0 -src ../../../rtl/acq_frontend.sv:160.10-160.19 -src ../../../rtl/acq_frontend.sv:160.26-160.53
+  ==> Finishing task 2091458c-a141-4b7f-82b4-e515cd94e91f (test_sim)
+  1 389 PASS mutate -mode cnot1 -module acq_frontend -cell $procdff$430 -port Q -portbit 2 -ctrlbit 11 -wire m_ev_val -wirebit 2 -src ../../../rtl/acq_frontend.sv:94.37-94.45 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Running task 99cf59af-a6f3-4554-b49f-1b11c9069442 (test_sim)
+ 1 408 mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:159$and$8 -port Y -portbit 0 -wire gap_lost_in -wirebit 0 -src ../../../rtl/acq_frontend.sv:159.10-159.21 -src ../../../rtl/acq_frontend.sv:159.26-159.60
+  ==> Finishing task 10ddbdae-1c1a-4144-887c-e42cba682ce6 (test_sim)
+  1 390 FAIL mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:250$ne$35 -port Y -portbit 0 -wire gap_span_on -wirebit 0 -src ../../../rtl/acq_frontend.sv:238.24-238.35 -src ../../../rtl/acq_frontend.sv:250.31-250.62
+  ==> Running task edc002b3-a614-407c-b538-65e3e1bbeab5 (test_sim)
+ 1 411 mutate -mode const1 -module acq_frontend -cell $procdff$384 -port Q -portbit 9 -wire bit_q[9] -wirebit 9 -src ../../../rtl/acq_frontend.sv:166.22-166.27 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Finishing task d85e5666-a96e-4837-a838-83f9bd16ee9b (test_sim)
+  1 397 FAIL mutate -mode cnot0 -module acq_frontend -cell $procdff$414 -port Q -portbit 9 -ctrlbit 2 -wire g_langkah[1].shifted -wirebit 10 -src ../../../rtl/acq_frontend.sv:193.30-193.37 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Running task 2b1996b4-528e-4096-8c64-50219ea16176 (test_sim)
+ 1 413 mutate -mode cnot1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:319$add$50 -port A -portbit 13 -ctrlbit 6 -src ../../../rtl/acq_frontend.sv:319.32-319.75
+  ==> Finishing task d5850568-579a-4939-8afc-a1b019c013a1 (test_sim)
+  1 406 FAIL mutate -mode const0 -module acq_frontend -cell $procdff$418 -port Q -portbit 8 -wire rate_cnt_q -wirebit 8 -src ../../../rtl/acq_frontend.sv:126.26-126.36 -src ../../../rtl/acq_frontend.sv:309.5-326.8
+  ==> Running task e49b4a31-1c37-4110-a38e-282f2579e772 (test_sim)
+ 1 415 mutate -mode const1 -module acq_frontend -cell $procdff$380 -port Q -portbit 11 -wire bit_q[10] -wirebit 11 -src ../../../rtl/acq_frontend.sv:166.22-166.27 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Finishing task db4a8b82-7a8b-4c20-9628-2dd14b434961 (test_sim)
+  1 407 FAIL mutate -mode const1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:160$or$9 -port Y -portbit 0 -wire gap_ev_in -wirebit 0 -src ../../../rtl/acq_frontend.sv:160.10-160.19 -src ../../../rtl/acq_frontend.sv:160.26-160.53
+  ==> Running task 4dbd3daf-8cf8-403c-9ad6-ed5b09fa9c82 (test_sim)
+ 1 419 mutate -mode inv -module acq_frontend -cell $procmux$353 -port B -portbit 1 -src ../../../rtl/acq_frontend.sv:247.13-247.20 -src ../../../rtl/acq_frontend.sv:247.9-251.70
+  ==> Finishing task 99cf59af-a6f3-4554-b49f-1b11c9069442 (test_sim)
+  1 408 FAIL mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:159$and$8 -port Y -portbit 0 -wire gap_lost_in -wirebit 0 -src ../../../rtl/acq_frontend.sv:159.10-159.21 -src ../../../rtl/acq_frontend.sv:159.26-159.60
+  ==> Running task 56f6fd7b-c80a-4bf1-a9a5-010fb06fefb7 (test_sim)
+ 1 423 mutate -mode inv -module acq_frontend -cell $procmux$254 -port B -portbit 4 -wire bit_q[1] -wirebit 3 -src ../../../rtl/acq_frontend.sv:166.22-166.27 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Finishing task edc002b3-a614-407c-b538-65e3e1bbeab5 (test_sim)
+  1 411 FAIL mutate -mode const1 -module acq_frontend -cell $procdff$384 -port Q -portbit 9 -wire bit_q[9] -wirebit 9 -src ../../../rtl/acq_frontend.sv:166.22-166.27 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Running task 5e9f2e8d-ba96-46a2-b7c6-d9ab14ce693a (test_sim)
+ 1 426 mutate -mode inv -module acq_frontend -cell $procdff$423 -port CLK -portbit 0 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Finishing task 2b1996b4-528e-4096-8c64-50219ea16176 (test_sim)
+  1 413 FAIL mutate -mode cnot1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:319$add$50 -port A -portbit 13 -ctrlbit 6 -src ../../../rtl/acq_frontend.sv:319.32-319.75
+  ==> Running task fc2d227c-c6a4-4a89-b73b-912a558401df (test_sim)
+ 1 428 mutate -mode const1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:161$and$10 -port A -portbit 0 -src ../../../rtl/acq_frontend.sv:161.26-161.45
+  ==> Finishing task e49b4a31-1c37-4110-a38e-282f2579e772 (test_sim)
+  1 415 FAIL mutate -mode const1 -module acq_frontend -cell $procdff$380 -port Q -portbit 11 -wire bit_q[10] -wirebit 11 -src ../../../rtl/acq_frontend.sv:166.22-166.27 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Running task cb76c8b4-64be-4e83-9aa5-bb207fd5b807 (test_sim)
+ 1 430 mutate -mode const1 -module acq_frontend -cell $procdff$433 -port Q -portbit 31 -wire o_sample_idx -wirebit 31 -src ../../../rtl/acq_frontend.sv:101.37-101.49 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Finishing task afd1a5c0-b0f9-4dd9-ab5a-5c7783b7fe35 (test_sim)
+  1 392 FAIL mutate -mode inv -module acq_frontend -cell $procdff$420 -port Q -portbit 0 -wire sample_en_q -wirebit 0 -src ../../../rtl/acq_frontend.sv:128.26-128.37 -src ../../../rtl/acq_frontend.sv:309.5-326.8
+  ==> Running task aadfdc62-13b5-4bec-8258-9bb6b7a656a0 (test_sim)
+ 1 431 mutate -mode const0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:280$ternary$41 -port A -portbit 2 -src ../../../rtl/acq_frontend.sv:280.30-281.85
+  ==> Finishing task 4dbd3daf-8cf8-403c-9ad6-ed5b09fa9c82 (test_sim)
+  1 419 FAIL mutate -mode inv -module acq_frontend -cell $procmux$353 -port B -portbit 1 -src ../../../rtl/acq_frontend.sv:247.13-247.20 -src ../../../rtl/acq_frontend.sv:247.9-251.70
+  ==> Running task 164b997a-5941-4f54-9c0d-4338bb389089 (test_sim)
+ 1 433 mutate -mode cnot0 -module acq_frontend -cell $procmux$263 -port B -portbit 9 -ctrlbit 15 -wire side_q[0] -wirebit 9 -src ../../../rtl/acq_frontend.sv:167.22-167.28 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Finishing task 56f6fd7b-c80a-4bf1-a9a5-010fb06fefb7 (test_sim)
+  1 423 FAIL mutate -mode inv -module acq_frontend -cell $procmux$254 -port B -portbit 4 -wire bit_q[1] -wirebit 3 -src ../../../rtl/acq_frontend.sv:166.22-166.27 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Running task 76dc9ba1-67c8-40cc-a528-3e91149c12ca (test_sim)
+ 1 434 mutate -mode const1 -module acq_frontend -cell $procmux$149 -port B -portbit 9 -wire quo_q[10] -wirebit 8 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Finishing task 5e9f2e8d-ba96-46a2-b7c6-d9ab14ce693a (test_sim)
+  1 426 PASS mutate -mode inv -module acq_frontend -cell $procdff$423 -port CLK -portbit 0 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Running task 92d3dff7-0ff0-40f3-99d9-97ff815338ab (test_sim)
+ 1 439 mutate -mode inv -module acq_frontend -cell $procdff$439 -port Q -portbit 11 -wire bit_q[0] -wirebit 11 -src ../../../rtl/acq_frontend.sv:166.22-166.27 -src ../../../rtl/acq_frontend.sv:173.5-185.8
+  ==> Finishing task fc2d227c-c6a4-4a89-b73b-912a558401df (test_sim)
+  1 428 FAIL mutate -mode const1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:161$and$10 -port A -portbit 0 -src ../../../rtl/acq_frontend.sv:161.26-161.45
+  ==> Running task b756fd6c-9a89-445e-812e-ce5777102a0e (test_sim)
+ 1 440 mutate -mode cnot1 -module acq_frontend -cell $procmux$209 -port Y -portbit 0 -ctrlbit 4 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Finishing task cb76c8b4-64be-4e83-9aa5-bb207fd5b807 (test_sim)
+  1 430 FAIL mutate -mode const1 -module acq_frontend -cell $procdff$433 -port Q -portbit 31 -wire o_sample_idx -wirebit 31 -src ../../../rtl/acq_frontend.sv:101.37-101.49 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Running task 33feefff-08aa-47dc-afd1-1826ad7573ec (test_sim)
+ 1 446 mutate -mode const0 -module acq_frontend -cell $procdff$419 -port Q -portbit 2 -wire sample_idx_q -wirebit 2 -src ../../../rtl/acq_frontend.sv:127.26-127.38 -src ../../../rtl/acq_frontend.sv:309.5-326.8
+  ==> Finishing task aadfdc62-13b5-4bec-8258-9bb6b7a656a0 (test_sim)
+  1 431 PASS mutate -mode const0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:280$ternary$41 -port A -portbit 2 -src ../../../rtl/acq_frontend.sv:280.30-281.85
+  ==> Running task d12d7584-40b3-421b-b9fe-2c87c571eba3 (test_sim)
+ 1 454 mutate -mode const0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:226$lt$22 -port A -portbit 13 -src ../../../rtl/acq_frontend.sv:226.58-226.80
+  ==> Finishing task 164b997a-5941-4f54-9c0d-4338bb389089 (test_sim)
+  1 433 FAIL mutate -mode cnot0 -module acq_frontend -cell $procmux$263 -port B -portbit 9 -ctrlbit 15 -wire side_q[0] -wirebit 9 -src ../../../rtl/acq_frontend.sv:167.22-167.28 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Running task 14dff2e3-154e-4c34-9a81-8c06d4aa9e53 (test_sim)
+ 1 456 mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:194$ge$103 -port Y -portbit 0 -wire g_langkah[10].enough -wirebit 0 -src ../../../rtl/acq_frontend.sv:194.30-194.36 -src ../../../rtl/acq_frontend.sv:194.41-194.60
+  ==> Finishing task 76dc9ba1-67c8-40cc-a528-3e91149c12ca (test_sim)
+  1 434 FAIL mutate -mode const1 -module acq_frontend -cell $procmux$149 -port B -portbit 9 -wire quo_q[10] -wirebit 8 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Running task 55e9d885-2b38-405a-8155-7570060a5bbc (test_sim)
+ 1 457 mutate -mode const1 -module acq_frontend -cell $procdff$367 -port Q -portbit 11 -wire quo_q[13] -wirebit 11 -src ../../../rtl/acq_frontend.sv:165.22-165.27 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Finishing task 92d3dff7-0ff0-40f3-99d9-97ff815338ab (test_sim)
+  1 439 FAIL mutate -mode inv -module acq_frontend -cell $procdff$439 -port Q -portbit 11 -wire bit_q[0] -wirebit 11 -src ../../../rtl/acq_frontend.sv:166.22-166.27 -src ../../../rtl/acq_frontend.sv:173.5-185.8
+  ==> Running task ccac0ae0-a932-4648-8692-110a20615f50 (test_sim)
+ 1 458 mutate -mode const0 -module acq_frontend -cell $procmux$350 -port B -portbit 5 -src ../../../rtl/acq_frontend.sv:248.18-248.34 -src ../../../rtl/acq_frontend.sv:248.14-251.70
+  ==> Finishing task b756fd6c-9a89-445e-812e-ce5777102a0e (test_sim)
+  1 440 FAIL mutate -mode cnot1 -module acq_frontend -cell $procmux$209 -port Y -portbit 0 -ctrlbit 4 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Running task 9e0bce59-a43a-45d8-b291-e992c6941f67 (test_sim)
+ 1 463 mutate -mode const1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:154$sub$2 -port Y -portbit 22 -wire prod_s -wirebit 22 -src ../../../rtl/acq_frontend.sv:154.29-154.35 -src ../../../rtl/acq_frontend.sv:154.40-154.73
+  ==> Finishing task 33feefff-08aa-47dc-afd1-1826ad7573ec (test_sim)
+  1 446 FAIL mutate -mode const0 -module acq_frontend -cell $procdff$419 -port Q -portbit 2 -wire sample_idx_q -wirebit 2 -src ../../../rtl/acq_frontend.sv:127.26-127.38 -src ../../../rtl/acq_frontend.sv:309.5-326.8
+  ==> Running task b3efee6f-da56-40d4-bb5f-a67d1b1579b9 (test_sim)
+ 1 465 mutate -mode cnot1 -module acq_frontend -cell $procdff$405 -port Q -portbit 38 -ctrlbit 35 -wire side_q[4] -wirebit 38 -src ../../../rtl/acq_frontend.sv:167.22-167.28 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Finishing task d12d7584-40b3-421b-b9fe-2c87c571eba3 (test_sim)
+  1 454 FAIL mutate -mode const0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:226$lt$22 -port A -portbit 13 -src ../../../rtl/acq_frontend.sv:226.58-226.80
+  ==> Running task 38303d96-2040-49d0-993c-dda6863a7d80 (test_sim)
+ 1 469 mutate -mode const0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:222$and$15 -port A -portbit 0 -wire rnd_tie -wirebit 0 -src ../../../rtl/acq_frontend.sv:221.22-221.29 -src ../../../rtl/acq_frontend.sv:222.46-222.64
+  ==> Finishing task 14dff2e3-154e-4c34-9a81-8c06d4aa9e53 (test_sim)
+  1 456 FAIL mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:194$ge$103 -port Y -portbit 0 -wire g_langkah[10].enough -wirebit 0 -src ../../../rtl/acq_frontend.sv:194.30-194.36 -src ../../../rtl/acq_frontend.sv:194.41-194.60
+  ==> Running task c7467f23-72c4-4dc5-8f1f-ba70473f48ae (test_sim)
+ 1 471 mutate -mode const1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:240$or$29 -port B -portbit 0 -src ../../../rtl/acq_frontend.sv:240.58-240.79
+  ==> Finishing task 55e9d885-2b38-405a-8155-7570060a5bbc (test_sim)
+  1 457 FAIL mutate -mode const1 -module acq_frontend -cell $procdff$367 -port Q -portbit 11 -wire quo_q[13] -wirebit 11 -src ../../../rtl/acq_frontend.sv:165.22-165.27 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Running task a80318bd-e126-4071-8b79-0d0db1cd7e67 (test_sim)
+ 1 473 mutate -mode inv -module acq_frontend -cell $procdff$434 -port Q -portbit 19 -wire o_gap_count -wirebit 19 -src ../../../rtl/acq_frontend.sv:102.37-102.48 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Finishing task ccac0ae0-a932-4648-8692-110a20615f50 (test_sim)
+  1 458 PASS mutate -mode const0 -module acq_frontend -cell $procmux$350 -port B -portbit 5 -src ../../../rtl/acq_frontend.sv:248.18-248.34 -src ../../../rtl/acq_frontend.sv:248.14-251.70
+  ==> Running task 9d3cfa44-fb55-405b-a5ea-ea9412ef1a74 (test_sim)
+ 1 475 mutate -mode const0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:159$not$7 -port Y -portbit 0 -src ../../../rtl/acq_frontend.sv:159.51-159.60
+  ==> Finishing task b3efee6f-da56-40d4-bb5f-a67d1b1579b9 (test_sim)
+  1 465 FAIL mutate -mode cnot1 -module acq_frontend -cell $procdff$405 -port Q -portbit 38 -ctrlbit 35 -wire side_q[4] -wirebit 38 -src ../../../rtl/acq_frontend.sv:167.22-167.28 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Running task e37e7bc7-1ec0-4063-8e5d-cbbd2112109e (test_sim)
+ 1 477 mutate -mode cnot1 -module acq_frontend -cell $procdff$430 -port Q -portbit 9 -ctrlbit 24 -wire m_ev_val -wirebit 9 -src ../../../rtl/acq_frontend.sv:94.37-94.45 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Finishing task 9e0bce59-a43a-45d8-b291-e992c6941f67 (test_sim)
+  1 463 FAIL mutate -mode const1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:154$sub$2 -port Y -portbit 22 -wire prod_s -wirebit 22 -src ../../../rtl/acq_frontend.sv:154.29-154.35 -src ../../../rtl/acq_frontend.sv:154.40-154.73
+  ==> Running task 5310c89f-8407-466b-bed7-f87aade37a8c (test_sim)
+ 1 478 mutate -mode const1 -module acq_frontend -cell $procdff$428 -port Q -portbit 0 -wire m_ev_kind -wirebit 0 -src ../../../rtl/acq_frontend.sv:92.37-92.46 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Finishing task 38303d96-2040-49d0-993c-dda6863a7d80 (test_sim)
+  1 469 FAIL mutate -mode const0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:222$and$15 -port A -portbit 0 -wire rnd_tie -wirebit 0 -src ../../../rtl/acq_frontend.sv:221.22-221.29 -src ../../../rtl/acq_frontend.sv:222.46-222.64
+  ==> Running task 7e299635-baa3-4f64-b82b-ae58035f1d8d (test_sim)
+ 1 482 mutate -mode const0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:227$ternary$25 -port Y -portbit 1 -wire word_f -wirebit 5 -src ../../../rtl/acq_frontend.sv:233.29-233.35 -src ../../../rtl/acq_frontend.sv:227.38-227.95
+  ==> Finishing task c7467f23-72c4-4dc5-8f1f-ba70473f48ae (test_sim)
+  1 471 FAIL mutate -mode const1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:240$or$29 -port B -portbit 0 -src ../../../rtl/acq_frontend.sv:240.58-240.79
+  ==> Running task 8d9e1dc4-fd30-4189-a9d0-4d0256c2297c (test_sim)
+ 1 483 mutate -mode const1 -module acq_frontend -cell $procmux$269 -port B -portbit 0 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Finishing task 9d3cfa44-fb55-405b-a5ea-ea9412ef1a74 (test_sim)
+  1 475 FAIL mutate -mode const0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:159$not$7 -port Y -portbit 0 -src ../../../rtl/acq_frontend.sv:159.51-159.60
+  ==> Running task 10c189cb-cb0b-4d27-ad45-ba8432009b10 (test_sim)
+ 1 488 mutate -mode const0 -module acq_frontend -cell $procdff$381 -port Q -portbit 30 -wire side_q[10] -wirebit 30 -src ../../../rtl/acq_frontend.sv:167.22-167.28 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Finishing task a80318bd-e126-4071-8b79-0d0db1cd7e67 (test_sim)
+  1 473 FAIL mutate -mode inv -module acq_frontend -cell $procdff$434 -port Q -portbit 19 -wire o_gap_count -wirebit 19 -src ../../../rtl/acq_frontend.sv:102.37-102.48 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Running task 03289c48-94f7-4aac-ac14-2ded3e428fee (test_sim)
+ 1 489 mutate -mode inv -module acq_frontend -cell $procmux$356 -port B -portbit 41 -wire s_tuser -wirebit 5 -src ../../../rtl/acq_frontend.sv:75.37-75.44 -src ../../../rtl/acq_frontend.sv:174.13-174.20 -src ../../../rtl/acq_frontend.sv:174.9-184.12
+  ==> Finishing task e37e7bc7-1ec0-4063-8e5d-cbbd2112109e (test_sim)
+  1 477 PASS mutate -mode cnot1 -module acq_frontend -cell $procdff$430 -port Q -portbit 9 -ctrlbit 24 -wire m_ev_val -wirebit 9 -src ../../../rtl/acq_frontend.sv:94.37-94.45 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Running task c73fa1bc-3a63-4cc0-9261-5f105fd2db72 (test_sim)
+ 1 490 mutate -mode const0 -module acq_frontend -cell $procmux$330 -port B -portbit 0 -wire out_mark -wirebit 0 -src ../../../rtl/acq_frontend.sv:242.24-242.32 -src ../../../rtl/acq_frontend.sv:256.13-256.20 -src ../../../rtl/acq_frontend.sv:256.9-301.12
+  ==> Finishing task 5310c89f-8407-466b-bed7-f87aade37a8c (test_sim)
+  1 478 PASS mutate -mode const1 -module acq_frontend -cell $procdff$428 -port Q -portbit 0 -wire m_ev_kind -wirebit 0 -src ../../../rtl/acq_frontend.sv:92.37-92.46 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Running task 4745d65c-114e-43a1-bc96-8533a7f65096 (test_sim)
+ 1 497 mutate -mode cnot1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:225$neg$19 -port Y -portbit 5 -ctrlbit 8 -src ../../../rtl/acq_frontend.sv:225.51-225.59
+  ==> Finishing task 7e299635-baa3-4f64-b82b-ae58035f1d8d (test_sim)
+  1 482 FAIL mutate -mode const0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:227$ternary$25 -port Y -portbit 1 -wire word_f -wirebit 5 -src ../../../rtl/acq_frontend.sv:233.29-233.35 -src ../../../rtl/acq_frontend.sv:227.38-227.95
+  ==> Running task 08bf5460-9ec4-4d87-8939-93daa15ae2b0 (test_sim)
+ 1 498 mutate -mode cnot0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:297$add$42 -port A -portbit 24 -ctrlbit 20 -src ../../../rtl/acq_frontend.sv:297.37-297.56
+  ==> Finishing task 8d9e1dc4-fd30-4189-a9d0-4d0256c2297c (test_sim)
+  1 483 FAIL mutate -mode const1 -module acq_frontend -cell $procmux$269 -port B -portbit 0 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Running task 11f06932-0b13-49cd-a43d-e549e0eb7e5d (test_sim)
+ 1 499 mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:227$ternary$24 -port Y -portbit 4 -src ../../../rtl/acq_frontend.sv:227.49-227.84
+  ==> Finishing task 10c189cb-cb0b-4d27-ad45-ba8432009b10 (test_sim)
+  1 488 PASS mutate -mode const0 -module acq_frontend -cell $procdff$381 -port Q -portbit 30 -wire side_q[10] -wirebit 30 -src ../../../rtl/acq_frontend.sv:167.22-167.28 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Finishing task 03289c48-94f7-4aac-ac14-2ded3e428fee (test_sim)
+  1 489 PASS mutate -mode inv -module acq_frontend -cell $procmux$356 -port B -portbit 41 -wire s_tuser -wirebit 5 -src ../../../rtl/acq_frontend.sv:75.37-75.44 -src ../../../rtl/acq_frontend.sv:174.13-174.20 -src ../../../rtl/acq_frontend.sv:174.9-184.12
+  ==> Running task c192116b-6fe8-4ccd-8f25-90a1cc1d27ac (test_sim)
+ 1 503 mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:298$ternary$46 -port B -portbit 11 -src ../../../rtl/acq_frontend.sv:298.34-299.75
+  ==> Running task cc9a21f7-db67-40a7-b2d5-7a7fc16c0839 (test_sim)
+ 1 504 mutate -mode const1 -module acq_frontend -cell $procdff$418 -port Q -portbit 9 -wire rate_cnt_q -wirebit 9 -src ../../../rtl/acq_frontend.sv:126.26-126.36 -src ../../../rtl/acq_frontend.sv:309.5-326.8
+  ==> Finishing task c73fa1bc-3a63-4cc0-9261-5f105fd2db72 (test_sim)
+  1 490 PASS mutate -mode const0 -module acq_frontend -cell $procmux$330 -port B -portbit 0 -wire out_mark -wirebit 0 -src ../../../rtl/acq_frontend.sv:242.24-242.32 -src ../../../rtl/acq_frontend.sv:256.13-256.20 -src ../../../rtl/acq_frontend.sv:256.9-301.12
+  ==> Running task 25db9656-b492-428c-98f7-cd652640a796 (test_sim)
+ 1 507 mutate -mode inv -module acq_frontend -cell $procdff$369 -port Q -portbit 9 -wire side_q[13] -wirebit 9 -src ../../../rtl/acq_frontend.sv:167.22-167.28 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Finishing task 4745d65c-114e-43a1-bc96-8533a7f65096 (test_sim)
+  1 497 FAIL mutate -mode cnot1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:225$neg$19 -port Y -portbit 5 -ctrlbit 8 -src ../../../rtl/acq_frontend.sv:225.51-225.59
+  ==> Running task 73d83157-8280-47f5-8df7-b31eb3797e7b (test_sim)
+ 1 509 mutate -mode const0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:160$or$9 -port Y -portbit 0 -wire gap_ev_in -wirebit 0 -src ../../../rtl/acq_frontend.sv:160.10-160.19 -src ../../../rtl/acq_frontend.sv:160.26-160.53
+  ==> Finishing task 08bf5460-9ec4-4d87-8939-93daa15ae2b0 (test_sim)
+  1 498 PASS mutate -mode cnot0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:297$add$42 -port A -portbit 24 -ctrlbit 20 -src ../../../rtl/acq_frontend.sv:297.37-297.56
+  ==> Running task f108b59c-68a0-4acb-b4b4-a71999c77b84 (test_sim)
+ 1 510 mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:240$or$29 -port A -portbit 0 -src ../../../rtl/acq_frontend.sv:240.58-240.79
+  ==> Finishing task 11f06932-0b13-49cd-a43d-e549e0eb7e5d (test_sim)
+  1 499 PASS mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:227$ternary$24 -port Y -portbit 4 -src ../../../rtl/acq_frontend.sv:227.49-227.84
+  ==> Running task 6358b205-cb34-4729-9586-84b56fbe8163 (test_sim)
+ 1 515 mutate -mode cnot0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:155$neg$3 -port Y -portbit 21 -ctrlbit 5 -src ../../../rtl/acq_frontend.sv:155.59-155.66
+  ==> Finishing task c192116b-6fe8-4ccd-8f25-90a1cc1d27ac (test_sim)
+  1 503 PASS mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:298$ternary$46 -port B -portbit 11 -src ../../../rtl/acq_frontend.sv:298.34-299.75
+  ==> Running task ad825566-1f66-4b69-8098-1302581465b6 (test_sim)
+ 1 516 mutate -mode const1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:194$ge$98 -port Y -portbit 0 -wire g_langkah[9].enough -wirebit 0 -src ../../../rtl/acq_frontend.sv:194.30-194.36 -src ../../../rtl/acq_frontend.sv:194.41-194.60
+  ==> Finishing task cc9a21f7-db67-40a7-b2d5-7a7fc16c0839 (test_sim)
+  1 504 FAIL mutate -mode const1 -module acq_frontend -cell $procdff$418 -port Q -portbit 9 -wire rate_cnt_q -wirebit 9 -src ../../../rtl/acq_frontend.sv:126.26-126.36 -src ../../../rtl/acq_frontend.sv:309.5-326.8
+  ==> Running task 70692249-5141-40cf-a6bf-6bef4bbfd69a (test_sim)
+ 1 517 mutate -mode cnot1 -module acq_frontend -cell $procdff$429 -port Q -portbit 13 -ctrlbit 2 -wire m_ev_idx -wirebit 13 -src ../../../rtl/acq_frontend.sv:93.37-93.45 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Finishing task 25db9656-b492-428c-98f7-cd652640a796 (test_sim)
+  1 507 FAIL mutate -mode inv -module acq_frontend -cell $procdff$369 -port Q -portbit 9 -wire side_q[13] -wirebit 9 -src ../../../rtl/acq_frontend.sv:167.22-167.28 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Running task 713608f5-b2d3-4329-bb2a-bb96b8c80b51 (test_sim)
+ 1 518 mutate -mode cnot1 -module acq_frontend -cell $procdff$428 -port Q -portbit 1 -ctrlbit 0 -wire m_ev_kind -wirebit 1 -src ../../../rtl/acq_frontend.sv:92.37-92.46 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Finishing task f108b59c-68a0-4acb-b4b4-a71999c77b84 (test_sim)
+  1 510 FAIL mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:240$or$29 -port A -portbit 0 -src ../../../rtl/acq_frontend.sv:240.58-240.79
+  ==> Running task db3e75c1-aedb-412c-bad7-203d4c22fa2b (test_sim)
+ 1 519 mutate -mode cnot1 -module acq_frontend -cell $procmux$185 -port B -portbit 1 -ctrlbit 6 -wire quo_q[7] -wirebit 0 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Finishing task 6358b205-cb34-4729-9586-84b56fbe8163 (test_sim)
+  1 515 FAIL mutate -mode cnot0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:155$neg$3 -port Y -portbit 21 -ctrlbit 5 -src ../../../rtl/acq_frontend.sv:155.59-155.66
+  ==> Running task 16660b62-1240-4aab-a25c-f5d285e4718f (test_sim)
+ 1 521 mutate -mode cnot0 -module acq_frontend -cell $procdff$393 -port Q -portbit 40 -ctrlbit 2 -wire side_q[7] -wirebit 40 -src ../../../rtl/acq_frontend.sv:167.22-167.28 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Finishing task ad825566-1f66-4b69-8098-1302581465b6 (test_sim)
+  1 516 FAIL mutate -mode const1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:194$ge$98 -port Y -portbit 0 -wire g_langkah[9].enough -wirebit 0 -src ../../../rtl/acq_frontend.sv:194.30-194.36 -src ../../../rtl/acq_frontend.sv:194.41-194.60
+  ==> Running task f4d9ec40-b290-457c-b5b2-b11e407f98fd (test_sim)
+ 1 522 mutate -mode cnot0 -module acq_frontend -cell $procmux$227 -port B -portbit 9 -ctrlbit 40 -wire side_q[3] -wirebit 9 -src ../../../rtl/acq_frontend.sv:167.22-167.28 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Finishing task 70692249-5141-40cf-a6bf-6bef4bbfd69a (test_sim)
+  1 517 PASS mutate -mode cnot1 -module acq_frontend -cell $procdff$429 -port Q -portbit 13 -ctrlbit 2 -wire m_ev_idx -wirebit 13 -src ../../../rtl/acq_frontend.sv:93.37-93.45 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Running task 801cf28e-24a4-499d-8197-0a3f7795a305 (test_sim)
+ 1 526 mutate -mode const1 -module acq_frontend -cell $procmux$353 -port Y -portbit 1 -src ../../../rtl/acq_frontend.sv:247.13-247.20 -src ../../../rtl/acq_frontend.sv:247.9-251.70
+  ==> Finishing task 73d83157-8280-47f5-8df7-b31eb3797e7b (test_sim)
+  1 509 FAIL mutate -mode const0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:160$or$9 -port Y -portbit 0 -wire gap_ev_in -wirebit 0 -src ../../../rtl/acq_frontend.sv:160.10-160.19 -src ../../../rtl/acq_frontend.sv:160.26-160.53
+  ==> Running task 114cfd8e-ab7e-4c13-9138-4fb1fc91ceff (test_sim)
+ 1 532 mutate -mode const1 -module acq_frontend -cell $procdff$421 -port Q -portbit 10 -wire m_tdata -wirebit 10 -src ../../../rtl/acq_frontend.sv:83.37-83.44 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Finishing task 713608f5-b2d3-4329-bb2a-bb96b8c80b51 (test_sim)
+  1 518 FAIL mutate -mode cnot1 -module acq_frontend -cell $procdff$428 -port Q -portbit 1 -ctrlbit 0 -wire m_ev_kind -wirebit 1 -src ../../../rtl/acq_frontend.sv:92.37-92.46 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Running task 9d190405-852d-4cba-9a19-12fe5a302106 (test_sim)
+ 1 534 mutate -mode const1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:222$add$17 -port Y -portbit 6 -src ../../../rtl/acq_frontend.sv:222.70-222.82
+  ==> Finishing task db3e75c1-aedb-412c-bad7-203d4c22fa2b (test_sim)
+  1 519 FAIL mutate -mode cnot1 -module acq_frontend -cell $procmux$185 -port B -portbit 1 -ctrlbit 6 -wire quo_q[7] -wirebit 0 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Running task 2566ee7d-4d1b-4b16-97f0-16fe164fe319 (test_sim)
+ 1 535 mutate -mode inv -module acq_frontend -cell $procdff$366 -port Q -portbit 5 -wire rem_wide -wirebit 5 -src ../../../rtl/acq_frontend.sv:219.22-219.30 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Finishing task f4d9ec40-b290-457c-b5b2-b11e407f98fd (test_sim)
+  1 522 FAIL mutate -mode cnot0 -module acq_frontend -cell $procmux$227 -port B -portbit 9 -ctrlbit 40 -wire side_q[3] -wirebit 9 -src ../../../rtl/acq_frontend.sv:167.22-167.28 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Running task 289a923f-e88d-4160-a720-c152cac782f6 (test_sim)
+ 1 537 mutate -mode cnot1 -module acq_frontend -cell $procdff$430 -port Q -portbit 25 -ctrlbit 19 -wire m_ev_val -wirebit 25 -src ../../../rtl/acq_frontend.sv:94.37-94.45 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Finishing task 801cf28e-24a4-499d-8197-0a3f7795a305 (test_sim)
+  1 526 FAIL mutate -mode const1 -module acq_frontend -cell $procmux$353 -port Y -portbit 1 -src ../../../rtl/acq_frontend.sv:247.13-247.20 -src ../../../rtl/acq_frontend.sv:247.9-251.70
+  ==> Running task e83f2893-6628-4f06-a092-1b301ae98d22 (test_sim)
+ 1 538 mutate -mode cnot0 -module acq_frontend -cell $procmux$281 -port Y -portbit 18 -ctrlbit 13 -src ../../../rtl/acq_frontend.sv:315.17-315.41 -src ../../../rtl/acq_frontend.sv:315.13-321.16
+  ==> Finishing task 16660b62-1240-4aab-a25c-f5d285e4718f (test_sim)
+  1 521 PASS mutate -mode cnot0 -module acq_frontend -cell $procdff$393 -port Q -portbit 40 -ctrlbit 2 -wire side_q[7] -wirebit 40 -src ../../../rtl/acq_frontend.sv:167.22-167.28 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Running task 881b4bb9-7be6-4276-95bf-349f2ed3ff38 (test_sim)
+ 1 539 mutate -mode cnot1 -module acq_frontend -cell $procmux$251 -port B -portbit 43 -ctrlbit 8 -wire side_q[1] -wirebit 43 -src ../../../rtl/acq_frontend.sv:167.22-167.28 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Finishing task 9d190405-852d-4cba-9a19-12fe5a302106 (test_sim)
+  1 534 FAIL mutate -mode const1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:222$add$17 -port Y -portbit 6 -src ../../../rtl/acq_frontend.sv:222.70-222.82
+  ==> Running task acb14d6a-3d32-442c-9ce5-6637cfb864db (test_sim)
+ 1 544 mutate -mode const1 -module acq_frontend -cell $procmux$218 -port B -portbit 11 -wire bit_q[4] -wirebit 10 -src ../../../rtl/acq_frontend.sv:166.22-166.27 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Finishing task 114cfd8e-ab7e-4c13-9138-4fb1fc91ceff (test_sim)
+  1 532 FAIL mutate -mode const1 -module acq_frontend -cell $procdff$421 -port Q -portbit 10 -wire m_tdata -wirebit 10 -src ../../../rtl/acq_frontend.sv:83.37-83.44 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Running task 8e468bca-369b-42f9-87ec-677fbdf25ab3 (test_sim)
+ 1 545 mutate -mode const1 -module acq_frontend -cell $procdff$430 -port Q -portbit 17 -wire m_ev_val -wirebit 17 -src ../../../rtl/acq_frontend.sv:94.37-94.45 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Finishing task 2566ee7d-4d1b-4b16-97f0-16fe164fe319 (test_sim)
+  1 535 FAIL mutate -mode inv -module acq_frontend -cell $procdff$366 -port Q -portbit 5 -wire rem_wide -wirebit 5 -src ../../../rtl/acq_frontend.sv:219.22-219.30 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Running task a244f3a9-1692-4e4b-9de7-052f3569ad52 (test_sim)
+ 1 548 mutate -mode const0 -module acq_frontend -cell $procdff$436 -port Q -portbit 3 -wire gap_span_q -wirebit 3 -src ../../../rtl/acq_frontend.sv:168.25-168.35 -src ../../../rtl/acq_frontend.sv:246.5-252.8
+  ==> Finishing task 289a923f-e88d-4160-a720-c152cac782f6 (test_sim)
+  1 537 PASS mutate -mode cnot1 -module acq_frontend -cell $procdff$430 -port Q -portbit 25 -ctrlbit 19 -wire m_ev_val -wirebit 25 -src ../../../rtl/acq_frontend.sv:94.37-94.45 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Running task 5ff35abb-dfab-4c2e-a291-2a28d03e61b1 (test_sim)
+ 1 550 mutate -mode const0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:222$add$17 -port Y -portbit 8 -src ../../../rtl/acq_frontend.sv:222.70-222.82
+  ==> Finishing task acb14d6a-3d32-442c-9ce5-6637cfb864db (test_sim)
+  1 544 FAIL mutate -mode const1 -module acq_frontend -cell $procmux$218 -port B -portbit 11 -wire bit_q[4] -wirebit 10 -src ../../../rtl/acq_frontend.sv:166.22-166.27 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Running task 6e5e4695-a9d7-4fc8-bf4a-e93800303da3 (test_sim)
+ 1 552 mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:298$and$44 -port A -portbit 0 -src ../../../rtl/acq_frontend.sv:298.35-298.54
+  ==> Finishing task 8e468bca-369b-42f9-87ec-677fbdf25ab3 (test_sim)
+  1 545 PASS mutate -mode const1 -module acq_frontend -cell $procdff$430 -port Q -portbit 17 -wire m_ev_val -wirebit 17 -src ../../../rtl/acq_frontend.sv:94.37-94.45 -src ../../../rtl/acq_frontend.sv:255.5-302.8
+  ==> Running task 26dbbc25-da4f-4f6b-9d75-fc57b70345ed (test_sim)
+ 1 553 mutate -mode inv -module acq_frontend -cell $procdff$372 -port Q -portbit 12 -wire g_langkah[12].shifted -wirebit 0 -src ../../../rtl/acq_frontend.sv:193.30-193.37 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Finishing task e83f2893-6628-4f06-a092-1b301ae98d22 (test_sim)
+  1 538 FAIL mutate -mode cnot0 -module acq_frontend -cell $procmux$281 -port Y -portbit 18 -ctrlbit 13 -src ../../../rtl/acq_frontend.sv:315.17-315.41 -src ../../../rtl/acq_frontend.sv:315.13-321.16
+  ==> Running task 64f347d3-76d9-4387-b2ae-010f96ef7140 (test_sim)
+ 1 554 mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:222$or$16 -port B -portbit 0 -src ../../../rtl/acq_frontend.sv:222.34-222.65
+  ==> Finishing task a244f3a9-1692-4e4b-9de7-052f3569ad52 (test_sim)
+  1 548 FAIL mutate -mode const0 -module acq_frontend -cell $procdff$436 -port Q -portbit 3 -wire gap_span_q -wirebit 3 -src ../../../rtl/acq_frontend.sv:168.25-168.35 -src ../../../rtl/acq_frontend.sv:246.5-252.8
+  ==> Running task c2585470-5f3f-4fc8-ba83-4cd6d3e63ff5 (test_sim)
+ 1 559 mutate -mode const1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:159$and$8 -port Y -portbit 0 -wire gap_lost_in -wirebit 0 -src ../../../rtl/acq_frontend.sv:159.10-159.21 -src ../../../rtl/acq_frontend.sv:159.26-159.60
+  ==> Finishing task 881b4bb9-7be6-4276-95bf-349f2ed3ff38 (test_sim)
+  1 539 PASS mutate -mode cnot1 -module acq_frontend -cell $procmux$251 -port B -portbit 43 -ctrlbit 8 -wire side_q[1] -wirebit 43 -src ../../../rtl/acq_frontend.sv:167.22-167.28 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Running task da7b4ecb-8a1c-4604-8402-7f95bbe651c8 (test_sim)
+ 1 561 mutate -mode const1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:226$lt$22 -port B -portbit 1 -src ../../../rtl/acq_frontend.sv:226.58-226.80
+  ==> Finishing task 5ff35abb-dfab-4c2e-a291-2a28d03e61b1 (test_sim)
+  1 550 FAIL mutate -mode const0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:222$add$17 -port Y -portbit 8 -src ../../../rtl/acq_frontend.sv:222.70-222.82
+  ==> Running task 4057e603-1506-4ffe-8ae3-cdf24d85a5cc (test_sim)
+ 1 562 mutate -mode cnot1 -module acq_frontend -cell $procdff$439 -port D -portbit 3 -ctrlbit 0 -src ../../../rtl/acq_frontend.sv:173.5-185.8
+  ==> Finishing task 26dbbc25-da4f-4f6b-9d75-fc57b70345ed (test_sim)
+  1 553 FAIL mutate -mode inv -module acq_frontend -cell $procdff$372 -port Q -portbit 12 -wire g_langkah[12].shifted -wirebit 0 -src ../../../rtl/acq_frontend.sv:193.30-193.37 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Running task 075fb299-d7d2-4cbf-8a26-1ff9fc6e6ae4 (test_sim)
+ 1 563 mutate -mode cnot0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:242$or$32 -port Y -portbit 7 -ctrlbit 3 -wire out_mark -wirebit 7 -src ../../../rtl/acq_frontend.sv:242.24-242.32 -src ../../../rtl/acq_frontend.sv:242.35-242.63
+  ==> Finishing task 6e5e4695-a9d7-4fc8-bf4a-e93800303da3 (test_sim)
+  1 552 PASS mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:298$and$44 -port A -portbit 0 -src ../../../rtl/acq_frontend.sv:298.35-298.54
+  ==> Finishing task 64f347d3-76d9-4387-b2ae-010f96ef7140 (test_sim)
+  1 554 FAIL mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:222$or$16 -port B -portbit 0 -src ../../../rtl/acq_frontend.sv:222.34-222.65
+  ==> Running task e9afca57-d013-486e-9374-e5ff7aa28029 (test_sim)
+ 1 565 mutate -mode const1 -module acq_frontend -cell $procdff$407 -port Q -portbit 0 -wire quo_q[3] -wirebit 0 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Running task e3a89e15-1d11-40cd-a753-8f04ba640294 (test_sim)
+ 1 567 mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:202$ternary$107 -port S -portbit 0 -src ../../../rtl/acq_frontend.sv:202.37-202.76
+  ==> Finishing task c2585470-5f3f-4fc8-ba83-4cd6d3e63ff5 (test_sim)
+  1 559 FAIL mutate -mode const1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:159$and$8 -port Y -portbit 0 -wire gap_lost_in -wirebit 0 -src ../../../rtl/acq_frontend.sv:159.10-159.21 -src ../../../rtl/acq_frontend.sv:159.26-159.60
+  ==> Running task 6de6cd56-c76a-49f0-a389-8acba7a70fbe (test_sim)
+ 1 568 mutate -mode const1 -module acq_frontend -cell $procmux$298 -port B -portbit 24 -src ../../../rtl/acq_frontend.sv:290.17-290.33 -src ../../../rtl/acq_frontend.sv:290.13-300.16
+  ==> Finishing task da7b4ecb-8a1c-4604-8402-7f95bbe651c8 (test_sim)
+  1 561 PASS mutate -mode const1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:226$lt$22 -port B -portbit 1 -src ../../../rtl/acq_frontend.sv:226.58-226.80
+  ==> Running task ef9536f3-703a-4770-8b35-40007910fd1c (test_sim)
+ 1 569 mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:240$or$29 -port Y -portbit 0 -wire gap_bit -wirebit 1 -src ../../../rtl/acq_frontend.sv:240.58-240.79
+  ==> Finishing task e9afca57-d013-486e-9374-e5ff7aa28029 (test_sim)
+  1 565 FAIL mutate -mode const1 -module acq_frontend -cell $procdff$407 -port Q -portbit 0 -wire quo_q[3] -wirebit 0 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Running task 841a5eb6-02ff-4f45-ba66-fed7bcc30ff8 (test_sim)
+ 1 573 mutate -mode cnot0 -module acq_frontend -cell $procmux$364 -port B -portbit 1 -ctrlbit 4 -wire prod_mag -wirebit 14 -src ../../../rtl/acq_frontend.sv:155.29-155.37 -src ../../../rtl/acq_frontend.sv:174.13-174.20 -src ../../../rtl/acq_frontend.sv:174.9-184.12
+  ==> Finishing task e3a89e15-1d11-40cd-a753-8f04ba640294 (test_sim)
+  1 567 FAIL mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:202$ternary$107 -port S -portbit 0 -src ../../../rtl/acq_frontend.sv:202.37-202.76
+  ==> Running task 5ae41a32-b553-481f-8df2-04927e51c3c8 (test_sim)
+ 1 576 mutate -mode inv -module acq_frontend -cell $procmux$339 -port S -portbit 0 -src ../../../rtl/acq_frontend.sv:256.13-256.20 -src ../../../rtl/acq_frontend.sv:256.9-301.12
+  ==> Finishing task 075fb299-d7d2-4cbf-8a26-1ff9fc6e6ae4 (test_sim)
+  1 563 PASS mutate -mode cnot0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:242$or$32 -port Y -portbit 7 -ctrlbit 3 -wire out_mark -wirebit 7 -src ../../../rtl/acq_frontend.sv:242.24-242.32 -src ../../../rtl/acq_frontend.sv:242.35-242.63
+  ==> Running task 68bd2a3e-60d1-4b11-86b3-6c66ef57e882 (test_sim)
+ 1 577 mutate -mode cnot1 -module acq_frontend -cell $procmux$263 -port B -portbit 12 -ctrlbit 18 -wire side_q[0] -wirebit 12 -src ../../../rtl/acq_frontend.sv:167.22-167.28 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Finishing task 4057e603-1506-4ffe-8ae3-cdf24d85a5cc (test_sim)
+  1 562 FAIL mutate -mode cnot1 -module acq_frontend -cell $procdff$439 -port D -portbit 3 -ctrlbit 0 -src ../../../rtl/acq_frontend.sv:173.5-185.8
+  ==> Running task 0a8e2c79-1fc5-431b-bda1-f8d47e43c61b (test_sim)
+ 1 578 mutate -mode const0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:323$logic_and$51 -port A -portbit 0 -src ../../../rtl/acq_frontend.sv:323.17-323.40
+  ==> Finishing task ef9536f3-703a-4770-8b35-40007910fd1c (test_sim)
+  1 569 FAIL mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:240$or$29 -port Y -portbit 0 -wire gap_bit -wirebit 1 -src ../../../rtl/acq_frontend.sv:240.58-240.79
+  ==> Running task 18de409a-3fb5-4649-a693-d0a7e3e3ab51 (test_sim)
+ 1 579 mutate -mode inv -module acq_frontend -cell $procmux$286 -port Y -portbit 20 -src ../../../rtl/acq_frontend.sv:323.17-323.40 -src ../../../rtl/acq_frontend.sv:323.13-324.74
+  ==> Finishing task 6de6cd56-c76a-49f0-a389-8acba7a70fbe (test_sim)
+  1 568 PASS mutate -mode const1 -module acq_frontend -cell $procmux$298 -port B -portbit 24 -src ../../../rtl/acq_frontend.sv:290.17-290.33 -src ../../../rtl/acq_frontend.sv:290.13-300.16
+  ==> Running task 8db6b789-3d01-4f32-bb72-22f6845c4f4e (test_sim)
+ 1 581 mutate -mode const1 -module acq_frontend -cell $procmux$134 -port A -portbit 1 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Finishing task 5ae41a32-b553-481f-8df2-04927e51c3c8 (test_sim)
+  1 576 FAIL mutate -mode inv -module acq_frontend -cell $procmux$339 -port S -portbit 0 -src ../../../rtl/acq_frontend.sv:256.13-256.20 -src ../../../rtl/acq_frontend.sv:256.9-301.12
+  ==> Running task 5ffc41c2-4152-4f22-9beb-61078895dc22 (test_sim)
+ 1 582 mutate -mode cnot1 -module acq_frontend -cell $procdff$403 -port Q -portbit 3 -ctrlbit 2 -wire quo_q[4] -wirebit 3 -src ../../../rtl/acq_frontend.sv:195.13-207.16

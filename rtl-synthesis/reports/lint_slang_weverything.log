@@ -1,0 +1,131 @@
+../rtl/afib_lite_pkg.sv:53:27: warning: unused package parameter 'W_DER_WORST' [-Wunused-package-parameter]
+  localparam int unsigned W_DER_WORST = 25;  // signed bound of +-14464656    [38 4.4, TASK_BRIEF 3]
+                          ^~~~~~~~~~~
+../rtl/afib_lite_pkg.sv:56:27: warning: unused package parameter 'W_WIN_WORST' [-Wunused-package-parameter]
+  localparam int unsigned W_WIN_WORST = 37;  // 38 * SQ_LIMIT^2 = 121318382342, magnitude convention [36 2.4]
+                          ^~~~~~~~~~~
+../rtl/afib_lite_pkg.sv:76:36: warning: unused package parameter 'CLAMP_COUNT' [-Wunused-package-parameter]
+  localparam int signed            CLAMP_COUNT       = 2047;   // count clamp, 12 significant bit [36 2.1]
+                                   ^~~~~~~~~~~
+../rtl/afib_lite_pkg.sv:77:36: warning: unused package parameter 'SHIFT_IN' [-Wunused-package-parameter]
+  localparam int unsigned          SHIFT_IN          = 4;      // locked word is left justified by four
+                                   ^~~~~~~~
+../rtl/afib_lite_pkg.sv:78:36: warning: unused package parameter 'CLAMP_WORD' [-Wunused-package-parameter]
+  localparam int signed            CLAMP_WORD        = 32752;  // 2047 << 4, largest legal input word [36 2.1]
+                                   ^~~~~~~~~~
+../rtl/afib_lite_pkg.sv:79:36: warning: unused package parameter 'SQ_LIMIT' [-Wunused-package-parameter]
+  localparam int signed            SQ_LIMIT          = 56503;  // ceil(14464656 / 2**8), |d| bound of the square node
+                                   ^~~~~~~~
+../rtl/afib_lite_pkg.sv:80:36: warning: unused package parameter 'SHIFT_DER' [-Wunused-package-parameter]
+  localparam int unsigned          SHIFT_DER         = 8;      // right shift between derivative and square
+                                   ^~~~~~~~~
+../rtl/afib_lite_pkg.sv:81:36: warning: unused package parameter 'THRESH_SCALE' [-Wunused-package-parameter]
+  localparam int unsigned          THRESH_SCALE      = 256;    // 2**SHIFT_DER, threshold scale factor
+                                   ^~~~~~~~~~~~
+../rtl/afib_lite_pkg.sv:83:36: warning: unused package parameter 'N_WIN_ALT' [-Wunused-package-parameter]
+  localparam int unsigned          N_WIN_ALT         = 37;     // the short window of the alternating pair
+                                   ^~~~~~~~~
+../rtl/afib_lite_pkg.sv:85:36: warning: unused package parameter 'RR_MAX_MS' [-Wunused-package-parameter]
+  localparam logic [W_RR_MS-1:0]   RR_MAX_MS         = 65535;  // full W_RR_MS width; clamping to 13 bit is forbidden
+                                   ^~~~~~~~~
+../rtl/afib_lite_pkg.sv:86:36: warning: unused package parameter 'GAP_RECOVERY' [-Wunused-package-parameter]
+  localparam int unsigned          GAP_RECOVERY      = 131;    // 12+32+4+38+27+18 samples = 524 ms at 250 Hz [36 3.6]
+                                   ^~~~~~~~~~~~
+../rtl/afib_lite_pkg.sv:88:36: warning: unused package parameter 'SEARCH_BACK_DEPTH' [-Wunused-package-parameter]
+  localparam int unsigned          SEARCH_BACK_DEPTH = 128;    // candidate buffer, needs its own overflow flag
+                                   ^~~~~~~~~~~~~~~~~
+../rtl/afib_lite_pkg.sv:89:36: warning: unused package parameter 'DECISION_DEPTH' [-Wunused-package-parameter]
+  localparam int unsigned          DECISION_DEPTH    = 8;      // decision output buffer
+                                   ^~~~~~~~~~~~~~
+../rtl/afib_lite_pkg.sv:90:36: warning: unused package parameter 'CONF_FULL_SCALE' [-Wunused-package-parameter]
+  localparam int unsigned          CONF_FULL_SCALE   = 1000;   // confidence full scale, D2b
+                                   ^~~~~~~~~~~~~~~
+../rtl/afib_lite_pkg.sv:103:35: warning: unused package typedef 'word_in_t' [-Wunused-package-typedef]
+  typedef logic [W_IN-1:0]        word_in_t;  // locked input word, Q12.4
+                                  ^~~~~~~~~
+../rtl/afib_lite_pkg.sv:104:35: warning: unused package typedef 'lp_t' [-Wunused-package-typedef]
+  typedef logic signed [W_LP-1:0] lp_t;       // Q18.4
+                                  ^~~~
+../rtl/afib_lite_pkg.sv:105:35: warning: unused package typedef 'hp_t' [-Wunused-package-typedef]
+  typedef logic signed [W_HP-1:0] hp_t;       // Q22.4
+                                  ^~~~
+../rtl/afib_lite_pkg.sv:106:36: warning: unused package typedef 'der_t' [-Wunused-package-typedef]
+  typedef logic signed [W_DER-1:0] der_t;     // Q17.7
+                                   ^~~~~
+../rtl/afib_lite_pkg.sv:107:35: warning: unused package typedef 'sq_t' [-Wunused-package-typedef]
+  typedef logic signed [W_SQ-1:0] sq_t;       // count squared after the shift of 8
+                                  ^~~~
+../rtl/afib_lite_pkg.sv:108:36: warning: unused package typedef 'win_t' [-Wunused-package-typedef]
+  typedef logic signed [W_WIN-1:0] win_t;     // running window of 38
+                                   ^~~~~
+../rtl/afib_lite_pkg.sv:109:36: warning: unused package typedef 'thr_t' [-Wunused-package-typedef]
+  typedef logic signed [W_THR-1:0] thr_t;     // Q29.0 adaptive threshold and search back
+                                   ^~~~~
+../rtl/afib_lite_pkg.sv:110:35: warning: unused package typedef 'rr_ms_t' [-Wunused-package-typedef]
+  typedef logic [W_RR_MS-1:0]     rr_ms_t;    // RR interval in milliseconds, Q16.0
+                                  ^~~~~~~
+../rtl/afib_lite_pkg.sv:111:35: warning: unused package typedef 'idx_t' [-Wunused-package-typedef]
+  typedef logic [W_IDX-1:0]       idx_t;      // absolute sample index
+                                  ^~~~~
+../rtl/afib_lite_pkg.sv:112:35: warning: unused package typedef 'tuser_t' [-Wunused-package-typedef]
+  typedef logic [W_TUSER-1:0]     tuser_t;    // marker vector
+                                  ^~~~~~~
+../rtl/afib_lite_pkg.sv:113:35: warning: unused package typedef 'conf_t' [-Wunused-package-typedef]
+  typedef logic [W_CONF-1:0]      conf_t;     // confidence, 0 to CONF_FULL_SCALE
+                                  ^~~~~~
+../rtl/afib_lite_pkg.sv:140:5: warning: unused package typedef 'rnd_e' [-Wunused-package-typedef]
+  } rnd_e;
+    ^~~~~
+../rtl/afib_lite_pkg.sv:163:27: warning: unused package parameter 'CLK_HZ' [-Wunused-package-parameter]
+  localparam int unsigned CLK_HZ = 100_000_000;  // PL clock, doc 36 3.1
+                          ^~~~~~
+../rtl/afib_lite_pkg.sv:173:27: warning: unused package parameter 'TU_WEAK' [-Wunused-package-parameter]
+  localparam int unsigned TU_WEAK       = 2;  // s_tuser bit 2, weak signal over the last second
+                          ^~~~~~~
+../rtl/afib_lite_pkg.sv:174:27: warning: unused package parameter 'TU_UNSURE' [-Wunused-package-parameter]
+  localparam int unsigned TU_UNSURE     = 3;  // s_tuser bit 3, quality undecided
+                          ^~~~~~~~~
+../rtl/afib_lite_pkg.sv:175:27: warning: unused package parameter 'WINDOW_BEATS_RST' [-Wunused-package-parameter]
+  localparam int unsigned WINDOW_BEATS_RST  = 32;  // D5 lock: decision window length in beats
+                          ^~~~~~~~~~~~~~~~
+../rtl/afib_lite_pkg.sv:176:27: warning: unused package parameter 'WINDOW_STEP_RST' [-Wunused-package-parameter]
+  localparam int unsigned WINDOW_STEP_RST   = 4;   // D5 lock: window stride in beats
+                          ^~~~~~~~~~~~~~~
+../rtl/acq_frontend.sv:39:28: warning: unused parameter 'LAT_CYCLES' [-Wunused-parameter]
+    parameter int unsigned LAT_CYCLES = 1
+                           ^~~~~~~~~~
+../rtl/bandpass.sv:37:28: warning: unused parameter 'LAT_CYCLES' [-Wunused-parameter]
+    parameter int unsigned LAT_CYCLES = 1
+                           ^~~~~~~~~~
+../rtl/classifier.sv:45:28: warning: unused parameter 'LAT_CYCLES' [-Wunused-parameter]
+    parameter int unsigned LAT_CYCLES = 1
+                           ^~~~~~~~~~
+../rtl/derivative.sv:37:28: warning: unused parameter 'LAT_CYCLES' [-Wunused-parameter]
+    parameter int unsigned LAT_CYCLES = 1
+                           ^~~~~~~~~~
+../rtl/features.sv:55:28: warning: unused parameter 'LAT_CYCLES' [-Wunused-parameter]
+    parameter int unsigned LAT_CYCLES = 1
+                           ^~~~~~~~~~
+../rtl/integrator.sv:40:28: warning: unused parameter 'N_WIN' [-Wunused-parameter]
+    parameter int unsigned N_WIN      = afib_lite_pkg::N_WIN,
+                           ^~~~~
+../rtl/integrator.sv:41:28: warning: unused parameter 'LAT_CYCLES' [-Wunused-parameter]
+    parameter int unsigned LAT_CYCLES = 1
+                           ^~~~~~~~~~
+../rtl/peak_detect.sv:45:28: warning: unused parameter 'LAT_CYCLES' [-Wunused-parameter]
+    parameter int unsigned LAT_CYCLES = 1
+                           ^~~~~~~~~~
+../rtl/rr_series.sv:48:28: warning: unused parameter 'LAT_CYCLES' [-Wunused-parameter]
+    parameter int unsigned LAT_CYCLES = 1
+                           ^~~~~~~~~~
+../rtl/square.sv:36:28: warning: unused parameter 'LAT_CYCLES' [-Wunused-parameter]
+    parameter int unsigned LAT_CYCLES = 1
+                           ^~~~~~~~~~
+../rtl/t_rule.sv:43:28: warning: unused parameter 'LAT_CYCLES' [-Wunused-parameter]
+    parameter int unsigned LAT_CYCLES = 1
+                           ^~~~~~~~~~
+Top level design units:
+    afib_lite_top
+
+
+Build succeeded: 0 errors, 42 warnings

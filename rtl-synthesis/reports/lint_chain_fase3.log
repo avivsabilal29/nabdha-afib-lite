@@ -1,0 +1,15 @@
+run_lint.sh: top=afib_lite_top sources=13 timing=0
+  ../rtl/afib_lite_pkg.sv
+  ../rtl/acq_frontend.sv
+  ../rtl/afib_lite_top.sv
+  ../rtl/bandpass.sv
+  ../rtl/classifier.sv
+  ../rtl/derivative.sv
+  ../rtl/features.sv
+  ../rtl/integrator.sv
+  ../rtl/peak_detect.sv
+  ../rtl/regs_axi.sv
+  ../rtl/rr_series.sv
+  ../rtl/square.sv
+  ../rtl/t_rule.sv
+lint clean: top=afib_lite_top sources=13 (/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl-synthesis/debroot/usr/bin/verilator_bin)

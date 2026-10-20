@@ -1,0 +1,6 @@
+read -sv ../../../rtl/afib_lite_pkg.sv
+read -sv ../../../rtl/bandpass.sv
+prep -top bandpass
+select -module bandpass
+
+write_rtlil database/design.il

@@ -1,0 +1,22 @@
+run_lint.sh: top=peak_detect sources=2 timing=0
+  ../rtl/afib_lite_pkg.sv
+  ../rtl/peak_detect.sv
+%Warning-WIDTHCONCAT: ../rtl/peak_detect.sv:223:71: Unsized numbers/parameters not allowed in concatenations.
+                                                  : ... note: In instance 'peak_detect'
+  223 |     localparam logic [W_IDX+1:0]  PITA_DX      = {{(W_IDX+2-32){1'b0}}, N_PITA[31:0]};
+      |                                                                       ^
+                      ... For warning description see https://verilator.org/warn/WIDTHCONCAT?v=5.020
+                      ... Use "/* verilator lint_off WIDTHCONCAT */" and lint_on around source to disable this message.
+%Warning-WIDTHCONCAT: ../rtl/peak_detect.sv:224:71: Unsized numbers/parameters not allowed in concatenations.
+                                                  : ... note: In instance 'peak_detect'
+  224 |     localparam logic [W_IDX+1:0]  RR_MIN_DX    = {{(W_IDX+2-32){1'b0}}, N_RR_MIN[31:0]};
+      |                                                                       ^
+%Warning-WIDTHCONCAT: ../rtl/peak_detect.sv:225:71: Unsized numbers/parameters not allowed in concatenations.
+                                                  : ... note: In instance 'peak_detect'
+  225 |     localparam logic [W_IDX+1:0]  RR_MAX_DX    = {{(W_IDX+2-32){1'b0}}, N_RR_MAX[31:0]};
+      |                                                                       ^
+%Warning-WIDTHTRUNC: ../rtl/peak_detect.sv:663:27: Operator ASSIGNW expects 16 bits on the Assign RHS, but Assign RHS's SHIFTR generates 17 bits.
+                                                 : ... note: In instance 'peak_detect'
+  663 |     wire [RR_W-1:0] med_w = med_sum_w >> 1;
+      |                           ^
+%Error: Exiting due to 4 warning(s)

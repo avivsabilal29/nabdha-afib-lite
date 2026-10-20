@@ -1,0 +1,6 @@
+run_sim.sh: tb=../rtl/tb/tb_peak_detect.sv sources=2 plusargs=2
+  plusargs forwarded to vvp: +VECTOR=../rtl/tb/vektor/fase5-verifikasi-aviv +GOLD=/home/avivsabilalm/.hermes/cache/scratch/rtlplan2/vektor
+  compiled first (packages): ../rtl/afib_lite_pkg.sv
+../rtl/peak_detect.sv:602: warning: returning 'bx for out of bounds array access deret_q[-1].
+../rtl/peak_detect.sv:603: warning: returning 'bx for out of bounds array access antre_q[-1].
+../rtl/peak_detect.sv:609: warning: returning 'bx for out of bounds array access rih_q[-1].

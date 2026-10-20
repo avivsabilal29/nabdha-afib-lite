@@ -955,14 +955,14 @@ Removed 0 unused cells and 38 unused wires.
 8. Executing JSON backend.
 
 Warnings: 26 unique messages, 234 total
-End of script. Logfile hash: 1595ada0d2, CPU: user 0.52s system 0.04s, MEM: 37.12 MB peak
+End of script. Logfile hash: 1595ada0d2, CPU: user 0.52s system 0.03s, MEM: 37.29 MB peak
 Yosys 0.33 (git sha1 2584903a060)
-Time spent: 43% 2x abc (0 sec), 22% 1x dfflibmap (0 sec), ...
+Time spent: 44% 2x abc (0 sec), 22% 1x dfflibmap (0 sec), ...
 tool     : Yosys 0.33 (git sha1 2584903a060)
 route    : native
 source   : demo_counter.sv
 library  : sky130_fd_sc_hd__tt_025C_1v80.lib
-run at   : 2026-10-20T17:45:52+0700
+run at   : 2026-10-20T18:12:28+0700
 log      : reports/demo_counter.native.20261020.log
 netlist  : reports/demo_counter.native.20261020.json
 

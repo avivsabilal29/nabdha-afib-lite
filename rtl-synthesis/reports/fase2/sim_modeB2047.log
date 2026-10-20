@@ -1,0 +1,85 @@
+run_sim.sh: tb=../rtl/tb/tb_kuantisasi.sv sources=2 plusargs=4
+  plusargs forwarded to vvp: +VECTOR=/home/avivsabilalm/.hermes/cache/scratch/rtlplan2/fase0/04015.masukan16.hex +MANIFEST=/home/avivsabilalm/.hermes/cache/scratch/rtlplan2/fase0/04015.manifest.json +STIM=/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/tb/vektor/04015.stimulus.hex +RAILC=2047
+  compiled first (packages): ../rtl/afib_lite_pkg.sv
+INFO  +RAILC taken from the command line
+== tb_kuantisasi, Fase 2, record 04015 ==
+INFO  manifest [/home/avivsabilalm/.hermes/cache/scratch/rtlplan2/fase0/04015.manifest.json]
+INFO  vector   [/home/avivsabilalm/.hermes/cache/scratch/rtlplan2/fase0/04015.masukan16.hex]
+INFO  stimulus [/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/tb/vektor/04015.stimulus.hex]
+INFO  golden column lines: 450000
+INFO  manifest frames=450000 words_per_column=450000
+INFO  manifest clamp=402 gap=0
+INFO  manifest weak=8817 uncertain=0
+counts swept: 4095
+distinct words over the sweep: 2001
+counts up to 1000: 2001
+injective up to 1000: 1
+counts at the rail word: 2096
+counts exactly on the rail: 2
+tie c=-1500 even=-3070 away=-3071 word=-32752
+tie c=-500 even=-1024 away=-1024 word=-16384
+tie c=500 even=1024 away=1024 word=16384
+tie c=1500 even=3070 away=3071 word=32752
+tie counts found: 4
+pipeline latency measured: 15
+OK   pipeline latency 15
+counts driven: 4095
+count mismatches: 0
+pre node mismatches: 0
+OK   counts emitted 4095
+OK   pre node mismatches 0
+INFO  stimulus lines: 450000
+words compared: 450000
+mismatches: 0
+index mismatches: 0
+marker passthrough mismatches: 0
+introspection mismatches: 0
+event sideband mismatches: 0
+golden words at the rail: 406
+marker weak words: 8817
+marker clamp words: 402
+marker unsure words: 0
+overflow words: 0
+tlast words: 1
+status clamp count: 402
+status gap count: 0
+status sample index at last word: 449999
+last emitted word index: 449999
+OK   words compared 450000
+OK   stream mismatches 0
+OK   index mismatches 0
+OK   marker mismatches 0
+OK   introspection mismatches 0
+OK   event sideband mismatches 0
+OK   clamp count vs manifest 402
+OK   gap count vs manifest 0
+OK   weak words vs manifest 8817
+OK   unsure words vs manifest 0
+OK   sample index vs manifest 449999
+OK   last word index 449999
+OK   overflow words 0
+OK   tlast words 1
+mode B rail count driven: 2047
+mode B words compared: 450000
+mode B mismatches: 0
+mode B clamp count: 406
+OK   mode B words compared 450000
+OK   mode B mismatches 0
+sample_en spacing: 400000
+sample_en pulses: 5
+sample_en spacing constant: 1
+OK   sample_en spacing 400000
+OK   sample_en pulses 5
+OK   spacing constant 1
+OK   clk_hz over period 250
+synthetic gap events: 2
+synthetic gap events on the sideband: 2
+synthetic gap marked words: 131
+OK   synthetic gap events 2
+OK   synthetic gap sideband events 2
+OK   synthetic gap kind mismatches 0
+OK   synthetic gap marked words 131
+checks: 27
+failures: 0
+../rtl/tb/tb_kuantisasi.sv:707: $finish called at 29545016000 (1ps)
+modeB2047_rc=0

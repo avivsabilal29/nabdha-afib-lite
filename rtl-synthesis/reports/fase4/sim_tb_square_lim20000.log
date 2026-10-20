@@ -1,0 +1,19 @@
+run_sim.sh: tb=../rtl/tb/tb_square.sv sources=2 plusargs=2
+  plusargs forwarded to vvp: +VECTOR=/home/avivsabilalm/.hermes/cache/scratch/rtlplan2/fase0 +LIMIT=20000
+  compiled first (packages): ../rtl/afib_lite_pkg.sv
+tb_square: vectors = /home/avivsabilalm/.hermes/cache/scratch/rtlplan2/fase0
+tb_square: limit   = 20000 of 450000
+tb_square: presented = 20000
+tb_square: outputs   = 20000
+tb_square: compared  = 20000
+tb_square: d_sq mismatches    = 0
+tb_square: m_tdata mismatches = 0
+tb_square: sample_idx mismatch= 0
+tb_square: tuser mismatches   = 0
+tb_square: tlast mismatches   = 0
+tb_square: golden format odd  = 0
+tb_square: overflow pulses    = 0
+tb_square: d_valid pulses     = 20000
+tb_square: mismatches = 0 out of 20000
+tb_square: PASS
+../rtl/tb/tb_square.sv:155: $finish called at 1600105 (1s)

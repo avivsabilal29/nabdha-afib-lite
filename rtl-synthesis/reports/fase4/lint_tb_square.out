@@ -1,0 +1,5 @@
+run_lint.sh: top=tb_square sources=3 timing=1
+  ../rtl/afib_lite_pkg.sv
+  ../rtl/tb/tb_square.sv
+  ../rtl/square.sv
+lint clean: top=tb_square sources=3 (/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl-synthesis/debroot/usr/bin/verilator_bin)
