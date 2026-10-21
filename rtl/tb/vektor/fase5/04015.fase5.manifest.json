@@ -1,0 +1,100 @@
+{
+ "generator": "rtl/tb/vektor/fase5/siapkan_vektor_fase5.py",
+ "source": {
+  "peaks_csv": "rtlplan2/fase5/04015.peaks.csv",
+  "peaks_csv_sha256": "500e6c0b8065544a220bc6c9a08fe64669137c7aa97d2e9a33c6bdf8d31e13a9",
+  "manifest_fase5_sha256": "e2bc01b8a31f6e19140a6b95d977f7244123d4cdd214cbac394e98dbb39cd387",
+  "manifest_fase0_sha256": "7261a2b8090e642c5b6f466045e409ff9308f9747e607afa5774cdb904c48e7b"
+ },
+ "counts": {
+  "peaks": 4777,
+  "qrs": 2596,
+  "ambang_state": 9,
+  "frames": 450000
+ },
+ "ambang_state": [
+  29,
+  6,
+  112,
+  6,
+  106,
+  0,
+  26,
+  1202,
+  2586
+ ],
+ "kind_encoding": {
+  "EV_QRS": 1,
+  "EV_PEAK_CAND": 2
+ },
+ "flag_bits": [
+  "signal",
+  "in_band",
+  "t_rejected",
+  "search_back",
+  "kind_is_qrs_search_back"
+ ],
+ "files": {
+  "04015.fase5.counts.hex": {
+   "words": 4,
+   "bytes": 36,
+   "sha256": "e7c1258e9e8db7ff45e74ea92e92892f79cad3299d112de08accd29b406aaa5a"
+  },
+  "04015.puncak.pos.hex": {
+   "words": 4777,
+   "bytes": 42993,
+   "sha256": "ef950fbf9a453e841b8ea306f7c60a2358e00faf19a26054c096349dd95a33b4"
+  },
+  "04015.puncak.pv.hex": {
+   "words": 4777,
+   "bytes": 42993,
+   "sha256": "3dc8e376f8fb90d0bea672eeedb60915749df00c4637c68f6ff3bdacaab09b03"
+  },
+  "04015.puncak.pkf.hex": {
+   "words": 4777,
+   "bytes": 42993,
+   "sha256": "5239077e42b06828893e698d21e834f7ed6ec9893827b5137b539e3f667fe27e"
+  },
+  "04015.puncak.kem.hex": {
+   "words": 4777,
+   "bytes": 42993,
+   "sha256": "4f78971db0b1f22a6e3e7bdd3adb320d8117220455afe2e71eabac7a91101d90"
+  },
+  "04015.puncak.i1.hex": {
+   "words": 4777,
+   "bytes": 42993,
+   "sha256": "e4518eb1051bb12d140dd454110af49047ea78d575672211489899d6b9e044ca"
+  },
+  "04015.puncak.i2.hex": {
+   "words": 4777,
+   "bytes": 42993,
+   "sha256": "224d0ba5c614f7113a155c54327349a9ba3994209c25ef14c9a02ee6672ad55f"
+  },
+  "04015.puncak.flag.hex": {
+   "words": 4777,
+   "bytes": 42993,
+   "sha256": "945c1af91060b85b64aba45e48205bbdba75e491bd1c763c3b59214694b0b172"
+  },
+  "04015.puncak.evidx.hex": {
+   "words": 4777,
+   "bytes": 42993,
+   "sha256": "57828a86ee6dcf67b8477c76c7fddd995228c72fcc2bc3e2e3b845bede0f3e40"
+  },
+  "04015.puncak.kind.hex": {
+   "words": 4777,
+   "bytes": 42993,
+   "sha256": "a6a46a81912ff9d3f2805f20bdf8ad87352ebbdc77cc905c72708ab1b05c68cf"
+  },
+  "04015.qrs.hex": {
+   "words": 2596,
+   "bytes": 23364,
+   "sha256": "cdae041c182f9b8929312563b515b824c440424476a8ffe2b82be7a480012de2"
+  },
+  "04015.ambang_state.hex": {
+   "words": 9,
+   "bytes": 81,
+   "sha256": "e8032e25cb41eea26e47edcfc5e1003ea72ef4c11aa1ac736fe656576784b0d8"
+  }
+ },
+ "note": "derived from the frozen golden data, no golden file was modified"
+}

@@ -1,0 +1,77 @@
+{
+ "record": "04015",
+ "phase": "fase8",
+ "generator": "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/tb/vektor/fase8/ekspor_vektor_fase8.py",
+ "frozen_model_sha256": "90df6e5b457307d37158a96b6dbedb4e72be03f35349769a858918f6314f1fe5",
+ "sources": {
+  "rr_csv": "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtlplan2/fase5/04015.rr.csv",
+  "windows_csv": "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtlplan2/fase5/04015.windows.csv",
+  "decisions_csv": "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtlplan2/fase5/04015.decisions.csv",
+  "fixture_npz": "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/model/rantai-afib-lite/fixture/04015_30m.npz"
+ },
+ "counts": {
+  "intervals_raw": 2595,
+  "intervals_marked": 2583,
+  "emissions_marked": 638,
+  "emissions_raw": 624,
+  "golden_marked": 602,
+  "golden_raw": 588,
+  "rejected_marked": 0,
+  "rejected_raw": 17
+ },
+ "rules": {
+  "mean31": "RTL form: q0 = (sum_d2 * 17318417) >> 29, negative remainder folded back, fraction from FRAC[rem], Q19.8",
+  "root": "digit root floor of (sum_d2 * 31) << 24, 29 steps, then round half to even of R/496",
+  "ratio": "R << 9 over 31*sum_rr truncating, then one round half to even stage, 17 bits with saturation",
+  "entropy": "folded term table, log2 with 24 fraction bits, term with 48, final round half to even on >> 34",
+  "histogram": "exact cross product 16*x >= k*span, last bin inclusive, counted as A[k] - A[k+1]",
+  "pnn50": "31 comparators, then a 32 entry Q1.8 table",
+  "class_filter": "not applied, no port for the rhythm label"
+ },
+ "node_error_vs_golden_marked": {
+  "d_rows_differing": 0,
+  "bin_rows_differing": 0,
+  "cnt50_rows_differing": 0,
+  "pnn50_rows_differing": 0,
+  "code_rows_differing": {
+   "rmssd": 0,
+   "ratio": 0,
+   "ent": 0,
+   "mean_q": 0
+  },
+  "code_rows_over_1_lsb": {
+   "rmssd": 0,
+   "ratio": 0,
+   "ent": 0,
+   "mean_q": 0
+  },
+  "code_worst_lsb": {
+   "rmssd": 0,
+   "ratio": 0,
+   "ent": 0,
+   "mean_q": 0
+  }
+ },
+ "node_error_vs_fixture_raw": {
+  "rows": 588,
+  "rows_over_1_lsb": 0,
+  "worst_lsb": {
+   "rmssd": 1,
+   "ratio": 0,
+   "ent": 0,
+   "pnn50": 0
+  }
+ },
+ "files_sha256": {
+  "04015.fase8.gold.bins.hex": "00af060409f917722170121f2093f63b6c77111937c4457d150b03ff540eb536",
+  "04015.fase8.gold.code.hex": "13d4feef19b3299796e633e5a28b4cfdf5ee654ba8589d66e84fd99e0fed1fc5",
+  "04015.fase8.gold.d.hex": "bb2e38d0a07d5d309f18e801c0ad7335364edb6ef6a80241abf170ed00b00e4c",
+  "04015.fase8.gold.raw.hex": "d87e7976ca2a05f9606526d0da58d7ddc58f98a3a9ed11bad496d062f94d9460",
+  "04015.fase8.manifest.json": "4ee57c13bd3ca0540184a38c324a412cddcf75e234b18bc12cb953b405a6282e",
+  "04015.fase8.map.marked.hex": "c13d75a56b31ef32759882e0e014356bd39ea759257017d45342b2f10c3b3216",
+  "04015.fase8.map.raw.hex": "652b3fd0fe56eb98acc7469f0b82fea9c3d624f0b1e04e34823e7eeefc70de6d",
+  "04015.fase8.rr.hex": "0a19111f430e9036a681153fca390cda62d58ca4bb8965da732d7742c4474c89",
+  "04015.fase8.sample.hex": "b72735ca211a3c76b9839d76cf44f025fcf65a0f83d3178e05d100ef91328473",
+  "04015.fase8.tables.txt": "5d02930f6130d414c4e7e455acc37164bc71b923f3c6341cf61ccff4c2dadc2f"
+ }
+}
