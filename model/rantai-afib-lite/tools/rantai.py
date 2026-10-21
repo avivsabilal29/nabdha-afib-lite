@@ -1088,8 +1088,26 @@ class Rantai:
         for k, r in self.rentang_terukur().items():
             if r is None or r[0] is None:
                 out[k] = None
+                continue
             elif r[0] >= 0:
                 out[k] = lebar_bit(r[1])
             else:
                 out[k] = None
         return out
+
+# Wrapper for notebook pipeline
+def rantai_process(signal, fs):
+    """Process full signal using Rantai class. Returns dict with 'ratio' and 'entropy' keys.
+    Ratio from rasio_pita, entropy from rasio_qrs (first element if arrays).
+    """
+    import numpy as np
+    r = Rantai()
+    for s in signal:
+        r.langkah(s)
+    out = r.hasil()
+    ratio_arr = out.get('rasio_pita')
+    entropy_arr = out.get('rasio_qrs')
+    ratio = float(ratio_arr[0]) if isinstance(ratio_arr, np.ndarray) and ratio_arr.size else None
+    entropy = float(entropy_arr[0]) if isinstance(entropy_arr, np.ndarray) and entropy_arr.size else None
+    return {'ratio': ratio, 'entropy': entropy}
+
