@@ -1,0 +1,403 @@
+run_lint.sh: top=tb_pkg_konstanta sources=2 timing=1
+  ../rtl/afib_lite_pkg.sv
+  ../rtl/tb/tb_pkg_konstanta.sv
+%Warning-TIMESCALEMOD: ../rtl/afib_lite_pkg.sv:44:9: Timescale missing on this module as other modules have it (IEEE 1800-2017 3.14.2.3)
+   44 | package afib_lite_pkg;
+      |         ^~~~~~~~~~~~~
+                       ../rtl/tb/tb_pkg_konstanta.sv:40:8: ... Location of module with timescale
+   40 | module tb_pkg_konstanta;
+      |        ^~~~~~~~~~~~~~~~
+                       ... For warning description see https://verilator.org/warn/TIMESCALEMOD?v=5.020
+                       ... Use "/* verilator lint_off TIMESCALEMOD */" and lint_on around source to disable this message.
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:67:23: Operator VAR 'CLAMP_COUNT' expects 64 bits on the Initial value, but Initial value's VARREF 'CLAMP_COUNT' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+   67 |     localparam [63:0] CLAMP_COUNT   = afib_lite_pkg::CLAMP_COUNT;
+      |                       ^~~~~~~~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:68:23: Operator VAR 'SHIFT_IN' expects 64 bits on the Initial value, but Initial value's VARREF 'SHIFT_IN' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+   68 |     localparam [63:0] SHIFT_IN      = afib_lite_pkg::SHIFT_IN;
+      |                       ^~~~~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:69:23: Operator VAR 'CLAMP_WORD' expects 64 bits on the Initial value, but Initial value's VARREF 'CLAMP_WORD' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+   69 |     localparam [63:0] CLAMP_WORD    = afib_lite_pkg::CLAMP_WORD;
+      |                       ^~~~~~~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:70:23: Operator VAR 'SQ_LIMIT' expects 64 bits on the Initial value, but Initial value's VARREF 'SQ_LIMIT' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+   70 |     localparam [63:0] SQ_LIMIT      = afib_lite_pkg::SQ_LIMIT;
+      |                       ^~~~~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:71:23: Operator VAR 'SHIFT_DER' expects 64 bits on the Initial value, but Initial value's VARREF 'SHIFT_DER' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+   71 |     localparam [63:0] SHIFT_DER     = afib_lite_pkg::SHIFT_DER;
+      |                       ^~~~~~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:72:23: Operator VAR 'THRESH_SCALE' expects 64 bits on the Initial value, but Initial value's VARREF 'THRESH_SCALE' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+   72 |     localparam [63:0] THRESH_SCALE  = afib_lite_pkg::THRESH_SCALE;
+      |                       ^~~~~~~~~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:73:23: Operator VAR 'N_WIN' expects 64 bits on the Initial value, but Initial value's VARREF 'N_WIN' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+   73 |     localparam [63:0] N_WIN         = afib_lite_pkg::N_WIN;
+      |                       ^~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:74:23: Operator VAR 'N_WIN_ALT' expects 64 bits on the Initial value, but Initial value's VARREF 'N_WIN_ALT' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+   74 |     localparam [63:0] N_WIN_ALT     = afib_lite_pkg::N_WIN_ALT;
+      |                       ^~~~~~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:75:23: Operator VAR 'RR_LONG_MS' expects 64 bits on the Initial value, but Initial value's VARREF 'RR_LONG_MS' generates 16 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+   75 |     localparam [63:0] RR_LONG_MS    = afib_lite_pkg::RR_LONG_MS;
+      |                       ^~~~~~~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:76:23: Operator VAR 'RR_MAX_MS' expects 64 bits on the Initial value, but Initial value's VARREF 'RR_MAX_MS' generates 16 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+   76 |     localparam [63:0] RR_MAX_MS     = afib_lite_pkg::RR_MAX_MS;
+      |                       ^~~~~~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:77:23: Operator VAR 'GAP_RECOVERY' expects 64 bits on the Initial value, but Initial value's VARREF 'GAP_RECOVERY' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+   77 |     localparam [63:0] GAP_RECOVERY  = afib_lite_pkg::GAP_RECOVERY;
+      |                       ^~~~~~~~~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:80:23: Operator VAR 'RATE_DIV_RST' expects 64 bits on the Initial value, but Initial value's VARREF 'RATE_DIV_RST' generates 20 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+   80 |     localparam [63:0] RATE_DIV_RST       = afib_lite_pkg::RATE_DIV_RST;
+      |                       ^~~~~~~~~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:81:23: Operator VAR 'CLK_HZ' expects 64 bits on the Initial value, but Initial value's VARREF 'CLK_HZ' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+   81 |     localparam [63:0] CLK_HZ             = afib_lite_pkg::CLK_HZ;
+      |                       ^~~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:82:23: Operator VAR 'RATIO_THRESH_RST' expects 64 bits on the Initial value, but Initial value's VARREF 'RATIO_THRESH_RST' generates 16 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+   82 |     localparam [63:0] RATIO_THRESH_RST   = afib_lite_pkg::RATIO_THRESH_RST;
+      |                       ^~~~~~~~~~~~~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:83:23: Operator VAR 'ENTROPY_THRESH_RST' expects 64 bits on the Initial value, but Initial value's VARREF 'ENTROPY_THRESH_RST' generates 16 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+   83 |     localparam [63:0] ENTROPY_THRESH_RST = afib_lite_pkg::ENTROPY_THRESH_RST;
+      |                       ^~~~~~~~~~~~~~~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:84:23: Operator VAR 'ARM_SELECT_RST' expects 64 bits on the Initial value, but Initial value's VARREF 'ARM_SELECT_RST' generates 5 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+   84 |     localparam [63:0] ARM_SELECT_RST     = afib_lite_pkg::ARM_SELECT_RST;
+      |                       ^~~~~~~~~~~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:85:23: Operator VAR 'WINDOW_BEATS_RST' expects 64 bits on the Initial value, but Initial value's VARREF 'WINDOW_BEATS_RST' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+   85 |     localparam [63:0] WINDOW_BEATS_RST   = afib_lite_pkg::WINDOW_BEATS_RST;
+      |                       ^~~~~~~~~~~~~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:86:23: Operator VAR 'WINDOW_STEP_RST' expects 64 bits on the Initial value, but Initial value's VARREF 'WINDOW_STEP_RST' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+   86 |     localparam [63:0] WINDOW_STEP_RST    = afib_lite_pkg::WINDOW_STEP_RST;
+      |                       ^~~~~~~~~~~~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:87:23: Operator VAR 'CONF_FULL_SCALE' expects 64 bits on the Initial value, but Initial value's VARREF 'CONF_FULL_SCALE' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+   87 |     localparam [63:0] CONF_FULL_SCALE    = afib_lite_pkg::CONF_FULL_SCALE;
+      |                       ^~~~~~~~~~~~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:88:23: Operator VAR 'SEARCH_BACK_DEPTH' expects 64 bits on the Initial value, but Initial value's VARREF 'SEARCH_BACK_DEPTH' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+   88 |     localparam [63:0] SEARCH_BACK_DEPTH  = afib_lite_pkg::SEARCH_BACK_DEPTH;
+      |                       ^~~~~~~~~~~~~~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:89:23: Operator VAR 'DECISION_DEPTH' expects 64 bits on the Initial value, but Initial value's VARREF 'DECISION_DEPTH' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+   89 |     localparam [63:0] DECISION_DEPTH     = afib_lite_pkg::DECISION_DEPTH;
+      |                       ^~~~~~~~~~~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:105:23: Operator VAR 'KELAS_UNDECIDED' expects 64 bits on the Initial value, but Initial value's ENUMITEMREF 'KELAS_UNDECIDED' generates 2 bits.
+                                                          : ... note: In instance 'tb_pkg_konstanta'
+  105 |     localparam [63:0] KELAS_UNDECIDED = afib_lite_pkg::KELAS_UNDECIDED;
+      |                       ^~~~~~~~~~~~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:106:23: Operator VAR 'KELAS_NORMAL' expects 64 bits on the Initial value, but Initial value's ENUMITEMREF 'KELAS_NORMAL' generates 2 bits.
+                                                          : ... note: In instance 'tb_pkg_konstanta'
+  106 |     localparam [63:0] KELAS_NORMAL    = afib_lite_pkg::KELAS_NORMAL;
+      |                       ^~~~~~~~~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:107:23: Operator VAR 'KELAS_REVIEW' expects 64 bits on the Initial value, but Initial value's ENUMITEMREF 'KELAS_REVIEW' generates 2 bits.
+                                                          : ... note: In instance 'tb_pkg_konstanta'
+  107 |     localparam [63:0] KELAS_REVIEW    = afib_lite_pkg::KELAS_REVIEW;
+      |                       ^~~~~~~~~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:108:23: Operator VAR 'EV_NONE' expects 64 bits on the Initial value, but Initial value's ENUMITEMREF 'EV_NONE' generates 3 bits.
+                                                          : ... note: In instance 'tb_pkg_konstanta'
+  108 |     localparam [63:0] EV_NONE         = afib_lite_pkg::EV_NONE;
+      |                       ^~~~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:109:23: Operator VAR 'EV_QRS' expects 64 bits on the Initial value, but Initial value's ENUMITEMREF 'EV_QRS' generates 3 bits.
+                                                          : ... note: In instance 'tb_pkg_konstanta'
+  109 |     localparam [63:0] EV_QRS          = afib_lite_pkg::EV_QRS;
+      |                       ^~~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:110:23: Operator VAR 'EV_RR' expects 64 bits on the Initial value, but Initial value's ENUMITEMREF 'EV_RR' generates 3 bits.
+                                                          : ... note: In instance 'tb_pkg_konstanta'
+  110 |     localparam [63:0] EV_RR           = afib_lite_pkg::EV_RR;
+      |                       ^~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:111:23: Operator VAR 'EV_WINDOW' expects 64 bits on the Initial value, but Initial value's ENUMITEMREF 'EV_WINDOW' generates 3 bits.
+                                                          : ... note: In instance 'tb_pkg_konstanta'
+  111 |     localparam [63:0] EV_WINDOW       = afib_lite_pkg::EV_WINDOW;
+      |                       ^~~~~~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:112:23: Operator VAR 'RND_TIES_EVEN' expects 64 bits on the Initial value, but Initial value's ENUMITEMREF 'RND_TIES_EVEN' generates 2 bits.
+                                                          : ... note: In instance 'tb_pkg_konstanta'
+  112 |     localparam [63:0] RND_TIES_EVEN   = afib_lite_pkg::RND_TIES_EVEN;
+      |                       ^~~~~~~~~~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:113:23: Operator VAR 'RR_MARK_KEEP' expects 64 bits on the Initial value, but Initial value's ENUMITEMREF 'RR_MARK_KEEP' generates 2 bits.
+                                                          : ... note: In instance 'tb_pkg_konstanta'
+  113 |     localparam [63:0] RR_MARK_KEEP    = afib_lite_pkg::RR_MARK_KEEP;
+      |                       ^~~~~~~~~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:114:23: Operator VAR 'RR_MARK_DROP' expects 64 bits on the Initial value, but Initial value's ENUMITEMREF 'RR_MARK_DROP' generates 2 bits.
+                                                          : ... note: In instance 'tb_pkg_konstanta'
+  114 |     localparam [63:0] RR_MARK_DROP    = afib_lite_pkg::RR_MARK_DROP;
+      |                       ^~~~~~~~~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:115:23: Operator VAR 'RR_MARK_GAP' expects 64 bits on the Initial value, but Initial value's ENUMITEMREF 'RR_MARK_GAP' generates 2 bits.
+                                                          : ... note: In instance 'tb_pkg_konstanta'
+  115 |     localparam [63:0] RR_MARK_GAP     = afib_lite_pkg::RR_MARK_GAP;
+      |                       ^~~~~~~~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:300:9: Operator TASKREF 'check' expects 64 bits on the Function Argument, but Function Argument's FUNCREF 'sig_width' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  300 |         check("width.masukan16", sig_width(c_min[0], c_max[0]), W_IN,  "doc36 2.2 columns.masukan16");
+      |         ^~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:300:9: Operator TASKREF 'check' expects 64 bits on the Function Argument, but Function Argument's VARREF 'W_IN' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  300 |         check("width.masukan16", sig_width(c_min[0], c_max[0]), W_IN,  "doc36 2.2 columns.masukan16");
+      |         ^~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:301:9: Operator TASKREF 'check' expects 64 bits on the Function Argument, but Function Argument's FUNCREF 'sig_width' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  301 |         check("width.lp",        sig_width(c_min[1], c_max[1]), W_LP,  "doc36 2.2 columns.lp");
+      |         ^~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:301:9: Operator TASKREF 'check' expects 64 bits on the Function Argument, but Function Argument's VARREF 'W_LP' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  301 |         check("width.lp",        sig_width(c_min[1], c_max[1]), W_LP,  "doc36 2.2 columns.lp");
+      |         ^~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:302:9: Operator TASKREF 'check' expects 64 bits on the Function Argument, but Function Argument's FUNCREF 'sig_width' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  302 |         check("width.hp",        sig_width(c_min[2], c_max[2]), W_HP,  "doc36 2.2 columns.hp");
+      |         ^~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:302:9: Operator TASKREF 'check' expects 64 bits on the Function Argument, but Function Argument's VARREF 'W_HP' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  302 |         check("width.hp",        sig_width(c_min[2], c_max[2]), W_HP,  "doc36 2.2 columns.hp");
+      |         ^~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:303:9: Operator TASKREF 'check' expects 64 bits on the Function Argument, but Function Argument's FUNCREF 'sig_width' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  303 |         check("width.turunan",   sig_width(c_min[3], c_max[3]), W_DER, "doc36 2.2 columns.turunan");
+      |         ^~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:303:9: Operator TASKREF 'check' expects 64 bits on the Function Argument, but Function Argument's VARREF 'W_DER' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  303 |         check("width.turunan",   sig_width(c_min[3], c_max[3]), W_DER, "doc36 2.2 columns.turunan");
+      |         ^~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:304:9: Operator TASKREF 'check' expects 64 bits on the Function Argument, but Function Argument's FUNCREF 'sig_width' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  304 |         check("width.kuadrat",   sig_width(c_min[4], c_max[4]), W_SQ,  "doc36 2.2 columns.kuadrat");
+      |         ^~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:304:9: Operator TASKREF 'check' expects 64 bits on the Function Argument, but Function Argument's VARREF 'W_SQ' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  304 |         check("width.kuadrat",   sig_width(c_min[4], c_max[4]), W_SQ,  "doc36 2.2 columns.kuadrat");
+      |         ^~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:305:9: Operator TASKREF 'check' expects 64 bits on the Function Argument, but Function Argument's FUNCREF 'sig_width' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  305 |         check("width.jendela",   sig_width(c_min[5], c_max[5]), W_WIN, "doc36 2.2 columns.jendela");
+      |         ^~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:305:9: Operator TASKREF 'check' expects 64 bits on the Function Argument, but Function Argument's VARREF 'W_WIN' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  305 |         check("width.jendela",   sig_width(c_min[5], c_max[5]), W_WIN, "doc36 2.2 columns.jendela");
+      |         ^~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:350:9: Operator TASKREF 'check' expects 64 bits on the Function Argument, but Function Argument's FUNCREF 'sig_width' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  350 |         check("rate.divider.width", sig_width(64'd0, RATE_DIV_RST), W_RATE_DIV,
+      |         ^~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:350:9: Operator TASKREF 'check' expects 64 bits on the Function Argument, but Function Argument's VARREF 'W_RATE_DIV' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  350 |         check("rate.divider.width", sig_width(64'd0, RATE_DIV_RST), W_RATE_DIV,
+      |         ^~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:361:9: Operator TASKREF 'check' expects 64 bits on the Function Argument, but Function Argument's VARREF 'n_min' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  361 |         check("stream.column_count", n_min, man_columns, "count of parsed min lines");
+      |         ^~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:362:9: Operator TASKREF 'check' expects 64 bits on the Function Argument, but Function Argument's VARREF 'n_max' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  362 |         check("stream.min_max_pairs", n_max, n_min, "count of parsed max lines");
+      |         ^~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:362:9: Operator TASKREF 'check' expects 64 bits on the Function Argument, but Function Argument's VARREF 'n_min' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  362 |         check("stream.min_max_pairs", n_max, n_min, "count of parsed max lines");
+      |         ^~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:363:9: Operator TASKREF 'check' expects 64 bits on the Function Argument, but Function Argument's VARREF 'n_above' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  363 |         check("stream.above_2p31_fields", n_above, n_min, "count of words_above_2p31 fields");
+      |         ^~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:363:9: Operator TASKREF 'check' expects 64 bits on the Function Argument, but Function Argument's VARREF 'n_min' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  363 |         check("stream.above_2p31_fields", n_above, n_min, "count of words_above_2p31 fields");
+      |         ^~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:375:9: Operator TASKREF 'check' expects 64 bits on the Function Argument, but Function Argument's VARREF 'W_DER_WORST' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  375 |         check("derivative.worst.identity", W_DER_WORST, W_DER + 1, "W_DER + 1");
+      |         ^~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:375:63: Operator ADD expects 64 bits on the LHS, but LHS's VARREF 'W_DER' generates 32 bits.
+                                                          : ... note: In instance 'tb_pkg_konstanta'
+  375 |         check("derivative.worst.identity", W_DER_WORST, W_DER + 1, "W_DER + 1");
+      |                                                               ^
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:376:9: Operator TASKREF 'check' expects 64 bits on the Function Argument, but Function Argument's CLOG2 generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  376 |         check("window.worst.identity", $clog2(N_WIN * SQ_LIMIT * SQ_LIMIT + 64'd1), W_WIN_WORST,
+      |         ^~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:376:9: Operator TASKREF 'check' expects 64 bits on the Function Argument, but Function Argument's VARREF 'W_WIN_WORST' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  376 |         check("window.worst.identity", $clog2(N_WIN * SQ_LIMIT * SQ_LIMIT + 64'd1), W_WIN_WORST,
+      |         ^~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:381:9: Operator TASKREF 'check' expects 64 bits on the Function Argument, but Function Argument's VARREF 'BITS_WORD_IN' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  381 |         check("bits.word_in_t", BITS_WORD_IN, W_IN,  "group 4 vs group 1");
+      |         ^~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:381:9: Operator TASKREF 'check' expects 64 bits on the Function Argument, but Function Argument's VARREF 'W_IN' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  381 |         check("bits.word_in_t", BITS_WORD_IN, W_IN,  "group 4 vs group 1");
+      |         ^~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:382:9: Operator TASKREF 'check' expects 64 bits on the Function Argument, but Function Argument's VARREF 'BITS_LP' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  382 |         check("bits.lp_t",      BITS_LP,      W_LP,  "group 4 vs group 1");
+      |         ^~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:382:9: Operator TASKREF 'check' expects 64 bits on the Function Argument, but Function Argument's VARREF 'W_LP' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  382 |         check("bits.lp_t",      BITS_LP,      W_LP,  "group 4 vs group 1");
+      |         ^~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:383:9: Operator TASKREF 'check' expects 64 bits on the Function Argument, but Function Argument's VARREF 'BITS_HP' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  383 |         check("bits.hp_t",      BITS_HP,      W_HP,  "group 4 vs group 1");
+      |         ^~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:383:9: Operator TASKREF 'check' expects 64 bits on the Function Argument, but Function Argument's VARREF 'W_HP' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  383 |         check("bits.hp_t",      BITS_HP,      W_HP,  "group 4 vs group 1");
+      |         ^~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:384:9: Operator TASKREF 'check' expects 64 bits on the Function Argument, but Function Argument's VARREF 'BITS_DER' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  384 |         check("bits.der_t",     BITS_DER,     W_DER, "group 4 vs group 1");
+      |         ^~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:384:9: Operator TASKREF 'check' expects 64 bits on the Function Argument, but Function Argument's VARREF 'W_DER' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  384 |         check("bits.der_t",     BITS_DER,     W_DER, "group 4 vs group 1");
+      |         ^~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:385:9: Operator TASKREF 'check' expects 64 bits on the Function Argument, but Function Argument's VARREF 'BITS_SQ' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  385 |         check("bits.sq_t",      BITS_SQ,      W_SQ,  "group 4 vs group 1");
+      |         ^~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:385:9: Operator TASKREF 'check' expects 64 bits on the Function Argument, but Function Argument's VARREF 'W_SQ' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  385 |         check("bits.sq_t",      BITS_SQ,      W_SQ,  "group 4 vs group 1");
+      |         ^~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:386:9: Operator TASKREF 'check' expects 64 bits on the Function Argument, but Function Argument's VARREF 'BITS_WIN' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  386 |         check("bits.win_t",     BITS_WIN,     W_WIN, "group 4 vs group 1");
+      |         ^~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:386:9: Operator TASKREF 'check' expects 64 bits on the Function Argument, but Function Argument's VARREF 'W_WIN' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  386 |         check("bits.win_t",     BITS_WIN,     W_WIN, "group 4 vs group 1");
+      |         ^~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:387:9: Operator TASKREF 'check' expects 64 bits on the Function Argument, but Function Argument's VARREF 'BITS_THR' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  387 |         check("bits.thr_t",     BITS_THR,     W_THR, "group 4 vs group 1");
+      |         ^~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:387:9: Operator TASKREF 'check' expects 64 bits on the Function Argument, but Function Argument's VARREF 'W_THR' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  387 |         check("bits.thr_t",     BITS_THR,     W_THR, "group 4 vs group 1");
+      |         ^~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:388:9: Operator TASKREF 'check' expects 64 bits on the Function Argument, but Function Argument's VARREF 'BITS_RR_MS' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  388 |         check("bits.rr_ms_t",   BITS_RR_MS,   W_RR_MS, "group 4 vs group 1");
+      |         ^~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:388:9: Operator TASKREF 'check' expects 64 bits on the Function Argument, but Function Argument's VARREF 'W_RR_MS' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  388 |         check("bits.rr_ms_t",   BITS_RR_MS,   W_RR_MS, "group 4 vs group 1");
+      |         ^~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:389:9: Operator TASKREF 'check' expects 64 bits on the Function Argument, but Function Argument's VARREF 'BITS_IDX' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  389 |         check("bits.idx_t",     BITS_IDX,     W_IDX, "group 4 vs group 1");
+      |         ^~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:389:9: Operator TASKREF 'check' expects 64 bits on the Function Argument, but Function Argument's VARREF 'W_IDX' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  389 |         check("bits.idx_t",     BITS_IDX,     W_IDX, "group 4 vs group 1");
+      |         ^~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:390:9: Operator TASKREF 'check' expects 64 bits on the Function Argument, but Function Argument's VARREF 'BITS_TUSER' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  390 |         check("bits.tuser_t",   BITS_TUSER,   W_TUSER, "group 4 vs group 1");
+      |         ^~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:390:9: Operator TASKREF 'check' expects 64 bits on the Function Argument, but Function Argument's VARREF 'W_TUSER' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  390 |         check("bits.tuser_t",   BITS_TUSER,   W_TUSER, "group 4 vs group 1");
+      |         ^~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:391:9: Operator TASKREF 'check' expects 64 bits on the Function Argument, but Function Argument's VARREF 'BITS_CONF' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  391 |         check("bits.conf_t",    BITS_CONF,    W_CONF, "group 4 vs group 1");
+      |         ^~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:391:9: Operator TASKREF 'check' expects 64 bits on the Function Argument, but Function Argument's VARREF 'W_CONF' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  391 |         check("bits.conf_t",    BITS_CONF,    W_CONF, "group 4 vs group 1");
+      |         ^~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:422:9: Operator TASKREF 'review' expects 64 bits on the Function Argument, but Function Argument's CLOG2 generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  422 |         review("square.bound.width", $clog2(SQ_LIMIT * SQ_LIMIT + 64'd1), W_SQ,
+      |         ^~~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:422:9: Operator TASKREF 'review' expects 64 bits on the Function Argument, but Function Argument's VARREF 'W_SQ' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  422 |         review("square.bound.width", $clog2(SQ_LIMIT * SQ_LIMIT + 64'd1), W_SQ,
+      |         ^~~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:424:9: Operator TASKREF 'review' expects 64 bits on the Function Argument, but Function Argument's VARREF 'W_THR' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  424 |         review("searchback.width", W_THR, W_TW,
+      |         ^~~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:424:9: Operator TASKREF 'review' expects 64 bits on the Function Argument, but Function Argument's VARREF 'W_TW' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  424 |         review("searchback.width", W_THR, W_TW,
+      |         ^~~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:428:9: Operator TASKREF 'review' expects 64 bits on the Function Argument, but Function Argument's VARREF 'W_RR_SMP' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  428 |         review("rr.samples.width", W_RR_SMP, W_RR_MS,
+      |         ^~~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:428:9: Operator TASKREF 'review' expects 64 bits on the Function Argument, but Function Argument's VARREF 'W_RR_MS' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  428 |         review("rr.samples.width", W_RR_SMP, W_RR_MS,
+      |         ^~~~~~
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:430:50: Operator ADD expects 64 bits on the LHS, but LHS's VARREF 'W_F_RATIO' generates 32 bits.
+                                                          : ... note: In instance 'tb_pkg_konstanta'
+  430 |         review("feature.widths.other", W_F_RATIO + W_F_ENT + W_F_MEANQ + W_F_RMSSD, W_CONF,
+      |                                                  ^
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:430:50: Operator ADD expects 64 bits on the RHS, but RHS's VARREF 'W_F_ENT' generates 32 bits.
+                                                          : ... note: In instance 'tb_pkg_konstanta'
+  430 |         review("feature.widths.other", W_F_RATIO + W_F_ENT + W_F_MEANQ + W_F_RMSSD, W_CONF,
+      |                                                  ^
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:430:60: Operator ADD expects 64 bits on the RHS, but RHS's VARREF 'W_F_MEANQ' generates 32 bits.
+                                                          : ... note: In instance 'tb_pkg_konstanta'
+  430 |         review("feature.widths.other", W_F_RATIO + W_F_ENT + W_F_MEANQ + W_F_RMSSD, W_CONF,
+      |                                                            ^
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:430:72: Operator ADD expects 64 bits on the RHS, but RHS's VARREF 'W_F_RMSSD' generates 32 bits.
+                                                          : ... note: In instance 'tb_pkg_konstanta'
+  430 |         review("feature.widths.other", W_F_RATIO + W_F_ENT + W_F_MEANQ + W_F_RMSSD, W_CONF,
+      |                                                                        ^
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_pkg_konstanta.sv:430:9: Operator TASKREF 'review' expects 64 bits on the Function Argument, but Function Argument's VARREF 'W_CONF' generates 32 bits.
+                                                         : ... note: In instance 'tb_pkg_konstanta'
+  430 |         review("feature.widths.other", W_F_RATIO + W_F_ENT + W_F_MEANQ + W_F_RMSSD, W_CONF,
+      |         ^~~~~~
+%Error: ../rtl/tb/tb_pkg_konstanta.sv:259:25: String of 8192 bits exceeds hardcoded limit VL_VALUE_STRING_MAX_WORDS in verilatedos.h
+  259 |             if ($sscanf(line, "  \"min\": %d,", v64) == 1) begin
+      |                         ^~~~
+%Error: ../rtl/tb/tb_pkg_konstanta.sv:263:25: String of 8192 bits exceeds hardcoded limit VL_VALUE_STRING_MAX_WORDS in verilatedos.h
+  263 |             if ($sscanf(line, "  \"max\": %d,", v64) == 1) begin
+      |                         ^~~~
+%Error: ../rtl/tb/tb_pkg_konstanta.sv:267:25: String of 8192 bits exceeds hardcoded limit VL_VALUE_STRING_MAX_WORDS in verilatedos.h
+  267 |             if ($sscanf(line, "   \"words_above_2p31\": %d,", v64) == 1) begin
+      |                         ^~~~
+%Error: ../rtl/tb/tb_pkg_konstanta.sv:271:25: String of 8192 bits exceeds hardcoded limit VL_VALUE_STRING_MAX_WORDS in verilatedos.h
+  271 |             if ($sscanf(line, " \"rate_hz\": %d", v64) == 1) man_rate = v64;
+      |                         ^~~~
+%Error: ../rtl/tb/tb_pkg_konstanta.sv:272:25: String of 8192 bits exceeds hardcoded limit VL_VALUE_STRING_MAX_WORDS in verilatedos.h
+  272 |             if ($sscanf(line, " \"frames\": %d,", v64) == 1) man_frames = v64;
+      |                         ^~~~
+%Error: ../rtl/tb/tb_pkg_konstanta.sv:273:25: String of 8192 bits exceeds hardcoded limit VL_VALUE_STRING_MAX_WORDS in verilatedos.h
+  273 |             if ($sscanf(line, "  \"hex_digits\": %d,", v64) == 1) man_hex_digits = v64;
+      |                         ^~~~
+%Error: ../rtl/tb/tb_pkg_konstanta.sv:274:25: String of 8192 bits exceeds hardcoded limit VL_VALUE_STRING_MAX_WORDS in verilatedos.h
+  274 |             if ($sscanf(line, "  \"bytes_per_word\": %d,", v64) == 1) man_bytes_per_word = v64;
+      |                         ^~~~
+%Error: ../rtl/tb/tb_pkg_konstanta.sv:275:25: String of 8192 bits exceeds hardcoded limit VL_VALUE_STRING_MAX_WORDS in verilatedos.h
+  275 |             if ($sscanf(line, "  \"words_per_line\": %d,", v64) == 1) man_words_per_line = v64;
+      |                         ^~~~
+%Error: ../rtl/tb/tb_pkg_konstanta.sv:276:25: String of 8192 bits exceeds hardcoded limit VL_VALUE_STRING_MAX_WORDS in verilatedos.h
+  276 |             if ($sscanf(line, "  \"total_words\": %d,", v64) == 1) man_total_words = v64;
+      |                         ^~~~
+%Error: ../rtl/tb/tb_pkg_konstanta.sv:277:25: String of 8192 bits exceeds hardcoded limit VL_VALUE_STRING_MAX_WORDS in verilatedos.h
+  277 |             if ($sscanf(line, "  \"columns\": %d,", v64) == 1) man_columns = v64;
+      |                         ^~~~
+%Error: ../rtl/tb/tb_pkg_konstanta.sv:278:25: String of 8192 bits exceeds hardcoded limit VL_VALUE_STRING_MAX_WORDS in verilatedos.h
+  278 |             if ($sscanf(line, "  \"words_per_column\": %d,", v64) == 1) man_words_per_column = v64;
+      |                         ^~~~
+%Error: ../rtl/tb/tb_pkg_konstanta.sv:279:25: String of 8192 bits exceeds hardcoded limit VL_VALUE_STRING_MAX_WORDS in verilatedos.h
+  279 |             if ($sscanf(line, "  \"mismatches\": %d,", v64) == 1) man_mismatches = v64;
+      |                         ^~~~
+%Error: ../rtl/tb/tb_pkg_konstanta.sv:280:25: String of 8192 bits exceeds hardcoded limit VL_VALUE_STRING_MAX_WORDS in verilatedos.h
+  280 |             if ($sscanf(line, "  \"fixture_masukan16_words\": %d,", v64) == 1) man_fixture_words = v64;
+      |                         ^~~~
+%Error: Exiting due to 13 error(s), 89 warning(s)

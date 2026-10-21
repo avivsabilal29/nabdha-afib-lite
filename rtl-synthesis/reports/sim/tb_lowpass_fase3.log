@@ -1,0 +1,19 @@
+run_sim.sh: tb=../rtl/tb/tb_lowpass.sv sources=2 plusargs=1
+  plusargs forwarded to vvp: +VECTOR=/home/avivsabilalm/.hermes/cache/scratch/rtlplan2/fase0
+  compiled first (packages): ../rtl/afib_lite_pkg.sv
+tb_lowpass: vectors = /home/avivsabilalm/.hermes/cache/scratch/rtlplan2/fase0
+tb_lowpass: limit   = 450000 of 450000
+tb_lowpass: presented = 450000
+tb_lowpass: outputs   = 450000
+tb_lowpass: compared  = 450000
+tb_lowpass: lp mismatches      = 0
+tb_lowpass: hp mismatches      = 0
+tb_lowpass: m_tdata mismatches = 0
+tb_lowpass: sample_idx mismatch= 0
+tb_lowpass: tuser mismatches   = 0
+tb_lowpass: tlast mismatches   = 0
+tb_lowpass: overflow pulses    = 0
+tb_lowpass: d_valid pulses     = 450000
+tb_lowpass: golden format odd  = 0
+tb_lowpass: PASS
+../rtl/tb/tb_lowpass.sv:161: $finish called at 90000135 (1s)

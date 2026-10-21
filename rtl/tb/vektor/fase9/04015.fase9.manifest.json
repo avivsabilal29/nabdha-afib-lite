@@ -1,0 +1,230 @@
+{
+ "record": "04015",
+ "generator": "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/tb/vektor/fase9/siapkan_vektor_fase9.py",
+ "golden_sources": {
+  "decisions_raw": {
+   "path": "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtlplan2/fase5/04015.decisions.csv",
+   "rows": 588,
+   "arm": "raw interval series"
+  },
+  "decisions_marked": {
+   "path": "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtlplan2/fase5/04015.decisions.berpenanda.csv",
+   "rows": 602,
+   "arm": "marked interval series"
+  },
+  "manifest_fase5": "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtlplan2/fase5/04015.manifest.fase5.json",
+  "fixture": "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/model/rantai-afib-lite/fixture/04015_30m.npz",
+  "vektor": "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/model/rantai-afib-lite/vektor/04015_berpenanda.npz"
+ },
+ "triage_gate": {
+  "predicate": "ratio > 0.165 and entropy_over_4 > 0.63",
+  "ratio_register_q16": 10813,
+  "entropy_register_q14": 10322,
+  "ratio_q16_from_float": 10813,
+  "entropy_q14_from_float": 10322
+ },
+ "feature_formats": {
+  "ratio": "Q1.16 in 17 bits",
+  "entropy_over_4": "Q1.14 in 15 bits",
+  "rounding": "ties to even (RND_TIES_EVEN)"
+ },
+ "boundary_straddles": {
+  "mentah": {
+   "round": 0,
+   "floor": 0,
+   "truncate": 0
+  },
+  "berpenanda": {
+   "round": 0,
+   "floor": 0,
+   "truncate": 0
+  }
+ },
+ "arms": {
+  "mentah": {
+   "census": {
+    "windows": 588,
+    "afib": 95,
+    "n": 493,
+    "fired": 183,
+    "true_positive": 95,
+    "false_positive": 88,
+    "false_negative": 0,
+    "true_negative": 405
+   },
+   "ground_truth_source": "fixture jendela_kelas_benar",
+   "ratio_q16_max": 35855,
+   "ent_q14_max": 14336
+  },
+  "berpenanda": {
+   "census": {
+    "windows": 602,
+    "afib": 95,
+    "n": 507,
+    "fired": 189,
+    "true_positive": 95,
+    "false_positive": 94,
+    "false_negative": 0,
+    "true_negative": 413
+   },
+   "ground_truth_source": "vektor jendela_kelas_berpenanda",
+   "ratio_q16_max": 40070,
+   "ent_q14_max": 14336
+  }
+ },
+ "perturbed_runs": {
+  "mutasi": {
+   "windows": 602,
+   "fired": 594,
+   "ratio_code": 0,
+   "entropy_code": 0,
+   "predicate": "ratio_q16 > 0 and entropy_q14 > 0"
+  },
+  "guard": {
+   "windows": 602,
+   "fired": 0,
+   "ratio_code": 10813,
+   "entropy_code": 32768,
+   "arm_select": 2,
+   "predicate": "entropy arm only, entropy field 0x8000: arm unsatisfiable"
+  },
+  "tunggal": {
+   "windows": 602,
+   "fired": 191,
+   "arm_select": 2,
+   "predicate": "entropy arm only: entropy_q14 > 10322"
+  }
+ },
+ "counts_words": {
+  "order": [
+   "n_marked",
+   "n_raw",
+   "fired_marked",
+   "fired_raw",
+   "tp_marked",
+   "fp_marked",
+   "fn_marked",
+   "tn_marked",
+   "tp_raw",
+   "fp_raw",
+   "fn_raw",
+   "tn_raw",
+   "afib_marked",
+   "normal_marked",
+   "afib_raw",
+   "normal_raw",
+   "ratio_code",
+   "entropy_code",
+   "arm_marked",
+   "arm_raw",
+   "mut_ratio_code",
+   "mut_entropy_code",
+   "guard_entropy_code",
+   "arm_single",
+   "fired_mutasi",
+   "fired_tunggal",
+   "n_tunggal"
+  ],
+  "values": [
+   602,
+   588,
+   189,
+   183,
+   95,
+   94,
+   0,
+   413,
+   95,
+   88,
+   0,
+   405,
+   95,
+   507,
+   95,
+   493,
+   10813,
+   10322,
+   15,
+   7,
+   0,
+   0,
+   32768,
+   2,
+   594,
+   191,
+   602
+  ]
+ },
+ "files": {
+  "04015.mentah.qr.hex": {
+   "words": 588,
+   "bytes": 5292,
+   "sha256": "984aedfac3f61eca8271c5e11bde8caf93b5b49b1d5191650087bab5c91d8f15"
+  },
+  "04015.mentah.qe.hex": {
+   "words": 588,
+   "bytes": 5292,
+   "sha256": "0af95f1238f3674bf5d5da218e1fb043ee09520cb440fdaf4e672a1263d015db"
+  },
+  "04015.mentah.kelas.hex": {
+   "words": 588,
+   "bytes": 5292,
+   "sha256": "0e86bb6485b1a9815580ec245315fe0f38fdd124092eb3bd1c3e0355b86f6031"
+  },
+  "04015.mentah.asli.hex": {
+   "words": 588,
+   "bytes": 5292,
+   "sha256": "5e15f39e6a240806fb574fda26e220ada7081069ef9fa1f10b9d166f1f79a1fa"
+  },
+  "04015.mentah.wi.hex": {
+   "words": 588,
+   "bytes": 5292,
+   "sha256": "5d9b04e36ea83063a42a280b561f13685f140146b13f26e87d5ba15b227c10ee"
+  },
+  "04015.berpenanda.qr.hex": {
+   "words": 602,
+   "bytes": 5418,
+   "sha256": "f35a3fdad3e6e5611659322bd28a50755a43a1c624b48a04604fafd31da68d42"
+  },
+  "04015.berpenanda.qe.hex": {
+   "words": 602,
+   "bytes": 5418,
+   "sha256": "79e19c1f953b8a90c28b47ec9abbd0570a3fde6ead4f98d86fe37e934b56216e"
+  },
+  "04015.berpenanda.kelas.hex": {
+   "words": 602,
+   "bytes": 5418,
+   "sha256": "2964ce290a1911b529cb31d9c7f44c17493039bf616262d8ea8c13a3a3aa3e80"
+  },
+  "04015.berpenanda.asli.hex": {
+   "words": 602,
+   "bytes": 5418,
+   "sha256": "73dba55564ec67e6ead7cef432b749cac417c910ed9c2d100290de43f46eaa36"
+  },
+  "04015.berpenanda.wi.hex": {
+   "words": 602,
+   "bytes": 5418,
+   "sha256": "703016b3393b52bace36628c8a3e09e3520d2c20e2b9cec22e7ad808c13771de"
+  },
+  "04015.mutasi.kelas.hex": {
+   "words": 602,
+   "bytes": 5418,
+   "sha256": "08febba211e46ce29233363eb5b6ac68b186456c887e4f26694b1d24ff180fc7"
+  },
+  "04015.guard.kelas.hex": {
+   "words": 602,
+   "bytes": 5418,
+   "sha256": "ccacf9224842a7fa62183d0ce369611be9a7dc24a83afd2b5de2546bc156a1a6"
+  },
+  "04015.tunggal.kelas.hex": {
+   "words": 602,
+   "bytes": 5418,
+   "sha256": "a764c6659f53f6cff21f8b88aca87c70e3d8c133042fa19fcbdd44e2ad51a06c"
+  },
+  "04015.fase9.counts.hex": {
+   "words": 27,
+   "bytes": 243,
+   "sha256": "d46121f85a54f89b06ce593b5775e72ba69cad5331295696fddf6aa90b736684"
+  }
+ }
+}

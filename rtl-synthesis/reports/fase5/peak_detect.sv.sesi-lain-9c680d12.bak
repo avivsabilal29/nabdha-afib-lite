@@ -1,0 +1,744 @@
+// ---------------------------------------------------------------------------
+// peak_detect.sv -- envelope peak detection, adaptive threshold, refractory period,
+// and the search-back walk. Contract profile: event stage (I1).
+//
+// Contract: rtl/afib_lite_pkg.sv, signal table marker "TBL|", 43 rows (plan doc 38
+// section 3.2). This stage owns the event sideband m_ev_* and the beat counter.
+// Introspection ports: d_thr and d_pk, both at the threshold node width.
+//
+// Widths, from afib_lite_pkg (plan 3.4, cross checked against doc 36 section 2.2):
+//   in   W_WIN = 33   the running window node, signed, 32 unsigned
+//   thr  W_THR = 30   adaptive threshold AND search back. Doc 36 2.2 measures 29 on
+//                     04015 but 2.2.1 measures 30 on nsrdb/16265 at 128 Hz, so the
+//                     binding width is 30 and this stage is built 30 bits wide.
+//   acc  W_THR_ACC = 31 and W_WIN_ACC = 34, group 8 of the package, because the measured
+//                     spki maximum 717628984 needs 30 unsigned bits and therefore does not
+//                     fit the signed W_THR port. See the group 8 note.
+// Saturation points: the threshold state is a floor-shifted recurrence, no clamp.
+//   SEARCH_BACK_DEPTH 128 is the candidate buffer depth and it is NOT proven for other
+//   records, so it has its own overflow flag. THRESH_SCALE 256 is 2**SHIFT_DER, the
+//   factor between the threshold and the shifted derivative domain.
+// Rounding rule: RND_FLOOR on every right shift (rantai.py:655, :656, :657, :683, :709).
+//   Theorem 6 fixes this: a + ((p - a) >> 3) is identical to (7a + p) // 8, and the
+//   identity breaks on 87316 of 200000 threshold pairs if truncation toward zero is
+//   used instead. The refractory test is PANTUL 50 (rantai.py:57).
+// Model lines this file mirrors: rantai.py:610-715, :655, :656, :657, :662, :665, :683,
+//   :685, :687, :699, :700, :705-709, cross form at :581, peak scan at :983-1002,
+//   batch at :289-303, RADIUS_PUNCAK 27 at :55, JENDELA_F 25 at :56, ring at :933-935.
+//
+// Warm-up: the adaptive threshold constants are part of the specification, not a defect.
+// A new decision is only trustworthy after 23 to 32 beats (doc 36 5.1 point 3).
+//
+// MEASURED DEVIATION THAT BOUNDS THIS FILE, and it is reported in full in
+// rtl-synthesis/reports/LAPORAN-FASE5.md:
+//
+//   The frozen port list carries ONE data input, s_tdata, the window column. The model
+//   stage this file mirrors reads THREE streams: ring_sel (the window, :935), ring_hp
+//   (:933 -> pk_f = ring_hp.maks_mutlak(pos-25, pos+25), :1002) and ring_besaran
+//   (:936 -> kem = garis.maks_mutlak(pos-18, pos+18), :333, the T wave slope). Neither
+//   hp nor the derivative can be reconstructed from the window: the window is the
+//   38 sample moving sum of the squared, shifted derivative (rantai.py:240-280), so it
+//   is not invertible. The frozen port list therefore cannot express the T wave rule.
+//
+//   Two consequences, both measured on the 450000 sample record 04015 and both proven:
+//
+//   1. pk_f. Forcing pk_f to 0 changes NOTHING that this stage decides. Proof: a run of
+//      the frozen model with pk_f forced to 0 gives peaks, qrs and ambang_state
+//      bit-identical to the reference (peaks identical True, qrs identical True,
+//      ambang_state identical True, same 4 kind census). pk_f only steers spkf and npkf,
+//      which are read by f1 = npkf + ((spkf - npkf) >> 2) (:656) and f1 steers nothing but
+//      the next spkf/npkf update. It never reaches i1, i2 or the search-back gate. This
+//      body keeps the spkf/npkf recurrence in the form of the model with pk_f = 0, so the
+//      registers exist and are used, and both stay at zero.
+//
+//   2. kem. The T wave slope DOES reach the decision (ditolak_t -> sinyal -> qrs), so
+//      this body implements the branch of :665 exactly, and `T_WAVE_SLOPE_AVAILABLE` is
+//      1'b0 because the slope stream has no port. The configuration this file therefore
+//      realises is the model's own `aturan_t=False` arm, which is one of the model's
+//      documented configurations (ARM_SELECT bit b2 low, plan doc 38 phase 7 is
+//      deferrable for exactly this reason). On 04015 that arm is
+//      peaks 4777, qrs 2603, kind census {qrs 2596, qrs_search_back 7, noise 2174,
+//      rejected_t 0}, ambang_state [23, 7, 0, 0, 0, 6, 25, 1194, 2592].
+//      The reference export of the plan's arm (aturan_t=True) is
+//      peaks 4777, qrs 2596, kind census {qrs 2590, qrs_search_back 6, rejected_t 1909,
+//      noise 272}. The peak POSITIONS and envelope values of the two arms are identical
+//      (proof in LAPORAN-FASE5.md), so the peak picker of this file is exact against
+//      both arms; only the verdict of 1912 of the 4777 peaks differs, and that
+//      difference is entirely the missing slope input.
+//
+//   Closing the gap needs one added input port (the derivative word, W_DER wide, riding
+//   with s_tvalid) and one line in afib_lite_top.sv. It is NOT added here because the
+//   port list is frozen.
+//
+// Fixed latency: PEAK_LAT_SAMPLE cycles per accepted word, measured by tb_peak_detect.sv,
+//   never trusted. Of those, 55 cycles are the serial maximum scan of the peak window
+//   (plan 4.8 scanner (b), 51 cycles was the plan's number for the hp scan; this file
+//   scans the 2*27+1 = 55 window samples instead) and the remaining 70 cycles are handed
+//   to the peak engine, which needs 4777 * ~55 cycles over the whole record, that is
+//   1.9 cycles per sample on average against 70 available. The plan's 18 cycles per
+//   sample tick is a duty figure (plan 10.4), not a latency, and 18 is not enough for a
+//   55 sample scan, so the cycle budget of this stage is reported as a measured deviation.
+// House style: wire and reg only (D10), one clock, synchronous active low reset.
+// ---------------------------------------------------------------------------
+`default_nettype none
+
+module peak_detect #(
+    parameter int unsigned W_WIN      = afib_lite_pkg::W_WIN,
+    parameter int unsigned W_THR      = afib_lite_pkg::W_THR,
+    parameter int unsigned W_IDX      = afib_lite_pkg::W_IDX,
+    parameter int unsigned W_TUSER    = afib_lite_pkg::W_TUSER,
+    parameter int unsigned W_EVKIND   = afib_lite_pkg::W_EVKIND,
+    parameter int unsigned LAT_CYCLES = 1
+) (
+    input  wire                     clk_i,
+    input  wire                     rst_ni,
+
+    // sample stream in
+    input  wire [W_WIN-1:0]         s_tdata,
+    input  wire                     s_tvalid,
+    input  wire                     s_tlast,
+    input  wire [W_TUSER-1:0]       s_tuser,
+    input  wire [W_IDX-1:0]         s_sample_idx,
+
+    // configuration
+    input  wire                     i_enable,
+    input  wire                     i_clear_counters,
+
+    // sample stream out
+    output reg  [W_WIN-1:0]         m_tdata,
+    output reg                      m_tvalid,
+    output reg                      m_overflow,
+    output reg                      m_tlast,
+    output reg  [W_TUSER-1:0]       m_tuser,
+    output reg  [W_IDX-1:0]         m_sample_idx,
+
+    // event sideband: QRS beats and peak candidates
+    output reg                      m_ev_valid,
+    output reg  [W_EVKIND-1:0]      m_ev_kind,
+    output reg  [W_IDX-1:0]         m_ev_idx,
+    output reg  [31:0]              m_ev_val,
+
+    // introspection
+    output reg                      d_valid,
+    output reg  [W_THR-1:0]         d_thr,
+    output reg  [W_THR-1:0]         d_pk,
+
+    // status this stage owns
+    output reg  [31:0]              o_beat_count
+);
+
+    // ---- lengths, every one taken from the package -------------------------
+    localparam int unsigned RING_W    = afib_lite_pkg::PEAK_RING_WORDS;   // 64
+    localparam int unsigned WIN_W     = afib_lite_pkg::PEAK_WIN_WORDS;    // 55
+    localparam int unsigned RADIUS    = afib_lite_pkg::PEAK_RADIUS;       // 27
+    localparam int unsigned BUF_D     = afib_lite_pkg::PEAK_BUF_DEPTH;    // 128
+    localparam int unsigned LAT_SMP   = afib_lite_pkg::PEAK_LAT_SAMPLE;   // 128
+    localparam int unsigned RR_N      = afib_lite_pkg::DELAPAN;           // 8
+    localparam int unsigned RW_N      = afib_lite_pkg::SEMAI_PANJANG;     // 32
+    localparam int unsigned W_ACC     = afib_lite_pkg::W_THR_ACC;         // 31
+    localparam int unsigned W_WACC    = afib_lite_pkg::W_WIN_ACC;         // 34
+    localparam int unsigned W_RSUM    = afib_lite_pkg::W_RR_SUM;          // 20
+
+    // The derivative stream, and therefore the T wave slope, has no input on the
+    // frozen port list. See the header. 1'b0 selects the model's `aturan_t=False` arm.
+    localparam logic T_WAVE_SLOPE_AVAILABLE = 1'b0;
+
+    // phase plan inside one accepted word: accept, serial window scan, decision,
+    // then the remaining cycles go to the peak engine.
+    localparam [7:0] PH_ACCEPT = 8'd0;
+    localparam [7:0] PH_SCAN0  = 8'd1;                       // scan k = phs - 1
+    localparam [7:0] PH_SCAN1  = 8'd(WIN_W);                 // last scan step, k = 54
+    localparam [7:0] PH_DECIDE = 8'd(WIN_W + 1);             // 56
+    localparam [7:0] PH_ENG0   = 8'd(WIN_W + 2);             // 57
+    localparam [7:0] PH_OUT    = 8'd(LAT_SMP - 1);           // 127
+
+    // peak engine program counter
+    localparam [5:0] E_IDLE = 6'd0,  E_I1   = 6'd1,  E_F1   = 6'd2,  E_I2   = 6'd3;
+    localparam [5:0] E_DEL  = 6'd4,  E_BAND = 6'd5,  E_PRE  = 6'd6,  E_PUSH = 6'd7;
+    localparam [5:0] E_CNT  = 6'd8,  E_BR   = 6'd9,  E_ACC  = 6'd10, E_ACCF = 6'd11;
+    localparam [5:0] E_CAT  = 6'd12, E_RR0  = 6'd13, E_RR1  = 6'd14, E_RR2  = 6'd15;
+    localparam [5:0] E_RR3  = 6'd16, E_RR4  = 6'd17, E_RR5  = 6'd18, E_RR6  = 6'd19;
+    localparam [5:0] E_ANT  = 6'd20, E_MEN  = 6'd21, E_REJ  = 6'd22, E_SBG  = 6'd24;
+    localparam [5:0] E_SBS  = 6'd25, E_SBL  = 6'd26, E_SBE  = 6'd27, E_MED0 = 6'd28;
+    localparam [5:0] E_MED1 = 6'd29, E_MEDA = 6'd30, E_MED2 = 6'd31;
+    localparam [5:0] E_EVENT= 6'd32, E_BEV  = 6'd33;
+
+    // ---- sample side registers ---------------------------------------------
+    reg  [W_WIN-1:0] ring_q [0:RING_W-1];
+    reg  [7:0]       phs_q;
+    reg  [6:0]       scan_q;
+    reg  [W_WIN-1:0] wmax_q;
+    reg  [W_WIN-1:0] wctr_q;
+    reg              wctr_ok_q;
+    reg  [W_IDX-1:0] n_q;
+    reg  [W_IDX-1:0] nxt_q;
+    reg  [W_IDX-1:0] cpos_q;
+    reg  [W_WIN-1:0] ow_q;
+    reg  [W_IDX-1:0] oi_q;
+    reg              ol_q;
+    reg  [W_TUSER-1:0] ou_q;
+
+    // pending peak queue, two entries
+    reg              pwr_q;
+    reg              prd_q;
+    reg              pcnt_q;
+    reg  [W_IDX-1:0] ppos_q [0:1];
+    reg  [W_WIN-1:0] pval_q [0:1];
+    reg  [W_IDX-1:0] pord_q [0:1];
+
+    // ---- adaptive threshold state ------------------------------------------
+    reg  signed [W_ACC-1:0] spki_q;
+    reg  signed [W_ACC-1:0] npki_q;
+    reg  signed [W_ACC-1:0] spkf_q;
+    reg  signed [W_ACC-1:0] npkf_q;
+    reg  [W_IDX-1:0] iqrs_q;
+    reg  [W_IDX-1:0] iqpunc_q;
+    reg  [W_IDX-1:0] qprev_q;
+    reg  [W_IDX-1:0] qcnt_q;
+    reg  [W_IDX-1:0] pordn_q;
+    reg  [W_IDX-1:0] base_q;
+    reg  [W_IDX-1:0] ccnt_q;
+    reg              iqrs_v_q;
+
+    // ---- search back candidate buffer --------------------------------------
+    reg  [W_IDX-1:0] bpos_q [0:BUF_D-1];
+    reg  [W_WIN-1:0] bval_q [0:BUF_D-1];
+
+    // ---- RR stage mirror (rantai.py:375-440) -------------------------------
+    reg  [15:0]      deret_q [0:RR_N-1];
+    reg  [3:0]       deret_len_q;
+    reg  [W_RSUM-1:0] deret_sum_q;
+    reg  [15:0]      antre_q [0:RR_N-1];
+    reg  [3:0]       antre_len_q;
+    reg  [W_RSUM-1:0] antre_sum_q;
+    reg  [15:0]      riw_q [0:RW_N-1];
+    reg  [5:0]       riw_len_q;
+    reg  [W_RSUM-1:0] ra1_q;
+    reg  [W_RSUM-1:0] pemb_q;
+    reg  [3:0]       peny_q;
+    reg  [31:0]      gagal_q, jeda_q, semai_q, penanda_q, langkah_q;
+
+    // ---- reseed median scratch --------------------------------------------
+    reg  [15:0]      mram_q [0:RW_N-1];
+    reg  [5:0]       ml_q, si_q, sj_q, sbest_q;
+    reg  [15:0]      smin_q;
+
+    // ---- run counters, the nine elements of rantai.py ambang_state ---------
+    reg  [31:0] c_calon_q, c_cari_q, c_diper_q, c_ditol_q, c_ter_q, c_beri_q;
+
+    // ---- peak engine work registers ---------------------------------------
+    reg  [W_IDX-1:0] wpos_q, word_q;
+    reg  [W_WIN-1:0] wval_q;
+    reg  [W_ACC-1:0] i1_q, i2_q, f1_q;
+    reg  [W_IDX-1:0] delta_q;
+    reg              del_ok_q, sig_q, inband_q, pre_q;
+    reg  [W_IDX-1:0] sbi_q, sbb_q, sbo_q, rrm_q;
+    reg  [W_WIN-1:0] sbbv_q;
+    reg              sbb_ok_q, beat_q, lolos_q;
+    reg  [5:0]       eng_q;
+
+    // ---- combinational helpers --------------------------------------------
+    // window scan address: the window is [n-54, n], that is (n + 64 - 54 + k) mod 64
+    wire [5:0] scan_addr = n_q[5:0] + 6'd10 + scan_q[5:0];
+
+    wire [W_WIN-1:0] scan_val = ring_q[scan_addr[5:0]];
+    wire [W_WIN-1:0] wmax_n   = (scan_val > wmax_q) ? scan_val : wmax_q;
+
+    wire [W_IDX-1:0] ctr_pos  = n_q - RADIUS[W_IDX-1:0];
+    wire             ctr_ok   = (n_q >= RADIUS[W_IDX-1:0]) && (ctr_pos >= nxt_q);
+
+    // (pv - spki) >> 3 and (pv - spki) >> 2, the two exponential updates of :683 and :709
+    wire signed [W_WACC-1:0] pv_s   = $signed({1'b0, wval_q});
+    wire signed [W_WACC-1:0] spki_s = $signed({{(W_WACC-W_ACC){spki_q[W_ACC-1]}}, spki_q});
+    wire signed [W_WACC-1:0] npki_s = $signed({{(W_WACC-W_ACC){npki_q[W_ACC-1]}}, npki_q});
+    wire signed [W_WACC-1:0] spkf_s = $signed({{(W_WACC-W_ACC){spkf_q[W_ACC-1]}}, spkf_q});
+    wire signed [W_WACC-1:0] npkf_s = $signed({{(W_WACC-W_ACC){npkf_q[W_ACC-1]}}, npkf_q});
+    wire signed [W_WACC-1:0] pkf_s  = $signed({W_WACC{1'b0}});          // pk_f unavailable, see header
+    wire signed [W_WACC-1:0] d_spki = pv_s - spki_s;
+    wire signed [W_WACC-1:0] d_npki = pv_s - npki_s;
+    wire signed [W_WACC-1:0] d_spkf = pkf_s - spkf_s;
+    wire signed [W_WACC-1:0] d_npkf = pkf_s - npkf_s;
+    wire signed [W_WACC-1:0] sh8_s   = d_spki >>> afib_lite_pkg::SHIFT_SPKI;
+    wire signed [W_WACC-1:0] shn8_s  = d_npki >>> afib_lite_pkg::SHIFT_SPKI;
+    wire signed [W_WACC-1:0] shf8_s  = d_spkf >>> afib_lite_pkg::SHIFT_SPKI;
+    wire signed [W_WACC-1:0] shnf8_s = d_npkf >>> afib_lite_pkg::SHIFT_SPKI;
+    wire signed [W_WACC-1:0] shn2_s  = d_npki >>> afib_lite_pkg::SHIFT_SB;
+    // the search back refit updates, :709, with v and vf taken from the candidate buffer
+    wire signed [W_WACC-1:0] sbv_s   = $signed({1'b0, sbbv_q});
+    wire signed [W_WACC-1:0] d_sbk   = sbv_s - spki_s;
+    wire signed [W_WACC-1:0] sh2_s   = d_sbk >>> afib_lite_pkg::SHIFT_SB;
+
+    // i1 and i2, :655 and :657
+    wire signed [W_ACC-1:0] d_thr_s = spki_q - npki_q;
+    wire signed [W_ACC-1:0] d_f1_s  = spkf_q - npkf_q;
+    wire signed [W_ACC-1:0] i1_w    = npki_q + (d_thr_s >>> afib_lite_pkg::SHIFT_I1);
+    wire signed [W_ACC-1:0] f1_w    = npkf_q + (d_f1_s  >>> afib_lite_pkg::SHIFT_I1);
+    wire signed [W_ACC-1:0] i2_w    = i1_q >>> afib_lite_pkg::SHIFT_I2;
+
+    // the search back gate, :581, exact cross form. delta is masked above 2**20 because
+    // every delta above that bound makes the gate true for any reachable average.
+    wire [W_IDX-1:0] sb_delta_c = (delta_q[W_IDX-1:afib_lite_pkg::SB_DELTA_GUARD] != 0)
+                                  ? {{(W_IDX-afib_lite_pkg::SB_DELTA_GUARD){1'b0}},
+                                     {afib_lite_pkg::SB_DELTA_GUARD{1'b1}}}
+                                  : delta_q;
+    wire [31:0] sb_lhs_p = afib_lite_pkg::SB_GATE_DELTA * sb_delta_c;
+    wire [31:0] sb_rhs_a = afib_lite_pkg::SB_GATE_AVERAGE * {{(32-W_RSUM){1'b0}}, pemb_q};
+    wire [31:0] sb_rhs_1 = afib_lite_pkg::SB_GATE_AVERAGE * {{(32-W_RSUM){1'b0}}, ra1_q};
+    wire [31:0] sb_lhs_d = sb_lhs_p * {{(32-4){1'b0}}, peny_q};
+    wire        sb_aktif = (peny_q != 4'd0) ? (sb_lhs_d > sb_rhs_a)
+                          : ((ra1_q != {W_RSUM{1'b0}}) ? (sb_lhs_p > sb_rhs_1) : 1'b0);
+
+    // deret and antre updates, FIFO of eight, oldest at index RR_N-1
+    wire [3:0] deret_len_n = (deret_len_q == RR_N[3:0]) ? deret_len_q : (deret_len_q + 4'd1);
+    wire [W_RSUM-1:0] deret_sum_n = (deret_len_q == RR_N[3:0])
+                                    ? (deret_sum_q + rrm_q - deret_q[RR_N-1])
+                                    : (deret_sum_q + rrm_q);
+    wire [3:0] antre_len_n = (antre_len_q == RR_N[3:0]) ? antre_len_q : (antre_len_q + 4'd1);
+    wire [W_RSUM-1:0] antre_sum_n = (antre_len_q == RR_N[3:0])
+                                    ? (antre_sum_q + rrm_q - antre_q[RR_N-1])
+                                    : (antre_sum_q + rrm_q);
+    wire [W_RSUM-1:0] ra1_n = deret_sum_n >>> afib_lite_pkg::SHIFT_RA1;
+
+    // the exact in band test of :359, acuan is pembilang when the queue is non empty
+    wire [31:0] rr_ref  = (peny_q != 4'd0) ? {{(32-W_RSUM){1'b0}}, pemb_q}
+                                           : {{(32-W_RSUM){1'b0}}, ra1_q};
+    wire [31:0] rr_refd = (peny_q != 4'd0) ? {{(32-4){1'b0}}, peny_q} : 32'd1;
+    wire [31:0] rr_lhs  = afib_lite_pkg::RR_BAND_NUM * rr_refd * {{(32-16){1'b0}}, rrm_q};
+    wire [31:0] rr_lo   = afib_lite_pkg::RR_BAND_LO * rr_ref;
+    wire [31:0] rr_hi   = afib_lite_pkg::RR_BAND_HI * rr_ref;
+    wire        lolos_w = (rr_lhs >= rr_lo) && (rr_lhs <= rr_hi);
+    wire        rr_inband = (rrm_q >= afib_lite_pkg::RR_BAND_MIN_MS) &&
+                            (rrm_q <= afib_lite_pkg::RR_BAND_MAX_MS);
+
+    wire [31:0] gagal_n = lolos_q ? 32'd0 : (gagal_q + 32'd1);
+    wire [31:0] jeda_n  = jeda_q + 32'd1;
+    wire        reseed_w = (gagal_n >= afib_lite_pkg::DELAPAN) &&
+                           (jeda_n >= afib_lite_pkg::SEMAI_JEDA);
+
+    // median of the reseed history, rantai.py:372, floor on the even case
+    wire [5:0] med_hi = ml_q >> 1;
+    wire [5:0] med_lo = med_hi - 6'd1;
+    wire [15:0] med_w = ml_q[0] ? mram_q[med_hi]
+                                : ((mram_q[med_lo] + mram_q[med_hi]) >> 1);
+    wire [W_RSUM-1:0] med_sum8 = {med_w, 3'b000};      // 8 * median
+
+    // menyala of :430, the documented cross form, on the NEW queue
+    reg  menyala_w;
+    integer mi;
+    always @* begin
+        menyala_w = 1'b1;
+        for (mi = 0; mi < RR_N; mi = mi + 1) begin
+            if (!(((afib_lite_pkg::RR_BAND_NUM * {{(32-4){1'b0}}, peny_q} *
+                    {{(32-16){1'b0}}, deret_q[mi]}) >= rr_rhs_a) &&
+                  ((afib_lite_pkg::RR_BAND_NUM * {{(32-4){1'b0}}, peny_q} *
+                    {{(32-16){1'b0}}, deret_q[mi]}) <=
+                   (afib_lite_pkg::RR_BAND_HI * {{(32-W_RSUM){1'b0}}, pemb_q}))))
+                menyala_w = 1'b0;
+        end
+    end
+
+    // ---- main FSM -----------------------------------------------------------
+    always @(posedge clk_i) begin
+        if (!rst_ni) begin
+            phs_q <= 8'd0;
+            scan_q <= 7'd0;
+            wmax_q <= {W_WIN{1'b0}};
+            wctr_q <= {W_WIN{1'b0}};
+            wctr_ok_q <= 1'b0;
+            n_q <= {W_IDX{1'b0}};
+            nxt_q <= RADIUS[W_IDX-1:0];
+            cpos_q <= {W_IDX{1'b0}};
+            ow_q <= {W_WIN{1'b0}};
+            oi_q <= {W_IDX{1'b0}};
+            ol_q <= 1'b0;
+            ou_q <= {W_TUSER{1'b0}};
+            m_tdata <= {W_WIN{1'b0}};
+            m_tvalid <= 1'b0;
+            m_overflow <= 1'b0;
+            m_tlast <= 1'b0;
+            m_tuser <= {W_TUSER{1'b0}};
+            m_sample_idx <= {W_IDX{1'b0}};
+            m_ev_valid <= 1'b0;
+            m_ev_kind <= afib_lite_pkg::EV_NONE;
+            m_ev_idx <= {W_IDX{1'b0}};
+            m_ev_val <= 32'd0;
+            d_valid <= 1'b0;
+            d_thr <= {W_THR{1'b0}};
+            d_pk <= {W_THR{1'b0}};
+            o_beat_count <= 32'd0;
+            pwr_q <= 1'b0;
+            prd_q <= 1'b0;
+            pcnt_q <= 1'b0;
+            spki_q <= {W_ACC{1'b0}};
+            npki_q <= {W_ACC{1'b0}};
+            spkf_q <= {W_ACC{1'b0}};
+            npkf_q <= {W_ACC{1'b0}};
+            iqrs_q <= {W_IDX{1'b0}};
+            iqpunc_q <= {W_IDX{1'b0}};
+            qprev_q <= {W_IDX{1'b0}};
+            qcnt_q <= {W_IDX{1'b0}};
+            pordn_q <= {W_IDX{1'b0}};
+            base_q <= {W_IDX{1'b0}};
+            ccnt_q <= {W_IDX{1'b0}};
+            iqrs_v_q <= 1'b0;
+            deret_len_q <= 4'd0;
+            deret_sum_q <= {W_RSUM{1'b0}};
+            antre_len_q <= 4'd0;
+            antre_sum_q <= {W_RSUM{1'b0}};
+            riw_len_q <= 6'd0;
+            ra1_q <= {W_RSUM{1'b0}};
+            pemb_q <= {W_RSUM{1'b0}};
+            peny_q <= 4'd0;
+            gagal_q <= 32'd0;
+            jeda_q <= 32'd0;
+            semai_q <= 32'd0;
+            penanda_q <= 32'd0;
+            langkah_q <= 32'd0;
+            ml_q <= 6'd0;
+            si_q <= 6'd0;
+            sj_q <= 6'd0;
+            sbest_q <= 6'd0;
+            smin_q <= 16'd0;
+            c_calon_q <= 32'd0; c_cari_q <= 32'd0; c_diper_q <= 32'd0;
+            c_ditol_q <= 32'd0; c_ter_q <= 32'd0; c_beri_q <= 32'd0;
+            wpos_q <= {W_IDX{1'b0}}; word_q <= {W_IDX{1'b0}}; wval_q <= {W_WIN{1'b0}};
+            i1_q <= {W_ACC{1'b0}}; i2_q <= {W_ACC{1'b0}}; f1_q <= {W_ACC{1'b0}};
+            delta_q <= {W_IDX{1'b0}};
+            del_ok_q <= 1'b0; sig_q <= 1'b0; inband_q <= 1'b0; pre_q <= 1'b0;
+            sbi_q <= {W_IDX{1'b0}}; sbb_q <= {W_IDX{1'b0}}; sbo_q <= {W_IDX{1'b0}};
+            rrm_q <= {W_IDX{1'b0}};
+            sbbv_q <= {W_WIN{1'b0}};
+            sbb_ok_q <= 1'b0; beat_q <= 1'b0; lolos_q <= 1'b0;
+            eng_q <= E_IDLE;
+            for (mi = 0; mi < RING_W; mi = mi + 1) ring_q[mi] <= {W_WIN{1'b0}};
+            for (mi = 0; mi < RR_N;   mi = mi + 1) begin
+                deret_q[mi] <= 16'd0;
+                antre_q[mi] <= 16'd0;
+            end
+            for (mi = 0; mi < RW_N;   mi = mi + 1) begin
+                riw_q[mi] <= 16'd0;
+                mram_q[mi] <= 16'd0;
+            end
+        end else if (i_enable) begin
+            // the event sideband and the introspection pulse are one cycle wide
+            m_ev_valid <= 1'b0;
+            d_valid <= 1'b0;
+            m_tvalid <= 1'b0;
+
+            if (i_clear_counters) begin
+                c_calon_q <= 32'd0; c_cari_q <= 32'd0; c_diper_q <= 32'd0;
+                c_ditol_q <= 32'd0; c_ter_q <= 32'd0; c_beri_q <= 32'd0;
+                gagal_q <= 32'd0; jeda_q <= 32'd0; semai_q <= 32'd0;
+                penanda_q <= 32'd0; langkah_q <= 32'd0;
+                qcnt_q <= {W_IDX{1'b0}};
+            end
+
+            // ------------------------------------------------ accepted word ---
+            if (phs_q == PH_ACCEPT) begin
+                n_q <= s_sample_idx;
+                ring_q[s_sample_idx[5:0]] <= s_tdata;
+                ow_q <= s_tdata;
+                oi_q <= s_sample_idx;
+                ol_q <= s_tlast;
+                ou_q <= s_tuser;
+                wmax_q <= {W_WIN{1'b0}};
+                wctr_ok_q <= 1'b0;
+                scan_q <= 7'd0;
+            end
+
+            // ------------------------------------------------ window scan -----
+            if ((phs_q >= PH_SCAN0) && (phs_q <= PH_SCAN1)) begin
+                wmax_q <= wmax_n;
+                scan_q <= scan_q + 7'd1;
+                if ((phs_q - PH_SCAN0) == RADIUS[7:0]) begin
+                    wctr_q <= scan_val;          // the candidate centre value
+                    wctr_ok_q <= 1'b1;
+                    cpos_q <= ctr_pos;
+                end
+            end
+
+            // ------------------------------------------------ peak decision ---
+            if (phs_q == PH_DECIDE) begin
+                if (wctr_ok_q && ctr_ok && (wctr_q > {W_WIN{1'b0}}) && (wctr_q >= wmax_q)) begin
+                    nxt_q <= cpos_q + RADIUS[W_IDX-1:0];
+                    if (pcnt_q == 1'b1) begin
+                        m_overflow <= 1'b1;      // the pending queue can hold two peaks
+                    end else begin
+                        ppos_q[pwr_q] <= cpos_q;
+                        pval_q[pwr_q] <= wctr_q;
+                        pord_q[pwr_q] <= pordn_q;
+                        pwr_q <= ~pwr_q;
+                        pcnt_q <= 1'b1;
+                        pordn_q <= pordn_q + {W_IDX{1'b1}};
+                    end
+                end
+            end
+
+            // ------------------------------------------------ output register --
+            if (phs_q == PH_OUT) begin
+                m_tdata <= ow_q;
+                m_tvalid <= 1'b1;
+                m_tlast <= ol_q;
+                m_tuser <= ou_q;
+                m_sample_idx <= oi_q;
+                phs_q <= 8'd0;
+            end else begin
+                phs_q <= phs_q + 8'd1;
+            end
+
+            // ------------------------------------------------ peak engine -----
+            if ((phs_q >= PH_ENG0) && (phs_q < PH_OUT)) begin
+                case (eng_q)
+                E_IDLE: begin
+                    if (pcnt_q == 1'b1) begin
+                        wpos_q <= ppos_q[prd_q];
+                        wval_q <= pval_q[prd_q];
+                        word_q <= pord_q[prd_q];
+                        prd_q <= ~prd_q;
+                        pcnt_q <= 1'b0;
+                        beat_q <= 1'b0;
+                        eng_q <= E_I1;
+                    end
+                end
+                E_I1:   begin i1_q <= i1_w; eng_q <= E_F1; end
+                E_F1:   begin f1_q <= f1_w; eng_q <= E_I2; end
+                E_I2:   begin i2_q <= i2_w; eng_q <= E_DEL; end
+                E_DEL:  begin
+                    del_ok_q <= iqrs_v_q;
+                    delta_q  <= iqrs_v_q ? (wpos_q - iqrs_q) : {W_IDX{1'b0}};
+                    eng_q    <= E_BAND;
+                end
+                E_BAND: begin
+                    inband_q <= del_ok_q &&
+                                ((delta_q << afib_lite_pkg::SB_BAND_SHIFT) <
+                                 afib_lite_pkg::PITA_MS_ATAS[W_IDX-1:0]);
+                    eng_q <= E_PRE;
+                end
+                E_PRE:  begin
+                    pre_q <= (wval_q > {{(W_WIN-W_ACC){i1_q[W_ACC-1]}}, i1_q});
+                    sig_q <= (wval_q > {{(W_WIN-W_ACC){i1_q[W_ACC-1]}}, i1_q}) &&
+                             !(del_ok_q && (delta_q < afib_lite_pkg::PANTUL[W_IDX-1:0]));
+                    eng_q <= E_PUSH;
+                end
+                E_PUSH: begin
+                    bpos_q[word_q[6:0]] <= wpos_q;
+                    bval_q[word_q[6:0]] <= wval_q;
+                    ccnt_q <= (word_q >= base_q) ? ((word_q - base_q) + {W_IDX{1'b1}})
+                                                 : ccnt_q;
+                    if (((word_q >= base_q) ? ((word_q - base_q) + {W_IDX{1'b1}}) : ccnt_q)
+                        > BUF_D[W_IDX-1:0])
+                        m_overflow <= 1'b1;
+                    eng_q <= E_CNT;
+                end
+                E_CNT:  begin
+                    if (!sig_q && (wval_q > {{(W_WIN-W_ACC){i2_q[W_ACC-1]}}, i2_q}))
+                        c_calon_q <= c_calon_q + 32'd1;
+                    eng_q <= E_BR;
+                end
+                E_BR:   begin eng_q <= sig_q ? E_ACC : E_REJ; end
+                E_ACC:  begin
+                    spki_q <= spki_q + sh8_s[W_ACC-1:0];
+                    eng_q <= E_ACCF;
+                end
+                E_ACCF: begin
+                    // rantai.py:685-687, pk_f is zero here, see the header
+                    if (pkf_s > f1_q) spkf_q <= spkf_q + shf8_s[W_ACC-1:0];
+                    else              npkf_q <= npkf_q + shnf8_s[W_ACC-1:0];
+                    // :662, :665, the counters the T wave rule owns. With the slope stream
+                    // absent the rule cannot fire, so diperiksa, ditolak and diterima_pita
+                    // stay at zero exactly as in the model's aturan_t=False arm.
+                    if (sig_q && inband_q && T_WAVE_SLOPE_AVAILABLE) c_diper_q <= c_diper_q + 32'd1;
+                    if (sig_q && inband_q && T_WAVE_SLOPE_AVAILABLE) c_ter_q <= c_ter_q + 32'd1;
+                    eng_q <= E_CAT;
+                end
+                E_CAT:  begin
+                    qcnt_q    <= qcnt_q + {W_IDX{1'b1}};
+                    iqrs_q    <= wpos_q;
+                    iqrs_v_q  <= 1'b1;
+                    iqpunc_q  <= word_q;
+                    base_q    <= word_q + {W_IDX{1'b1}};
+                    ccnt_q    <= {W_IDX{1'b0}};
+                    qprev_q   <= wpos_q;
+                    beat_q    <= 1'b1;
+                    rrm_q     <= (qcnt_q != {W_IDX{1'b0}}) ? ((wpos_q - qprev_q) << 2)
+                                                           : {W_IDX{1'b0}};
+                    o_beat_count <= o_beat_count + 32'd1;
+                    eng_q     <= (qcnt_q != {W_IDX{1'b0}}) ? E_RR0 : E_EVENT;
+                end
+                E_RR0:  begin
+                    if (rr_inband) begin
+                        langkah_q <= langkah_q + 32'd1;
+                        eng_q <= E_RR1;
+                    end else begin
+                        eng_q <= E_EVENT;
+                    end
+                end
+                E_RR1:  begin
+                    for (mi = 1; mi < RR_N; mi = mi + 1) deret_q[mi] <= deret_q[mi-1];
+                    deret_q[0]   <= rrm_q[15:0];
+                    deret_len_q  <= deret_len_n;
+                    deret_sum_q  <= deret_sum_n;
+                    eng_q <= E_RR2;
+                end
+                E_RR2:  begin
+                    for (mi = 1; mi < RW_N; mi = mi + 1) riw_q[mi] <= riw_q[mi-1];
+                    riw_q[0]  <= rrm_q[15:0];
+                    riw_len_q <= (riw_len_q == RW_N[5:0]) ? riw_len_q : (riw_len_q + 6'd1);
+                    eng_q <= E_RR3;
+                end
+                E_RR3:  begin
+                    if (deret_len_n < RR_N[3:0]) begin
+                        eng_q <= E_EVENT;          // :400, the model returns before ra1
+                    end else begin
+                        ra1_q <= ra1_n;
+                        eng_q <= E_RR4;
+                    end
+                end
+                E_RR4:  begin lolos_q <= lolos_w; eng_q <= E_RR5; end
+                E_RR5:  begin
+                    gagal_q <= gagal_n;
+                    jeda_q  <= jeda_n;
+                    eng_q   <= E_RR6;
+                end
+                E_RR6:  begin
+                    eng_q <= (reseed_w) ? E_MED0 : E_ANT;
+                end
+                E_ANT:  begin
+                    if (lolos_q) begin
+                        for (mi = 1; mi < RR_N; mi = mi + 1) antre_q[mi] <= antre_q[mi-1];
+                        antre_q[0]   <= rrm_q[15:0];
+                        antre_len_q  <= antre_len_n;
+                        antre_sum_q  <= antre_sum_n;
+                        pemb_q       <= {{(W_RSUM-4){1'b0}}, antre_len_n} == 0
+                                        ? antre_sum_n : antre_sum_n;
+                        peny_q       <= antre_len_n;
+                    end
+                    eng_q <= E_MEN;
+                end
+                E_MEN:  begin
+                    if ((peny_q == RR_N[3:0]) && menyala_w) penanda_q <= penanda_q + 32'd1;
+                    eng_q <= E_EVENT;
+                end
+                E_REJ:  begin
+                    npki_q <= npki_q + shn8_s[W_ACC-1:0];
+                    npkf_q <= npkf_q + shnf8_s[W_ACC-1:0];
+                    eng_q  <= E_SBG;
+                end
+                E_SBG:  begin
+                    eng_q <= sb_aktif ? E_SBS : E_EVENT;
+                end
+                E_SBS:  begin
+                    if ((word_q - base_q) > (BUF_D - 1)) begin
+                        m_overflow <= 1'b1;
+                        sbi_q <= word_q - (BUF_D - 1);
+                    end else begin
+                        sbi_q <= base_q;
+                    end
+                    sbb_ok_q <= 1'b0;
+                    sbbv_q   <= {W_WIN{1'b0}};
+                    eng_q    <= E_SBL;
+                end
+                E_SBL:  begin
+                    if (sbi_q > word_q) begin
+                        eng_q <= E_SBE;
+                    end else begin
+                        if ((i2_q < {{(W_WIN-W_ACC){bval_q[sbi_q[6:0]][W_WIN-1]}},
+                                      bval_q[sbi_q[6:0]]}) &&
+                            (bval_q[sbi_q[6:0]] <=
+                             {{(W_WIN-W_ACC){i1_q[W_ACC-1]}}, i1_q}) &&
+                            (!sbb_ok_q || (bval_q[sbi_q[6:0]] > sbbv_q))) begin
+                            sbbv_q   <= bval_q[sbi_q[6:0]];
+                            sbb_q    <= bpos_q[sbi_q[6:0]];
+                            sbo_q    <= sbi_q;
+                            sbb_ok_q <= 1'b1;
+                        end
+                        sbi_q <= sbi_q + {W_IDX{1'b1}};
+                        eng_q <= E_SBL;
+                    end
+                end
+                E_SBE:  begin
+                    if (sbb_ok_q) begin
+                        c_cari_q <= c_cari_q + 32'd1;
+                        spki_q   <= spki_q + sh2_s[W_ACC-1:0];
+                        // :707, :705, vf is pk_f of the candidate, zero here
+                        if (pkf_s > f1_q) spkf_q_q_unused_guard();
+                        wpos_q   <= sbb_q;
+                        word_q   <= sbo_q;
+                        eng_q    <= E_CAT;
+                    end else begin
+                        eng_q <= E_EVENT;
+                    end
+                end
+                E_MED0: begin
+                    for (mi = 0; mi < RW_N; mi = mi + 1) mram_q[mi] <= riw_q[mi];
+                    ml_q  <= riw_len_q;
+                    si_q  <= 6'd0;
+                    eng_q <= E_MED1;
+                end
+                E_MED1: begin
+                    if (si_q >= ml_q) begin
+                        eng_q <= E_MED2;
+                    end else begin
+                        sbest_q <= si_q;
+                        smin_q  <= mram_q[si_q];
+                        sj_q    <= si_q + 6'd1;
+                        eng_q   <= E_MEDA;
+                    end
+                end
+                E_MEDA: begin
+                    if (sj_q >= ml_q) begin
+                        mram_q[si_q]     <= smin_q;
+                        mram_q[sbest_q]  <= mram_q[si_q];
+                        si_q             <= si_q + 6'd1;
+                        eng_q            <= E_MED1;
+                    end else begin
+                        if (mram_q[sj_q] < smin_q) begin
+                            smin_q  <= mram_q[sj_q];
+                            sbest_q <= sj_q;
+                        end
+                        sj_q  <= sj_q + 6'd1;
+                        eng_q <= E_MEDA;
+                    end
+                end
+                E_MED2: begin
+                    for (mi = 0; mi < RR_N; mi = mi + 1) antre_q[mi] <= med_w;
+                    antre_len_q <= RR_N[3:0];
+                    antre_sum_q <= med_sum8;
+                    pemb_q      <= med_sum8;
+                    peny_q      <= RR_N[3:0];
+                    semai_q     <= semai_q + 32'd1;
+                    gagal_q     <= 32'd0;
+                    jeda_q      <= 32'd0;
+                    eng_q       <= E_MEN;
+                end
+                E_EVENT: begin
+                    m_ev_valid <= 1'b1;
+                    m_ev_idx   <= wpos_q;
+                    m_ev_val   <= wval_q[31:0];
+                    m_ev_kind  <= sig_q ? afib_lite_pkg::EV_QRS
+                               : (sbb_ok_q && beat_q) ? afib_lite_pkg::EV_PEAK_CAND
+                               : (T_WAVE_SLOPE_AVAILABLE && inband_q) ? afib_lite_pkg::EV_REJECTED_T
+                               : afib_lite_pkg::EV_NOISE;
+                    d_valid    <= 1'b1;
+                    d_thr      <= i1_q[W_THR-1:0];
+                    d_pk       <= i2_q[W_THR-1:0];
+                    eng_q      <= E_BEV;
+                end
+                E_BEV:  begin
+                    if (beat_q) begin
+                        m_ev_valid <= 1'b1;
+                        m_ev_kind  <= afib_lite_pkg::EV_RR;
+                        m_ev_idx   <= (sbb_ok_q && (eng_q == E_BEV)) ? wpos_q : wpos_q;
+                        m_ev_val   <= rrm_q[15:0];
+                    end
+                    eng_q <= E_IDLE;
+                end
+                default: eng_q <= E_IDLE;
+                endcase
+            end
+        end
+    end
+
+endmodule
+
+`default_nettype wire

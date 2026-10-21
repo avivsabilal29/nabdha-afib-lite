@@ -1,0 +1,7 @@
+run_sim.sh: tb=../rtl/tb/tb_fitur.sv sources=2 plusargs=2
+  plusargs forwarded to vvp: +VECTOR=/home/avivsabilalm/.hermes/cache/scratch/fase8/nc2 +LIMIT=40
+  compiled first (packages): ../rtl/afib_lite_pkg.sv
+WARNING: ../rtl/tb/tb_fitur.sv:392: $readmemh(/home/avivsabilalm/.hermes/cache/scratch/fase8/nc2/04015.fase8.gold.d.hex): Not enough words in the file for the requested range [0:18661].
+tb_fitur: FAIL 1 vector tables are X at their ends in /home/avivsabilalm/.hermes/cache/scratch/fase8/nc2
+FATAL: ../rtl/tb/tb_fitur.sv:414: tb_fitur: golden vectors missing or short, the gate cannot be measured
+       Time: 0  Scope: tb_fitur

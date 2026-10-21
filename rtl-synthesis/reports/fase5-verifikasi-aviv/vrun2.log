@@ -1,0 +1,40 @@
+tb_peak_detect: class ev 982 got 3 want 1
+tb_peak_detect: class ev 983 got 1 want 3
+tb_peak_detect: d_thr ev 983 got 195877376 want 157394329
+tb_peak_detect: class ev 984 got 2 want 3
+tb_peak_detect: d_thr ev 984 got 168900049 want 167295513
+tb_peak_detect: class ev 985 got 3 want 1
+tb_peak_detect: d_thr ev 985 got 166238060 want 164633524
+tb_peak_detect: class ev 986 got 3 want 2
+tb_peak_detect: d_thr ev 986 got 176952761 want 149236087
+tb_peak_detect: class ev 987 got 1 want 3
+tb_peak_detect: d_thr ev 987 got 172991782 want 145275108
+tb_peak_detect: d_thr ev 988 got 152086481 want 152588085
+tb_peak_detect: idx  ev 1791 got 172277 want 172509
+tb_peak_detect: idx  ev 1792 got 172277 want 172647
+tb_peak_detect: idx  ev 1793 got 172277 want 172711
+tb_peak_detect: idx  ev 1827 got 172277 want 175913
+tb_peak_detect: idx  ev 1828 got 172277 want 176033
+tb_peak_detect: kind ev 1836 got 1 want beat 0
+tb_peak_detect: run limit 450000 samples, accepted words 450000
+tb_peak_detect: expected peaks 4777, events seen 4777, introspection pulses 4777
+tb_peak_detect: loaded census 4way {qrs 2590, search_back 6, rejected_t 1909, noise 272}
+tb_peak_detect: event bus census {EV_QRS 2591, EV_PEAK_CAND 2186, other 0}, beats 2591
+tb_peak_detect: mismatches idx 5 val 0 kind 1 d_thr 509 d_pk 0
+tb_peak_detect: forwarded word mismatches idx 0 data 0 user 0 last 0, d_dbg_valid pulses 4777
+tb_peak_detect: four way class checkpoints 4777, class mismatches 15
+tb_peak_detect: flag word census {qrs 2591, search_back 9, rejected_t 1911, noise 266}
+tb_peak_detect: walk rows carrying the beat index instead of the peak index 1
+tb_peak_detect: o_beat_count 2600
+tb_peak_detect: m_overflow cycles 0 (0 expected, reported not gated)
+tb_peak_detect: threshold checkpoints compared 4777 (d_thr) + 4777 (d_pk) = 9554
+tb_peak_detect: ambang_state[1] got 9 want 6
+tb_peak_detect: ambang_state[6] got 27 want 26
+tb_peak_detect: ambang_state[7] got 1196 want 1202
+tb_peak_detect: ambang_state compared 9 of 9, mismatches 3
+tb_peak_detect: ambang_state got  [29, 9, 112, 6, 106, 0, 27, 1196, 2586]
+tb_peak_detect: ambang_state want [29, 6, 112, 6, 106, 0, 26, 1202, 2586]
+tb_peak_detect: FAIL event stream idx 5 val 0 kind 1
+[4500166] %Fatal: tb_peak_detect.sv:440: Assertion failed in tb_peak_detect
+%Error: ../rtl/tb/tb_peak_detect.sv:440: Verilog $stop
+Aborting...

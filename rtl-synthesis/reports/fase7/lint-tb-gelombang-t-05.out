@@ -1,0 +1,16 @@
+run_lint.sh: top=tb_gelombang_t sources=3 timing=1
+  ../rtl/afib_lite_pkg.sv
+  ../rtl/tb/tb_gelombang_t.sv
+  ../rtl/t_rule.sv
+%Warning-WIDTHEXPAND: ../rtl/tb/tb_gelombang_t.sv:280:37: Operator SHIFTR expects 32 bits on the LHS, but LHS's VARREF 'even' generates 25 bits.
+                                                        : ... note: In instance 'tb_gelombang_t'
+  280 |             f_shift_half = 32'(even >> 1);
+      |                                     ^~
+                      ... For warning description see https://verilator.org/warn/WIDTHEXPAND?v=5.020
+                      ... Use "/* verilator lint_off WIDTHEXPAND */" and lint_on around source to disable this message.
+%Warning-UNUSEDSIGNAL: ../rtl/tb/tb_gelombang_t.sv:306:23: Bits of signal are not used: 'm'[24:23]
+                                                         : ... note: In instance 'tb_gelombang_t'
+  306 |         reg [W_DER:0] m;
+      |                       ^
+%Error: Exiting due to 2 warning(s)
+exit=1

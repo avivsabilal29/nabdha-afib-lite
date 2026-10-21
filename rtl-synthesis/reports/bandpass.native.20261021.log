@@ -1,0 +1,1685 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.33 (git sha1 2584903a060)
+
+
+-- Running command `
+    read_verilog -sv /home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/afib_lite_pkg.sv;
+    read_verilog -sv /home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv;
+    hierarchy -top bandpass;
+    synth -top bandpass;
+    dfflibmap -liberty sky130_fd_sc_hd__tt_025C_1v80.lib;
+    abc -liberty sky130_fd_sc_hd__tt_025C_1v80.lib;
+    opt_clean;
+    stat -liberty sky130_fd_sc_hd__tt_025C_1v80.lib;
+    write_json reports/bandpass.native.20261021.json
+' --
+
+1. Executing Verilog-2005 frontend: /home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/afib_lite_pkg.sv
+Parsing SystemVerilog input from `/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/afib_lite_pkg.sv' to AST representation.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: /home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv
+Parsing SystemVerilog input from `/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv' to AST representation.
+Generating RTLIL representation for module `\bandpass'.
+Warning: Replacing memory \lp_hist_q with list of registers. See /home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:171
+Warning: Replacing memory \x_hist_q with list of registers. See /home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:170
+Successfully finished Verilog frontend.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+
+3.1. Analyzing design hierarchy..
+Top module:  \bandpass
+
+3.2. Analyzing design hierarchy..
+Top module:  \bandpass
+Removed 0 unused modules.
+
+4. Executing SYNTH pass.
+
+4.1. Executing HIERARCHY pass (managing design hierarchy).
+
+4.1.1. Analyzing design hierarchy..
+Top module:  \bandpass
+
+4.1.2. Analyzing design hierarchy..
+Top module:  \bandpass
+Removed 0 unused modules.
+
+4.2. Executing PROC pass (convert processes to netlists).
+
+4.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 6 switch rules as full_case in process $proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43 in module bandpass.
+Marked 1 switch rules as full_case in process $proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:139$20 in module bandpass.
+Removed a total of 0 dead cases.
+
+4.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 2 redundant assignments.
+Promoted 3 assignments to connections.
+
+4.2.4. Executing PROC_INIT pass (extract init attributes).
+
+4.2.5. Executing PROC_ARST pass (detect async resets in processes).
+
+4.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~8 debug messages>
+
+4.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+     1/73: $4\k[31:0]
+     2/73: $3\k[31:0]
+     3/73: $2\k[31:0]
+     4/73: $0\d_valid[0:0]
+     5/73: $0\m_tvalid[0:0]
+     6/73: $1\k[31:0]
+     7/73: $0\lp_hist_q[31][21:0]
+     8/73: $0\lp_hist_q[30][21:0]
+     9/73: $0\lp_hist_q[29][21:0]
+    10/73: $0\lp_hist_q[28][21:0]
+    11/73: $0\lp_hist_q[27][21:0]
+    12/73: $0\lp_hist_q[26][21:0]
+    13/73: $0\lp_hist_q[25][21:0]
+    14/73: $0\lp_hist_q[24][21:0]
+    15/73: $0\lp_hist_q[23][21:0]
+    16/73: $0\lp_hist_q[22][21:0]
+    17/73: $0\lp_hist_q[21][21:0]
+    18/73: $0\lp_hist_q[20][21:0]
+    19/73: $0\lp_hist_q[19][21:0]
+    20/73: $0\lp_hist_q[18][21:0]
+    21/73: $0\lp_hist_q[17][21:0]
+    22/73: $0\lp_hist_q[16][21:0]
+    23/73: $0\lp_hist_q[15][21:0]
+    24/73: $0\lp_hist_q[14][21:0]
+    25/73: $0\lp_hist_q[13][21:0]
+    26/73: $0\lp_hist_q[12][21:0]
+    27/73: $0\lp_hist_q[11][21:0]
+    28/73: $0\lp_hist_q[10][21:0]
+    29/73: $0\lp_hist_q[9][21:0]
+    30/73: $0\lp_hist_q[8][21:0]
+    31/73: $0\lp_hist_q[7][21:0]
+    32/73: $0\lp_hist_q[6][21:0]
+    33/73: $0\lp_hist_q[5][21:0]
+    34/73: $0\lp_hist_q[4][21:0]
+    35/73: $0\lp_hist_q[3][21:0]
+    36/73: $0\lp_hist_q[2][21:0]
+    37/73: $0\lp_hist_q[1][21:0]
+    38/73: $0\lp_hist_q[0][21:0]
+    39/73: $0\x_hist_q[11][15:0]
+    40/73: $0\x_hist_q[10][15:0]
+    41/73: $0\x_hist_q[9][15:0]
+    42/73: $0\x_hist_q[8][15:0]
+    43/73: $0\x_hist_q[7][15:0]
+    44/73: $0\x_hist_q[6][15:0]
+    45/73: $0\x_hist_q[5][15:0]
+    46/73: $0\x_hist_q[4][15:0]
+    47/73: $0\x_hist_q[3][15:0]
+    48/73: $0\x_hist_q[2][15:0]
+    49/73: $0\x_hist_q[1][15:0]
+    50/73: $0\x_hist_q[0][15:0]
+    51/73: $0\idx_q[31:0]
+    52/73: $0\tuser_q[7:0]
+    53/73: $0\last_q[0:0]
+    54/73: $0\hp_pass_q[1:0]
+    55/73: $0\lp_slice_q[1:0]
+    56/73: $0\lp_pass_q[1:0]
+    57/73: $0\st_q[1:0]
+    58/73: $0\ovf_q[0:0]
+    59/73: $0\acc_hp_q[26:0]
+    60/73: $0\hp_y_q[25:0]
+    61/73: $0\acc_cy_q[0:0]
+    62/73: $0\acc_hi_q[4:0]
+    63/73: $0\acc_mid_q[8:0]
+    64/73: $0\acc_lo_q[8:0]
+    65/73: $0\lp_out_q[21:0]
+    66/73: $0\x_hold_q[15:0]
+    67/73: $0\d_hp[25:0]
+    68/73: $0\d_lp[21:0]
+    69/73: $0\m_sample_idx[31:0]
+    70/73: $0\m_tuser[7:0]
+    71/73: $0\m_tlast[0:0]
+    72/73: $0\m_overflow[0:0]
+    73/73: $0\m_tdata[25:0]
+Creating decoders for process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:139$20'.
+     1/2: $1\sl_b[8:0]
+     2/2: $1\sl_a[8:0]
+
+4.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\bandpass.\sl_a' from process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:139$20'.
+No latch inferred for signal `\bandpass.\sl_b' from process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:139$20'.
+
+4.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\bandpass.\m_tdata' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$790' with positive edge clock.
+Creating register for signal `\bandpass.\m_tvalid' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$791' with positive edge clock.
+Creating register for signal `\bandpass.\m_overflow' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$792' with positive edge clock.
+Creating register for signal `\bandpass.\m_tlast' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$793' with positive edge clock.
+Creating register for signal `\bandpass.\m_tuser' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$794' with positive edge clock.
+Creating register for signal `\bandpass.\m_sample_idx' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$795' with positive edge clock.
+Creating register for signal `\bandpass.\d_valid' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$796' with positive edge clock.
+Creating register for signal `\bandpass.\d_lp' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$797' with positive edge clock.
+Creating register for signal `\bandpass.\d_hp' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$798' with positive edge clock.
+Creating register for signal `\bandpass.\x_hold_q' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$799' with positive edge clock.
+Creating register for signal `\bandpass.\lp_out_q' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$800' with positive edge clock.
+Creating register for signal `\bandpass.\acc_lo_q' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$801' with positive edge clock.
+Creating register for signal `\bandpass.\acc_mid_q' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$802' with positive edge clock.
+Creating register for signal `\bandpass.\acc_hi_q' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$803' with positive edge clock.
+Creating register for signal `\bandpass.\acc_cy_q' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$804' with positive edge clock.
+Creating register for signal `\bandpass.\hp_y_q' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$805' with positive edge clock.
+Creating register for signal `\bandpass.\acc_hp_q' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$806' with positive edge clock.
+Creating register for signal `\bandpass.\ovf_q' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$807' with positive edge clock.
+Creating register for signal `\bandpass.\st_q' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$808' with positive edge clock.
+Creating register for signal `\bandpass.\lp_pass_q' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$809' with positive edge clock.
+Creating register for signal `\bandpass.\lp_slice_q' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$810' with positive edge clock.
+Creating register for signal `\bandpass.\hp_pass_q' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$811' with positive edge clock.
+Creating register for signal `\bandpass.\last_q' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$812' with positive edge clock.
+Creating register for signal `\bandpass.\tuser_q' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$813' with positive edge clock.
+Creating register for signal `\bandpass.\idx_q' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$814' with positive edge clock.
+Creating register for signal `\bandpass.\k' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$815' with positive edge clock.
+Creating register for signal `\bandpass.\x_hist_q[0]' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$816' with positive edge clock.
+Creating register for signal `\bandpass.\x_hist_q[1]' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$817' with positive edge clock.
+Creating register for signal `\bandpass.\x_hist_q[2]' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$818' with positive edge clock.
+Creating register for signal `\bandpass.\x_hist_q[3]' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$819' with positive edge clock.
+Creating register for signal `\bandpass.\x_hist_q[4]' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$820' with positive edge clock.
+Creating register for signal `\bandpass.\x_hist_q[5]' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$821' with positive edge clock.
+Creating register for signal `\bandpass.\x_hist_q[6]' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$822' with positive edge clock.
+Creating register for signal `\bandpass.\x_hist_q[7]' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$823' with positive edge clock.
+Creating register for signal `\bandpass.\x_hist_q[8]' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$824' with positive edge clock.
+Creating register for signal `\bandpass.\x_hist_q[9]' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$825' with positive edge clock.
+Creating register for signal `\bandpass.\x_hist_q[10]' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$826' with positive edge clock.
+Creating register for signal `\bandpass.\x_hist_q[11]' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$827' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[0]' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$828' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[1]' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$829' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[2]' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$830' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[3]' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$831' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[4]' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$832' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[5]' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$833' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[6]' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$834' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[7]' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$835' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[8]' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$836' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[9]' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$837' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[10]' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$838' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[11]' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$839' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[12]' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$840' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[13]' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$841' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[14]' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$842' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[15]' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$843' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[16]' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$844' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[17]' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$845' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[18]' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$846' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[19]' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$847' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[20]' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$848' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[21]' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$849' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[22]' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$850' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[23]' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$851' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[24]' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$852' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[25]' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$853' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[26]' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$854' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[27]' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$855' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[28]' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$856' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[29]' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$857' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[30]' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$858' with positive edge clock.
+Creating register for signal `\bandpass.\lp_hist_q[31]' using process `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+  created $dff cell `$procdff$859' with positive edge clock.
+
+4.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 7 empty switches in `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+Removing empty process `bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:167$43'.
+Found and cleaned up 1 empty switch in `\bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:139$20'.
+Removing empty process `bandpass.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:139$20'.
+Cleaned up 8 empty switches.
+
+4.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module bandpass.
+<suppressed ~150 debug messages>
+
+4.3. Executing OPT_EXPR pass (perform const folding).
+Optimizing module bandpass.
+
+4.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \bandpass..
+Removed 16 unused cells and 253 unused wires.
+<suppressed ~18 debug messages>
+
+4.5. Executing CHECK pass (checking for obvious problems).
+Checking module bandpass...
+Found and reported 0 problems.
+
+4.6. Executing OPT pass (performing simple optimizations).
+
+4.6.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module bandpass.
+
+4.6.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\bandpass'.
+<suppressed ~390 debug messages>
+Removed a total of 130 cells.
+
+4.6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \bandpass..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~76 debug messages>
+
+4.6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \bandpass.
+    New ctrl vector for $pmux cell $procmux$166: $auto$opt_reduce.cc:134:opt_pmux$861
+    New ctrl vector for $pmux cell $procmux$176: $auto$opt_reduce.cc:134:opt_pmux$863
+    New ctrl vector for $pmux cell $procmux$186: $auto$opt_reduce.cc:134:opt_pmux$865
+    New ctrl vector for $pmux cell $procmux$196: $auto$opt_reduce.cc:134:opt_pmux$867
+    New ctrl vector for $pmux cell $procmux$206: $auto$opt_reduce.cc:134:opt_pmux$869
+    New ctrl vector for $pmux cell $procmux$216: $auto$opt_reduce.cc:134:opt_pmux$871
+    New ctrl vector for $pmux cell $procmux$226: $auto$opt_reduce.cc:134:opt_pmux$873
+    New ctrl vector for $pmux cell $procmux$236: $auto$opt_reduce.cc:134:opt_pmux$875
+    New ctrl vector for $pmux cell $procmux$246: $auto$opt_reduce.cc:134:opt_pmux$877
+    New ctrl vector for $pmux cell $procmux$256: $auto$opt_reduce.cc:134:opt_pmux$879
+    New ctrl vector for $pmux cell $procmux$266: $auto$opt_reduce.cc:134:opt_pmux$881
+    New ctrl vector for $pmux cell $procmux$276: $auto$opt_reduce.cc:134:opt_pmux$883
+    New ctrl vector for $pmux cell $procmux$286: $auto$opt_reduce.cc:134:opt_pmux$885
+    New ctrl vector for $pmux cell $procmux$296: $auto$opt_reduce.cc:134:opt_pmux$887
+    New ctrl vector for $pmux cell $procmux$306: $auto$opt_reduce.cc:134:opt_pmux$889
+    New ctrl vector for $pmux cell $procmux$316: $auto$opt_reduce.cc:134:opt_pmux$891
+    New ctrl vector for $pmux cell $procmux$326: $auto$opt_reduce.cc:134:opt_pmux$893
+    New ctrl vector for $pmux cell $procmux$336: $auto$opt_reduce.cc:134:opt_pmux$895
+    New ctrl vector for $pmux cell $procmux$346: $auto$opt_reduce.cc:134:opt_pmux$897
+    New ctrl vector for $pmux cell $procmux$356: $auto$opt_reduce.cc:134:opt_pmux$899
+    New ctrl vector for $pmux cell $procmux$366: $auto$opt_reduce.cc:134:opt_pmux$901
+    New ctrl vector for $pmux cell $procmux$376: $auto$opt_reduce.cc:134:opt_pmux$903
+    New ctrl vector for $pmux cell $procmux$386: $auto$opt_reduce.cc:134:opt_pmux$905
+    New ctrl vector for $pmux cell $procmux$396: $auto$opt_reduce.cc:134:opt_pmux$907
+    New ctrl vector for $pmux cell $procmux$406: $auto$opt_reduce.cc:134:opt_pmux$909
+    New ctrl vector for $pmux cell $procmux$416: $auto$opt_reduce.cc:134:opt_pmux$911
+    New ctrl vector for $pmux cell $procmux$630: $auto$opt_reduce.cc:134:opt_pmux$913
+    New ctrl vector for $pmux cell $procmux$640: $auto$opt_reduce.cc:134:opt_pmux$915
+    New ctrl vector for $pmux cell $procmux$650: $auto$opt_reduce.cc:134:opt_pmux$917
+    New ctrl vector for $pmux cell $procmux$667: $auto$opt_reduce.cc:134:opt_pmux$919
+    New ctrl vector for $pmux cell $procmux$106: $auto$opt_reduce.cc:134:opt_pmux$921
+    New ctrl vector for $pmux cell $procmux$116: $auto$opt_reduce.cc:134:opt_pmux$923
+    New ctrl vector for $pmux cell $procmux$716: $auto$opt_reduce.cc:134:opt_pmux$925
+    New ctrl vector for $pmux cell $procmux$726: $auto$opt_reduce.cc:134:opt_pmux$927
+    New ctrl vector for $pmux cell $procmux$736: $auto$opt_reduce.cc:134:opt_pmux$929
+    New ctrl vector for $pmux cell $procmux$126: $auto$opt_reduce.cc:134:opt_pmux$931
+    New ctrl vector for $pmux cell $procmux$746: $auto$opt_reduce.cc:134:opt_pmux$933
+    New ctrl vector for $pmux cell $procmux$756: $auto$opt_reduce.cc:134:opt_pmux$935
+    New ctrl vector for $pmux cell $procmux$136: $auto$opt_reduce.cc:134:opt_pmux$937
+    New ctrl vector for $pmux cell $procmux$766: $auto$opt_reduce.cc:134:opt_pmux$939
+    New ctrl vector for $pmux cell $procmux$776: $auto$opt_reduce.cc:134:opt_pmux$941
+    New ctrl vector for $pmux cell $procmux$146: $auto$opt_reduce.cc:134:opt_pmux$943
+    New ctrl vector for $pmux cell $procmux$83: $auto$opt_reduce.cc:134:opt_pmux$945
+    New ctrl vector for $pmux cell $procmux$156: $auto$opt_reduce.cc:134:opt_pmux$947
+    New ctrl vector for $pmux cell $procmux$93: $auto$opt_reduce.cc:134:opt_pmux$949
+  Optimizing cells in module \bandpass.
+Performed a total of 45 changes.
+
+4.6.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\bandpass'.
+<suppressed ~141 debug messages>
+Removed a total of 47 cells.
+
+4.6.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.6.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \bandpass..
+Removed 0 unused cells and 176 unused wires.
+<suppressed ~1 debug messages>
+
+4.6.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module bandpass.
+
+4.6.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.6.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \bandpass..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~75 debug messages>
+
+4.6.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \bandpass.
+Performed a total of 0 changes.
+
+4.6.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\bandpass'.
+Removed a total of 0 cells.
+
+4.6.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.6.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \bandpass..
+
+4.6.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module bandpass.
+
+4.6.16. Finished OPT passes. (There is nothing left to do.)
+
+4.7. Executing FSM pass (extract and optimize FSM).
+
+4.7.1. Executing FSM_DETECT pass (finding FSMs in design).
+Found FSM state register bandpass.st_q.
+
+4.7.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+Extracting FSM `\st_q' from module `\bandpass'.
+  found $dff cell for state register: $procdff$808
+  root of input selection tree: $0\st_q[1:0]
+  found reset state: 2'00 (guessed from mux tree)
+  found ctrl input: \rst_ni
+  found state code: 2'00
+  found ctrl input: $procmux$107_CMP
+  found ctrl input: $procmux$108_CMP
+  found ctrl input: $ne$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:234$48_Y
+  found ctrl input: \lp_last
+  found state code: 2'10
+  found ctrl input: \s_tvalid
+  found state code: 2'01
+  found ctrl output: $procmux$107_CMP
+  found ctrl output: $procmux$108_CMP
+  ctrl inputs: { $ne$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:234$48_Y \lp_last \s_tvalid \rst_ni }
+  ctrl outputs: { $procmux$108_CMP $procmux$107_CMP $0\st_q[1:0] }
+  transition:       2'00 4'---0 ->       2'00 4'1000
+  transition:       2'00 4'--01 ->       2'00 4'1000
+  transition:       2'00 4'--11 ->       2'01 4'1001
+  transition:       2'10 4'---0 ->       2'00 4'0000
+  transition:       2'10 4'0--1 ->       2'00 4'0000
+  transition:       2'10 4'1--1 ->       2'10 4'0010
+  transition:       2'01 4'---0 ->       2'00 4'0100
+  transition:       2'01 4'-0-1 ->       2'01 4'0101
+  transition:       2'01 4'-1-1 ->       2'10 4'0110
+
+4.7.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+Optimizing FSM `$fsm$\st_q$950' from module `\bandpass'.
+
+4.7.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \bandpass..
+Removed 8 unused cells and 8 unused wires.
+<suppressed ~9 debug messages>
+
+4.7.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+Optimizing FSM `$fsm$\st_q$950' from module `\bandpass'.
+  Removing unused output signal $0\st_q[1:0] [0].
+  Removing unused output signal $0\st_q[1:0] [1].
+
+4.7.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+Recoding FSM `$fsm$\st_q$950' from module `\bandpass' using `auto' encoding:
+  mapping auto encoding to `one-hot` for this FSM.
+  00 -> --1
+  10 -> -1-
+  01 -> 1--
+
+4.7.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+FSM `$fsm$\st_q$950' from module `bandpass':
+-------------------------------------
+
+  Information on FSM $fsm$\st_q$950 (\st_q):
+
+  Number of input signals:    4
+  Number of output signals:   2
+  Number of state bits:       3
+
+  Input signals:
+    0: \rst_ni
+    1: \s_tvalid
+    2: \lp_last
+    3: $ne$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:234$48_Y
+
+  Output signals:
+    0: $procmux$107_CMP
+    1: $procmux$108_CMP
+
+  State encoding:
+    0:      3'--1  <RESET STATE>
+    1:      3'-1-
+    2:      3'1--
+
+  Transition Table (state_in, ctrl_in, state_out, ctrl_out):
+      0:     0 4'---0   ->     0 2'10
+      1:     0 4'--01   ->     0 2'10
+      2:     0 4'--11   ->     2 2'10
+      3:     1 4'---0   ->     0 2'00
+      4:     1 4'0--1   ->     0 2'00
+      5:     1 4'1--1   ->     1 2'00
+      6:     2 4'---0   ->     0 2'01
+      7:     2 4'-1-1   ->     1 2'01
+      8:     2 4'-0-1   ->     2 2'01
+
+-------------------------------------
+
+4.7.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+Mapping FSM `$fsm$\st_q$950' from module `\bandpass'.
+
+4.8. Executing OPT pass (performing simple optimizations).
+
+4.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module bandpass.
+<suppressed ~1 debug messages>
+
+4.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\bandpass'.
+Removed a total of 0 cells.
+
+4.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \bandpass..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~74 debug messages>
+
+4.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \bandpass.
+Performed a total of 0 changes.
+
+4.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\bandpass'.
+Removed a total of 0 cells.
+
+4.8.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$859 ($dff) from module bandpass (D = $procmux$106_Y, Q = \lp_hist_q[31], rval = 22'0000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$987 ($sdff) from module bandpass (D = \lp_hist_q[30], Q = \lp_hist_q[31]).
+Adding SRST signal on $procdff$858 ($dff) from module bandpass (D = $procmux$116_Y, Q = \lp_hist_q[30], rval = 22'0000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$995 ($sdff) from module bandpass (D = \lp_hist_q[29], Q = \lp_hist_q[30]).
+Adding SRST signal on $procdff$857 ($dff) from module bandpass (D = $procmux$126_Y, Q = \lp_hist_q[29], rval = 22'0000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1003 ($sdff) from module bandpass (D = \lp_hist_q[28], Q = \lp_hist_q[29]).
+Adding SRST signal on $procdff$856 ($dff) from module bandpass (D = $procmux$136_Y, Q = \lp_hist_q[28], rval = 22'0000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1011 ($sdff) from module bandpass (D = \lp_hist_q[27], Q = \lp_hist_q[28]).
+Adding SRST signal on $procdff$855 ($dff) from module bandpass (D = $procmux$146_Y, Q = \lp_hist_q[27], rval = 22'0000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1019 ($sdff) from module bandpass (D = \lp_hist_q[26], Q = \lp_hist_q[27]).
+Adding SRST signal on $procdff$854 ($dff) from module bandpass (D = $procmux$156_Y, Q = \lp_hist_q[26], rval = 22'0000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1027 ($sdff) from module bandpass (D = \lp_hist_q[25], Q = \lp_hist_q[26]).
+Adding SRST signal on $procdff$853 ($dff) from module bandpass (D = $procmux$166_Y, Q = \lp_hist_q[25], rval = 22'0000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1035 ($sdff) from module bandpass (D = \lp_hist_q[24], Q = \lp_hist_q[25]).
+Adding SRST signal on $procdff$852 ($dff) from module bandpass (D = $procmux$176_Y, Q = \lp_hist_q[24], rval = 22'0000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1043 ($sdff) from module bandpass (D = \lp_hist_q[23], Q = \lp_hist_q[24]).
+Adding SRST signal on $procdff$851 ($dff) from module bandpass (D = $procmux$186_Y, Q = \lp_hist_q[23], rval = 22'0000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1051 ($sdff) from module bandpass (D = \lp_hist_q[22], Q = \lp_hist_q[23]).
+Adding SRST signal on $procdff$850 ($dff) from module bandpass (D = $procmux$196_Y, Q = \lp_hist_q[22], rval = 22'0000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1059 ($sdff) from module bandpass (D = \lp_hist_q[21], Q = \lp_hist_q[22]).
+Adding SRST signal on $procdff$849 ($dff) from module bandpass (D = $procmux$206_Y, Q = \lp_hist_q[21], rval = 22'0000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1067 ($sdff) from module bandpass (D = \lp_hist_q[20], Q = \lp_hist_q[21]).
+Adding SRST signal on $procdff$848 ($dff) from module bandpass (D = $procmux$216_Y, Q = \lp_hist_q[20], rval = 22'0000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1075 ($sdff) from module bandpass (D = \lp_hist_q[19], Q = \lp_hist_q[20]).
+Adding SRST signal on $procdff$847 ($dff) from module bandpass (D = $procmux$226_Y, Q = \lp_hist_q[19], rval = 22'0000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1083 ($sdff) from module bandpass (D = \lp_hist_q[18], Q = \lp_hist_q[19]).
+Adding SRST signal on $procdff$846 ($dff) from module bandpass (D = $procmux$236_Y, Q = \lp_hist_q[18], rval = 22'0000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1091 ($sdff) from module bandpass (D = \lp_hist_q[17], Q = \lp_hist_q[18]).
+Adding SRST signal on $procdff$845 ($dff) from module bandpass (D = $procmux$246_Y, Q = \lp_hist_q[17], rval = 22'0000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1099 ($sdff) from module bandpass (D = \lp_hist_q[16], Q = \lp_hist_q[17]).
+Adding SRST signal on $procdff$844 ($dff) from module bandpass (D = $procmux$256_Y, Q = \lp_hist_q[16], rval = 22'0000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1107 ($sdff) from module bandpass (D = \lp_hist_q[15], Q = \lp_hist_q[16]).
+Adding SRST signal on $procdff$843 ($dff) from module bandpass (D = $procmux$266_Y, Q = \lp_hist_q[15], rval = 22'0000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1115 ($sdff) from module bandpass (D = \lp_hist_q[14], Q = \lp_hist_q[15]).
+Adding SRST signal on $procdff$842 ($dff) from module bandpass (D = $procmux$276_Y, Q = \lp_hist_q[14], rval = 22'0000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1123 ($sdff) from module bandpass (D = \lp_hist_q[13], Q = \lp_hist_q[14]).
+Adding SRST signal on $procdff$841 ($dff) from module bandpass (D = $procmux$286_Y, Q = \lp_hist_q[13], rval = 22'0000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1131 ($sdff) from module bandpass (D = \lp_hist_q[12], Q = \lp_hist_q[13]).
+Adding SRST signal on $procdff$840 ($dff) from module bandpass (D = $procmux$296_Y, Q = \lp_hist_q[12], rval = 22'0000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1139 ($sdff) from module bandpass (D = \lp_hist_q[11], Q = \lp_hist_q[12]).
+Adding SRST signal on $procdff$839 ($dff) from module bandpass (D = $procmux$306_Y, Q = \lp_hist_q[11], rval = 22'0000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1147 ($sdff) from module bandpass (D = \lp_hist_q[10], Q = \lp_hist_q[11]).
+Adding SRST signal on $procdff$838 ($dff) from module bandpass (D = $procmux$316_Y, Q = \lp_hist_q[10], rval = 22'0000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1155 ($sdff) from module bandpass (D = \lp_hist_q[9], Q = \lp_hist_q[10]).
+Adding SRST signal on $procdff$837 ($dff) from module bandpass (D = $procmux$326_Y, Q = \lp_hist_q[9], rval = 22'0000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1163 ($sdff) from module bandpass (D = \lp_hist_q[8], Q = \lp_hist_q[9]).
+Adding SRST signal on $procdff$836 ($dff) from module bandpass (D = $procmux$336_Y, Q = \lp_hist_q[8], rval = 22'0000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1171 ($sdff) from module bandpass (D = \lp_hist_q[7], Q = \lp_hist_q[8]).
+Adding SRST signal on $procdff$835 ($dff) from module bandpass (D = $procmux$346_Y, Q = \lp_hist_q[7], rval = 22'0000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1179 ($sdff) from module bandpass (D = \lp_hist_q[6], Q = \lp_hist_q[7]).
+Adding SRST signal on $procdff$834 ($dff) from module bandpass (D = $procmux$356_Y, Q = \lp_hist_q[6], rval = 22'0000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1187 ($sdff) from module bandpass (D = \lp_hist_q[5], Q = \lp_hist_q[6]).
+Adding SRST signal on $procdff$833 ($dff) from module bandpass (D = $procmux$366_Y, Q = \lp_hist_q[5], rval = 22'0000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1195 ($sdff) from module bandpass (D = \lp_hist_q[4], Q = \lp_hist_q[5]).
+Adding SRST signal on $procdff$832 ($dff) from module bandpass (D = $procmux$376_Y, Q = \lp_hist_q[4], rval = 22'0000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1203 ($sdff) from module bandpass (D = \lp_hist_q[3], Q = \lp_hist_q[4]).
+Adding SRST signal on $procdff$831 ($dff) from module bandpass (D = $procmux$386_Y, Q = \lp_hist_q[3], rval = 22'0000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1211 ($sdff) from module bandpass (D = \lp_hist_q[2], Q = \lp_hist_q[3]).
+Adding SRST signal on $procdff$830 ($dff) from module bandpass (D = $procmux$396_Y, Q = \lp_hist_q[2], rval = 22'0000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1219 ($sdff) from module bandpass (D = \lp_hist_q[1], Q = \lp_hist_q[2]).
+Adding SRST signal on $procdff$829 ($dff) from module bandpass (D = $procmux$406_Y, Q = \lp_hist_q[1], rval = 22'0000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1227 ($sdff) from module bandpass (D = \lp_hist_q[0], Q = \lp_hist_q[1]).
+Adding SRST signal on $procdff$828 ($dff) from module bandpass (D = $procmux$416_Y, Q = \lp_hist_q[0], rval = 22'0000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1235 ($sdff) from module bandpass (D = \lp_out_q, Q = \lp_hist_q[0]).
+Adding SRST signal on $procdff$827 ($dff) from module bandpass (D = $procmux$427_Y, Q = \x_hist_q[11], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1243 ($sdff) from module bandpass (D = \x_hist_q[10], Q = \x_hist_q[11]).
+Adding SRST signal on $procdff$826 ($dff) from module bandpass (D = $procmux$437_Y, Q = \x_hist_q[10], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1247 ($sdff) from module bandpass (D = \x_hist_q[9], Q = \x_hist_q[10]).
+Adding SRST signal on $procdff$825 ($dff) from module bandpass (D = $procmux$447_Y, Q = \x_hist_q[9], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1251 ($sdff) from module bandpass (D = \x_hist_q[8], Q = \x_hist_q[9]).
+Adding SRST signal on $procdff$824 ($dff) from module bandpass (D = $procmux$457_Y, Q = \x_hist_q[8], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1255 ($sdff) from module bandpass (D = \x_hist_q[7], Q = \x_hist_q[8]).
+Adding SRST signal on $procdff$823 ($dff) from module bandpass (D = $procmux$467_Y, Q = \x_hist_q[7], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1259 ($sdff) from module bandpass (D = \x_hist_q[6], Q = \x_hist_q[7]).
+Adding SRST signal on $procdff$822 ($dff) from module bandpass (D = $procmux$477_Y, Q = \x_hist_q[6], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1263 ($sdff) from module bandpass (D = \x_hist_q[5], Q = \x_hist_q[6]).
+Adding SRST signal on $procdff$821 ($dff) from module bandpass (D = $procmux$487_Y, Q = \x_hist_q[5], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1267 ($sdff) from module bandpass (D = \x_hist_q[4], Q = \x_hist_q[5]).
+Adding SRST signal on $procdff$820 ($dff) from module bandpass (D = $procmux$497_Y, Q = \x_hist_q[4], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1271 ($sdff) from module bandpass (D = \x_hist_q[3], Q = \x_hist_q[4]).
+Adding SRST signal on $procdff$819 ($dff) from module bandpass (D = $procmux$507_Y, Q = \x_hist_q[3], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1275 ($sdff) from module bandpass (D = \x_hist_q[2], Q = \x_hist_q[3]).
+Adding SRST signal on $procdff$818 ($dff) from module bandpass (D = $procmux$517_Y, Q = \x_hist_q[2], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1279 ($sdff) from module bandpass (D = \x_hist_q[1], Q = \x_hist_q[2]).
+Adding SRST signal on $procdff$817 ($dff) from module bandpass (D = $procmux$527_Y, Q = \x_hist_q[1], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1283 ($sdff) from module bandpass (D = \x_hist_q[0], Q = \x_hist_q[1]).
+Adding SRST signal on $procdff$816 ($dff) from module bandpass (D = $procmux$537_Y, Q = \x_hist_q[0], rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1287 ($sdff) from module bandpass (D = \x_hold_q, Q = \x_hist_q[0]).
+Adding SRST signal on $procdff$814 ($dff) from module bandpass (D = $procmux$547_Y, Q = \idx_q, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$1291 ($sdff) from module bandpass (D = \s_sample_idx, Q = \idx_q).
+Adding SRST signal on $procdff$813 ($dff) from module bandpass (D = $procmux$557_Y, Q = \tuser_q, rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:266:slice$1295 ($sdff) from module bandpass (D = \s_tuser, Q = \tuser_q).
+Adding SRST signal on $procdff$812 ($dff) from module bandpass (D = $procmux$567_Y, Q = \last_q, rval = 1'0).
+Adding EN signal on $auto$ff.cc:266:slice$1299 ($sdff) from module bandpass (D = \s_tlast, Q = \last_q).
+Adding SRST signal on $procdff$811 ($dff) from module bandpass (D = $procmux$576_Y, Q = \hp_pass_q, rval = 2'00).
+Adding EN signal on $auto$ff.cc:266:slice$1303 ($sdff) from module bandpass (D = $procmux$576_Y, Q = \hp_pass_q).
+Adding SRST signal on $procdff$810 ($dff) from module bandpass (D = $procmux$589_Y, Q = \lp_slice_q, rval = 2'00).
+Adding EN signal on $auto$ff.cc:266:slice$1313 ($sdff) from module bandpass (D = $procmux$589_Y, Q = \lp_slice_q).
+Adding SRST signal on $procdff$809 ($dff) from module bandpass (D = $procmux$602_Y, Q = \lp_pass_q, rval = 2'00).
+Adding EN signal on $auto$ff.cc:266:slice$1321 ($sdff) from module bandpass (D = $procmux$602_Y, Q = \lp_pass_q).
+Adding SRST signal on $procdff$807 ($dff) from module bandpass (D = $procmux$630_Y, Q = \ovf_q, rval = 1'0).
+Adding EN signal on $auto$ff.cc:266:slice$1331 ($sdff) from module bandpass (D = $or$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:239$50_Y, Q = \ovf_q).
+Adding SRST signal on $procdff$806 ($dff) from module bandpass (D = $procmux$640_Y, Q = \acc_hp_q, rval = 27'000000000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1339 ($sdff) from module bandpass (D = \hp_sum, Q = \acc_hp_q).
+Adding SRST signal on $procdff$805 ($dff) from module bandpass (D = $procmux$650_Y, Q = \hp_y_q, rval = 26'00000000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1345 ($sdff) from module bandpass (D = \hp_sat, Q = \hp_y_q).
+Adding SRST signal on $procdff$804 ($dff) from module bandpass (D = $procmux$660_Y, Q = \acc_cy_q, rval = 1'0).
+Adding EN signal on $auto$ff.cc:266:slice$1353 ($sdff) from module bandpass (D = \sl_sum [9], Q = \acc_cy_q).
+Adding SRST signal on $procdff$803 ($dff) from module bandpass (D = $procmux$670_Y, Q = \acc_hi_q, rval = 5'00000).
+Adding EN signal on $auto$ff.cc:266:slice$1355 ($sdff) from module bandpass (D = \sl_sum [4:0], Q = \acc_hi_q).
+Adding SRST signal on $procdff$802 ($dff) from module bandpass (D = $procmux$679_Y, Q = \acc_mid_q, rval = 9'000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1361 ($sdff) from module bandpass (D = \sl_sum [8:0], Q = \acc_mid_q).
+Adding SRST signal on $procdff$801 ($dff) from module bandpass (D = $procmux$689_Y, Q = \acc_lo_q, rval = 9'000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1365 ($sdff) from module bandpass (D = \sl_sum [8:0], Q = \acc_lo_q).
+Adding SRST signal on $procdff$800 ($dff) from module bandpass (D = $procmux$697_Y, Q = \lp_out_q, rval = 22'0000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1369 ($sdff) from module bandpass (D = { \sl_sum [3:0] \acc_mid_q \acc_lo_q }, Q = \lp_out_q).
+Adding SRST signal on $procdff$799 ($dff) from module bandpass (D = $procmux$707_Y, Q = \x_hold_q, rval = 16'0000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1373 ($sdff) from module bandpass (D = \s_tdata, Q = \x_hold_q).
+Adding SRST signal on $procdff$798 ($dff) from module bandpass (D = $procmux$716_Y, Q = \d_hp, rval = 26'00000000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1377 ($sdff) from module bandpass (D = \hp_sat, Q = \d_hp).
+Adding SRST signal on $procdff$797 ($dff) from module bandpass (D = $procmux$726_Y, Q = \d_lp, rval = 22'0000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1385 ($sdff) from module bandpass (D = \lp_out_q, Q = \d_lp).
+Adding SRST signal on $procdff$795 ($dff) from module bandpass (D = $procmux$736_Y, Q = \m_sample_idx, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$1393 ($sdff) from module bandpass (D = \idx_q, Q = \m_sample_idx).
+Adding SRST signal on $procdff$794 ($dff) from module bandpass (D = $procmux$746_Y, Q = \m_tuser, rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:266:slice$1401 ($sdff) from module bandpass (D = \tuser_q, Q = \m_tuser).
+Adding SRST signal on $procdff$793 ($dff) from module bandpass (D = $procmux$756_Y, Q = \m_tlast, rval = 1'0).
+Adding EN signal on $auto$ff.cc:266:slice$1409 ($sdff) from module bandpass (D = \last_q, Q = \m_tlast).
+Adding SRST signal on $procdff$792 ($dff) from module bandpass (D = $procmux$766_Y, Q = \m_overflow, rval = 1'0).
+Adding EN signal on $auto$ff.cc:266:slice$1417 ($sdff) from module bandpass (D = $or$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:239$50_Y, Q = \m_overflow).
+Adding SRST signal on $procdff$791 ($dff) from module bandpass (D = $procmux$80_Y, Q = \m_tvalid, rval = 1'0).
+Adding SRST signal on $procdff$790 ($dff) from module bandpass (D = $procmux$776_Y, Q = \m_tdata, rval = 26'00000000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$1430 ($sdff) from module bandpass (D = \hp_sat, Q = \m_tdata).
+
+4.8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \bandpass..
+Removed 193 unused cells and 198 unused wires.
+<suppressed ~194 debug messages>
+
+4.8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module bandpass.
+<suppressed ~4 debug messages>
+
+4.8.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.8.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \bandpass..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~11 debug messages>
+
+4.8.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \bandpass.
+    New input vector for $reduce_or cell $auto$opt_dff.cc:254:combine_resets$1429: { $auto$rtlil.cc:2401:Not$1427 \st_q [2] \st_q [0] }
+  Optimizing cells in module \bandpass.
+Performed a total of 1 changes.
+
+4.8.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\bandpass'.
+<suppressed ~438 debug messages>
+Removed a total of 146 cells.
+
+4.8.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.8.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \bandpass..
+Removed 0 unused cells and 142 unused wires.
+<suppressed ~1 debug messages>
+
+4.8.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module bandpass.
+
+4.8.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.8.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \bandpass..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~12 debug messages>
+
+4.8.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \bandpass.
+Performed a total of 0 changes.
+
+4.8.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\bandpass'.
+Removed a total of 0 cells.
+
+4.8.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.8.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \bandpass..
+
+4.8.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module bandpass.
+
+4.8.23. Finished OPT passes. (There is nothing left to do.)
+
+4.9. Executing WREDUCE pass (reducing word size of cells).
+Removed top 1 bits (of 2) from port B of cell bandpass.$eq$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:132$8 ($eq).
+Removed top 1 bits (of 10) from port A of cell bandpass.$add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:148$21 ($add).
+Removed top 1 bits (of 10) from port B of cell bandpass.$add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:148$21 ($add).
+Removed top 9 bits (of 10) from port B of cell bandpass.$add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:148$22 ($add).
+Removed top 1 bits (of 2) from port B of cell bandpass.$eq$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:157$24 ($eq).
+Removed top 26 bits (of 27) from mux cell bandpass.$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:159$34 ($mux).
+Removed top 26 bits (of 27) from port B of cell bandpass.$add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:160$36 ($add).
+Removed top 1 bits (of 2) from port B of cell bandpass.$add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:228$46 ($add).
+Removed top 1 bits (of 2) from port B of cell bandpass.$add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:230$47 ($add).
+Removed top 1 bits (of 2) from port B of cell bandpass.$add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:236$49 ($add).
+Removed top 1 bits (of 2) from port B of cell bandpass.$auto$fsm_map.cc:77:implement_pattern_cache$983 ($eq).
+Removed top 1 bits (of 2) from port B of cell bandpass.$auto$fsm_map.cc:77:implement_pattern_cache$965 ($eq).
+Removed top 1 bits (of 2) from port B of cell bandpass.$procmux$668_CMP0 ($eq).
+Removed top 1 bits (of 2) from port B of cell bandpass.$auto$fsm_map.cc:77:implement_pattern_cache$961 ($eq).
+Removed top 26 bits (of 27) from wire bandpass.hp_add_c.
+
+4.10. Executing PEEPOPT pass (run peephole optimizers).
+
+4.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \bandpass..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+4.12. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module bandpass:
+  creating $macc model for $add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:148$21 ($add).
+  creating $macc model for $add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:148$22 ($add).
+  creating $macc model for $add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:160$35 ($add).
+  creating $macc model for $add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:160$36 ($add).
+  creating $macc model for $add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:228$46 ($add).
+  creating $macc model for $add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:230$47 ($add).
+  creating $macc model for $add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:236$49 ($add).
+  merging $macc model for $add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:160$35 into $add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:160$36.
+  merging $macc model for $add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:148$21 into $add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:148$22.
+  creating $alu model for $macc $add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:228$46.
+  creating $alu model for $macc $add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:160$36.
+  creating $alu model for $macc $add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:230$47.
+  creating $alu model for $macc $add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:148$22.
+  creating $alu model for $macc $add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:236$49.
+  creating $alu cell for $add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:236$49: $auto$alumacc.cc:485:replace_alu$1439
+  creating $alu cell for $add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:148$22: $auto$alumacc.cc:485:replace_alu$1442
+  creating $alu cell for $add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:230$47: $auto$alumacc.cc:485:replace_alu$1445
+  creating $alu cell for $add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:160$36: $auto$alumacc.cc:485:replace_alu$1448
+  creating $alu cell for $add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:228$46: $auto$alumacc.cc:485:replace_alu$1451
+  created 5 $alu and 0 $macc cells.
+
+4.13. Executing SHARE pass (SAT-based resource sharing).
+
+4.14. Executing OPT pass (performing simple optimizations).
+
+4.14.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module bandpass.
+
+4.14.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\bandpass'.
+Removed a total of 0 cells.
+
+4.14.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \bandpass..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~12 debug messages>
+
+4.14.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \bandpass.
+Performed a total of 0 changes.
+
+4.14.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\bandpass'.
+Removed a total of 0 cells.
+
+4.14.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.14.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \bandpass..
+Removed 2 unused cells and 2 unused wires.
+<suppressed ~3 debug messages>
+
+4.14.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module bandpass.
+
+4.14.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.14.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \bandpass..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~12 debug messages>
+
+4.14.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \bandpass.
+Performed a total of 0 changes.
+
+4.14.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\bandpass'.
+Removed a total of 0 cells.
+
+4.14.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.14.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \bandpass..
+
+4.14.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module bandpass.
+
+4.14.16. Finished OPT passes. (There is nothing left to do.)
+
+4.15. Executing MEMORY pass.
+
+4.15.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+4.15.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+4.15.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+4.15.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+4.15.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+4.15.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \bandpass..
+
+4.15.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+4.15.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+4.15.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \bandpass..
+
+4.15.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+4.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \bandpass..
+
+4.17. Executing OPT pass (performing simple optimizations).
+
+4.17.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module bandpass.
+<suppressed ~20 debug messages>
+
+4.17.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\bandpass'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+4.17.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.17.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \bandpass..
+Removed 0 unused cells and 8 unused wires.
+<suppressed ~1 debug messages>
+
+4.17.5. Finished fast OPT passes.
+
+4.18. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+4.19. Executing OPT pass (performing simple optimizations).
+
+4.19.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module bandpass.
+
+4.19.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\bandpass'.
+Removed a total of 0 cells.
+
+4.19.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \bandpass..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~9 debug messages>
+
+4.19.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \bandpass.
+    Consolidated identical input bits for $mux cell $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:130$6:
+      Old ports: A={ \acc_hi_q [4] \acc_hi_q [4] \acc_hi_q [4] \acc_hi_q [4] \acc_hi_q \acc_mid_q \acc_lo_q }, B={ \x_hist_q[11] [15] \x_hist_q[11] [15] \x_hist_q[11] [15] \x_hist_q[11] [15] \x_hist_q[11] [15] \x_hist_q[11] [15] \x_hist_q[11] [15] \x_hist_q[11] [15] \x_hist_q[11] [15] \x_hist_q[11] [15] \x_hist_q[11] [15] \x_hist_q[11] }, Y=\lp_add_a
+      New ports: A={ \acc_hi_q \acc_mid_q \acc_lo_q }, B={ \x_hist_q[11] [15] \x_hist_q[11] [15] \x_hist_q[11] [15] \x_hist_q[11] [15] \x_hist_q[11] [15] \x_hist_q[11] [15] \x_hist_q[11] [15] \x_hist_q[11] }, Y=\lp_add_a [22:0]
+      New connections: \lp_add_a [26:23] = { \lp_add_a [22] \lp_add_a [22] \lp_add_a [22] \lp_add_a [22] }
+    Consolidated identical input bits for $mux cell $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:133$12:
+      Old ports: A={ $auto$opt_expr.cc:205:group_cell_inputs$1456 [15] $auto$opt_expr.cc:205:group_cell_inputs$1456 [15] $auto$opt_expr.cc:205:group_cell_inputs$1456 [15] $auto$opt_expr.cc:205:group_cell_inputs$1456 [15] $auto$opt_expr.cc:205:group_cell_inputs$1456 [15] $auto$opt_expr.cc:205:group_cell_inputs$1456 [15] $auto$opt_expr.cc:205:group_cell_inputs$1456 [15] $auto$opt_expr.cc:205:group_cell_inputs$1456 [15] $auto$opt_expr.cc:205:group_cell_inputs$1456 [15] $auto$opt_expr.cc:205:group_cell_inputs$1456 [15] $auto$opt_expr.cc:205:group_cell_inputs$1456 1'1 }, B={ \x_hold_q [15] \x_hold_q [15] \x_hold_q [15] \x_hold_q [15] \x_hold_q [15] \x_hold_q [15] \x_hold_q [15] \x_hold_q [15] \x_hold_q [15] \x_hold_q [15] \x_hold_q [15] \x_hold_q }, Y=$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:133$12_Y
+      New ports: A={ $auto$opt_expr.cc:205:group_cell_inputs$1456 1'1 }, B={ \x_hold_q [15] \x_hold_q }, Y=$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:133$12_Y [16:0]
+      New connections: $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:133$12_Y [26:17] = { $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:133$12_Y [16] $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:133$12_Y [16] $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:133$12_Y [16] $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:133$12_Y [16] $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:133$12_Y [16] $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:133$12_Y [16] $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:133$12_Y [16] $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:133$12_Y [16] $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:133$12_Y [16] $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:133$12_Y [16] }
+  Optimizing cells in module \bandpass.
+    Consolidated identical input bits for $mux cell $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:132$13:
+      Old ports: A=$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:133$12_Y, B={ $auto$opt_expr.cc:205:group_cell_inputs$1454 [21] $auto$opt_expr.cc:205:group_cell_inputs$1454 [21] $auto$opt_expr.cc:205:group_cell_inputs$1454 [21] $auto$opt_expr.cc:205:group_cell_inputs$1454 [21] $auto$opt_expr.cc:205:group_cell_inputs$1454 [21] $auto$opt_expr.cc:205:group_cell_inputs$1454 }, Y=$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:132$13_Y
+      New ports: A={ $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:133$12_Y [16] $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:133$12_Y [16] $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:133$12_Y [16] $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:133$12_Y [16] $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:133$12_Y [16] $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:133$12_Y [16:0] }, B=$auto$opt_expr.cc:205:group_cell_inputs$1454, Y=$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:132$13_Y [21:0]
+      New connections: $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:132$13_Y [26:22] = { $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:132$13_Y [21] $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:132$13_Y [21] $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:132$13_Y [21] $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:132$13_Y [21] $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:132$13_Y [21] }
+  Optimizing cells in module \bandpass.
+    Consolidated identical input bits for $mux cell $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:131$14:
+      Old ports: A=$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:132$13_Y, B={ \d_lp [21] \d_lp [21] \d_lp [21] \d_lp [21] \d_lp 1'0 }, Y=\lp_add_b
+      New ports: A={ $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:132$13_Y [21] $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/bandpass.sv:132$13_Y [21:0] }, B={ \d_lp 1'0 }, Y=\lp_add_b [22:0]
+      New connections: \lp_add_b [26:23] = { \lp_add_b [22] \lp_add_b [22] \lp_add_b [22] \lp_add_b [22] }
+  Optimizing cells in module \bandpass.
+Performed a total of 4 changes.
+
+4.19.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\bandpass'.
+Removed a total of 0 cells.
+
+4.19.6. Executing OPT_SHARE pass.
+
+4.19.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.19.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \bandpass..
+
+4.19.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module bandpass.
+
+4.19.10. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.19.11. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \bandpass..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~9 debug messages>
+
+4.19.12. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \bandpass.
+Performed a total of 0 changes.
+
+4.19.13. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\bandpass'.
+Removed a total of 0 cells.
+
+4.19.14. Executing OPT_SHARE pass.
+
+4.19.15. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.19.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \bandpass..
+
+4.19.17. Executing OPT_EXPR pass (perform const folding).
+Optimizing module bandpass.
+
+4.19.18. Finished OPT passes. (There is nothing left to do.)
+
+4.20. Executing TECHMAP pass (map to technology primitives).
+
+4.20.1. Executing Verilog-2005 frontend: /home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl-synthesis/debroot/usr/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl-synthesis/debroot/usr/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+4.20.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $dff.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $eq.
+Using extmapper simplemap for cells of type $ne.
+Using extmapper simplemap for cells of type $logic_or.
+Using template $paramod$175e67c02b86e96b1288b9dc100122520d7240d8\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $xor.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $logic_and.
+Using template $paramod$f02bbbf710bba6238f4bdfa41b3051acfe2064a8\_90_alu for cells of type $alu.
+Using template $paramod$30a6a3eda691e4e16264fbb83b0421b58195fe41\_90_pmux for cells of type $pmux.
+Using template $paramod$f31f04e77f067a6da635d02c4a81c0a799bf18a4\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $sdff.
+Using extmapper simplemap for cells of type $sdffe.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000000010 for cells of type $lcu.
+Using extmapper simplemap for cells of type $pos.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000001010 for cells of type $lcu.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000011011 for cells of type $lcu.
+No more expansions possible.
+<suppressed ~863 debug messages>
+
+4.21. Executing OPT pass (performing simple optimizations).
+
+4.21.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module bandpass.
+<suppressed ~308 debug messages>
+
+4.21.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\bandpass'.
+<suppressed ~69 debug messages>
+Removed a total of 23 cells.
+
+4.21.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.21.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \bandpass..
+Removed 46 unused cells and 281 unused wires.
+<suppressed ~47 debug messages>
+
+4.21.5. Finished fast OPT passes.
+
+4.22. Executing ABC pass (technology mapping using ABC).
+
+4.22.1. Extracting gate netlist of module `\bandpass' to `<abc-temp-dir>/input.blif'..
+Extracted 711 gates and 960 wires to a netlist network with 247 inputs and 85 outputs.
+
+4.22.1.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+4.22.1.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:        8
+ABC RESULTS:             ORNOT cells:       16
+ABC RESULTS:              XNOR cells:       32
+ABC RESULTS:               NOT cells:      142
+ABC RESULTS:              NAND cells:       12
+ABC RESULTS:               MUX cells:      232
+ABC RESULTS:               XOR cells:       42
+ABC RESULTS:            ANDNOT cells:      145
+ABC RESULTS:               NOR cells:       49
+ABC RESULTS:                OR cells:       59
+ABC RESULTS:        internal signals:      628
+ABC RESULTS:           input signals:      247
+ABC RESULTS:          output signals:       85
+Removing temp directory.
+
+4.23. Executing OPT pass (performing simple optimizations).
+
+4.23.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module bandpass.
+<suppressed ~2 debug messages>
+
+4.23.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\bandpass'.
+Removed a total of 0 cells.
+
+4.23.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.23.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \bandpass..
+Removed 0 unused cells and 516 unused wires.
+<suppressed ~10 debug messages>
+
+4.23.5. Finished fast OPT passes.
+
+4.24. Executing HIERARCHY pass (managing design hierarchy).
+
+4.24.1. Analyzing design hierarchy..
+Top module:  \bandpass
+
+4.24.2. Analyzing design hierarchy..
+Top module:  \bandpass
+Removed 0 unused modules.
+
+4.25. Printing statistics.
+
+=== bandpass ===
+
+   Number of wires:                768
+   Number of wire bits:           2375
+   Number of public wires:          94
+   Number of public wire bits:    1701
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               1841
+     $_ANDNOT_                     145
+     $_AND_                          8
+     $_DFF_P_                        3
+     $_MUX_                        232
+     $_NAND_                        12
+     $_NOR_                         49
+     $_NOT_                        142
+     $_ORNOT_                       16
+     $_OR_                          59
+     $_SDFFE_PN0P_                1100
+     $_SDFF_PP0_                     1
+     $_XNOR_                        32
+     $_XOR_                         42
+
+4.26. Executing CHECK pass (checking for obvious problems).
+Checking module bandpass...
+Found and reported 0 problems.
+
+5. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtn_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_4' - skipping.
+  cell sky130_fd_sc_hd__dfxtp_1 (noninv, pins=3, area=20.02) is a direct match for cell type $_DFF_P_.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtn_1' - skipping.
+  cell sky130_fd_sc_hd__dfrtn_1 (noninv, pins=4, area=25.02) is a direct match for cell type $_DFF_NN0_.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtn_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_4' - skipping.
+  cell sky130_fd_sc_hd__dfrtp_1 (noninv, pins=4, area=25.02) is a direct match for cell type $_DFF_PN0_.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_4' - skipping.
+  cell sky130_fd_sc_hd__dfstp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN1_.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtn_1' - skipping.
+  cell sky130_fd_sc_hd__dfbbn_1 (noninv, pins=6, area=32.53) is a direct match for cell type $_DFFSR_NNN_.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtn_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_4' - skipping.
+  cell sky130_fd_sc_hd__dfbbp_1 (noninv, pins=6, area=32.53) is a direct match for cell type $_DFFSR_PNN_.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_4' - skipping.
+  final dff cell mappings:
+    unmapped dff cell: $_DFF_N_
+    \sky130_fd_sc_hd__dfxtp_1 _DFF_P_ (.CLK( C), .D( D), .Q( Q));
+    \sky130_fd_sc_hd__dfrtn_1 _DFF_NN0_ (.CLK_N( C), .D( D), .Q( Q), .RESET_B( R));
+    unmapped dff cell: $_DFF_NN1_
+    unmapped dff cell: $_DFF_NP0_
+    unmapped dff cell: $_DFF_NP1_
+    \sky130_fd_sc_hd__dfrtp_1 _DFF_PN0_ (.CLK( C), .D( D), .Q( Q), .RESET_B( R));
+    \sky130_fd_sc_hd__dfstp_2 _DFF_PN1_ (.CLK( C), .D( D), .Q( Q), .SET_B( R));
+    unmapped dff cell: $_DFF_PP0_
+    unmapped dff cell: $_DFF_PP1_
+    \sky130_fd_sc_hd__dfbbn_1 _DFFSR_NNN_ (.CLK_N( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff cell: $_DFFSR_NNP_
+    unmapped dff cell: $_DFFSR_NPN_
+    unmapped dff cell: $_DFFSR_NPP_
+    \sky130_fd_sc_hd__dfbbp_1 _DFFSR_PNN_ (.CLK( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff cell: $_DFFSR_PNP_
+    unmapped dff cell: $_DFFSR_PPN_
+    unmapped dff cell: $_DFFSR_PPP_
+
+5.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+Mapping DFF cells in module `\bandpass':
+  mapped 1104 $_DFF_P_ cells to \sky130_fd_sc_hd__dfxtp_1 cells.
+
+6. Executing ABC pass (technology mapping using ABC).
+
+6.1. Extracting gate netlist of module `\bandpass' to `<abc-temp-dir>/input.blif'..
+Extracted 2938 gates and 4101 wires to a netlist network with 1162 inputs and 1104 outputs.
+
+6.1.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lib -w /home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl-synthesis/sky130_fd_sc_hd__tt_025C_1v80.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.14 sec
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_12" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_3" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_6" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__diode_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_8".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__edfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__edfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_0".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_8".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_8".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_bleeder_1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_12" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_3" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_6" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__lpflow_inputisolatch_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfsbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_4".
+ABC: Library "sky130_fd_sc_hd__tt_025C_1v80" from "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl-synthesis/sky130_fd_sc_hd__tt_025C_1v80.lib" has 334 cells (94 skipped: 63 seq; 13 tri-state; 18 no func; 0 dont_use).  Time =     0.21 sec
+ABC: Memory =   19.81 MB. Time =     0.21 sec
+ABC: Warning: Detected 9 multi-output gates (for example, "sky130_fd_sc_hd__fa_1").
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+6.1.2. Re-integrating ABC results.
+ABC RESULTS:   sky130_fd_sc_hd__clkinv_1 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__nand4_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__and3_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o21ba_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a211oi_1 cells:       14
+ABC RESULTS:   sky130_fd_sc_hd__or3_1 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__a21o_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o31a_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o21a_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__a22o_1 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__nand3_1 cells:        8
+ABC RESULTS:   sky130_fd_sc_hd__mux2i_1 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__lpflow_inputiso1p_1 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__nor4_1 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__o31ai_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a221oi_1 cells:        7
+ABC RESULTS:   sky130_fd_sc_hd__a211o_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nand2b_1 cells:       23
+ABC RESULTS:   sky130_fd_sc_hd__o221ai_1 cells:       18
+ABC RESULTS:   sky130_fd_sc_hd__a221o_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__maj3_1 cells:       25
+ABC RESULTS:   sky130_fd_sc_hd__a222oi_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__xor3_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__xor2_1 cells:        8
+ABC RESULTS:   sky130_fd_sc_hd__xnor2_1 cells:       56
+ABC RESULTS:   sky130_fd_sc_hd__nor3_1 cells:        8
+ABC RESULTS:   sky130_fd_sc_hd__nor2_1 cells:       60
+ABC RESULTS:   sky130_fd_sc_hd__o22ai_1 cells:       11
+ABC RESULTS:   sky130_fd_sc_hd__and2_0 cells:       46
+ABC RESULTS:   sky130_fd_sc_hd__nor2b_1 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__o21ai_0 cells:      119
+ABC RESULTS:   sky130_fd_sc_hd__a21oi_1 cells:       53
+ABC RESULTS:   sky130_fd_sc_hd__a22oi_1 cells:       26
+ABC RESULTS:   sky130_fd_sc_hd__lpflow_isobufsrc_1 cells:       13
+ABC RESULTS:   sky130_fd_sc_hd__nand2_1 cells:     2163
+ABC RESULTS:   sky130_fd_sc_hd__a21boi_0 cells:     1054
+ABC RESULTS:        internal signals:     1835
+ABC RESULTS:           input signals:     1162
+ABC RESULTS:          output signals:     1104
+Removing temp directory.
+
+7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \bandpass..
+Removed 0 unused cells and 4039 unused wires.
+<suppressed ~3 debug messages>
+
+8. Printing statistics.
+
+=== bandpass ===
+
+   Number of wires:               3843
+   Number of wire bits:           5399
+   Number of public wires:          92
+   Number of public wire bits:    1648
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               4855
+     sky130_fd_sc_hd__a211o_1        1
+     sky130_fd_sc_hd__a211oi_1      14
+     sky130_fd_sc_hd__a21boi_0    1054
+     sky130_fd_sc_hd__a21o_1         2
+     sky130_fd_sc_hd__a21oi_1       53
+     sky130_fd_sc_hd__a221o_1        1
+     sky130_fd_sc_hd__a221oi_1       7
+     sky130_fd_sc_hd__a222oi_1       1
+     sky130_fd_sc_hd__a22o_1         5
+     sky130_fd_sc_hd__a22oi_1       26
+     sky130_fd_sc_hd__and2_0        46
+     sky130_fd_sc_hd__and3_1         2
+     sky130_fd_sc_hd__clkinv_1       4
+     sky130_fd_sc_hd__dfxtp_1     1104
+     sky130_fd_sc_hd__lpflow_inputiso1p_1      3
+     sky130_fd_sc_hd__lpflow_isobufsrc_1     13
+     sky130_fd_sc_hd__maj3_1        25
+     sky130_fd_sc_hd__mux2i_1        3
+     sky130_fd_sc_hd__nand2_1     2163
+     sky130_fd_sc_hd__nand2b_1      23
+     sky130_fd_sc_hd__nand3_1        8
+     sky130_fd_sc_hd__nand4_1        1
+     sky130_fd_sc_hd__nor2_1        60
+     sky130_fd_sc_hd__nor2b_1        3
+     sky130_fd_sc_hd__nor3_1         8
+     sky130_fd_sc_hd__nor4_1         3
+     sky130_fd_sc_hd__o21a_1         2
+     sky130_fd_sc_hd__o21ai_0      119
+     sky130_fd_sc_hd__o21ba_1        1
+     sky130_fd_sc_hd__o221ai_1      18
+     sky130_fd_sc_hd__o22ai_1       11
+     sky130_fd_sc_hd__o31a_1         1
+     sky130_fd_sc_hd__o31ai_1        1
+     sky130_fd_sc_hd__or3_1          4
+     sky130_fd_sc_hd__xnor2_1       56
+     sky130_fd_sc_hd__xor2_1         8
+     sky130_fd_sc_hd__xor3_1         1
+
+   Chip area for module '\bandpass': 41508.560000
+
+9. Executing JSON backend.
+
+Warnings: 28 unique messages, 236 total
+End of script. Logfile hash: cd37e2fa91, CPU: user 2.46s system 0.05s, MEM: 49.15 MB peak
+Yosys 0.33 (git sha1 2584903a060)
+Time spent: 35% 2x abc (1 sec), 13% 22x opt_clean (0 sec), ...

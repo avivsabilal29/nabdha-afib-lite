@@ -1,0 +1,157 @@
+tb_top: Fase 0 columns = ../rtlplan2/fase0
+tb_top: stimulus       = ../rtl/tb/vektor/04015.stimulus.hex
+tb_top: Fase 5 vectors = ../rtl/tb/vektor/fase5
+tb_top: Fase 6 vectors = ../rtl/tb/vektor/fase6
+tb_top: Fase 9 vectors = ../rtl/tb/vektor/fase9
+tb_top: Fase 8 row bridge = ../rtl/tb/vektor/fase8 (two words per emission: window sample end, golden row, FFFFFFFF when there is no golden row)
+tb_top: arm            = marked (code 0xf, thresholds 33 63)
+tb_top: limit          = 450000 of 450000 frames
+tb_top: golden peaks = 4777 qrs = 2596 ambang_state = 9 windows = 602 fired = 189
+tb_top: golden rows in range: peaks = 4777 qrs = 2596 t_rejected = 1909
+tb_top: cadence = 64 cycles per sample
+RULEDBG row 73 pos 6845 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1338096 i1=53674100 pv=143770372 | fed delta=88 kemq=838322 qrs_at_capture=6757 twdtw=377662 pulse=74
+RULEDBG row 79 pos 7423 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1112974 i1=49501949 pv=125272213 | fed delta=84 kemq=1245560 qrs_at_capture=7339 twdtw=79900 pulse=80
+RULEDBG row 164 pos 15761 dut pita=1 rej=1 | gold pita=1 rej=0 flag=2 kem=452820 i1=58140719 pv=21183173 | fed delta=54 kemq=897984 qrs_at_capture=15707 twdtw=223320 pulse=165
+RULEDBG row 267 pos 24503 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1236434 i1=39684016 pv=140836121 | fed delta=86 kemq=806402 qrs_at_capture=24417 twdtw=384134 pulse=268
+RULEDBG row 276 pos 25393 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1175828 i1=42762494 pv=137952754 | fed delta=80 kemq=1196138 qrs_at_capture=25313 twdtw=144164 pulse=277
+RULEDBG row 381 pos 35243 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1025850 i1=47203340 pv=88332176 | fed delta=82 kemq=1418404 qrs_at_capture=35161 twdtw=226382 pulse=382
+RULEDBG row 467 pos 43043 dut pita=1 rej=1 | gold pita=1 rej=0 flag=2 kem=288370 i1=42210027 pv=15605886 | fed delta=54 kemq=570718 qrs_at_capture=42989 twdtw=97584 pulse=468
+RULEDBG row 487 pos 44809 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1359548 i1=43570324 pv=169644706 | fed delta=76 kemq=582700 qrs_at_capture=44733 twdtw=80872 pulse=488
+RULEDBG row 491 pos 45135 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1448860 i1=43726912 pv=176723057 | fed delta=86 kemq=617688 qrs_at_capture=45049 twdtw=261078 pulse=492
+RULEDBG row 497 pos 45717 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=948336 i1=44530409 pv=75410880 | fed delta=70 kemq=657190 qrs_at_capture=45647 twdtw=158662 pulse=498
+RULEDBG row 501 pos 46023 dut pita=1 rej=1 | gold pita=1 rej=0 flag=2 kem=345568 i1=41110068 pv=13791074 | fed delta=50 kemq=633826 qrs_at_capture=45973 twdtw=86400 pulse=502
+RULEDBG row 520 pos 47731 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1386420 i1=46073235 pv=160046602 | fed delta=76 kemq=867814 qrs_at_capture=47655 twdtw=358732 pulse=521
+RULEDBG row 521 pos 47815 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1096030 i1=46333478 pv=100127089 | fed delta=84 kemq=1386420 qrs_at_capture=47731 twdtw=386090 pulse=522
+RULEDBG row 523 pos 47999 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1209354 i1=44742006 pv=128747656 | fed delta=82 kemq=1355634 qrs_at_capture=47917 twdtw=512862 pulse=524
+RULEDBG row 635 pos 58635 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1103756 i1=41802549 pv=107574103 | fed delta=72 kemq=476346 qrs_at_capture=58563 twdtw=221792 pulse=636
+RULEDBG row 640 pos 59167 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1381502 i1=40406221 pv=162749716 | fed delta=76 kemq=765254 qrs_at_capture=59091 twdtw=368068 pulse=641
+RULEDBG row 641 pos 59247 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1141588 i1=41102194 pv=117123092 | fed delta=80 kemq=1381502 qrs_at_capture=59167 twdtw=181742 pulse=642
+RULEDBG row 685 pos 63273 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1328008 i1=47986376 pv=150419269 | fed delta=78 kemq=904642 qrs_at_capture=63195 twdtw=310580 pulse=686
+RULEDBG row 692 pos 63901 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1381434 i1=47780965 pv=152837336 | fed delta=84 kemq=1477334 qrs_at_capture=63817 twdtw=362490 pulse=693
+RULEDBG row 967 pos 90179 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1462158 i1=48263907 pv=191340743 | fed delta=66 kemq=913808 qrs_at_capture=90113 twdtw=265960 pulse=968
+RULEDBG row 978 pos 91343 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=3995970 i1=153293604 pv=1598545198 | fed delta=50 kemq=3330722 qrs_at_capture=91293 twdtw=140780 pulse=979
+RULEDBG row 990 pos 92475 dut pita=1 rej=1 | gold pita=1 rej=0 flag=2 kem=261710 i1=136975421 pv=8822053 | fed delta=62 kemq=499594 qrs_at_capture=92413 twdtw=81866 pulse=991
+RULEDBG row 1109 pos 103723 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1174412 i1=51178201 pv=143238801 | fed delta=66 kemq=1091684 qrs_at_capture=103657 twdtw=349904 pulse=1110
+RULEDBG row 1113 pos 104083 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1499322 i1=49438793 pv=187287091 | fed delta=84 kemq=603490 qrs_at_capture=103999 twdtw=155248 pulse=1114
+RULEDBG row 1115 pos 104251 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1319922 i1=50392486 pv=187434196 | fed delta=74 kemq=1238986 qrs_at_capture=104177 twdtw=226304 pulse=1116
+RULEDBG row 1117 pos 104423 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1314414 i1=51514620 pv=164354257 | fed delta=78 kemq=622998 qrs_at_capture=104345 twdtw=250760 pulse=1118
+RULEDBG row 1134 pos 106097 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1187990 i1=40829380 pv=136058894 | fed delta=74 kemq=1203694 qrs_at_capture=106023 twdtw=102802 pulse=1135
+RULEDBG row 1138 pos 106475 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1337796 i1=42193769 pv=161815312 | fed delta=84 kemq=1460914 qrs_at_capture=106391 twdtw=167504 pulse=1139
+RULEDBG row 1145 pos 107137 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1386720 i1=41888472 pv=155196673 | fed delta=86 kemq=1261960 qrs_at_capture=107051 twdtw=490192 pulse=1146
+RULEDBG row 1165 pos 108889 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1433544 i1=52453975 pv=177554441 | fed delta=84 kemq=1441758 qrs_at_capture=108805 twdtw=253952 pulse=1166
+RULEDBG row 1179 pos 110383 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1508874 i1=54084335 pv=188017724 | fed delta=84 kemq=1580578 qrs_at_capture=110299 twdtw=318952 pulse=1180
+RULEDBG row 1180 pos 110469 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1257744 i1=54261881 pv=135026733 | fed delta=86 kemq=1508874 qrs_at_capture=110383 twdtw=78884 pulse=1181
+RULEDBG row 1189 pos 111319 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1112578 i1=52004549 pv=217126940 | fed delta=70 kemq=713070 qrs_at_capture=111249 twdtw=246676 pulse=1190
+RULEDBG row 1193 pos 111713 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1582080 i1=53709358 pv=200698006 | fed delta=86 kemq=1422724 qrs_at_capture=111627 twdtw=408064 pulse=1194
+RULEDBG row 1198 pos 112221 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1675740 i1=55524529 pv=244514044 | fed delta=86 kemq=743758 qrs_at_capture=112135 twdtw=33402 pulse=1199
+RULEDBG row 1200 pos 112393 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1647154 i1=57377858 pv=210323898 | fed delta=82 kemq=1555164 qrs_at_capture=112311 twdtw=500654 pulse=1201
+RULEDBG row 1202 pos 112573 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1519676 i1=57908665 pv=195096966 | fed delta=84 kemq=1566250 qrs_at_capture=112489 twdtw=293882 pulse=1203
+RULEDBG row 1207 pos 113095 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1305130 i1=55569797 pv=163878882 | fed delta=74 kemq=1128156 qrs_at_capture=113021 twdtw=43786 pulse=1208
+RULEDBG row 1214 pos 113751 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1694248 i1=53108669 pv=266366738 | fed delta=86 kemq=1316782 qrs_at_capture=113665 twdtw=351440 pulse=1215
+RULEDBG row 1225 pos 114907 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1612418 i1=60187422 pv=211628087 | fed delta=84 kemq=1403400 qrs_at_capture=114823 twdtw=487710 pulse=1226
+RULEDBG row 1226 pos 114989 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1696440 i1=60483236 pv=239980444 | fed delta=82 kemq=1612418 qrs_at_capture=114907 twdtw=541894 pulse=1227
+RULEDBG row 1230 pos 115385 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1185674 i1=59727210 pv=195422347 | fed delta=68 kemq=1313246 qrs_at_capture=115317 twdtw=172276 pulse=1231
+RULEDBG row 1241 pos 116375 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1388040 i1=61065103 pv=159679170 | fed delta=72 kemq=1322104 qrs_at_capture=116303 twdtw=386530 pulse=1242
+RULEDBG row 1245 pos 116861 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1532740 i1=58774280 pv=206155887 | fed delta=80 kemq=1570282 qrs_at_capture=116781 twdtw=247964 pulse=1246
+RULEDBG row 1246 pos 116941 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1567224 i1=58983650 pv=198385238 | fed delta=80 kemq=1532740 qrs_at_capture=116861 twdtw=210596 pulse=1247
+RULEDBG row 1249 pos 117241 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1476854 i1=57390063 pv=222079689 | fed delta=70 kemq=798534 qrs_at_capture=117171 twdtw=378140 pulse=1250
+RULEDBG row 1250 pos 117327 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1580580 i1=58270079 pv=216077840 | fed delta=86 kemq=1476854 qrs_at_capture=117241 twdtw=295454 pulse=1251
+RULEDBG row 1251 pos 117413 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1549950 i1=58852535 pv=199258383 | fed delta=86 kemq=1580580 qrs_at_capture=117327 twdtw=21540 pulse=1252
+RULEDBG row 1252 pos 117487 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1570338 i1=58836576 pv=210371642 | fed delta=74 kemq=1549950 qrs_at_capture=117413 twdtw=333032 pulse=1253
+RULEDBG row 1253 pos 117575 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1413440 i1=59169901 pv=200072571 | fed delta=88 kemq=1570338 qrs_at_capture=117487 twdtw=62604 pulse=1254
+RULEDBG row 1259 pos 118113 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1534402 i1=58195619 pv=188918677 | fed delta=80 kemq=1463098 qrs_at_capture=118033 twdtw=214042 pulse=1260
+RULEDBG row 1263 pos 118597 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1377706 i1=57718477 pv=147127711 | fed delta=82 kemq=1545128 qrs_at_capture=118515 twdtw=409320 pulse=1264
+RULEDBG row 1282 pos 120669 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1296748 i1=56457456 pv=196357162 | fed delta=68 kemq=769120 qrs_at_capture=120601 twdtw=214032 pulse=1283
+RULEDBG row 1432 pos 134525 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1766122 i1=60429037 pv=318274181 | fed delta=74 kemq=1037972 qrs_at_capture=134451 twdtw=346836 pulse=1433
+RULEDBG row 1445 pos 135687 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1715074 i1=59702795 pv=240148064 | fed delta=80 kemq=736370 qrs_at_capture=135607 twdtw=164086 pulse=1446
+RULEDBG row 1452 pos 136487 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1512614 i1=57473332 pv=191058798 | fed delta=76 kemq=1168192 qrs_at_capture=136411 twdtw=258012 pulse=1453
+RULEDBG row 1453 pos 136565 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1374836 i1=57038301 pv=156141134 | fed delta=78 kemq=1512614 qrs_at_capture=136487 twdtw=378244 pulse=1454
+RULEDBG row 1456 pos 136877 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1237280 i1=55016560 pv=136263267 | fed delta=72 kemq=1457254 qrs_at_capture=136805 twdtw=143056 pulse=1457
+RULEDBG row 1464 pos 137601 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1202028 i1=49842733 pv=125249394 | fed delta=74 kemq=1544722 qrs_at_capture=137527 twdtw=310238 pulse=1465
+RULEDBG row 1469 pos 138023 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1668888 i1=48313624 pv=221376503 | fed delta=82 kemq=1456718 qrs_at_capture=137941 twdtw=538032 pulse=1470
+RULEDBG row 1477 pos 138723 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1232214 i1=45835152 pv=136538056 | fed delta=72 kemq=638372 qrs_at_capture=138651 twdtw=276128 pulse=1478
+RULEDBG row 1480 pos 139065 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1283108 i1=46212887 pv=138985029 | fed delta=82 kemq=1475434 qrs_at_capture=138983 twdtw=308460 pulse=1481
+RULEDBG row 1483 pos 139371 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1135348 i1=44571955 pv=135796135 | fed delta=70 kemq=1248250 qrs_at_capture=139301 twdtw=139388 pulse=1484
+RULEDBG row 1490 pos 139945 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1566090 i1=46423774 pv=193579751 | fed delta=74 kemq=772354 qrs_at_capture=139871 twdtw=334828 pulse=1491
+RULEDBG row 1499 pos 140927 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1257126 i1=48424632 pv=131864094 | fed delta=76 kemq=1417538 qrs_at_capture=140851 twdtw=267274 pulse=1500
+RULEDBG row 1501 pos 141109 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1535134 i1=48602690 pv=206500797 | fed delta=80 kemq=807106 qrs_at_capture=141029 twdtw=203368 pulse=1502
+RULEDBG row 1504 pos 141417 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1247008 i1=49953524 pv=140618666 | fed delta=72 kemq=1430334 qrs_at_capture=141345 twdtw=67294 pulse=1505
+RULEDBG row 1517 pos 142709 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1491212 i1=56203775 pv=182191131 | fed delta=84 kemq=1600574 qrs_at_capture=142625 twdtw=169444 pulse=1518
+RULEDBG row 1548 pos 146055 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1399022 i1=59537544 pv=169710045 | fed delta=74 kemq=1681460 qrs_at_capture=145981 twdtw=86624 pulse=1549
+RULEDBG row 1552 pos 146401 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1286112 i1=78616713 pv=130410936 | fed delta=74 kemq=1530474 qrs_at_capture=146327 twdtw=284378 pulse=1553
+RULEDBG row 1559 pos 147129 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1516932 i1=74365318 pv=181266200 | fed delta=64 kemq=831748 qrs_at_capture=147065 twdtw=388368 pulse=1560
+RULEDBG row 1569 pos 148129 dut pita=1 rej=1 | gold pita=1 rej=0 flag=2 kem=657918 i1=72274837 pv=49566087 | fed delta=82 kemq=712958 qrs_at_capture=148047 twdtw=106638 pulse=1570
+RULEDBG row 1576 pos 148923 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1758732 i1=76802938 pv=245575107 | fed delta=86 kemq=829236 qrs_at_capture=148837 twdtw=50240 pulse=1577
+RULEDBG row 1577 pos 149005 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1049644 i1=78194616 pv=118135702 | fed delta=82 kemq=1758732 qrs_at_capture=148923 twdtw=108654 pulse=1578
+RULEDBG row 1589 pos 150205 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1378748 i1=74198058 pv=158671276 | fed delta=80 kemq=1783394 qrs_at_capture=150125 twdtw=325762 pulse=1590
+RULEDBG row 1590 pos 150285 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1622798 i1=72794397 pv=209597545 | fed delta=80 kemq=1378748 qrs_at_capture=150205 twdtw=357002 pulse=1591
+RULEDBG row 1616 pos 153081 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1519584 i1=68285063 pv=195940315 | fed delta=82 kemq=1524466 qrs_at_capture=152999 twdtw=316072 pulse=1617
+RULEDBG row 1622 pos 153655 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1129372 i1=67145806 pv=105034546 | fed delta=66 kemq=1433508 qrs_at_capture=153589 twdtw=26058 pulse=1623
+RULEDBG row 1624 pos 153855 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1240898 i1=63808454 pv=166804679 | fed delta=86 kemq=613418 qrs_at_capture=153769 twdtw=59354 pulse=1625
+RULEDBG row 1625 pos 153917 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1205586 i1=63286790 pv=120148800 | fed delta=62 kemq=1240898 qrs_at_capture=153855 twdtw=144906 pulse=1626
+RULEDBG row 1635 pos 154917 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1438876 i1=60094324 pv=166431668 | fed delta=86 kemq=1185152 qrs_at_capture=154831 twdtw=49720 pulse=1636
+RULEDBG row 1648 pos 156337 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1575328 i1=62246943 pv=204143540 | fed delta=78 kemq=1366014 qrs_at_capture=156259 twdtw=270668 pulse=1649
+RULEDBG row 1662 pos 157891 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1654696 i1=65729212 pv=218927271 | fed delta=86 kemq=752728 qrs_at_capture=157805 twdtw=160102 pulse=1663
+RULEDBG row 1675 pos 159355 dut pita=1 rej=1 | gold pita=1 rej=0 flag=2 kem=450338 i1=67170311 pv=44506190 | fed delta=78 kemq=714622 qrs_at_capture=159277 twdtw=222758 pulse=1676
+RULEDBG row 1683 pos 160139 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1561462 i1=66964418 pv=209146533 | fed delta=84 kemq=802014 qrs_at_capture=160055 twdtw=298306 pulse=1684
+RULEDBG row 1710 pos 163065 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1516702 i1=65480894 pv=190981497 | fed delta=86 kemq=1396798 qrs_at_capture=162979 twdtw=91760 pulse=1711
+RULEDBG row 1711 pos 163153 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1692300 i1=65342270 pv=233082198 | fed delta=88 kemq=1516702 qrs_at_capture=163065 twdtw=107216 pulse=1712
+RULEDBG row 1716 pos 163673 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1442880 i1=66126629 pv=174849604 | fed delta=86 kemq=688328 qrs_at_capture=163587 twdtw=219896 pulse=1717
+RULEDBG row 1717 pos 163751 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1557562 i1=65403166 pv=191078004 | fed delta=78 kemq=1442880 qrs_at_capture=163673 twdtw=334928 pulse=1718
+RULEDBG row 1720 pos 164033 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1389348 i1=64802620 pv=197508628 | fed delta=88 kemq=700426 qrs_at_capture=163945 twdtw=41796 pulse=1721
+RULEDBG row 1733 pos 165381 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1415064 i1=65402846 pv=160024055 | fed delta=84 kemq=1611252 qrs_at_capture=165297 twdtw=318102 pulse=1734
+RULEDBG row 1739 pos 166039 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1614310 i1=64489674 pv=213871263 | fed delta=88 kemq=777656 qrs_at_capture=165951 twdtw=244796 pulse=1740
+RULEDBG row 1801 pos 173267 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1308638 i1=122164243 pv=242853007 | fed delta=86 kemq=1623812 qrs_at_capture=173181 twdtw=211162 pulse=1802
+RULEDBG row 1870 pos 180247 dut pita=1 rej=1 | gold pita=1 rej=0 flag=2 kem=426888 i1=68197831 pv=36608771 | fed delta=56 kemq=813812 qrs_at_capture=180191 twdtw=235874 pulse=1871
+RULEDBG row 1922 pos 185259 dut pita=1 rej=1 | gold pita=1 rej=0 flag=2 kem=292238 i1=65435708 pv=20191111 | fed delta=58 kemq=478874 qrs_at_capture=185201 twdtw=199684 pulse=1923
+RULEDBG row 1924 pos 185445 dut pita=1 rej=1 | gold pita=1 rej=0 flag=2 kem=256380 i1=63861175 pv=11095114 | fed delta=56 kemq=468316 qrs_at_capture=185389 twdtw=118594 pulse=1925
+RULEDBG row 1974 pos 190179 dut pita=1 rej=1 | gold pita=1 rej=0 flag=2 kem=347648 i1=56775060 pv=17490137 | fed delta=66 kemq=654862 qrs_at_capture=190113 twdtw=121952 pulse=1975
+RULEDBG row 2000 pos 192599 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1467180 i1=50068985 pv=198502877 | fed delta=64 kemq=1101486 qrs_at_capture=192535 twdtw=102530 pulse=2001
+RULEDBG row 2032 pos 195563 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1753522 i1=90386504 pv=274473070 | fed delta=76 kemq=1466000 qrs_at_capture=195487 twdtw=215098 pulse=2033
+RULEDBG row 2035 pos 195859 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1239882 i1=93289449 pv=133811418 | fed delta=66 kemq=1848926 qrs_at_capture=195793 twdtw=158612 pulse=2036
+RULEDBG row 2451 pos 234397 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1305184 i1=56643612 pv=178261516 | fed delta=74 kemq=632866 qrs_at_capture=234323 twdtw=87424 pulse=2452
+RULEDBG row 2454 pos 234671 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1450066 i1=56631788 pv=193732256 | fed delta=72 kemq=872322 qrs_at_capture=234599 twdtw=152326 pulse=2455
+RULEDBG row 2875 pos 273905 dut pita=1 rej=1 | gold pita=1 rej=0 flag=2 kem=332896 i1=65227531 pv=27973277 | fed delta=62 kemq=643468 qrs_at_capture=273843 twdtw=135924 pulse=2876
+RULEDBG row 3428 pos 324945 dut pita=1 rej=1 | gold pita=1 rej=0 flag=2 kem=352446 i1=57646708 pv=16633280 | fed delta=72 kemq=595984 qrs_at_capture=324873 twdtw=69790 pulse=3429
+RULEDBG row 3901 pos 368199 dut pita=1 rej=1 | gold pita=1 rej=0 flag=2 kem=309476 i1=59741127 pv=16371589 | fed delta=64 kemq=580342 qrs_at_capture=368135 twdtw=90558 pulse=3902
+tb_top: ambang_state[0] dut = 29 golden = 29
+tb_top: ambang_state[1] dut = 6 golden = 6
+tb_top: ambang_state[2] dut = 112 golden = 112
+tb_top: ambang_state[3] dut = 6 golden = 6
+tb_top: ambang_state[4] dut = 106 golden = 106
+tb_top: ambang_state[5] dut = 0 golden = 0
+tb_top: ambang_state[6] dut = 26 golden = 26
+tb_top: ambang_state[7] dut = 1202 golden = 1202
+tb_top: ambang_state[8] dut = 2586 golden = 2586
+NOTE t_rule rejected peaks dut=2014 peaks with t_rejected in golden=189 (deviation, not gated: this standalone instance is fed on a different timing from the Fase 7 fixture, and the T rule the chain decides with is the one inside peak_detect, whose flag column matches the golden exactly)
+NOTE t_rule rejected peak verdicts dut=2014 gold=1909 (dut is stricter; the rule output feeds only the debug mux)
+tb_top: words compared: masukan16=449999 lp=449999 hp=449999 turunan=449999 kuadrat=449999 jendela=449999
+tb_top: data mismatches: masukan16=0 lp=0 hp=0 turunan=0 kuadrat=0 jendela=0
+tb_top: index mismatches: masukan16=0 lp=0 hp=0 turunan=0 kuadrat=0 jendela=0
+tb_top: peaks dut=4777 expected=4777, qrs dut=2596 expected=2596, o_beat_count=2596
+tb_top: peak mismatches pos=0 kem=0 flags=0 i1=0 pkf=0 kind=0 evidx=0 evval=0 qrs=0 i2_model=0
+tb_top: ambang_state mismatches = 0, beat/count mismatches = 0, peak print rows = 0
+tb_top: rr interval=0 mark=0 sample distance=0 mismatches, intervals dut=2595 golden=2595
+tb_top: unit bridge: ratio 33 user -> 10813 code (golden code 10813), entropy 63 user -> 10322 code (golden code 10322)
+tb_top: classifier emissions dut=638, golden rows compared=602 of 602, emissions without a golden row=36
+tb_top: windows compared dut=638 expected=602 o_window_count=638; class=0 wi=0 qr=0 qe=0 mismatches (plus 0 non gated lag notes)
+tb_top: confidence max=1000 nonzero=602 of 602 decisions (no golden column; reported, not gated)
+tb_top: triage census dut fired=189 TP=95 FP=94 FN=0 TN=413 | golden fired=189 TP=95 FP=94 FN=0 TN=413
+tb_top: feature events m_ev_valid=638, golden windows=602
+tb_top: t_rule peak pulses=4777 of 4777 peaks, rejected=2014, golden t_rejected in range=1909, overrun cycles=0, stale=0
+tb_top: status o_gap_count=0 o_clamp_count=402 o_rr_long_count=3 o_sample_idx=449999 o_irq=0x15
+tb_top: port witness mismatches = 0, m_overflow cycles = 0
+tb_top: AXI witness, idle because this bench drives no traffic: awready=1 wready=1 arready=1 bresp=0 rresp=0 rdata=0x00000000
+tb_top: unknown golden words used = 0
+tb_top: unknown t_rule inputs at peak pulses = 0 of 4777 pulses (must be 0: the two engine comparison on the verdict path is only valid once no input is unknown)
+tb_top: CK_STREAM = b254f0da0524e710
+tb_top: CK_PEAK   = ff1f6a10a1028888
+tb_top: CK_DOWN   = 3fbbce7cafe82708
+tb_top: CK_EVENT  = cf143c61d384939e
+tb_top: end of stream slack: frames fed=450000, stage outputs masukan16=449999 lp=449999 turunan=449999 kuadrat=449999 jendela=449999 (the last frame of each stage is still in its pipeline at teardown)
+tb_top: total mismatches = 0
+tb_top: PASS
+- ../rtl/tb/tb_top.sv:980: Verilog $finish
+- S i m u l a t i o n   R e p o r t: Verilator 5.053 devel
+- Verilator: $finish at 288us; walltime 117.397 s; speed 2.453 us/s
+- Verilator: cpu 117.376 s on 1 threads; allocated 16 MB

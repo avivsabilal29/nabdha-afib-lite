@@ -1,0 +1,19 @@
+run_lint.sh: top=t_rule sources=2 timing=0
+  ../rtl/afib_lite_pkg.sv
+  ../rtl/t_rule.sv
+%Warning-WIDTHEXPAND: ../rtl/t_rule.sv:216:52: Operator ADD expects 32 bits on the RHS, but RHS's VARREF 'j_w' generates 4 bits.
+                                             : ... note: In instance 't_rule'
+  216 |             lane_k_w[li] = (W_LANE_A)'((N_TAP - 1) + j_w) - lane_i_w[li];
+      |                                                    ^
+                      ... For warning description see https://verilator.org/warn/WIDTHEXPAND?v=5.020
+                      ... Use "/* verilator lint_off WIDTHEXPAND */" and lint_on around source to disable this message.
+%Warning-UNDRIVEN: ../rtl/t_rule.sv:139:37: Signal is not driven: 'o_overrun'
+                                          : ... note: In instance 't_rule'
+  139 |     output reg                      o_overrun
+      |                                     ^~~~~~~~~
+%Warning-UNUSEDSIGNAL: ../rtl/t_rule.sv:186:32: Signal is not used: 'ovr_q'
+                                              : ... note: In instance 't_rule'
+  186 |     reg                        ovr_q;       
+      |                                ^~~~~
+%Error: Exiting due to 3 warning(s)
+exit=1

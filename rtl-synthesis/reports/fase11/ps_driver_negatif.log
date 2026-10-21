@@ -1,0 +1,73 @@
+driver self-test against the register-semantics MOCK, not against a board
+map: 38 slots, 0x00..0x94 (frozen map 36 slots 0x00..0x8C plus DEBUG_SEL 0x90 and DEBUG_VAL 0x94 of plan decision 9)
+base address: /proc/device-tree/afib_lite (from the device tree, never a constant)
+fixture: 450000 words, 4777 peaks, 588 feature rows, chain sha256 90df6e5b457307d3
+feature row 0: [217.23422768389736, 0.3031880358463327, 0.45161290322580644, 0.5880542503656206]
+  init 1/9 versi      0x00010001
+  init 1/9 VERSION_ID is not zero                PASS
+  init 2/9 scratch    0x00000000 (BAD)
+  init 2/9 SCRATCH reads back what was written   FAIL: wrote 0xA5A55A5A, read 0x00000000
+  init 3/9 irq_clear 0x00000000
+  init 4/9 ctrl_stop 0x00000000
+  init 5/9 rate_div 0x00061A7F
+  init 6/9 format_cfg 0x004C00FA
+  init 7/9 ambang ratio=0x00000021 entropy=0x0000003F arm=0x0000000F
+  init 8/9 ctrl 0x00000001
+  init 9/9 status 0x00000081
+run1 burst: {'samples_in': 60000, 'writes_in': 60000, 'windows': 155, 'beats': 648, 'gap': 0, 'clamp': 0, 'ovf': 0, 'idx': 60000} in 0.110 s (544 kS/s host side)
+  latency: windows=155 | pipeline tail samples min 3 max 3 | tap group delay samples 40 (model says 40.11) | window fill s train min 9.7
+  csv: reports/fase11/ps_driver/window.pl.04015.20261021.01.csv (155 rows)
+  first 3 rows: [(0, 1, 3, 40), (1, 1, 3, 40), (2, 1, 3, 40)]
+  class histogram of the logged windows: {1: 60, 2: 95}
+  csv header: window_no,beat_count,idx_first_beat,idx_in_last,idx_dec,latensi_pipa_sampel,tundaan_grup_sampel,latensi_jendela_sampel,latensi_jendela_s,kelas,confidence,feat_ratio,feat_entropy,rr_last,clamp_count,gap_count,ovf,fifo_level,idx_in_read,ts_host
+  csv row 1  : 0,32,91,2925,2928,3,40,2837,11.348,1,112,61,59,56,0,0,0,0,2925,1792516592.6818783
+  run1 every window logged exactly once          PASS
+  run1 both classes present, the decision path is really crossed PASS
+  run1 no gap and no overflow on a clean replay  PASS
+  init 1/9 versi      0x00010001
+  init 1/9 VERSION_ID is not zero                PASS
+  init 2/9 scratch    0xA5A55A5A (ok)
+  init 2/9 SCRATCH reads back what was written   PASS
+  init 3/9 irq_clear 0x00000000
+  init 4/9 ctrl_stop 0x00000000
+  init 5/9 rate_div 0x00061A7F
+  init 6/9 format_cfg 0x004C00FA
+  init 7/9 ambang ratio=0x00000021 entropy=0x0000003F arm=0x0000000F
+  init 8/9 ctrl 0x00000001
+  init 9/9 status 0x00000081
+run2 realtime: {'samples_in': 1250, 'writes_in': 1250, 'windows': 0, 'beats': 14, 'gap': 0, 'clamp': 0, 'ovf': 0, 'idx': 1250}, wall 5.000 s for 1250 samples (expected 5.000 s)
+  run2 one sample slot per sample, 1250 samples is 5.000 s PASS
+  init 1/9 versi      0x00010001
+  init 1/9 VERSION_ID is not zero                PASS
+  init 2/9 scratch    0xA5A55A5A (ok)
+  init 2/9 SCRATCH reads back what was written   PASS
+  init 3/9 irq_clear 0x00000000
+  init 4/9 ctrl_stop 0x00000000
+  init 5/9 rate_div 0x00061A7F
+  init 6/9 format_cfg 0x004C00FA
+  init 7/9 ambang ratio=0x00000021 entropy=0x0000003F arm=0x0000000F
+  init 8/9 ctrl 0x00000001
+  init 9/9 status 0x00000081
+run3 clamp stress: {'samples_in': 6000, 'writes_in': 6000, 'windows': 8, 'beats': 63, 'gap': 0, 'clamp': 6000, 'ovf': 0, 'idx': 6000, 'marker_last': '0x1', 'status': '0xD1'}
+  run3 every stressed sample counted as clamped  PASS
+  run3 the clamp flag reached the status register PASS
+  init 1/9 versi      0x00010001
+  init 1/9 VERSION_ID is not zero                PASS
+  init 2/9 scratch    0xA5A55A5A (ok)
+  init 2/9 SCRATCH reads back what was written   PASS
+  init 3/9 irq_clear 0x00000000
+  init 4/9 ctrl_stop 0x00000000
+  init 5/9 rate_div 0x00061A7F
+  init 6/9 format_cfg 0x004C00FA
+  init 7/9 ambang ratio=0x00000021 entropy=0x0000003F arm=0x0000000F
+  init 8/9 ctrl 0x00000001
+  init 9/9 status 0x00000081
+run4 gap injection: gap=2 ovf=0 idx=4000
+  run4 two injected gaps counted, none lost      PASS
+run5 measure csv: reports/fase11/ps_driver/measure.energi.pl.20261021.01.csv
+  run5 measure header matches the plan, byte for byte PASS
+  window csv header matches the plan, byte for byte PASS
+  window csv row 1 is the plan's measured row shape, 20 fields PASS
+checks: 12, failed: 1
+FAIL: init 2/9 SCRATCH reads back what was written (wrote 0xA5A55A5A, read 0x00000000)
+FAIL: driver self test against the mock

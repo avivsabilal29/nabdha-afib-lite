@@ -1,0 +1,13 @@
+peaks 4777  qrs 2596  ambang_state [29, 6, 112, 6, 106, 0, 26, 1202, 2586]  frames 450000
+  04015.ambang_state.hex           words      9 bytes       81 sha256 e8032e25cb41eea26e47edcfc5e1003e
+  04015.fase5.counts.hex           words      4 bytes       36 sha256 e7c1258e9e8db7ff45e74ea92e92892f
+  04015.puncak.evidx.hex           words   4777 bytes    42993 sha256 57828a86ee6dcf67b8477c76c7fddd99
+  04015.puncak.flag.hex            words   4777 bytes    42993 sha256 945c1af91060b85b64aba45e48205bbd
+  04015.puncak.i1.hex              words   4777 bytes    42993 sha256 e4518eb1051bb12d140dd454110af490
+  04015.puncak.i2.hex              words   4777 bytes    42993 sha256 224d0ba5c614f7113a155c54327349a9
+  04015.puncak.kem.hex             words   4777 bytes    42993 sha256 4f78971db0b1f22a6e3e7bdd3adb320d
+  04015.puncak.kind.hex            words   4777 bytes    42993 sha256 a6a46a81912ff9d3f2805f20bdf8ad87
+  04015.puncak.pkf.hex             words   4777 bytes    42993 sha256 5239077e42b06828893e698d21e834f7
+  04015.puncak.pos.hex             words   4777 bytes    42993 sha256 ef950fbf9a453e841b8ea306f7c60a23
+  04015.puncak.pv.hex              words   4777 bytes    42993 sha256 3dc8e376f8fb90d0bea672eeedb60915
+  04015.qrs.hex                    words   2596 bytes    23364 sha256 cdae041c182f9b8929312563b515b824

@@ -1,0 +1,3 @@
+run_sim.sh: tb=../rtl/tb/tb_peak_detect.sv sources=2 plusargs=2
+  plusargs forwarded to vvp: +VECTOR=../rtl/tb/vektor/fase5-verifikasi-aviv +GOLD=/home/avivsabilalm/.hermes/cache/scratch/rtlplan2/vektor
+  compiled first (packages): ../rtl/afib_lite_pkg.sv

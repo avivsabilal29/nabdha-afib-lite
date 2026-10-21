@@ -1,0 +1,10 @@
+task 12c494b9-595e-44b5-953f-5c6394515501 (test_sim)
+  1 368 mutate -mode inv -module acq_frontend -cell $procdff$420 -port Q -portbit 0 -wire sample_en_q -wirebit 0 -src ../../../rtl/acq_frontend.sv:128.26-128.37 -src ../../../rtl/acq_frontend.sv:309.5-326.8
++ echo '1 ERROR'
++ REPO=/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite
++ DEB=/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl-synthesis/debroot/usr/bin
++ IVLDIR=/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl-synthesis/debroot/usr/lib/x86_64-linux-gnu/ivl
++ F0=/home/avivsabilalm/.hermes/cache/scratch/rtlplan2/fase0
++ bash /home/avivsabilalm/eda/oss-cad-suite/libexec/../share/mcy/scripts/create_mutated.sh
++ /home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl-synthesis/debroot/usr/bin/iverilog -B /home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl-synthesis/debroot/usr/lib/x86_64-linux-gnu/ivl -g2012 -o sim.vvp /home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/afib_lite_pkg.sv /home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/tb/tb_kuantisasi.sv mutated.v
++ /home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl-synthesis/debroot/usr/bin/vvp sim.vvp +VECTOR=/home/avivsabilalm/.hermes/cache/scratch/rtlplan2/fase0/04015.masukan16.hex +MANIFEST=/home/avivsabilalm/.hermes/cache/scratch/rtlplan2/fase0/04015.manifest.json +STIM=/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/tb/vektor/04015.stimulus.hex +LIMIT=20000 +MUT=1

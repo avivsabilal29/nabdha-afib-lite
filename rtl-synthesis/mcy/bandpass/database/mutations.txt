@@ -1,0 +1,1000 @@
+mutate -mode none
+mutate -mode cnot1 -module bandpass -cell $procdff$798 -port Q -portbit 16 -ctrlbit 10 -wire d_hp -wirebit 16 -src ../../../rtl/bandpass.sv:80.37-80.41 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$850 -port Q -portbit 13 -wire lp_hist_q[22] -wirebit 13 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procmux$787 -port Y -portbit 0 -wire sl_a -wirebit 0 -src ../../../rtl/bandpass.sv:137.24-137.28 -src ../../../rtl/bandpass.sv:141.111-141.111 -src ../../../rtl/bandpass.sv:140.9-144.16
+mutate -mode const1 -module bandpass -cell $procdff$820 -port Q -portbit 2 -wire x_hist_q[4] -wirebit 2 -src ../../../rtl/bandpass.sv:99.25-99.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:157$ternary$25 -port A -portbit 19 -src ../../../rtl/bandpass.sv:157.70-157.111
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:162$ternary$39 -port Y -portbit 14 -wire hp_sat -wirebit 14 -src ../../../rtl/bandpass.sv:162.25-162.31 -src ../../../rtl/bandpass.sv:162.37-163.62
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:132$ternary$13 -port A -portbit 1 -src ../../../rtl/bandpass.sv:132.32-133.71
+mutate -mode const1 -module bandpass -cell $procmux$736 -port B -portbit 2 -src ../../../rtl/bandpass.sv:215.20-215.20 -src ../../../rtl/bandpass.sv:199.13-254.20
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:135$ternary$19 -port Y -portbit 0 -wire lp_cin -wirebit 0 -src ../../../rtl/bandpass.sv:135.21-135.27 -src ../../../rtl/bandpass.sv:135.32-135.72
+mutate -mode inv -module bandpass -cell $procdff$828 -port Q -portbit 21 -wire y1_ext -wirebit 25 -src ../../../rtl/bandpass.sv:124.21-124.27 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procmux$695 -port Y -portbit 9 -src ../../../rtl/bandpass.sv:222.25-222.32 -src ../../../rtl/bandpass.sv:222.21-225.24
+mutate -mode const1 -module bandpass -cell $procmux$507 -port A -portbit 2 -src ../../../rtl/bandpass.sv:199.24-199.24 -src ../../../rtl/bandpass.sv:199.13-254.20
+mutate -mode const0 -module bandpass -cell $procdff$836 -port Q -portbit 2 -wire lp_hist_q[8] -wirebit 2 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$851 -port Q -portbit 2 -wire lp_hist_q[23] -wirebit 2 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$812 -port Q -portbit 0 -wire last_q -wirebit 0 -src ../../../rtl/bandpass.sv:113.25-113.31 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$791 -port Q -portbit 0 -wire m_tvalid -wirebit 0 -src ../../../rtl/bandpass.sv:72.37-72.45 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procmux$647 -port B -portbit 8 -src ../../../rtl/bandpass.sv:234.25-234.42 -src ../../../rtl/bandpass.sv:234.21-252.24
+mutate -mode inv -module bandpass -cell $procdff$794 -port Q -portbit 5 -wire m_tuser -wirebit 5 -src ../../../rtl/bandpass.sv:75.37-75.44 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procmux$450 -port B -portbit 12 -ctrlbit 3 -src ../../../rtl/bandpass.sv:168.13-168.20 -src ../../../rtl/bandpass.sv:168.9-255.12
+mutate -mode const1 -module bandpass -cell $procmux$789_CMP0 -port A -portbit 1 -src ../../../rtl/bandpass.sv:140.26-140.26 -src ../../../rtl/bandpass.sv:140.9-144.16
+mutate -mode const1 -module bandpass -cell $procmux$555 -port B -portbit 1 -wire s_tuser -wirebit 1 -src ../../../rtl/bandpass.sv:68.37-68.44 -src ../../../rtl/bandpass.sv:201.25-201.33 -src ../../../rtl/bandpass.sv:201.21-214.24
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:133$not$11 -port Y -portbit 7 -src ../../../rtl/bandpass.sv:133.64-133.71
+mutate -mode cnot1 -module bandpass -cell $../../../rtl/bandpass.sv:160$add$36 -port Y -portbit 13 -ctrlbit 19 -wire hp_sum -wirebit 13 -src ../../../rtl/bandpass.sv:160.25-160.31 -src ../../../rtl/bandpass.sv:160.37-160.67
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:133$ternary$12 -port Y -portbit 7 -src ../../../rtl/bandpass.sv:133.32-133.71
+mutate -mode cnot1 -module bandpass -cell $procdff$835 -port Q -portbit 4 -ctrlbit 10 -wire lp_hist_q[7] -wirebit 4 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procmux$246 -port B -portbit 21 -src ../../../rtl/bandpass.sv:215.20-215.20 -src ../../../rtl/bandpass.sv:199.13-254.20
+mutate -mode cnot0 -module bandpass -cell $../../../rtl/bandpass.sv:132$not$9 -port A -portbit 4 -ctrlbit 13 -src ../../../rtl/bandpass.sv:132.54-132.61
+mutate -mode const1 -module bandpass -cell $procmux$260 -port Y -portbit 12 -src ../../../rtl/bandpass.sv:168.13-168.20 -src ../../../rtl/bandpass.sv:168.9-255.12
+mutate -mode const1 -module bandpass -cell $procmux$789_CMP0 -port Y -portbit 0 -src ../../../rtl/bandpass.sv:140.26-140.26 -src ../../../rtl/bandpass.sv:140.9-144.16
+mutate -mode const0 -module bandpass -cell $procmux$206 -port Y -portbit 9 -src ../../../rtl/bandpass.sv:215.20-215.20 -src ../../../rtl/bandpass.sv:199.13-254.20
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:226$eq$45 -port A -portbit 1 -src ../../../rtl/bandpass.sv:226.25-226.43
+mutate -mode cnot0 -module bandpass -cell $../../../rtl/bandpass.sv:130$ternary$6 -port Y -portbit 25 -ctrlbit 10 -wire lp_add_a -wirebit 25 -src ../../../rtl/bandpass.sv:130.21-130.29 -src ../../../rtl/bandpass.sv:130.32-130.74
+mutate -mode cnot1 -module bandpass -cell $../../../rtl/bandpass.sv:132$not$9 -port A -portbit 3 -ctrlbit 5 -src ../../../rtl/bandpass.sv:132.54-132.61
+mutate -mode cnot1 -module bandpass -cell $procdff$857 -port Q -portbit 13 -ctrlbit 6 -wire lp_hist_q[29] -wirebit 13 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procdff$852 -port Q -portbit 19 -ctrlbit 16 -wire lp_hist_q[24] -wirebit 19 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:131$ternary$14 -port A -portbit 3 -src ../../../rtl/bandpass.sv:131.32-133.71
+mutate -mode cnot0 -module bandpass -cell $../../../rtl/bandpass.sv:148$add$22 -port Y -portbit 2 -ctrlbit 6 -wire sl_sum -wirebit 2 -src ../../../rtl/bandpass.sv:148.22-148.28 -src ../../../rtl/bandpass.sv:148.31-148.86
+mutate -mode cnot1 -module bandpass -cell $../../../rtl/bandpass.sv:162$ternary$39 -port Y -portbit 11 -ctrlbit 6 -wire hp_sat -wirebit 11 -src ../../../rtl/bandpass.sv:162.25-162.31 -src ../../../rtl/bandpass.sv:162.37-163.62
+mutate -mode inv -module bandpass -cell $procdff$800 -port Q -portbit 4 -wire lp_out_q -wirebit 4 -src ../../../rtl/bandpass.sv:101.25-101.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procdff$849 -port Q -portbit 3 -ctrlbit 6 -wire lp_hist_q[21] -wirebit 3 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:134$logic_or$17 -port Y -portbit 0 -wire lp_sub -wirebit 0 -src ../../../rtl/bandpass.sv:134.21-134.27 -src ../../../rtl/bandpass.sv:134.32-134.74
+mutate -mode const1 -module bandpass -cell $procmux$692 -port B -portbit 8 -src ../../../rtl/bandpass.sv:168.13-168.20 -src ../../../rtl/bandpass.sv:168.9-255.12
+mutate -mode cnot0 -module bandpass -cell $procdff$795 -port Q -portbit 17 -ctrlbit 30 -wire m_sample_idx -wirebit 17 -src ../../../rtl/bandpass.sv:76.37-76.49 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procdff$806 -port Q -portbit 5 -ctrlbit 11 -wire acc_hp_q -wirebit 5 -src ../../../rtl/bandpass.sv:107.25-107.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:162$not$38 -port Y -portbit 0 -src ../../../rtl/bandpass.sv:162.77-162.96
+mutate -mode cnot1 -module bandpass -cell $procmux$687 -port Y -portbit 5 -ctrlbit 7 -src ../../../rtl/bandpass.sv:217.38-217.38 -src ../../../rtl/bandpass.sv:217.21-221.28
+mutate -mode cnot1 -module bandpass -cell $../../../rtl/bandpass.sv:158$ternary$32 -port A -portbit 15 -ctrlbit 18 -src ../../../rtl/bandpass.sv:158.36-158.116
+mutate -mode const0 -module bandpass -cell $procmux$530 -port B -portbit 9 -src ../../../rtl/bandpass.sv:168.13-168.20 -src ../../../rtl/bandpass.sv:168.9-255.12
+mutate -mode cnot0 -module bandpass -cell $../../../rtl/bandpass.sv:158$ternary$31 -port A -portbit 17 -ctrlbit 9 -src ../../../rtl/bandpass.sv:158.70-158.116
+mutate -mode inv -module bandpass -cell $procmux$589 -port A -portbit 1 -src ../../../rtl/bandpass.sv:215.20-215.20 -src ../../../rtl/bandpass.sv:199.13-254.20
+mutate -mode cnot0 -module bandpass -cell $procdff$801 -port Q -portbit 3 -ctrlbit 0 -wire acc_lp_next -wirebit 3 -src ../../../rtl/bandpass.sv:150.22-150.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procmux$515 -port A -portbit 12 -ctrlbit 5 -src ../../../rtl/bandpass.sv:201.25-201.33 -src ../../../rtl/bandpass.sv:201.21-214.24
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:158$ternary$32 -port Y -portbit 7 -wire hp_add_b -wirebit 7 -src ../../../rtl/bandpass.sv:158.25-158.33 -src ../../../rtl/bandpass.sv:158.36-158.116
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:158$not$30 -port Y -portbit 8 -src ../../../rtl/bandpass.sv:158.107-158.116
+mutate -mode inv -module bandpass -cell $procmux$697 -port Y -portbit 12 -src ../../../rtl/bandpass.sv:215.20-215.20 -src ../../../rtl/bandpass.sv:199.13-254.20
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:134$eq$15 -port B -portbit 0 -src ../../../rtl/bandpass.sv:134.33-134.50
+mutate -mode cnot0 -module bandpass -cell $../../../rtl/bandpass.sv:158$ternary$31 -port Y -portbit 26 -ctrlbit 11 -src ../../../rtl/bandpass.sv:158.70-158.116
+mutate -mode cnot1 -module bandpass -cell $procdff$837 -port Q -portbit 13 -ctrlbit 9 -wire lp_hist_q[9] -wirebit 13 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procdff$823 -port Q -portbit 1 -wire x_hist_q[7] -wirebit 1 -src ../../../rtl/bandpass.sv:99.25-99.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:158$not$29 -port Y -portbit 12 -src ../../../rtl/bandpass.sv:158.92-158.104
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:165$logic_and$42 -port Y -portbit 0 -wire lp_last -wirebit 0 -src ../../../rtl/bandpass.sv:165.10-165.17 -src ../../../rtl/bandpass.sv:165.20-165.63
+mutate -mode inv -module bandpass -cell $procdff$790 -port Q -portbit 17 -wire m_tdata -wirebit 17 -src ../../../rtl/bandpass.sv:71.37-71.44 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procmux$787 -port B -portbit 12 -wire lp_add_a -wirebit 3 -src ../../../rtl/bandpass.sv:130.21-130.29 -src ../../../rtl/bandpass.sv:141.111-141.111 -src ../../../rtl/bandpass.sv:140.9-144.16
+mutate -mode inv -module bandpass -cell $procdff$790 -port Q -portbit 25 -wire m_tdata -wirebit 25 -src ../../../rtl/bandpass.sv:71.37-71.44 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procmux$677 -port B -portbit 1 -ctrlbit 3 -src ../../../rtl/bandpass.sv:218.106-218.106 -src ../../../rtl/bandpass.sv:217.21-221.28
+mutate -mode const1 -module bandpass -cell $procdff$813 -port Q -portbit 1 -wire tuser_q -wirebit 1 -src ../../../rtl/bandpass.sv:114.25-114.32 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procdff$836 -port Q -portbit 12 -wire lp_hist_q[8] -wirebit 12 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $../../../rtl/bandpass.sv:157$ternary$26 -port B -portbit 23 -ctrlbit 12 -src ../../../rtl/bandpass.sv:157.36-157.111
+mutate -mode inv -module bandpass -cell $procmux$360 -port A -portbit 11 -src ../../../rtl/bandpass.sv:168.13-168.20 -src ../../../rtl/bandpass.sv:168.9-255.12
+mutate -mode inv -module bandpass -cell $procdff$797 -port Q -portbit 18 -wire d_lp -wirebit 18 -src ../../../rtl/bandpass.sv:79.37-79.41 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$797 -port Q -portbit 20 -wire d_lp -wirebit 20 -src ../../../rtl/bandpass.sv:79.37-79.41 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procdff$842 -port Q -portbit 17 -wire lp_hist_q[14] -wirebit 17 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procmux$576 -port A -portbit 1 -ctrlbit 0 -src ../../../rtl/bandpass.sv:215.20-215.20 -src ../../../rtl/bandpass.sv:199.13-254.20
+mutate -mode cnot1 -module bandpass -cell $procdff$848 -port Q -portbit 8 -ctrlbit 0 -wire lp_hist_q[20] -wirebit 8 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:131$eq$7 -port A -portbit 0 -src ../../../rtl/bandpass.sv:131.33-131.50
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:244$or$51 -port A -portbit 0 -src ../../../rtl/bandpass.sv:244.41-244.55
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:160$add$36 -port Y -portbit 26 -wire hp_sum -wirebit 26 -src ../../../rtl/bandpass.sv:160.25-160.31 -src ../../../rtl/bandpass.sv:160.37-160.67
+mutate -mode const1 -module bandpass -cell $procdff$805 -port Q -portbit 8 -wire hp_y_q -wirebit 8 -src ../../../rtl/bandpass.sv:106.25-106.31 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:160$add$35 -port A -portbit 22 -wire hp_add_a -wirebit 22 -src ../../../rtl/bandpass.sv:157.25-157.33 -src ../../../rtl/bandpass.sv:160.37-160.56
+mutate -mode const0 -module bandpass -cell $procdff$829 -port Q -portbit 18 -wire y2_ext -wirebit 18 -src ../../../rtl/bandpass.sv:125.21-125.27 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procdff$835 -port Q -portbit 6 -wire lp_hist_q[7] -wirebit 6 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $../../../rtl/bandpass.sv:131$ternary$14 -port Y -portbit 5 -ctrlbit 3 -wire lp_add_b -wirebit 5 -src ../../../rtl/bandpass.sv:131.21-131.29 -src ../../../rtl/bandpass.sv:131.32-133.71
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:132$ternary$13 -port A -portbit 0 -src ../../../rtl/bandpass.sv:132.32-133.71
+mutate -mode inv -module bandpass -cell $procmux$783 -port Y -portbit 3 -wire sl_b -wirebit 3 -src ../../../rtl/bandpass.sv:138.24-138.28 -src ../../../rtl/bandpass.sv:141.111-141.111 -src ../../../rtl/bandpass.sv:140.9-144.16
+mutate -mode inv -module bandpass -cell $procdff$845 -port Q -portbit 17 -wire lp_hist_q[17] -wirebit 17 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:158$not$30 -port Y -portbit 0 -src ../../../rtl/bandpass.sv:158.107-158.116
+mutate -mode cnot0 -module bandpass -cell $procdff$794 -port Q -portbit 0 -ctrlbit 4 -wire m_tuser -wirebit 0 -src ../../../rtl/bandpass.sv:75.37-75.44 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procmux$579 -port B -portbit 0 -src ../../../rtl/bandpass.sv:201.25-201.33 -src ../../../rtl/bandpass.sv:201.21-214.24
+mutate -mode cnot1 -module bandpass -cell $procdff$803 -port Q -portbit 0 -ctrlbit 2 -wire acc_lp_ext -wirebit 18 -src ../../../rtl/bandpass.sv:120.21-120.31 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$852 -port Q -portbit 21 -wire lp_hist_q[24] -wirebit 21 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procdff$857 -port Q -portbit 10 -ctrlbit 15 -wire lp_hist_q[29] -wirebit 10 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procdff$838 -port Q -portbit 9 -ctrlbit 16 -wire lp_hist_q[10] -wirebit 9 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procdff$807 -port Q -portbit 0 -wire ovf_q -wirebit 0 -src ../../../rtl/bandpass.sv:108.25-108.30 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$805 -port Q -portbit 4 -wire hp_y_q -wirebit 4 -src ../../../rtl/bandpass.sv:106.25-106.31 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procmux$480 -port B -portbit 7 -ctrlbit 4 -src ../../../rtl/bandpass.sv:168.13-168.20 -src ../../../rtl/bandpass.sv:168.9-255.12
+mutate -mode inv -module bandpass -cell $procdff$814 -port Q -portbit 13 -wire idx_q -wirebit 13 -src ../../../rtl/bandpass.sv:115.25-115.30 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procmux$525 -port A -portbit 8 -ctrlbit 13 -src ../../../rtl/bandpass.sv:201.25-201.33 -src ../../../rtl/bandpass.sv:201.21-214.24
+mutate -mode cnot0 -module bandpass -cell $procmux$545 -port B -portbit 17 -ctrlbit 22 -wire s_sample_idx -wirebit 17 -src ../../../rtl/bandpass.sv:69.37-69.49 -src ../../../rtl/bandpass.sv:201.25-201.33 -src ../../../rtl/bandpass.sv:201.21-214.24
+mutate -mode inv -module bandpass -cell $procmux$565 -port B -portbit 0 -wire s_tlast -wirebit 0 -src ../../../rtl/bandpass.sv:67.37-67.44 -src ../../../rtl/bandpass.sv:201.25-201.33 -src ../../../rtl/bandpass.sv:201.21-214.24
+mutate -mode cnot0 -module bandpass -cell $procdff$799 -port Q -portbit 11 -ctrlbit 4 -wire x_hold_q -wirebit 11 -src ../../../rtl/bandpass.sv:98.25-98.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procdff$811 -port Q -portbit 1 -ctrlbit 0 -wire hp_pass_q -wirebit 1 -src ../../../rtl/bandpass.sv:112.25-112.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:161$xor$37 -port B -portbit 0 -src ../../../rtl/bandpass.sv:161.37-161.72
+mutate -mode inv -module bandpass -cell $procdff$851 -port Q -portbit 9 -wire lp_hist_q[23] -wirebit 9 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procmux$403 -port Y -portbit 14 -src ../../../rtl/bandpass.sv:234.25-234.42 -src ../../../rtl/bandpass.sv:234.21-252.24
+mutate -mode cnot1 -module bandpass -cell $procdff$813 -port Q -portbit 3 -ctrlbit 7 -wire tuser_q -wirebit 3 -src ../../../rtl/bandpass.sv:114.25-114.32 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procmux$705 -port B -portbit 10 -ctrlbit 8 -wire s_tdata -wirebit 10 -src ../../../rtl/bandpass.sv:65.37-65.44 -src ../../../rtl/bandpass.sv:201.25-201.33 -src ../../../rtl/bandpass.sv:201.21-214.24
+mutate -mode const0 -module bandpass -cell $procdff$802 -port Q -portbit 3 -wire acc_mid_q -wirebit 3 -src ../../../rtl/bandpass.sv:103.25-103.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:148$add$21 -port A -portbit 0 -wire sl_a -wirebit 0 -src ../../../rtl/bandpass.sv:137.24-137.28 -src ../../../rtl/bandpass.sv:148.31-148.58
+mutate -mode cnot0 -module bandpass -cell $procmux$587 -port Y -portbit 1 -ctrlbit 0 -src ../../../rtl/bandpass.sv:226.25-226.43 -src ../../../rtl/bandpass.sv:226.21-231.24
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:228$add$46 -port A -portbit 1 -src ../../../rtl/bandpass.sv:228.39-228.55
+mutate -mode const1 -module bandpass -cell $procmux$620 -port B -portbit 1 -src ../../../rtl/bandpass.sv:201.25-201.33 -src ../../../rtl/bandpass.sv:201.21-214.24
+mutate -mode cnot1 -module bandpass -cell $procdff$800 -port Q -portbit 12 -ctrlbit 0 -wire lp_out_q -wirebit 12 -src ../../../rtl/bandpass.sv:101.25-101.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:165$eq$40 -port B -portbit 1 -src ../../../rtl/bandpass.sv:165.21-165.38
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:135$ternary$19 -port B -portbit 0 -wire lp_sub -wirebit 0 -src ../../../rtl/bandpass.sv:134.21-134.27 -src ../../../rtl/bandpass.sv:135.32-135.72
+mutate -mode cnot1 -module bandpass -cell $../../../rtl/bandpass.sv:230$add$47 -port A -portbit 1 -ctrlbit 0 -src ../../../rtl/bandpass.sv:230.39-230.56
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:158$eq$28 -port Y -portbit 0 -src ../../../rtl/bandpass.sv:158.71-158.88
+mutate -mode inv -module bandpass -cell $procdff$792 -port Q -portbit 0 -wire m_overflow -wirebit 0 -src ../../../rtl/bandpass.sv:73.37-73.47 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procdff$809 -port Q -portbit 1 -ctrlbit 0 -wire lp_pass_q -wirebit 1 -src ../../../rtl/bandpass.sv:110.25-110.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procdff$858 -port Q -portbit 2 -ctrlbit 7 -wire lp_hist_q[30] -wirebit 2 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procdff$859 -port Q -portbit 18 -wire lp_hist_q[31] -wirebit 18 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:133$eq$10 -port B -portbit 0 -src ../../../rtl/bandpass.sv:133.33-133.50
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:159$eq$33 -port Y -portbit 0 -src ../../../rtl/bandpass.sv:159.37-159.54
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:161$xor$37 -port Y -portbit 0 -wire hp_ovf -wirebit 0 -src ../../../rtl/bandpass.sv:161.25-161.31 -src ../../../rtl/bandpass.sv:161.37-161.72
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:234$ne$48 -port Y -portbit 0 -src ../../../rtl/bandpass.sv:234.25-234.42
+mutate -mode const0 -module bandpass -cell $procdff$829 -port Q -portbit 4 -wire y2_ext -wirebit 4 -src ../../../rtl/bandpass.sv:125.21-125.27 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procdff$810 -port Q -portbit 1 -ctrlbit 0 -wire lp_slice_q -wirebit 1 -src ../../../rtl/bandpass.sv:111.25-111.35 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$796 -port Q -portbit 0 -wire d_valid -wirebit 0 -src ../../../rtl/bandpass.sv:78.37-78.44 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:159$ternary$34 -port S -portbit 0 -src ../../../rtl/bandpass.sv:159.36-159.105
+mutate -mode inv -module bandpass -cell $procdff$793 -port Q -portbit 0 -wire m_tlast -wirebit 0 -src ../../../rtl/bandpass.sv:74.37-74.44 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$808 -port Q -portbit 1 -wire st_q -wirebit 1 -src ../../../rtl/bandpass.sv:109.25-109.29 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:236$add$49 -port Y -portbit 1 -src ../../../rtl/bandpass.sv:236.38-236.54
+mutate -mode cnot0 -module bandpass -cell $procdff$823 -port Q -portbit 14 -ctrlbit 8 -wire x_hist_q[7] -wirebit 14 -src ../../../rtl/bandpass.sv:99.25-99.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procdff$804 -port Q -portbit 0 -wire acc_cy_q -wirebit 0 -src ../../../rtl/bandpass.sv:105.25-105.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:165$logic_and$42 -port Y -portbit 0 -wire lp_last -wirebit 0 -src ../../../rtl/bandpass.sv:165.10-165.17 -src ../../../rtl/bandpass.sv:165.20-165.63
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:133$not$11 -port Y -portbit 11 -src ../../../rtl/bandpass.sv:133.64-133.71
+mutate -mode const0 -module bandpass -cell $procmux$477 -port Y -portbit 15 -src ../../../rtl/bandpass.sv:199.24-199.24 -src ../../../rtl/bandpass.sv:199.13-254.20
+mutate -mode const1 -module bandpass -cell $procdff$804 -port Q -portbit 0 -wire acc_cy_q -wirebit 0 -src ../../../rtl/bandpass.sv:105.25-105.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procdff$791 -port Q -portbit 0 -wire m_tvalid -wirebit 0 -src ../../../rtl/bandpass.sv:72.37-72.45 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:158$not$29 -port Y -portbit 3 -src ../../../rtl/bandpass.sv:158.92-158.104
+mutate -mode const0 -module bandpass -cell $procdff$814 -port Q -portbit 13 -wire idx_q -wirebit 13 -src ../../../rtl/bandpass.sv:115.25-115.30 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:157$ternary$26 -port B -portbit 8 -src ../../../rtl/bandpass.sv:157.36-157.111
+mutate -mode cnot0 -module bandpass -cell $procmux$545 -port B -portbit 20 -ctrlbit 7 -wire s_sample_idx -wirebit 20 -src ../../../rtl/bandpass.sv:69.37-69.49 -src ../../../rtl/bandpass.sv:201.25-201.33 -src ../../../rtl/bandpass.sv:201.21-214.24
+mutate -mode cnot0 -module bandpass -cell $../../../rtl/bandpass.sv:160$add$35 -port Y -portbit 11 -ctrlbit 9 -src ../../../rtl/bandpass.sv:160.37-160.56
+mutate -mode const1 -module bandpass -cell $procdff$831 -port Q -portbit 2 -wire lp_hist_q[3] -wirebit 2 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$847 -port Q -portbit 9 -wire lp_hist_q[19] -wirebit 9 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procdff$845 -port Q -portbit 6 -wire lp_hist_q[17] -wirebit 6 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procdff$805 -port Q -portbit 6 -wire hp_y_q -wirebit 6 -src ../../../rtl/bandpass.sv:106.25-106.31 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$794 -port Q -portbit 3 -wire m_tuser -wirebit 3 -src ../../../rtl/bandpass.sv:75.37-75.44 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procdff$806 -port Q -portbit 10 -wire acc_hp_q -wirebit 10 -src ../../../rtl/bandpass.sv:107.25-107.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procdff$845 -port Q -portbit 16 -ctrlbit 2 -wire lp_hist_q[17] -wirebit 16 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procdff$799 -port Q -portbit 6 -ctrlbit 5 -wire x_hold_q -wirebit 6 -src ../../../rtl/bandpass.sv:98.25-98.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procdff$810 -port Q -portbit 0 -wire lp_slice_q -wirebit 0 -src ../../../rtl/bandpass.sv:111.25-111.35 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:148$add$22 -port A -portbit 1 -src ../../../rtl/bandpass.sv:148.31-148.86
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:130$ternary$6 -port A -portbit 0 -src ../../../rtl/bandpass.sv:130.32-130.74
+mutate -mode cnot1 -module bandpass -cell $../../../rtl/bandpass.sv:157$ternary$25 -port A -portbit 23 -ctrlbit 19 -src ../../../rtl/bandpass.sv:157.70-157.111
+mutate -mode cnot0 -module bandpass -cell $procdff$828 -port Q -portbit 10 -ctrlbit 2 -wire y1_ext -wirebit 10 -src ../../../rtl/bandpass.sv:124.21-124.27 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:131$eq$7 -port A -portbit 0 -src ../../../rtl/bandpass.sv:131.33-131.50
+mutate -mode inv -module bandpass -cell $procmux$705 -port B -portbit 13 -wire s_tdata -wirebit 13 -src ../../../rtl/bandpass.sv:65.37-65.44 -src ../../../rtl/bandpass.sv:201.25-201.33 -src ../../../rtl/bandpass.sv:201.21-214.24
+mutate -mode cnot0 -module bandpass -cell $procdff$795 -port Q -portbit 1 -ctrlbit 4 -wire m_sample_idx -wirebit 1 -src ../../../rtl/bandpass.sv:76.37-76.49 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:157$ternary$26 -port Y -portbit 10 -wire hp_add_a -wirebit 10 -src ../../../rtl/bandpass.sv:157.25-157.33 -src ../../../rtl/bandpass.sv:157.36-157.111
+mutate -mode const1 -module bandpass -cell $procdff$807 -port Q -portbit 0 -wire ovf_q -wirebit 0 -src ../../../rtl/bandpass.sv:108.25-108.30 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $../../../rtl/bandpass.sv:133$ternary$12 -port Y -portbit 23 -ctrlbit 9 -src ../../../rtl/bandpass.sv:133.32-133.71
+mutate -mode inv -module bandpass -cell $procmux$380 -port Y -portbit 18 -src ../../../rtl/bandpass.sv:168.13-168.20 -src ../../../rtl/bandpass.sv:168.9-255.12
+mutate -mode cnot0 -module bandpass -cell $procdff$827 -port Q -portbit 7 -ctrlbit 4 -wire x_hist_q[11] -wirebit 7 -src ../../../rtl/bandpass.sv:99.25-99.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procdff$799 -port Q -portbit 4 -ctrlbit 14 -wire x_hold_q -wirebit 4 -src ../../../rtl/bandpass.sv:98.25-98.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procdff$812 -port Q -portbit 0 -wire last_q -wirebit 0 -src ../../../rtl/bandpass.sv:113.25-113.31 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procdff$849 -port Q -portbit 0 -wire lp_hist_q[21] -wirebit 0 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:148$add$22 -port Y -portbit 4 -wire sl_sum -wirebit 4 -src ../../../rtl/bandpass.sv:148.22-148.28 -src ../../../rtl/bandpass.sv:148.31-148.86
+mutate -mode const0 -module bandpass -cell $procmux$783 -port Y -portbit 6 -wire sl_b -wirebit 6 -src ../../../rtl/bandpass.sv:138.24-138.28 -src ../../../rtl/bandpass.sv:141.111-141.111 -src ../../../rtl/bandpass.sv:140.9-144.16
+mutate -mode cnot0 -module bandpass -cell $procmux$517 -port B -portbit 12 -ctrlbit 15 -src ../../../rtl/bandpass.sv:199.24-199.24 -src ../../../rtl/bandpass.sv:199.13-254.20
+mutate -mode cnot1 -module bandpass -cell $../../../rtl/bandpass.sv:158$ternary$32 -port Y -portbit 14 -ctrlbit 16 -wire hp_add_b -wirebit 14 -src ../../../rtl/bandpass.sv:158.25-158.33 -src ../../../rtl/bandpass.sv:158.36-158.116
+mutate -mode const0 -module bandpass -cell $procmux$695 -port Y -portbit 2 -src ../../../rtl/bandpass.sv:222.25-222.32 -src ../../../rtl/bandpass.sv:222.21-225.24
+mutate -mode cnot1 -module bandpass -cell $procmux$306 -port B -portbit 2 -ctrlbit 14 -src ../../../rtl/bandpass.sv:215.20-215.20 -src ../../../rtl/bandpass.sv:199.13-254.20
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:158$eq$28 -port A -portbit 1 -src ../../../rtl/bandpass.sv:158.71-158.88
+mutate -mode const1 -module bandpass -cell $procmux$565 -port B -portbit 0 -wire s_tlast -wirebit 0 -src ../../../rtl/bandpass.sv:67.37-67.44 -src ../../../rtl/bandpass.sv:201.25-201.33 -src ../../../rtl/bandpass.sv:201.21-214.24
+mutate -mode cnot1 -module bandpass -cell $procdff$797 -port Q -portbit 9 -ctrlbit 7 -wire d_lp -wirebit 9 -src ../../../rtl/bandpass.sv:79.37-79.41 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procdff$821 -port Q -portbit 3 -wire x_hist_q[5] -wirebit 3 -src ../../../rtl/bandpass.sv:99.25-99.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procmux$555 -port B -portbit 7 -ctrlbit 5 -wire s_tuser -wirebit 7 -src ../../../rtl/bandpass.sv:68.37-68.44 -src ../../../rtl/bandpass.sv:201.25-201.33 -src ../../../rtl/bandpass.sv:201.21-214.24
+mutate -mode cnot0 -module bandpass -cell $procdff$790 -port Q -portbit 2 -ctrlbit 20 -wire m_tdata -wirebit 2 -src ../../../rtl/bandpass.sv:71.37-71.44 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:148$add$21 -port Y -portbit 2 -src ../../../rtl/bandpass.sv:148.31-148.58
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:131$ternary$14 -port Y -portbit 0 -wire lp_add_b -wirebit 0 -src ../../../rtl/bandpass.sv:131.21-131.29 -src ../../../rtl/bandpass.sv:131.32-133.71
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:134$logic_or$17 -port B -portbit 0 -src ../../../rtl/bandpass.sv:134.32-134.74
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:236$add$49 -port A -portbit 1 -src ../../../rtl/bandpass.sv:236.38-236.54
+mutate -mode cnot0 -module bandpass -cell $procdff$798 -port Q -portbit 15 -ctrlbit 18 -wire d_hp -wirebit 15 -src ../../../rtl/bandpass.sv:80.37-80.41 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procmux$687 -port A -portbit 3 -src ../../../rtl/bandpass.sv:217.38-217.38 -src ../../../rtl/bandpass.sv:217.21-221.28
+mutate -mode inv -module bandpass -cell $procdff$840 -port Q -portbit 5 -wire lp_hist_q[12] -wirebit 5 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:236$add$49 -port Y -portbit 1 -src ../../../rtl/bandpass.sv:236.38-236.54
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:134$eq$15 -port Y -portbit 0 -src ../../../rtl/bandpass.sv:134.33-134.50
+mutate -mode inv -module bandpass -cell $procmux$667 -port A -portbit 3 -src ../../../rtl/bandpass.sv:218.106-218.106 -src ../../../rtl/bandpass.sv:217.21-221.28
+mutate -mode const0 -module bandpass -cell $procmux$760 -port S -portbit 0 -src ../../../rtl/bandpass.sv:168.13-168.20 -src ../../../rtl/bandpass.sv:168.9-255.12
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:230$add$47 -port Y -portbit 1 -src ../../../rtl/bandpass.sv:230.39-230.56
+mutate -mode cnot0 -module bandpass -cell $procdff$806 -port Q -portbit 3 -ctrlbit 17 -wire acc_hp_q -wirebit 3 -src ../../../rtl/bandpass.sv:107.25-107.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:135$ternary$19 -port Y -portbit 0 -wire lp_cin -wirebit 0 -src ../../../rtl/bandpass.sv:135.21-135.27 -src ../../../rtl/bandpass.sv:135.32-135.72
+mutate -mode inv -module bandpass -cell $procmux$253 -port B -portbit 13 -src ../../../rtl/bandpass.sv:234.25-234.42 -src ../../../rtl/bandpass.sv:234.21-252.24
+mutate -mode cnot0 -module bandpass -cell $procmux$233 -port B -portbit 12 -ctrlbit 10 -src ../../../rtl/bandpass.sv:234.25-234.42 -src ../../../rtl/bandpass.sv:234.21-252.24
+mutate -mode inv -module bandpass -cell $procmux$545 -port B -portbit 18 -wire s_sample_idx -wirebit 18 -src ../../../rtl/bandpass.sv:69.37-69.49 -src ../../../rtl/bandpass.sv:201.25-201.33 -src ../../../rtl/bandpass.sv:201.21-214.24
+mutate -mode const1 -module bandpass -cell $procdff$801 -port Q -portbit 1 -wire acc_lp_next -wirebit 1 -src ../../../rtl/bandpass.sv:150.22-150.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:160$add$35 -port B -portbit 4 -wire hp_add_b -wirebit 4 -src ../../../rtl/bandpass.sv:158.25-158.33 -src ../../../rtl/bandpass.sv:160.37-160.56
+mutate -mode inv -module bandpass -cell $procdff$803 -port Q -portbit 3 -wire acc_lp_ext -wirebit 21 -src ../../../rtl/bandpass.sv:120.21-120.31 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:133$ternary$12 -port B -portbit 24 -src ../../../rtl/bandpass.sv:133.32-133.71
+mutate -mode cnot0 -module bandpass -cell $../../../rtl/bandpass.sv:160$add$35 -port B -portbit 26 -ctrlbit 7 -wire hp_add_b -wirebit 26 -src ../../../rtl/bandpass.sv:158.25-158.33 -src ../../../rtl/bandpass.sv:160.37-160.56
+mutate -mode cnot1 -module bandpass -cell $procdff$818 -port Q -portbit 3 -ctrlbit 9 -wire x_hist_q[2] -wirebit 3 -src ../../../rtl/bandpass.sv:99.25-99.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procdff$802 -port Q -portbit 5 -ctrlbit 3 -wire acc_mid_q -wirebit 5 -src ../../../rtl/bandpass.sv:103.25-103.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procdff$808 -port Q -portbit 1 -wire st_q -wirebit 1 -src ../../../rtl/bandpass.sv:109.25-109.29 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:148$add$22 -port B -portbit 0 -wire lp_cin -wirebit 0 -src ../../../rtl/bandpass.sv:135.21-135.27 -src ../../../rtl/bandpass.sv:148.31-148.86
+mutate -mode const0 -module bandpass -cell $procmux$600 -port B -portbit 1 -src ../../../rtl/bandpass.sv:226.25-226.43 -src ../../../rtl/bandpass.sv:226.21-231.24
+mutate -mode cnot1 -module bandpass -cell $procdff$854 -port Q -portbit 16 -ctrlbit 17 -wire lp_hist_q[26] -wirebit 16 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procdff$824 -port Q -portbit 6 -ctrlbit 14 -wire x_hist_q[8] -wirebit 6 -src ../../../rtl/bandpass.sv:99.25-99.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:148$add$21 -port B -portbit 0 -wire sl_b -wirebit 0 -src ../../../rtl/bandpass.sv:138.24-138.28 -src ../../../rtl/bandpass.sv:148.31-148.58
+mutate -mode const1 -module bandpass -cell $procmux$136 -port B -portbit 8 -src ../../../rtl/bandpass.sv:215.20-215.20 -src ../../../rtl/bandpass.sv:199.13-254.20
+mutate -mode cnot1 -module bandpass -cell $../../../rtl/bandpass.sv:165$eq$40 -port A -portbit 1 -ctrlbit 0 -src ../../../rtl/bandpass.sv:165.21-165.38
+mutate -mode const0 -module bandpass -cell $procdff$811 -port Q -portbit 1 -wire hp_pass_q -wirebit 1 -src ../../../rtl/bandpass.sv:112.25-112.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $../../../rtl/bandpass.sv:228$add$46 -port A -portbit 1 -ctrlbit 0 -src ../../../rtl/bandpass.sv:228.39-228.55
+mutate -mode cnot1 -module bandpass -cell $procdff$859 -port Q -portbit 8 -ctrlbit 6 -wire lp_hist_q[31] -wirebit 8 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$814 -port Q -portbit 26 -wire idx_q -wirebit 26 -src ../../../rtl/bandpass.sv:115.25-115.30 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procdff$795 -port Q -portbit 22 -ctrlbit 14 -wire m_sample_idx -wirebit 22 -src ../../../rtl/bandpass.sv:76.37-76.49 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:158$not$29 -port Y -portbit 0 -src ../../../rtl/bandpass.sv:158.92-158.104
+mutate -mode const0 -module bandpass -cell $procdff$793 -port Q -portbit 0 -wire m_tlast -wirebit 0 -src ../../../rtl/bandpass.sv:74.37-74.44 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procdff$800 -port Q -portbit 14 -wire lp_out_q -wirebit 14 -src ../../../rtl/bandpass.sv:101.25-101.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procdff$809 -port Q -portbit 0 -ctrlbit 1 -wire lp_pass_q -wirebit 0 -src ../../../rtl/bandpass.sv:110.25-110.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procdff$829 -port Q -portbit 2 -wire y2_ext -wirebit 2 -src ../../../rtl/bandpass.sv:125.21-125.27 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:244$or$51 -port B -portbit 0 -src ../../../rtl/bandpass.sv:244.41-244.55
+mutate -mode const1 -module bandpass -cell $procdff$837 -port Q -portbit 21 -wire lp_hist_q[9] -wirebit 21 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:133$not$11 -port A -portbit 17 -src ../../../rtl/bandpass.sv:133.64-133.71
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:133$eq$10 -port Y -portbit 0 -src ../../../rtl/bandpass.sv:133.33-133.50
+mutate -mode const0 -module bandpass -cell $procdff$854 -port Q -portbit 21 -wire lp_hist_q[26] -wirebit 21 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procdff$852 -port Q -portbit 12 -ctrlbit 5 -wire lp_hist_q[24] -wirebit 12 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:159$ternary$34 -port B -portbit 0 -src ../../../rtl/bandpass.sv:159.36-159.105
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:162$not$38 -port Y -portbit 0 -src ../../../rtl/bandpass.sv:162.77-162.96
+mutate -mode const0 -module bandpass -cell $procdff$792 -port Q -portbit 0 -wire m_overflow -wirebit 0 -src ../../../rtl/bandpass.sv:73.37-73.47 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procmux$273 -port B -portbit 8 -src ../../../rtl/bandpass.sv:234.25-234.42 -src ../../../rtl/bandpass.sv:234.21-252.24
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:159$eq$33 -port A -portbit 1 -src ../../../rtl/bandpass.sv:159.37-159.54
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:160$add$35 -port B -portbit 24 -wire hp_add_b -wirebit 24 -src ../../../rtl/bandpass.sv:158.25-158.33 -src ../../../rtl/bandpass.sv:160.37-160.56
+mutate -mode const0 -module bandpass -cell $procdff$857 -port Q -portbit 0 -wire lp_hist_q[29] -wirebit 0 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procdff$796 -port Q -portbit 0 -wire d_valid -wirebit 0 -src ../../../rtl/bandpass.sv:78.37-78.44 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $../../../rtl/bandpass.sv:236$add$49 -port A -portbit 0 -ctrlbit 1 -src ../../../rtl/bandpass.sv:236.38-236.54
+mutate -mode cnot0 -module bandpass -cell $procmux$495 -port Y -portbit 7 -ctrlbit 14 -src ../../../rtl/bandpass.sv:201.25-201.33 -src ../../../rtl/bandpass.sv:201.21-214.24
+mutate -mode const0 -module bandpass -cell $procmux$250 -port A -portbit 2 -src ../../../rtl/bandpass.sv:168.13-168.20 -src ../../../rtl/bandpass.sv:168.9-255.12
+mutate -mode const1 -module bandpass -cell $procdff$811 -port Q -portbit 0 -wire hp_pass_q -wirebit 0 -src ../../../rtl/bandpass.sv:112.25-112.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:161$xor$37 -port Y -portbit 0 -wire hp_ovf -wirebit 0 -src ../../../rtl/bandpass.sv:161.25-161.31 -src ../../../rtl/bandpass.sv:161.37-161.72
+mutate -mode const0 -module bandpass -cell $procdff$798 -port Q -portbit 25 -wire d_hp -wirebit 25 -src ../../../rtl/bandpass.sv:80.37-80.41 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$816 -port Q -portbit 13 -wire x_hist_q[0] -wirebit 13 -src ../../../rtl/bandpass.sv:99.25-99.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procdff$852 -port Q -portbit 10 -ctrlbit 7 -wire lp_hist_q[24] -wirebit 10 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procmux$313 -port A -portbit 17 -src ../../../rtl/bandpass.sv:234.25-234.42 -src ../../../rtl/bandpass.sv:234.21-252.24
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:162$ternary$39 -port Y -portbit 10 -wire hp_sat -wirebit 10 -src ../../../rtl/bandpass.sv:162.25-162.31 -src ../../../rtl/bandpass.sv:162.37-163.62
+mutate -mode inv -module bandpass -cell $procmux$413 -port B -portbit 8 -src ../../../rtl/bandpass.sv:234.25-234.42 -src ../../../rtl/bandpass.sv:234.21-252.24
+mutate -mode inv -module bandpass -cell $procdff$800 -port Q -portbit 8 -wire lp_out_q -wirebit 8 -src ../../../rtl/bandpass.sv:101.25-101.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:157$ternary$25 -port A -portbit 2 -src ../../../rtl/bandpass.sv:157.70-157.111
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:160$add$35 -port A -portbit 19 -wire hp_add_a -wirebit 19 -src ../../../rtl/bandpass.sv:157.25-157.33 -src ../../../rtl/bandpass.sv:160.37-160.56
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:130$ternary$6 -port A -portbit 4 -src ../../../rtl/bandpass.sv:130.32-130.74
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:228$add$46 -port A -portbit 0 -src ../../../rtl/bandpass.sv:228.39-228.55
+mutate -mode cnot1 -module bandpass -cell $procmux$306 -port A -portbit 19 -ctrlbit 7 -src ../../../rtl/bandpass.sv:215.20-215.20 -src ../../../rtl/bandpass.sv:199.13-254.20
+mutate -mode cnot0 -module bandpass -cell $procdff$806 -port Q -portbit 1 -ctrlbit 12 -wire acc_hp_q -wirebit 1 -src ../../../rtl/bandpass.sv:107.25-107.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:132$ternary$13 -port A -portbit 22 -src ../../../rtl/bandpass.sv:132.32-133.71
+mutate -mode const0 -module bandpass -cell $procmux$660 -port B -portbit 0 -wire sl_sum -wirebit 9 -src ../../../rtl/bandpass.sv:148.22-148.28 -src ../../../rtl/bandpass.sv:215.20-215.20 -src ../../../rtl/bandpass.sv:199.13-254.20
+mutate -mode inv -module bandpass -cell $procmux$695 -port A -portbit 18 -src ../../../rtl/bandpass.sv:222.25-222.32 -src ../../../rtl/bandpass.sv:222.21-225.24
+mutate -mode const0 -module bandpass -cell $procdff$820 -port Q -portbit 8 -wire x_hist_q[4] -wirebit 8 -src ../../../rtl/bandpass.sv:99.25-99.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procdff$836 -port Q -portbit 20 -wire lp_hist_q[8] -wirebit 20 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procdff$828 -port Q -portbit 18 -wire y1_ext -wirebit 18 -src ../../../rtl/bandpass.sv:124.21-124.27 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procdff$810 -port Q -portbit 0 -wire lp_slice_q -wirebit 0 -src ../../../rtl/bandpass.sv:111.25-111.35 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procdff$813 -port Q -portbit 7 -ctrlbit 0 -wire tuser_q -wirebit 7 -src ../../../rtl/bandpass.sv:114.25-114.32 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procdff$808 -port Q -portbit 0 -wire st_q -wirebit 0 -src ../../../rtl/bandpass.sv:109.25-109.29 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:158$ternary$31 -port A -portbit 14 -src ../../../rtl/bandpass.sv:158.70-158.116
+mutate -mode const1 -module bandpass -cell $procmux$783 -port A -portbit 2 -wire lp_add_b -wirebit 20 -src ../../../rtl/bandpass.sv:131.21-131.29 -src ../../../rtl/bandpass.sv:141.111-141.111 -src ../../../rtl/bandpass.sv:140.9-144.16
+mutate -mode inv -module bandpass -cell $procmux$705 -port B -portbit 10 -wire s_tdata -wirebit 10 -src ../../../rtl/bandpass.sv:65.37-65.44 -src ../../../rtl/bandpass.sv:201.25-201.33 -src ../../../rtl/bandpass.sv:201.21-214.24
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:157$ternary$26 -port B -portbit 1 -src ../../../rtl/bandpass.sv:157.36-157.111
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:131$eq$7 -port Y -portbit 0 -src ../../../rtl/bandpass.sv:131.33-131.50
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:130$ternary$6 -port Y -portbit 25 -wire lp_add_a -wirebit 25 -src ../../../rtl/bandpass.sv:130.21-130.29 -src ../../../rtl/bandpass.sv:130.32-130.74
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:132$not$9 -port Y -portbit 23 -src ../../../rtl/bandpass.sv:132.54-132.61
+mutate -mode inv -module bandpass -cell $procmux$600 -port A -portbit 0 -src ../../../rtl/bandpass.sv:226.25-226.43 -src ../../../rtl/bandpass.sv:226.21-231.24
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:160$add$36 -port Y -portbit 2 -wire hp_sum -wirebit 2 -src ../../../rtl/bandpass.sv:160.25-160.31 -src ../../../rtl/bandpass.sv:160.37-160.67
+mutate -mode inv -module bandpass -cell $procdff$814 -port Q -portbit 10 -wire idx_q -wirebit 10 -src ../../../rtl/bandpass.sv:115.25-115.30 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procmux$677 -port Y -portbit 6 -ctrlbit 3 -src ../../../rtl/bandpass.sv:218.106-218.106 -src ../../../rtl/bandpass.sv:217.21-221.28
+mutate -mode cnot1 -module bandpass -cell $../../../rtl/bandpass.sv:158$not$30 -port A -portbit 3 -ctrlbit 4 -src ../../../rtl/bandpass.sv:158.107-158.116
+mutate -mode cnot1 -module bandpass -cell $procmux$555 -port B -portbit 0 -ctrlbit 1 -wire s_tuser -wirebit 0 -src ../../../rtl/bandpass.sv:68.37-68.44 -src ../../../rtl/bandpass.sv:201.25-201.33 -src ../../../rtl/bandpass.sv:201.21-214.24
+mutate -mode inv -module bandpass -cell $procdff$834 -port Q -portbit 18 -wire lp_hist_q[6] -wirebit 18 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procmux$687 -port B -portbit 7 -ctrlbit 0 -src ../../../rtl/bandpass.sv:217.38-217.38 -src ../../../rtl/bandpass.sv:217.21-221.28
+mutate -mode inv -module bandpass -cell $procdff$834 -port Q -portbit 21 -wire lp_hist_q[6] -wirebit 21 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procmux$787 -port Y -portbit 3 -wire sl_a -wirebit 3 -src ../../../rtl/bandpass.sv:137.24-137.28 -src ../../../rtl/bandpass.sv:141.111-141.111 -src ../../../rtl/bandpass.sv:140.9-144.16
+mutate -mode cnot0 -module bandpass -cell $procmux$455 -port B -portbit 15 -ctrlbit 8 -src ../../../rtl/bandpass.sv:201.25-201.33 -src ../../../rtl/bandpass.sv:201.21-214.24
+mutate -mode const0 -module bandpass -cell $procdff$850 -port Q -portbit 8 -wire lp_hist_q[22] -wirebit 8 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $../../../rtl/bandpass.sv:148$add$22 -port Y -portbit 5 -ctrlbit 8 -wire sl_sum -wirebit 5 -src ../../../rtl/bandpass.sv:148.22-148.28 -src ../../../rtl/bandpass.sv:148.31-148.86
+mutate -mode const0 -module bandpass -cell $procdff$821 -port Q -portbit 10 -wire x_hist_q[5] -wirebit 10 -src ../../../rtl/bandpass.sv:99.25-99.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:165$logic_and$42 -port B -portbit 0 -src ../../../rtl/bandpass.sv:165.20-165.63
+mutate -mode const0 -module bandpass -cell $procdff$841 -port Q -portbit 17 -wire lp_hist_q[13] -wirebit 17 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procdff$852 -port Q -portbit 20 -ctrlbit 4 -wire lp_hist_q[24] -wirebit 20 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procmux$789_CMP0 -port A -portbit 0 -src ../../../rtl/bandpass.sv:140.26-140.26 -src ../../../rtl/bandpass.sv:140.9-144.16
+mutate -mode const0 -module bandpass -cell $procdff$816 -port Q -portbit 9 -wire x_hist_q[0] -wirebit 9 -src ../../../rtl/bandpass.sv:99.25-99.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procdff$848 -port Q -portbit 4 -wire lp_hist_q[20] -wirebit 4 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:159$eq$33 -port Y -portbit 0 -src ../../../rtl/bandpass.sv:159.37-159.54
+mutate -mode const1 -module bandpass -cell $procdff$793 -port Q -portbit 0 -wire m_tlast -wirebit 0 -src ../../../rtl/bandpass.sv:74.37-74.44 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procmux$226 -port B -portbit 1 -ctrlbit 12 -src ../../../rtl/bandpass.sv:215.20-215.20 -src ../../../rtl/bandpass.sv:199.13-254.20
+mutate -mode cnot0 -module bandpass -cell $procmux$143 -port A -portbit 5 -ctrlbit 8 -src ../../../rtl/bandpass.sv:234.25-234.42 -src ../../../rtl/bandpass.sv:234.21-252.24
+mutate -mode const0 -module bandpass -cell $procmux$783 -port A -portbit 0 -wire lp_add_b -wirebit 18 -src ../../../rtl/bandpass.sv:131.21-131.29 -src ../../../rtl/bandpass.sv:141.111-141.111 -src ../../../rtl/bandpass.sv:140.9-144.16
+mutate -mode cnot0 -module bandpass -cell $procdff$802 -port Q -portbit 8 -ctrlbit 4 -wire acc_mid_q -wirebit 8 -src ../../../rtl/bandpass.sv:103.25-103.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procdff$791 -port Q -portbit 0 -wire m_tvalid -wirebit 0 -src ../../../rtl/bandpass.sv:72.37-72.45 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:159$ternary$34 -port B -portbit 0 -src ../../../rtl/bandpass.sv:159.36-159.105
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:133$eq$10 -port A -portbit 0 -src ../../../rtl/bandpass.sv:133.33-133.50
+mutate -mode const1 -module bandpass -cell $procmux$695 -port A -portbit 0 -src ../../../rtl/bandpass.sv:222.25-222.32 -src ../../../rtl/bandpass.sv:222.21-225.24
+mutate -mode const0 -module bandpass -cell $procdff$801 -port Q -portbit 1 -wire acc_lp_next -wirebit 1 -src ../../../rtl/bandpass.sv:150.22-150.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procmux$150 -port Y -portbit 1 -src ../../../rtl/bandpass.sv:168.13-168.20 -src ../../../rtl/bandpass.sv:168.9-255.12
+mutate -mode const1 -module bandpass -cell $procdff$792 -port Q -portbit 0 -wire m_overflow -wirebit 0 -src ../../../rtl/bandpass.sv:73.37-73.47 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procmux$565 -port B -portbit 0 -wire s_tlast -wirebit 0 -src ../../../rtl/bandpass.sv:67.37-67.44 -src ../../../rtl/bandpass.sv:201.25-201.33 -src ../../../rtl/bandpass.sv:201.21-214.24
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:165$eq$40 -port B -portbit 0 -src ../../../rtl/bandpass.sv:165.21-165.38
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:244$or$51 -port B -portbit 0 -src ../../../rtl/bandpass.sv:244.41-244.55
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:158$ternary$31 -port Y -portbit 19 -src ../../../rtl/bandpass.sv:158.70-158.116
+mutate -mode const1 -module bandpass -cell $procdff$846 -port Q -portbit 21 -wire lp_hist_q[18] -wirebit 21 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procdff$832 -port Q -portbit 17 -ctrlbit 6 -wire lp_hist_q[4] -wirebit 17 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:230$add$47 -port Y -portbit 1 -src ../../../rtl/bandpass.sv:230.39-230.56
+mutate -mode const1 -module bandpass -cell $procdff$803 -port Q -portbit 2 -wire acc_lp_ext -wirebit 20 -src ../../../rtl/bandpass.sv:120.21-120.31 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:158$eq$28 -port A -portbit 0 -src ../../../rtl/bandpass.sv:158.71-158.88
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:134$eq$15 -port A -portbit 1 -src ../../../rtl/bandpass.sv:134.33-134.50
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:135$ternary$19 -port B -portbit 0 -wire lp_sub -wirebit 0 -src ../../../rtl/bandpass.sv:134.21-134.27 -src ../../../rtl/bandpass.sv:135.32-135.72
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:162$not$38 -port Y -portbit 0 -src ../../../rtl/bandpass.sv:162.77-162.96
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:133$not$11 -port Y -portbit 23 -src ../../../rtl/bandpass.sv:133.64-133.71
+mutate -mode cnot0 -module bandpass -cell $procmux$540 -port Y -portbit 13 -ctrlbit 2 -src ../../../rtl/bandpass.sv:168.13-168.20 -src ../../../rtl/bandpass.sv:168.9-255.12
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:134$logic_or$17 -port Y -portbit 0 -wire lp_sub -wirebit 0 -src ../../../rtl/bandpass.sv:134.21-134.27 -src ../../../rtl/bandpass.sv:134.32-134.74
+mutate -mode inv -module bandpass -cell $procmux$787 -port Y -portbit 2 -wire sl_a -wirebit 2 -src ../../../rtl/bandpass.sv:137.24-137.28 -src ../../../rtl/bandpass.sv:141.111-141.111 -src ../../../rtl/bandpass.sv:140.9-144.16
+mutate -mode inv -module bandpass -cell $procdff$809 -port Q -portbit 0 -wire lp_pass_q -wirebit 0 -src ../../../rtl/bandpass.sv:110.25-110.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procdff$837 -port Q -portbit 6 -ctrlbit 13 -wire lp_hist_q[9] -wirebit 6 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$807 -port Q -portbit 0 -wire ovf_q -wirebit 0 -src ../../../rtl/bandpass.sv:108.25-108.30 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:161$xor$37 -port Y -portbit 0 -wire hp_ovf -wirebit 0 -src ../../../rtl/bandpass.sv:161.25-161.31 -src ../../../rtl/bandpass.sv:161.37-161.72
+mutate -mode const1 -module bandpass -cell $procdff$812 -port Q -portbit 0 -wire last_q -wirebit 0 -src ../../../rtl/bandpass.sv:113.25-113.31 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:130$ternary$6 -port Y -portbit 22 -wire lp_add_a -wirebit 22 -src ../../../rtl/bandpass.sv:130.21-130.29 -src ../../../rtl/bandpass.sv:130.32-130.74
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:165$logic_and$42 -port Y -portbit 0 -wire lp_last -wirebit 0 -src ../../../rtl/bandpass.sv:165.10-165.17 -src ../../../rtl/bandpass.sv:165.20-165.63
+mutate -mode const0 -module bandpass -cell $procdff$796 -port Q -portbit 0 -wire d_valid -wirebit 0 -src ../../../rtl/bandpass.sv:78.37-78.44 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$804 -port Q -portbit 0 -wire acc_cy_q -wirebit 0 -src ../../../rtl/bandpass.sv:105.25-105.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procmux$707 -port B -portbit 15 -ctrlbit 13 -src ../../../rtl/bandpass.sv:199.24-199.24 -src ../../../rtl/bandpass.sv:199.13-254.20
+mutate -mode const0 -module bandpass -cell $procdff$807 -port CLK -portbit 0 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$805 -port Q -portbit 23 -wire hp_y_q -wirebit 23 -src ../../../rtl/bandpass.sv:106.25-106.31 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $../../../rtl/bandpass.sv:157$ternary$26 -port Y -portbit 8 -ctrlbit 20 -wire hp_add_a -wirebit 8 -src ../../../rtl/bandpass.sv:157.25-157.33 -src ../../../rtl/bandpass.sv:157.36-157.111
+mutate -mode cnot0 -module bandpass -cell $procdff$799 -port Q -portbit 9 -ctrlbit 7 -wire x_hold_q -wirebit 9 -src ../../../rtl/bandpass.sv:98.25-98.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:132$ternary$13 -port Y -portbit 6 -src ../../../rtl/bandpass.sv:132.32-133.71
+mutate -mode const1 -module bandpass -cell $procmux$587 -port A -portbit 0 -src ../../../rtl/bandpass.sv:226.25-226.43 -src ../../../rtl/bandpass.sv:226.21-231.24
+mutate -mode cnot0 -module bandpass -cell $procdff$841 -port Q -portbit 19 -ctrlbit 20 -wire lp_hist_q[13] -wirebit 19 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $../../../rtl/bandpass.sv:158$not$29 -port Y -portbit 12 -ctrlbit 21 -src ../../../rtl/bandpass.sv:158.92-158.104
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:131$ternary$14 -port B -portbit 5 -src ../../../rtl/bandpass.sv:131.32-133.71
+mutate -mode const0 -module bandpass -cell $procmux$677 -port B -portbit 6 -src ../../../rtl/bandpass.sv:218.106-218.106 -src ../../../rtl/bandpass.sv:217.21-221.28
+mutate -mode inv -module bandpass -cell $procdff$834 -port Q -portbit 20 -wire lp_hist_q[6] -wirebit 20 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:133$ternary$12 -port B -portbit 7 -src ../../../rtl/bandpass.sv:133.32-133.71
+mutate -mode cnot1 -module bandpass -cell $procdff$831 -port Q -portbit 17 -ctrlbit 18 -wire lp_hist_q[3] -wirebit 17 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:157$ternary$25 -port A -portbit 7 -src ../../../rtl/bandpass.sv:157.70-157.111
+mutate -mode cnot1 -module bandpass -cell $procdff$800 -port Q -portbit 21 -ctrlbit 3 -wire lp_out_q -wirebit 21 -src ../../../rtl/bandpass.sv:101.25-101.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procdff$790 -port Q -portbit 20 -ctrlbit 15 -wire m_tdata -wirebit 20 -src ../../../rtl/bandpass.sv:71.37-71.44 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procdff$806 -port Q -portbit 22 -ctrlbit 10 -wire acc_hp_q -wirebit 22 -src ../../../rtl/bandpass.sv:107.25-107.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:132$not$9 -port A -portbit 11 -src ../../../rtl/bandpass.sv:132.54-132.61
+mutate -mode const1 -module bandpass -cell $procmux$340 -port B -portbit 8 -src ../../../rtl/bandpass.sv:168.13-168.20 -src ../../../rtl/bandpass.sv:168.9-255.12
+mutate -mode cnot0 -module bandpass -cell $procdff$826 -port Q -portbit 15 -ctrlbit 14 -wire x_hist_q[10] -wirebit 15 -src ../../../rtl/bandpass.sv:99.25-99.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:135$ternary$19 -port B -portbit 0 -wire lp_sub -wirebit 0 -src ../../../rtl/bandpass.sv:134.21-134.27 -src ../../../rtl/bandpass.sv:135.32-135.72
+mutate -mode inv -module bandpass -cell $procdff$856 -port Q -portbit 5 -wire lp_hist_q[28] -wirebit 5 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procdff$797 -port Q -portbit 10 -ctrlbit 14 -wire d_lp -wirebit 10 -src ../../../rtl/bandpass.sv:79.37-79.41 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procdff$819 -port Q -portbit 4 -wire x_hist_q[3] -wirebit 4 -src ../../../rtl/bandpass.sv:99.25-99.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procmux$687 -port Y -portbit 3 -src ../../../rtl/bandpass.sv:217.38-217.38 -src ../../../rtl/bandpass.sv:217.21-221.28
+mutate -mode cnot0 -module bandpass -cell $../../../rtl/bandpass.sv:158$ternary$32 -port B -portbit 26 -ctrlbit 19 -src ../../../rtl/bandpass.sv:158.36-158.116
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:162$ternary$39 -port A -portbit 23 -src ../../../rtl/bandpass.sv:162.37-163.62
+mutate -mode const0 -module bandpass -cell $procmux$644 -port B -portbit 7 -src ../../../rtl/bandpass.sv:168.13-168.20 -src ../../../rtl/bandpass.sv:168.9-255.12
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:160$add$35 -port Y -portbit 21 -src ../../../rtl/bandpass.sv:160.37-160.56
+mutate -mode inv -module bandpass -cell $procdff$832 -port Q -portbit 11 -wire lp_hist_q[4] -wirebit 11 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$795 -port Q -portbit 21 -wire m_sample_idx -wirebit 21 -src ../../../rtl/bandpass.sv:76.37-76.49 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:230$add$47 -port Y -portbit 0 -src ../../../rtl/bandpass.sv:230.39-230.56
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:158$not$30 -port A -portbit 6 -src ../../../rtl/bandpass.sv:158.107-158.116
+mutate -mode const1 -module bandpass -cell $procmux$545 -port B -portbit 6 -wire s_sample_idx -wirebit 6 -src ../../../rtl/bandpass.sv:69.37-69.49 -src ../../../rtl/bandpass.sv:201.25-201.33 -src ../../../rtl/bandpass.sv:201.21-214.24
+mutate -mode cnot0 -module bandpass -cell $procdff$822 -port Q -portbit 5 -ctrlbit 15 -wire x_hist_q[6] -wirebit 5 -src ../../../rtl/bandpass.sv:99.25-99.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procmux$555 -port B -portbit 3 -wire s_tuser -wirebit 3 -src ../../../rtl/bandpass.sv:68.37-68.44 -src ../../../rtl/bandpass.sv:201.25-201.33 -src ../../../rtl/bandpass.sv:201.21-214.24
+mutate -mode const1 -module bandpass -cell $procdff$795 -port Q -portbit 23 -wire m_sample_idx -wirebit 23 -src ../../../rtl/bandpass.sv:76.37-76.49 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $../../../rtl/bandpass.sv:228$add$46 -port A -portbit 1 -ctrlbit 0 -src ../../../rtl/bandpass.sv:228.39-228.55
+mutate -mode const1 -module bandpass -cell $procmux$540 -port A -portbit 15 -src ../../../rtl/bandpass.sv:168.13-168.20 -src ../../../rtl/bandpass.sv:168.9-255.12
+mutate -mode const0 -module bandpass -cell $procdff$799 -port Q -portbit 15 -wire x_hold_q -wirebit 15 -src ../../../rtl/bandpass.sv:98.25-98.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$797 -port Q -portbit 2 -wire d_lp -wirebit 2 -src ../../../rtl/bandpass.sv:79.37-79.41 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procdff$829 -port Q -portbit 6 -wire y2_ext -wirebit 6 -src ../../../rtl/bandpass.sv:125.21-125.27 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:162$ternary$39 -port Y -portbit 5 -wire hp_sat -wirebit 5 -src ../../../rtl/bandpass.sv:162.25-162.31 -src ../../../rtl/bandpass.sv:162.37-163.62
+mutate -mode const0 -module bandpass -cell $procdff$846 -port Q -portbit 10 -wire lp_hist_q[18] -wirebit 10 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$802 -port Q -portbit 2 -wire acc_mid_q -wirebit 2 -src ../../../rtl/bandpass.sv:103.25-103.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procmux$113 -port B -portbit 3 -src ../../../rtl/bandpass.sv:234.25-234.42 -src ../../../rtl/bandpass.sv:234.21-252.24
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:226$eq$45 -port B -portbit 0 -src ../../../rtl/bandpass.sv:226.25-226.43
+mutate -mode cnot0 -module bandpass -cell $procdff$813 -port Q -portbit 3 -ctrlbit 2 -wire tuser_q -wirebit 3 -src ../../../rtl/bandpass.sv:114.25-114.32 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:160$add$36 -port Y -portbit 18 -wire hp_sum -wirebit 18 -src ../../../rtl/bandpass.sv:160.25-160.31 -src ../../../rtl/bandpass.sv:160.37-160.67
+mutate -mode const0 -module bandpass -cell $procmux$660 -port A -portbit 0 -src ../../../rtl/bandpass.sv:215.20-215.20 -src ../../../rtl/bandpass.sv:199.13-254.20
+mutate -mode cnot1 -module bandpass -cell $../../../rtl/bandpass.sv:148$add$21 -port B -portbit 0 -ctrlbit 6 -wire sl_b -wirebit 0 -src ../../../rtl/bandpass.sv:138.24-138.28 -src ../../../rtl/bandpass.sv:148.31-148.58
+mutate -mode const0 -module bandpass -cell $procdff$817 -port Q -portbit 8 -wire x_hist_q[1] -wirebit 8 -src ../../../rtl/bandpass.sv:99.25-99.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procdff$828 -port Q -portbit 19 -wire y1_ext -wirebit 19 -src ../../../rtl/bandpass.sv:124.21-124.27 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procdff$798 -port Q -portbit 18 -ctrlbit 9 -wire d_hp -wirebit 18 -src ../../../rtl/bandpass.sv:80.37-80.41 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procmux$787 -port B -portbit 14 -wire lp_add_a -wirebit 5 -src ../../../rtl/bandpass.sv:130.21-130.29 -src ../../../rtl/bandpass.sv:141.111-141.111 -src ../../../rtl/bandpass.sv:140.9-144.16
+mutate -mode const1 -module bandpass -cell $procdff$801 -port Q -portbit 8 -wire acc_lp_next -wirebit 8 -src ../../../rtl/bandpass.sv:150.22-150.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$832 -port Q -portbit 6 -wire lp_hist_q[4] -wirebit 6 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:148$add$21 -port B -portbit 4 -wire sl_b -wirebit 4 -src ../../../rtl/bandpass.sv:138.24-138.28 -src ../../../rtl/bandpass.sv:148.31-148.58
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:133$eq$10 -port B -portbit 0 -src ../../../rtl/bandpass.sv:133.33-133.50
+mutate -mode const1 -module bandpass -cell $procdff$840 -port Q -portbit 5 -wire lp_hist_q[12] -wirebit 5 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procdff$852 -port Q -portbit 5 -ctrlbit 4 -wire lp_hist_q[24] -wirebit 5 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:131$eq$7 -port A -portbit 0 -src ../../../rtl/bandpass.sv:131.33-131.50
+mutate -mode inv -module bandpass -cell $procmux$705 -port B -portbit 4 -wire s_tdata -wirebit 4 -src ../../../rtl/bandpass.sv:65.37-65.44 -src ../../../rtl/bandpass.sv:201.25-201.33 -src ../../../rtl/bandpass.sv:201.21-214.24
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:162$not$38 -port A -portbit 0 -src ../../../rtl/bandpass.sv:162.77-162.96
+mutate -mode const1 -module bandpass -cell $procdff$854 -port Q -portbit 13 -wire lp_hist_q[26] -wirebit 13 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procdff$821 -port Q -portbit 15 -ctrlbit 11 -wire x_hist_q[5] -wirebit 15 -src ../../../rtl/bandpass.sv:99.25-99.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$794 -port Q -portbit 6 -wire m_tuser -wirebit 6 -src ../../../rtl/bandpass.sv:75.37-75.44 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procdff$836 -port Q -portbit 5 -wire lp_hist_q[8] -wirebit 5 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procmux$150 -port Y -portbit 8 -src ../../../rtl/bandpass.sv:168.13-168.20 -src ../../../rtl/bandpass.sv:168.9-255.12
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:134$eq$15 -port Y -portbit 0 -src ../../../rtl/bandpass.sv:134.33-134.50
+mutate -mode const0 -module bandpass -cell $procmux$627 -port S -portbit 0 -src ../../../rtl/bandpass.sv:234.25-234.42 -src ../../../rtl/bandpass.sv:234.21-252.24
+mutate -mode cnot0 -module bandpass -cell $procdff$848 -port Q -portbit 14 -ctrlbit 20 -wire lp_hist_q[20] -wirebit 14 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procmux$644 -port A -portbit 3 -src ../../../rtl/bandpass.sv:168.13-168.20 -src ../../../rtl/bandpass.sv:168.9-255.12
+mutate -mode const1 -module bandpass -cell $procdff$818 -port Q -portbit 0 -wire x_hist_q[2] -wirebit 0 -src ../../../rtl/bandpass.sv:99.25-99.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$818 -port Q -portbit 2 -wire x_hist_q[2] -wirebit 2 -src ../../../rtl/bandpass.sv:99.25-99.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$793 -port CLK -portbit 0 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procdff$845 -port Q -portbit 1 -wire lp_hist_q[17] -wirebit 1 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procdff$819 -port Q -portbit 15 -wire x_hist_q[3] -wirebit 15 -src ../../../rtl/bandpass.sv:99.25-99.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procdff$808 -port Q -portbit 1 -wire st_q -wirebit 1 -src ../../../rtl/bandpass.sv:109.25-109.29 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procdff$790 -port Q -portbit 7 -wire m_tdata -wirebit 7 -src ../../../rtl/bandpass.sv:71.37-71.44 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procdff$827 -port Q -portbit 13 -wire x_hist_q[11] -wirebit 13 -src ../../../rtl/bandpass.sv:99.25-99.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procdff$809 -port Q -portbit 1 -ctrlbit 0 -wire lp_pass_q -wirebit 1 -src ../../../rtl/bandpass.sv:110.25-110.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:165$eq$40 -port A -portbit 1 -src ../../../rtl/bandpass.sv:165.21-165.38
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:162$not$38 -port A -portbit 0 -src ../../../rtl/bandpass.sv:162.77-162.96
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:148$add$22 -port B -portbit 0 -wire lp_cin -wirebit 0 -src ../../../rtl/bandpass.sv:135.21-135.27 -src ../../../rtl/bandpass.sv:148.31-148.86
+mutate -mode const0 -module bandpass -cell $procmux$333 -port S -portbit 0 -src ../../../rtl/bandpass.sv:234.25-234.42 -src ../../../rtl/bandpass.sv:234.21-252.24
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:165$logic_and$42 -port B -portbit 0 -src ../../../rtl/bandpass.sv:165.20-165.63
+mutate -mode inv -module bandpass -cell $procdff$811 -port Q -portbit 1 -wire hp_pass_q -wirebit 1 -src ../../../rtl/bandpass.sv:112.25-112.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$838 -port Q -portbit 3 -wire lp_hist_q[10] -wirebit 3 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procdff$821 -port Q -portbit 11 -wire x_hist_q[5] -wirebit 11 -src ../../../rtl/bandpass.sv:99.25-99.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procdff$833 -port Q -portbit 11 -wire lp_hist_q[5] -wirebit 11 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procdff$801 -port Q -portbit 4 -wire acc_lp_next -wirebit 4 -src ../../../rtl/bandpass.sv:150.22-150.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $../../../rtl/bandpass.sv:159$eq$33 -port A -portbit 0 -ctrlbit 1 -src ../../../rtl/bandpass.sv:159.37-159.54
+mutate -mode const0 -module bandpass -cell $procdff$810 -port Q -portbit 1 -wire lp_slice_q -wirebit 1 -src ../../../rtl/bandpass.sv:111.25-111.35 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procdff$803 -port Q -portbit 3 -ctrlbit 2 -wire acc_lp_ext -wirebit 21 -src ../../../rtl/bandpass.sv:120.21-120.31 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:160$add$36 -port B -portbit 0 -wire hp_add_c -wirebit 0 -src ../../../rtl/bandpass.sv:160.37-160.67
+mutate -mode inv -module bandpass -cell $procmux$789_CMP0 -port A -portbit 0 -src ../../../rtl/bandpass.sv:140.26-140.26 -src ../../../rtl/bandpass.sv:140.9-144.16
+mutate -mode inv -module bandpass -cell $procdff$835 -port Q -portbit 7 -wire lp_hist_q[7] -wirebit 7 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:130$ternary$6 -port Y -portbit 9 -wire lp_add_a -wirebit 9 -src ../../../rtl/bandpass.sv:130.21-130.29 -src ../../../rtl/bandpass.sv:130.32-130.74
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:159$ternary$34 -port A -portbit 0 -src ../../../rtl/bandpass.sv:159.36-159.105
+mutate -mode cnot0 -module bandpass -cell $procdff$832 -port Q -portbit 10 -ctrlbit 21 -wire lp_hist_q[4] -wirebit 10 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:244$or$51 -port A -portbit 0 -src ../../../rtl/bandpass.sv:244.41-244.55
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:158$eq$28 -port Y -portbit 0 -src ../../../rtl/bandpass.sv:158.71-158.88
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:165$eq$40 -port A -portbit 0 -src ../../../rtl/bandpass.sv:165.21-165.38
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:230$add$47 -port A -portbit 0 -src ../../../rtl/bandpass.sv:230.39-230.56
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:134$logic_or$17 -port B -portbit 0 -src ../../../rtl/bandpass.sv:134.32-134.74
+mutate -mode inv -module bandpass -cell $procdff$855 -port Q -portbit 9 -wire lp_hist_q[27] -wirebit 9 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procmux$497 -port Y -portbit 8 -src ../../../rtl/bandpass.sv:199.24-199.24 -src ../../../rtl/bandpass.sv:199.13-254.20
+mutate -mode cnot0 -module bandpass -cell $procdff$814 -port Q -portbit 19 -ctrlbit 28 -wire idx_q -wirebit 19 -src ../../../rtl/bandpass.sv:115.25-115.30 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$838 -port Q -portbit 7 -wire lp_hist_q[10] -wirebit 7 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procdff$834 -port Q -portbit 15 -wire lp_hist_q[6] -wirebit 15 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:158$ternary$31 -port Y -portbit 9 -src ../../../rtl/bandpass.sv:158.70-158.116
+mutate -mode inv -module bandpass -cell $procdff$837 -port Q -portbit 17 -wire lp_hist_q[9] -wirebit 17 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $../../../rtl/bandpass.sv:131$ternary$14 -port B -portbit 1 -ctrlbit 22 -src ../../../rtl/bandpass.sv:131.32-133.71
+mutate -mode cnot1 -module bandpass -cell $procdff$851 -port Q -portbit 4 -ctrlbit 5 -wire lp_hist_q[23] -wirebit 4 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $../../../rtl/bandpass.sv:158$ternary$32 -port Y -portbit 11 -ctrlbit 15 -wire hp_add_b -wirebit 11 -src ../../../rtl/bandpass.sv:158.25-158.33 -src ../../../rtl/bandpass.sv:158.36-158.116
+mutate -mode inv -module bandpass -cell $procmux$545 -port B -portbit 25 -wire s_sample_idx -wirebit 25 -src ../../../rtl/bandpass.sv:69.37-69.49 -src ../../../rtl/bandpass.sv:201.25-201.33 -src ../../../rtl/bandpass.sv:201.21-214.24
+mutate -mode cnot1 -module bandpass -cell $procdff$844 -port Q -portbit 9 -ctrlbit 18 -wire lp_hist_q[16] -wirebit 9 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:157$ternary$25 -port A -portbit 10 -src ../../../rtl/bandpass.sv:157.70-157.111
+mutate -mode cnot1 -module bandpass -cell $../../../rtl/bandpass.sv:158$not$30 -port Y -portbit 16 -ctrlbit 25 -src ../../../rtl/bandpass.sv:158.107-158.116
+mutate -mode const0 -module bandpass -cell $procdff$841 -port Q -portbit 5 -wire lp_hist_q[13] -wirebit 5 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procdff$806 -port Q -portbit 15 -ctrlbit 18 -wire acc_hp_q -wirebit 15 -src ../../../rtl/bandpass.sv:107.25-107.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procmux$783 -port A -portbit 2 -wire lp_add_b -wirebit 20 -src ../../../rtl/bandpass.sv:131.21-131.29 -src ../../../rtl/bandpass.sv:141.111-141.111 -src ../../../rtl/bandpass.sv:140.9-144.16
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:165$logic_and$42 -port A -portbit 0 -src ../../../rtl/bandpass.sv:165.20-165.63
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:132$ternary$13 -port B -portbit 0 -src ../../../rtl/bandpass.sv:132.32-133.71
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:133$ternary$12 -port B -portbit 25 -src ../../../rtl/bandpass.sv:133.32-133.71
+mutate -mode const0 -module bandpass -cell $procmux$617 -port S -portbit 0 -src ../../../rtl/bandpass.sv:215.20-215.20 -src ../../../rtl/bandpass.sv:199.13-254.20
+mutate -mode inv -module bandpass -cell $procdff$802 -port Q -portbit 7 -wire acc_mid_q -wirebit 7 -src ../../../rtl/bandpass.sv:103.25-103.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procdff$797 -port Q -portbit 19 -ctrlbit 5 -wire d_lp -wirebit 19 -src ../../../rtl/bandpass.sv:79.37-79.41 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:160$add$36 -port Y -portbit 17 -wire hp_sum -wirebit 17 -src ../../../rtl/bandpass.sv:160.25-160.31 -src ../../../rtl/bandpass.sv:160.37-160.67
+mutate -mode const1 -module bandpass -cell $procdff$809 -port Q -portbit 1 -wire lp_pass_q -wirebit 1 -src ../../../rtl/bandpass.sv:110.25-110.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procmux$290 -port B -portbit 19 -src ../../../rtl/bandpass.sv:168.13-168.20 -src ../../../rtl/bandpass.sv:168.9-255.12
+mutate -mode inv -module bandpass -cell $procmux$350 -port B -portbit 8 -src ../../../rtl/bandpass.sv:168.13-168.20 -src ../../../rtl/bandpass.sv:168.9-255.12
+mutate -mode const0 -module bandpass -cell $procmux$777_CMP0 -port B -portbit 0 -src ../../../rtl/bandpass.sv:215.20-215.20 -src ../../../rtl/bandpass.sv:199.13-254.20
+mutate -mode cnot0 -module bandpass -cell $procdff$849 -port Q -portbit 15 -ctrlbit 0 -wire lp_hist_q[21] -wirebit 15 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procdff$790 -port Q -portbit 15 -wire m_tdata -wirebit 15 -src ../../../rtl/bandpass.sv:71.37-71.44 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$850 -port Q -portbit 4 -wire lp_hist_q[22] -wirebit 4 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procmux$600 -port A -portbit 1 -src ../../../rtl/bandpass.sv:226.25-226.43 -src ../../../rtl/bandpass.sv:226.21-231.24
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:132$not$9 -port A -portbit 12 -src ../../../rtl/bandpass.sv:132.54-132.61
+mutate -mode cnot0 -module bandpass -cell $procdff$830 -port Q -portbit 18 -ctrlbit 14 -wire lp_hist_q[2] -wirebit 18 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procmux$310 -port B -portbit 12 -src ../../../rtl/bandpass.sv:168.13-168.20 -src ../../../rtl/bandpass.sv:168.9-255.12
+mutate -mode const0 -module bandpass -cell $procdff$817 -port Q -portbit 0 -wire x_hist_q[1] -wirebit 0 -src ../../../rtl/bandpass.sv:99.25-99.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procmux$170 -port B -portbit 14 -src ../../../rtl/bandpass.sv:168.13-168.20 -src ../../../rtl/bandpass.sv:168.9-255.12
+mutate -mode const0 -module bandpass -cell $procmux$787 -port A -portbit 2 -wire lp_add_a -wirebit 20 -src ../../../rtl/bandpass.sv:130.21-130.29 -src ../../../rtl/bandpass.sv:141.111-141.111 -src ../../../rtl/bandpass.sv:140.9-144.16
+mutate -mode const1 -module bandpass -cell $procdff$836 -port Q -portbit 1 -wire lp_hist_q[8] -wirebit 1 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:157$ternary$25 -port Y -portbit 3 -src ../../../rtl/bandpass.sv:157.70-157.111
+mutate -mode const0 -module bandpass -cell $procdff$798 -port Q -portbit 2 -wire d_hp -wirebit 2 -src ../../../rtl/bandpass.sv:80.37-80.41 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procmux$333 -port Y -portbit 3 -src ../../../rtl/bandpass.sv:234.25-234.42 -src ../../../rtl/bandpass.sv:234.21-252.24
+mutate -mode const1 -module bandpass -cell $procdff$806 -port Q -portbit 23 -wire acc_hp_q -wirebit 23 -src ../../../rtl/bandpass.sv:107.25-107.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procdff$852 -port Q -portbit 18 -ctrlbit 20 -wire lp_hist_q[24] -wirebit 18 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $../../../rtl/bandpass.sv:158$not$29 -port A -portbit 10 -ctrlbit 6 -src ../../../rtl/bandpass.sv:158.92-158.104
+mutate -mode cnot0 -module bandpass -cell $procdff$830 -port Q -portbit 16 -ctrlbit 19 -wire lp_hist_q[2] -wirebit 16 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procdff$842 -port Q -portbit 1 -ctrlbit 10 -wire lp_hist_q[14] -wirebit 1 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procdff$809 -port Q -portbit 0 -ctrlbit 1 -wire lp_pass_q -wirebit 0 -src ../../../rtl/bandpass.sv:110.25-110.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $../../../rtl/bandpass.sv:148$add$21 -port A -portbit 4 -ctrlbit 0 -wire sl_a -wirebit 4 -src ../../../rtl/bandpass.sv:137.24-137.28 -src ../../../rtl/bandpass.sv:148.31-148.58
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:160$add$35 -port A -portbit 11 -wire hp_add_a -wirebit 11 -src ../../../rtl/bandpass.sv:157.25-157.33 -src ../../../rtl/bandpass.sv:160.37-160.56
+mutate -mode cnot1 -module bandpass -cell $procdff$832 -port Q -portbit 19 -ctrlbit 14 -wire lp_hist_q[4] -wirebit 19 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procmux$609 -port Y -portbit 0 -src ../../../rtl/bandpass.sv:168.13-168.20 -src ../../../rtl/bandpass.sv:168.9-255.12
+mutate -mode const0 -module bandpass -cell $procmux$695 -port A -portbit 20 -src ../../../rtl/bandpass.sv:222.25-222.32 -src ../../../rtl/bandpass.sv:222.21-225.24
+mutate -mode const1 -module bandpass -cell $procdff$847 -port Q -portbit 21 -wire lp_hist_q[19] -wirebit 21 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$852 -port Q -portbit 15 -wire lp_hist_q[24] -wirebit 15 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procmux$687 -port B -portbit 1 -ctrlbit 0 -src ../../../rtl/bandpass.sv:217.38-217.38 -src ../../../rtl/bandpass.sv:217.21-221.28
+mutate -mode const1 -module bandpass -cell $procmux$170 -port Y -portbit 19 -src ../../../rtl/bandpass.sv:168.13-168.20 -src ../../../rtl/bandpass.sv:168.9-255.12
+mutate -mode const1 -module bandpass -cell $procmux$363 -port B -portbit 17 -src ../../../rtl/bandpass.sv:234.25-234.42 -src ../../../rtl/bandpass.sv:234.21-252.24
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:157$ternary$25 -port A -portbit 1 -src ../../../rtl/bandpass.sv:157.70-157.111
+mutate -mode cnot1 -module bandpass -cell $procdff$829 -port Q -portbit 2 -ctrlbit 8 -wire y2_ext -wirebit 2 -src ../../../rtl/bandpass.sv:125.21-125.27 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procdff$840 -port Q -portbit 17 -wire lp_hist_q[12] -wirebit 17 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $../../../rtl/bandpass.sv:157$ternary$26 -port Y -portbit 12 -ctrlbit 14 -wire hp_add_a -wirebit 12 -src ../../../rtl/bandpass.sv:157.25-157.33 -src ../../../rtl/bandpass.sv:157.36-157.111
+mutate -mode inv -module bandpass -cell $procmux$667 -port Y -portbit 3 -src ../../../rtl/bandpass.sv:218.106-218.106 -src ../../../rtl/bandpass.sv:217.21-221.28
+mutate -mode cnot1 -module bandpass -cell $../../../rtl/bandpass.sv:162$ternary$39 -port Y -portbit 12 -ctrlbit 15 -wire hp_sat -wirebit 12 -src ../../../rtl/bandpass.sv:162.25-162.31 -src ../../../rtl/bandpass.sv:162.37-163.62
+mutate -mode const0 -module bandpass -cell $procdff$819 -port Q -portbit 0 -wire x_hist_q[3] -wirebit 0 -src ../../../rtl/bandpass.sv:99.25-99.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $../../../rtl/bandpass.sv:133$not$11 -port Y -portbit 17 -ctrlbit 2 -src ../../../rtl/bandpass.sv:133.64-133.71
+mutate -mode cnot1 -module bandpass -cell $procdff$821 -port Q -portbit 1 -ctrlbit 15 -wire x_hist_q[5] -wirebit 1 -src ../../../rtl/bandpass.sv:99.25-99.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:134$logic_or$17 -port A -portbit 0 -src ../../../rtl/bandpass.sv:134.32-134.74
+mutate -mode cnot0 -module bandpass -cell $procdff$805 -port Q -portbit 4 -ctrlbit 1 -wire hp_y_q -wirebit 4 -src ../../../rtl/bandpass.sv:106.25-106.31 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procdff$813 -port Q -portbit 3 -wire tuser_q -wirebit 3 -src ../../../rtl/bandpass.sv:114.25-114.32 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procdff$845 -port Q -portbit 12 -ctrlbit 21 -wire lp_hist_q[17] -wirebit 12 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procdff$794 -port Q -portbit 1 -wire m_tuser -wirebit 1 -src ../../../rtl/bandpass.sv:75.37-75.44 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$828 -port Q -portbit 16 -wire y1_ext -wirebit 16 -src ../../../rtl/bandpass.sv:124.21-124.27 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procdff$794 -port Q -portbit 7 -wire m_tuser -wirebit 7 -src ../../../rtl/bandpass.sv:75.37-75.44 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:161$xor$37 -port A -portbit 0 -src ../../../rtl/bandpass.sv:161.37-161.72
+mutate -mode cnot1 -module bandpass -cell $../../../rtl/bandpass.sv:228$add$46 -port Y -portbit 0 -ctrlbit 1 -src ../../../rtl/bandpass.sv:228.39-228.55
+mutate -mode cnot1 -module bandpass -cell $procmux$440 -port Y -portbit 12 -ctrlbit 7 -src ../../../rtl/bandpass.sv:168.13-168.20 -src ../../../rtl/bandpass.sv:168.9-255.12
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:148$add$22 -port Y -portbit 9 -wire sl_sum -wirebit 9 -src ../../../rtl/bandpass.sv:148.22-148.28 -src ../../../rtl/bandpass.sv:148.31-148.86
+mutate -mode cnot1 -module bandpass -cell $procmux$555 -port B -portbit 2 -ctrlbit 4 -wire s_tuser -wirebit 2 -src ../../../rtl/bandpass.sv:68.37-68.44 -src ../../../rtl/bandpass.sv:201.25-201.33 -src ../../../rtl/bandpass.sv:201.21-214.24
+mutate -mode cnot1 -module bandpass -cell $procmux$705 -port B -portbit 1 -ctrlbit 8 -wire s_tdata -wirebit 1 -src ../../../rtl/bandpass.sv:65.37-65.44 -src ../../../rtl/bandpass.sv:201.25-201.33 -src ../../../rtl/bandpass.sv:201.21-214.24
+mutate -mode cnot1 -module bandpass -cell $procdff$855 -port Q -portbit 20 -ctrlbit 4 -wire lp_hist_q[27] -wirebit 20 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procdff$831 -port Q -portbit 8 -wire lp_hist_q[3] -wirebit 8 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:158$not$30 -port Y -portbit 11 -src ../../../rtl/bandpass.sv:158.107-158.116
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:159$eq$33 -port A -portbit 1 -src ../../../rtl/bandpass.sv:159.37-159.54
+mutate -mode inv -module bandpass -cell $procdff$828 -port Q -portbit 7 -wire y1_ext -wirebit 7 -src ../../../rtl/bandpass.sv:124.21-124.27 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procmux$789_CMP0 -port A -portbit 0 -src ../../../rtl/bandpass.sv:140.26-140.26 -src ../../../rtl/bandpass.sv:140.9-144.16
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:158$eq$28 -port Y -portbit 0 -src ../../../rtl/bandpass.sv:158.71-158.88
+mutate -mode const0 -module bandpass -cell $procmux$545 -port B -portbit 18 -wire s_sample_idx -wirebit 18 -src ../../../rtl/bandpass.sv:69.37-69.49 -src ../../../rtl/bandpass.sv:201.25-201.33 -src ../../../rtl/bandpass.sv:201.21-214.24
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:133$eq$10 -port B -portbit 1 -src ../../../rtl/bandpass.sv:133.33-133.50
+mutate -mode cnot0 -module bandpass -cell $procmux$485 -port B -portbit 10 -ctrlbit 3 -src ../../../rtl/bandpass.sv:201.25-201.33 -src ../../../rtl/bandpass.sv:201.21-214.24
+mutate -mode cnot0 -module bandpass -cell $procmux$776 -port B -portbit 8 -ctrlbit 17 -src ../../../rtl/bandpass.sv:215.20-215.20 -src ../../../rtl/bandpass.sv:199.13-254.20
+mutate -mode const0 -module bandpass -cell $procdff$816 -port Q -portbit 10 -wire x_hist_q[0] -wirebit 10 -src ../../../rtl/bandpass.sv:99.25-99.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:134$eq$15 -port B -portbit 0 -src ../../../rtl/bandpass.sv:134.33-134.50
+mutate -mode const1 -module bandpass -cell $procdff$827 -port Q -portbit 11 -wire x_hist_q[11] -wirebit 11 -src ../../../rtl/bandpass.sv:99.25-99.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:159$ternary$34 -port Y -portbit 0 -wire hp_add_c -wirebit 0 -src ../../../rtl/bandpass.sv:159.36-159.105
+mutate -mode cnot0 -module bandpass -cell $procdff$803 -port Q -portbit 3 -ctrlbit 1 -wire acc_lp_ext -wirebit 21 -src ../../../rtl/bandpass.sv:120.21-120.31 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:236$add$49 -port B -portbit 0 -src ../../../rtl/bandpass.sv:236.38-236.54
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:244$or$51 -port Y -portbit 0 -src ../../../rtl/bandpass.sv:244.41-244.55
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:158$not$30 -port A -portbit 0 -src ../../../rtl/bandpass.sv:158.107-158.116
+mutate -mode const1 -module bandpass -cell $procmux$705 -port B -portbit 11 -wire s_tdata -wirebit 11 -src ../../../rtl/bandpass.sv:65.37-65.44 -src ../../../rtl/bandpass.sv:201.25-201.33 -src ../../../rtl/bandpass.sv:201.21-214.24
+mutate -mode cnot0 -module bandpass -cell $../../../rtl/bandpass.sv:131$eq$7 -port A -portbit 0 -ctrlbit 1 -src ../../../rtl/bandpass.sv:131.33-131.50
+mutate -mode cnot0 -module bandpass -cell $../../../rtl/bandpass.sv:160$add$36 -port Y -portbit 3 -ctrlbit 5 -wire hp_sum -wirebit 3 -src ../../../rtl/bandpass.sv:160.25-160.31 -src ../../../rtl/bandpass.sv:160.37-160.67
+mutate -mode inv -module bandpass -cell $procdff$808 -port Q -portbit 0 -wire st_q -wirebit 0 -src ../../../rtl/bandpass.sv:109.25-109.29 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:135$ternary$19 -port Y -portbit 0 -wire lp_cin -wirebit 0 -src ../../../rtl/bandpass.sv:135.21-135.27 -src ../../../rtl/bandpass.sv:135.32-135.72
+mutate -mode inv -module bandpass -cell $procdff$810 -port Q -portbit 1 -wire lp_slice_q -wirebit 1 -src ../../../rtl/bandpass.sv:111.25-111.35 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procdff$811 -port Q -portbit 0 -ctrlbit 1 -wire hp_pass_q -wirebit 0 -src ../../../rtl/bandpass.sv:112.25-112.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$850 -port Q -portbit 10 -wire lp_hist_q[22] -wirebit 10 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procdff$854 -port Q -portbit 10 -wire lp_hist_q[26] -wirebit 10 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $../../../rtl/bandpass.sv:130$ternary$6 -port Y -portbit 21 -ctrlbit 5 -wire lp_add_a -wirebit 21 -src ../../../rtl/bandpass.sv:130.21-130.29 -src ../../../rtl/bandpass.sv:130.32-130.74
+mutate -mode const1 -module bandpass -cell $procmux$783 -port B -portbit 12 -wire lp_add_b -wirebit 3 -src ../../../rtl/bandpass.sv:131.21-131.29 -src ../../../rtl/bandpass.sv:141.111-141.111 -src ../../../rtl/bandpass.sv:140.9-144.16
+mutate -mode const1 -module bandpass -cell $procdff$838 -port Q -portbit 11 -wire lp_hist_q[10] -wirebit 11 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:160$add$36 -port Y -portbit 12 -wire hp_sum -wirebit 12 -src ../../../rtl/bandpass.sv:160.25-160.31 -src ../../../rtl/bandpass.sv:160.37-160.67
+mutate -mode inv -module bandpass -cell $procmux$545 -port B -portbit 10 -wire s_sample_idx -wirebit 10 -src ../../../rtl/bandpass.sv:69.37-69.49 -src ../../../rtl/bandpass.sv:201.25-201.33 -src ../../../rtl/bandpass.sv:201.21-214.24
+mutate -mode inv -module bandpass -cell $procdff$790 -port Q -portbit 2 -wire m_tdata -wirebit 2 -src ../../../rtl/bandpass.sv:71.37-71.44 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procdff$839 -port Q -portbit 12 -wire lp_hist_q[11] -wirebit 12 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procdff$802 -port Q -portbit 6 -ctrlbit 5 -wire acc_mid_q -wirebit 6 -src ../../../rtl/bandpass.sv:103.25-103.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $../../../rtl/bandpass.sv:162$ternary$39 -port Y -portbit 20 -ctrlbit 15 -wire hp_sat -wirebit 20 -src ../../../rtl/bandpass.sv:162.25-162.31 -src ../../../rtl/bandpass.sv:162.37-163.62
+mutate -mode const0 -module bandpass -cell $procmux$467 -port B -portbit 11 -src ../../../rtl/bandpass.sv:199.24-199.24 -src ../../../rtl/bandpass.sv:199.13-254.20
+mutate -mode cnot1 -module bandpass -cell $procmux$695 -port A -portbit 17 -ctrlbit 21 -src ../../../rtl/bandpass.sv:222.25-222.32 -src ../../../rtl/bandpass.sv:222.21-225.24
+mutate -mode cnot1 -module bandpass -cell $../../../rtl/bandpass.sv:132$ternary$13 -port Y -portbit 6 -ctrlbit 17 -src ../../../rtl/bandpass.sv:132.32-133.71
+mutate -mode const0 -module bandpass -cell $procdff$805 -port Q -portbit 21 -wire hp_y_q -wirebit 21 -src ../../../rtl/bandpass.sv:106.25-106.31 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procmux$787 -port Y -portbit 6 -wire sl_a -wirebit 6 -src ../../../rtl/bandpass.sv:137.24-137.28 -src ../../../rtl/bandpass.sv:141.111-141.111 -src ../../../rtl/bandpass.sv:140.9-144.16
+mutate -mode cnot0 -module bandpass -cell $procmux$223 -port Y -portbit 3 -ctrlbit 20 -src ../../../rtl/bandpass.sv:234.25-234.42 -src ../../../rtl/bandpass.sv:234.21-252.24
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:161$xor$37 -port B -portbit 0 -src ../../../rtl/bandpass.sv:161.37-161.72
+mutate -mode const0 -module bandpass -cell $procdff$829 -port Q -portbit 8 -wire y2_ext -wirebit 8 -src ../../../rtl/bandpass.sv:125.21-125.27 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procdff$814 -port Q -portbit 15 -ctrlbit 21 -wire idx_q -wirebit 15 -src ../../../rtl/bandpass.sv:115.25-115.30 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:158$ternary$32 -port A -portbit 2 -src ../../../rtl/bandpass.sv:158.36-158.116
+mutate -mode cnot1 -module bandpass -cell $../../../rtl/bandpass.sv:130$ternary$6 -port Y -portbit 22 -ctrlbit 18 -wire lp_add_a -wirebit 22 -src ../../../rtl/bandpass.sv:130.21-130.29 -src ../../../rtl/bandpass.sv:130.32-130.74
+mutate -mode inv -module bandpass -cell $procmux$630 -port A -portbit 0 -src ../../../rtl/bandpass.sv:215.20-215.20 -src ../../../rtl/bandpass.sv:199.13-254.20
+mutate -mode const0 -module bandpass -cell $procdff$797 -port Q -portbit 1 -wire d_lp -wirebit 1 -src ../../../rtl/bandpass.sv:79.37-79.41 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $../../../rtl/bandpass.sv:133$ternary$12 -port B -portbit 10 -ctrlbit 3 -src ../../../rtl/bandpass.sv:133.32-133.71
+mutate -mode const1 -module bandpass -cell $procdff$801 -port Q -portbit 5 -wire acc_lp_next -wirebit 5 -src ../../../rtl/bandpass.sv:150.22-150.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procmux$783 -port Y -portbit 1 -wire sl_b -wirebit 1 -src ../../../rtl/bandpass.sv:138.24-138.28 -src ../../../rtl/bandpass.sv:141.111-141.111 -src ../../../rtl/bandpass.sv:140.9-144.16
+mutate -mode const1 -module bandpass -cell $procmux$687 -port B -portbit 0 -src ../../../rtl/bandpass.sv:217.38-217.38 -src ../../../rtl/bandpass.sv:217.21-221.28
+mutate -mode cnot1 -module bandpass -cell $procdff$810 -port Q -portbit 0 -ctrlbit 1 -wire lp_slice_q -wirebit 0 -src ../../../rtl/bandpass.sv:111.25-111.35 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:159$ternary$34 -port B -portbit 0 -src ../../../rtl/bandpass.sv:159.36-159.105
+mutate -mode cnot1 -module bandpass -cell $procdff$854 -port Q -portbit 13 -ctrlbit 16 -wire lp_hist_q[26] -wirebit 13 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procdff$805 -port Q -portbit 16 -wire hp_y_q -wirebit 16 -src ../../../rtl/bandpass.sv:106.25-106.31 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procdff$842 -port Q -portbit 15 -ctrlbit 1 -wire lp_hist_q[14] -wirebit 15 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $../../../rtl/bandpass.sv:133$not$11 -port A -portbit 12 -ctrlbit 1 -src ../../../rtl/bandpass.sv:133.64-133.71
+mutate -mode const0 -module bandpass -cell $procmux$746 -port A -portbit 3 -src ../../../rtl/bandpass.sv:215.20-215.20 -src ../../../rtl/bandpass.sv:199.13-254.20
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:158$ternary$31 -port A -portbit 14 -src ../../../rtl/bandpass.sv:158.70-158.116
+mutate -mode const0 -module bandpass -cell $procdff$800 -port Q -portbit 0 -wire lp_out_q -wirebit 0 -src ../../../rtl/bandpass.sv:101.25-101.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procdff$802 -port Q -portbit 4 -ctrlbit 8 -wire acc_mid_q -wirebit 4 -src ../../../rtl/bandpass.sv:103.25-103.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procdff$846 -port Q -portbit 0 -ctrlbit 11 -wire lp_hist_q[18] -wirebit 0 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$806 -port Q -portbit 18 -wire acc_hp_q -wirebit 18 -src ../../../rtl/bandpass.sv:107.25-107.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procmux$677 -port A -portbit 5 -ctrlbit 4 -src ../../../rtl/bandpass.sv:218.106-218.106 -src ../../../rtl/bandpass.sv:217.21-221.28
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:148$add$21 -port B -portbit 2 -wire sl_b -wirebit 2 -src ../../../rtl/bandpass.sv:138.24-138.28 -src ../../../rtl/bandpass.sv:148.31-148.58
+mutate -mode cnot1 -module bandpass -cell $procdff$851 -port Q -portbit 5 -ctrlbit 17 -wire lp_hist_q[23] -wirebit 5 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$819 -port Q -portbit 1 -wire x_hist_q[3] -wirebit 1 -src ../../../rtl/bandpass.sv:99.25-99.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:131$ternary$14 -port Y -portbit 14 -wire lp_add_b -wirebit 14 -src ../../../rtl/bandpass.sv:131.21-131.29 -src ../../../rtl/bandpass.sv:131.32-133.71
+mutate -mode cnot1 -module bandpass -cell $procdff$858 -port Q -portbit 3 -ctrlbit 0 -wire lp_hist_q[30] -wirebit 3 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procdff$798 -port Q -portbit 23 -wire d_hp -wirebit 23 -src ../../../rtl/bandpass.sv:80.37-80.41 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procdff$797 -port Q -portbit 4 -ctrlbit 21 -wire d_lp -wirebit 4 -src ../../../rtl/bandpass.sv:79.37-79.41 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procdff$833 -port Q -portbit 9 -wire lp_hist_q[5] -wirebit 9 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procmux$106 -port B -portbit 12 -src ../../../rtl/bandpass.sv:215.20-215.20 -src ../../../rtl/bandpass.sv:199.13-254.20
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:148$add$22 -port B -portbit 0 -wire lp_cin -wirebit 0 -src ../../../rtl/bandpass.sv:135.21-135.27 -src ../../../rtl/bandpass.sv:148.31-148.86
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:165$eq$40 -port A -portbit 1 -src ../../../rtl/bandpass.sv:165.21-165.38
+mutate -mode inv -module bandpass -cell $procdff$858 -port Q -portbit 13 -wire lp_hist_q[30] -wirebit 13 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procmux$393 -port A -portbit 2 -src ../../../rtl/bandpass.sv:234.25-234.42 -src ../../../rtl/bandpass.sv:234.21-252.24
+mutate -mode const0 -module bandpass -cell $procdff$800 -port Q -portbit 16 -wire lp_out_q -wirebit 16 -src ../../../rtl/bandpass.sv:101.25-101.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:159$ternary$34 -port A -portbit 0 -src ../../../rtl/bandpass.sv:159.36-159.105
+mutate -mode cnot0 -module bandpass -cell $procdff$857 -port Q -portbit 20 -ctrlbit 14 -wire lp_hist_q[29] -wirebit 20 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:158$not$29 -port A -portbit 22 -src ../../../rtl/bandpass.sv:158.92-158.104
+mutate -mode cnot1 -module bandpass -cell $../../../rtl/bandpass.sv:131$eq$7 -port A -portbit 0 -ctrlbit 1 -src ../../../rtl/bandpass.sv:131.33-131.50
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:160$add$36 -port Y -portbit 11 -wire hp_sum -wirebit 11 -src ../../../rtl/bandpass.sv:160.25-160.31 -src ../../../rtl/bandpass.sv:160.37-160.67
+mutate -mode cnot0 -module bandpass -cell $../../../rtl/bandpass.sv:132$not$9 -port A -portbit 13 -ctrlbit 17 -src ../../../rtl/bandpass.sv:132.54-132.61
+mutate -mode cnot0 -module bandpass -cell $../../../rtl/bandpass.sv:236$add$49 -port Y -portbit 1 -ctrlbit 0 -src ../../../rtl/bandpass.sv:236.38-236.54
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:160$add$35 -port B -portbit 11 -wire hp_add_b -wirebit 11 -src ../../../rtl/bandpass.sv:158.25-158.33 -src ../../../rtl/bandpass.sv:160.37-160.56
+mutate -mode cnot0 -module bandpass -cell $procdff$852 -port Q -portbit 9 -ctrlbit 14 -wire lp_hist_q[24] -wirebit 9 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procdff$798 -port Q -portbit 9 -wire d_hp -wirebit 9 -src ../../../rtl/bandpass.sv:80.37-80.41 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:134$eq$15 -port A -portbit 0 -src ../../../rtl/bandpass.sv:134.33-134.50
+mutate -mode cnot1 -module bandpass -cell $procdff$822 -port Q -portbit 14 -ctrlbit 13 -wire x_hist_q[6] -wirebit 14 -src ../../../rtl/bandpass.sv:99.25-99.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:228$add$46 -port B -portbit 0 -src ../../../rtl/bandpass.sv:228.39-228.55
+mutate -mode inv -module bandpass -cell $procdff$828 -port Q -portbit 11 -wire y1_ext -wirebit 11 -src ../../../rtl/bandpass.sv:124.21-124.27 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procmux$677 -port B -portbit 0 -src ../../../rtl/bandpass.sv:218.106-218.106 -src ../../../rtl/bandpass.sv:217.21-221.28
+mutate -mode const1 -module bandpass -cell $procdff$795 -port Q -portbit 21 -wire m_sample_idx -wirebit 21 -src ../../../rtl/bandpass.sv:76.37-76.49 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procdff$808 -port Q -portbit 0 -ctrlbit 1 -wire st_q -wirebit 0 -src ../../../rtl/bandpass.sv:109.25-109.29 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procdff$811 -port Q -portbit 1 -wire hp_pass_q -wirebit 1 -src ../../../rtl/bandpass.sv:112.25-112.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:148$add$22 -port Y -portbit 3 -wire sl_sum -wirebit 3 -src ../../../rtl/bandpass.sv:148.22-148.28 -src ../../../rtl/bandpass.sv:148.31-148.86
+mutate -mode inv -module bandpass -cell $procdff$799 -port Q -portbit 8 -wire x_hold_q -wirebit 8 -src ../../../rtl/bandpass.sv:98.25-98.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procmux$600 -port A -portbit 1 -ctrlbit 0 -src ../../../rtl/bandpass.sv:226.25-226.43 -src ../../../rtl/bandpass.sv:226.21-231.24
+mutate -mode cnot1 -module bandpass -cell $procdff$813 -port Q -portbit 4 -ctrlbit 3 -wire tuser_q -wirebit 4 -src ../../../rtl/bandpass.sv:114.25-114.32 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $../../../rtl/bandpass.sv:230$add$47 -port Y -portbit 0 -ctrlbit 1 -src ../../../rtl/bandpass.sv:230.39-230.56
+mutate -mode inv -module bandpass -cell $procmux$555 -port B -portbit 0 -wire s_tuser -wirebit 0 -src ../../../rtl/bandpass.sv:68.37-68.44 -src ../../../rtl/bandpass.sv:201.25-201.33 -src ../../../rtl/bandpass.sv:201.21-214.24
+mutate -mode const1 -module bandpass -cell $procdff$822 -port Q -portbit 12 -wire x_hist_q[6] -wirebit 12 -src ../../../rtl/bandpass.sv:99.25-99.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procdff$837 -port Q -portbit 7 -ctrlbit 20 -wire lp_hist_q[9] -wirebit 7 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procmux$545 -port B -portbit 11 -wire s_sample_idx -wirebit 11 -src ../../../rtl/bandpass.sv:69.37-69.49 -src ../../../rtl/bandpass.sv:201.25-201.33 -src ../../../rtl/bandpass.sv:201.21-214.24
+mutate -mode cnot1 -module bandpass -cell $procdff$799 -port Q -portbit 0 -ctrlbit 4 -wire x_hold_q -wirebit 0 -src ../../../rtl/bandpass.sv:98.25-98.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:130$ternary$6 -port Y -portbit 24 -wire lp_add_a -wirebit 24 -src ../../../rtl/bandpass.sv:130.21-130.29 -src ../../../rtl/bandpass.sv:130.32-130.74
+mutate -mode inv -module bandpass -cell $procdff$806 -port Q -portbit 8 -wire acc_hp_q -wirebit 8 -src ../../../rtl/bandpass.sv:107.25-107.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$849 -port Q -portbit 7 -wire lp_hist_q[21] -wirebit 7 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:158$eq$28 -port A -portbit 0 -src ../../../rtl/bandpass.sv:158.71-158.88
+mutate -mode inv -module bandpass -cell $procdff$803 -port Q -portbit 2 -wire acc_lp_ext -wirebit 20 -src ../../../rtl/bandpass.sv:120.21-120.31 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procdff$848 -port Q -portbit 16 -wire lp_hist_q[20] -wirebit 16 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procmux$654 -port A -portbit 15 -src ../../../rtl/bandpass.sv:168.13-168.20 -src ../../../rtl/bandpass.sv:168.9-255.12
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:133$eq$10 -port A -portbit 0 -src ../../../rtl/bandpass.sv:133.33-133.50
+mutate -mode cnot1 -module bandpass -cell $../../../rtl/bandpass.sv:159$eq$33 -port A -portbit 1 -ctrlbit 0 -src ../../../rtl/bandpass.sv:159.37-159.54
+mutate -mode const0 -module bandpass -cell $procmux$789_CMP0 -port Y -portbit 0 -src ../../../rtl/bandpass.sv:140.26-140.26 -src ../../../rtl/bandpass.sv:140.9-144.16
+mutate -mode const0 -module bandpass -cell $procdff$806 -port Q -portbit 26 -wire acc_hp_q -wirebit 26 -src ../../../rtl/bandpass.sv:107.25-107.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:244$or$51 -port Y -portbit 0 -src ../../../rtl/bandpass.sv:244.41-244.55
+mutate -mode inv -module bandpass -cell $procmux$450 -port B -portbit 11 -src ../../../rtl/bandpass.sv:168.13-168.20 -src ../../../rtl/bandpass.sv:168.9-255.12
+mutate -mode const0 -module bandpass -cell $procdff$802 -port Q -portbit 8 -wire acc_mid_q -wirebit 8 -src ../../../rtl/bandpass.sv:103.25-103.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procmux$670 -port Y -portbit 1 -ctrlbit 2 -src ../../../rtl/bandpass.sv:215.20-215.20 -src ../../../rtl/bandpass.sv:199.13-254.20
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:134$logic_or$17 -port B -portbit 0 -src ../../../rtl/bandpass.sv:134.32-134.74
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:134$logic_or$17 -port Y -portbit 0 -wire lp_sub -wirebit 0 -src ../../../rtl/bandpass.sv:134.21-134.27 -src ../../../rtl/bandpass.sv:134.32-134.74
+mutate -mode cnot1 -module bandpass -cell $procmux$705 -port B -portbit 7 -ctrlbit 13 -wire s_tdata -wirebit 7 -src ../../../rtl/bandpass.sv:65.37-65.44 -src ../../../rtl/bandpass.sv:201.25-201.33 -src ../../../rtl/bandpass.sv:201.21-214.24
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:162$not$38 -port A -portbit 0 -src ../../../rtl/bandpass.sv:162.77-162.96
+mutate -mode cnot0 -module bandpass -cell $../../../rtl/bandpass.sv:157$ternary$26 -port A -portbit 15 -ctrlbit 8 -src ../../../rtl/bandpass.sv:157.36-157.111
+mutate -mode cnot1 -module bandpass -cell $procdff$802 -port Q -portbit 1 -ctrlbit 8 -wire acc_mid_q -wirebit 1 -src ../../../rtl/bandpass.sv:103.25-103.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procdff$830 -port Q -portbit 13 -ctrlbit 17 -wire lp_hist_q[2] -wirebit 13 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procmux$695 -port A -portbit 19 -ctrlbit 5 -src ../../../rtl/bandpass.sv:222.25-222.32 -src ../../../rtl/bandpass.sv:222.21-225.24
+mutate -mode const1 -module bandpass -cell $procmux$753 -port A -portbit 0 -src ../../../rtl/bandpass.sv:234.25-234.42 -src ../../../rtl/bandpass.sv:234.21-252.24
+mutate -mode inv -module bandpass -cell $procdff$842 -port Q -portbit 18 -wire lp_hist_q[14] -wirebit 18 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procdff$834 -port Q -portbit 3 -ctrlbit 5 -wire lp_hist_q[6] -wirebit 3 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $../../../rtl/bandpass.sv:133$ternary$12 -port B -portbit 0 -ctrlbit 8 -src ../../../rtl/bandpass.sv:133.32-133.71
+mutate -mode const1 -module bandpass -cell $procmux$116 -port A -portbit 15 -src ../../../rtl/bandpass.sv:215.20-215.20 -src ../../../rtl/bandpass.sv:199.13-254.20
+mutate -mode cnot1 -module bandpass -cell $../../../rtl/bandpass.sv:132$ternary$13 -port Y -portbit 2 -ctrlbit 8 -src ../../../rtl/bandpass.sv:132.32-133.71
+mutate -mode inv -module bandpass -cell $procmux$363 -port B -portbit 13 -src ../../../rtl/bandpass.sv:234.25-234.42 -src ../../../rtl/bandpass.sv:234.21-252.24
+mutate -mode const0 -module bandpass -cell $procmux$517 -port A -portbit 6 -src ../../../rtl/bandpass.sv:199.24-199.24 -src ../../../rtl/bandpass.sv:199.13-254.20
+mutate -mode const1 -module bandpass -cell $procdff$849 -port Q -portbit 13 -wire lp_hist_q[21] -wirebit 13 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procdff$844 -port Q -portbit 9 -ctrlbit 16 -wire lp_hist_q[16] -wirebit 9 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $../../../rtl/bandpass.sv:131$ternary$14 -port B -portbit 18 -ctrlbit 14 -src ../../../rtl/bandpass.sv:131.32-133.71
+mutate -mode const1 -module bandpass -cell $procmux$600 -port Y -portbit 0 -src ../../../rtl/bandpass.sv:226.25-226.43 -src ../../../rtl/bandpass.sv:226.21-231.24
+mutate -mode cnot1 -module bandpass -cell $../../../rtl/bandpass.sv:158$ternary$32 -port A -portbit 8 -ctrlbit 15 -src ../../../rtl/bandpass.sv:158.36-158.116
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:133$not$11 -port A -portbit 5 -src ../../../rtl/bandpass.sv:133.64-133.71
+mutate -mode const0 -module bandpass -cell $procdff$818 -port Q -portbit 0 -wire x_hist_q[2] -wirebit 0 -src ../../../rtl/bandpass.sv:99.25-99.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$814 -port Q -portbit 23 -wire idx_q -wirebit 23 -src ../../../rtl/bandpass.sv:115.25-115.30 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:158$ternary$32 -port Y -portbit 6 -wire hp_add_b -wirebit 6 -src ../../../rtl/bandpass.sv:158.25-158.33 -src ../../../rtl/bandpass.sv:158.36-158.116
+mutate -mode cnot0 -module bandpass -cell $procdff$805 -port Q -portbit 2 -ctrlbit 7 -wire hp_y_q -wirebit 2 -src ../../../rtl/bandpass.sv:106.25-106.31 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procmux$687 -port A -portbit 0 -src ../../../rtl/bandpass.sv:217.38-217.38 -src ../../../rtl/bandpass.sv:217.21-221.28
+mutate -mode const0 -module bandpass -cell $procmux$600 -port S -portbit 0 -src ../../../rtl/bandpass.sv:226.25-226.43 -src ../../../rtl/bandpass.sv:226.21-231.24
+mutate -mode cnot1 -module bandpass -cell $procmux$783 -port Y -portbit 2 -ctrlbit 8 -wire sl_b -wirebit 2 -src ../../../rtl/bandpass.sv:138.24-138.28 -src ../../../rtl/bandpass.sv:141.111-141.111 -src ../../../rtl/bandpass.sv:140.9-144.16
+mutate -mode const0 -module bandpass -cell $procmux$97 -port S -portbit 0 -src ../../../rtl/bandpass.sv:168.13-168.20 -src ../../../rtl/bandpass.sv:168.9-255.12
+mutate -mode inv -module bandpass -cell $procdff$844 -port Q -portbit 11 -wire lp_hist_q[16] -wirebit 11 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procdff$795 -port Q -portbit 14 -wire m_sample_idx -wirebit 14 -src ../../../rtl/bandpass.sv:76.37-76.49 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procmux$783 -port Y -portbit 5 -ctrlbit 1 -wire sl_b -wirebit 5 -src ../../../rtl/bandpass.sv:138.24-138.28 -src ../../../rtl/bandpass.sv:141.111-141.111 -src ../../../rtl/bandpass.sv:140.9-144.16
+mutate -mode cnot0 -module bandpass -cell $procmux$236 -port B -portbit 0 -ctrlbit 11 -src ../../../rtl/bandpass.sv:215.20-215.20 -src ../../../rtl/bandpass.sv:199.13-254.20
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:158$ternary$31 -port B -portbit 23 -src ../../../rtl/bandpass.sv:158.70-158.116
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:158$not$29 -port Y -portbit 12 -src ../../../rtl/bandpass.sv:158.92-158.104
+mutate -mode const1 -module bandpass -cell $procdff$794 -port Q -portbit 7 -wire m_tuser -wirebit 7 -src ../../../rtl/bandpass.sv:75.37-75.44 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procdff$795 -port Q -portbit 15 -wire m_sample_idx -wirebit 15 -src ../../../rtl/bandpass.sv:76.37-76.49 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $../../../rtl/bandpass.sv:230$add$47 -port A -portbit 1 -ctrlbit 0 -src ../../../rtl/bandpass.sv:230.39-230.56
+mutate -mode cnot0 -module bandpass -cell $../../../rtl/bandpass.sv:132$not$9 -port Y -portbit 9 -ctrlbit 25 -src ../../../rtl/bandpass.sv:132.54-132.61
+mutate -mode cnot1 -module bandpass -cell $../../../rtl/bandpass.sv:148$add$22 -port Y -portbit 7 -ctrlbit 3 -wire sl_sum -wirebit 7 -src ../../../rtl/bandpass.sv:148.22-148.28 -src ../../../rtl/bandpass.sv:148.31-148.86
+mutate -mode cnot0 -module bandpass -cell $procdff$798 -port Q -portbit 24 -ctrlbit 21 -wire d_hp -wirebit 24 -src ../../../rtl/bandpass.sv:80.37-80.41 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$803 -port Q -portbit 1 -wire acc_lp_ext -wirebit 19 -src ../../../rtl/bandpass.sv:120.21-120.31 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procmux$783 -port B -portbit 10 -ctrlbit 17 -wire lp_add_b -wirebit 1 -src ../../../rtl/bandpass.sv:131.21-131.29 -src ../../../rtl/bandpass.sv:141.111-141.111 -src ../../../rtl/bandpass.sv:140.9-144.16
+mutate -mode cnot0 -module bandpass -cell $../../../rtl/bandpass.sv:157$ternary$26 -port Y -portbit 14 -ctrlbit 4 -wire hp_add_a -wirebit 14 -src ../../../rtl/bandpass.sv:157.25-157.33 -src ../../../rtl/bandpass.sv:157.36-157.111
+mutate -mode const0 -module bandpass -cell $procdff$808 -port Q -portbit 0 -wire st_q -wirebit 0 -src ../../../rtl/bandpass.sv:109.25-109.29 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:228$add$46 -port A -portbit 0 -src ../../../rtl/bandpass.sv:228.39-228.55
+mutate -mode cnot1 -module bandpass -cell $procdff$835 -port Q -portbit 6 -ctrlbit 11 -wire lp_hist_q[7] -wirebit 6 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:131$ternary$14 -port Y -portbit 26 -wire lp_add_b -wirebit 26 -src ../../../rtl/bandpass.sv:131.21-131.29 -src ../../../rtl/bandpass.sv:131.32-133.71
+mutate -mode inv -module bandpass -cell $procdff$855 -port Q -portbit 2 -wire lp_hist_q[27] -wirebit 2 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procdff$797 -port Q -portbit 12 -ctrlbit 11 -wire d_lp -wirebit 12 -src ../../../rtl/bandpass.sv:79.37-79.41 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procdff$852 -port Q -portbit 4 -ctrlbit 11 -wire lp_hist_q[24] -wirebit 4 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$829 -port Q -portbit 15 -wire y2_ext -wirebit 15 -src ../../../rtl/bandpass.sv:125.21-125.27 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procdff$813 -port Q -portbit 4 -wire tuser_q -wirebit 4 -src ../../../rtl/bandpass.sv:114.25-114.32 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $../../../rtl/bandpass.sv:131$ternary$14 -port Y -portbit 9 -ctrlbit 13 -wire lp_add_b -wirebit 9 -src ../../../rtl/bandpass.sv:131.21-131.29 -src ../../../rtl/bandpass.sv:131.32-133.71
+mutate -mode inv -module bandpass -cell $procmux$787 -port Y -portbit 7 -wire sl_a -wirebit 7 -src ../../../rtl/bandpass.sv:137.24-137.28 -src ../../../rtl/bandpass.sv:141.111-141.111 -src ../../../rtl/bandpass.sv:140.9-144.16
+mutate -mode const0 -module bandpass -cell $procdff$801 -port Q -portbit 5 -wire acc_lp_next -wirebit 5 -src ../../../rtl/bandpass.sv:150.22-150.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procmux$200 -port B -portbit 4 -src ../../../rtl/bandpass.sv:168.13-168.20 -src ../../../rtl/bandpass.sv:168.9-255.12
+mutate -mode cnot0 -module bandpass -cell $../../../rtl/bandpass.sv:162$ternary$39 -port Y -portbit 0 -ctrlbit 23 -wire hp_sat -wirebit 0 -src ../../../rtl/bandpass.sv:162.25-162.31 -src ../../../rtl/bandpass.sv:162.37-163.62
+mutate -mode cnot0 -module bandpass -cell $../../../rtl/bandpass.sv:131$eq$7 -port A -portbit 1 -ctrlbit 0 -src ../../../rtl/bandpass.sv:131.33-131.50
+mutate -mode cnot0 -module bandpass -cell $procmux$545 -port B -portbit 2 -ctrlbit 17 -wire s_sample_idx -wirebit 2 -src ../../../rtl/bandpass.sv:69.37-69.49 -src ../../../rtl/bandpass.sv:201.25-201.33 -src ../../../rtl/bandpass.sv:201.21-214.24
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:157$ternary$25 -port B -portbit 6 -src ../../../rtl/bandpass.sv:157.70-157.111
+mutate -mode inv -module bandpass -cell $procdff$825 -port Q -portbit 8 -wire x_hist_q[9] -wirebit 8 -src ../../../rtl/bandpass.sv:99.25-99.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:165$eq$40 -port A -portbit 1 -src ../../../rtl/bandpass.sv:165.21-165.38
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:158$eq$28 -port B -portbit 0 -src ../../../rtl/bandpass.sv:158.71-158.88
+mutate -mode inv -module bandpass -cell $procdff$811 -port Q -portbit 0 -wire hp_pass_q -wirebit 0 -src ../../../rtl/bandpass.sv:112.25-112.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procdff$837 -port Q -portbit 16 -wire lp_hist_q[9] -wirebit 16 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procdff$818 -port Q -portbit 9 -ctrlbit 3 -wire x_hist_q[2] -wirebit 9 -src ../../../rtl/bandpass.sv:99.25-99.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procdff$857 -port Q -portbit 17 -ctrlbit 7 -wire lp_hist_q[29] -wirebit 17 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procmux$555 -port B -portbit 2 -wire s_tuser -wirebit 2 -src ../../../rtl/bandpass.sv:68.37-68.44 -src ../../../rtl/bandpass.sv:201.25-201.33 -src ../../../rtl/bandpass.sv:201.21-214.24
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:133$eq$10 -port A -portbit 0 -src ../../../rtl/bandpass.sv:133.33-133.50
+mutate -mode cnot0 -module bandpass -cell $procdff$827 -port Q -portbit 1 -ctrlbit 12 -wire x_hist_q[11] -wirebit 1 -src ../../../rtl/bandpass.sv:99.25-99.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $../../../rtl/bandpass.sv:160$add$36 -port Y -portbit 1 -ctrlbit 12 -wire hp_sum -wirebit 1 -src ../../../rtl/bandpass.sv:160.25-160.31 -src ../../../rtl/bandpass.sv:160.37-160.67
+mutate -mode const0 -module bandpass -cell $procmux$555 -port A -portbit 7 -src ../../../rtl/bandpass.sv:201.25-201.33 -src ../../../rtl/bandpass.sv:201.21-214.24
+mutate -mode cnot0 -module bandpass -cell $procdff$855 -port Q -portbit 11 -ctrlbit 3 -wire lp_hist_q[27] -wirebit 11 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:162$ternary$39 -port Y -portbit 0 -wire hp_sat -wirebit 0 -src ../../../rtl/bandpass.sv:162.25-162.31 -src ../../../rtl/bandpass.sv:162.37-163.62
+mutate -mode const1 -module bandpass -cell $procdff$809 -port Q -portbit 0 -wire lp_pass_q -wirebit 0 -src ../../../rtl/bandpass.sv:110.25-110.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:158$not$29 -port Y -portbit 23 -src ../../../rtl/bandpass.sv:158.92-158.104
+mutate -mode const1 -module bandpass -cell $procmux$705 -port B -portbit 14 -wire s_tdata -wirebit 14 -src ../../../rtl/bandpass.sv:65.37-65.44 -src ../../../rtl/bandpass.sv:201.25-201.33 -src ../../../rtl/bandpass.sv:201.21-214.24
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:135$ternary$19 -port S -portbit 0 -src ../../../rtl/bandpass.sv:135.32-135.72
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:236$add$49 -port A -portbit 1 -src ../../../rtl/bandpass.sv:236.38-236.54
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:157$ternary$26 -port Y -portbit 17 -wire hp_add_a -wirebit 17 -src ../../../rtl/bandpass.sv:157.25-157.33 -src ../../../rtl/bandpass.sv:157.36-157.111
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:159$eq$33 -port A -portbit 0 -src ../../../rtl/bandpass.sv:159.37-159.54
+mutate -mode inv -module bandpass -cell $procmux$789_CMP0 -port A -portbit 1 -src ../../../rtl/bandpass.sv:140.26-140.26 -src ../../../rtl/bandpass.sv:140.9-144.16
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:134$eq$15 -port B -portbit 0 -src ../../../rtl/bandpass.sv:134.33-134.50
+mutate -mode cnot0 -module bandpass -cell $procdff$834 -port Q -portbit 0 -ctrlbit 12 -wire lp_hist_q[6] -wirebit 0 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$843 -port Q -portbit 2 -wire lp_hist_q[15] -wirebit 2 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:244$or$51 -port B -portbit 0 -src ../../../rtl/bandpass.sv:244.41-244.55
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:165$logic_and$42 -port B -portbit 0 -src ../../../rtl/bandpass.sv:165.20-165.63
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:161$xor$37 -port B -portbit 0 -src ../../../rtl/bandpass.sv:161.37-161.72
+mutate -mode const1 -module bandpass -cell $procdff$859 -port Q -portbit 12 -wire lp_hist_q[31] -wirebit 12 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procmux$445 -port Y -portbit 1 -src ../../../rtl/bandpass.sv:201.25-201.33 -src ../../../rtl/bandpass.sv:201.21-214.24
+mutate -mode const1 -module bandpass -cell $procdff$810 -port Q -portbit 1 -wire lp_slice_q -wirebit 1 -src ../../../rtl/bandpass.sv:111.25-111.35 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procmux$283 -port A -portbit 10 -src ../../../rtl/bandpass.sv:234.25-234.42 -src ../../../rtl/bandpass.sv:234.21-252.24
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:165$logic_and$42 -port A -portbit 0 -src ../../../rtl/bandpass.sv:165.20-165.63
+mutate -mode cnot0 -module bandpass -cell $procdff$835 -port Q -portbit 2 -ctrlbit 21 -wire lp_hist_q[7] -wirebit 2 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procmux$487 -port Y -portbit 5 -src ../../../rtl/bandpass.sv:199.24-199.24 -src ../../../rtl/bandpass.sv:199.13-254.20
+mutate -mode const1 -module bandpass -cell $procdff$794 -port Q -portbit 6 -wire m_tuser -wirebit 6 -src ../../../rtl/bandpass.sv:75.37-75.44 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:158$ternary$32 -port Y -portbit 18 -wire hp_add_b -wirebit 18 -src ../../../rtl/bandpass.sv:158.25-158.33 -src ../../../rtl/bandpass.sv:158.36-158.116
+mutate -mode cnot1 -module bandpass -cell $procdff$826 -port Q -portbit 8 -ctrlbit 1 -wire x_hist_q[10] -wirebit 8 -src ../../../rtl/bandpass.sv:99.25-99.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $../../../rtl/bandpass.sv:133$ternary$12 -port Y -portbit 23 -ctrlbit 7 -src ../../../rtl/bandpass.sv:133.32-133.71
+mutate -mode cnot0 -module bandpass -cell $procdff$828 -port Q -portbit 13 -ctrlbit 6 -wire y1_ext -wirebit 13 -src ../../../rtl/bandpass.sv:124.21-124.27 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:132$ternary$13 -port Y -portbit 20 -src ../../../rtl/bandpass.sv:132.32-133.71
+mutate -mode cnot0 -module bandpass -cell $procdff$851 -port Q -portbit 18 -ctrlbit 8 -wire lp_hist_q[23] -wirebit 18 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procdff$813 -port Q -portbit 6 -wire tuser_q -wirebit 6 -src ../../../rtl/bandpass.sv:114.25-114.32 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$810 -port Q -portbit 0 -wire lp_slice_q -wirebit 0 -src ../../../rtl/bandpass.sv:111.25-111.35 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:236$add$49 -port Y -portbit 0 -src ../../../rtl/bandpass.sv:236.38-236.54
+mutate -mode const1 -module bandpass -cell $procdff$809 -port CLK -portbit 0 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procdff$822 -port Q -portbit 2 -ctrlbit 4 -wire x_hist_q[6] -wirebit 2 -src ../../../rtl/bandpass.sv:99.25-99.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procdff$800 -port Q -portbit 11 -ctrlbit 1 -wire lp_out_q -wirebit 11 -src ../../../rtl/bandpass.sv:101.25-101.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procmux$695 -port Y -portbit 21 -src ../../../rtl/bandpass.sv:222.25-222.32 -src ../../../rtl/bandpass.sv:222.21-225.24
+mutate -mode cnot1 -module bandpass -cell $../../../rtl/bandpass.sv:158$not$30 -port Y -portbit 18 -ctrlbit 10 -src ../../../rtl/bandpass.sv:158.107-158.116
+mutate -mode const1 -module bandpass -cell $procmux$330 -port B -portbit 17 -src ../../../rtl/bandpass.sv:168.13-168.20 -src ../../../rtl/bandpass.sv:168.9-255.12
+mutate -mode cnot1 -module bandpass -cell $procmux$736 -port Y -portbit 3 -ctrlbit 27 -src ../../../rtl/bandpass.sv:215.20-215.20 -src ../../../rtl/bandpass.sv:199.13-254.20
+mutate -mode cnot0 -module bandpass -cell $procmux$783 -port B -portbit 13 -ctrlbit 4 -wire lp_add_b -wirebit 4 -src ../../../rtl/bandpass.sv:131.21-131.29 -src ../../../rtl/bandpass.sv:141.111-141.111 -src ../../../rtl/bandpass.sv:140.9-144.16
+mutate -mode const1 -module bandpass -cell $procdff$829 -port Q -portbit 15 -wire y2_ext -wirebit 15 -src ../../../rtl/bandpass.sv:125.21-125.27 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:158$ternary$31 -port Y -portbit 7 -src ../../../rtl/bandpass.sv:158.70-158.116
+mutate -mode inv -module bandpass -cell $procdff$841 -port Q -portbit 0 -wire lp_hist_q[13] -wirebit 0 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$819 -port Q -portbit 5 -wire x_hist_q[3] -wirebit 5 -src ../../../rtl/bandpass.sv:99.25-99.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procmux$650 -port Y -portbit 17 -ctrlbit 15 -src ../../../rtl/bandpass.sv:215.20-215.20 -src ../../../rtl/bandpass.sv:199.13-254.20
+mutate -mode cnot0 -module bandpass -cell $../../../rtl/bandpass.sv:160$add$35 -port A -portbit 24 -ctrlbit 22 -wire hp_add_a -wirebit 24 -src ../../../rtl/bandpass.sv:157.25-157.33 -src ../../../rtl/bandpass.sv:160.37-160.56
+mutate -mode inv -module bandpass -cell $procdff$846 -port Q -portbit 16 -wire lp_hist_q[18] -wirebit 16 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procmux$126 -port B -portbit 18 -src ../../../rtl/bandpass.sv:215.20-215.20 -src ../../../rtl/bandpass.sv:199.13-254.20
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:133$eq$10 -port B -portbit 0 -src ../../../rtl/bandpass.sv:133.33-133.50
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:160$add$35 -port A -portbit 1 -wire hp_add_a -wirebit 1 -src ../../../rtl/bandpass.sv:157.25-157.33 -src ../../../rtl/bandpass.sv:160.37-160.56
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:132$not$9 -port A -portbit 2 -src ../../../rtl/bandpass.sv:132.54-132.61
+mutate -mode inv -module bandpass -cell $procdff$798 -port Q -portbit 6 -wire d_hp -wirebit 6 -src ../../../rtl/bandpass.sv:80.37-80.41 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procmux$710 -port B -portbit 10 -ctrlbit 2 -src ../../../rtl/bandpass.sv:168.13-168.20 -src ../../../rtl/bandpass.sv:168.9-255.12
+mutate -mode const0 -module bandpass -cell $procdff$850 -port Q -portbit 10 -wire lp_hist_q[22] -wirebit 10 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procdff$857 -port Q -portbit 5 -ctrlbit 11 -wire lp_hist_q[29] -wirebit 5 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $../../../rtl/bandpass.sv:148$add$21 -port A -portbit 0 -ctrlbit 1 -wire sl_a -wirebit 0 -src ../../../rtl/bandpass.sv:137.24-137.28 -src ../../../rtl/bandpass.sv:148.31-148.58
+mutate -mode cnot0 -module bandpass -cell $procmux$602 -port A -portbit 1 -ctrlbit 0 -src ../../../rtl/bandpass.sv:215.20-215.20 -src ../../../rtl/bandpass.sv:199.13-254.20
+mutate -mode cnot0 -module bandpass -cell $../../../rtl/bandpass.sv:133$not$11 -port A -portbit 4 -ctrlbit 7 -src ../../../rtl/bandpass.sv:133.64-133.71
+mutate -mode const0 -module bandpass -cell $procdff$834 -port Q -portbit 5 -wire lp_hist_q[6] -wirebit 5 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:162$ternary$39 -port B -portbit 11 -src ../../../rtl/bandpass.sv:162.37-163.62
+mutate -mode cnot0 -module bandpass -cell $../../../rtl/bandpass.sv:162$ternary$39 -port Y -portbit 19 -ctrlbit 20 -wire hp_sat -wirebit 19 -src ../../../rtl/bandpass.sv:162.25-162.31 -src ../../../rtl/bandpass.sv:162.37-163.62
+mutate -mode cnot1 -module bandpass -cell $procdff$814 -port Q -portbit 8 -ctrlbit 9 -wire idx_q -wirebit 8 -src ../../../rtl/bandpass.sv:115.25-115.30 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procmux$677 -port Y -portbit 1 -src ../../../rtl/bandpass.sv:218.106-218.106 -src ../../../rtl/bandpass.sv:217.21-221.28
+mutate -mode inv -module bandpass -cell $procdff$820 -port Q -portbit 5 -wire x_hist_q[4] -wirebit 5 -src ../../../rtl/bandpass.sv:99.25-99.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$855 -port Q -portbit 12 -wire lp_hist_q[27] -wirebit 12 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procdff$800 -port Q -portbit 16 -wire lp_out_q -wirebit 16 -src ../../../rtl/bandpass.sv:101.25-101.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procdff$840 -port D -portbit 19 -ctrlbit 18 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procmux$467 -port A -portbit 12 -ctrlbit 8 -src ../../../rtl/bandpass.sv:199.24-199.24 -src ../../../rtl/bandpass.sv:199.13-254.20
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:228$add$46 -port Y -portbit 0 -src ../../../rtl/bandpass.sv:228.39-228.55
+mutate -mode cnot0 -module bandpass -cell $procmux$130 -port Y -portbit 18 -ctrlbit 16 -src ../../../rtl/bandpass.sv:168.13-168.20 -src ../../../rtl/bandpass.sv:168.9-255.12
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:134$eq$15 -port A -portbit 0 -src ../../../rtl/bandpass.sv:134.33-134.50
+mutate -mode cnot1 -module bandpass -cell $procdff$859 -port Q -portbit 0 -ctrlbit 9 -wire lp_hist_q[31] -wirebit 0 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procmux$186 -port B -portbit 16 -ctrlbit 5 -src ../../../rtl/bandpass.sv:215.20-215.20 -src ../../../rtl/bandpass.sv:199.13-254.20
+mutate -mode const1 -module bandpass -cell $procdff$824 -port Q -portbit 12 -wire x_hist_q[8] -wirebit 12 -src ../../../rtl/bandpass.sv:99.25-99.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procdff$790 -port Q -portbit 22 -wire m_tdata -wirebit 22 -src ../../../rtl/bandpass.sv:71.37-71.44 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procmux$687 -port A -portbit 4 -src ../../../rtl/bandpass.sv:217.38-217.38 -src ../../../rtl/bandpass.sv:217.21-221.28
+mutate -mode const0 -module bandpass -cell $procdff$799 -port Q -portbit 11 -wire x_hold_q -wirebit 11 -src ../../../rtl/bandpass.sv:98.25-98.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procmux$555 -port B -portbit 5 -wire s_tuser -wirebit 5 -src ../../../rtl/bandpass.sv:68.37-68.44 -src ../../../rtl/bandpass.sv:201.25-201.33 -src ../../../rtl/bandpass.sv:201.21-214.24
+mutate -mode const1 -module bandpass -cell $procdff$828 -port Q -portbit 14 -wire y1_ext -wirebit 14 -src ../../../rtl/bandpass.sv:124.21-124.27 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procdff$803 -port Q -portbit 0 -wire acc_lp_ext -wirebit 18 -src ../../../rtl/bandpass.sv:120.21-120.31 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$853 -port Q -portbit 16 -wire lp_hist_q[25] -wirebit 16 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$839 -port Q -portbit 17 -wire lp_hist_q[11] -wirebit 17 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procmux$400 -port Y -portbit 11 -ctrlbit 3 -src ../../../rtl/bandpass.sv:168.13-168.20 -src ../../../rtl/bandpass.sv:168.9-255.12
+mutate -mode const1 -module bandpass -cell $procmux$705 -port B -portbit 2 -wire s_tdata -wirebit 2 -src ../../../rtl/bandpass.sv:65.37-65.44 -src ../../../rtl/bandpass.sv:201.25-201.33 -src ../../../rtl/bandpass.sv:201.21-214.24
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:159$ternary$34 -port A -portbit 0 -src ../../../rtl/bandpass.sv:159.36-159.105
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:230$add$47 -port A -portbit 0 -src ../../../rtl/bandpass.sv:230.39-230.56
+mutate -mode inv -module bandpass -cell $procdff$838 -port Q -portbit 1 -wire lp_hist_q[10] -wirebit 1 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$854 -port Q -portbit 19 -wire lp_hist_q[26] -wirebit 19 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procdff$818 -port Q -portbit 0 -ctrlbit 10 -wire x_hist_q[2] -wirebit 0 -src ../../../rtl/bandpass.sv:99.25-99.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procmux$166 -port B -portbit 8 -src ../../../rtl/bandpass.sv:215.20-215.20 -src ../../../rtl/bandpass.sv:199.13-254.20
+mutate -mode cnot1 -module bandpass -cell $procdff$801 -port Q -portbit 6 -ctrlbit 4 -wire acc_lp_next -wirebit 6 -src ../../../rtl/bandpass.sv:150.22-150.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:135$ternary$19 -port S -portbit 0 -src ../../../rtl/bandpass.sv:135.32-135.72
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:165$eq$40 -port B -portbit 0 -src ../../../rtl/bandpass.sv:165.21-165.38
+mutate -mode const0 -module bandpass -cell $procdff$836 -port Q -portbit 15 -wire lp_hist_q[8] -wirebit 15 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $../../../rtl/bandpass.sv:148$add$22 -port Y -portbit 0 -ctrlbit 6 -wire sl_sum -wirebit 0 -src ../../../rtl/bandpass.sv:148.22-148.28 -src ../../../rtl/bandpass.sv:148.31-148.86
+mutate -mode inv -module bandpass -cell $procmux$313 -port Y -portbit 0 -src ../../../rtl/bandpass.sv:234.25-234.42 -src ../../../rtl/bandpass.sv:234.21-252.24
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:159$eq$33 -port Y -portbit 0 -src ../../../rtl/bandpass.sv:159.37-159.54
+mutate -mode inv -module bandpass -cell $procdff$809 -port Q -portbit 1 -wire lp_pass_q -wirebit 1 -src ../../../rtl/bandpass.sv:110.25-110.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procmux$789_CMP0 -port A -portbit 1 -src ../../../rtl/bandpass.sv:140.26-140.26 -src ../../../rtl/bandpass.sv:140.9-144.16
+mutate -mode inv -module bandpass -cell $procmux$783 -port B -portbit 3 -wire lp_add_b -wirebit 12 -src ../../../rtl/bandpass.sv:131.21-131.29 -src ../../../rtl/bandpass.sv:141.111-141.111 -src ../../../rtl/bandpass.sv:140.9-144.16
+mutate -mode cnot0 -module bandpass -cell $procdff$803 -port Q -portbit 4 -ctrlbit 2 -wire acc_lp_ext -wirebit 26 -src ../../../rtl/bandpass.sv:120.21-120.31 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $../../../rtl/bandpass.sv:158$eq$28 -port A -portbit 1 -ctrlbit 0 -src ../../../rtl/bandpass.sv:158.71-158.88
+mutate -mode cnot0 -module bandpass -cell $procdff$805 -port Q -portbit 25 -ctrlbit 19 -wire hp_y_q -wirebit 25 -src ../../../rtl/bandpass.sv:106.25-106.31 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:134$logic_or$17 -port A -portbit 0 -src ../../../rtl/bandpass.sv:134.32-134.74
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:131$eq$7 -port A -portbit 1 -src ../../../rtl/bandpass.sv:131.33-131.50
+mutate -mode inv -module bandpass -cell $procmux$667 -port B -portbit 3 -src ../../../rtl/bandpass.sv:218.106-218.106 -src ../../../rtl/bandpass.sv:217.21-221.28
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:161$xor$37 -port A -portbit 0 -src ../../../rtl/bandpass.sv:161.37-161.72
+mutate -mode cnot1 -module bandpass -cell $procdff$808 -port Q -portbit 0 -ctrlbit 1 -wire st_q -wirebit 0 -src ../../../rtl/bandpass.sv:109.25-109.29 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procdff$798 -port Q -portbit 4 -ctrlbit 24 -wire d_hp -wirebit 4 -src ../../../rtl/bandpass.sv:80.37-80.41 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:244$or$51 -port A -portbit 0 -src ../../../rtl/bandpass.sv:244.41-244.55
+mutate -mode const0 -module bandpass -cell $procdff$811 -port Q -portbit 0 -wire hp_pass_q -wirebit 0 -src ../../../rtl/bandpass.sv:112.25-112.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procdff$822 -port Q -portbit 13 -ctrlbit 0 -wire x_hist_q[6] -wirebit 13 -src ../../../rtl/bandpass.sv:99.25-99.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procmux$673 -port Y -portbit 0 -ctrlbit 2 -src ../../../rtl/bandpass.sv:168.13-168.20 -src ../../../rtl/bandpass.sv:168.9-255.12
+mutate -mode cnot0 -module bandpass -cell $procdff$799 -port Q -portbit 8 -ctrlbit 2 -wire x_hold_q -wirebit 8 -src ../../../rtl/bandpass.sv:98.25-98.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $../../../rtl/bandpass.sv:158$ternary$32 -port Y -portbit 15 -ctrlbit 8 -wire hp_add_b -wirebit 15 -src ../../../rtl/bandpass.sv:158.25-158.33 -src ../../../rtl/bandpass.sv:158.36-158.116
+mutate -mode cnot0 -module bandpass -cell $procmux$687 -port Y -portbit 7 -ctrlbit 1 -src ../../../rtl/bandpass.sv:217.38-217.38 -src ../../../rtl/bandpass.sv:217.21-221.28
+mutate -mode inv -module bandpass -cell $procdff$814 -port Q -portbit 28 -wire idx_q -wirebit 28 -src ../../../rtl/bandpass.sv:115.25-115.30 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $../../../rtl/bandpass.sv:132$ternary$13 -port Y -portbit 14 -ctrlbit 5 -src ../../../rtl/bandpass.sv:132.32-133.71
+mutate -mode const0 -module bandpass -cell $procmux$743 -port Y -portbit 5 -src ../../../rtl/bandpass.sv:234.25-234.42 -src ../../../rtl/bandpass.sv:234.21-252.24
+mutate -mode cnot0 -module bandpass -cell $procdff$857 -port Q -portbit 11 -ctrlbit 4 -wire lp_hist_q[29] -wirebit 11 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $../../../rtl/bandpass.sv:130$ternary$6 -port Y -portbit 8 -ctrlbit 16 -wire lp_add_a -wirebit 8 -src ../../../rtl/bandpass.sv:130.21-130.29 -src ../../../rtl/bandpass.sv:130.32-130.74
+mutate -mode inv -module bandpass -cell $procdff$845 -port Q -portbit 20 -wire lp_hist_q[17] -wirebit 20 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procdff$832 -port Q -portbit 13 -wire lp_hist_q[4] -wirebit 13 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $../../../rtl/bandpass.sv:133$ternary$12 -port Y -portbit 16 -ctrlbit 7 -src ../../../rtl/bandpass.sv:133.32-133.71
+mutate -mode inv -module bandpass -cell $procdff$831 -port Q -portbit 8 -wire lp_hist_q[3] -wirebit 8 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procmux$695 -port Y -portbit 6 -ctrlbit 8 -src ../../../rtl/bandpass.sv:222.25-222.32 -src ../../../rtl/bandpass.sv:222.21-225.24
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:158$not$29 -port A -portbit 11 -src ../../../rtl/bandpass.sv:158.92-158.104
+mutate -mode cnot0 -module bandpass -cell $procdff$836 -port Q -portbit 6 -ctrlbit 0 -wire lp_hist_q[8] -wirebit 6 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procdff$797 -port Q -portbit 11 -ctrlbit 6 -wire d_lp -wirebit 11 -src ../../../rtl/bandpass.sv:79.37-79.41 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procmux$783 -port B -portbit 8 -wire lp_add_b -wirebit 17 -src ../../../rtl/bandpass.sv:131.21-131.29 -src ../../../rtl/bandpass.sv:141.111-141.111 -src ../../../rtl/bandpass.sv:140.9-144.16
+mutate -mode cnot1 -module bandpass -cell $../../../rtl/bandpass.sv:130$ternary$6 -port A -portbit 5 -ctrlbit 18 -src ../../../rtl/bandpass.sv:130.32-130.74
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:158$ternary$31 -port B -portbit 2 -src ../../../rtl/bandpass.sv:158.70-158.116
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:133$not$11 -port Y -portbit 16 -src ../../../rtl/bandpass.sv:133.64-133.71
+mutate -mode const0 -module bandpass -cell $procdff$849 -port Q -portbit 2 -wire lp_hist_q[21] -wirebit 2 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procmux$783 -port A -portbit 8 -ctrlbit 1 -wire lp_add_b -wirebit 26 -src ../../../rtl/bandpass.sv:131.21-131.29 -src ../../../rtl/bandpass.sv:141.111-141.111 -src ../../../rtl/bandpass.sv:140.9-144.16
+mutate -mode inv -module bandpass -cell $procmux$470 -port A -portbit 2 -src ../../../rtl/bandpass.sv:168.13-168.20 -src ../../../rtl/bandpass.sv:168.9-255.12
+mutate -mode cnot1 -module bandpass -cell $../../../rtl/bandpass.sv:157$ternary$25 -port Y -portbit 26 -ctrlbit 3 -src ../../../rtl/bandpass.sv:157.70-157.111
+mutate -mode const1 -module bandpass -cell $procdff$798 -port Q -portbit 1 -wire d_hp -wirebit 1 -src ../../../rtl/bandpass.sv:80.37-80.41 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$790 -port Q -portbit 23 -wire m_tdata -wirebit 23 -src ../../../rtl/bandpass.sv:71.37-71.44 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$848 -port Q -portbit 9 -wire lp_hist_q[20] -wirebit 9 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procdff$832 -port Q -portbit 18 -ctrlbit 1 -wire lp_hist_q[4] -wirebit 18 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:148$add$21 -port B -portbit 0 -wire sl_b -wirebit 0 -src ../../../rtl/bandpass.sv:138.24-138.28 -src ../../../rtl/bandpass.sv:148.31-148.58
+mutate -mode const0 -module bandpass -cell $procdff$826 -port Q -portbit 6 -wire x_hist_q[10] -wirebit 6 -src ../../../rtl/bandpass.sv:99.25-99.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:132$not$9 -port Y -portbit 9 -src ../../../rtl/bandpass.sv:132.54-132.61
+mutate -mode const1 -module bandpass -cell $procmux$386 -port A -portbit 21 -src ../../../rtl/bandpass.sv:215.20-215.20 -src ../../../rtl/bandpass.sv:199.13-254.20
+mutate -mode inv -module bandpass -cell $procdff$790 -port Q -portbit 16 -wire m_tdata -wirebit 16 -src ../../../rtl/bandpass.sv:71.37-71.44 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procdff$800 -port Q -portbit 4 -ctrlbit 15 -wire lp_out_q -wirebit 4 -src ../../../rtl/bandpass.sv:101.25-101.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procdff$795 -port Q -portbit 9 -wire m_sample_idx -wirebit 9 -src ../../../rtl/bandpass.sv:76.37-76.49 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procdff$829 -port Q -portbit 16 -wire y2_ext -wirebit 16 -src ../../../rtl/bandpass.sv:125.21-125.27 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:133$eq$10 -port A -portbit 1 -src ../../../rtl/bandpass.sv:133.33-133.50
+mutate -mode inv -module bandpass -cell $procdff$794 -port Q -portbit 1 -wire m_tuser -wirebit 1 -src ../../../rtl/bandpass.sv:75.37-75.44 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procmux$787 -port Y -portbit 5 -wire sl_a -wirebit 5 -src ../../../rtl/bandpass.sv:137.24-137.28 -src ../../../rtl/bandpass.sv:141.111-141.111 -src ../../../rtl/bandpass.sv:140.9-144.16
+mutate -mode cnot1 -module bandpass -cell $../../../rtl/bandpass.sv:158$not$30 -port A -portbit 13 -ctrlbit 12 -src ../../../rtl/bandpass.sv:158.107-158.116
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:160$add$36 -port Y -portbit 5 -wire hp_sum -wirebit 5 -src ../../../rtl/bandpass.sv:160.25-160.31 -src ../../../rtl/bandpass.sv:160.37-160.67
+mutate -mode const0 -module bandpass -cell $procmux$600 -port Y -portbit 1 -src ../../../rtl/bandpass.sv:226.25-226.43 -src ../../../rtl/bandpass.sv:226.21-231.24
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:161$xor$37 -port A -portbit 0 -src ../../../rtl/bandpass.sv:161.37-161.72
+mutate -mode cnot0 -module bandpass -cell $procdff$829 -port Q -portbit 7 -ctrlbit 1 -wire y2_ext -wirebit 7 -src ../../../rtl/bandpass.sv:125.21-125.27 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procmux$660 -port B -portbit 0 -wire sl_sum -wirebit 9 -src ../../../rtl/bandpass.sv:148.22-148.28 -src ../../../rtl/bandpass.sv:215.20-215.20 -src ../../../rtl/bandpass.sv:199.13-254.20
+mutate -mode cnot0 -module bandpass -cell $procmux$136 -port Y -portbit 18 -ctrlbit 17 -src ../../../rtl/bandpass.sv:215.20-215.20 -src ../../../rtl/bandpass.sv:199.13-254.20
+mutate -mode const0 -module bandpass -cell $procdff$847 -port Q -portbit 18 -wire lp_hist_q[19] -wirebit 18 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procmux$293 -port Y -portbit 8 -src ../../../rtl/bandpass.sv:234.25-234.42 -src ../../../rtl/bandpass.sv:234.21-252.24
+mutate -mode cnot0 -module bandpass -cell $procmux$555 -port B -portbit 7 -ctrlbit 1 -wire s_tuser -wirebit 7 -src ../../../rtl/bandpass.sv:68.37-68.44 -src ../../../rtl/bandpass.sv:201.25-201.33 -src ../../../rtl/bandpass.sv:201.21-214.24
+mutate -mode inv -module bandpass -cell $procdff$833 -port Q -portbit 15 -wire lp_hist_q[5] -wirebit 15 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procmux$470 -port B -portbit 9 -ctrlbit 7 -src ../../../rtl/bandpass.sv:168.13-168.20 -src ../../../rtl/bandpass.sv:168.9-255.12
+mutate -mode cnot1 -module bandpass -cell $procdff$801 -port Q -portbit 0 -ctrlbit 6 -wire acc_lp_next -wirebit 0 -src ../../../rtl/bandpass.sv:150.22-150.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procdff$846 -port Q -portbit 6 -ctrlbit 12 -wire lp_hist_q[18] -wirebit 6 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procdff$790 -port Q -portbit 9 -wire m_tdata -wirebit 9 -src ../../../rtl/bandpass.sv:71.37-71.44 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$820 -port Q -portbit 1 -wire x_hist_q[4] -wirebit 1 -src ../../../rtl/bandpass.sv:99.25-99.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$813 -port Q -portbit 6 -wire tuser_q -wirebit 6 -src ../../../rtl/bandpass.sv:114.25-114.32 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:228$add$46 -port Y -portbit 0 -src ../../../rtl/bandpass.sv:228.39-228.55
+mutate -mode cnot1 -module bandpass -cell $procdff$829 -port Q -portbit 17 -ctrlbit 11 -wire y2_ext -wirebit 17 -src ../../../rtl/bandpass.sv:125.21-125.27 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:135$ternary$19 -port A -portbit 0 -src ../../../rtl/bandpass.sv:135.32-135.72
+mutate -mode const0 -module bandpass -cell $procmux$705 -port B -portbit 0 -wire s_tdata -wirebit 0 -src ../../../rtl/bandpass.sv:65.37-65.44 -src ../../../rtl/bandpass.sv:201.25-201.33 -src ../../../rtl/bandpass.sv:201.21-214.24
+mutate -mode const0 -module bandpass -cell $procmux$555 -port B -portbit 4 -wire s_tuser -wirebit 4 -src ../../../rtl/bandpass.sv:68.37-68.44 -src ../../../rtl/bandpass.sv:201.25-201.33 -src ../../../rtl/bandpass.sv:201.21-214.24
+mutate -mode cnot1 -module bandpass -cell $../../../rtl/bandpass.sv:134$eq$15 -port A -portbit 1 -ctrlbit 0 -src ../../../rtl/bandpass.sv:134.33-134.50
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:131$eq$7 -port A -portbit 1 -src ../../../rtl/bandpass.sv:131.33-131.50
+mutate -mode cnot0 -module bandpass -cell $procmux$280 -port Y -portbit 16 -ctrlbit 4 -src ../../../rtl/bandpass.sv:168.13-168.20 -src ../../../rtl/bandpass.sv:168.9-255.12
+mutate -mode cnot1 -module bandpass -cell $procdff$853 -port Q -portbit 2 -ctrlbit 21 -wire lp_hist_q[25] -wirebit 2 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procdff$825 -port Q -portbit 10 -ctrlbit 8 -wire x_hist_q[9] -wirebit 10 -src ../../../rtl/bandpass.sv:99.25-99.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $../../../rtl/bandpass.sv:132$not$9 -port A -portbit 5 -ctrlbit 23 -src ../../../rtl/bandpass.sv:132.54-132.61
+mutate -mode inv -module bandpass -cell $procdff$843 -port Q -portbit 15 -wire lp_hist_q[15] -wirebit 15 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:230$add$47 -port Y -portbit 0 -src ../../../rtl/bandpass.sv:230.39-230.56
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:165$logic_and$42 -port A -portbit 0 -src ../../../rtl/bandpass.sv:165.20-165.63
+mutate -mode cnot1 -module bandpass -cell $../../../rtl/bandpass.sv:158$ternary$32 -port Y -portbit 12 -ctrlbit 5 -wire hp_add_b -wirebit 12 -src ../../../rtl/bandpass.sv:158.25-158.33 -src ../../../rtl/bandpass.sv:158.36-158.116
+mutate -mode const0 -module bandpass -cell $procdff$850 -port Q -portbit 20 -wire lp_hist_q[22] -wirebit 20 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:158$eq$28 -port A -portbit 1 -src ../../../rtl/bandpass.sv:158.71-158.88
+mutate -mode inv -module bandpass -cell $procmux$497 -port Y -portbit 1 -src ../../../rtl/bandpass.sv:199.24-199.24 -src ../../../rtl/bandpass.sv:199.13-254.20
+mutate -mode cnot0 -module bandpass -cell $procdff$847 -port Q -portbit 5 -ctrlbit 2 -wire lp_hist_q[19] -wirebit 5 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procmux$736 -port A -portbit 8 -src ../../../rtl/bandpass.sv:215.20-215.20 -src ../../../rtl/bandpass.sv:199.13-254.20
+mutate -mode const1 -module bandpass -cell $procdff$856 -port Q -portbit 6 -wire lp_hist_q[28] -wirebit 6 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procmux$410 -port B -portbit 14 -ctrlbit 7 -src ../../../rtl/bandpass.sv:168.13-168.20 -src ../../../rtl/bandpass.sv:168.9-255.12
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:244$or$51 -port Y -portbit 0 -src ../../../rtl/bandpass.sv:244.41-244.55
+mutate -mode cnot1 -module bandpass -cell $procdff$824 -port Q -portbit 12 -ctrlbit 1 -wire x_hist_q[8] -wirebit 12 -src ../../../rtl/bandpass.sv:99.25-99.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procmux$567 -port A -portbit 0 -src ../../../rtl/bandpass.sv:199.24-199.24 -src ../../../rtl/bandpass.sv:199.13-254.20
+mutate -mode inv -module bandpass -cell $procmux$789_CMP0 -port Y -portbit 0 -src ../../../rtl/bandpass.sv:140.26-140.26 -src ../../../rtl/bandpass.sv:140.9-144.16
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:165$eq$40 -port Y -portbit 0 -src ../../../rtl/bandpass.sv:165.21-165.38
+mutate -mode cnot0 -module bandpass -cell $procdff$795 -port Q -portbit 19 -ctrlbit 6 -wire m_sample_idx -wirebit 19 -src ../../../rtl/bandpass.sv:76.37-76.49 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$803 -port Q -portbit 4 -wire acc_lp_ext -wirebit 26 -src ../../../rtl/bandpass.sv:120.21-120.31 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:236$add$49 -port Y -portbit 0 -src ../../../rtl/bandpass.sv:236.38-236.54
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:159$ternary$34 -port Y -portbit 0 -wire hp_add_c -wirebit 0 -src ../../../rtl/bandpass.sv:159.36-159.105
+mutate -mode cnot0 -module bandpass -cell $procdff$837 -port Q -portbit 4 -ctrlbit 0 -wire lp_hist_q[9] -wirebit 4 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procdff$845 -port D -portbit 21 -ctrlbit 19 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:159$eq$33 -port A -portbit 1 -src ../../../rtl/bandpass.sv:159.37-159.54
+mutate -mode const0 -module bandpass -cell $procdff$814 -port Q -portbit 3 -wire idx_q -wirebit 3 -src ../../../rtl/bandpass.sv:115.25-115.30 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$828 -port Q -portbit 9 -wire y1_ext -wirebit 9 -src ../../../rtl/bandpass.sv:124.21-124.27 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procmux$535 -port S -portbit 0 -src ../../../rtl/bandpass.sv:201.25-201.33 -src ../../../rtl/bandpass.sv:201.21-214.24
+mutate -mode cnot1 -module bandpass -cell $../../../rtl/bandpass.sv:131$ternary$14 -port Y -portbit 8 -ctrlbit 13 -wire lp_add_b -wirebit 8 -src ../../../rtl/bandpass.sv:131.21-131.29 -src ../../../rtl/bandpass.sv:131.32-133.71
+mutate -mode cnot0 -module bandpass -cell $procdff$801 -port Q -portbit 0 -ctrlbit 1 -wire acc_lp_next -wirebit 0 -src ../../../rtl/bandpass.sv:150.22-150.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procmux$583 -port Y -portbit 1 -ctrlbit 0 -src ../../../rtl/bandpass.sv:168.13-168.20 -src ../../../rtl/bandpass.sv:168.9-255.12
+mutate -mode const0 -module bandpass -cell $procdff$809 -port Q -portbit 1 -wire lp_pass_q -wirebit 1 -src ../../../rtl/bandpass.sv:110.25-110.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procmux$545 -port B -portbit 24 -wire s_sample_idx -wirebit 24 -src ../../../rtl/bandpass.sv:69.37-69.49 -src ../../../rtl/bandpass.sv:201.25-201.33 -src ../../../rtl/bandpass.sv:201.21-214.24
+mutate -mode inv -module bandpass -cell $procmux$545 -port B -portbit 3 -wire s_sample_idx -wirebit 3 -src ../../../rtl/bandpass.sv:69.37-69.49 -src ../../../rtl/bandpass.sv:201.25-201.33 -src ../../../rtl/bandpass.sv:201.21-214.24
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:134$logic_or$17 -port A -portbit 0 -src ../../../rtl/bandpass.sv:134.32-134.74
+mutate -mode cnot0 -module bandpass -cell $../../../rtl/bandpass.sv:158$not$30 -port A -portbit 25 -ctrlbit 2 -src ../../../rtl/bandpass.sv:158.107-158.116
+mutate -mode cnot1 -module bandpass -cell $../../../rtl/bandpass.sv:157$ternary$26 -port A -portbit 13 -ctrlbit 8 -src ../../../rtl/bandpass.sv:157.36-157.111
+mutate -mode inv -module bandpass -cell $procdff$831 -port Q -portbit 0 -wire lp_hist_q[3] -wirebit 0 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:157$ternary$25 -port A -portbit 17 -src ../../../rtl/bandpass.sv:157.70-157.111
+mutate -mode cnot1 -module bandpass -cell $procmux$530 -port B -portbit 13 -ctrlbit 14 -src ../../../rtl/bandpass.sv:168.13-168.20 -src ../../../rtl/bandpass.sv:168.9-255.12
+mutate -mode cnot1 -module bandpass -cell $../../../rtl/bandpass.sv:158$not$29 -port Y -portbit 9 -ctrlbit 10 -src ../../../rtl/bandpass.sv:158.92-158.104
+mutate -mode const1 -module bandpass -cell $procmux$787 -port B -portbit 14 -wire lp_add_a -wirebit 5 -src ../../../rtl/bandpass.sv:130.21-130.29 -src ../../../rtl/bandpass.sv:141.111-141.111 -src ../../../rtl/bandpass.sv:140.9-144.16
+mutate -mode const1 -module bandpass -cell $procmux$687 -port B -portbit 8 -src ../../../rtl/bandpass.sv:217.38-217.38 -src ../../../rtl/bandpass.sv:217.21-221.28
+mutate -mode const0 -module bandpass -cell $procdff$799 -port Q -portbit 13 -wire x_hold_q -wirebit 13 -src ../../../rtl/bandpass.sv:98.25-98.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:133$ternary$12 -port B -portbit 4 -src ../../../rtl/bandpass.sv:133.32-133.71
+mutate -mode const1 -module bandpass -cell $procmux$787 -port B -portbit 4 -wire lp_add_a -wirebit 13 -src ../../../rtl/bandpass.sv:130.21-130.29 -src ../../../rtl/bandpass.sv:141.111-141.111 -src ../../../rtl/bandpass.sv:140.9-144.16
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:148$add$21 -port A -portbit 8 -wire sl_a -wirebit 8 -src ../../../rtl/bandpass.sv:137.24-137.28 -src ../../../rtl/bandpass.sv:148.31-148.58
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:159$ternary$34 -port Y -portbit 0 -wire hp_add_c -wirebit 0 -src ../../../rtl/bandpass.sv:159.36-159.105
+mutate -mode const1 -module bandpass -cell $procmux$376 -port Y -portbit 11 -src ../../../rtl/bandpass.sv:215.20-215.20 -src ../../../rtl/bandpass.sv:199.13-254.20
+mutate -mode const1 -module bandpass -cell $procdff$823 -port Q -portbit 14 -wire x_hist_q[7] -wirebit 14 -src ../../../rtl/bandpass.sv:99.25-99.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procmux$677 -port B -portbit 8 -ctrlbit 0 -src ../../../rtl/bandpass.sv:218.106-218.106 -src ../../../rtl/bandpass.sv:217.21-221.28
+mutate -mode const0 -module bandpass -cell $procdff$840 -port Q -portbit 16 -wire lp_hist_q[12] -wirebit 16 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:158$ternary$31 -port Y -portbit 6 -src ../../../rtl/bandpass.sv:158.70-158.116
+mutate -mode cnot0 -module bandpass -cell $procdff$853 -port Q -portbit 18 -ctrlbit 6 -wire lp_hist_q[25] -wirebit 18 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procdff$833 -port Q -portbit 9 -wire lp_hist_q[5] -wirebit 9 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procdff$794 -port Q -portbit 6 -wire m_tuser -wirebit 6 -src ../../../rtl/bandpass.sv:75.37-75.44 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procdff$833 -port Q -portbit 10 -wire lp_hist_q[5] -wirebit 10 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procmux$565 -port S -portbit 0 -src ../../../rtl/bandpass.sv:201.25-201.33 -src ../../../rtl/bandpass.sv:201.21-214.24
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:132$ternary$13 -port B -portbit 23 -src ../../../rtl/bandpass.sv:132.32-133.71
+mutate -mode inv -module bandpass -cell $procmux$527 -port A -portbit 9 -src ../../../rtl/bandpass.sv:199.24-199.24 -src ../../../rtl/bandpass.sv:199.13-254.20
+mutate -mode inv -module bandpass -cell $procdff$840 -port Q -portbit 6 -wire lp_hist_q[12] -wirebit 6 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $../../../rtl/bandpass.sv:162$ternary$39 -port Y -portbit 17 -ctrlbit 5 -wire hp_sat -wirebit 17 -src ../../../rtl/bandpass.sv:162.25-162.31 -src ../../../rtl/bandpass.sv:162.37-163.62
+mutate -mode cnot0 -module bandpass -cell $procdff$843 -port Q -portbit 13 -ctrlbit 10 -wire lp_hist_q[15] -wirebit 13 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procdff$839 -port Q -portbit 4 -ctrlbit 2 -wire lp_hist_q[11] -wirebit 4 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:133$not$11 -port Y -portbit 10 -src ../../../rtl/bandpass.sv:133.64-133.71
+mutate -mode cnot1 -module bandpass -cell $procdff$836 -port Q -portbit 12 -ctrlbit 11 -wire lp_hist_q[8] -wirebit 12 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procmux$555 -port B -portbit 6 -ctrlbit 2 -wire s_tuser -wirebit 6 -src ../../../rtl/bandpass.sv:68.37-68.44 -src ../../../rtl/bandpass.sv:201.25-201.33 -src ../../../rtl/bandpass.sv:201.21-214.24
+mutate -mode const0 -module bandpass -cell $procdff$842 -port Q -portbit 4 -wire lp_hist_q[14] -wirebit 4 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procmux$306 -port A -portbit 20 -src ../../../rtl/bandpass.sv:215.20-215.20 -src ../../../rtl/bandpass.sv:199.13-254.20
+mutate -mode inv -module bandpass -cell $procmux$695 -port B -portbit 16 -src ../../../rtl/bandpass.sv:222.25-222.32 -src ../../../rtl/bandpass.sv:222.21-225.24
+mutate -mode cnot1 -module bandpass -cell $procdff$805 -port Q -portbit 1 -ctrlbit 0 -wire hp_y_q -wirebit 1 -src ../../../rtl/bandpass.sv:106.25-106.31 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procdff$806 -port Q -portbit 7 -wire acc_hp_q -wirebit 7 -src ../../../rtl/bandpass.sv:107.25-107.33 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procmux$600 -port A -portbit 1 -src ../../../rtl/bandpass.sv:226.25-226.43 -src ../../../rtl/bandpass.sv:226.21-231.24
+mutate -mode const1 -module bandpass -cell $procdff$854 -port Q -portbit 3 -wire lp_hist_q[26] -wirebit 3 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procdff$856 -port Q -portbit 9 -wire lp_hist_q[28] -wirebit 9 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:133$eq$10 -port B -portbit 1 -src ../../../rtl/bandpass.sv:133.33-133.50
+mutate -mode const1 -module bandpass -cell $procdff$837 -port Q -portbit 8 -wire lp_hist_q[9] -wirebit 8 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:228$add$46 -port Y -portbit 0 -src ../../../rtl/bandpass.sv:228.39-228.55
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:148$add$22 -port Y -portbit 9 -wire sl_sum -wirebit 9 -src ../../../rtl/bandpass.sv:148.22-148.28 -src ../../../rtl/bandpass.sv:148.31-148.86
+mutate -mode const0 -module bandpass -cell $procdff$802 -port Q -portbit 5 -wire acc_mid_q -wirebit 5 -src ../../../rtl/bandpass.sv:103.25-103.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:159$eq$33 -port A -portbit 0 -src ../../../rtl/bandpass.sv:159.37-159.54
+mutate -mode cnot1 -module bandpass -cell $procdff$840 -port Q -portbit 18 -ctrlbit 10 -wire lp_hist_q[12] -wirebit 18 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $procdff$835 -port Q -portbit 11 -ctrlbit 2 -wire lp_hist_q[7] -wirebit 11 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:131$ternary$14 -port Y -portbit 15 -wire lp_add_b -wirebit 15 -src ../../../rtl/bandpass.sv:131.21-131.29 -src ../../../rtl/bandpass.sv:131.32-133.71
+mutate -mode const0 -module bandpass -cell $procdff$809 -port Q -portbit 0 -wire lp_pass_q -wirebit 0 -src ../../../rtl/bandpass.sv:110.25-110.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:158$eq$28 -port B -portbit 0 -src ../../../rtl/bandpass.sv:158.71-158.88
+mutate -mode const0 -module bandpass -cell $procdff$838 -port Q -portbit 3 -wire lp_hist_q[10] -wirebit 3 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot0 -module bandpass -cell $../../../rtl/bandpass.sv:165$eq$40 -port A -portbit 0 -ctrlbit 1 -src ../../../rtl/bandpass.sv:165.21-165.38
+mutate -mode cnot1 -module bandpass -cell $../../../rtl/bandpass.sv:230$add$47 -port Y -portbit 0 -ctrlbit 1 -src ../../../rtl/bandpass.sv:230.39-230.56
+mutate -mode const1 -module bandpass -cell $../../../rtl/bandpass.sv:236$add$49 -port Y -portbit 1 -src ../../../rtl/bandpass.sv:236.38-236.54
+mutate -mode const1 -module bandpass -cell $procmux$166 -port B -portbit 4 -src ../../../rtl/bandpass.sv:215.20-215.20 -src ../../../rtl/bandpass.sv:199.13-254.20
+mutate -mode const1 -module bandpass -cell $procdff$856 -port Q -portbit 17 -wire lp_hist_q[28] -wirebit 17 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const0 -module bandpass -cell $procdff$842 -port Q -portbit 6 -wire lp_hist_q[14] -wirebit 6 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$852 -port Q -portbit 18 -wire lp_hist_q[24] -wirebit 18 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $procdff$844 -port Q -portbit 4 -wire lp_hist_q[16] -wirebit 4 -src ../../../rtl/bandpass.sv:100.25-100.34 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode cnot1 -module bandpass -cell $procmux$480 -port Y -portbit 15 -ctrlbit 10 -src ../../../rtl/bandpass.sv:168.13-168.20 -src ../../../rtl/bandpass.sv:168.9-255.12
+mutate -mode inv -module bandpass -cell $procdff$813 -port Q -portbit 5 -wire tuser_q -wirebit 5 -src ../../../rtl/bandpass.sv:114.25-114.32 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode const1 -module bandpass -cell $procdff$794 -port Q -portbit 5 -wire m_tuser -wirebit 5 -src ../../../rtl/bandpass.sv:75.37-75.44 -src ../../../rtl/bandpass.sv:167.5-256.8
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:159$eq$33 -port A -portbit 0 -src ../../../rtl/bandpass.sv:159.37-159.54
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:135$ternary$19 -port S -portbit 0 -src ../../../rtl/bandpass.sv:135.32-135.72
+mutate -mode inv -module bandpass -cell $procmux$403 -port Y -portbit 13 -src ../../../rtl/bandpass.sv:234.25-234.42 -src ../../../rtl/bandpass.sv:234.21-252.24
+mutate -mode cnot0 -module bandpass -cell $../../../rtl/bandpass.sv:130$ternary$6 -port Y -portbit 17 -ctrlbit 8 -wire lp_add_a -wirebit 17 -src ../../../rtl/bandpass.sv:130.21-130.29 -src ../../../rtl/bandpass.sv:130.32-130.74
+mutate -mode inv -module bandpass -cell $procmux$166 -port B -portbit 19 -src ../../../rtl/bandpass.sv:215.20-215.20 -src ../../../rtl/bandpass.sv:199.13-254.20
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:134$eq$15 -port A -portbit 1 -src ../../../rtl/bandpass.sv:134.33-134.50
+mutate -mode const0 -module bandpass -cell $../../../rtl/bandpass.sv:160$add$36 -port B -portbit 0 -wire hp_add_c -wirebit 0 -src ../../../rtl/bandpass.sv:160.37-160.67
+mutate -mode cnot0 -module bandpass -cell $procmux$140 -port B -portbit 11 -ctrlbit 0 -src ../../../rtl/bandpass.sv:168.13-168.20 -src ../../../rtl/bandpass.sv:168.9-255.12
+mutate -mode cnot0 -module bandpass -cell $procmux$310 -port Y -portbit 11 -ctrlbit 0 -src ../../../rtl/bandpass.sv:168.13-168.20 -src ../../../rtl/bandpass.sv:168.9-255.12
+mutate -mode inv -module bandpass -cell $../../../rtl/bandpass.sv:131$eq$7 -port Y -portbit 0 -src ../../../rtl/bandpass.sv:131.33-131.50

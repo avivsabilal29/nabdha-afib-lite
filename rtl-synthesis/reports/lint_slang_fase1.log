@@ -1,0 +1,6 @@
+warning: unknown warning option '-Wall' [-Wunknown-warning-option]
+Top level design units:
+    afib_lite_top
+
+
+Build succeeded: 0 errors, 1 warning

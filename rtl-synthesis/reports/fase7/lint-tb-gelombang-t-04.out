@@ -1,0 +1,12 @@
+run_lint.sh: top=tb_gelombang_t sources=3 timing=1
+  ../rtl/afib_lite_pkg.sv
+  ../rtl/tb/tb_gelombang_t.sv
+  ../rtl/t_rule.sv
+%Error: ../rtl/tb/tb_gelombang_t.sv:279:47: syntax error, unexpected ',', expecting '}'
+  279 |             even = {1'b0, kemq} - {W_DER{1'b0}, kemq[0]};
+      |                                               ^
+%Error: ../rtl/tb/tb_gelombang_t.sv:307:62: syntax error, unexpected '[', expecting ';'
+  307 |             f_report = f_rail(v) ? W_TW'(KEM_RAIL) : f_mag(v)[W_TW-1:0];
+      |                                                              ^
+%Error: Exiting due to 2 error(s)
+exit=1

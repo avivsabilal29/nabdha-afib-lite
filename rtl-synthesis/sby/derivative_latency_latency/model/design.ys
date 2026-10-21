@@ -1,0 +1,9 @@
+# running in derivative_latency_latency/src/
+read_verilog -sv /home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/afib_lite_pkg.sv /home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv
+read_verilog -sv derivative_latency.sv
+prep -top derivative_latency -flatten
+
+hierarchy -smtcheck
+rename -witness
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il

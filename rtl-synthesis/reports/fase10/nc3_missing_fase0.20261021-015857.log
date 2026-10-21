@@ -1,0 +1,33 @@
+run_sim.sh: tb=../rtl/tb/tb_top.sv sources=14 plusargs=7
+  plusargs forwarded to vvp: +VECTOR=/home/avivsabilalm/.hermes/cache/scratch/neg/nonexistent +STIM=../rtl/tb/vektor/04015.stimulus.hex +EXPECT=../rtl/tb/vektor/fase5 +RRVEC=../rtl/tb/vektor/fase6 +CLVEC=../rtl/tb/vektor/fase9 +F8VEC=../rtl/tb/vektor/fase8 +LIMIT=6000
+  compiled first (packages): ../rtl/afib_lite_pkg.sv ../rtl/afib_lite_pkg.sv
+ERROR: ../rtl/tb/tb_top.sv:665: $readmemh: Unable to open /home/avivsabilalm/.hermes/cache/scratch/neg/nonexistent/04015.masukan16.hex for reading.
+ERROR: ../rtl/tb/tb_top.sv:666: $readmemh: Unable to open /home/avivsabilalm/.hermes/cache/scratch/neg/nonexistent/04015.lp.hex for reading.
+ERROR: ../rtl/tb/tb_top.sv:667: $readmemh: Unable to open /home/avivsabilalm/.hermes/cache/scratch/neg/nonexistent/04015.hp.hex for reading.
+ERROR: ../rtl/tb/tb_top.sv:668: $readmemh: Unable to open /home/avivsabilalm/.hermes/cache/scratch/neg/nonexistent/04015.turunan.hex for reading.
+ERROR: ../rtl/tb/tb_top.sv:669: $readmemh: Unable to open /home/avivsabilalm/.hermes/cache/scratch/neg/nonexistent/04015.kuadrat.hex for reading.
+ERROR: ../rtl/tb/tb_top.sv:670: $readmemh: Unable to open /home/avivsabilalm/.hermes/cache/scratch/neg/nonexistent/04015.jendela.hex for reading.
+WARNING: ../rtl/tb/tb_top.sv:674: $readmemh(../rtl/tb/vektor/fase5/04015.ambang_state.hex): Not enough words in the file for the requested range [0:15].
+WARNING: ../rtl/tb/tb_top.sv:675: $readmemh(../rtl/tb/vektor/fase5/04015.qrs.hex): Not enough words in the file for the requested range [0:8191].
+WARNING: ../rtl/tb/tb_top.sv:676: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.pos.hex): Not enough words in the file for the requested range [0:8191].
+WARNING: ../rtl/tb/tb_top.sv:677: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.pv.hex): Not enough words in the file for the requested range [0:8191].
+WARNING: ../rtl/tb/tb_top.sv:678: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.pkf.hex): Not enough words in the file for the requested range [0:8191].
+WARNING: ../rtl/tb/tb_top.sv:679: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.kem.hex): Not enough words in the file for the requested range [0:8191].
+WARNING: ../rtl/tb/tb_top.sv:680: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.i1.hex): Not enough words in the file for the requested range [0:8191].
+WARNING: ../rtl/tb/tb_top.sv:681: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.i2.hex): Not enough words in the file for the requested range [0:8191].
+WARNING: ../rtl/tb/tb_top.sv:682: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.flag.hex): Not enough words in the file for the requested range [0:8191].
+WARNING: ../rtl/tb/tb_top.sv:683: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.evidx.hex): Not enough words in the file for the requested range [0:8191].
+WARNING: ../rtl/tb/tb_top.sv:684: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.kind.hex): Not enough words in the file for the requested range [0:8191].
+WARNING: ../rtl/tb/tb_top.sv:686: $readmemh(../rtl/tb/vektor/fase6/04015.rr.hex): Not enough words in the file for the requested range [0:8191].
+WARNING: ../rtl/tb/tb_top.sv:687: $readmemh(../rtl/tb/vektor/fase6/04015.rr.mark.hex): Not enough words in the file for the requested range [0:8191].
+WARNING: ../rtl/tb/tb_top.sv:688: $readmemh(../rtl/tb/vektor/fase6/04015.rr.smp.hex): Not enough words in the file for the requested range [0:8191].
+WARNING: ../rtl/tb/tb_top.sv:689: $readmemh(../rtl/tb/vektor/fase6/04015.fase6.counts.hex): Not enough words in the file for the requested range [0:31].
+WARNING: ../rtl/tb/tb_top.sv:691: $readmemh(../rtl/tb/vektor/fase9/04015.fase9.counts.hex): Not enough words in the file for the requested range [0:31].
+WARNING: ../rtl/tb/tb_top.sv:696: $readmemh(../rtl/tb/vektor/fase8/04015.fase8.map.marked.hex): Not enough words in the file for the requested range [0:4095].
+WARNING: ../rtl/tb/tb_top.sv:702: $readmemh(../rtl/tb/vektor/fase9/04015.mentah.asli.hex): Not enough words in the file for the requested range [0:1023].
+WARNING: ../rtl/tb/tb_top.sv:703: $readmemh(../rtl/tb/vektor/fase9/04015.berpenanda.asli.hex): Not enough words in the file for the requested range [0:1023].
+WARNING: ../rtl/tb/tb_top.sv:704: $readmemh(../rtl/tb/vektor/fase9/04015.berpenanda.kelas.hex): Not enough words in the file for the requested range [0:1023].
+WARNING: ../rtl/tb/tb_top.sv:705: $readmemh(../rtl/tb/vektor/fase9/04015.berpenanda.qr.hex): Not enough words in the file for the requested range [0:1023].
+WARNING: ../rtl/tb/tb_top.sv:706: $readmemh(../rtl/tb/vektor/fase9/04015.berpenanda.qe.hex): Not enough words in the file for the requested range [0:1023].
+FATAL: ../rtl/tb/tb_top.sv:721: tb_top: FAIL a Fase 0 column is missing or short
+       Time: 0  Scope: tb_top

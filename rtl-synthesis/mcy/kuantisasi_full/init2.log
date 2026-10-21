@@ -1,0 +1,24 @@
+==> Initialize database
+  -> Reading configuration file.
+  -> Checking database existance.
+  -> Creating database directory.
+  -> Creating design script file.
+  -> Creating design RTL.
+yosys -ql database/design.log database/design.ys
+Warning: Replacing memory \side_q with list of registers. See ../../../rtl/acq_frontend.sv:178
+Warning: Replacing memory \bit_q with list of registers. See ../../../rtl/acq_frontend.sv:177
+Warning: Replacing memory \quo_q with list of registers. See ../../../rtl/acq_frontend.sv:176
+Warning: Replacing memory \rem_q with list of registers. See ../../../rtl/acq_frontend.sv:175
+  -> Creating mutations script file.
+  -> Creating mutations.
+yosys -ql database/mutations.log database/mutations.ys
+  -> Initializing database.
+  -> Connecting to database.
+  -> Importing mutations.
+  -> Importing design sources.
+  -> Reseting database statistics.
+  -> Remove 'tasks' subdirectory.
+  -> Update mutations.
+  -> Getting database statistics.
+Database contains 0 cached results.
+Queued 1000 "test_sim" tests.

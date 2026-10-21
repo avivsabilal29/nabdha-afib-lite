@@ -1,0 +1,36 @@
+{
+  "format": "Yosys Witness Trace",
+  "generator": "smtbmc",
+  "clocks": [
+    {"path": ["\\clk"], "edge": "posedge", "offset": 0}
+  ],
+  "signals": [
+    {"path": ["\\clk"], "width": 1, "offset": 0, "init_only": false},
+    {"path": ["\\dut", "\\s_tvalid"], "width": 1, "offset": 0, "init_only": false},
+    {"path": ["\\dut", "\\m_tvalid"], "width": 1, "offset": 0, "init_only": true},
+    {"path": ["\\dut", "\\pass_q"], "width": 2, "offset": 0, "init_only": true},
+    {"path": ["\\dut", "\\slice_q"], "width": 2, "offset": 0, "init_only": true},
+    {"path": ["\\dut", "\\st_q"], "width": 2, "offset": 0, "init_only": true}
+  ],
+  "steps": [
+    {"bits": "000000000"},
+    {"bits": "00"},
+    {"bits": "00"},
+    {"bits": "00"},
+    {"bits": "10"},
+    {"bits": "10"},
+    {"bits": "10"},
+    {"bits": "10"},
+    {"bits": "10"},
+    {"bits": "10"},
+    {"bits": "10"},
+    {"bits": "10"},
+    {"bits": "10"},
+    {"bits": "10"},
+    {"bits": "10"},
+    {"bits": "10"},
+    {"bits": "10"},
+    {"bits": "10"},
+    {"bits": "10"}
+  ]
+}

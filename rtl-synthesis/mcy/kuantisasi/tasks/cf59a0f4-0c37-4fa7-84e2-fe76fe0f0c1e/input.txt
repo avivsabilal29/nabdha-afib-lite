@@ -1,0 +1,1 @@
+1 mutate -mode const0 -module acq_frontend -cell $procdff$420 -port Q -portbit 0 -wire sample_en_q -wirebit 0 -src ../../../rtl/acq_frontend.sv:128.26-128.37 -src ../../../rtl/acq_frontend.sv:309.5-326.8

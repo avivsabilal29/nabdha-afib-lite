@@ -1,0 +1,23 @@
+run_sim.sh: tb=../rtl/tb/tb_rr.sv sources=2 plusargs=1
+  plusargs forwarded to vvp: +VECTOR=../rtl/tb/vektor/tidak-ada-dir
+  compiled first (packages): ../rtl/afib_lite_pkg.sv
+ERROR: ../rtl/tb/tb_rr.sv:262: $readmemh: Unable to open ../rtl/tb/vektor/tidak-ada-dir/04015.fase6.counts.hex for reading.
+ERROR: ../rtl/tb/tb_rr.sv:263: $readmemh: Unable to open ../rtl/tb/vektor/tidak-ada-dir/04015.qrs.hex for reading.
+ERROR: ../rtl/tb/tb_rr.sv:264: $readmemh: Unable to open ../rtl/tb/vektor/tidak-ada-dir/04015.qrsval.hex for reading.
+ERROR: ../rtl/tb/tb_rr.sv:265: $readmemh: Unable to open ../rtl/tb/vektor/tidak-ada-dir/04015.rr.hex for reading.
+ERROR: ../rtl/tb/tb_rr.sv:266: $readmemh: Unable to open ../rtl/tb/vektor/tidak-ada-dir/04015.rr.smp.hex for reading.
+ERROR: ../rtl/tb/tb_rr.sv:267: $readmemh: Unable to open ../rtl/tb/vektor/tidak-ada-dir/04015.rr.mark.hex for reading.
+ERROR: ../rtl/tb/tb_rr.sv:268: $readmemh: Unable to open ../rtl/tb/vektor/tidak-ada-dir/04015.rr.mask.hex for reading.
+ERROR: ../rtl/tb/tb_rr.sv:269: $readmemh: Unable to open ../rtl/tb/vektor/tidak-ada-dir/04015.rrstep.ra1.hex for reading.
+ERROR: ../rtl/tb/tb_rr.sv:270: $readmemh: Unable to open ../rtl/tb/vektor/tidak-ada-dir/04015.rrstep.ra2.hex for reading.
+ERROR: ../rtl/tb/tb_rr.sv:271: $readmemh: Unable to open ../rtl/tb/vektor/tidak-ada-dir/04015.rrstep.antre.hex for reading.
+ERROR: ../rtl/tb/tb_rr.sv:272: $readmemh: Unable to open ../rtl/tb/vektor/tidak-ada-dir/04015.rrstep.menyala.hex for reading.
+ERROR: ../rtl/tb/tb_rr.sv:273: $readmemh: Unable to open ../rtl/tb/vektor/tidak-ada-dir/04015.rrstep.disemai.hex for reading.
+ERROR: ../rtl/tb/tb_rr.sv:274: $readmemh: Unable to open ../rtl/tb/vektor/tidak-ada-dir/04015.rrstep.riwayat.hex for reading.
+ERROR: ../rtl/tb/tb_rr.sv:275: $readmemh: Unable to open ../rtl/tb/vektor/tidak-ada-dir/04015.rrstep.gagal.hex for reading.
+ERROR: ../rtl/tb/tb_rr.sv:276: $readmemh: Unable to open ../rtl/tb/vektor/tidak-ada-dir/04015.rrstep.jeda.hex for reading.
+ERROR: ../rtl/tb/tb_rr.sv:277: $readmemh: Unable to open ../rtl/tb/vektor/tidak-ada-dir/04015.rrstep.rr.hex for reading.
+== tb_rr, Fase 6, record 04015 ==
+tb_rr: vectors = ../rtl/tb/vektor/tidak-ada-dir
+FATAL: ../rtl/tb/tb_rr.sv:310: tb_rr: FAIL 38862 golden words are unknown, the vector directory is missing, short or unreadable
+       Time: 0  Scope: tb_rr

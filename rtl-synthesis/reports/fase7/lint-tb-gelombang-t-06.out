@@ -1,0 +1,6 @@
+run_lint.sh: top=tb_gelombang_t sources=3 timing=1
+  ../rtl/afib_lite_pkg.sv
+  ../rtl/tb/tb_gelombang_t.sv
+  ../rtl/t_rule.sv
+lint clean: top=tb_gelombang_t sources=3 (/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl-synthesis/debroot/usr/bin/verilator_bin)
+exit=0

@@ -1,0 +1,47 @@
+run_sim.sh: tb=../rtl/tb/tb_klasifier.sv sources=2 plusargs=1
+  plusargs forwarded to vvp: +VECTOR=../rtl/tb/vektor/fase9
+  compiled first (packages): ../rtl/afib_lite_pkg.sv
+== tb_klasifier, Fase 9, record 04015, vectors ../rtl/tb/vektor/fase9 ==
+INFO tb_klasifier: vector words above their width: 0
+INFO tb_klasifier: counts vector marked 602 raw 588, afib 95 and normal 507
+INFO tb_klasifier: raw afib 95 normal 493, single arm windows 602, mutasi fired 594
+INFO tb_klasifier: parity ratio code 10813
+INFO tb_klasifier: parity entropy code 10322
+INFO tb_klasifier: marked arm 0xf, raw arm 0x7, single arm 0x2
+OK   tb_klasifier: reset and disabled stage read undecided, no decision (D2)
+INFO tb_klasifier: measured latency = 1 cycles, DUT parameter = 1
+OK   tb_klasifier: latency and first decision of the marked arm
+INFO tb_klasifier: marked arm fired 189, TP=95 FP=94 FN=0 TN=413
+OK   tb_klasifier: marked arm census equals the Fase 5 manifest
+tb_klasifier: [marked] words compared: 602
+tb_klasifier: [marked] mismatches = 0 out of 602
+tb_klasifier: [marked] window index mismatches = 0
+tb_klasifier: [marked] m_dvalid missing = 0, extra decisions = 0
+tb_klasifier: [marked] introspection tap mismatches = 0
+tb_klasifier: [marked] confidence out of range = 0
+OK   tb_klasifier: window counter cleared
+INFO tb_klasifier: raw arm fired 183, TP=95 FP=88 FN=0 TN=405
+OK   tb_klasifier: raw arm census equals the Fase 5 manifest
+tb_klasifier: [raw] words compared: 588
+tb_klasifier: [raw] mismatches = 0 out of 588
+tb_klasifier: [raw] window index mismatches = 0
+tb_klasifier: [raw] m_dvalid missing = 0, extra decisions = 0
+tb_klasifier: [mutasi] thresholds 0 and 0, arm 0xf
+tb_klasifier: [mutasi] words compared: 602
+tb_klasifier: [mutasi] mismatches = 0 out of 602
+tb_klasifier: [guard] entropy field 32768, arm 0x2
+tb_klasifier: [guard] words compared: 602
+tb_klasifier: [guard] mismatches = 594 out of 602
+tb_klasifier: [tunggal] arm 0x2, entropy arm alone
+tb_klasifier: [tunggal] words compared: 602
+tb_klasifier: [tunggal] mismatches = 0 out of 602
+INFO tb_klasifier: tunggal fired 191
+INFO tb_klasifier: conf on both thresholds = 0
+INFO tb_klasifier: conf far above both thresholds = 1000
+tb_klasifier: [conf] outside range = 0, nonzero on the threshold = 0
+tb_klasifier: [conf] not monotone = 0, not saturating = 0, fired on the threshold = 0
+tb_klasifier: [conf] words compared: 5, missing decisions = 0
+tb_klasifier: gate totals, marked 0 raw 0 mutasi 0 guard 594 tunggal 0 conf 0
+tb_klasifier: FAIL
+FATAL: ../rtl/tb/tb_klasifier.sv:746: tb_klasifier: gate failed
+       Time: 120495  Scope: tb_klasifier

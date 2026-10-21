@@ -1,0 +1,28 @@
+run_sim.sh: tb=../rtl/tb/tb_fitur.sv sources=2 plusargs=1
+  plusargs forwarded to vvp: +VECTOR=../rtl/tb/vektor/fase8
+  compiled first (packages): ../rtl/afib_lite_pkg.sv
+tb_fitur: vectors   = ../rtl/tb/vektor/fase8
+tb_fitur: limit     = 2595 of 2595 intervals
+tb_fitur: arm A emissions = 638 of 638, pass 2 = 638
+tb_fitur: arm B emissions = 624 of 624, pass 2 = 624
+tb_fitur: arm A golden rows compared = 602 of 602, pass 2 = 602
+tb_fitur: arm B golden rows compared = 588 of 588, pass 2 = 588
+tb_fitur: d mismatches          = 0
+tb_fitur: histogram mismatches  = 0
+tb_fitur: pNN50 count mismatch  = 0
+tb_fitur: pNN50 code mismatch   = 0
+tb_fitur: four code mismatches  = 0
+tb_fitur: sample_end mismatch   = 0
+tb_fitur: ev_kind mismatch      = 0
+tb_fitur: ev_val high bits      = 0
+tb_fitur: d_valid pulse mismatch= 0
+tb_fitur: windows dropped (ovf) = 0
+tb_fitur: range gate count wrong= 0
+tb_fitur: oracle words unknown  = 0
+tb_fitur: arm B rows over 1 LSB = 0 (worst 1 LSB)
+tb_fitur: comparisons run       = 602 arm A + 588 arm B
+tb_fitur: digest A pass1/pass2  = 99b99f28 / 99b99f28
+tb_fitur: digest B pass1/pass2  = 4499c5f6 / 4499c5f6
+tb_fitur: mismatches = 0 out of 1190
+tb_fitur: PASS
+../rtl/tb/tb_fitur.sv:525: $finish called at 4567765 (1s)

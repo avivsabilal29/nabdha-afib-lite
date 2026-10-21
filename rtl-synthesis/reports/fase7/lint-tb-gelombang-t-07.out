@@ -1,0 +1,12 @@
+run_lint.sh: top=tb_gelombang_t sources=3 timing=1
+  ../rtl/afib_lite_pkg.sv
+  ../rtl/tb/tb_gelombang_t.sv
+  ../rtl/t_rule.sv
+%Warning-EOFNEWLINE: ../rtl/tb/tb_gelombang_t.sv:766:22: Missing newline at end of file (POSIX 3.206).
+                                                       : ... Suggest add newline.
+  766 | `default_nettype wire
+      |                      ^
+                     ... For warning description see https://verilator.org/warn/EOFNEWLINE?v=5.020
+                     ... Use "/* verilator lint_off EOFNEWLINE */" and lint_on around source to disable this message.
+%Error: Exiting due to 1 warning(s)
+exit=1

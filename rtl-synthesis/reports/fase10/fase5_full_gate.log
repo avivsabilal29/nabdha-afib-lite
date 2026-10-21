@@ -1,0 +1,57 @@
+run_sim.sh: tb=../rtl/tb/tb_puncak.sv sources=3 plusargs=2
+  plusargs forwarded to vvp: +VECTOR=../rtlplan2/fase0 +EXPECT=../rtl/tb/vektor/fase5
+  compiled first (packages): ../rtl/afib_lite_pkg.sv
+WARNING: ../rtl/tb/tb_puncak.sv:364: $readmemh(../rtl/tb/vektor/fase5/04015.ambang_state.hex): Not enough words in the file for the requested range [0:15].
+WARNING: ../rtl/tb/tb_puncak.sv:365: $readmemh(../rtl/tb/vektor/fase5/04015.qrs.hex): Not enough words in the file for the requested range [0:8191].
+WARNING: ../rtl/tb/tb_puncak.sv:366: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.pos.hex): Not enough words in the file for the requested range [0:16383].
+WARNING: ../rtl/tb/tb_puncak.sv:367: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.pv.hex): Not enough words in the file for the requested range [0:16383].
+WARNING: ../rtl/tb/tb_puncak.sv:368: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.pkf.hex): Not enough words in the file for the requested range [0:16383].
+WARNING: ../rtl/tb/tb_puncak.sv:369: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.kem.hex): Not enough words in the file for the requested range [0:16383].
+WARNING: ../rtl/tb/tb_puncak.sv:370: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.i1.hex): Not enough words in the file for the requested range [0:16383].
+WARNING: ../rtl/tb/tb_puncak.sv:371: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.i2.hex): Not enough words in the file for the requested range [0:16383].
+WARNING: ../rtl/tb/tb_puncak.sv:372: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.flag.hex): Not enough words in the file for the requested range [0:16383].
+WARNING: ../rtl/tb/tb_puncak.sv:373: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.evidx.hex): Not enough words in the file for the requested range [0:16383].
+WARNING: ../rtl/tb/tb_puncak.sv:374: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.kind.hex): Not enough words in the file for the requested range [0:16383].
+tb_puncak: vectors = ../rtlplan2/fase0
+tb_puncak: expected = ../rtl/tb/vektor/fase5
+tb_puncak: limit   = 450000 of 450000 frames
+tb_puncak: golden peaks = 4777, qrs = 2596, ambang_state words = 9
+tb_puncak: ambang_state[0] dut = 29 golden = 29
+tb_puncak: ambang_state[1] dut = 6 golden = 6
+tb_puncak: ambang_state[2] dut = 112 golden = 112
+tb_puncak: ambang_state[3] dut = 6 golden = 6
+tb_puncak: ambang_state[4] dut = 106 golden = 106
+tb_puncak: ambang_state[5] dut = 0 golden = 0
+tb_puncak: ambang_state[6] dut = 26 golden = 26
+tb_puncak: ambang_state[7] dut = 1202 golden = 1202
+tb_puncak: ambang_state[8] dut = 2586 golden = 2586
+tb_puncak: peaks dut = 4777 expected = 4777
+tb_puncak: qrs   dut = 2596 expected = 2596
+tb_puncak: beats o_beat_count = 2596
+tb_puncak: words compared = 450000 of 450000
+tb_puncak: peak position mismatches = 0
+tb_puncak: peak pv mismatches       = 0
+tb_puncak: peak pk_f mismatches     = 0
+tb_puncak: peak kem mismatches      = 0
+tb_puncak: peak i1 mismatches       = 0
+tb_puncak: peak flag mismatches     = 0
+tb_puncak: peak kind mismatches     = 0
+tb_puncak: peak ev_idx mismatches   = 0
+tb_puncak: peak ev_val mismatches   = 0
+tb_puncak: qrs index out of order   = 0
+tb_puncak: stream m_tdata mismatch  = 0
+tb_puncak: stream sample_idx        = 0
+tb_puncak: stream tuser mismatch    = 0
+tb_puncak: stream tlast mismatch    = 0
+tb_puncak: golden i1 words wider than 30 bits = 0
+tb_puncak: golden pk_f words wider than 30 bits = 0
+tb_puncak: golden i2 != i1 >> 1 rows = 0
+tb_puncak: golden signal flags = 2590 in_band = 2029 t_rejected = 1909 refit = 6
+tb_puncak: peaks whose event index moved off the peak position = 2
+tb_puncak: counter decreases = 0
+tb_puncak: m_overflow pulses = 0 (rising edges 0)
+tb_puncak: d_valid pulses    = 4777
+tb_puncak: ambang_state mismatches = 0
+tb_puncak: mismatches = 0
+tb_puncak: PASS
+../rtl/tb/tb_puncak.sv:508: $finish called at 18000185 (1s)

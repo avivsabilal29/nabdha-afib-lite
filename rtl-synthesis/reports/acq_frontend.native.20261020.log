@@ -1,0 +1,2282 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.33 (git sha1 2584903a060)
+
+
+-- Running command `
+    read_verilog -sv /home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/afib_lite_pkg.sv;
+    read_verilog -sv /home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv;
+    hierarchy -top acq_frontend;
+    synth -top acq_frontend;
+    dfflibmap -liberty sky130_fd_sc_hd__tt_025C_1v80.lib;
+    abc -liberty sky130_fd_sc_hd__tt_025C_1v80.lib;
+    opt_clean;
+    stat -liberty sky130_fd_sc_hd__tt_025C_1v80.lib;
+    write_json reports/acq_frontend.native.20261020.json
+' --
+
+1. Executing Verilog-2005 frontend: /home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/afib_lite_pkg.sv
+Parsing SystemVerilog input from `/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/afib_lite_pkg.sv' to AST representation.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: /home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv
+Parsing SystemVerilog input from `/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv' to AST representation.
+Generating RTLIL representation for module `\acq_frontend'.
+Warning: Replacing memory \side_q with list of registers. See /home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:178
+Warning: Replacing memory \bit_q with list of registers. See /home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:177
+Warning: Replacing memory \quo_q with list of registers. See /home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:176
+Warning: Replacing memory \rem_q with list of registers. See /home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:175
+Successfully finished Verilog frontend.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+
+3.1. Analyzing design hierarchy..
+Top module:  \acq_frontend
+
+3.2. Analyzing design hierarchy..
+Top module:  \acq_frontend
+Removed 0 unused modules.
+
+4. Executing SYNTH pass.
+
+4.1. Executing HIERARCHY pass (managing design hierarchy).
+
+4.1.1. Analyzing design hierarchy..
+Top module:  \acq_frontend
+
+4.1.2. Analyzing design hierarchy..
+Top module:  \acq_frontend
+Removed 0 unused modules.
+
+4.2. Executing PROC pass (convert processes to netlists).
+
+4.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$114 in module acq_frontend.
+Marked 1 switch rules as full_case in process $proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$109 in module acq_frontend.
+Marked 1 switch rules as full_case in process $proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$104 in module acq_frontend.
+Marked 1 switch rules as full_case in process $proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$99 in module acq_frontend.
+Marked 1 switch rules as full_case in process $proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$94 in module acq_frontend.
+Marked 1 switch rules as full_case in process $proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$89 in module acq_frontend.
+Marked 1 switch rules as full_case in process $proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$84 in module acq_frontend.
+Marked 1 switch rules as full_case in process $proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$79 in module acq_frontend.
+Marked 1 switch rules as full_case in process $proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$74 in module acq_frontend.
+Marked 1 switch rules as full_case in process $proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$69 in module acq_frontend.
+Marked 1 switch rules as full_case in process $proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$64 in module acq_frontend.
+Marked 1 switch rules as full_case in process $proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$59 in module acq_frontend.
+Marked 1 switch rules as full_case in process $proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$54 in module acq_frontend.
+Marked 2 switch rules as full_case in process $proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:309$47 in module acq_frontend.
+Marked 2 switch rules as full_case in process $proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:255$38 in module acq_frontend.
+Marked 3 switch rules as full_case in process $proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:246$33 in module acq_frontend.
+Marked 1 switch rules as full_case in process $proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:173$11 in module acq_frontend.
+Removed a total of 0 dead cases.
+
+4.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 73 redundant assignments.
+Promoted 0 assignments to connections.
+
+4.2.4. Executing PROC_INIT pass (extract init attributes).
+
+4.2.5. Executing PROC_ARST pass (detect async resets in processes).
+
+4.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~23 debug messages>
+
+4.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$114'.
+     1/4: $0\side_q[13][43:0]
+     2/4: $0\bit_q[13][12:0]
+     3/4: $0\quo_q[13][12:0]
+     4/4: $0\rem_q[13][10:0]
+Creating decoders for process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$109'.
+     1/4: $0\side_q[12][43:0]
+     2/4: $0\bit_q[12][12:0]
+     3/4: $0\quo_q[12][12:0]
+     4/4: $0\rem_q[12][10:0]
+Creating decoders for process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$104'.
+     1/4: $0\side_q[11][43:0]
+     2/4: $0\bit_q[11][12:0]
+     3/4: $0\quo_q[11][12:0]
+     4/4: $0\rem_q[11][10:0]
+Creating decoders for process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$99'.
+     1/4: $0\side_q[10][43:0]
+     2/4: $0\bit_q[10][12:0]
+     3/4: $0\quo_q[10][12:0]
+     4/4: $0\rem_q[10][10:0]
+Creating decoders for process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$94'.
+     1/4: $0\side_q[9][43:0]
+     2/4: $0\bit_q[9][12:0]
+     3/4: $0\quo_q[9][12:0]
+     4/4: $0\rem_q[9][10:0]
+Creating decoders for process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$89'.
+     1/4: $0\side_q[8][43:0]
+     2/4: $0\bit_q[8][12:0]
+     3/4: $0\quo_q[8][12:0]
+     4/4: $0\rem_q[8][10:0]
+Creating decoders for process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$84'.
+     1/4: $0\side_q[7][43:0]
+     2/4: $0\bit_q[7][12:0]
+     3/4: $0\quo_q[7][12:0]
+     4/4: $0\rem_q[7][10:0]
+Creating decoders for process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$79'.
+     1/4: $0\side_q[6][43:0]
+     2/4: $0\bit_q[6][12:0]
+     3/4: $0\quo_q[6][12:0]
+     4/4: $0\rem_q[6][10:0]
+Creating decoders for process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$74'.
+     1/4: $0\side_q[5][43:0]
+     2/4: $0\bit_q[5][12:0]
+     3/4: $0\quo_q[5][12:0]
+     4/4: $0\rem_q[5][10:0]
+Creating decoders for process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$69'.
+     1/4: $0\side_q[4][43:0]
+     2/4: $0\bit_q[4][12:0]
+     3/4: $0\quo_q[4][12:0]
+     4/4: $0\rem_q[4][10:0]
+Creating decoders for process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$64'.
+     1/4: $0\side_q[3][43:0]
+     2/4: $0\bit_q[3][12:0]
+     3/4: $0\quo_q[3][12:0]
+     4/4: $0\rem_q[3][10:0]
+Creating decoders for process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$59'.
+     1/4: $0\side_q[2][43:0]
+     2/4: $0\bit_q[2][12:0]
+     3/4: $0\quo_q[2][12:0]
+     4/4: $0\rem_q[2][10:0]
+Creating decoders for process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$54'.
+     1/4: $0\side_q[1][43:0]
+     2/4: $0\bit_q[1][12:0]
+     3/4: $0\quo_q[1][12:0]
+     4/4: $0\rem_q[1][10:0]
+Creating decoders for process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:309$47'.
+     1/3: $0\sample_en_q[0:0]
+     2/3: $0\rate_cnt_q[19:0]
+     3/3: $0\sample_idx_q[31:0]
+Creating decoders for process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:255$38'.
+     1/15: $0\o_clamp_count[31:0]
+     2/15: $0\o_gap_count[31:0]
+     3/15: $0\o_sample_idx[31:0]
+     4/15: $0\d_word[15:0]
+     5/15: $0\d_valid[0:0]
+     6/15: $0\m_ev_val[31:0]
+     7/15: $0\m_ev_idx[31:0]
+     8/15: $0\m_ev_kind[2:0]
+     9/15: $0\m_ev_valid[0:0]
+    10/15: $0\m_sample_idx[31:0]
+    11/15: $0\m_tuser[7:0]
+    12/15: $0\m_tlast[0:0]
+    13/15: $0\m_overflow[0:0]
+    14/15: $0\m_tvalid[0:0]
+    15/15: $0\m_tdata[15:0]
+Creating decoders for process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:246$33'.
+     1/1: $0\gap_span_q[7:0]
+Creating decoders for process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:173$11'.
+     1/4: $0\side_q[0][43:0]
+     2/4: $0\bit_q[0][12:0]
+     3/4: $0\quo_q[0][12:0]
+     4/4: $0\rem_q[0][10:0]
+
+4.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+4.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\acq_frontend.\rem_q[13]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$114'.
+  created $dff cell `$procdff$366' with positive edge clock.
+Creating register for signal `\acq_frontend.\quo_q[13]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$114'.
+  created $dff cell `$procdff$367' with positive edge clock.
+Creating register for signal `\acq_frontend.\bit_q[13]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$114'.
+  created $dff cell `$procdff$368' with positive edge clock.
+Creating register for signal `\acq_frontend.\side_q[13]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$114'.
+  created $dff cell `$procdff$369' with positive edge clock.
+Creating register for signal `\acq_frontend.\rem_q[12]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$109'.
+  created $dff cell `$procdff$370' with positive edge clock.
+Creating register for signal `\acq_frontend.\quo_q[12]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$109'.
+  created $dff cell `$procdff$371' with positive edge clock.
+Creating register for signal `\acq_frontend.\bit_q[12]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$109'.
+  created $dff cell `$procdff$372' with positive edge clock.
+Creating register for signal `\acq_frontend.\side_q[12]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$109'.
+  created $dff cell `$procdff$373' with positive edge clock.
+Creating register for signal `\acq_frontend.\rem_q[11]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$104'.
+  created $dff cell `$procdff$374' with positive edge clock.
+Creating register for signal `\acq_frontend.\quo_q[11]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$104'.
+  created $dff cell `$procdff$375' with positive edge clock.
+Creating register for signal `\acq_frontend.\bit_q[11]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$104'.
+  created $dff cell `$procdff$376' with positive edge clock.
+Creating register for signal `\acq_frontend.\side_q[11]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$104'.
+  created $dff cell `$procdff$377' with positive edge clock.
+Creating register for signal `\acq_frontend.\rem_q[10]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$99'.
+  created $dff cell `$procdff$378' with positive edge clock.
+Creating register for signal `\acq_frontend.\quo_q[10]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$99'.
+  created $dff cell `$procdff$379' with positive edge clock.
+Creating register for signal `\acq_frontend.\bit_q[10]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$99'.
+  created $dff cell `$procdff$380' with positive edge clock.
+Creating register for signal `\acq_frontend.\side_q[10]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$99'.
+  created $dff cell `$procdff$381' with positive edge clock.
+Creating register for signal `\acq_frontend.\rem_q[9]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$94'.
+  created $dff cell `$procdff$382' with positive edge clock.
+Creating register for signal `\acq_frontend.\quo_q[9]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$94'.
+  created $dff cell `$procdff$383' with positive edge clock.
+Creating register for signal `\acq_frontend.\bit_q[9]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$94'.
+  created $dff cell `$procdff$384' with positive edge clock.
+Creating register for signal `\acq_frontend.\side_q[9]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$94'.
+  created $dff cell `$procdff$385' with positive edge clock.
+Creating register for signal `\acq_frontend.\rem_q[8]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$89'.
+  created $dff cell `$procdff$386' with positive edge clock.
+Creating register for signal `\acq_frontend.\quo_q[8]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$89'.
+  created $dff cell `$procdff$387' with positive edge clock.
+Creating register for signal `\acq_frontend.\bit_q[8]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$89'.
+  created $dff cell `$procdff$388' with positive edge clock.
+Creating register for signal `\acq_frontend.\side_q[8]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$89'.
+  created $dff cell `$procdff$389' with positive edge clock.
+Creating register for signal `\acq_frontend.\rem_q[7]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$84'.
+  created $dff cell `$procdff$390' with positive edge clock.
+Creating register for signal `\acq_frontend.\quo_q[7]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$84'.
+  created $dff cell `$procdff$391' with positive edge clock.
+Creating register for signal `\acq_frontend.\bit_q[7]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$84'.
+  created $dff cell `$procdff$392' with positive edge clock.
+Creating register for signal `\acq_frontend.\side_q[7]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$84'.
+  created $dff cell `$procdff$393' with positive edge clock.
+Creating register for signal `\acq_frontend.\rem_q[6]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$79'.
+  created $dff cell `$procdff$394' with positive edge clock.
+Creating register for signal `\acq_frontend.\quo_q[6]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$79'.
+  created $dff cell `$procdff$395' with positive edge clock.
+Creating register for signal `\acq_frontend.\bit_q[6]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$79'.
+  created $dff cell `$procdff$396' with positive edge clock.
+Creating register for signal `\acq_frontend.\side_q[6]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$79'.
+  created $dff cell `$procdff$397' with positive edge clock.
+Creating register for signal `\acq_frontend.\rem_q[5]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$74'.
+  created $dff cell `$procdff$398' with positive edge clock.
+Creating register for signal `\acq_frontend.\quo_q[5]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$74'.
+  created $dff cell `$procdff$399' with positive edge clock.
+Creating register for signal `\acq_frontend.\bit_q[5]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$74'.
+  created $dff cell `$procdff$400' with positive edge clock.
+Creating register for signal `\acq_frontend.\side_q[5]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$74'.
+  created $dff cell `$procdff$401' with positive edge clock.
+Creating register for signal `\acq_frontend.\rem_q[4]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$69'.
+  created $dff cell `$procdff$402' with positive edge clock.
+Creating register for signal `\acq_frontend.\quo_q[4]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$69'.
+  created $dff cell `$procdff$403' with positive edge clock.
+Creating register for signal `\acq_frontend.\bit_q[4]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$69'.
+  created $dff cell `$procdff$404' with positive edge clock.
+Creating register for signal `\acq_frontend.\side_q[4]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$69'.
+  created $dff cell `$procdff$405' with positive edge clock.
+Creating register for signal `\acq_frontend.\rem_q[3]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$64'.
+  created $dff cell `$procdff$406' with positive edge clock.
+Creating register for signal `\acq_frontend.\quo_q[3]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$64'.
+  created $dff cell `$procdff$407' with positive edge clock.
+Creating register for signal `\acq_frontend.\bit_q[3]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$64'.
+  created $dff cell `$procdff$408' with positive edge clock.
+Creating register for signal `\acq_frontend.\side_q[3]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$64'.
+  created $dff cell `$procdff$409' with positive edge clock.
+Creating register for signal `\acq_frontend.\rem_q[2]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$59'.
+  created $dff cell `$procdff$410' with positive edge clock.
+Creating register for signal `\acq_frontend.\quo_q[2]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$59'.
+  created $dff cell `$procdff$411' with positive edge clock.
+Creating register for signal `\acq_frontend.\bit_q[2]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$59'.
+  created $dff cell `$procdff$412' with positive edge clock.
+Creating register for signal `\acq_frontend.\side_q[2]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$59'.
+  created $dff cell `$procdff$413' with positive edge clock.
+Creating register for signal `\acq_frontend.\rem_q[1]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$54'.
+  created $dff cell `$procdff$414' with positive edge clock.
+Creating register for signal `\acq_frontend.\quo_q[1]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$54'.
+  created $dff cell `$procdff$415' with positive edge clock.
+Creating register for signal `\acq_frontend.\bit_q[1]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$54'.
+  created $dff cell `$procdff$416' with positive edge clock.
+Creating register for signal `\acq_frontend.\side_q[1]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$54'.
+  created $dff cell `$procdff$417' with positive edge clock.
+Creating register for signal `\acq_frontend.\rate_cnt_q' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:309$47'.
+  created $dff cell `$procdff$418' with positive edge clock.
+Creating register for signal `\acq_frontend.\sample_idx_q' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:309$47'.
+  created $dff cell `$procdff$419' with positive edge clock.
+Creating register for signal `\acq_frontend.\sample_en_q' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:309$47'.
+  created $dff cell `$procdff$420' with positive edge clock.
+Creating register for signal `\acq_frontend.\m_tdata' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:255$38'.
+  created $dff cell `$procdff$421' with positive edge clock.
+Creating register for signal `\acq_frontend.\m_tvalid' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:255$38'.
+  created $dff cell `$procdff$422' with positive edge clock.
+Creating register for signal `\acq_frontend.\m_overflow' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:255$38'.
+  created $dff cell `$procdff$423' with positive edge clock.
+Creating register for signal `\acq_frontend.\m_tlast' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:255$38'.
+  created $dff cell `$procdff$424' with positive edge clock.
+Creating register for signal `\acq_frontend.\m_tuser' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:255$38'.
+  created $dff cell `$procdff$425' with positive edge clock.
+Creating register for signal `\acq_frontend.\m_sample_idx' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:255$38'.
+  created $dff cell `$procdff$426' with positive edge clock.
+Creating register for signal `\acq_frontend.\m_ev_valid' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:255$38'.
+  created $dff cell `$procdff$427' with positive edge clock.
+Creating register for signal `\acq_frontend.\m_ev_kind' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:255$38'.
+  created $dff cell `$procdff$428' with positive edge clock.
+Creating register for signal `\acq_frontend.\m_ev_idx' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:255$38'.
+  created $dff cell `$procdff$429' with positive edge clock.
+Creating register for signal `\acq_frontend.\m_ev_val' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:255$38'.
+  created $dff cell `$procdff$430' with positive edge clock.
+Creating register for signal `\acq_frontend.\d_valid' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:255$38'.
+  created $dff cell `$procdff$431' with positive edge clock.
+Creating register for signal `\acq_frontend.\d_word' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:255$38'.
+  created $dff cell `$procdff$432' with positive edge clock.
+Creating register for signal `\acq_frontend.\o_sample_idx' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:255$38'.
+  created $dff cell `$procdff$433' with positive edge clock.
+Creating register for signal `\acq_frontend.\o_gap_count' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:255$38'.
+  created $dff cell `$procdff$434' with positive edge clock.
+Creating register for signal `\acq_frontend.\o_clamp_count' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:255$38'.
+  created $dff cell `$procdff$435' with positive edge clock.
+Creating register for signal `\acq_frontend.\gap_span_q' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:246$33'.
+  created $dff cell `$procdff$436' with positive edge clock.
+Creating register for signal `\acq_frontend.\rem_q[0]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:173$11'.
+  created $dff cell `$procdff$437' with positive edge clock.
+Creating register for signal `\acq_frontend.\quo_q[0]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:173$11'.
+  created $dff cell `$procdff$438' with positive edge clock.
+Creating register for signal `\acq_frontend.\bit_q[0]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:173$11'.
+  created $dff cell `$procdff$439' with positive edge clock.
+Creating register for signal `\acq_frontend.\side_q[0]' using process `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:173$11'.
+  created $dff cell `$procdff$440' with positive edge clock.
+
+4.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$114'.
+Removing empty process `acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$114'.
+Found and cleaned up 1 empty switch in `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$109'.
+Removing empty process `acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$109'.
+Found and cleaned up 1 empty switch in `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$104'.
+Removing empty process `acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$104'.
+Found and cleaned up 1 empty switch in `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$99'.
+Removing empty process `acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$99'.
+Found and cleaned up 1 empty switch in `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$94'.
+Removing empty process `acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$94'.
+Found and cleaned up 1 empty switch in `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$89'.
+Removing empty process `acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$89'.
+Found and cleaned up 1 empty switch in `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$84'.
+Removing empty process `acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$84'.
+Found and cleaned up 1 empty switch in `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$79'.
+Removing empty process `acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$79'.
+Found and cleaned up 1 empty switch in `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$74'.
+Removing empty process `acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$74'.
+Found and cleaned up 1 empty switch in `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$69'.
+Removing empty process `acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$69'.
+Found and cleaned up 1 empty switch in `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$64'.
+Removing empty process `acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$64'.
+Found and cleaned up 1 empty switch in `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$59'.
+Removing empty process `acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$59'.
+Found and cleaned up 1 empty switch in `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$54'.
+Removing empty process `acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:195$54'.
+Found and cleaned up 3 empty switches in `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:309$47'.
+Removing empty process `acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:309$47'.
+Found and cleaned up 2 empty switches in `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:255$38'.
+Removing empty process `acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:255$38'.
+Found and cleaned up 4 empty switches in `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:246$33'.
+Removing empty process `acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:246$33'.
+Found and cleaned up 1 empty switch in `\acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:173$11'.
+Removing empty process `acq_frontend.$proc$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:173$11'.
+Cleaned up 23 empty switches.
+
+4.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acq_frontend.
+<suppressed ~80 debug messages>
+
+4.3. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acq_frontend.
+
+4.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acq_frontend..
+Removed 19 unused cells and 209 unused wires.
+<suppressed ~21 debug messages>
+
+4.5. Executing CHECK pass (checking for obvious problems).
+Checking module acq_frontend...
+Found and reported 0 problems.
+
+4.6. Executing OPT pass (performing simple optimizations).
+
+4.6.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acq_frontend.
+
+4.6.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\acq_frontend'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+4.6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \acq_frontend..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+      Replacing known input bits on port A of cell $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:155$4: \prod_s -> { 1'0 \prod_s [21:0] }
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~76 debug messages>
+
+4.6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \acq_frontend.
+Performed a total of 0 changes.
+
+4.6.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\acq_frontend'.
+<suppressed ~18 debug messages>
+Removed a total of 6 cells.
+
+4.6.6. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $procdff$430 ($dff) from module acq_frontend.
+Setting constant 0-bit at position 1 on $procdff$430 ($dff) from module acq_frontend.
+Setting constant 0-bit at position 2 on $procdff$430 ($dff) from module acq_frontend.
+Setting constant 0-bit at position 3 on $procdff$430 ($dff) from module acq_frontend.
+Setting constant 0-bit at position 4 on $procdff$430 ($dff) from module acq_frontend.
+Setting constant 0-bit at position 5 on $procdff$430 ($dff) from module acq_frontend.
+Setting constant 0-bit at position 6 on $procdff$430 ($dff) from module acq_frontend.
+Setting constant 0-bit at position 7 on $procdff$430 ($dff) from module acq_frontend.
+Setting constant 0-bit at position 8 on $procdff$430 ($dff) from module acq_frontend.
+Setting constant 0-bit at position 9 on $procdff$430 ($dff) from module acq_frontend.
+Setting constant 0-bit at position 10 on $procdff$430 ($dff) from module acq_frontend.
+Setting constant 0-bit at position 11 on $procdff$430 ($dff) from module acq_frontend.
+Setting constant 0-bit at position 12 on $procdff$430 ($dff) from module acq_frontend.
+Setting constant 0-bit at position 13 on $procdff$430 ($dff) from module acq_frontend.
+Setting constant 0-bit at position 14 on $procdff$430 ($dff) from module acq_frontend.
+Setting constant 0-bit at position 15 on $procdff$430 ($dff) from module acq_frontend.
+Setting constant 0-bit at position 16 on $procdff$430 ($dff) from module acq_frontend.
+Setting constant 0-bit at position 17 on $procdff$430 ($dff) from module acq_frontend.
+Setting constant 0-bit at position 18 on $procdff$430 ($dff) from module acq_frontend.
+Setting constant 0-bit at position 19 on $procdff$430 ($dff) from module acq_frontend.
+Setting constant 0-bit at position 20 on $procdff$430 ($dff) from module acq_frontend.
+Setting constant 0-bit at position 21 on $procdff$430 ($dff) from module acq_frontend.
+Setting constant 0-bit at position 22 on $procdff$430 ($dff) from module acq_frontend.
+Setting constant 0-bit at position 23 on $procdff$430 ($dff) from module acq_frontend.
+Setting constant 0-bit at position 24 on $procdff$430 ($dff) from module acq_frontend.
+Setting constant 0-bit at position 25 on $procdff$430 ($dff) from module acq_frontend.
+Setting constant 0-bit at position 26 on $procdff$430 ($dff) from module acq_frontend.
+Setting constant 0-bit at position 27 on $procdff$430 ($dff) from module acq_frontend.
+Setting constant 0-bit at position 28 on $procdff$430 ($dff) from module acq_frontend.
+Setting constant 0-bit at position 29 on $procdff$430 ($dff) from module acq_frontend.
+Setting constant 0-bit at position 30 on $procdff$430 ($dff) from module acq_frontend.
+Setting constant 0-bit at position 31 on $procdff$430 ($dff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $procdff$438 ($dff) from module acq_frontend.
+Setting constant 0-bit at position 1 on $procdff$438 ($dff) from module acq_frontend.
+Setting constant 0-bit at position 2 on $procdff$438 ($dff) from module acq_frontend.
+Setting constant 0-bit at position 3 on $procdff$438 ($dff) from module acq_frontend.
+Setting constant 0-bit at position 4 on $procdff$438 ($dff) from module acq_frontend.
+Setting constant 0-bit at position 5 on $procdff$438 ($dff) from module acq_frontend.
+Setting constant 0-bit at position 6 on $procdff$438 ($dff) from module acq_frontend.
+Setting constant 0-bit at position 7 on $procdff$438 ($dff) from module acq_frontend.
+Setting constant 0-bit at position 8 on $procdff$438 ($dff) from module acq_frontend.
+Setting constant 0-bit at position 9 on $procdff$438 ($dff) from module acq_frontend.
+Setting constant 0-bit at position 10 on $procdff$438 ($dff) from module acq_frontend.
+Setting constant 0-bit at position 11 on $procdff$438 ($dff) from module acq_frontend.
+Setting constant 0-bit at position 12 on $procdff$438 ($dff) from module acq_frontend.
+
+4.6.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acq_frontend..
+Removed 0 unused cells and 4 unused wires.
+<suppressed ~1 debug messages>
+
+4.6.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acq_frontend.
+
+4.6.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.6.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \acq_frontend..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~72 debug messages>
+
+4.6.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \acq_frontend.
+Performed a total of 0 changes.
+
+4.6.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\acq_frontend'.
+Removed a total of 0 cells.
+
+4.6.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.6.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acq_frontend..
+
+4.6.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acq_frontend.
+
+4.6.16. Finished OPT passes. (There is nothing left to do.)
+
+4.7. Executing FSM pass (extract and optimize FSM).
+
+4.7.1. Executing FSM_DETECT pass (finding FSMs in design).
+Not marking acq_frontend.m_ev_kind as FSM state register:
+    Register is connected to module port.
+    Users of register don't seem to benefit from recoding.
+
+4.7.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+4.7.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+4.7.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acq_frontend..
+
+4.7.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+4.7.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+4.7.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+4.7.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+4.8. Executing OPT pass (performing simple optimizations).
+
+4.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acq_frontend.
+
+4.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\acq_frontend'.
+Removed a total of 0 cells.
+
+4.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \acq_frontend..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~72 debug messages>
+
+4.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \acq_frontend.
+Performed a total of 0 changes.
+
+4.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\acq_frontend'.
+Removed a total of 0 cells.
+
+4.8.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$440 ($dff) from module acq_frontend (D = { \s_tuser \s_tdata [15] \s_tlast \valid_in \gap_ev_in \sample_idx_q }, Q = \side_q[0], rval = 44'00000000000000000000000000000000000000000000).
+Adding SRST signal on $procdff$439 ($dff) from module acq_frontend (D = \prod_mag [12:0], Q = \bit_q[0], rval = 13'0000000000000).
+Adding SRST signal on $procdff$437 ($dff) from module acq_frontend (D = \prod_mag [21:13], Q = \rem_q[0] [8:0], rval = 9'000000000).
+Adding SRST signal on $procdff$437 ($dff) from module acq_frontend (D = $neg$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:155$3_Y [22], Q = \rem_q[0] [9], rval = 1'0).
+Adding SRST signal on $procdff$436 ($dff) from module acq_frontend (D = { $procmux$347_Y [7] $procmux$347_Y [1:0] }, Q = { \gap_span_q [7] \gap_span_q [1:0] }, rval = 3'000).
+Adding SRST signal on $procdff$436 ($dff) from module acq_frontend (D = $procmux$344_Y [6:2], Q = \gap_span_q [6:2], rval = 5'00000).
+Adding EN signal on $auto$ff.cc:266:slice$453 ($sdff) from module acq_frontend (D = $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:251$37_Y [6:2], Q = \gap_span_q [6:2]).
+Adding EN signal on $auto$ff.cc:266:slice$448 ($sdff) from module acq_frontend (D = { $procmux$347_Y [7] $procmux$347_Y [1:0] }, Q = { \gap_span_q [7] \gap_span_q [1:0] }).
+Adding SRST signal on $procdff$435 ($dff) from module acq_frontend (D = $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:298$46_Y, Q = \o_clamp_count, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$462 ($sdff) from module acq_frontend (D = $add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:299$45_Y, Q = \o_clamp_count).
+Adding SRST signal on $procdff$434 ($dff) from module acq_frontend (D = $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:296$43_Y, Q = \o_gap_count, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$468 ($sdff) from module acq_frontend (D = $add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:297$42_Y, Q = \o_gap_count).
+Adding SRST signal on $procdff$433 ($dff) from module acq_frontend (D = \sample_idx_q, Q = \o_sample_idx, rval = 0).
+Adding SRST signal on $procdff$428 ($dff) from module acq_frontend (D = $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:280$41_Y, Q = \m_ev_kind, rval = 3'000).
+Adding SRST signal on $procdff$427 ($dff) from module acq_frontend (D = \side_q[13] [32], Q = \m_ev_valid, rval = 1'0).
+Adding SRST signal on $procdff$426 ($dff) from module acq_frontend (D = \side_q[13] [31:0], Q = \m_sample_idx, rval = 0).
+Adding SRST signal on $procdff$425 ($dff) from module acq_frontend (D = \out_mark, Q = \m_tuser, rval = 8'00000000).
+Adding SRST signal on $procdff$424 ($dff) from module acq_frontend (D = \side_q[13] [34], Q = \m_tlast, rval = 1'0).
+Adding EN signal on $procdff$423 ($dff) from module acq_frontend (D = 1'0, Q = \m_overflow).
+Adding SRST signal on $procdff$422 ($dff) from module acq_frontend (D = \side_q[13] [33], Q = \m_tvalid, rval = 1'0).
+Adding SRST signal on $procdff$421 ($dff) from module acq_frontend (D = \pre_cl [11:0], Q = \m_tdata [15:4], rval = 12'000000000000).
+Adding SRST signal on $procdff$420 ($dff) from module acq_frontend (D = $procmux$275_Y, Q = \sample_en_q, rval = 1'0).
+Adding SRST signal on $procdff$419 ($dff) from module acq_frontend (D = $procmux$286_Y, Q = \sample_idx_q, rval = 0).
+Adding EN signal on $auto$ff.cc:266:slice$489 ($sdff) from module acq_frontend (D = $add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:324$52_Y, Q = \sample_idx_q).
+Adding SRST signal on $procdff$418 ($dff) from module acq_frontend (D = $add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:319$50_Y, Q = \rate_cnt_q, rval = 20'00000000000000000000).
+Adding SRST signal on $procdff$417 ($dff) from module acq_frontend (D = \side_q[0], Q = \side_q[1], rval = 44'00000000000000000000000000000000000000000000).
+Adding SRST signal on $procdff$416 ($dff) from module acq_frontend (D = \bit_q[0] [11:0], Q = \bit_q[1] [12:1], rval = 12'000000000000).
+Adding SRST signal on $procdff$415 ($dff) from module acq_frontend (D = \g_langkah[0].enough, Q = \quo_q[1] [0], rval = 1'0).
+Adding SRST signal on $procdff$414 ($dff) from module acq_frontend (D = $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$57_Y, Q = \rem_q[1], rval = 11'00000000000).
+Adding SRST signal on $procdff$413 ($dff) from module acq_frontend (D = \side_q[1], Q = \side_q[2], rval = 44'00000000000000000000000000000000000000000000).
+Adding SRST signal on $procdff$412 ($dff) from module acq_frontend (D = \bit_q[1] [11:0], Q = \bit_q[2] [12:1], rval = 12'000000000000).
+Adding SRST signal on $procdff$411 ($dff) from module acq_frontend (D = { \quo_q[1] [11:0] \g_langkah[1].enough }, Q = \quo_q[2], rval = 13'0000000000000).
+Adding SRST signal on $procdff$410 ($dff) from module acq_frontend (D = $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$62_Y, Q = \rem_q[2], rval = 11'00000000000).
+Adding SRST signal on $procdff$409 ($dff) from module acq_frontend (D = \side_q[2], Q = \side_q[3], rval = 44'00000000000000000000000000000000000000000000).
+Adding SRST signal on $procdff$408 ($dff) from module acq_frontend (D = \bit_q[2] [11:0], Q = \bit_q[3] [12:1], rval = 12'000000000000).
+Adding SRST signal on $procdff$407 ($dff) from module acq_frontend (D = { \quo_q[2] [11:0] \g_langkah[2].enough }, Q = \quo_q[3], rval = 13'0000000000000).
+Adding SRST signal on $procdff$406 ($dff) from module acq_frontend (D = $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$67_Y, Q = \rem_q[3], rval = 11'00000000000).
+Adding SRST signal on $procdff$405 ($dff) from module acq_frontend (D = \side_q[3], Q = \side_q[4], rval = 44'00000000000000000000000000000000000000000000).
+Adding SRST signal on $procdff$404 ($dff) from module acq_frontend (D = \bit_q[3] [11:0], Q = \bit_q[4] [12:1], rval = 12'000000000000).
+Adding SRST signal on $procdff$403 ($dff) from module acq_frontend (D = { \quo_q[3] [11:0] \g_langkah[3].enough }, Q = \quo_q[4], rval = 13'0000000000000).
+Adding SRST signal on $procdff$402 ($dff) from module acq_frontend (D = $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$72_Y, Q = \rem_q[4], rval = 11'00000000000).
+Adding SRST signal on $procdff$401 ($dff) from module acq_frontend (D = \side_q[4], Q = \side_q[5], rval = 44'00000000000000000000000000000000000000000000).
+Adding SRST signal on $procdff$400 ($dff) from module acq_frontend (D = \bit_q[4] [11:0], Q = \bit_q[5] [12:1], rval = 12'000000000000).
+Adding SRST signal on $procdff$399 ($dff) from module acq_frontend (D = { \quo_q[4] [11:0] \g_langkah[4].enough }, Q = \quo_q[5], rval = 13'0000000000000).
+Adding SRST signal on $procdff$398 ($dff) from module acq_frontend (D = $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$77_Y, Q = \rem_q[5], rval = 11'00000000000).
+Adding SRST signal on $procdff$397 ($dff) from module acq_frontend (D = \side_q[5], Q = \side_q[6], rval = 44'00000000000000000000000000000000000000000000).
+Adding SRST signal on $procdff$396 ($dff) from module acq_frontend (D = \bit_q[5] [11:0], Q = \bit_q[6] [12:1], rval = 12'000000000000).
+Adding SRST signal on $procdff$395 ($dff) from module acq_frontend (D = { \quo_q[5] [11:0] \g_langkah[5].enough }, Q = \quo_q[6], rval = 13'0000000000000).
+Adding SRST signal on $procdff$394 ($dff) from module acq_frontend (D = $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$82_Y, Q = \rem_q[6], rval = 11'00000000000).
+Adding SRST signal on $procdff$393 ($dff) from module acq_frontend (D = \side_q[6], Q = \side_q[7], rval = 44'00000000000000000000000000000000000000000000).
+Adding SRST signal on $procdff$392 ($dff) from module acq_frontend (D = \bit_q[6] [11:0], Q = \bit_q[7] [12:1], rval = 12'000000000000).
+Adding SRST signal on $procdff$391 ($dff) from module acq_frontend (D = { \quo_q[6] [11:0] \g_langkah[6].enough }, Q = \quo_q[7], rval = 13'0000000000000).
+Adding SRST signal on $procdff$390 ($dff) from module acq_frontend (D = $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$87_Y, Q = \rem_q[7], rval = 11'00000000000).
+Adding SRST signal on $procdff$389 ($dff) from module acq_frontend (D = \side_q[7], Q = \side_q[8], rval = 44'00000000000000000000000000000000000000000000).
+Adding SRST signal on $procdff$388 ($dff) from module acq_frontend (D = \bit_q[7] [11:0], Q = \bit_q[8] [12:1], rval = 12'000000000000).
+Adding SRST signal on $procdff$387 ($dff) from module acq_frontend (D = { \quo_q[7] [11:0] \g_langkah[7].enough }, Q = \quo_q[8], rval = 13'0000000000000).
+Adding SRST signal on $procdff$386 ($dff) from module acq_frontend (D = $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$92_Y, Q = \rem_q[8], rval = 11'00000000000).
+Adding SRST signal on $procdff$385 ($dff) from module acq_frontend (D = \side_q[8], Q = \side_q[9], rval = 44'00000000000000000000000000000000000000000000).
+Adding SRST signal on $procdff$384 ($dff) from module acq_frontend (D = \bit_q[8] [11:0], Q = \bit_q[9] [12:1], rval = 12'000000000000).
+Adding SRST signal on $procdff$383 ($dff) from module acq_frontend (D = { \quo_q[8] [11:0] \g_langkah[8].enough }, Q = \quo_q[9], rval = 13'0000000000000).
+Adding SRST signal on $procdff$382 ($dff) from module acq_frontend (D = $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$97_Y, Q = \rem_q[9], rval = 11'00000000000).
+Adding SRST signal on $procdff$381 ($dff) from module acq_frontend (D = \side_q[9], Q = \side_q[10], rval = 44'00000000000000000000000000000000000000000000).
+Adding SRST signal on $procdff$380 ($dff) from module acq_frontend (D = \bit_q[9] [11:0], Q = \bit_q[10] [12:1], rval = 12'000000000000).
+Adding SRST signal on $procdff$379 ($dff) from module acq_frontend (D = { \quo_q[9] [11:0] \g_langkah[9].enough }, Q = \quo_q[10], rval = 13'0000000000000).
+Adding SRST signal on $procdff$378 ($dff) from module acq_frontend (D = $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$102_Y, Q = \rem_q[10], rval = 11'00000000000).
+Adding SRST signal on $procdff$377 ($dff) from module acq_frontend (D = \side_q[10], Q = \side_q[11], rval = 44'00000000000000000000000000000000000000000000).
+Adding SRST signal on $procdff$376 ($dff) from module acq_frontend (D = \bit_q[10] [11:0], Q = \bit_q[11] [12:1], rval = 12'000000000000).
+Adding SRST signal on $procdff$375 ($dff) from module acq_frontend (D = { \quo_q[10] [11:0] \g_langkah[10].enough }, Q = \quo_q[11], rval = 13'0000000000000).
+Adding SRST signal on $procdff$374 ($dff) from module acq_frontend (D = $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$107_Y, Q = \rem_q[11], rval = 11'00000000000).
+Adding SRST signal on $procdff$373 ($dff) from module acq_frontend (D = \side_q[11], Q = \side_q[12], rval = 44'00000000000000000000000000000000000000000000).
+Adding SRST signal on $procdff$372 ($dff) from module acq_frontend (D = \bit_q[11] [11:0], Q = \bit_q[12] [12:1], rval = 12'000000000000).
+Adding SRST signal on $procdff$371 ($dff) from module acq_frontend (D = { \quo_q[11] [11:0] \g_langkah[11].enough }, Q = \quo_q[12], rval = 13'0000000000000).
+Adding SRST signal on $procdff$370 ($dff) from module acq_frontend (D = $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$112_Y, Q = \rem_q[12], rval = 11'00000000000).
+Adding SRST signal on $procdff$369 ($dff) from module acq_frontend (D = \side_q[12], Q = \side_q[13], rval = 44'00000000000000000000000000000000000000000000).
+Adding SRST signal on $procdff$367 ($dff) from module acq_frontend (D = { \quo_q[12] [11:0] \g_langkah[12].enough }, Q = \quo_q[13], rval = 13'0000000000000).
+Adding SRST signal on $procdff$366 ($dff) from module acq_frontend (D = $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$117_Y, Q = \rem_q[13], rval = 11'00000000000).
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$484 ($dffe) from module acq_frontend.
+
+4.8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acq_frontend..
+Removed 66 unused cells and 64 unused wires.
+<suppressed ~67 debug messages>
+
+4.8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acq_frontend.
+<suppressed ~1 debug messages>
+
+4.8.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.8.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \acq_frontend..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~33 debug messages>
+
+4.8.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \acq_frontend.
+Performed a total of 0 changes.
+
+4.8.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\acq_frontend'.
+<suppressed ~24 debug messages>
+Removed a total of 8 cells.
+
+4.8.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.8.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acq_frontend..
+Removed 0 unused cells and 8 unused wires.
+<suppressed ~1 debug messages>
+
+4.8.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acq_frontend.
+
+4.8.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.8.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \acq_frontend..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~33 debug messages>
+
+4.8.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \acq_frontend.
+Performed a total of 0 changes.
+
+4.8.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\acq_frontend'.
+Removed a total of 0 cells.
+
+4.8.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.8.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acq_frontend..
+
+4.8.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acq_frontend.
+
+4.8.23. Finished OPT passes. (There is nothing left to do.)
+
+4.9. Executing WREDUCE pass (reducing word size of cells).
+Removed top 11 bits (of 23) from port B of cell acq_frontend.$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:154$2 ($sub).
+Removed top 1 bits (of 23) from mux cell acq_frontend.$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:155$4 ($mux).
+Removed top 21 bits (of 32) from port A of cell acq_frontend.$gt$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:220$13 ($gt).
+Removed top 23 bits (of 32) from port B of cell acq_frontend.$gt$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:220$13 ($gt).
+Removed top 2 bits (of 11) from port B of cell acq_frontend.$eq$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:221$14 ($eq).
+Removed top 1 bits (of 15) from port A of cell acq_frontend.$neg$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:225$19 ($neg).
+Converting cell acq_frontend.$neg$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:225$19 ($neg) from signed to unsigned.
+Removed top 1 bits (of 14) from port A of cell acq_frontend.$neg$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:225$19 ($neg).
+Removed top 3 bits (of 15) from port B of cell acq_frontend.$gt$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:226$21 ($gt).
+Removed top 3 bits (of 15) from port B of cell acq_frontend.$lt$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:226$22 ($lt).
+Removed top 3 bits (of 15) from mux cell acq_frontend.$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:227$25 ($mux).
+Removed top 7 bits (of 8) from port B of cell acq_frontend.$or$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:242$31 ($or).
+Removed top 6 bits (of 8) from port B of cell acq_frontend.$or$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:242$32 ($or).
+Removed top 7 bits (of 8) from port B of cell acq_frontend.$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:251$37 ($sub).
+Removed top 31 bits (of 32) from port B of cell acq_frontend.$add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:297$42 ($add).
+Removed top 31 bits (of 32) from port B of cell acq_frontend.$add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:299$45 ($add).
+Removed top 19 bits (of 20) from port B of cell acq_frontend.$add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:319$50 ($add).
+Removed top 31 bits (of 32) from port B of cell acq_frontend.$add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:324$52 ($add).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$ge$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:194$53 ($ge).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$56 ($sub).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$ge$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:194$58 ($ge).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$61 ($sub).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$ge$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:194$63 ($ge).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$66 ($sub).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$ge$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:194$68 ($ge).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$71 ($sub).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$ge$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:194$73 ($ge).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$76 ($sub).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$ge$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:194$78 ($ge).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$81 ($sub).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$ge$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:194$83 ($ge).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$86 ($sub).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$ge$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:194$88 ($ge).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$91 ($sub).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$ge$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:194$93 ($ge).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$96 ($sub).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$ge$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:194$98 ($ge).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$101 ($sub).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$ge$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:194$103 ($ge).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$106 ($sub).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$ge$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:194$108 ($ge).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$111 ($sub).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$ge$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:194$113 ($ge).
+Removed top 1 bits (of 11) from port B of cell acq_frontend.$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$116 ($sub).
+Removed cell acq_frontend.$procmux$146 ($mux).
+Removed cell acq_frontend.$procmux$158 ($mux).
+Removed cell acq_frontend.$procmux$170 ($mux).
+Removed cell acq_frontend.$procmux$182 ($mux).
+Removed cell acq_frontend.$procmux$194 ($mux).
+Removed cell acq_frontend.$procmux$206 ($mux).
+Removed cell acq_frontend.$procmux$218 ($mux).
+Removed cell acq_frontend.$procmux$230 ($mux).
+Removed cell acq_frontend.$procmux$242 ($mux).
+Removed cell acq_frontend.$procmux$254 ($mux).
+Removed cell acq_frontend.$procmux$266 ($mux).
+Removed cell acq_frontend.$procmux$269 ($mux).
+Removed cell acq_frontend.$auto$ff.cc:266:slice$549 ($dff).
+Removed cell acq_frontend.$procmux$310 ($mux).
+Removed cell acq_frontend.$auto$ff.cc:266:slice$544 ($dff).
+Removed cell acq_frontend.$auto$ff.cc:266:slice$539 ($dff).
+Removed cell acq_frontend.$auto$ff.cc:266:slice$534 ($dff).
+Removed cell acq_frontend.$auto$ff.cc:266:slice$529 ($dff).
+Removed cell acq_frontend.$auto$ff.cc:266:slice$524 ($dff).
+Removed cell acq_frontend.$auto$ff.cc:266:slice$519 ($dff).
+Removed cell acq_frontend.$auto$ff.cc:266:slice$514 ($dff).
+Removed cell acq_frontend.$auto$ff.cc:266:slice$509 ($dff).
+Removed cell acq_frontend.$auto$ff.cc:266:slice$504 ($dff).
+Removed cell acq_frontend.$auto$ff.cc:266:slice$500 ($dff).
+Removed cell acq_frontend.$auto$ff.cc:266:slice$498 ($dff).
+Removed cell acq_frontend.$auto$ff.cc:266:slice$487 ($dff).
+Removed top 1 bits (of 11) from FF cell acq_frontend.$auto$ff.cc:266:slice$556 ($sdff).
+Removed top 1 bits (of 13) from FF cell acq_frontend.$auto$ff.cc:266:slice$555 ($sdff).
+Removed top 1 bits (of 11) from FF cell acq_frontend.$auto$ff.cc:266:slice$551 ($sdff).
+Removed top 2 bits (of 13) from FF cell acq_frontend.$auto$ff.cc:266:slice$550 ($sdff).
+Removed top 1 bits (of 11) from FF cell acq_frontend.$auto$ff.cc:266:slice$546 ($sdff).
+Removed top 3 bits (of 13) from FF cell acq_frontend.$auto$ff.cc:266:slice$545 ($sdff).
+Removed top 1 bits (of 11) from FF cell acq_frontend.$auto$ff.cc:266:slice$541 ($sdff).
+Removed top 4 bits (of 13) from FF cell acq_frontend.$auto$ff.cc:266:slice$540 ($sdff).
+Removed top 1 bits (of 11) from FF cell acq_frontend.$auto$ff.cc:266:slice$536 ($sdff).
+Removed top 5 bits (of 13) from FF cell acq_frontend.$auto$ff.cc:266:slice$535 ($sdff).
+Removed top 1 bits (of 11) from FF cell acq_frontend.$auto$ff.cc:266:slice$531 ($sdff).
+Removed top 6 bits (of 13) from FF cell acq_frontend.$auto$ff.cc:266:slice$530 ($sdff).
+Removed top 1 bits (of 11) from FF cell acq_frontend.$auto$ff.cc:266:slice$526 ($sdff).
+Removed top 7 bits (of 13) from FF cell acq_frontend.$auto$ff.cc:266:slice$525 ($sdff).
+Removed top 1 bits (of 11) from FF cell acq_frontend.$auto$ff.cc:266:slice$521 ($sdff).
+Removed top 8 bits (of 13) from FF cell acq_frontend.$auto$ff.cc:266:slice$520 ($sdff).
+Removed top 1 bits (of 11) from FF cell acq_frontend.$auto$ff.cc:266:slice$516 ($sdff).
+Removed top 9 bits (of 13) from FF cell acq_frontend.$auto$ff.cc:266:slice$515 ($sdff).
+Removed top 1 bits (of 11) from FF cell acq_frontend.$auto$ff.cc:266:slice$511 ($sdff).
+Removed top 10 bits (of 13) from FF cell acq_frontend.$auto$ff.cc:266:slice$510 ($sdff).
+Removed top 1 bits (of 11) from FF cell acq_frontend.$auto$ff.cc:266:slice$506 ($sdff).
+Removed top 11 bits (of 13) from FF cell acq_frontend.$auto$ff.cc:266:slice$505 ($sdff).
+Removed top 1 bits (of 11) from FF cell acq_frontend.$auto$ff.cc:266:slice$501 ($sdff).
+Removed top 3 bits (of 15) from mux cell acq_frontend.$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:227$24 ($mux).
+Removed top 1 bits (of 11) from mux cell acq_frontend.$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$57 ($mux).
+Removed top 1 bits (of 11) from mux cell acq_frontend.$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$62 ($mux).
+Removed top 1 bits (of 11) from mux cell acq_frontend.$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$67 ($mux).
+Removed top 1 bits (of 11) from mux cell acq_frontend.$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$72 ($mux).
+Removed top 1 bits (of 11) from mux cell acq_frontend.$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$77 ($mux).
+Removed top 1 bits (of 11) from mux cell acq_frontend.$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$82 ($mux).
+Removed top 1 bits (of 11) from mux cell acq_frontend.$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$87 ($mux).
+Removed top 1 bits (of 11) from mux cell acq_frontend.$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$92 ($mux).
+Removed top 1 bits (of 11) from mux cell acq_frontend.$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$97 ($mux).
+Removed top 1 bits (of 11) from mux cell acq_frontend.$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$102 ($mux).
+Removed top 1 bits (of 11) from mux cell acq_frontend.$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$107 ($mux).
+Removed top 1 bits (of 11) from mux cell acq_frontend.$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$112 ($mux).
+Removed top 1 bits (of 11) from port Y of cell acq_frontend.$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$56 ($sub).
+Removed top 1 bits (of 11) from port A of cell acq_frontend.$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$56 ($sub).
+Removed top 1 bits (of 11) from port Y of cell acq_frontend.$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$61 ($sub).
+Removed top 1 bits (of 11) from port A of cell acq_frontend.$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$61 ($sub).
+Removed top 1 bits (of 11) from port Y of cell acq_frontend.$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$66 ($sub).
+Removed top 1 bits (of 11) from port A of cell acq_frontend.$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$66 ($sub).
+Removed top 1 bits (of 11) from port Y of cell acq_frontend.$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$71 ($sub).
+Removed top 1 bits (of 11) from port A of cell acq_frontend.$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$71 ($sub).
+Removed top 1 bits (of 11) from port Y of cell acq_frontend.$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$76 ($sub).
+Removed top 1 bits (of 11) from port A of cell acq_frontend.$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$76 ($sub).
+Removed top 1 bits (of 11) from port Y of cell acq_frontend.$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$81 ($sub).
+Removed top 1 bits (of 11) from port A of cell acq_frontend.$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$81 ($sub).
+Removed top 1 bits (of 11) from port Y of cell acq_frontend.$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$86 ($sub).
+Removed top 1 bits (of 11) from port A of cell acq_frontend.$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$86 ($sub).
+Removed top 1 bits (of 11) from port Y of cell acq_frontend.$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$91 ($sub).
+Removed top 1 bits (of 11) from port A of cell acq_frontend.$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$91 ($sub).
+Removed top 1 bits (of 11) from port Y of cell acq_frontend.$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$96 ($sub).
+Removed top 1 bits (of 11) from port A of cell acq_frontend.$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$96 ($sub).
+Removed top 1 bits (of 11) from port Y of cell acq_frontend.$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$101 ($sub).
+Removed top 1 bits (of 11) from port A of cell acq_frontend.$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$101 ($sub).
+Removed top 1 bits (of 11) from port Y of cell acq_frontend.$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$106 ($sub).
+Removed top 1 bits (of 11) from port A of cell acq_frontend.$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$106 ($sub).
+Removed top 1 bits (of 11) from port Y of cell acq_frontend.$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$111 ($sub).
+Removed top 1 bits (of 11) from port A of cell acq_frontend.$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$111 ($sub).
+Removed top 1 bits (of 11) from wire acq_frontend.$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$101_Y.
+Removed top 1 bits (of 11) from wire acq_frontend.$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$106_Y.
+Removed top 1 bits (of 11) from wire acq_frontend.$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$56_Y.
+Removed top 1 bits (of 11) from wire acq_frontend.$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$81_Y.
+Removed top 1 bits (of 11) from wire acq_frontend.$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$86_Y.
+Removed top 1 bits (of 11) from wire acq_frontend.$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$96_Y.
+Removed top 1 bits (of 11) from wire acq_frontend.$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$77_Y.
+Removed top 3 bits (of 15) from wire acq_frontend.$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:227$24_Y.
+Removed top 6 bits (of 8) from wire acq_frontend.gap_bit.
+Removed top 3 bits (of 15) from wire acq_frontend.pre_cl.
+Removed top 1 bits (of 23) from wire acq_frontend.prod_mag.
+Removed top 3 bits (of 13) from wire acq_frontend.quo_q[10].
+Removed top 12 bits (of 13) from wire acq_frontend.quo_q[1].
+Removed top 11 bits (of 13) from wire acq_frontend.quo_q[2].
+Removed top 1 bits (of 11) from wire acq_frontend.rem_q[0].
+Removed top 1 bits (of 11) from wire acq_frontend.rem_q[10].
+Removed top 1 bits (of 11) from wire acq_frontend.rem_q[11].
+Removed top 1 bits (of 11) from wire acq_frontend.rem_q[12].
+Removed top 1 bits (of 11) from wire acq_frontend.rem_q[1].
+Removed top 1 bits (of 11) from wire acq_frontend.rem_q[2].
+Removed top 1 bits (of 11) from wire acq_frontend.rem_q[5].
+
+4.10. Executing PEEPOPT pass (run peephole optimizers).
+
+4.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acq_frontend..
+Removed 0 unused cells and 34 unused wires.
+<suppressed ~1 debug messages>
+
+4.12. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module acq_frontend:
+  creating $macc model for $add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:222$17 ($add).
+  creating $macc model for $add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:297$42 ($add).
+  creating $macc model for $add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:299$45 ($add).
+  creating $macc model for $add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:319$50 ($add).
+  creating $macc model for $add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:324$52 ($add).
+  creating $macc model for $neg$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:155$3 ($neg).
+  creating $macc model for $neg$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:225$19 ($neg).
+  creating $macc model for $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:154$2 ($sub).
+  creating $macc model for $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$101 ($sub).
+  creating $macc model for $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$106 ($sub).
+  creating $macc model for $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$111 ($sub).
+  creating $macc model for $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$116 ($sub).
+  creating $macc model for $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$56 ($sub).
+  creating $macc model for $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$61 ($sub).
+  creating $macc model for $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$66 ($sub).
+  creating $macc model for $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$71 ($sub).
+  creating $macc model for $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$76 ($sub).
+  creating $macc model for $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$81 ($sub).
+  creating $macc model for $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$86 ($sub).
+  creating $macc model for $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$91 ($sub).
+  creating $macc model for $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$96 ($sub).
+  creating $macc model for $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:251$37 ($sub).
+  creating $alu model for $macc $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:251$37.
+  creating $alu model for $macc $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$96.
+  creating $alu model for $macc $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$91.
+  creating $alu model for $macc $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$86.
+  creating $alu model for $macc $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$81.
+  creating $alu model for $macc $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$76.
+  creating $alu model for $macc $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$71.
+  creating $alu model for $macc $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$66.
+  creating $alu model for $macc $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$61.
+  creating $alu model for $macc $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$56.
+  creating $alu model for $macc $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$116.
+  creating $alu model for $macc $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$111.
+  creating $alu model for $macc $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$106.
+  creating $alu model for $macc $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$101.
+  creating $alu model for $macc $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:154$2.
+  creating $alu model for $macc $neg$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:225$19.
+  creating $alu model for $macc $neg$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:155$3.
+  creating $alu model for $macc $add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:324$52.
+  creating $alu model for $macc $add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:319$50.
+  creating $alu model for $macc $add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:299$45.
+  creating $alu model for $macc $add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:297$42.
+  creating $alu model for $macc $add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:222$17.
+  creating $alu model for $ge$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:194$103 ($ge): new $alu
+  creating $alu model for $ge$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:194$108 ($ge): new $alu
+  creating $alu model for $ge$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:194$113 ($ge): new $alu
+  creating $alu model for $ge$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:194$53 ($ge): new $alu
+  creating $alu model for $ge$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:194$58 ($ge): new $alu
+  creating $alu model for $ge$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:194$63 ($ge): new $alu
+  creating $alu model for $ge$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:194$68 ($ge): new $alu
+  creating $alu model for $ge$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:194$73 ($ge): new $alu
+  creating $alu model for $ge$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:194$78 ($ge): new $alu
+  creating $alu model for $ge$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:194$83 ($ge): new $alu
+  creating $alu model for $ge$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:194$88 ($ge): new $alu
+  creating $alu model for $ge$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:194$93 ($ge): new $alu
+  creating $alu model for $ge$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:194$98 ($ge): new $alu
+  creating $alu model for $ge$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:315$49 ($ge): new $alu
+  creating $alu model for $gt$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:220$13 ($gt): new $alu
+  creating $alu model for $gt$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:226$21 ($gt): new $alu
+  creating $alu model for $lt$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:226$22 ($lt): new $alu
+  creating $alu model for $eq$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:221$14 ($eq): merged with $gt$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:220$13.
+  creating $alu cell for $lt$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:226$22: $auto$alumacc.cc:485:replace_alu$598
+  creating $alu cell for $gt$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:226$21: $auto$alumacc.cc:485:replace_alu$611
+  creating $alu cell for $gt$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:220$13, $eq$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:221$14: $auto$alumacc.cc:485:replace_alu$618
+  creating $alu cell for $ge$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:315$49: $auto$alumacc.cc:485:replace_alu$625
+  creating $alu cell for $ge$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:194$98: $auto$alumacc.cc:485:replace_alu$634
+  creating $alu cell for $ge$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:194$93: $auto$alumacc.cc:485:replace_alu$643
+  creating $alu cell for $ge$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:194$88: $auto$alumacc.cc:485:replace_alu$652
+  creating $alu cell for $ge$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:194$83: $auto$alumacc.cc:485:replace_alu$661
+  creating $alu cell for $ge$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:194$78: $auto$alumacc.cc:485:replace_alu$670
+  creating $alu cell for $ge$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:194$73: $auto$alumacc.cc:485:replace_alu$679
+  creating $alu cell for $ge$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:194$68: $auto$alumacc.cc:485:replace_alu$688
+  creating $alu cell for $ge$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:194$63: $auto$alumacc.cc:485:replace_alu$697
+  creating $alu cell for $ge$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:194$58: $auto$alumacc.cc:485:replace_alu$706
+  creating $alu cell for $ge$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:194$53: $auto$alumacc.cc:485:replace_alu$715
+  creating $alu cell for $ge$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:194$113: $auto$alumacc.cc:485:replace_alu$724
+  creating $alu cell for $ge$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:194$108: $auto$alumacc.cc:485:replace_alu$733
+  creating $alu cell for $ge$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:194$103: $auto$alumacc.cc:485:replace_alu$742
+  creating $alu cell for $add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:222$17: $auto$alumacc.cc:485:replace_alu$751
+  creating $alu cell for $add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:297$42: $auto$alumacc.cc:485:replace_alu$754
+  creating $alu cell for $add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:299$45: $auto$alumacc.cc:485:replace_alu$757
+  creating $alu cell for $add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:319$50: $auto$alumacc.cc:485:replace_alu$760
+  creating $alu cell for $add$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:324$52: $auto$alumacc.cc:485:replace_alu$763
+  creating $alu cell for $neg$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:155$3: $auto$alumacc.cc:485:replace_alu$766
+  creating $alu cell for $neg$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:225$19: $auto$alumacc.cc:485:replace_alu$769
+  creating $alu cell for $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:154$2: $auto$alumacc.cc:485:replace_alu$772
+  creating $alu cell for $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$101: $auto$alumacc.cc:485:replace_alu$775
+  creating $alu cell for $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$106: $auto$alumacc.cc:485:replace_alu$778
+  creating $alu cell for $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$111: $auto$alumacc.cc:485:replace_alu$781
+  creating $alu cell for $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$116: $auto$alumacc.cc:485:replace_alu$784
+  creating $alu cell for $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$56: $auto$alumacc.cc:485:replace_alu$787
+  creating $alu cell for $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$61: $auto$alumacc.cc:485:replace_alu$790
+  creating $alu cell for $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$66: $auto$alumacc.cc:485:replace_alu$793
+  creating $alu cell for $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$71: $auto$alumacc.cc:485:replace_alu$796
+  creating $alu cell for $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$76: $auto$alumacc.cc:485:replace_alu$799
+  creating $alu cell for $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$81: $auto$alumacc.cc:485:replace_alu$802
+  creating $alu cell for $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$86: $auto$alumacc.cc:485:replace_alu$805
+  creating $alu cell for $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$91: $auto$alumacc.cc:485:replace_alu$808
+  creating $alu cell for $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$96: $auto$alumacc.cc:485:replace_alu$811
+  creating $alu cell for $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:251$37: $auto$alumacc.cc:485:replace_alu$814
+  created 39 $alu and 0 $macc cells.
+
+4.13. Executing SHARE pass (SAT-based resource sharing).
+
+4.14. Executing OPT pass (performing simple optimizations).
+
+4.14.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acq_frontend.
+
+4.14.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\acq_frontend'.
+Removed a total of 0 cells.
+
+4.14.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \acq_frontend..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~20 debug messages>
+
+4.14.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \acq_frontend.
+    New input vector for $reduce_or cell $auto$opt_dff.cc:254:combine_resets$495: { $auto$rtlil.cc:2401:Not$450 $auto$rtlil.cc:2401:Not$629 $auto$rtlil.cc:2404:ReduceAnd$631 }
+  Optimizing cells in module \acq_frontend.
+Performed a total of 1 changes.
+
+4.14.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\acq_frontend'.
+Removed a total of 0 cells.
+
+4.14.6. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$503 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$508 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$513 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$518 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$523 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$528 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$533 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$538 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$543 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$548 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$553 ($sdff) from module acq_frontend.
+
+4.14.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acq_frontend..
+Removed 0 unused cells and 18 unused wires.
+<suppressed ~1 debug messages>
+
+4.14.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acq_frontend.
+
+4.14.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.14.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \acq_frontend..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~20 debug messages>
+
+4.14.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \acq_frontend.
+Performed a total of 0 changes.
+
+4.14.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\acq_frontend'.
+Removed a total of 0 cells.
+
+4.14.13. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$818 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$819 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$820 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$821 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$822 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$823 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$824 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$825 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$826 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$827 ($sdff) from module acq_frontend.
+
+4.14.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acq_frontend..
+
+4.14.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acq_frontend.
+
+4.14.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.14.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \acq_frontend..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~20 debug messages>
+
+4.14.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \acq_frontend.
+Performed a total of 0 changes.
+
+4.14.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\acq_frontend'.
+Removed a total of 0 cells.
+
+4.14.20. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$829 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$830 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$831 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$832 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$833 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$834 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$835 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$836 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$837 ($sdff) from module acq_frontend.
+
+4.14.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acq_frontend..
+
+4.14.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acq_frontend.
+
+4.14.23. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.14.24. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \acq_frontend..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~20 debug messages>
+
+4.14.25. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \acq_frontend.
+Performed a total of 0 changes.
+
+4.14.26. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\acq_frontend'.
+Removed a total of 0 cells.
+
+4.14.27. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$839 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$840 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$841 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$842 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$843 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$844 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$845 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$846 ($sdff) from module acq_frontend.
+
+4.14.28. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acq_frontend..
+
+4.14.29. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acq_frontend.
+
+4.14.30. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.14.31. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \acq_frontend..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~20 debug messages>
+
+4.14.32. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \acq_frontend.
+Performed a total of 0 changes.
+
+4.14.33. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\acq_frontend'.
+Removed a total of 0 cells.
+
+4.14.34. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$848 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$849 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$850 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$851 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$852 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$853 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$854 ($sdff) from module acq_frontend.
+
+4.14.35. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acq_frontend..
+
+4.14.36. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acq_frontend.
+
+4.14.37. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.14.38. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \acq_frontend..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~20 debug messages>
+
+4.14.39. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \acq_frontend.
+Performed a total of 0 changes.
+
+4.14.40. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\acq_frontend'.
+Removed a total of 0 cells.
+
+4.14.41. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$856 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$857 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$858 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$859 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$860 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$861 ($sdff) from module acq_frontend.
+
+4.14.42. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acq_frontend..
+
+4.14.43. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acq_frontend.
+
+4.14.44. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.14.45. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \acq_frontend..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~20 debug messages>
+
+4.14.46. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \acq_frontend.
+Performed a total of 0 changes.
+
+4.14.47. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\acq_frontend'.
+Removed a total of 0 cells.
+
+4.14.48. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$863 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$864 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$865 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$866 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$867 ($sdff) from module acq_frontend.
+
+4.14.49. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acq_frontend..
+
+4.14.50. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acq_frontend.
+
+4.14.51. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.14.52. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \acq_frontend..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~20 debug messages>
+
+4.14.53. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \acq_frontend.
+Performed a total of 0 changes.
+
+4.14.54. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\acq_frontend'.
+Removed a total of 0 cells.
+
+4.14.55. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$869 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$870 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$871 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$872 ($sdff) from module acq_frontend.
+
+4.14.56. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acq_frontend..
+
+4.14.57. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acq_frontend.
+
+4.14.58. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.14.59. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \acq_frontend..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~20 debug messages>
+
+4.14.60. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \acq_frontend.
+Performed a total of 0 changes.
+
+4.14.61. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\acq_frontend'.
+Removed a total of 0 cells.
+
+4.14.62. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$874 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$875 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$876 ($sdff) from module acq_frontend.
+
+4.14.63. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acq_frontend..
+
+4.14.64. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acq_frontend.
+
+4.14.65. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.14.66. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \acq_frontend..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~20 debug messages>
+
+4.14.67. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \acq_frontend.
+Performed a total of 0 changes.
+
+4.14.68. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\acq_frontend'.
+Removed a total of 0 cells.
+
+4.14.69. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$878 ($sdff) from module acq_frontend.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$879 ($sdff) from module acq_frontend.
+
+4.14.70. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acq_frontend..
+
+4.14.71. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acq_frontend.
+
+4.14.72. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.14.73. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \acq_frontend..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~20 debug messages>
+
+4.14.74. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \acq_frontend.
+Performed a total of 0 changes.
+
+4.14.75. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\acq_frontend'.
+Removed a total of 0 cells.
+
+4.14.76. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$881 ($sdff) from module acq_frontend.
+
+4.14.77. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acq_frontend..
+
+4.14.78. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acq_frontend.
+
+4.14.79. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.14.80. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \acq_frontend..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~20 debug messages>
+
+4.14.81. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \acq_frontend.
+Performed a total of 0 changes.
+
+4.14.82. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\acq_frontend'.
+Removed a total of 0 cells.
+
+4.14.83. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.14.84. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acq_frontend..
+
+4.14.85. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acq_frontend.
+
+4.14.86. Finished OPT passes. (There is nothing left to do.)
+
+4.15. Executing MEMORY pass.
+
+4.15.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+4.15.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+4.15.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+4.15.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+4.15.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+4.15.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acq_frontend..
+
+4.15.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+4.15.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+4.15.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acq_frontend..
+
+4.15.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+4.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acq_frontend..
+
+4.17. Executing OPT pass (performing simple optimizations).
+
+4.17.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acq_frontend.
+<suppressed ~80 debug messages>
+
+4.17.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\acq_frontend'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+4.17.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.17.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acq_frontend..
+Removed 50 unused cells and 57 unused wires.
+<suppressed ~51 debug messages>
+
+4.17.5. Finished fast OPT passes.
+
+4.18. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+4.19. Executing OPT pass (performing simple optimizations).
+
+4.19.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acq_frontend.
+
+4.19.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\acq_frontend'.
+Removed a total of 0 cells.
+
+4.19.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \acq_frontend..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~19 debug messages>
+
+4.19.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \acq_frontend.
+    Consolidated identical input bits for $mux cell $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$102:
+      Old ports: A={ \rem_q[9] [8:0] \bit_q[9] [12] }, B={ $auto$wreduce.cc:461:run$560 [9:3] \rem_q[9] [1:0] \bit_q[9] [12] }, Y=$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$102_Y [9:0]
+      New ports: A=\rem_q[9] [8:2], B=$auto$wreduce.cc:461:run$560 [9:3], Y=$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$102_Y [9:3]
+      New connections: $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$102_Y [2:0] = { \rem_q[9] [1:0] \bit_q[9] [12] }
+    Consolidated identical input bits for $mux cell $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$107:
+      Old ports: A={ \rem_q[10] [8:0] \bit_q[10] [12] }, B={ $auto$wreduce.cc:461:run$561 [9:3] \rem_q[10] [1:0] \bit_q[10] [12] }, Y=$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$107_Y [9:0]
+      New ports: A=\rem_q[10] [8:2], B=$auto$wreduce.cc:461:run$561 [9:3], Y=$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$107_Y [9:3]
+      New connections: $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$107_Y [2:0] = { \rem_q[10] [1:0] \bit_q[10] [12] }
+    Consolidated identical input bits for $mux cell $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$112:
+      Old ports: A={ \rem_q[11] [8:0] \bit_q[11] [12] }, B={ $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$111_Y [9:3] \rem_q[11] [1:0] \bit_q[11] [12] }, Y=$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$112_Y [9:0]
+      New ports: A=\rem_q[11] [8:2], B=$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$111_Y [9:3], Y=$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$112_Y [9:3]
+      New connections: $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$112_Y [2:0] = { \rem_q[11] [1:0] \bit_q[11] [12] }
+    Consolidated identical input bits for $mux cell $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$117:
+      Old ports: A={ \rem_q[12] \bit_q[12] [12] }, B={ $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$116_Y [10:3] \rem_q[12] [1:0] \bit_q[12] [12] }, Y=$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$117_Y
+      New ports: A=\rem_q[12] [9:2], B=$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$116_Y [10:3], Y=$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$117_Y [10:3]
+      New connections: $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$117_Y [2:0] = { \rem_q[12] [1:0] \bit_q[12] [12] }
+    Consolidated identical input bits for $mux cell $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$57:
+      Old ports: A={ \g_langkah[0].shifted [9:1] \bit_q[0] [12] }, B={ $auto$wreduce.cc:461:run$562 [9:3] \g_langkah[0].shifted [2:1] \bit_q[0] [12] }, Y=$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$57_Y [9:0]
+      New ports: A=\g_langkah[0].shifted [9:3], B=$auto$wreduce.cc:461:run$562 [9:3], Y=$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$57_Y [9:3]
+      New connections: $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$57_Y [2:0] = { \g_langkah[0].shifted [2:1] \bit_q[0] [12] }
+    Consolidated identical input bits for $mux cell $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$62:
+      Old ports: A={ \rem_q[1] [8:0] \bit_q[1] [12] }, B={ $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$61_Y [9:3] \rem_q[1] [1:0] \bit_q[1] [12] }, Y=$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$62_Y [9:0]
+      New ports: A=\rem_q[1] [8:2], B=$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$61_Y [9:3], Y=$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$62_Y [9:3]
+      New connections: $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$62_Y [2:0] = { \rem_q[1] [1:0] \bit_q[1] [12] }
+    Consolidated identical input bits for $mux cell $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$67:
+      Old ports: A={ \rem_q[2] [8:0] \bit_q[2] [12] }, B={ $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$66_Y [9:3] \rem_q[2] [1:0] \bit_q[2] [12] }, Y=$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$67_Y [9:0]
+      New ports: A=\rem_q[2] [8:2], B=$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$66_Y [9:3], Y=$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$67_Y [9:3]
+      New connections: $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$67_Y [2:0] = { \rem_q[2] [1:0] \bit_q[2] [12] }
+    Consolidated identical input bits for $mux cell $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$72:
+      Old ports: A={ \rem_q[3] [8:0] \bit_q[3] [12] }, B={ $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$71_Y [9:3] \rem_q[3] [1:0] \bit_q[3] [12] }, Y=$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$72_Y [9:0]
+      New ports: A=\rem_q[3] [8:2], B=$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$71_Y [9:3], Y=$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$72_Y [9:3]
+      New connections: $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$72_Y [2:0] = { \rem_q[3] [1:0] \bit_q[3] [12] }
+    Consolidated identical input bits for $mux cell $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$77:
+      Old ports: A={ \rem_q[4] [8:0] \bit_q[4] [12] }, B={ $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$76_Y [9:3] \rem_q[4] [1:0] \bit_q[4] [12] }, Y=$auto$wreduce.cc:461:run$566 [9:0]
+      New ports: A=\rem_q[4] [8:2], B=$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$76_Y [9:3], Y=$auto$wreduce.cc:461:run$566 [9:3]
+      New connections: $auto$wreduce.cc:461:run$566 [2:0] = { \rem_q[4] [1:0] \bit_q[4] [12] }
+    Consolidated identical input bits for $mux cell $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$82:
+      Old ports: A={ \rem_q[5] [8:0] \bit_q[5] [12] }, B={ $auto$wreduce.cc:461:run$563 [9:3] \rem_q[5] [1:0] \bit_q[5] [12] }, Y=$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$82_Y [9:0]
+      New ports: A=\rem_q[5] [8:2], B=$auto$wreduce.cc:461:run$563 [9:3], Y=$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$82_Y [9:3]
+      New connections: $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$82_Y [2:0] = { \rem_q[5] [1:0] \bit_q[5] [12] }
+    Consolidated identical input bits for $mux cell $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$87:
+      Old ports: A={ \rem_q[6] [8:0] \bit_q[6] [12] }, B={ $auto$wreduce.cc:461:run$564 [9:3] \rem_q[6] [1:0] \bit_q[6] [12] }, Y=$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$87_Y [9:0]
+      New ports: A=\rem_q[6] [8:2], B=$auto$wreduce.cc:461:run$564 [9:3], Y=$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$87_Y [9:3]
+      New connections: $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$87_Y [2:0] = { \rem_q[6] [1:0] \bit_q[6] [12] }
+    Consolidated identical input bits for $mux cell $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$92:
+      Old ports: A={ \rem_q[7] [8:0] \bit_q[7] [12] }, B={ $sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$91_Y [9:3] \rem_q[7] [1:0] \bit_q[7] [12] }, Y=$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$92_Y [9:0]
+      New ports: A=\rem_q[7] [8:2], B=$sub$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$91_Y [9:3], Y=$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$92_Y [9:3]
+      New connections: $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$92_Y [2:0] = { \rem_q[7] [1:0] \bit_q[7] [12] }
+    Consolidated identical input bits for $mux cell $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$97:
+      Old ports: A={ \rem_q[8] [8:0] \bit_q[8] [12] }, B={ $auto$wreduce.cc:461:run$565 [9:3] \rem_q[8] [1:0] \bit_q[8] [12] }, Y=$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$97_Y [9:0]
+      New ports: A=\rem_q[8] [8:2], B=$auto$wreduce.cc:461:run$565 [9:3], Y=$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$97_Y [9:3]
+      New connections: $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:202$97_Y [2:0] = { \rem_q[8] [1:0] \bit_q[8] [12] }
+    Consolidated identical input bits for $mux cell $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:227$24:
+      Old ports: A=12'011111111111, B=12'100000000001, Y=$auto$wreduce.cc:461:run$567 [11:0]
+      New ports: A=2'01, B=2'10, Y={ $auto$wreduce.cc:461:run$567 [11] $auto$wreduce.cc:461:run$567 [1] }
+      New connections: { $auto$wreduce.cc:461:run$567 [10:2] $auto$wreduce.cc:461:run$567 [0] } = { $auto$wreduce.cc:461:run$567 [1] $auto$wreduce.cc:461:run$567 [1] $auto$wreduce.cc:461:run$567 [1] $auto$wreduce.cc:461:run$567 [1] $auto$wreduce.cc:461:run$567 [1] $auto$wreduce.cc:461:run$567 [1] $auto$wreduce.cc:461:run$567 [1] $auto$wreduce.cc:461:run$567 [1] $auto$wreduce.cc:461:run$567 [1] 1'1 }
+    Consolidated identical input bits for $mux cell $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:280$41:
+      Old ports: A=3'000, B=3'101, Y=$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:280$41_Y
+      New ports: A=1'0, B=1'1, Y=$ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:280$41_Y [0]
+      New connections: $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:280$41_Y [2:1] = { $ternary$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/acq_frontend.sv:280$41_Y [0] 1'0 }
+  Optimizing cells in module \acq_frontend.
+Performed a total of 15 changes.
+
+4.19.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\acq_frontend'.
+Removed a total of 0 cells.
+
+4.19.6. Executing OPT_SHARE pass.
+
+4.19.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.19.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acq_frontend..
+
+4.19.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acq_frontend.
+<suppressed ~1 debug messages>
+
+4.19.10. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.19.11. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \acq_frontend..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~18 debug messages>
+
+4.19.12. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \acq_frontend.
+Performed a total of 0 changes.
+
+4.19.13. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\acq_frontend'.
+Removed a total of 0 cells.
+
+4.19.14. Executing OPT_SHARE pass.
+
+4.19.15. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 1 on $auto$ff.cc:266:slice$479 ($sdff) from module acq_frontend.
+
+4.19.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acq_frontend..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+4.19.17. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acq_frontend.
+
+4.19.18. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.19.19. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \acq_frontend..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~18 debug messages>
+
+4.19.20. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \acq_frontend.
+Performed a total of 0 changes.
+
+4.19.21. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\acq_frontend'.
+Removed a total of 0 cells.
+
+4.19.22. Executing OPT_SHARE pass.
+
+4.19.23. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.19.24. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acq_frontend..
+
+4.19.25. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acq_frontend.
+
+4.19.26. Finished OPT passes. (There is nothing left to do.)
+
+4.20. Executing TECHMAP pass (map to technology primitives).
+
+4.20.1. Executing Verilog-2005 frontend: /home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl-synthesis/debroot/usr/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl-synthesis/debroot/usr/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+4.20.2. Continuing TECHMAP pass.
+Using template $paramod$dbcdc7e8aa1a4080cea2deda6fdc8772064f4d90\_90_alu for cells of type $alu.
+Using template $paramod$5a6db3d099b7d97358d0b56f37845ee9fd0b5a80\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $reduce_or.
+Using template $paramod$6fc37af1c109ae54e8aed83fcd995c12d378ce93\_90_alu for cells of type $alu.
+Using template $paramod$6a42b6fefed750f8a1c58eab59479d960557103c\_90_alu for cells of type $alu.
+Using template $paramod$0fe964d8808dc66c299b37041540f6ca8d0088ad\_90_alu for cells of type $alu.
+Using template $paramod$8fc04fdd16a9929ec08bc9962c2522fe8f7f851f\_90_alu for cells of type $alu.
+Using template $paramod$6573161e4b887696395c6f9d98b67a20055df5c9\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $sdff.
+Using template $paramod$ce0ec84be7047712840b0952f343ee9e63ef75d1\_90_alu for cells of type $alu.
+Using template $paramod$a9c862b459f0009bb3a015092e00213b862f7967\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $logic_and.
+Using template $paramod$0f18b05d33f7867ae8d44c79c4e5d69c7a3654cf\_90_alu for cells of type $alu.
+Using template $paramod$f544bc9b428a881ffce7ad4a3b7169b5d02cac93\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod$403a3c2fa431a154c52a6a5429d7a6260b5d144f\_90_alu for cells of type $alu.
+Using template $paramod$215440792383f7884e57d9c95f84e9552d0bf4ac\_90_alu for cells of type $alu.
+Using template $paramod$befd47b1c77b68561d11d0cb61a0fae29b79f34c\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $sdffe.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000000111 for cells of type $lcu.
+Using extmapper simplemap for cells of type $pos.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000001111 for cells of type $lcu.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000010100 for cells of type $lcu.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000100000 for cells of type $lcu.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000010111 for cells of type $lcu.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000001011 for cells of type $lcu.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000000100 for cells of type $lcu.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000001110 for cells of type $lcu.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000001000 for cells of type $lcu.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000001101 for cells of type $lcu.
+No more expansions possible.
+<suppressed ~3800 debug messages>
+
+4.21. Executing OPT pass (performing simple optimizations).
+
+4.21.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acq_frontend.
+<suppressed ~2438 debug messages>
+
+4.21.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\acq_frontend'.
+<suppressed ~564 debug messages>
+Removed a total of 188 cells.
+
+4.21.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.21.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acq_frontend..
+Removed 484 unused cells and 2094 unused wires.
+<suppressed ~485 debug messages>
+
+4.21.5. Finished fast OPT passes.
+
+4.22. Executing ABC pass (technology mapping using ABC).
+
+4.22.1. Extracting gate netlist of module `\acq_frontend' to `<abc-temp-dir>/input.blif'..
+Extracted 1651 gates and 1988 wires to a netlist network with 334 inputs and 276 outputs.
+
+4.22.1.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+4.22.1.2. Re-integrating ABC results.
+ABC RESULTS:               NOR cells:       74
+ABC RESULTS:              XNOR cells:       50
+ABC RESULTS:               NOT cells:       74
+ABC RESULTS:               MUX cells:      136
+ABC RESULTS:             ORNOT cells:       63
+ABC RESULTS:                OR cells:      113
+ABC RESULTS:               AND cells:      135
+ABC RESULTS:              NAND cells:      109
+ABC RESULTS:            ANDNOT cells:      375
+ABC RESULTS:               XOR cells:      260
+ABC RESULTS:        internal signals:     1378
+ABC RESULTS:           input signals:      334
+ABC RESULTS:          output signals:      276
+Removing temp directory.
+
+4.23. Executing OPT pass (performing simple optimizations).
+
+4.23.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module acq_frontend.
+<suppressed ~12 debug messages>
+
+4.23.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\acq_frontend'.
+<suppressed ~66 debug messages>
+Removed a total of 22 cells.
+
+4.23.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.23.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acq_frontend..
+Removed 0 unused cells and 1092 unused wires.
+<suppressed ~6 debug messages>
+
+4.23.5. Finished fast OPT passes.
+
+4.24. Executing HIERARCHY pass (managing design hierarchy).
+
+4.24.1. Analyzing design hierarchy..
+Top module:  \acq_frontend
+
+4.24.2. Analyzing design hierarchy..
+Top module:  \acq_frontend
+Removed 0 unused modules.
+
+4.25. Printing statistics.
+
+=== acq_frontend ===
+
+   Number of wires:               1339
+   Number of wire bits:           3310
+   Number of public wires:         134
+   Number of public wire bits:    1852
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               2518
+     $_ANDNOT_                     374
+     $_AND_                        117
+     $_MUX_                        136
+     $_NAND_                       109
+     $_NOR_                         71
+     $_NOT_                         74
+     $_ORNOT_                       63
+     $_OR_                         113
+     $_SDFFE_PN0P_                  32
+     $_SDFFE_PP0P_                  72
+     $_SDFF_PN0_                   995
+     $_SDFF_PP0_                    52
+     $_XNOR_                        50
+     $_XOR_                        260
+
+4.26. Executing CHECK pass (checking for obvious problems).
+Checking module acq_frontend...
+Found and reported 0 problems.
+
+5. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtn_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_4' - skipping.
+  cell sky130_fd_sc_hd__dfxtp_1 (noninv, pins=3, area=20.02) is a direct match for cell type $_DFF_P_.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtn_1' - skipping.
+  cell sky130_fd_sc_hd__dfrtn_1 (noninv, pins=4, area=25.02) is a direct match for cell type $_DFF_NN0_.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtn_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_4' - skipping.
+  cell sky130_fd_sc_hd__dfrtp_1 (noninv, pins=4, area=25.02) is a direct match for cell type $_DFF_PN0_.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_4' - skipping.
+  cell sky130_fd_sc_hd__dfstp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN1_.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtn_1' - skipping.
+  cell sky130_fd_sc_hd__dfbbn_1 (noninv, pins=6, area=32.53) is a direct match for cell type $_DFFSR_NNN_.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtn_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_4' - skipping.
+  cell sky130_fd_sc_hd__dfbbp_1 (noninv, pins=6, area=32.53) is a direct match for cell type $_DFFSR_PNN_.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_4' - skipping.
+  final dff cell mappings:
+    unmapped dff cell: $_DFF_N_
+    \sky130_fd_sc_hd__dfxtp_1 _DFF_P_ (.CLK( C), .D( D), .Q( Q));
+    \sky130_fd_sc_hd__dfrtn_1 _DFF_NN0_ (.CLK_N( C), .D( D), .Q( Q), .RESET_B( R));
+    unmapped dff cell: $_DFF_NN1_
+    unmapped dff cell: $_DFF_NP0_
+    unmapped dff cell: $_DFF_NP1_
+    \sky130_fd_sc_hd__dfrtp_1 _DFF_PN0_ (.CLK( C), .D( D), .Q( Q), .RESET_B( R));
+    \sky130_fd_sc_hd__dfstp_2 _DFF_PN1_ (.CLK( C), .D( D), .Q( Q), .SET_B( R));
+    unmapped dff cell: $_DFF_PP0_
+    unmapped dff cell: $_DFF_PP1_
+    \sky130_fd_sc_hd__dfbbn_1 _DFFSR_NNN_ (.CLK_N( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff cell: $_DFFSR_NNP_
+    unmapped dff cell: $_DFFSR_NPN_
+    unmapped dff cell: $_DFFSR_NPP_
+    \sky130_fd_sc_hd__dfbbp_1 _DFFSR_PNN_ (.CLK( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff cell: $_DFFSR_PNP_
+    unmapped dff cell: $_DFFSR_PPN_
+    unmapped dff cell: $_DFFSR_PPP_
+
+5.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+Mapping DFF cells in module `\acq_frontend':
+  mapped 1151 $_DFF_P_ cells to \sky130_fd_sc_hd__dfxtp_1 cells.
+
+6. Executing ABC pass (technology mapping using ABC).
+
+6.1. Extracting gate netlist of module `\acq_frontend' to `<abc-temp-dir>/input.blif'..
+Extracted 2622 gates and 3732 wires to a netlist network with 1109 inputs and 1151 outputs.
+
+6.1.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lib -w /home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl-synthesis/sky130_fd_sc_hd__tt_025C_1v80.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.19 sec
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_12" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_3" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_6" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__diode_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_8".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__edfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__edfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_0".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_8".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_8".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_bleeder_1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_12" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_3" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_6" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__lpflow_inputisolatch_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfsbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_4".
+ABC: Library "sky130_fd_sc_hd__tt_025C_1v80" from "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl-synthesis/sky130_fd_sc_hd__tt_025C_1v80.lib" has 334 cells (94 skipped: 63 seq; 13 tri-state; 18 no func; 0 dont_use).  Time =     0.28 sec
+ABC: Memory =   19.81 MB. Time =     0.28 sec
+ABC: Warning: Detected 9 multi-output gates (for example, "sky130_fd_sc_hd__fa_1").
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+6.1.2. Re-integrating ABC results.
+ABC RESULTS:   sky130_fd_sc_hd__o211ai_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__a41oi_1 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__a41o_1 cells:        6
+ABC RESULTS:   sky130_fd_sc_hd__a21o_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__and3b_1 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__o221a_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__a221oi_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__nand3b_1 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__o311ai_0 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o221ai_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o2111a_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__lpflow_inputiso1p_1 cells:       14
+ABC RESULTS:   sky130_fd_sc_hd__clkinv_1 cells:       30
+ABC RESULTS:   sky130_fd_sc_hd__o2111ai_1 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__a311o_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o22ai_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__nor4bb_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o31ai_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nand4b_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a311oi_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o311a_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o31a_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o211a_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__a31oi_1 cells:        6
+ABC RESULTS:   sky130_fd_sc_hd__and4_1 cells:       26
+ABC RESULTS:   sky130_fd_sc_hd__nand3_1 cells:       20
+ABC RESULTS:   sky130_fd_sc_hd__nor3b_1 cells:       27
+ABC RESULTS:   sky130_fd_sc_hd__a31o_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__nand4_1 cells:       21
+ABC RESULTS:   sky130_fd_sc_hd__a211oi_1 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__or4_1 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__nand2b_1 cells:       15
+ABC RESULTS:   sky130_fd_sc_hd__and3_1 cells:       49
+ABC RESULTS:   sky130_fd_sc_hd__nor4_1 cells:       15
+ABC RESULTS:   sky130_fd_sc_hd__or3_1 cells:       11
+ABC RESULTS:   sky130_fd_sc_hd__nor2b_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__nand2_1 cells:       65
+ABC RESULTS:   sky130_fd_sc_hd__o21bai_1 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__a21boi_0 cells:        6
+ABC RESULTS:   sky130_fd_sc_hd__lpflow_isobufsrc_1 cells:       36
+ABC RESULTS:   sky130_fd_sc_hd__xnor2_1 cells:       67
+ABC RESULTS:   sky130_fd_sc_hd__xor2_1 cells:       47
+ABC RESULTS:   sky130_fd_sc_hd__and2_0 cells:      954
+ABC RESULTS:   sky130_fd_sc_hd__nor2_1 cells:      117
+ABC RESULTS:   sky130_fd_sc_hd__o21ai_0 cells:       72
+ABC RESULTS:   sky130_fd_sc_hd__a21oi_1 cells:      123
+ABC RESULTS:   sky130_fd_sc_hd__nor3_1 cells:       43
+ABC RESULTS:   sky130_fd_sc_hd__o21a_1 cells:       23
+ABC RESULTS:          _const0_ cells:        1
+ABC RESULTS:        internal signals:     1472
+ABC RESULTS:           input signals:     1109
+ABC RESULTS:          output signals:     1151
+Removing temp directory.
+
+7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \acq_frontend..
+Removed 0 unused cells and 3586 unused wires.
+<suppressed ~17 debug messages>
+
+8. Printing statistics.
+
+=== acq_frontend ===
+
+   Number of wires:               1966
+   Number of wire bits:           3673
+   Number of public wires:         118
+   Number of public wire bits:    1825
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               2999
+     sky130_fd_sc_hd__a211oi_1       4
+     sky130_fd_sc_hd__a21boi_0       6
+     sky130_fd_sc_hd__a21o_1         1
+     sky130_fd_sc_hd__a21oi_1      123
+     sky130_fd_sc_hd__a221oi_1       2
+     sky130_fd_sc_hd__a311o_1        1
+     sky130_fd_sc_hd__a311oi_1       2
+     sky130_fd_sc_hd__a31o_1         2
+     sky130_fd_sc_hd__a31oi_1        6
+     sky130_fd_sc_hd__a41o_1         6
+     sky130_fd_sc_hd__a41oi_1        4
+     sky130_fd_sc_hd__and2_0       954
+     sky130_fd_sc_hd__and3_1        49
+     sky130_fd_sc_hd__and3b_1        5
+     sky130_fd_sc_hd__and4_1        26
+     sky130_fd_sc_hd__clkinv_1      30
+     sky130_fd_sc_hd__dfxtp_1     1151
+     sky130_fd_sc_hd__lpflow_inputiso1p_1     14
+     sky130_fd_sc_hd__lpflow_isobufsrc_1     36
+     sky130_fd_sc_hd__nand2_1       65
+     sky130_fd_sc_hd__nand2b_1      15
+     sky130_fd_sc_hd__nand3_1       20
+     sky130_fd_sc_hd__nand3b_1       4
+     sky130_fd_sc_hd__nand4_1       21
+     sky130_fd_sc_hd__nand4b_1       1
+     sky130_fd_sc_hd__nor2_1       117
+     sky130_fd_sc_hd__nor2b_1        2
+     sky130_fd_sc_hd__nor3_1        43
+     sky130_fd_sc_hd__nor3b_1       27
+     sky130_fd_sc_hd__nor4_1        15
+     sky130_fd_sc_hd__nor4bb_1       1
+     sky130_fd_sc_hd__o2111a_1       1
+     sky130_fd_sc_hd__o2111ai_1      4
+     sky130_fd_sc_hd__o211a_1        1
+     sky130_fd_sc_hd__o211ai_1       2
+     sky130_fd_sc_hd__o21a_1        23
+     sky130_fd_sc_hd__o21ai_0       72
+     sky130_fd_sc_hd__o21bai_1       4
+     sky130_fd_sc_hd__o221a_1        2
+     sky130_fd_sc_hd__o221ai_1       1
+     sky130_fd_sc_hd__o22ai_1        2
+     sky130_fd_sc_hd__o311a_1        1
+     sky130_fd_sc_hd__o311ai_0       1
+     sky130_fd_sc_hd__o31a_1         2
+     sky130_fd_sc_hd__o31ai_1        1
+     sky130_fd_sc_hd__or3_1         11
+     sky130_fd_sc_hd__or4_1          4
+     sky130_fd_sc_hd__xnor2_1       67
+     sky130_fd_sc_hd__xor2_1        47
+
+   Chip area for module '\acq_frontend': 34307.904000
+
+9. Executing JSON backend.
+
+Warnings: 30 unique messages, 238 total
+End of script. Logfile hash: 991a7891a2, CPU: user 5.09s system 0.10s, MEM: 54.31 MB peak
+Yosys 0.33 (git sha1 2584903a060)
+Time spent: 22% 2x abc (1 sec), 15% 49x opt_expr (0 sec), ...

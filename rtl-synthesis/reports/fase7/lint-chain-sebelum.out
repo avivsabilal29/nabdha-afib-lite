@@ -1,0 +1,150 @@
+run_lint.sh: top=afib_lite_top sources=13 timing=0
+  ../rtl/afib_lite_pkg.sv
+  ../rtl/acq_frontend.sv
+  ../rtl/afib_lite_top.sv
+  ../rtl/bandpass.sv
+  ../rtl/classifier.sv
+  ../rtl/derivative.sv
+  ../rtl/features.sv
+  ../rtl/integrator.sv
+  ../rtl/peak_detect.sv
+  ../rtl/regs_axi.sv
+  ../rtl/rr_series.sv
+  ../rtl/square.sv
+  ../rtl/t_rule.sv
+%Warning-PINMISSING: ../rtl/afib_lite_top.sv:398:17: Cell has missing pin: 's_hp'
+  398 |     peak_detect u_peak_detect (
+      |                 ^~~~~~~~~~~~~
+                     ... For warning description see https://verilator.org/warn/PINMISSING?v=5.020
+                     ... Use "/* verilator lint_off PINMISSING */" and lint_on around source to disable this message.
+%Warning-PINMISSING: ../rtl/afib_lite_top.sv:398:17: Cell has missing pin: 's_besaran'
+  398 |     peak_detect u_peak_detect (
+      |                 ^~~~~~~~~~~~~
+%Warning-PINMISSING: ../rtl/afib_lite_top.sv:398:17: Cell has missing pin: 'd_dbg'
+  398 |     peak_detect u_peak_detect (
+      |                 ^~~~~~~~~~~~~
+%Warning-PINMISSING: ../rtl/afib_lite_top.sv:398:17: Cell has missing pin: 'd_dbg_valid'
+  398 |     peak_detect u_peak_detect (
+      |                 ^~~~~~~~~~~~~
+%Warning-WIDTHEXPAND: ../rtl/rr_series.sv:330:25: Operator EQ expects 2 bits on the RHS, but RHS's CONST '1'h0' generates 1 bits.
+                                                : ... note: In instance 'afib_lite_top.u_rr_series'
+  330 |         if (med_which_q == 1'b0) begin
+      |                         ^~
+%Warning-WIDTHEXPAND: ../rtl/rr_series.sv:402:50: Operator GTE expects 32 bits on the LHS, but LHS's VARREF 'hist_len_q' generates 4 bits.
+                                                : ... note: In instance 'afib_lite_top.u_rr_series'
+  402 |     wire [HIST_LW-1:0] hist_len_p2 = (hist_len_q >= (DELAPAN_L - 1)) ? DELAPAN_L[HIST_LW-1:0]
+      |                                                  ^~
+%Warning-WIDTHEXPAND: ../rtl/rr_series.sv:424:41: Operator COND expects 24 bits on the Conditional False, but Conditional False's VARREF 'a_sum_c' generates 20 bits.
+                                                : ... note: In instance 'afib_lite_top.u_rr_series'
+  424 |                                         ? {{(W_RR_SUM_L-W_RR_MS){1'b0}},
+      |                                         ^
+%Warning-WIDTHTRUNC: ../rtl/rr_series.sv:423:39: Operator ASSIGNW expects 20 bits on the Assign RHS, but Assign RHS's COND generates 24 bits.
+                                               : ... note: In instance 'afib_lite_top.u_rr_series'
+  423 |     wire [W_RR_SUM_L-1:0] acuan_num_c = acuan_from_ra1
+      |                                       ^
+%Warning-WIDTHTRUNC: ../rtl/rr_series.sv:460:22: Operator ASSIGNW expects 1 bits on the Assign RHS, but Assign RHS's ARRAYSEL generates 16 bits.
+                                               : ... note: In instance 'afib_lite_top.u_rr_series'
+  460 |     wire hist_over_c = hist_q[hist_w_q];
+      |                      ^
+%Warning-WIDTHEXPAND: ../rtl/rr_series.sv:501:29: Operator ASSIGNDLY expects 2 bits on the Assign RHS, but Assign RHS's CONST '1'h0' generates 1 bits.
+                                                : ... note: In instance 'afib_lite_top.u_rr_series'
+  501 |             med_which_q     <= 1'b0;
+      |                             ^~
+%Warning-WIDTHEXPAND: ../rtl/rr_series.sv:572:41: Operator ASSIGNDLY expects 2 bits on the Assign RHS, but Assign RHS's CONST '1'h0' generates 1 bits.
+                                                : ... note: In instance 'afib_lite_top.u_rr_series'
+  572 |                             med_which_q <= 1'b0;
+      |                                         ^~
+%Warning-WIDTHTRUNC: ../rtl/rr_series.sv:632:35: Operator ASSIGNDLY expects 16 bits on the Assign RHS, but Assign RHS's SHIFTR generates 20 bits.
+                                               : ... note: In instance 'afib_lite_top.u_rr_series'
+  632 |                         ra1_q     <= deret_sum_n >> SHIFT_RA1_L;
+      |                                   ^~
+%Warning-WIDTHEXPAND: ../rtl/rr_series.sv:639:41: Operator ASSIGNDLY expects 2 bits on the Assign RHS, but Assign RHS's CONST '1'h1' generates 1 bits.
+                                                : ... note: In instance 'afib_lite_top.u_rr_series'
+  639 |                             med_which_q <= 1'b1;
+      |                                         ^~
+%Warning-WIDTHEXPAND: ../rtl/rr_series.sv:724:43: Operator ADD expects 20 bits on the LHS, but LHS's VARREF 'sel_lo_q' generates 16 bits.
+                                                : ... note: In instance 'afib_lite_top.u_rr_series'
+  724 |                 pembilang_q <= ((sel_lo_q + sel_hi_q) >> 1) * DELAPAN_L[W_RR_SUM_L-1:0];
+      |                                           ^
+%Warning-WIDTHEXPAND: ../rtl/rr_series.sv:724:43: Operator ADD expects 20 bits on the RHS, but RHS's VARREF 'sel_hi_q' generates 16 bits.
+                                                : ... note: In instance 'afib_lite_top.u_rr_series'
+  724 |                 pembilang_q <= ((sel_lo_q + sel_hi_q) >> 1) * DELAPAN_L[W_RR_SUM_L-1:0];
+      |                                           ^
+%Warning-WIDTHEXPAND: ../rtl/regs_axi.sv:268:29: Operator ASSIGNDLY expects 32 bits on the Assign RHS, but Assign RHS's VARREF 'RATE_DIV_RST' generates 20 bits.
+                                               : ... note: In instance 'afib_lite_top.u_regs_axi'
+  268 |             rate_q          <= afib_lite_pkg::RATE_DIV_RST;
+      |                             ^~
+%Warning-WIDTHEXPAND: ../rtl/regs_axi.sv:369:54: Operator OR expects 32 bits on the RHS, but RHS's SEL generates 5 bits.
+                                               : ... note: In instance 'afib_lite_top.u_regs_axi'
+  369 |                         irq_clr_q       <= irq_clr_q | (wmerge[4:0]);
+      |                                                      ^
+%Warning-UNUSEDSIGNAL: ../rtl/rr_series.sv:113:37: Signal is not used: 's_ev_val'
+                                                 : ... note: In instance 'afib_lite_top.u_rr_series'
+  113 |     input  wire [31:0]              s_ev_val,
+      |                                     ^~~~~~~~
+%Warning-UNUSEDSIGNAL: ../rtl/rr_series.sv:248:29: Bits of signal are not used: 'div_rem_q'[19]
+                                                 : ... note: In instance 'afib_lite_top.u_rr_series'
+  248 |     reg [W_RR_SUM_L-1:0]    div_rem_q;
+      |                             ^~~~~~~~~
+%Warning-UNUSEDSIGNAL: ../rtl/rr_series.sv:257:29: Signal is not used: 'd_step_valid_q'
+                                                 : ... note: In instance 'afib_lite_top.u_rr_series'
+  257 |     reg                     d_step_valid_q;
+      |                             ^~~~~~~~~~~~~~
+%Warning-UNUSEDSIGNAL: ../rtl/rr_series.sv:258:29: Signal is not used: 'd_step_ra1_q'
+                                                 : ... note: In instance 'afib_lite_top.u_rr_series'
+  258 |     reg [W_RR_MS-1:0]       d_step_ra1_q;
+      |                             ^~~~~~~~~~~~
+%Warning-UNUSEDSIGNAL: ../rtl/rr_series.sv:259:29: Signal is not used: 'd_step_ra2_q'
+                                                 : ... note: In instance 'afib_lite_top.u_rr_series'
+  259 |     reg [W_RR_MS-1:0]       d_step_ra2_q;
+      |                             ^~~~~~~~~~~~
+%Warning-UNUSEDSIGNAL: ../rtl/rr_series.sv:260:29: Signal is not used: 'd_step_antre_q'
+                                                 : ... note: In instance 'afib_lite_top.u_rr_series'
+  260 |     reg [HIST_LW-1:0]       d_step_antre_q;
+      |                             ^~~~~~~~~~~~~~
+%Warning-UNUSEDSIGNAL: ../rtl/rr_series.sv:261:29: Signal is not used: 'd_step_deret_q'
+                                                 : ... note: In instance 'afib_lite_top.u_rr_series'
+  261 |     reg [HIST_LW-1:0]       d_step_deret_q;
+      |                             ^~~~~~~~~~~~~~
+%Warning-UNUSEDSIGNAL: ../rtl/rr_series.sv:262:29: Signal is not used: 'd_step_riwayat_q'
+                                                 : ... note: In instance 'afib_lite_top.u_rr_series'
+  262 |     reg [RIW_LW-1:0]        d_step_riwayat_q;
+      |                             ^~~~~~~~~~~~~~~~
+%Warning-UNUSEDSIGNAL: ../rtl/rr_series.sv:263:29: Signal is not used: 'd_step_menyala_q'
+                                                 : ... note: In instance 'afib_lite_top.u_rr_series'
+  263 |     reg                     d_step_menyala_q;
+      |                             ^~~~~~~~~~~~~~~~
+%Warning-UNUSEDSIGNAL: ../rtl/rr_series.sv:264:29: Signal is not used: 'd_step_disemai_q'
+                                                 : ... note: In instance 'afib_lite_top.u_rr_series'
+  264 |     reg                     d_step_disemai_q;
+      |                             ^~~~~~~~~~~~~~~~
+%Warning-UNUSEDSIGNAL: ../rtl/rr_series.sv:265:29: Signal is not used: 'd_step_gagal_q'
+                                                 : ... note: In instance 'afib_lite_top.u_rr_series'
+  265 |     reg [3:0]               d_step_gagal_q;
+      |                             ^~~~~~~~~~~~~~
+%Warning-UNUSEDSIGNAL: ../rtl/rr_series.sv:266:29: Signal is not used: 'd_step_jeda_q'
+                                                 : ... note: In instance 'afib_lite_top.u_rr_series'
+  266 |     reg [3:0]               d_step_jeda_q;
+      |                             ^~~~~~~~~~~~~
+%Warning-UNUSEDSIGNAL: ../rtl/rr_series.sv:267:29: Signal is not used: 'd_step_step_q'
+                                                 : ... note: In instance 'afib_lite_top.u_rr_series'
+  267 |     reg [31:0]              d_step_step_q;
+      |                             ^~~~~~~~~~~~~
+%Warning-UNUSEDSIGNAL: ../rtl/rr_series.sv:268:29: Signal is not used: 'd_step_pembilang_q'
+                                                 : ... note: In instance 'afib_lite_top.u_rr_series'
+  268 |     reg [W_RR_SUM_L-1:0]    d_step_pembilang_q;
+      |                             ^~~~~~~~~~~~~~~~~~
+%Warning-UNUSEDSIGNAL: ../rtl/rr_series.sv:269:29: Signal is not used: 'd_step_penyebut_q'
+                                                 : ... note: In instance 'afib_lite_top.u_rr_series'
+  269 |     reg [3:0]               d_step_penyebut_q;
+      |                             ^~~~~~~~~~~~~~~~~
+%Warning-UNUSEDSIGNAL: ../rtl/rr_series.sv:270:29: Signal is not used: 'd_step_inband_q'
+                                                 : ... note: In instance 'afib_lite_top.u_rr_series'
+  270 |     reg                     d_step_inband_q;
+      |                             ^~~~~~~~~~~~~~~
+%Warning-UNUSEDSIGNAL: ../rtl/rr_series.sv:460:10: Signal is not used: 'hist_over_c'
+                                                 : ... note: In instance 'afib_lite_top.u_rr_series'
+  460 |     wire hist_over_c = hist_q[hist_w_q];
+      |          ^~~~~~~~~~~
+%Error: Exiting due to 34 warning(s)
+exit=1

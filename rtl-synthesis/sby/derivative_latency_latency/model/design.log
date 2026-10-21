@@ -1,0 +1,389 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.70+157 (git sha1 af9f71e51, Release, Clang /usr/bin/clang++ 21.1.8)
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: /home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/afib_lite_pkg.sv
+Parsing SystemVerilog input from `/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/afib_lite_pkg.sv' to AST representation.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: /home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv
+Parsing SystemVerilog input from `/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv' to AST representation.
+Generating RTLIL representation for module `\derivative'.
+Warning: Replacing memory \x_hist_q with list of registers. See /home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:187
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: derivative_latency.sv
+Parsing SystemVerilog input from `derivative_latency.sv' to AST representation.
+Generating RTLIL representation for module `\derivative_latency'.
+Successfully finished Verilog frontend.
+
+4. Executing PREP pass.
+
+4.1. Executing HIERARCHY pass (managing design hierarchy).
+
+4.1.1. Analyzing design hierarchy..
+Top module:  \derivative_latency
+Used module:     \derivative
+Parameter \W_HP = 26
+Parameter \W_DER = 24
+Parameter \W_IDX = 32
+Parameter \W_TUSER = 8
+Parameter \LAT_CYCLES = 17
+
+4.1.2. Executing AST frontend in derive mode using pre-parsed AST for module `\derivative'.
+Parameter \W_HP = 26
+Parameter \W_DER = 24
+Parameter \W_IDX = 32
+Parameter \W_TUSER = 8
+Parameter \LAT_CYCLES = 17
+Generating RTLIL representation for module `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative'.
+Warning: Replacing memory \x_hist_q with list of registers. See /home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:187
+
+4.1.3. Analyzing design hierarchy..
+Top module:  \derivative_latency
+Used module:     $paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative
+
+4.1.4. Analyzing design hierarchy..
+Top module:  \derivative_latency
+Used module:     $paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative
+Removing unused module `\derivative'.
+Removed 1 unused modules.
+Module derivative_latency directly or indirectly contains formal properties -> setting "keep" attribute.
+
+4.2. Executing PROC pass (convert processes to netlists).
+
+4.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $derivative_latency.sv:79$proc$46 in module derivative_latency.
+Marked 5 switch rules as full_case in process $/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:184$proc$82 in module $paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.
+Marked 1 switch rules as full_case in process $/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:161$proc$73 in module $paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.
+Removed a total of 0 dead cases.
+
+4.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 2 redundant assignments.
+Promoted 3 assignments to connections.
+
+4.2.4. Executing PROC_INIT pass (extract init attributes).
+
+4.2.5. Executing PROC_ARST pass (detect async resets in processes).
+
+4.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~15 debug messages>
+
+4.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\derivative_latency.$derivative_latency.sv:89$proc$55'.
+     1/1: $derivative_latency.sv:89$cover$56_EN
+Creating decoders for process `\derivative_latency.$derivative_latency.sv:86$proc$51'.
+     1/1: $derivative_latency.sv:86$assert$54_EN
+Creating decoders for process `\derivative_latency.$derivative_latency.sv:83$proc$48'.
+     1/1: $derivative_latency.sv:83$assert$50_EN
+Creating decoders for process `\derivative_latency.$derivative_latency.sv:79$proc$46'.
+     1/1: $0\seen_valid[0:0]
+Creating decoders for process `\derivative_latency.$derivative_latency.sv:75$proc$43'.
+     1/1: $derivative_latency.sv:75$assume$44_EN
+Creating decoders for process `\derivative_latency.$derivative_latency.sv:55$proc$39'.
+     1/1: $0\cyc[7:0]
+Creating decoders for process `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:184$proc$82'.
+     1/28: $3\k[31:0]
+     2/28: $2\k[31:0]
+     3/28: $0\d_valid[0:0]
+     4/28: $0\m_tvalid[0:0]
+     5/28: $1\k[31:0]
+     6/28: $0\x_hist_q[3][25:0]
+     7/28: $0\x_hist_q[2][25:0]
+     8/28: $0\x_hist_q[1][25:0]
+     9/28: $0\x_hist_q[0][25:0]
+    10/28: $0\idx_q[31:0]
+    11/28: $0\tuser_q[7:0]
+    12/28: $0\last_q[0:0]
+    13/28: $0\slice_q[1:0]
+    14/28: $0\pass_q[1:0]
+    15/28: $0\st_q[1:0]
+    16/28: $0\ovf_q[0:0]
+    17/28: $0\acc_cy_q[0:0]
+    18/28: $0\acc_top_q[0:0]
+    19/28: $0\acc_hi_q[8:0]
+    20/28: $0\acc_mid_q[8:0]
+    21/28: $0\acc_lo_q[8:0]
+    22/28: $0\x_hold_q[25:0]
+    23/28: $0\d_der[23:0]
+    24/28: $0\m_sample_idx[31:0]
+    25/28: $0\m_tuser[7:0]
+    26/28: $0\m_tlast[0:0]
+    27/28: $0\m_overflow[0:0]
+    28/28: $0\m_tdata[23:0]
+Creating decoders for process `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:161$proc$73'.
+     1/2: $1\sl_b[8:0]
+     2/2: $1\sl_a[8:0]
+
+4.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.\sl_a' from process `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:161$proc$73'.
+No latch inferred for signal `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.\sl_b' from process `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:161$proc$73'.
+
+4.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\derivative_latency.\seen_valid' using process `\derivative_latency.$derivative_latency.sv:79$proc$46'.
+  created $dff cell `$procdff$362' with positive edge clock.
+Creating register for signal `\derivative_latency.\cyc' using process `\derivative_latency.$derivative_latency.sv:55$proc$39'.
+  created $dff cell `$procdff$363' with positive edge clock.
+Creating register for signal `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.\m_tdata' using process `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:184$proc$82'.
+  created $dff cell `$procdff$364' with positive edge clock.
+Creating register for signal `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.\m_tvalid' using process `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:184$proc$82'.
+  created $dff cell `$procdff$365' with positive edge clock.
+Creating register for signal `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.\m_overflow' using process `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:184$proc$82'.
+  created $dff cell `$procdff$366' with positive edge clock.
+Creating register for signal `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.\m_tlast' using process `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:184$proc$82'.
+  created $dff cell `$procdff$367' with positive edge clock.
+Creating register for signal `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.\m_tuser' using process `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:184$proc$82'.
+  created $dff cell `$procdff$368' with positive edge clock.
+Creating register for signal `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.\m_sample_idx' using process `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:184$proc$82'.
+  created $dff cell `$procdff$369' with positive edge clock.
+Creating register for signal `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.\d_valid' using process `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:184$proc$82'.
+  created $dff cell `$procdff$370' with positive edge clock.
+Creating register for signal `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.\d_der' using process `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:184$proc$82'.
+  created $dff cell `$procdff$371' with positive edge clock.
+Creating register for signal `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.\x_hold_q' using process `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:184$proc$82'.
+  created $dff cell `$procdff$372' with positive edge clock.
+Creating register for signal `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.\acc_lo_q' using process `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:184$proc$82'.
+  created $dff cell `$procdff$373' with positive edge clock.
+Creating register for signal `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.\acc_mid_q' using process `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:184$proc$82'.
+  created $dff cell `$procdff$374' with positive edge clock.
+Creating register for signal `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.\acc_hi_q' using process `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:184$proc$82'.
+  created $dff cell `$procdff$375' with positive edge clock.
+Creating register for signal `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.\acc_top_q' using process `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:184$proc$82'.
+  created $dff cell `$procdff$376' with positive edge clock.
+Creating register for signal `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.\acc_cy_q' using process `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:184$proc$82'.
+  created $dff cell `$procdff$377' with positive edge clock.
+Creating register for signal `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.\ovf_q' using process `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:184$proc$82'.
+  created $dff cell `$procdff$378' with positive edge clock.
+Creating register for signal `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.\st_q' using process `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:184$proc$82'.
+  created $dff cell `$procdff$379' with positive edge clock.
+Creating register for signal `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.\pass_q' using process `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:184$proc$82'.
+  created $dff cell `$procdff$380' with positive edge clock.
+Creating register for signal `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.\slice_q' using process `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:184$proc$82'.
+  created $dff cell `$procdff$381' with positive edge clock.
+Creating register for signal `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.\last_q' using process `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:184$proc$82'.
+  created $dff cell `$procdff$382' with positive edge clock.
+Creating register for signal `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.\tuser_q' using process `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:184$proc$82'.
+  created $dff cell `$procdff$383' with positive edge clock.
+Creating register for signal `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.\idx_q' using process `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:184$proc$82'.
+  created $dff cell `$procdff$384' with positive edge clock.
+Creating register for signal `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.\k' using process `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:184$proc$82'.
+  created $dff cell `$procdff$385' with positive edge clock.
+Creating register for signal `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.\x_hist_q[0]' using process `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:184$proc$82'.
+  created $dff cell `$procdff$386' with positive edge clock.
+Creating register for signal `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.\x_hist_q[1]' using process `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:184$proc$82'.
+  created $dff cell `$procdff$387' with positive edge clock.
+Creating register for signal `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.\x_hist_q[2]' using process `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:184$proc$82'.
+  created $dff cell `$procdff$388' with positive edge clock.
+Creating register for signal `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.\x_hist_q[3]' using process `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:184$proc$82'.
+  created $dff cell `$procdff$389' with positive edge clock.
+
+4.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\derivative_latency.$derivative_latency.sv:89$proc$55'.
+Removing empty process `derivative_latency.$derivative_latency.sv:89$proc$55'.
+Found and cleaned up 1 empty switch in `\derivative_latency.$derivative_latency.sv:86$proc$51'.
+Removing empty process `derivative_latency.$derivative_latency.sv:86$proc$51'.
+Found and cleaned up 1 empty switch in `\derivative_latency.$derivative_latency.sv:83$proc$48'.
+Removing empty process `derivative_latency.$derivative_latency.sv:83$proc$48'.
+Found and cleaned up 2 empty switches in `\derivative_latency.$derivative_latency.sv:79$proc$46'.
+Removing empty process `derivative_latency.$derivative_latency.sv:79$proc$46'.
+Found and cleaned up 1 empty switch in `\derivative_latency.$derivative_latency.sv:75$proc$43'.
+Removing empty process `derivative_latency.$derivative_latency.sv:75$proc$43'.
+Found and cleaned up 1 empty switch in `\derivative_latency.$derivative_latency.sv:55$proc$39'.
+Removing empty process `derivative_latency.$derivative_latency.sv:55$proc$39'.
+Found and cleaned up 7 empty switches in `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:184$proc$82'.
+Removing empty process `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:184$proc$82'.
+Found and cleaned up 1 empty switch in `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:161$proc$73'.
+Removing empty process `$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:161$proc$73'.
+Cleaned up 15 empty switches.
+
+4.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module derivative_latency.
+<suppressed ~2 debug messages>
+Optimizing module $paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.
+<suppressed ~62 debug messages>
+
+4.3. Executing CHECK pass (checking for obvious problems).
+Checking module derivative_latency...
+Checking module $paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative...
+Found and reported 0 problems.
+
+4.4. Executing FLATTEN pass (flatten design).
+Deleting now unused module $paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\derivative.
+<suppressed ~1 debug messages>
+
+4.5. Executing FUTURE pass.
+
+4.6. Executing OPT_EXPR pass (perform const folding).
+Optimizing module derivative_latency.
+
+4.7. Executing CHECK pass (checking for obvious problems).
+Checking module derivative_latency...
+Found and reported 0 problems.
+
+4.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \derivative_latency..
+Removed 158 unused cells and 290 unused wires.
+<suppressed ~208 debug messages>
+
+4.9. Executing OPT pass (performing simple optimizations).
+
+4.9.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module derivative_latency.
+
+4.9.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\derivative_latency'.
+Computing hashes of 49 cells of `\derivative_latency'.
+Finding duplicate cells in `\derivative_latency'.
+Computing hashes of 46 cells of `\derivative_latency'.
+Finding duplicate cells in `\derivative_latency'.
+<suppressed ~9 debug messages>
+Removed a total of 3 cells.
+
+4.9.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \derivative_latency..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~32 debug messages>
+
+4.9.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \derivative_latency.
+Performed a total of 0 changes.
+
+4.9.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\derivative_latency'.
+Computing hashes of 46 cells of `\derivative_latency'.
+Finding duplicate cells in `\derivative_latency'.
+Computing hashes of 45 cells of `\derivative_latency'.
+Finding duplicate cells in `\derivative_latency'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+4.9.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \derivative_latency..
+Removed 0 unused cells and 4 unused wires.
+<suppressed ~1 debug messages>
+
+4.9.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module derivative_latency.
+
+4.9.8. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.9.9. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \derivative_latency..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~30 debug messages>
+
+4.9.10. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \derivative_latency.
+Performed a total of 0 changes.
+
+4.9.11. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\derivative_latency'.
+Computing hashes of 45 cells of `\derivative_latency'.
+Finding duplicate cells in `\derivative_latency'.
+Removed a total of 0 cells.
+
+4.9.12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \derivative_latency..
+
+4.9.13. Executing OPT_EXPR pass (perform const folding).
+Optimizing module derivative_latency.
+
+4.9.14. Finished fast OPT passes. (There is nothing left to do.)
+
+4.10. Executing WREDUCE pass (reducing word size of cells).
+Removed top 7 bits (of 8) from port B of cell derivative_latency.$derivative_latency.sv:56$add$41 ($add).
+Removed top 5 bits (of 8) from port B of cell derivative_latency.$derivative_latency.sv:58$ge$42 ($ge).
+Removed top 3 bits (of 8) from port B of cell derivative_latency.$derivative_latency.sv:86$ge$52 ($ge).
+Removed top 1 bits (of 2) from port B of cell derivative_latency.$flatten\dut.$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:240$add$85 ($add).
+Removed top 1 bits (of 2) from port B of cell derivative_latency.$flatten\dut.$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:238$add$84 ($add).
+
+4.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \derivative_latency..
+
+4.12. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+4.13. Executing OPT pass (performing simple optimizations).
+
+4.13.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module derivative_latency.
+
+4.13.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\derivative_latency'.
+Computing hashes of 45 cells of `\derivative_latency'.
+Finding duplicate cells in `\derivative_latency'.
+Removed a total of 0 cells.
+
+4.13.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \derivative_latency..
+
+4.13.4. Finished fast OPT passes.
+
+4.14. Executing SORT pass.
+
+4.15. Printing statistics.
+
+=== derivative_latency ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       55 wires
+      305 wire bits
+       25 public wires
+      247 public wire bits
+        1 ports
+        1 port bits
+       45 cells
+        3   $add
+        1   $anyseq
+        4   $check
+        6   $dff
+        2   $eq
+        2   $ge
+        3   $logic_and
+        1   $logic_not
+       21   $mux
+        1   $ne
+        1   $scopeinfo
+
+4.16. Executing CHECK pass (checking for obvious problems).
+Checking module derivative_latency...
+Found and reported 0 problems.
+
+5. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `derivative_latency'. Setting top module to derivative_latency.
+
+5.1. Analyzing design hierarchy..
+Top module:  \derivative_latency
+
+5.2. Analyzing design hierarchy..
+Top module:  \derivative_latency
+Removed 0 unused modules.
+Module derivative_latency directly or indirectly contains formal properties -> setting "keep" attribute.
+
+6. Executing jny backend.
+
+7. Executing RTLIL backend.
+Output filename: ../model/design.il
+
+Warnings: 1 unique messages, 2 total
+End of script. Logfile hash: eeb91731d3, time: 0.06s, user: 0.06s, system: 0.02s, MEM: 21.11 MB peak
+Yosys 0.70+157 (git sha1 af9f71e51, Release, Clang /usr/bin/clang++ 21.1.8)
+Time spent: 30% 5x read_verilog (0 sec), 17% 2x hierarchy (0 sec), ...

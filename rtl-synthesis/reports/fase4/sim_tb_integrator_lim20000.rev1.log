@@ -1,0 +1,28 @@
+# revisi pertama integrator.sv, DIHAPUS dari badan: koreksi jendela 37 dilipat ke
+# akumulator, jadi jendela menyusut satu suku tiap sampel. Disimpan sebagai bukti proses.
+# Perintah: ./run_sim.sh ../rtl/tb/tb_integrator.sv ../rtl/afib_lite_pkg.sv ../rtl/integrator.sv \
+#             -- +VECTOR=/home/avivsabilalm/.hermes/cache/scratch/rtlplan2/fase0 +LIMIT=20000
+run_sim.sh: tb=../rtl/tb/tb_integrator.sv sources=2 plusargs=2
+  plusargs forwarded to vvp: +VECTOR=/home/avivsabilalm/.hermes/cache/scratch/rtlplan2/fase0 +LIMIT=20000
+  compiled first (packages): ../rtl/afib_lite_pkg.sv
+tb_integrator: vectors = /home/avivsabilalm/.hermes/cache/scratch/rtlplan2/fase0
+tb_integrator: limit   = 20000 of 450000
+tb_integrator: phase A  = window width gate, constant input 1000, 80 words
+tb_integrator: phase A outputs checked = 80 of 80
+tb_integrator: phase A window width 37 reads = 17000
+tb_integrator: phase A window width 38 reads = 17000
+tb_integrator: phase A mismatches = 41
+tb_integrator: presented = 20000
+tb_integrator: outputs   = 20000
+tb_integrator: compared  = 20000
+tb_integrator: d_win mismatches   = 19961
+tb_integrator: m_tdata mismatches = 19961
+tb_integrator: sample_idx mismatch = 0
+tb_integrator: tuser mismatches   = 0
+tb_integrator: tlast mismatches   = 0
+tb_integrator: jendela words at or above 2**31 = 0
+tb_integrator: overflow pulses    = 19882
+tb_integrator: d_valid pulses     = 20000
+tb_integrator: mismatches = 39922 out of 20000
+tb_integrator: FAIL
+../rtl/tb/tb_integrator.sv:301: $finish called at 1606685 (1s)

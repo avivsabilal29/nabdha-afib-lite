@@ -1,0 +1,578 @@
+{
+ "record": "04015",
+ "generator": "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl-synthesis/reports/fase11/gen_vektor_fase11.py",
+ "frozen_model": {
+  "rantai_py_sha256": "90df6e5b457307d37158a96b6dbedb4e72be03f35349769a858918f6314f1fe5",
+  "checked": true
+ },
+ "golden_sources": {
+  "decisions_raw": {
+   "path": "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtlplan2/fase5/04015.decisions.csv",
+   "rows": 588,
+   "sha256": "077da18d031e785c90dce16aadb5e43157878d1d3e430ac6e46b29562b93e507"
+  },
+  "decisions_marked": {
+   "path": "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtlplan2/fase5/04015.decisions.berpenanda.csv",
+   "rows": 602,
+   "sha256": "895dfa1c2dfcabb69cc7deac490c6a045c98004f0f57558957819f49cf925eea"
+  },
+  "manifest_fase5": {
+   "path": "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtlplan2/fase5/04015.manifest.fase5.json",
+   "sha256": "e2bc01b8a31f6e19140a6b95d977f7244123d4cdd214cbac394e98dbb39cd387"
+  }
+ },
+ "triage_gate": {
+  "predicate": "ratio > 0.165 and entropy_over_4 > 0.63",
+  "ratio_register_q16": 10813,
+  "entropy_register_q14": 10322
+ },
+ "feature_formats": {
+  "ratio": "Q1.16 in 17 bits",
+  "entropy_over_4": "Q1.14 in 15 bits",
+  "rounding": "ties to even (RND_TIES_EVEN)"
+ },
+ "boundary_straddles": {
+  "mentah": {
+   "round": 0,
+   "floor": 0,
+   "truncate": 0
+  },
+  "berpenanda": {
+   "round": 0,
+   "floor": 0,
+   "truncate": 0
+  }
+ },
+ "arms": {
+  "mentah": {
+   "census": {
+    "windows": 588,
+    "afib": 95,
+    "n": 493,
+    "fired": 183,
+    "true_positive": 95,
+    "false_positive": 88,
+    "false_negative": 0,
+    "true_negative": 405
+   },
+   "ratio_q16_max": 35855,
+   "ent_q14_max": 14336
+  },
+  "berpenanda": {
+   "census": {
+    "windows": 602,
+    "afib": 95,
+    "n": 507,
+    "fired": 189,
+    "true_positive": 95,
+    "false_positive": 94,
+    "false_negative": 0,
+    "true_negative": 413
+   },
+   "ratio_q16_max": 40070,
+   "ent_q14_max": 14336
+  }
+ },
+ "arm_runs": {
+  "berpenanda": {
+   "arm_select": 15,
+   "arm_name": "berpenanda",
+   "ratio_code": 10813,
+   "entropy_code": 10322,
+   "expected_source": "arm fixture class column",
+   "census": {
+    "windows": 602,
+    "fired": 189,
+    "true_positive": 95,
+    "false_positive": 94,
+    "false_negative": 0,
+    "true_negative": 413
+   },
+   "mismatch": 0
+  },
+  "t_off": {
+   "arm_select": 11,
+   "arm_name": "mentah",
+   "ratio_code": 10813,
+   "entropy_code": 10322,
+   "expected_source": "arm fixture class column",
+   "census": {
+    "windows": 588,
+    "fired": 183,
+    "true_positive": 95,
+    "false_positive": 88,
+    "false_negative": 0,
+    "true_negative": 405
+   },
+   "mismatch": 0
+  },
+  "mentah": {
+   "arm_select": 7,
+   "arm_name": "mentah",
+   "ratio_code": 10813,
+   "entropy_code": 10322,
+   "expected_source": "arm fixture class column",
+   "census": {
+    "windows": 588,
+    "fired": 183,
+    "true_positive": 95,
+    "false_positive": 88,
+    "false_negative": 0,
+    "true_negative": 405
+   },
+   "mismatch": 0
+  },
+  "tunggal": {
+   "arm_select": 2,
+   "arm_name": "berpenanda",
+   "ratio_code": 10813,
+   "entropy_code": 10322,
+   "expected_source": "run output; census cross checked",
+   "census": {
+    "windows": 602,
+    "fired": 191,
+    "true_positive": 95,
+    "false_positive": 96,
+    "false_negative": 0,
+    "true_negative": 411
+   },
+   "mismatch": 0
+  },
+  "either": {
+   "arm_select": 31,
+   "arm_name": "berpenanda",
+   "ratio_code": 10813,
+   "entropy_code": 10322,
+   "expected_source": "run output; census cross checked",
+   "census": {
+    "windows": 602,
+    "fired": 299,
+    "true_positive": 95,
+    "false_positive": 204,
+    "false_negative": 0,
+    "true_negative": 303
+   },
+   "mismatch": 0
+  },
+  "guard": {
+   "arm_select": 2,
+   "arm_name": "berpenanda",
+   "ratio_code": 10813,
+   "entropy_code": 32768,
+   "census": {
+    "windows": 602,
+    "fired": 0
+   },
+   "predicate": "entropy arm only, entropy field 0x8000: unsatisfiable"
+  }
+ },
+ "cross_check_fase9": {
+  "present": true,
+  "path": "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/tb/vektor/fase9/04015.fase9.manifest.json",
+  "n_marked": 602,
+  "n_raw": 588,
+  "fired_marked": 189,
+  "fired_raw": 183,
+  "fired_tunggal": 191,
+  "fired_guard": 0,
+  "agree": true
+ },
+ "register_map": {
+  "frozen_slots": 36,
+  "slots": 38,
+  "provisional": [
+   {
+    "offset": 144,
+    "name": "DEBUG_SEL",
+    "reset": 0
+   },
+   {
+    "offset": 148,
+    "name": "DEBUG_VAL",
+    "reset": 0
+   }
+  ],
+  "kind_codes": {
+   "0": "RW",
+   "1": "RO",
+   "2": "WO",
+   "3": "W1C"
+  },
+  "table": [
+   {
+    "offset": 0,
+    "name": "CTRL",
+    "kind": "RW",
+    "reset": 0
+   },
+   {
+    "offset": 4,
+    "name": "STATUS",
+    "kind": "RO",
+    "reset": 1
+   },
+   {
+    "offset": 8,
+    "name": "IRQ_STATUS",
+    "kind": "RO",
+    "reset": 0
+   },
+   {
+    "offset": 12,
+    "name": "IRQ_CLEAR",
+    "kind": "W1C",
+    "reset": 0
+   },
+   {
+    "offset": 16,
+    "name": "CLASS_OUT",
+    "kind": "RO",
+    "reset": 0
+   },
+   {
+    "offset": 20,
+    "name": "CONFIDENCE",
+    "kind": "RO",
+    "reset": 0
+   },
+   {
+    "offset": 24,
+    "name": "RR_LAST",
+    "kind": "RO",
+    "reset": 0
+   },
+   {
+    "offset": 28,
+    "name": "BEAT_COUNT",
+    "kind": "RO",
+    "reset": 0
+   },
+   {
+    "offset": 32,
+    "name": "GAP_COUNT",
+    "kind": "RO",
+    "reset": 0
+   },
+   {
+    "offset": 36,
+    "name": "SAMPLE_IDX",
+    "kind": "RO",
+    "reset": 0
+   },
+   {
+    "offset": 40,
+    "name": "WINDOW_COUNT",
+    "kind": "RO",
+    "reset": 0
+   },
+   {
+    "offset": 44,
+    "name": "CLAMP_COUNT",
+    "kind": "RO",
+    "reset": 0
+   },
+   {
+    "offset": 48,
+    "name": "FIFO_OVF_COUNT",
+    "kind": "RO",
+    "reset": 0
+   },
+   {
+    "offset": 52,
+    "name": "RR_LONG_COUNT",
+    "kind": "RO",
+    "reset": 0
+   },
+   {
+    "offset": 56,
+    "name": "RR_MARK_LAST",
+    "kind": "RO",
+    "reset": 0
+   },
+   {
+    "offset": 60,
+    "name": "RATIO_THRESH",
+    "kind": "RW",
+    "reset": 33
+   },
+   {
+    "offset": 64,
+    "name": "ENTROPY_THRESH",
+    "kind": "RW",
+    "reset": 63
+   },
+   {
+    "offset": 68,
+    "name": "ARM_SELECT",
+    "kind": "RW",
+    "reset": 15
+   },
+   {
+    "offset": 72,
+    "name": "FEAT_RATIO",
+    "kind": "RO",
+    "reset": 0
+   },
+   {
+    "offset": 76,
+    "name": "FEAT_ENTROPY",
+    "kind": "RO",
+    "reset": 0
+   },
+   {
+    "offset": 80,
+    "name": "FORMAT_CFG",
+    "kind": "RW",
+    "reset": 4980986
+   },
+   {
+    "offset": 84,
+    "name": "RATE_DIV",
+    "kind": "RW",
+    "reset": 399999
+   },
+   {
+    "offset": 88,
+    "name": "THRESH_SCALE",
+    "kind": "RW",
+    "reset": 256
+   },
+   {
+    "offset": 92,
+    "name": "RR_BAND_LO",
+    "kind": "RW",
+    "reset": 92
+   },
+   {
+    "offset": 96,
+    "name": "RR_BAND_HI",
+    "kind": "RW",
+    "reset": 116
+   },
+   {
+    "offset": 100,
+    "name": "VERSION_ID",
+    "kind": "RO",
+    "reset": 65537
+   },
+   {
+    "offset": 104,
+    "name": "SCRATCH",
+    "kind": "RW",
+    "reset": 0
+   },
+   {
+    "offset": 108,
+    "name": "SAMPLE_FIFO",
+    "kind": "WO",
+    "reset": 0
+   },
+   {
+    "offset": 112,
+    "name": "SAMPLE_MARK",
+    "kind": "WO",
+    "reset": 0
+   },
+   {
+    "offset": 116,
+    "name": "SAMPLE_IN_STATUS",
+    "kind": "RO",
+    "reset": 0
+   },
+   {
+    "offset": 120,
+    "name": "MARKER_LAST",
+    "kind": "RO",
+    "reset": 0
+   },
+   {
+    "offset": 124,
+    "name": "CLAMP_THRESH",
+    "kind": "RW",
+    "reset": 2047
+   },
+   {
+    "offset": 128,
+    "name": "GAP_RECOVERY",
+    "kind": "RW",
+    "reset": 131
+   },
+   {
+    "offset": 132,
+    "name": "REPLAY_LEN",
+    "kind": "RW",
+    "reset": 0
+   },
+   {
+    "offset": 136,
+    "name": "IDX_TAP_LAST",
+    "kind": "RO",
+    "reset": 0
+   },
+   {
+    "offset": 140,
+    "name": "IDX_DEC_LAST",
+    "kind": "RO",
+    "reset": 0
+   },
+   {
+    "offset": 144,
+    "name": "DEBUG_SEL",
+    "kind": "RW",
+    "reset": 0
+   },
+   {
+    "offset": 148,
+    "name": "DEBUG_VAL",
+    "kind": "RO",
+    "reset": 0
+   }
+  ]
+ },
+ "counts_words": {
+  "order": [
+   "n_marked",
+   "n_raw",
+   "fired_marked",
+   "fired_raw",
+   "tp_marked",
+   "fp_marked",
+   "fn_marked",
+   "tn_marked",
+   "tp_raw",
+   "fp_raw",
+   "fn_raw",
+   "tn_raw",
+   "afib_marked",
+   "normal_marked",
+   "afib_raw",
+   "normal_raw",
+   "ratio_code",
+   "entropy_code",
+   "arm_default",
+   "arm_raw_tree",
+   "arm_t_off",
+   "arm_single",
+   "guard_ent",
+   "fired_tunggal",
+   "fired_guard",
+   "n_map_slots",
+   "n_frozen_slots"
+  ],
+  "values": [
+   602,
+   588,
+   189,
+   183,
+   95,
+   94,
+   0,
+   413,
+   95,
+   88,
+   0,
+   405,
+   95,
+   507,
+   95,
+   493,
+   10813,
+   10322,
+   15,
+   7,
+   11,
+   2,
+   32768,
+   31,
+   191,
+   0,
+   299,
+   95,
+   204,
+   38,
+   36
+  ]
+ },
+ "files": {
+  "f11.mentah.qr.hex": {
+   "words": 588,
+   "bytes": 5292,
+   "sha256": "984aedfac3f61eca8271c5e11bde8caf93b5b49b1d5191650087bab5c91d8f15"
+  },
+  "f11.mentah.qe.hex": {
+   "words": 588,
+   "bytes": 5292,
+   "sha256": "0af95f1238f3674bf5d5da218e1fb043ee09520cb440fdaf4e672a1263d015db"
+  },
+  "f11.mentah.kelas.hex": {
+   "words": 588,
+   "bytes": 5292,
+   "sha256": "0e86bb6485b1a9815580ec245315fe0f38fdd124092eb3bd1c3e0355b86f6031"
+  },
+  "f11.mentah.asli.hex": {
+   "words": 588,
+   "bytes": 5292,
+   "sha256": "5e15f39e6a240806fb574fda26e220ada7081069ef9fa1f10b9d166f1f79a1fa"
+  },
+  "f11.berpenanda.qr.hex": {
+   "words": 602,
+   "bytes": 5418,
+   "sha256": "f35a3fdad3e6e5611659322bd28a50755a43a1c624b48a04604fafd31da68d42"
+  },
+  "f11.berpenanda.qe.hex": {
+   "words": 602,
+   "bytes": 5418,
+   "sha256": "79e19c1f953b8a90c28b47ec9abbd0570a3fde6ead4f98d86fe37e934b56216e"
+  },
+  "f11.berpenanda.kelas.hex": {
+   "words": 602,
+   "bytes": 5418,
+   "sha256": "2964ce290a1911b529cb31d9c7f44c17493039bf616262d8ea8c13a3a3aa3e80"
+  },
+  "f11.berpenanda.asli.hex": {
+   "words": 602,
+   "bytes": 5418,
+   "sha256": "73dba55564ec67e6ead7cef432b749cac417c910ed9c2d100290de43f46eaa36"
+  },
+  "f11.t_off.kelas.hex": {
+   "words": 588,
+   "bytes": 5292,
+   "sha256": "0e86bb6485b1a9815580ec245315fe0f38fdd124092eb3bd1c3e0355b86f6031"
+  },
+  "f11.tunggal.kelas.hex": {
+   "words": 602,
+   "bytes": 5418,
+   "sha256": "a764c6659f53f6cff21f8b88aca87c70e3d8c133042fa19fcbdd44e2ad51a06c"
+  },
+  "f11.either.kelas.hex": {
+   "words": 602,
+   "bytes": 5418,
+   "sha256": "f993890ec5ac4c91c3df372c970cbc2a0b1c078a78e904b3d30133c191b0a110"
+  },
+  "f11.guard.kelas.hex": {
+   "words": 602,
+   "bytes": 5418,
+   "sha256": "ccacf9224842a7fa62183d0ce369611be9a7dc24a83afd2b5de2546bc156a1a6"
+  },
+  "f11.map.offs.hex": {
+   "words": 38,
+   "bytes": 342,
+   "sha256": "10d0d462b2a8070846e2b11663b65ec3f417abc8c0d4c7362ffb0657e29cd3e5"
+  },
+  "f11.map.kind.hex": {
+   "words": 38,
+   "bytes": 342,
+   "sha256": "b41c4f983ed3825446d9160b9bf4274a879468f2cd223a1f40ba31a217dc26c0"
+  },
+  "f11.map.rst.hex": {
+   "words": 38,
+   "bytes": 342,
+   "sha256": "deadb5e330ad236d7c4dce86c70461da2c17349fe7d8d34f4b24bbac05adc060"
+  },
+  "f11.counts.hex": {
+   "words": 31,
+   "bytes": 279,
+   "sha256": "e06792afe7aa678cdcbbefdee9a028887a28e22546fb2ef8744ecedda8981b19"
+  }
+ }
+}

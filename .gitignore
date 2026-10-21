@@ -54,3 +54,22 @@ openlane/
 *.lib
 *.lib.gz
 *.db
+
+# Saved gate output of model/math-equation-afib/end-to-end-chain.ipynb. This is a speed cache only:
+# the notebook re-runs any gate whose saved text is missing or whose script hash moved, then writes
+# the text back under the name that carries the new hash. Deleting this directory breaks nothing,
+# so it is never committed.
+model/math-equation-afib/gate-cache/
+
+# Rekaman uji PhysioNet: hanya bentuk gelombang yang diabaikan, sekitar 94 MB dari cermin resmi.
+# Header .hea dan anotasi .atr tetap ikut repo karena kecil dan menjadi bukti metode pemilihan.
+# Kalau memang perlu ikut, tambahkan dengan git add -f.
+dataset/*.dat
+dataset/**/*.dat
+
+# Vektor emas, tabel rujukan fase, dan dokumen rencana di rtlplan/ + rtlplan2/ (sekitar 121 MB).
+# Sumber kebenaran tiap fase: fase 5 dan seterusnya membandingkan RTL terhadap vektor di sini,
+# jadi berkasnya wajib ada di mesin, tetapi terlalu besar untuk git. Laporan fase yang perlu
+# ter-versi tetap ditulis di rtl-synthesis/reports/LAPORAN-FASE<n>.md, bukan di sini.
+rtlplan/
+rtlplan2/

@@ -1,0 +1,24 @@
+run_sim.sh: tb=../rtl/tb/tb_integrator.sv sources=2 plusargs=1
+  plusargs forwarded to vvp: +VECTOR=/home/avivsabilalm/.hermes/cache/scratch/rtlplan2/fase0
+  compiled first (packages): ../rtl/afib_lite_pkg.sv
+tb_integrator: vectors = /home/avivsabilalm/.hermes/cache/scratch/rtlplan2/fase0
+tb_integrator: limit   = 450000 of 450000
+tb_integrator: phase A  = window width gate, constant input 1000, 80 words
+tb_integrator: phase A outputs checked = 80 of 80
+tb_integrator: phase A window width 37 reads = 37000
+tb_integrator: phase A window width 38 reads = 38000
+tb_integrator: phase A mismatches = 0
+tb_integrator: presented = 450000
+tb_integrator: outputs   = 450000
+tb_integrator: compared  = 450000
+tb_integrator: d_win mismatches   = 0
+tb_integrator: m_tdata mismatches = 0
+tb_integrator: sample_idx mismatch = 0
+tb_integrator: tuser mismatches   = 0
+tb_integrator: tlast mismatches   = 0
+tb_integrator: jendela words at or above 2**31 = 27
+tb_integrator: overflow pulses    = 0
+tb_integrator: d_valid pulses     = 450000
+tb_integrator: mismatches = 0 out of 450000
+tb_integrator: PASS
+../rtl/tb/tb_integrator.sv:301: $finish called at 36006685 (1s)

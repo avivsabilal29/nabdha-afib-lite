@@ -1,0 +1,19 @@
+[tasks]
+latency
+
+[options]
+mode bmc
+depth 30
+
+[engines]
+smtbmc
+
+# sby runs these commands from inside <task>/src, so the RTL paths are absolute while the
+# harness, which sby copies into src itself, is read by its bare name.
+[script]
+read_verilog -sv /home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/afib_lite_pkg.sv /home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv
+read_verilog -sv derivative_latency.sv
+prep -top derivative_latency -flatten
+
+[files]
+derivative_latency.sv

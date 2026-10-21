@@ -1,0 +1,67 @@
+initial
+assume (= [$auto$async2sync.cc:107:execute$397] false)
+assume (= [$auto$async2sync.cc:107:execute$403] false)
+assume (= [$auto$async2sync.cc:116:execute$401] true)
+assume (= [cyc] #b00000000)
+assume (= [dut.m_tvalid] false)
+assume (= [dut.pass_q] #b00)
+assume (= [dut.slice_q] #b00)
+assume (= [dut.st_q] #b00)
+assume (= [seen_valid] false)
+
+state 0
+assume (= [clk] false)
+
+state 1
+assume (= [clk] false)
+
+state 2
+assume (= [clk] false)
+
+state 3
+assume (= [clk] false)
+
+state 4
+assume (= [clk] false)
+
+state 5
+assume (= [clk] false)
+
+state 6
+assume (= [clk] false)
+
+state 7
+assume (= [clk] false)
+
+state 8
+assume (= [clk] false)
+
+state 9
+assume (= [clk] false)
+
+state 10
+assume (= [clk] false)
+
+state 11
+assume (= [clk] false)
+
+state 12
+assume (= [clk] false)
+
+state 13
+assume (= [clk] false)
+
+state 14
+assume (= [clk] false)
+
+state 15
+assume (= [clk] false)
+
+state 16
+assume (= [clk] false)
+
+state 17
+assume (= [clk] false)
+
+state 18
+assume (= [clk] false)

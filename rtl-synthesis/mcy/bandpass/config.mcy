@@ -1,0 +1,35 @@
+[options]
+size 1000
+tags COVERED UNCOVERED
+
+[script]
+read -sv ../../../rtl/afib_lite_pkg.sv
+read -sv ../../../rtl/bandpass.sv
+prep -top bandpass
+select -module bandpass
+
+[files]
+../../../rtl/afib_lite_pkg.sv
+../../../rtl/bandpass.sv
+
+[logic]
+lp_caught = (result("test_lp") == "FAIL")
+hp_caught = (result("test_hp") == "FAIL")
+
+if lp_caught or hp_caught:
+    tag("COVERED")
+else:
+    tag("UNCOVERED")
+
+[report]
+print("survived (neither filter bench caught it): %d" % tags("UNCOVERED"))
+print("killed (at least one bench caught it): %d" % tags("COVERED"))
+print("mutation coverage: %.2f%%" % (100.0*tags("COVERED")/(tags("COVERED")+tags("UNCOVERED")) if (tags("COVERED")+tags("UNCOVERED")) else 0.0))
+
+[test test_lp]
+expect PASS FAIL
+run bash $PRJDIR/test_lp.sh
+
+[test test_hp]
+expect PASS FAIL
+run bash $PRJDIR/test_hp.sh

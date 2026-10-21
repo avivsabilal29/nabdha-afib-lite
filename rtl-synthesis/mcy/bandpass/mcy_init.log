@@ -1,0 +1,22 @@
+==> Initialize database
+  -> Reading configuration file.
+  -> Checking database existance.
+  -> Creating database directory.
+  -> Creating design script file.
+  -> Creating design RTL.
+yosys -ql database/design.log database/design.ys
+Warning: Replacing memory \lp_hist_q with list of registers. See ../../../rtl/bandpass.sv:171
+Warning: Replacing memory \x_hist_q with list of registers. See ../../../rtl/bandpass.sv:170
+  -> Creating mutations script file.
+  -> Creating mutations.
+yosys -ql database/mutations.log database/mutations.ys
+  -> Initializing database.
+  -> Connecting to database.
+  -> Importing mutations.
+  -> Importing design sources.
+  -> Reseting database statistics.
+  -> Remove 'tasks' subdirectory.
+  -> Update mutations.
+  -> Getting database statistics.
+Database contains 0 cached results.
+Queued 1000 "test_lp" tests.

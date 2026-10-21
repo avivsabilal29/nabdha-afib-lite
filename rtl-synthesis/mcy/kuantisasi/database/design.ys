@@ -1,0 +1,6 @@
+read -sv ../../../rtl/afib_lite_pkg.sv
+read -sv ../../../rtl/acq_frontend.sv
+prep -top acq_frontend
+select -module acq_frontend
+
+write_rtlil database/design.il

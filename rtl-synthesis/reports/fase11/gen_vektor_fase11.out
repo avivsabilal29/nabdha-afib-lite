@@ -1,0 +1,14 @@
+== gen_vektor_fase11 ==
+  rantai.py sha256 90df6e5b457307d37158a96b6dbedb4e72be03f35349769a858918f6314f1fe5 (frozen, checked)
+  ratio code 10813  entropy code 10322
+  arm mentah      windows 588 AFIB 95 N 493 fired 183 TP 95 FP 88 FN 0 TN 405  straddle {'round': 0, 'floor': 0, 'truncate': 0}
+  arm berpenanda  windows 602 AFIB 95 N 507 fired 189 TP 95 FP 94 FN 0 TN 413  straddle {'round': 0, 'floor': 0, 'truncate': 0}
+  run berpenanda  arm=0x0F source=berpenanda  fired 189 over 602 windows
+  run t_off       arm=0x0B source=mentah      fired 183 over 588 windows
+  run mentah      arm=0x07 source=mentah      fired 183 over 588 windows
+  run tunggal     arm=0x02 source=berpenanda  fired 191 over 602 windows
+  run guard       arm=0x02 source=berpenanda  fired 0 over 602 windows
+  run either      arm=0x1F source=berpenanda  fired 299 over 602 windows
+  cross check fase9: agree=True (/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/tb/vektor/fase9/04015.fase9.manifest.json)
+  map slots 38 (frozen 36 0x00..0x8C + provisional 0x90/0x94)
+  files written: 16

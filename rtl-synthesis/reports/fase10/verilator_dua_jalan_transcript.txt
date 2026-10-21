@@ -1,0 +1,25 @@
+$ /home/avivsabilalm/.hermes/cache/scratch/vtop_all.sh      # Tahap 2, dua jalan Verilator, TB sha c0baf8e2.../final
+=== verilator build 20261021-021645 ===
+build rc=0 (log /home/avivsabilalm/.hermes/cache/scratch/vbuild_20261021-021645.log)
+=== verilator full run 1 -> /home/avivsabilalm/.hermes/cache/scratch/vtop_full_jalan1_20261021-021645.log ===
+run1 rc=0
+tb_top: CK_STREAM = b254f0da0524e710
+tb_top: CK_PEAK   = ff1f6a10a1028888
+tb_top: CK_DOWN   = 3fbbce7cafe82708
+tb_top: CK_EVENT  = cf143c61d384939e
+tb_top: total mismatches = 0
+tb_top: PASS
+=== verilator full run 2 -> /home/avivsabilalm/.hermes/cache/scratch/vtop_full_jalan2_20261021-021645.log ===
+run2 rc=0
+tb_top: CK_STREAM = b254f0da0524e710
+tb_top: CK_PEAK   = ff1f6a10a1028888
+tb_top: CK_DOWN   = 3fbbce7cafe82708
+tb_top: CK_EVENT  = cf143c61d384939e
+tb_top: total mismatches = 0
+tb_top: PASS
+=== checksum comparison between the two Verilator runs ===
+CK_STREAM IDENTICAL: tb_top: CK_STREAM = b254f0da0524e710
+CK_PEAK IDENTICAL: tb_top: CK_PEAK   = ff1f6a10a1028888
+CK_DOWN IDENTICAL: tb_top: CK_DOWN   = 3fbbce7cafe82708
+CK_EVENT IDENTICAL: tb_top: CK_EVENT  = cf143c61d384939e
+VTOP_DONE

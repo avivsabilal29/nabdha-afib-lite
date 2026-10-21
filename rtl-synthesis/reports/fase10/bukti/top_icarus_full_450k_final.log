@@ -1,0 +1,55 @@
+run_sim.sh: tb=../rtl/tb/tb_top.sv sources=14 plusargs=6
+  plusargs forwarded to vvp: +VECTOR=../rtlplan2/fase0 +STIM=../rtl/tb/vektor/04015.stimulus.hex +EXPECT=../rtl/tb/vektor/fase5 +RRVEC=../rtl/tb/vektor/fase6 +CLVEC=../rtl/tb/vektor/fase9 +F8VEC=../rtl/tb/vektor/fase8
+  compiled first (packages): ../rtl/afib_lite_pkg.sv ../rtl/afib_lite_pkg.sv
+WARNING: ../rtl/tb/tb_top.sv:674: $readmemh(../rtl/tb/vektor/fase5/04015.ambang_state.hex): Not enough words in the file for the requested range [0:15].
+WARNING: ../rtl/tb/tb_top.sv:675: $readmemh(../rtl/tb/vektor/fase5/04015.qrs.hex): Not enough words in the file for the requested range [0:8191].
+WARNING: ../rtl/tb/tb_top.sv:676: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.pos.hex): Not enough words in the file for the requested range [0:8191].
+WARNING: ../rtl/tb/tb_top.sv:677: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.pv.hex): Not enough words in the file for the requested range [0:8191].
+WARNING: ../rtl/tb/tb_top.sv:678: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.pkf.hex): Not enough words in the file for the requested range [0:8191].
+WARNING: ../rtl/tb/tb_top.sv:679: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.kem.hex): Not enough words in the file for the requested range [0:8191].
+WARNING: ../rtl/tb/tb_top.sv:680: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.i1.hex): Not enough words in the file for the requested range [0:8191].
+WARNING: ../rtl/tb/tb_top.sv:681: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.i2.hex): Not enough words in the file for the requested range [0:8191].
+WARNING: ../rtl/tb/tb_top.sv:682: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.flag.hex): Not enough words in the file for the requested range [0:8191].
+WARNING: ../rtl/tb/tb_top.sv:683: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.evidx.hex): Not enough words in the file for the requested range [0:8191].
+WARNING: ../rtl/tb/tb_top.sv:684: $readmemh(../rtl/tb/vektor/fase5/04015.puncak.kind.hex): Not enough words in the file for the requested range [0:8191].
+WARNING: ../rtl/tb/tb_top.sv:686: $readmemh(../rtl/tb/vektor/fase6/04015.rr.hex): Not enough words in the file for the requested range [0:8191].
+WARNING: ../rtl/tb/tb_top.sv:687: $readmemh(../rtl/tb/vektor/fase6/04015.rr.mark.hex): Not enough words in the file for the requested range [0:8191].
+WARNING: ../rtl/tb/tb_top.sv:688: $readmemh(../rtl/tb/vektor/fase6/04015.rr.smp.hex): Not enough words in the file for the requested range [0:8191].
+WARNING: ../rtl/tb/tb_top.sv:689: $readmemh(../rtl/tb/vektor/fase6/04015.fase6.counts.hex): Not enough words in the file for the requested range [0:31].
+WARNING: ../rtl/tb/tb_top.sv:691: $readmemh(../rtl/tb/vektor/fase9/04015.fase9.counts.hex): Not enough words in the file for the requested range [0:31].
+WARNING: ../rtl/tb/tb_top.sv:696: $readmemh(../rtl/tb/vektor/fase8/04015.fase8.map.marked.hex): Not enough words in the file for the requested range [0:4095].
+WARNING: ../rtl/tb/tb_top.sv:706: $readmemh(../rtl/tb/vektor/fase9/04015.mentah.asli.hex): Not enough words in the file for the requested range [0:1023].
+WARNING: ../rtl/tb/tb_top.sv:707: $readmemh(../rtl/tb/vektor/fase9/04015.berpenanda.asli.hex): Not enough words in the file for the requested range [0:1023].
+WARNING: ../rtl/tb/tb_top.sv:708: $readmemh(../rtl/tb/vektor/fase9/04015.berpenanda.kelas.hex): Not enough words in the file for the requested range [0:1023].
+WARNING: ../rtl/tb/tb_top.sv:709: $readmemh(../rtl/tb/vektor/fase9/04015.berpenanda.qr.hex): Not enough words in the file for the requested range [0:1023].
+WARNING: ../rtl/tb/tb_top.sv:710: $readmemh(../rtl/tb/vektor/fase9/04015.berpenanda.qe.hex): Not enough words in the file for the requested range [0:1023].
+tb_top: Fase 0 columns = ../rtlplan2/fase0
+tb_top: stimulus       = ../rtl/tb/vektor/04015.stimulus.hex
+tb_top: Fase 5 vectors = ../rtl/tb/vektor/fase5
+tb_top: Fase 6 vectors = ../rtl/tb/vektor/fase6
+tb_top: Fase 9 vectors = ../rtl/tb/vektor/fase9
+tb_top: Fase 8 row bridge = ../rtl/tb/vektor/fase8 (two words per emission: window sample end, golden row, FFFFFFFF when there is no golden row)
+tb_top: arm            = marked (code 0xf, thresholds 33 63)
+tb_top: limit          = 450000 of 450000 frames
+tb_top: golden peaks = 4777 qrs = 2596 ambang_state = 9 windows = 602 fired = 189
+tb_top: golden rows in range: peaks = 4777 qrs = 2596 t_rejected = 1909
+tb_top: cadence = 64 cycles per sample
+RULEDBG row 73 pos 6845 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1338096 i1=53674100 pv=143770372 | fed delta=88 kemq=838322 qrs_at_capture=6757 twdtw=377662 pulse=74
+RULEDBG row 79 pos 7423 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1112974 i1=49501949 pv=125272213 | fed delta=84 kemq=1245560 qrs_at_capture=7339 twdtw=79900 pulse=80
+RULEDBG row 164 pos 15761 dut pita=1 rej=1 | gold pita=1 rej=0 flag=2 kem=452820 i1=58140719 pv=21183173 | fed delta=54 kemq=897984 qrs_at_capture=15707 twdtw=223320 pulse=165
+RULEDBG row 267 pos 24503 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1236434 i1=39684016 pv=140836121 | fed delta=86 kemq=806402 qrs_at_capture=24417 twdtw=384134 pulse=268
+RULEDBG row 276 pos 25393 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1175828 i1=42762494 pv=137952754 | fed delta=80 kemq=1196138 qrs_at_capture=25313 twdtw=144164 pulse=277
+RULEDBG row 381 pos 35243 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1025850 i1=47203340 pv=88332176 | fed delta=82 kemq=1418404 qrs_at_capture=35161 twdtw=226382 pulse=382
+RULEDBG row 467 pos 43043 dut pita=1 rej=1 | gold pita=1 rej=0 flag=2 kem=288370 i1=42210027 pv=15605886 | fed delta=54 kemq=570718 qrs_at_capture=42989 twdtw=97584 pulse=468
+RULEDBG row 487 pos 44809 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1359548 i1=43570324 pv=169644706 | fed delta=76 kemq=582700 qrs_at_capture=44733 twdtw=80872 pulse=488
+RULEDBG row 491 pos 45135 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1448860 i1=43726912 pv=176723057 | fed delta=86 kemq=617688 qrs_at_capture=45049 twdtw=261078 pulse=492
+RULEDBG row 497 pos 45717 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=948336 i1=44530409 pv=75410880 | fed delta=70 kemq=657190 qrs_at_capture=45647 twdtw=158662 pulse=498
+RULEDBG row 501 pos 46023 dut pita=1 rej=1 | gold pita=1 rej=0 flag=2 kem=345568 i1=41110068 pv=13791074 | fed delta=50 kemq=633826 qrs_at_capture=45973 twdtw=86400 pulse=502
+RULEDBG row 520 pos 47731 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1386420 i1=46073235 pv=160046602 | fed delta=76 kemq=867814 qrs_at_capture=47655 twdtw=358732 pulse=521
+RULEDBG row 521 pos 47815 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1096030 i1=46333478 pv=100127089 | fed delta=84 kemq=1386420 qrs_at_capture=47731 twdtw=386090 pulse=522
+RULEDBG row 523 pos 47999 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1209354 i1=44742006 pv=128747656 | fed delta=82 kemq=1355634 qrs_at_capture=47917 twdtw=512862 pulse=524
+RULEDBG row 635 pos 58635 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1103756 i1=41802549 pv=107574103 | fed delta=72 kemq=476346 qrs_at_capture=58563 twdtw=221792 pulse=636
+RULEDBG row 640 pos 59167 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1381502 i1=40406221 pv=162749716 | fed delta=76 kemq=765254 qrs_at_capture=59091 twdtw=368068 pulse=641
+RULEDBG row 641 pos 59247 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1141588 i1=41102194 pv=117123092 | fed delta=80 kemq=1381502 qrs_at_capture=59167 twdtw=181742 pulse=642
+RULEDBG row 685 pos 63273 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1328008 i1=47986376 pv=150419269 | fed delta=78 kemq=904642 qrs_at_capture=63195 twdtw=310580 pulse=686
+RULEDBG row 692 pos 63901 dut pita=1 rej=1 | gold pita=1 rej=0 flag=3 kem=1381434 i1=47780965 pv=152837336 | fed delta=84 kemq=1477334 qrs_at_capture=63817 twdtw=362490 pulse=693

@@ -1,8 +1,16 @@
 #!/usr/bin/env bash
 # Synthesise one SystemVerilog file to SKY130 standard cells and report cell count and area.
 #
-# Usage:   ./run_synth.sh <source.sv> <top module> [liberty file]
+# Usage:   ./run_synth.sh <source.sv> <top module> [liberty file] [extra sources ...]
 # Example: ./run_synth.sh demo_counter.sv demo_counter sky130_fd_sc_hd__tt_025C_1v80.lib
+#          ./run_synth.sh ../rtl/derivative.sv derivative
+#
+# Extra sources go after the liberty file and are read before the main source. On top of that, every
+# `*_pkg.sv` sitting next to the main source is read first automatically. Packages must be read before
+# any module that imports them, exactly as run_lint.sh and run_sim.sh already do. Without this, a
+# module that names a package width or package constant inside a localparam dies at elaboration with
+#   ERROR: Failed to evaluate system function `$clog2' with non-constant value
+# which is the defect that hit derivative.sv:99 on 20 October 2026.
 #
 # Needs Yosys and ABC. Install them with ./setup_tools.sh, which needs no root, then run this script
 # with no environment setup. A system yosys works too, and the WASM build works through YOSYS:
@@ -25,10 +33,37 @@ if [ -z "${YOSYS:-}" ] && [ -x "$HERE/debroot/usr/bin/yosys" ]; then
     export YOSYS_DATDIR="$HERE/debroot/usr/share/yosys"
 fi
 
-SRC="${1:?usage: run_synth.sh <source.sv> <top module> [liberty file]}"
-TOP="${2:?usage: run_synth.sh <source.sv> <top module> [liberty file]}"
+SRC="${1:?usage: run_synth.sh <source.sv> <top module> [liberty file] [extra sources ...]}"
+TOP="${2:?usage: run_synth.sh <source.sv> <top module> [liberty file] [extra sources ...]}"
 LIB="${3:-sky130_fd_sc_hd__tt_025C_1v80.lib}"
 YOSYS="${YOSYS:-yosys}"
+
+# Optional extra sources after the liberty file.
+EXTRA=()
+if [ "$#" -gt 3 ]; then
+    EXTRA=("${@:4}")
+fi
+
+# Every package file next to the main source is read first, so a module that imports the package
+# elaborates instead of failing on a non-constant $clog2. Absolute paths, because this script changes
+# directory before it runs yosys.
+SRCDIR="$(cd "$(dirname "$SRC")" && pwd)"
+SRCABS="$SRCDIR/$(basename "$SRC")"
+PKGS=()
+for candidate in "$SRCDIR"/*_pkg.sv; do
+    if [ -e "$candidate" ] && [ "$candidate" != "$SRCABS" ]; then
+        PKGS+=("$candidate")
+    fi
+done
+
+READS=""
+for f in ${PKGS[@]+"${PKGS[@]}"} ${EXTRA[@]+"${EXTRA[@]}"}; do
+    READS+="    read_verilog -sv $f;
+"
+done
+READS+="    read_verilog -sv $SRCABS;
+"
+SOURCES_LIST="${PKGS[*]:-} ${EXTRA[*]:-} $SRCABS"
 
 # Provenance naming. A run only overwrites its own route and day, so a Route A report never destroys a
 # Route B report. The header printed below and written into the log carries the exact time and the
@@ -59,8 +94,7 @@ YOSYS_VER="${YOSYS_VER%%$'\n'*}"
 
 # -l writes the full log to a file: with the YoWASP build, pass output after ABC does not reach stdout.
 "$YOSYS" -l "$LOG" -p "
-    read_verilog -sv $SRC;
-    hierarchy -top $TOP;
+$READS    hierarchy -top $TOP;
     synth -top $TOP;
     dfflibmap -liberty $LIB;
     abc -liberty $LIB;
@@ -71,7 +105,7 @@ YOSYS_VER="${YOSYS_VER%%$'\n'*}"
 
 echo "tool     : $YOSYS_VER"
 echo "route    : $ROUTE"
-echo "source   : $SRC"
+echo "sources  : $SOURCES_LIST"
 echo "library  : $LIB"
 echo "run at   : $(date +%Y-%m-%dT%H:%M:%S%z)"
 echo "log      : $LOG"

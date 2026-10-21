@@ -1,0 +1,48 @@
+# SHA-256 fingerprint of the frozen fixture arrays
+# every digest is computed over arr.tobytes() of the array as it is written,
+# so it does not depend on the dtype used when the file is read back
+
+# record                           /home/avivsabilalm/.hermes/cache/scratch/afib/afdb_local/04015
+# frames read                      450000
+# fs Hz                            250.0
+# sample clipping count            402
+# ambang_state order               calon_kedua, cari_mundur, diperiksa, ditolak, diterima_pita, berisiko, semai, penanda, langkah
+# jendela_fitur columns            RMSSD, RMSSD/meanRR, pNN50, normalized entropy
+# npz sha256                       91ff408fb1b7880a124d28bcc4205038935d4a3a2dbabb4c0f7d161d89e8ac4d
+
+| key | shape | dtype | max abs | bytes | sha256 |
+|---|---|---|---|---|---|
+| ambang_kemiringan_puncak | (4777,) | int64 | 3.99597e+06 | 38216 | 9d71b9d8b19627ad285e1f1cf1f77905e2eb45580175919e9257e2bc6c422ad9 |
+| ambang_puncak_terfilter | (4777,) | int64 | 1.88652e+07 | 38216 | 0a29164fdfb2f8c6d42dc684f24b2d6d8789dd6b0738152ef73a851b0bfb755b |
+| ambang_state | (9,) | int64 | 2586 | 72 | c8dda322d074d9c30cda8fed28ff72a071d445b8cda703812ae19055bcb3b6f3 |
+| hp | (450000,) | int64 | 1.92862e+07 | 3600000 | 6419919e435ee00200e73e3735588890786b1fe5b17cd1e783c1bccdf4416610 |
+| jendela | (450000,) | int64 | 3.10528e+09 | 3600000 | 194764f58ac8eeb65cb8b51e5e2bb7aa4160375fea105e1e430290258fedba03 |
+| jendela_ambang | (2,) | float64 | 0.69 | 16 | 1bb951c73bbfa2b3712cd3e11d6c108a99e687e552300e348ab91fc19a92f5ac |
+| jendela_ambang_ref | (2,) | float64 | 0.79 | 16 | e374cd27f01d84bb379bd05f70ae6bbba40ff21274cce8b48ab15f13ee7f3331 |
+| jendela_aturan_t_mati | (2603,) | int64 | 449825 | 20824 | 9d4bc77f2205c32daf62d0ef1227f3155686bfa810aa638a6f9bbc762b9463f7 |
+| jendela_fitur | (588, 4) | float64 | 408.412 | 18816 | e17ef435f86af58d8ca85ea55f64c572072957876fb21c980fc7aa855931dc03 |
+| jendela_fitur_acuan | (590, 4) | float64 | 476.978 | 18880 | 689f0b2f1d61c71eeb218502d578fc22cbfd7846edba4b7e03702b52942096b9 |
+| jendela_fitur_aturan_t_mati | (593, 4) | float64 | 334.883 | 18976 | 21a7c40c2d78f1547bfb7803ed0648ca12fd77a6ea7fee3084bcb564d38ef899 |
+| jendela_kelas_acuan | (590,) | <U6 | nan | 14160 | 316f0be0aac27c8aee10157dc64c09e95ddce50c29467eeacc277bbe1116df02 |
+| jendela_kelas_aturan_t_mati | (593,) | <U6 | nan | 14232 | e18eb8ed7338aaae94a53ba4c5c593fbac69bdc3c11d99eca0f1df3a5360c5ca |
+| jendela_kelas_benar | (588,) | <U6 | nan | 14112 | f0fd4518a61a2ee1e1e82010729860d834dfd281cf649bb37634f13285e26735 |
+| kuadrat | (450000,) | int64 | 3.50438e+08 | 3600000 | f4faa711650c994cf8c3189fc8e6febf88b24282de946a686b3b845c5080b764 |
+| lp | (450000,) | int64 | 1.17907e+06 | 3600000 | 9efefc03a2c2b0a061cbc1699b497ab91fda81e45d30645b91847ae6f07f6919 |
+| masukan16 | (450000,) | int64 | 32752 | 3600000 | 97ea4ae0977692700ddf74d2f9596897789b65a1ae5644fae227ec631ad8e592 |
+| penanda | (2579,) | int64 | 1 | 20632 | 04ab232b39b49a9de4f48423c090f1cfb82439e3ef46b86f31a0b8c4d522ad6e |
+| puncak | (4777,) | int64 | 449899 | 38216 | 1f47eade377c3c35d09725ac06dd24d60bc0252124b17a6e4201dbd2659e7bc3 |
+| puncak_acuan_neurokit | (2601,) | int64 | 449997 | 20808 | 9be5c68fbc2d4662a2f436dcc459df8987d38e8cb4a75ade4645b0fb7d7952df |
+| qrs | (2596,) | int64 | 449825 | 20768 | f7296e4a3d11f0d4e6308957fcf9df54f28558ef3dfed9a839437e627da105e7 |
+| rasio_pita | (112,) | float64 | 5.21931 | 896 | b00b3bb9aafdf1dd43eb398f72ca425a6a76e87bb1e592f6f9b8426c4298759a |
+| rasio_pita_aturan_t_mati | (0,) | float64 | 0 | 0 | e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 |
+| rasio_qrs | (106,) | float64 | 5.21931 | 848 | 648f18b283e03236a7d9646099f4bd3650e0a0b80b06020a911a0f67ea591460 |
+| rasio_qrs_aturan_t_mati | (113,) | float64 | 6.04012 | 904 | ccdab13a44b21aa7219ea37aeb7623cf32f61ddeb6d88f4d5d944d94772570e8 |
+| rr | (2595,) | int64 | 51064 | 20760 | 42ca9830e7fc2c3ab0f9f9b6cb5365c8ae7ba10cf14017e6d6ba5d5e8d22379d |
+| rr_antre_panjang | (2579,) | int64 | 8 | 20632 | eafb6fc08a49b2daa87215e885a756d65e77269d4952a41fa766b2431dd0a3c2 |
+| rr_average1 | (2579,) | int64 | 1092 | 20632 | 5824ea77543983c50cbb3a8406e9db34357ab0c3d86c4ac34b25651a65f90793 |
+| rr_average2 | (2579,) | int64 | 889 | 20632 | 15668a075547583ceddf74ed28171b318866560dd6d0944f86394d7a99ab1e85 |
+| rr_disemai | (2579,) | int64 | 1 | 20632 | 1c9809d6a6ba6f64239de0acd6accbad1529f565d596ad1f45639e640cdf5fe5 |
+| rr_menyala_akhir | () | int64 | 1 | 8 | 7c9fa136d4413fa6173637e883b6998d32e1d675f88cddff9dcbcf331820f4b8 |
+| rr_riwayat_panjang | (2579,) | int64 | 32 | 20632 | f9bd591a63de0c2fe21dbf83c9a359fabcf91673d12959c354208bbcf1dd8e38 |
+| turunan | (450000,) | int64 | 4.79232e+06 | 3600000 | 18b26cfb3efe3dd77ab15bb61e810c9490faaa8513d7e3f78b0fca206c0f5683 |
+

@@ -1,0 +1,10 @@
+== siapkan_vektor_fase9 ==
+  ratio code 10813  entropy code 10322
+  arm mentah     windows 588 AFIB 95 N 493 fired 183 TP 95 FP 88 FN 0 TN 405  straddle {'round': 0, 'floor': 0, 'truncate': 0}
+      q16 max 35855 (17 bit), q14 max 14336 (15 bit)
+  arm berpenanda windows 602 AFIB 95 N 507 fired 189 TP 95 FP 94 FN 0 TN 413  straddle {'round': 0, 'floor': 0, 'truncate': 0}
+      q16 max 40070 (17 bit), q14 max 14336 (15 bit)
+  mutasi t=(0,0)      fired 594
+  guard ent=0x8000    fired 0
+  tunggal arm=0b00010 fired 191
+  files written: 14

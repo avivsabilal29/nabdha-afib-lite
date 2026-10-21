@@ -1,0 +1,18 @@
+[03:37:54] ================ SINTESIS SISA MULAI (pid 3138967) ================
+[03:37:54] features: MULAI (pagar 6000 MB, mem tersedia 10576 MB)
+[04:04:41] features: DIHENTIKAN SENGAJA setelah 22 menit di ABC tanpa tanda selesai (kelas aritmetika 32 bit yang sama dengan peak_detect). Bukan kegagalan pagar memori; ini keputusan waktu.
+[04:04:41] features: GAGAL rc=143 (1607s) -- lihat /home/avivsabilalm/.hermes/cache/scratch/fase10/synth2_features.log
+[04:04:41] t_rule: MULAI (pagar 6000 MB, mem tersedia 6874 MB)
+[04:05:19] t_rule: GAGAL rc=2 (38s) -- lihat /home/avivsabilalm/.hermes/cache/scratch/fase10/synth2_t_rule.log
+[04:05:19] classifier: MULAI (pagar 6000 MB, mem tersedia 5820 MB)
+[04:05:22] classifier: SELESAI rc=0 sel=678 area=5755.520000 (3s)
+[04:05:22] regs_axi: MULAI (pagar 6000 MB, mem tersedia 5973 MB)
+[04:05:25] regs_axi: SELESAI rc=0 sel=2900 area=25730.928000 (3s)
+[04:05:25] peak_detect: MULAI (pagar 9000 MB, mem tersedia 6306 MB)
+[04:27:42] peak_detect: GAGAL rc=134 (1337s) -- lihat /home/avivsabilalm/.hermes/cache/scratch/fase10/synth2_peak_detect.log
+[04:27:42] peak_detect: penyebab = kehabisan memori di dalam pagar 9000 MB
+[04:27:42] afib_lite_top: MULAI (pagar 11000 MB, mem tersedia 10445 MB)
+[04:49:59] afib_lite_top: GAGAL rc=134 (1337s) -- lihat /home/avivsabilalm/.hermes/cache/scratch/fase10/synth2_afib_lite_top.log
+[04:49:59] afib_lite_top: penyebab = kehabisan memori di dalam pagar 11000 MB
+[04:49:59] ================ SINTESIS SISA SELESAI ================
+[04:49:59] memori tersedia di akhir: 10501 MB

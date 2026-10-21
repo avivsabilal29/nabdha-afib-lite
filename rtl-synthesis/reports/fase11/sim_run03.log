@@ -1,0 +1,5 @@
+run_sim.sh: tb=../rtl/tb/tb_regs_axi.sv sources=2 plusargs=1
+  plusargs forwarded to vvp: +VECTOR=../rtl/tb/vektor/fase11
+  compiled first (packages): ../rtl/afib_lite_pkg.sv
+../rtl/tb/tb_regs_axi.sv:435: syntax error
+../rtl/tb/tb_regs_axi.sv:435: error: Malformed statement

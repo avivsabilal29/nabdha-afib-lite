@@ -1,0 +1,20 @@
+run at 2026-10-20T20:02:39+0700
+netlist       : reports/fase4/derivative.native.20261020.json
+library       : sky130_fd_sc_hd__tt_025C_1v80.lib  (428 cells described)
+cells mapped  : 1348  (flip-flops 274, combinational 1074)
+area          : 11176.97 um^2   (flops 5485.26 um^2, combinational 5691.71 um^2)
+flop share    : 49.1 percent of the area
+
+top cell types:
+  sky130_fd_sc_hd__nand2_1           x  513   3.754 um^2 each
+  sky130_fd_sc_hd__dfxtp_1           x  274   20.019 um^2 each
+  sky130_fd_sc_hd__a21boi_0          x  226   7.507 um^2 each
+  sky130_fd_sc_hd__a21oi_1           x   83   5.005 um^2 each
+  sky130_fd_sc_hd__o21ai_0           x   47   5.005 um^2 each
+  sky130_fd_sc_hd__lpflow_isobufsrc_1 x   33   6.256 um^2 each
+  sky130_fd_sc_hd__nor2_1            x   29   3.754 um^2 each
+  sky130_fd_sc_hd__a221o_1           x   20   10.010 um^2 each
+  sky130_fd_sc_hd__and2_0            x   19   6.256 um^2 each
+  sky130_fd_sc_hd__a22oi_1           x   19   7.507 um^2 each
+  sky130_fd_sc_hd__xnor2_1           x   14   8.758 um^2 each
+  sky130_fd_sc_hd__clkinv_1          x   10   3.754 um^2 each

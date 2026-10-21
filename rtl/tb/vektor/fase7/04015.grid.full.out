@@ -1,0 +1,6 @@
+grid of the frozen model theorem (uji_00_teorema.py:766-777, doc 06 section 4.1)
+grid: s and s_prev both 0..4095, pairs = 16777216
+cross form 2*s < s_prev vs float route s < s_prev/2.0 : differ = 0
+cross form 2*s < s_prev vs forbidden shift s < (s_prev >> 1) : differ = 2048
+cross form vs exact rational (Fraction), 200000 random pairs : differ = 0
+fraction of the grid where the shift route differs = 2048/16777216 = 0.00012207

@@ -1,0 +1,31 @@
+run_sim.sh: tb=../rtl/tb/tb_derivative.sv sources=2 plusargs=1
+  plusargs forwarded to vvp: +VECTOR=/home/avivsabilalm/.hermes/cache/scratch/rtlplan2/fase0
+  compiled first (packages): ../rtl/afib_lite_pkg.sv
+tb_derivative: vectors = /home/avivsabilalm/.hermes/cache/scratch/rtlplan2/fase0
+tb_derivative: limit   = 450000 of 450000
+tb_derivative: [golden] presented       = 450000
+tb_derivative: [golden] outputs         = 450000
+tb_derivative: [golden] words compared: 450000
+tb_derivative: [golden] mismatches: 0   (m_tdata against turunan)
+tb_derivative: [golden] d_der mismatches   = 0
+tb_derivative: [golden] sample_idx mismatch= 0
+tb_derivative: [golden] tuser mismatches   = 0
+tb_derivative: [golden] tlast mismatches   = 0
+tb_derivative: [golden] first bad index    = -1
+tb_derivative: [golden] overflow pulses    = 0
+tb_derivative: [golden] first overflow idx = -1
+tb_derivative: [golden] d_valid pulses     = 450000
+tb_derivative: [golden] golden format odd  = 0
+tb_derivative: [golden] PASS
+tb_derivative: [synthetic] length          = 45
+tb_derivative: [synthetic] outputs         = 45
+tb_derivative: [synthetic] words compared: 45
+tb_derivative: [synthetic] mismatches: 0   (floor shift differs on 6)
+tb_derivative: [synthetic] d_der mismatches   = 0
+tb_derivative: [synthetic] sample_idx mismatch= 0
+tb_derivative: [synthetic] first bad index    = -1
+tb_derivative: [synthetic] first overflow idx = 40 (expected 40)
+tb_derivative: [synthetic] overflow pulses    = 5 (expected 5)
+tb_derivative: [synthetic] PASS
+tb_derivative: PASS
+../rtl/tb/tb_derivative.sv:307: $finish called at 108012985 (1s)

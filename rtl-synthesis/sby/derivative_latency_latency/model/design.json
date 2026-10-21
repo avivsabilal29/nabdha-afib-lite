@@ -1,0 +1,752 @@
+{
+  "$schema": "https://raw.githubusercontent.com/YosysHQ/yosys/main/misc/jny.schema.json",
+  "generator": "Yosys 0.70+157 (git sha1 af9f71e51, Release, Clang /usr/bin/clang++ 21.1.8)",
+  "version": "0.0.1",
+  "invocation": "write_jny -no-connections ../model/design.json ",
+  "features": ["attributes", "properties"],
+  "modules": [
+      {
+        "name": "derivative_latency",
+        "cell_sorts": [
+          {
+            "type": "$scopeinfo",
+            "ports": [
+
+            ],
+            "cells": [
+                {
+                  "name": "dut",
+                  "attributes": {
+                    "cell_src": "derivative_latency.sv:63.7-70.6",
+                    "module": "$paramod$e7bcd79753de8799eb82f84ebaa169ce49642b0e\\derivative",
+                    "module_dynports": "00000000000000000000000000000001",
+                    "module_hdlname": "derivative",
+                    "module_src": "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:65.1-266.10"
+                  },
+                  "parameters": {
+                    "TYPE": "module"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$logic_not",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [2, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$flatten\\dut.$procmux$231_CMP0",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:211.24-211.24|/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:211.13-262.20"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$mux",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "S",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$flatten\\dut.$procmux$126",
+                  "attributes": {
+                    "src": "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:242.25-242.33|/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:242.21-255.24"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.$procmux$129",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:211.24-211.24|/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:211.13-262.20"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.$procmux$132",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:185.13-185.20|/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:185.9-263.12"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.$procmux$201",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:236.25-236.35|/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:236.21-241.24"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.$procmux$205",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:213.25-213.33|/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:213.21-226.24"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.$procmux$207",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:211.24-211.24|/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:211.13-262.20"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.$procmux$210",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:185.13-185.20|/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:185.9-263.12"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.$procmux$213",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:236.25-236.35|/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:236.21-241.24"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.$procmux$217",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:213.25-213.33|/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:213.21-226.24"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.$procmux$219",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:211.24-211.24|/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:211.13-262.20"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.$procmux$222",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:185.13-185.20|/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:185.9-263.12"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.$procmux$224",
+                  "attributes": {
+                    "src": "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:242.25-242.33|/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:242.21-255.24"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.$procmux$228",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:213.25-213.33|/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:213.21-226.24"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.$procmux$230",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:211.24-211.24|/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:211.13-262.20"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.$procmux$233",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:185.13-185.20|/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:185.9-263.12"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$procmux$101",
+                  "attributes": {
+                    "src": "derivative_latency.sv:56.13-56.25|derivative_latency.sv:56.9-56.45"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000001000"
+                  }
+                },
+                {
+                  "name": "$procmux$90",
+                  "attributes": {
+                    "src": "derivative_latency.sv:86.31-86.58|derivative_latency.sv:86.27-86.78"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$92",
+                  "attributes": {
+                    "src": "derivative_latency.sv:83.31-83.51|derivative_latency.sv:83.27-83.71"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$94",
+                  "attributes": {
+                    "src": "derivative_latency.sv:81.18-81.26|derivative_latency.sv:81.14-81.47"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$97",
+                  "attributes": {
+                    "full_case": "00000000000000000000000000000001",
+                    "src": "derivative_latency.sv:80.13-80.20|derivative_latency.sv:80.9-81.47"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procmux$99",
+                  "attributes": {
+                    "src": "derivative_latency.sv:75.31-75.37|derivative_latency.sv:75.27-75.65"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$dff",
+            "ports": [
+                {
+                  "name": "CLK",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "D",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Q",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$flatten\\dut.$procdff$365",
+                  "attributes": {
+                    "src": "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:184.5-264.8"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.$procdff$379",
+                  "attributes": {
+                    "src": "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:184.5-264.8"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.$procdff$380",
+                  "attributes": {
+                    "src": "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:184.5-264.8"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.$procdff$381",
+                  "attributes": {
+                    "src": "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:184.5-264.8"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$procdff$362",
+                  "attributes": {
+                    "src": "derivative_latency.sv:79.5-82.8"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$procdff$363",
+                  "attributes": {
+                    "src": "derivative_latency.sv:55.5-57.8"
+                  },
+                  "parameters": {
+                    "CLK_POLARITY": "1",
+                    "WIDTH": "00000000000000000000000000001000"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$check",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "ARGS",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "EN",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "TRG",
+                  "direction": "io",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "_witness_.check_derivative_latency_sv_75_assume_44",
+                  "attributes": {
+                    "hdlname": "_witness_ check_derivative_latency_sv_75_assume_44",
+                    "keep": "00000000000000000000000000000001",
+                    "src": "derivative_latency.sv:75.39-75.64"
+                  },
+                  "parameters": {
+                    "ARGS_WIDTH": "00000000000000000000000000000000",
+                    "FLAVOR": "assume",
+                    "FORMAT": true,
+                    "PRIORITY": "11111111111111111111111111111111",
+                    "TRG_ENABLE": "00000000000000000000000000000001",
+                    "TRG_POLARITY": "1",
+                    "TRG_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "_witness_.check_derivative_latency_sv_83_assert_50",
+                  "attributes": {
+                    "hdlname": "_witness_ check_derivative_latency_sv_83_assert_50",
+                    "keep": "00000000000000000000000000000001",
+                    "src": "derivative_latency.sv:83.53-83.70"
+                  },
+                  "parameters": {
+                    "ARGS_WIDTH": "00000000000000000000000000000000",
+                    "FLAVOR": "assert",
+                    "FORMAT": true,
+                    "PRIORITY": "11111111111111111111111111111111",
+                    "TRG_ENABLE": "00000000000000000000000000000001",
+                    "TRG_POLARITY": "1",
+                    "TRG_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "_witness_.check_derivative_latency_sv_86_assert_54",
+                  "attributes": {
+                    "hdlname": "_witness_ check_derivative_latency_sv_86_assert_54",
+                    "keep": "00000000000000000000000000000001",
+                    "src": "derivative_latency.sv:86.60-86.77"
+                  },
+                  "parameters": {
+                    "ARGS_WIDTH": "00000000000000000000000000000000",
+                    "FLAVOR": "assert",
+                    "FORMAT": true,
+                    "PRIORITY": "11111111111111111111111111111111",
+                    "TRG_ENABLE": "00000000000000000000000000000001",
+                    "TRG_POLARITY": "1",
+                    "TRG_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "_witness_.check_derivative_latency_sv_89_cover_56",
+                  "attributes": {
+                    "hdlname": "_witness_ check_derivative_latency_sv_89_cover_56",
+                    "keep": "00000000000000000000000000000001",
+                    "src": "derivative_latency.sv:89.39-89.55"
+                  },
+                  "parameters": {
+                    "ARGS_WIDTH": "00000000000000000000000000000000",
+                    "FLAVOR": "cover",
+                    "FORMAT": true,
+                    "PRIORITY": "11111111111111111111111111111111",
+                    "TRG_ENABLE": "00000000000000000000000000000001",
+                    "TRG_POLARITY": "1",
+                    "TRG_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$logic_and",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$derivative_latency.sv:83$logic_and$49",
+                  "attributes": {
+                    "src": "derivative_latency.sv:83.31-83.51"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$derivative_latency.sv:86$logic_and$53",
+                  "attributes": {
+                    "src": "derivative_latency.sv:86.31-86.58"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:182$logic_and$81",
+                  "attributes": {
+                    "src": "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:182.36-182.68"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$ge",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [8, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [3, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$derivative_latency.sv:58$ge$42",
+                  "attributes": {
+                    "src": "derivative_latency.sv:58.20-58.39"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000001000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000011",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$derivative_latency.sv:86$ge$52",
+                  "attributes": {
+                    "src": "derivative_latency.sv:86.42-86.57"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000001000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000101",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$ne",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [8, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [8, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$derivative_latency.sv:56$ne$40",
+                  "attributes": {
+                    "src": "derivative_latency.sv:56.13-56.25"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000001000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000001000",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$add",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [8, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [0, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [8, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$derivative_latency.sv:56$add$41",
+                  "attributes": {
+                    "src": "derivative_latency.sv:56.34-56.44"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000001000",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000001000"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:238$add$84",
+                  "attributes": {
+                    "src": "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:238.36-238.49"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000010"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:240$add$85",
+                  "attributes": {
+                    "src": "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:240.36-240.50"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000010"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$eq",
+            "ports": [
+                {
+                  "name": "A",
+                  "direction": "io",
+                  "range": [2, 0]
+                },
+                {
+                  "name": "B",
+                  "direction": "io",
+                  "range": [2, 0]
+                },
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$flatten\\dut.$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:181$eq$79",
+                  "attributes": {
+                    "src": "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:181.37-181.52"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$flatten\\dut.$/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:182$eq$80",
+                  "attributes": {
+                    "src": "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/derivative.sv:182.37-182.53"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000010",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000010",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          },
+          {
+            "type": "$anyseq",
+            "ports": [
+                {
+                  "name": "Y",
+                  "direction": "",
+                  "range": [0, 0]
+                }
+            ],
+            "cells": [
+                {
+                  "name": "$anyseq$37",
+                  "attributes": {
+                    "reg": "s_tvalid",
+                    "src": "derivative_latency.sv:38.36-38.44"
+                  },
+                  "parameters": {
+                    "WIDTH": "00000000000000000000000000000001"
+                  }
+                }
+            ]
+          }
+        ],
+        "attributes": {
+            "keep": "00000000000000000000000000000001",
+            "dynports": "00000000000000000000000000000001",
+            "top": "00000000000000000000000000000001",
+            "src": "derivative_latency.sv:25.1-90.10"
+        }
+      }
+  ]
+}

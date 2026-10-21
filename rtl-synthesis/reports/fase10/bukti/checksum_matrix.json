@@ -1,0 +1,204 @@
+{
+  "newest": {
+    "tidak-diketahui|icarus": {
+      "file": "/home/avivsabilalm/.hermes/cache/scratch/fase10/icarus_full_450k_INDUK.log",
+      "engine": "icarus",
+      "arm": "tidak-diketahui",
+      "ck": {
+        "CK_STREAM": "b707dacfa5e92141",
+        "CK_PEAK": "d1fae253bb8d1112",
+        "CK_DOWN": "3fbbce7cafe82708",
+        "CK_EVENT": "cf143c61d384939e"
+      },
+      "mismatches": [
+        0,
+        ""
+      ],
+      "census": [
+        189,
+        95,
+        94,
+        0,
+        413
+      ],
+      "peaks": [
+        4777,
+        4777
+      ],
+      "qrs": null,
+      "ambang": null,
+      "unknown": [
+        0,
+        4777
+      ],
+      "golden": [
+        4777,
+        2596,
+        9,
+        602,
+        189
+      ],
+      "verdict": null
+    },
+    "mentah|icarus": {
+      "file": "/home/avivsabilalm/.hermes/cache/scratch/fase10/icarus_full_450k_mentah_INDUK.log",
+      "engine": "icarus",
+      "arm": "mentah",
+      "ck": {
+        "CK_STREAM": "b707dacfa5e92141",
+        "CK_PEAK": "d1fae253bb8d1112",
+        "CK_DOWN": "9b568a7540e9540f",
+        "CK_EVENT": "b4649b063ef94265"
+      },
+      "mismatches": [
+        0,
+        ""
+      ],
+      "census": [
+        183,
+        95,
+        88,
+        0,
+        405
+      ],
+      "peaks": [
+        4777,
+        4777
+      ],
+      "qrs": null,
+      "ambang": null,
+      "unknown": [
+        0,
+        4777
+      ],
+      "golden": [
+        4777,
+        2596,
+        9,
+        588,
+        183
+      ],
+      "verdict": null
+    },
+    "mentah|verilator": {
+      "file": "/home/avivsabilalm/.hermes/cache/scratch/fase10/top_verilator_arm_mentah_final.log",
+      "engine": "verilator",
+      "arm": "mentah",
+      "ck": {
+        "CK_STREAM": "b254f0da0524e710",
+        "CK_PEAK": "ff1f6a10a1028888",
+        "CK_DOWN": "9b568a7540e9540f",
+        "CK_EVENT": "b4649b063ef94265"
+      },
+      "mismatches": [
+        0,
+        ""
+      ],
+      "census": [
+        183,
+        95,
+        88,
+        0,
+        405
+      ],
+      "peaks": [
+        4777,
+        4777
+      ],
+      "qrs": null,
+      "ambang": null,
+      "unknown": [
+        0,
+        4777
+      ],
+      "golden": [
+        4777,
+        2596,
+        9,
+        588,
+        183
+      ],
+      "verdict": null
+    },
+    "berpenanda|verilator": {
+      "file": "/home/avivsabilalm/.hermes/cache/scratch/vtop_full_jalan2_20261021-021645.log",
+      "engine": "verilator",
+      "arm": "berpenanda",
+      "ck": {
+        "CK_STREAM": "b254f0da0524e710",
+        "CK_PEAK": "ff1f6a10a1028888",
+        "CK_DOWN": "3fbbce7cafe82708",
+        "CK_EVENT": "cf143c61d384939e"
+      },
+      "mismatches": [
+        0,
+        ""
+      ],
+      "census": [
+        189,
+        95,
+        94,
+        0,
+        413
+      ],
+      "peaks": [
+        4777,
+        4777
+      ],
+      "qrs": null,
+      "ambang": null,
+      "unknown": [
+        0,
+        4777
+      ],
+      "golden": [
+        4777,
+        2596,
+        9,
+        602,
+        189
+      ],
+      "verdict": null
+    },
+    "tidak-diketahui|verilator": {
+      "file": "/home/avivsabilalm/.hermes/cache/scratch/xprobe/probe_icarus_lim110000.log",
+      "engine": "verilator",
+      "arm": "tidak-diketahui",
+      "ck": {
+        "CK_STREAM": "6a8d7eae2e438538",
+        "CK_PEAK": "80154ef8c947507d",
+        "CK_DOWN": "d73975dfcc0a236b",
+        "CK_EVENT": "b79ae170c3520ebb"
+      },
+      "mismatches": [
+        0,
+        ""
+      ],
+      "census": [
+        189,
+        95,
+        94,
+        0,
+        413
+      ],
+      "peaks": [
+        1175,
+        1175
+      ],
+      "qrs": null,
+      "ambang": null,
+      "unknown": null,
+      "golden": [
+        4777,
+        2596,
+        9,
+        602,
+        189
+      ],
+      "verdict": null
+    }
+  },
+  "verdicts": {
+    "mentah": "BEDA"
+  }
+}

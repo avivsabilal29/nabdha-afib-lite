@@ -1,0 +1,14 @@
+run_lint.sh: top=tb_kuantisasi sources=3 timing=1
+  ../rtl/afib_lite_pkg.sv
+  ../rtl/tb/tb_kuantisasi.sv
+  ../rtl/acq_frontend.sv
+%Warning-TIMESCALEMOD: ../rtl/afib_lite_pkg.sv:44:9: Timescale missing on this module as other modules have it (IEEE 1800-2017 3.14.2.3)
+   44 | package afib_lite_pkg;
+      |         ^~~~~~~~~~~~~
+                       ../rtl/tb/tb_kuantisasi.sv:57:8: ... Location of module with timescale
+   57 | module tb_kuantisasi;
+      |        ^~~~~~~~~~~~~
+                       ... For warning description see https://verilator.org/warn/TIMESCALEMOD?v=5.020
+                       ... Use "/* verilator lint_off TIMESCALEMOD */" and lint_on around source to disable this message.
+%Error: Exiting due to 1 warning(s)
+tb_lint_rc=1

@@ -1,0 +1,4 @@
+run_lint.sh: top=peak_detect sources=2 timing=0
+  ../rtl/afib_lite_pkg.sv
+  ../rtl/peak_detect.sv
+lint clean: top=peak_detect sources=2 (/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl-synthesis/debroot/usr/bin/verilator_bin)

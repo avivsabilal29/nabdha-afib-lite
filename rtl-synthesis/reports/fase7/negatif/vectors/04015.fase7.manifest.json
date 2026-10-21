@@ -1,0 +1,158 @@
+{
+ "generator": "rtl/tb/vektor/fase7/siapkan_vektor_fase7.py",
+ "phase": 7,
+ "rate_hz": 250.0,
+ "word_format": "one 32 bit word per line, 8 hex digits, two's complement, no comments",
+ "sources": {
+  "rantai.py": {
+   "path": "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/model/rantai-afib-lite/rantai.py",
+   "sha256": "90df6e5b457307d37158a96b6dbedb4e72be03f35349769a858918f6314f1fe5",
+   "role": "frozen behaviour"
+  },
+  "04015.turunan.hex": {
+   "path": "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtlplan2/fase0/04015.turunan.hex",
+   "sha256": "824fcddba95d4ccce8a484948ef392b242e724b4c30539247440a488d57e1710"
+  },
+  "04015.peaks.csv": {
+   "path": "/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtlplan2/fase5/04015.peaks.csv",
+   "sha256": "500e6c0b8065544a220bc6c9a08fe64669137c7aa97d2e9a33c6bdf8d31e13a9"
+  }
+ },
+ "counts": {
+  "frames": 450000,
+  "peaks": 4777,
+  "peaks_usable": 4777,
+  "sint_words": 60000,
+  "sint_pos": 5453,
+  "grid_rows": 16382,
+  "edge_rows": 14,
+  "stair_rows": 16396,
+  "grid_shift_differ_sim": 2048,
+  "grid_float_differ_sim": 0,
+  "sint_pos_usable": 5452
+ },
+ "interfaces": {
+  "constant": {
+   "SETENGAH_JENDELA": 18,
+   "window_words": 37,
+   "PITA_MS_ATAS": 360,
+   "delta_shift": 2
+  },
+  "flag_bits": [
+   "delta_valid",
+   "kem_qrs_valid",
+   "in_band",
+   "t_rejected",
+   "signal",
+   "is_qrs"
+  ],
+  "stair_flag_bits": [
+   "delta_valid",
+   "kem_qrs_valid",
+   "rule_enable",
+   "exp_in_band",
+   "exp_reject",
+   "grid_row"
+  ]
+ },
+ "checks": {
+  "model_kem_vs_csv_slope_mismatches": 0,
+  "driven_delta_vs_csv_sample_delta_differ": 2599,
+  "driven_delta_vs_csv_sample_delta_differ_nonzero": 6,
+  "in_band_rebuild_mismatches": 0,
+  "in_band_ones": 2029,
+  "t_rejected_rebuild_mismatches": 0,
+  "t_rejected_ones": 1909,
+  "signal_ones": 2590,
+  "is_qrs_ones": 2596,
+  "real_in_band_pairs_checked": 106,
+  "real_pairs_cross_vs_shift_differ": 0,
+  "real_pairs_cross_vs_float_differ": 0,
+  "grid_pairs": 16777216,
+  "grid_cross_vs_float_differ": 0,
+  "grid_cross_vs_shift_differ": 2048,
+  "grid_cross_vs_rational_differ_200k": 0,
+  "grid_simulated_pairs": 16382,
+  "grid_simulated_cross_vs_shift_differ": 2048,
+  "grid_simulated_cross_vs_float_differ": 0,
+  "synthetic_positions_with_a_verdict": 5452
+ },
+ "edge_reasons": [
+  "2*kem = 200000 < 200001, rejected",
+  "2*kem = kem_qrs exactly, cross form FALSE",
+  "2*kem = kem_qrs + 1",
+  "kem = 0 < 1/2, rejected",
+  "kem_qrs = 0, 2*0 < 0 false",
+  "delta 89: 89<<2 = 356 < 360, in band",
+  "delta 90: 90<<2 = 360 is NOT < 360, out of band",
+  "delta 91: out of band",
+  "largest measured slope, 2*kem < kem_qrs",
+  "largest measured slope at the exact boundary",
+  "no previous QRS, delta None",
+  "rule disabled by i_rule_enable, slope measured",
+  "the largest slope that still fits the report port (2*kem = 2**24-2) against the largest kem_qrs the 24 bit port carries (2**24-1): a rejection at the very top of both operands",
+  "the most negative derivative word: the slope 2**23 saturates the report word at 2**23-1 (m_overflow) while the rule compares the full 2**23, and 2*kem = 2**24 is above any kem_qrs this port can carry, so no rejection is possible: the one pair where report word and compared value differ"
+ ],
+ "files": {
+  "04015.fase7.counts.hex": {
+   "bytes": 99,
+   "sha256": "ee43138f397b02ee40379b59c050d83dde307ac39333cb5e5bc4670921a66275"
+  },
+  "04015.fase7.delta.hex": {
+   "bytes": 42993,
+   "sha256": "80ed6cdbd6e100b0403018b2476ec720782df1fd997bdfe4344cdf9e5e6d18f4"
+  },
+  "04015.fase7.flag.hex": {
+   "bytes": 42993,
+   "sha256": "cf7390a14bc19cc0f905ade3b6b0b5d805c5597546221f0e817504f6ea862dd9"
+  },
+  "04015.fase7.kem.hex": {
+   "bytes": 42993,
+   "sha256": "9d71b0110a40cd786c661460556315f0da480edf7ccb3281fdfd5db261080d99"
+  },
+  "04015.fase7.kemqrs.hex": {
+   "bytes": 42993,
+   "sha256": "c2461a00ef6bb621be10b999fd505b33fe5959d69236ba4e0cabee71c5aa1b4f"
+  },
+  "04015.fase7.pos.hex": {
+   "bytes": 42993,
+   "sha256": "ecdb8fe3a094e9bc086c72d0e481d98a5ae056990cc11f7442ef4f09363b182a"
+  },
+  "04015.grid.full.out": {
+   "bytes": 429,
+   "sha256": "58a82da2f0d43e506efeb59781e7c89c07206740faa7916d13190068bf549d05"
+  },
+  "04015.sintetis.kem.hex": {
+   "bytes": 49077,
+   "sha256": "219d46864b18a633e0a9994194b22949fa5bf88a9bee1050c8acbfd0391a9200"
+  },
+  "04015.sintetis.pos.hex": {
+   "bytes": 49077,
+   "sha256": "23b1367e64d71725a26850a76eac73611a26b0d9c3f90f07a04b2bb936cd0d79"
+  },
+  "04015.sintetis.turunan.hex": {
+   "bytes": 540000,
+   "sha256": "9305281ebc37ceef045e3eff12a84a6992fff9b2a1b4633d3f92f9c75be3f0e9"
+  },
+  "04015.stair.delta.hex": {
+   "bytes": 147564,
+   "sha256": "ff2fea6e0b671fd6482bb5f4ecfe08c87a383003feb86cc397950312dcd79ed7"
+  },
+  "04015.stair.der.hex": {
+   "bytes": 147564,
+   "sha256": "0676704b868c71455d61bd82ede5400361d177f814ee856c7be5dbb3dd019e5d"
+  },
+  "04015.stair.flag.hex": {
+   "bytes": 147564,
+   "sha256": "b03988873b801f987e17d585cd4e89c44708ee07ae18ac3a82f323a70cda5a18"
+  },
+  "04015.stair.sp.hex": {
+   "bytes": 147564,
+   "sha256": "b1a706d9eed8b28d76d23b8812151eea958427f2f413fb19e5b5539ef0a08d64"
+  },
+  "04015.turunan.hex": {
+   "bytes": 4050000,
+   "sha256": "824fcddba95d4ccce8a484948ef392b242e724b4c30539247440a488d57e1710"
+  }
+ }
+}

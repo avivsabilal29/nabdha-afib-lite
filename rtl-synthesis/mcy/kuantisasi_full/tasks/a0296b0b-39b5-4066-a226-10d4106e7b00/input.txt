@@ -1,0 +1,1 @@
+1 mutate -mode cnot0 -module acq_frontend -cell $procdff$391 -port Q -portbit 2 -ctrlbit 0 -wire quo_q[7] -wirebit 2 -src ../../../rtl/acq_frontend.sv:195.13-207.16

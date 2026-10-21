@@ -1,0 +1,30 @@
+[options]
+size 1000
+tags COVERED UNCOVERED NOCHANGE
+
+[script]
+read -sv ../../../rtl/afib_lite_pkg.sv
+read -sv ../../../rtl/acq_frontend.sv
+prep -top acq_frontend
+select -module acq_frontend
+
+[files]
+../../../rtl/afib_lite_pkg.sv
+../../../rtl/acq_frontend.sv
+
+[logic]
+sim_okay = (result("test_sim") == "PASS")
+
+if sim_okay:
+    tag("UNCOVERED")
+else:
+    tag("COVERED")
+
+[report]
+print("survived (bench blind): %d" % tags("UNCOVERED"))
+print("killed (bench caught it): %d" % tags("COVERED"))
+print("mutation coverage: %.2f%%" % (100.0*tags("COVERED")/(tags("COVERED")+tags("UNCOVERED")) if (tags("COVERED")+tags("UNCOVERED")) else 0.0))
+
+[test test_sim]
+expect PASS FAIL
+run bash $PRJDIR/test_sim.sh

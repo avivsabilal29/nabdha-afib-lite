@@ -1,0 +1,77 @@
+==> Run all tasks from queue
+  -> Reading configuration file.
+  -> Connecting to database.
+  -> Getting database statistics.
+Database contains 0 cached results.
+Queued 1000 "test_sim" tests.
+  ==> Running task d0e89de6-fab4-42ff-a7d6-775c5414e688 (test_sim)
+ 1 1 mutate -mode none
+  ==> Running task 87413da2-0995-4bb1-a712-0ec86af95320 (test_sim)
+ 1 2 mutate -mode inv -module acq_frontend -cell $procmux$224 -port A -portbit 2 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Running task 6a13690a-5093-4e12-b235-6671b2cb50ee (test_sim)
+ 1 3 mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:202$ternary$72 -port A -portbit 6 -src ../../../rtl/acq_frontend.sv:202.37-202.76
+  ==> Running task e163dc48-8a57-4948-9cb0-31eb09293182 (test_sim)
+ 1 4 mutate -mode const1 -module acq_frontend -cell $procdff$394 -port Q -portbit 2 -wire g_langkah[6].shifted -wirebit 3 -src ../../../rtl/acq_frontend.sv:193.30-193.37 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Running task fb13a0fe-c822-45f4-9949-47c8d50df63b (test_sim)
+ 1 5 mutate -mode inv -module acq_frontend -cell $procmux$227 -port B -portbit 3 -wire side_q[3] -wirebit 3 -src ../../../rtl/acq_frontend.sv:167.22-167.28 -src ../../../rtl/acq_frontend.sv:196.21-196.28 -src ../../../rtl/acq_frontend.sv:196.17-206.20
+  ==> Running task 8adb939f-44f2-4986-9acc-51fee0642274 (test_sim)
+ 1 6 mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:194$ge$93 -port Y -portbit 0 -wire g_langkah[8].enough -wirebit 0 -src ../../../rtl/acq_frontend.sv:194.30-194.36 -src ../../../rtl/acq_frontend.sv:194.41-194.60
+  ==> Running task f9034b65-f34a-42d4-a13c-67c96b987b8a (test_sim)
+ 1 7 mutate -mode const1 -module acq_frontend -cell $procmux$307 -port Y -portbit 18 -src ../../../rtl/acq_frontend.sv:256.13-256.20 -src ../../../rtl/acq_frontend.sv:256.9-301.12
+  ==> Running task a6f7276f-d18c-490a-ad32-093d8181eb90 (test_sim)
+ 1 8 mutate -mode cnot1 -module acq_frontend -cell $procdff$439 -port D -portbit 0 -ctrlbit 10 -src ../../../rtl/acq_frontend.sv:173.5-185.8
+  ==> Running task 1ee604f1-bf09-43d8-9ebe-6bf5fa57c102 (test_sim)
+ 1 9 mutate -mode cnot1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:222$ternary$18 -port Y -portbit 7 -ctrlbit 6 -wire quo_rnd -wirebit 7 -src ../../../rtl/acq_frontend.sv:222.22-222.29 -src ../../../rtl/acq_frontend.sv:222.33-222.91
+  ==> Running task 5c7c45b9-f99a-4e30-a972-fb950d667472 (test_sim)
+ 1 10 mutate -mode const1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:226$lt$22 -port A -portbit 9 -src ../../../rtl/acq_frontend.sv:226.58-226.80
+  ==> Running task 28b32362-d317-4295-a00a-2af1c0d94f8d (test_sim)
+ 1 11 mutate -mode inv -module acq_frontend -cell $../../../rtl/acq_frontend.sv:299$add$45 -port A -portbit 31 -src ../../../rtl/acq_frontend.sv:299.37-299.58
+  ==> Running task 8d1f0817-9613-4e97-a49b-9ac86f8c0187 (test_sim)
+ 1 12 mutate -mode inv -module acq_frontend -cell $procmux$356 -port B -portbit 40 -wire s_tuser -wirebit 4 -src ../../../rtl/acq_frontend.sv:75.37-75.44 -src ../../../rtl/acq_frontend.sv:174.13-174.20 -src ../../../rtl/acq_frontend.sv:174.9-184.12
+  ==> Running task 26026080-aae6-46bf-976f-cf26d04f7de9 (test_sim)
+ 1 13 mutate -mode const1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:315$ge$49 -port B -portbit 5 -wire i_rate_div -wirebit 5 -src ../../../rtl/acq_frontend.sv:79.37-79.47 -src ../../../rtl/acq_frontend.sv:315.17-315.41
+  ==> Running task 79109bf4-7196-40b6-ae69-b1899d9e12ae (test_sim)
+ 1 14 mutate -mode inv -module acq_frontend -cell $procdff$412 -port Q -portbit 10 -wire bit_q[2] -wirebit 10 -src ../../../rtl/acq_frontend.sv:166.22-166.27 -src ../../../rtl/acq_frontend.sv:195.13-207.16
+  ==> Running task bc8e73e1-67b7-4be1-b896-8d194d5fbe54 (test_sim)
+ 1 15 mutate -mode const1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:194$ge$53 -port Y -portbit 0 -wire g_langkah[0].enough -wirebit 0 -src ../../../rtl/acq_frontend.sv:194.30-194.36 -src ../../../rtl/acq_frontend.sv:194.41-194.60
+  ==> Running task f82ade81-2e82-4785-86ef-07d76a323e76 (test_sim)
+ 1 16 mutate -mode const1 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:194$ge$113 -port Y -portbit 0 -wire g_langkah[12].enough -wirebit 0 -src ../../../rtl/acq_frontend.sv:194.30-194.36 -src ../../../rtl/acq_frontend.sv:194.41-194.60
+  ==> Running task 2c9d2ee8-bff8-4789-9086-c48ed9add4ff (test_sim)
+ 1 17 mutate -mode const0 -module acq_frontend -cell $../../../rtl/acq_frontend.sv:227$ternary$25 -port Y -portbit 7 -wire word_f -wirebit 11 -src ../../../rtl/acq_frontend.sv:233.29-233.35 -src ../../../rtl/acq_frontend.sv:227.38-227.95
+  ==> Running task d28c21ca-78b6-4f78-8be5-78a6c2a89d8c (test_sim)
+ 1 18 mutate -mode cnot1 -module acq_frontend -cell $procmux$304 -port A -portbit 23 -ctrlbit 28 -src ../../../rtl/acq_frontend.sv:290.17-290.33 -src ../../../rtl/acq_frontend.sv:290.13-300.16
+  ==> Running task 257cb3f8-d024-4538-8658-e9b45429c005 (test_sim)
+ 1 19 mutate -mode const1 -module acq_frontend -cell $procmux$284 -port B -portbit 12 -src ../../../rtl/acq_frontend.sv:310.13-310.20 -src ../../../rtl/acq_frontend.sv:310.9-325.12
+  ==> Running task 25bff70e-5590-4042-93ea-0ccd7087fe1c (test_sim)
+ 1 20 mutate -mode cnot1 -module acq_frontend -cell $procmux$356 -port B -portbit 34 -ctrlbit 20 -wire s_tlast -wirebit 0 -src ../../../rtl/acq_frontend.sv:74.37-74.44 -src ../../../rtl/acq_frontend.sv:174.13-174.20 -src ../../../rtl/acq_frontend.sv:174.9-184.12
+  ==> Finishing task 6a13690a-5093-4e12-b235-6671b2cb50ee (test_sim)
+Traceback (most recent call last):
+  File "/home/avivsabilalm/eda/oss-cad-suite/libexec/mcy", line 1028, in <module>
+    cli(None)
+  File "/home/avivsabilalm/eda/oss-cad-suite/lib/python3.11/site-packages/click/core.py", line 1631, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/avivsabilalm/eda/oss-cad-suite/lib/python3.11/site-packages/click/core.py", line 1552, in main
+    rv = self.invoke(ctx)
+         ^^^^^^^^^^^^^^^^
+  File "/home/avivsabilalm/eda/oss-cad-suite/lib/python3.11/site-packages/click/core.py", line 2032, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/avivsabilalm/eda/oss-cad-suite/lib/python3.11/site-packages/click/core.py", line 1415, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/avivsabilalm/eda/oss-cad-suite/lib/python3.11/site-packages/click/core.py", line 910, in invoke
+    return callback(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/avivsabilalm/eda/oss-cad-suite/libexec/mcy", line 801, in run_command
+    wait_tasks(nproc)
+  File "/home/avivsabilalm/eda/oss-cad-suite/libexec/mcy", line 371, in wait_tasks
+    task.poll()
+  File "/home/avivsabilalm/eda/oss-cad-suite/libexec/mcy", line 404, in poll
+    self.callback()
+  File "/home/avivsabilalm/eda/oss-cad-suite/libexec/mcy", line 715, in callback
+    with open("tasks/%s/output.txt" % task_id, "r") as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'tasks/6a13690a-5093-4e12-b235-6671b2cb50ee/output.txt'
+rc=1
+rc=1

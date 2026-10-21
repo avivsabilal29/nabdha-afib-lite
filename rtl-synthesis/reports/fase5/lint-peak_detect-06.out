@@ -1,0 +1,10 @@
+run_lint.sh: top=peak_detect sources=2 timing=0
+  ../rtl/afib_lite_pkg.sv
+  ../rtl/peak_detect.sv
+%Warning-WIDTHTRUNC: ../rtl/peak_detect.sv:870:41: Operator ASSIGNDLY expects 16 bits on the Assign RHS, but Assign RHS's VARREF 'med_w' generates 17 bits.
+                                                 : ... note: In instance 'peak_detect'
+  870 |                             antre_q[wi] <= med_w;
+      |                                         ^~
+                     ... For warning description see https://verilator.org/warn/WIDTHTRUNC?v=5.020
+                     ... Use "/* verilator lint_off WIDTHTRUNC */" and lint_on around source to disable this message.
+%Error: Exiting due to 1 warning(s)

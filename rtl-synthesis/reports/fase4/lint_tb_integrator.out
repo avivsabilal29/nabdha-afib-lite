@@ -1,0 +1,5 @@
+run_lint.sh: top=tb_integrator sources=3 timing=1
+  ../rtl/afib_lite_pkg.sv
+  ../rtl/tb/tb_integrator.sv
+  ../rtl/integrator.sv
+lint clean: top=tb_integrator sources=3 (/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl-synthesis/debroot/usr/bin/verilator_bin)

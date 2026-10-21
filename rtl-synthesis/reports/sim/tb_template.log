@@ -1,0 +1,4 @@
+VCD info: dumpfile reports/sim/tb_template.vcd opened for output.
+samples driven: 64, output pulses: 64
+PASS: tb_template
+/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl-synthesis/template/tb_template.sv:86: $finish called at 6175000 (1ps)

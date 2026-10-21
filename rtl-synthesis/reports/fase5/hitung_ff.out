@@ -1,0 +1,87 @@
+peak_detect flip-flop bits by construction, depth x width (plan 38 D1)
+
+register                                                                  depth    width       bits
+-- penampan kandidat penelusuran balik (bpk_vec)
+bpk_vec                                                                       1    14592      14592   (line 261)
+  subtotal                                                                                    14592
+-- garis tunda jalur data (sel_vec, hp_vec, bes_vec)
+sel_vec                                                                       1     1782       1782   (line 255)
+hp_vec                                                                        1     1352       1352   (line 256)
+bes_vec                                                                       1     1080       1080   (line 257)
+  subtotal                                                                                     4214
+-- sub-tahap RR (deret, antre, rih, ra1, pemb, peny, semai, gagal, jeda)
+deret_q                                                                       8       16        128   (line 285)
+deret_len_q                                                                   1        4          4   (line 286)
+deret_sum_q                                                                   1       20         20   (line 287)
+antre_q                                                                       8       16        128   (line 288)
+antre_len_q                                                                   1        4          4   (line 289)
+antre_sum_q                                                                   1       20         20   (line 290)
+rih_q                                                                        32       16        512   (line 291)
+rih_len_q                                                                     1        6          6   (line 292)
+ra1_q                                                                         1       20         20   (line 293)
+pemb_q                                                                        1       20         20   (line 294)
+peny_q                                                                        1        4          4   (line 295)
+gagal_q                                                                       1       32         32   (line 296)
+jeda_q                                                                        1       32         32   (line 297)
+semai_q                                                                       1       32         32   (line 298)
+  subtotal                                                                                      962
+-- pelacak fitur dan QRS (i_qrs, i_qrs_pk, kem_qrs dan benderanya)
+i_qrs_q                                                                       1       32         32   (line 273)
+i_qrs_v_q                                                                     1        1          1   (line 274)
+i_qrs_pk_q                                                                    1       32         32   (line 275)
+i_qrs_pk_v_q                                                                  1        1          1   (line 276)
+kem_qrs_q                                                                     1       24         24   (line 277)
+kem_qrs_v_q                                                                   1        1          1   (line 278)
+  subtotal                                                                                       91
+-- state ambang adaptif (spki, npki, spkf, npkf)
+spki_q                                                                        1       33         33   (line 269)
+npki_q                                                                        1       33         33   (line 270)
+spkf_q                                                                        1       33         33   (line 271)
+npkf_q                                                                        1       33         33   (line 272)
+  subtotal                                                                                      132
+-- introspeksi aditif (dbg_q, dbg_valid_q)
+dbg_q                                                                         1      448        448   (line 316)
+dbg_valid_q                                                                   1        1          1   (line 317)
+  subtotal                                                                                      449
+-- pencacah ambang_state (delapan kali 32 bit)
+c_calon_q                                                                     1       32         32   (line 303)
+c_cari_q                                                                      1       32         32   (line 304)
+c_diper_q                                                                     1       32         32   (line 305)
+c_ditol_q                                                                     1       32         32   (line 306)
+c_terima_q                                                                    1       32         32   (line 307)
+c_beri_q                                                                      1       32         32   (line 308)
+c_penanda_q                                                                   1       32         32   (line 309)
+c_langkah_q                                                                   1       32         32   (line 310)
+  subtotal                                                                                      256
+-- pemindai amplop dan pencacah puncak (scan_q, pk_cnt_q)
+pk_cnt_q                                                                      1       32         32   (line 262)
+scan_q                                                                        1       32         32   (line 315)
+  subtotal                                                                                       64
+-- keluaran aliran, sisi, dan introspeksi (m_*, d_*, o_beat_count)
+m_tdata                                                                       1       33         33   (line 87)
+m_tvalid                                                                      1        1          1   (line 88)
+m_overflow                                                                    1        1          1   (line 89)
+m_tlast                                                                       1        1          1   (line 90)
+m_tuser                                                                       1        8          8   (line 91)
+m_sample_idx                                                                  1       32         32   (line 92)
+m_ev_valid                                                                    1        1          1   (line 95)
+m_ev_kind                                                                     1        3          3   (line 96)
+m_ev_idx                                                                      1       32         32   (line 97)
+m_ev_val                                                                      1       32         32   (line 98)
+d_valid                                                                       1        1          1   (line 101)
+d_thr                                                                         1       30         30   (line 102)
+d_pk                                                                          1       30         30   (line 103)
+o_beat_count                                                                  1       32         32   (line 106)
+  subtotal                                                                                      237
+
+TOTAL flip-flop bit = 20997
+
+Rencana 38 (final38.md:1850-1858), anggaran state seluruh rantai:
+  penampan kandidat penelusuran balik, 128 entri 112 bit        14336
+  jalur data, tujuh ring                                         8152
+  antrean dan riwayat RR                                          896
+  lapisan fitur                                                  1232
+  penampan keluaran keputusan                                    1024
+  total rantai                                                  25640
+
+modul ini 20997 bit, jadi 4643 bit di bawah anggaran seluruh rantai

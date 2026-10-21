@@ -1,0 +1,9 @@
+run_sim.sh: tb=../rtl/tb/tb_kuantisasi.sv sources=2 plusargs=3
+  plusargs forwarded to vvp: +VECTOR=/home/avivsabilalm/.hermes/cache/scratch/rtlplan2/fase0/04015.NOT_HERE.hex +MANIFEST=/home/avivsabilalm/.hermes/cache/scratch/rtlplan2/fase0/04015.manifest.json +STIM=/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/tb/vektor/04015.stimulus.hex
+  compiled first (packages): ../rtl/afib_lite_pkg.sv
+== tb_kuantisasi, Fase 2, record 04015 ==
+INFO  manifest [/home/avivsabilalm/.hermes/cache/scratch/rtlplan2/fase0/04015.manifest.json]
+INFO  vector   [/home/avivsabilalm/.hermes/cache/scratch/rtlplan2/fase0/04015.NOT_HERE.hex]
+INFO  stimulus [/home/avivsabilalm/hackathon-semiconductor-programs/nabdha-afib-lite/rtl/tb/vektor/04015.stimulus.hex]
+FATAL cannot open /home/avivsabilalm/.hermes/cache/scratch/rtlplan2/fase0/04015.NOT_HERE.hex
+../rtl/tb/tb_kuantisasi.sv:253: $finish called at 0 (1ps)

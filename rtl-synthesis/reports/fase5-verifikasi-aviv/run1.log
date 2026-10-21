@@ -1,0 +1,22 @@
+run_sim.sh: tb=../rtl/tb/tb_peak_detect.sv sources=2 plusargs=2
+  plusargs forwarded to vvp: +VECTOR=../rtl/tb/vektor/fase5-verifikasi-aviv +GOLD=/home/avivsabilalm/.hermes/cache/scratch/rtlplan2/vektor
+  compiled first (packages): ../rtl/afib_lite_pkg.sv
+../rtl/peak_detect.sv:602: warning: returning 'bx for out of bounds array access deret_q[-1].
+../rtl/peak_detect.sv:603: warning: returning 'bx for out of bounds array access antre_q[-1].
+../rtl/peak_detect.sv:609: warning: returning 'bx for out of bounds array access rih_q[-1].
+tb_peak_detect: kind ev 921 got 2 want beat 1
+tb_peak_detect: kind ev 982 got 2 want beat 1
+tb_peak_detect: d_thr ev 983 got 195877376 want 157394329
+tb_peak_detect: d_thr ev 984 got 168900049 want 167295513
+tb_peak_detect: kind ev 985 got 2 want beat 1
+tb_peak_detect: d_thr ev 985 got 166238060 want 164633524
+tb_peak_detect: d_thr ev 986 got 176952761 want 149236087
+tb_peak_detect: d_thr ev 987 got 172991782 want 145275108
+tb_peak_detect: d_thr ev 988 got 152086481 want 152588085
+tb_peak_detect: kind ev 989 got 2 want beat 1
+tb_peak_detect: idx  ev 1791 got 172277 want 172509
+tb_peak_detect: kind ev 1791 got 2 want beat 1
+tb_peak_detect: idx  ev 1792 got 172277 want 172647
+tb_peak_detect: idx  ev 1793 got 172277 want 172711
+tb_peak_detect: idx  ev 1827 got 172277 want 175913
+tb_peak_detect: idx  ev 1828 got 172277 want 176033
