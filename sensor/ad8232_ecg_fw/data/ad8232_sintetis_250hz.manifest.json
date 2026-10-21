@@ -1,0 +1,47 @@
+{
+  "sesi": "sintetis",
+  "dibuat": "2026-10-21T09:47:36",
+  "perintah": "python tools/ecg_ingest.py --from-bin data/ad8232_sintetis_250hz.bin --sesi sintetis",
+  "berkas_bin": "ad8232_sintetis_250hz.bin",
+  "jumlah_sampel": 15000,
+  "durasi_s": 60.0,
+  "laju_hz": 250,
+  "skala": "200 cacah per mV acuan input, dijepit +-2047",
+  "format_kata_rtl": "s_tdata = {cacah[11:0], 4'b0000}; s_tuser = {weak, gap, clamp}",
+  "format_hex": "4 digit heks per baris: [14] weak [13] gap [12] clamp [11:0] cacah (komplemen dua)",
+  "header_firmware": {
+    "fw_version": 256,
+    "kit_gain": 100,
+    "adc_full_scale_mv": 3100,
+    "sample_hz": 250,
+    "baseline_mv": 1650,
+    "counts_per_mv": 200,
+    "adc_source": 0,
+    "status": 0
+  },
+  "header_terakhir": {
+    "fw_version": 256,
+    "kit_gain": 100,
+    "adc_full_scale_mv": 3100,
+    "sample_hz": 250,
+    "baseline_mv": 1650,
+    "counts_per_mv": 200,
+    "adc_source": 0,
+    "status": 0
+  },
+  "statistik_aliran": {
+    "bytes_in": 123866,
+    "frames_ok": 15000,
+    "header_frames": 480,
+    "checksum_errors": 0,
+    "bytes_skipped": 26,
+    "lost_samples": 0,
+    "seq_breaks": 0
+  },
+  "ringkasan_sinyal": {
+    "cacah_min": -45,
+    "cacah_maks": 2047,
+    "persen_gap": 0.833,
+    "persen_clamp": 0.833
+  }
+}

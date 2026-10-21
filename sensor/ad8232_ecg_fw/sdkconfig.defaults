@@ -1,0 +1,10 @@
+# Tick FreeRTOS 1 kHz (vTaskDelay(1) = 1 ms saat kalibrasi dasar)
+CONFIG_FREERTOS_HZ=1000
+# Konsol tetap di UART0 115200 (port USB DevKit)
+CONFIG_ESP_CONSOLE_UART_DEFAULT=y
+CONFIG_ESP_CONSOLE_UART_BAUDRATE=115200
+# Flash 4 MB (ESP32-WROOM-32)
+CONFIG_ESPTOOLPY_FLASHSIZE_4MB=y
+# Log boot seperlunya; di mode biner log dimatikan saat runtime
+CONFIG_BOOTLOADER_LOG_LEVEL_WARN=y
+CONFIG_LOG_DEFAULT_LEVEL_INFO=y

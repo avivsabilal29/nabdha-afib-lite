@@ -1,0 +1,7 @@
+.pio/
+.vscode/
+sdkconfig.esp32dev*
+sdkconfig.old
+data/*.bin
+host_test/test_stream
+host_test/test_stream.exe
