@@ -1,0 +1,8 @@
+{
+  "record": "04015",
+  "source": "rtl/tb/vektor/04015.stimulus.hex",
+  "words": 450000,
+  "bytes": 900000,
+  "sha256": "2f9d77a54f5c91fa5a2d344dbe729cc5fefc3c08ec1ccf899d1b9a7cf43ebe8f",
+  "format": "uint16 little endian, bit 11..0 hitungan 12 bit bertanda, bit 14..12 penanda"
+}

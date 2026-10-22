@@ -1,0 +1,4 @@
+# PC: acuan model, tangkap serial, banding
+numpy>=1.22
+pyserial>=3.5
+# wfdb tidak wajib (acuan_model.py punya pembaca .atr sendiri)

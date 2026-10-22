@@ -1,0 +1,7 @@
+.pio/
+.vscode/
+sdkconfig.dut
+sdkconfig.old
+host_test/host_run
+host_test/host_run.exe
+host_test/*.log

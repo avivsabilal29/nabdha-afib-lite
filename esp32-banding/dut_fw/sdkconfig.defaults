@@ -1,0 +1,27 @@
+# ---- ESP32 DUT benchmark AFIB-LITE ----
+# CPU 240 MHz saat boot; perintah FREQ menguncinya ke 80/160/240 lewat esp_pm
+CONFIG_ESP_DEFAULT_CPU_FREQ_MHZ_240=y
+CONFIG_FREERTOS_HZ=1000
+# optimasi kinerja (-O2) untuk seluruh proyek
+CONFIG_COMPILER_OPTIMIZATION_PERF=y
+# flash 4 MB, tabel partisi sendiri (aplikasi 3 MB)
+CONFIG_ESPTOOLPY_FLASHSIZE_4MB=y
+CONFIG_PARTITION_TABLE_CUSTOM=y
+CONFIG_PARTITION_TABLE_CUSTOM_FILENAME="partitions.csv"
+# konsol UART0 lewat USB, 115200 baud
+CONFIG_ESP_CONSOLE_UART_CUSTOM=y
+CONFIG_ESP_CONSOLE_UART_CUSTOM_NUM_0=y
+CONFIG_ESP_CONSOLE_UART_TX_GPIO=1
+CONFIG_ESP_CONSOLE_UART_RX_GPIO=3
+CONFIG_ESP_CONSOLE_UART_BAUDRATE=115200
+# manajemen daya: DFS + light sleep otomatis (dipakai mode RT, dimatikan di mode lain)
+CONFIG_PM_ENABLE=y
+CONFIG_FREERTOS_USE_TICKLESS_IDLE=y
+CONFIG_FREERTOS_IDLE_TIME_BEFORE_SLEEP=3
+# task watchdog mati: fase bench sengaja memakai core 1 penuh selama puluhan detik
+CONFIG_ESP_TASK_WDT_INIT=n
+# log seperlunya, supaya tidak ada teks liar di port saat pengukuran
+CONFIG_BOOTLOADER_LOG_LEVEL_WARN=y
+CONFIG_LOG_DEFAULT_LEVEL_WARN=y
+# Wi-Fi dan Bluetooth tidak pernah dinyalakan oleh firmware ini
+CONFIG_BT_ENABLED=n

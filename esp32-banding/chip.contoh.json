@@ -1,0 +1,9 @@
+{
+  "_petunjuk": "Salin ke chip.json lalu isi dari sisi chip. Biarkan null bila belum ada. Dipakai: banding_esp32.py analisis DIR --chip chip.json",
+  "f_clk_mhz": 100,
+  "cyc_per_sample": null,
+  "cyc_per_window": 136,
+  "p_mw": null,
+  "e_per_window_uj": null,
+  "sumber": "f_clk dari RATE_DIV KV260 100 MHz; cyc_per_window dari rtl/features.sv (136 siklus per jendela); p_mw dari SKY130 report_power atau INA260 KV260"
+}

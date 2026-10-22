@@ -1,0 +1,9 @@
+hasil/
+acuan/
+dut_fw/host_test/host_run
+dut_fw/host_test/host_run.exe
+dut_fw/host_test/*.log
+logger_fw/host_test/uji_seg
+logger_fw/host_test/uji_seg.exe
+chip.json
+__pycache__/
