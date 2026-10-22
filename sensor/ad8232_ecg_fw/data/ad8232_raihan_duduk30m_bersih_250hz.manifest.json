@@ -1,0 +1,58 @@
+{
+  "sesi": "raihan_duduk30m_bersih",
+  "dibuat": "2026-10-22T19:11:51",
+  "perintah": "tools/potong_bersih.py --bin data/ad8232_raihan_duduk30m_250hz.bin --skip-seconds 30 --mulai 562 --akhir 851 --sesi raihan_duduk30m_bersih",
+  "berkas_bin": "ad8232_raihan_duduk30m_250hz.bin",
+  "jumlah_sampel": 72250,
+  "durasi_s": 289.0,
+  "laju_hz": 250,
+  "skala": "200 cacah per mV acuan input, dijepit +-2047",
+  "format_kata_rtl": "s_tdata = {cacah[11:0], 4'b0000}; s_tuser = {weak, gap, clamp}",
+  "format_hex": "4 digit heks per baris: [14] weak [13] gap [12] clamp [11:0] cacah (komplemen dua)",
+  "header_firmware": {
+    "fw_version": 257,
+    "kit_gain": 1100,
+    "adc_full_scale_mv": 3100,
+    "sample_hz": 250,
+    "baseline_mv": 1674,
+    "counts_per_mv": 200,
+    "adc_source": 1,
+    "status": 3
+  },
+  "header_terakhir": {
+    "fw_version": 257,
+    "kit_gain": 1100,
+    "adc_full_scale_mv": 3100,
+    "sample_hz": 250,
+    "baseline_mv": 1674,
+    "counts_per_mv": 200,
+    "adc_source": 1,
+    "status": 3
+  },
+  "statistik_aliran": {
+    "bytes_in": 3778455,
+    "frames_ok": 457424,
+    "header_frames": 14640,
+    "checksum_errors": 0,
+    "bytes_skipped": 1943,
+    "lost_samples": 0,
+    "seq_breaks": 0
+  },
+  "ringkasan_sinyal": {
+    "cacah_min": -134,
+    "cacah_maks": 269,
+    "persen_gap": 0.0,
+    "persen_clamp": 0.992
+  },
+  "potongan": {
+    "sumber_bin": "ad8232_raihan_duduk30m_250hz.bin",
+    "buang_awal_s": 30.0,
+    "mulai_s_sesudah_buangan": 562.0,
+    "akhir_s_sesudah_buangan": 851.0,
+    "indeks_sampel_bin": [
+      148000,
+      220250
+    ],
+    "catatan": "statistik_aliran dihitung atas seluruh .bin, bukan hanya potongan"
+  }
+}

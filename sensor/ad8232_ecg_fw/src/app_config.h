@@ -10,7 +10,7 @@
 /*  Versi firmware (masuk ke rekaman header)                           */
 /* ------------------------------------------------------------------ */
 #define FW_VERSION_MAJOR 1
-#define FW_VERSION_MINOR 0
+#define FW_VERSION_MINOR 1
 
 /* ------------------------------------------------------------------ */
 /*  Pin — sama dengan firmware lama ADB232_HeartRate.ino               */
@@ -33,6 +33,11 @@
 #define SUBSAMPLE_HZ     2000
 #define SUBSAMPLES       8
 #define SAMPLE_HZ        (SUBSAMPLE_HZ / SUBSAMPLES)   /* = 250 */
+
+/* gap dari LO+/LO-: dipasang bila LO tinggi di >= N dari SUBSAMPLES bacaan satu sampel.
+ * 1 = paling peka (fw 1.0). 8 = LO harus tinggi terus 4 ms, supaya puncak dengung 50 Hz
+ * yang sesaat menyentuh ambang lead-off tidak ikut ditandai gap (fw 1.1, 22 Okt 2026). */
+#define LO_GAP_MIN_SUBSAMPLES  8
 
 /* ------------------------------------------------------------------ */
 /*  Skala kata sampel (kontrak RTL)                                    */

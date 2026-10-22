@@ -243,6 +243,7 @@ static void task_sample(void *arg)
 
     int32_t sum_mv   = 0;
     int     n        = 0;
+    int     lo_n     = 0;        /* jumlah subsampel dengan LO tinggi */
     uint8_t flags    = 0;
     bool    carry_gap = false;   /* sampel sebelumnya hilang -> tandai sampel ini */
 
@@ -263,11 +264,14 @@ static void task_sample(void *arg)
 
         sum_mv += mv;
         n++;
-        if (lo)   flags |= ECG_FLAG_GAP;
+        if (lo)   lo_n++;
         if (rail) flags |= ECG_FLAG_CLAMP;
         s_lead_off = lo;
 
         if (n >= SUBSAMPLES) {
+            if (lo_n >= LO_GAP_MIN_SUBSAMPLES) {
+                flags |= ECG_FLAG_GAP;
+            }
             if (carry_gap) {
                 flags |= ECG_FLAG_GAP;
                 carry_gap = false;
@@ -282,6 +286,7 @@ static void task_sample(void *arg)
             }
             sum_mv = 0;
             n      = 0;
+            lo_n   = 0;
             flags  = 0;
         }
     }

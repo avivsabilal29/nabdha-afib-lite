@@ -365,6 +365,11 @@ Alasan desainnya:
 - **ISR hanya membangunkan task.** `adc_oneshot_read()` tidak boleh dipanggil di dalam ISR, jadi pembacaan ADC dilakukan di task berprioritas tinggi yang dipasang di core 1, terpisah dari core 0 yang mengurus UART.
 - **`ulTaskNotifyTake(pdFALSE)`**: ketukan yang tertunda tidak hilang. Kalau task sempat tertinggal lebih dari 1 ms, sampel itu diberi `gap` supaya jujur soal waktunya.
 - **Queue** memisahkan pencuplikan dari pengiriman. Kalau UART tersendat, sampel yang terbuang ditandai `gap` pada sampel berikutnya.
+- **`gap` dari LO+/LO- (fw 1.1):** sampel diberi `gap` bila LO tinggi di sedikitnya
+  `LO_GAP_MIN_SUBSAMPLES` dari 8 bacaan (bawaan 8, artinya lead-off terus-menerus 4 ms). Di fw 1.0
+  satu bacaan saja sudah cukup, sehingga puncak dengung 50 Hz yang sesaat menyentuh ambang
+  lead-off AD8232 membuat `gap` berkedip tiap 20 ms (cek kualitas 22 Okt 2026). Elektroda yang
+  benar-benar lepas tetap terdeteksi karena LO-nya tinggi terus.
 - **Skala:** kalibrasi ADC bawaan ESP-IDF (`adc_cali_raw_to_voltage`, memakai data pabrik di eFuse) membuat 1 langkah = 1 mV di OUT. Untuk gain 100: Σ8 >> 2 = 2 × rata-rata = 200 cacah per mV, persis catatan 44 bagian 9.
 - **Dasar sinyal** (REFOUT, sekitar 1,65 V) diukur 2 detik saat boot setelah elektroda terpasang dan dicatat di header.
 - **Mode biner mematikan semua log** (`esp_log_level_set("*", ESP_LOG_NONE)`) supaya teks tidak menyusup ke aliran. Teks boot ROM sebelum `app_main` tetap muncul, dan pengurai melewatinya lewat sinkronisasi `A5 5A` + checksum.

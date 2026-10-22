@@ -1,0 +1,955 @@
+merekam 1830 s dari COM14 @ 115200 ... (Ctrl+C untuk berhenti lebih awal)
+  t=  1.1s sampel=     0 cacah_terakhir=     0 gap_1s=  0 cksum_err=0 hilang=0
+  t=  2.1s sampel=     0 cacah_terakhir=     0 gap_1s=  0 cksum_err=0 hilang=0
+  t=  4.3s sampel=   496 cacah_terakhir=     0 gap_1s=  0 cksum_err=0 hilang=0
+  t=  6.2s sampel=   992 cacah_terakhir=    35 gap_1s=  0 cksum_err=0 hilang=0
+  t=  8.2s sampel=  1488 cacah_terakhir=   -31 gap_1s=  0 cksum_err=0 hilang=0
+  t= 10.2s sampel=  1984 cacah_terakhir=   -18 gap_1s=  0 cksum_err=0 hilang=0
+  t= 12.2s sampel=  2480 cacah_terakhir=    28 gap_1s=  0 cksum_err=0 hilang=0
+  t= 14.2s sampel=  2976 cacah_terakhir=   -23 gap_1s=  0 cksum_err=0 hilang=0
+  t= 16.2s sampel=  3472 cacah_terakhir=   -40 gap_1s=  0 cksum_err=0 hilang=0
+  t= 18.1s sampel=  3968 cacah_terakhir=     4 gap_1s=  0 cksum_err=0 hilang=0
+  t= 20.1s sampel=  4464 cacah_terakhir=    23 gap_1s=  0 cksum_err=0 hilang=0
+  t= 22.1s sampel=  4960 cacah_terakhir=   -26 gap_1s=  0 cksum_err=0 hilang=0
+  t= 24.1s sampel=  5456 cacah_terakhir=   -50 gap_1s=  0 cksum_err=0 hilang=0
+  t= 26.1s sampel=  5952 cacah_terakhir=    17 gap_1s=  0 cksum_err=0 hilang=0
+  t= 28.1s sampel=  6448 cacah_terakhir=    -2 gap_1s=  0 cksum_err=0 hilang=0
+  t= 30.0s sampel=  6944 cacah_terakhir=   -35 gap_1s=  0 cksum_err=0 hilang=0
+  t= 32.0s sampel=  7440 cacah_terakhir=   -27 gap_1s=  0 cksum_err=0 hilang=0
+  t= 34.0s sampel=  7936 cacah_terakhir=    31 gap_1s=  0 cksum_err=0 hilang=0
+  t= 36.0s sampel=  8432 cacah_terakhir=    -2 gap_1s=  0 cksum_err=0 hilang=0
+  t= 38.0s sampel=  8928 cacah_terakhir=   -16 gap_1s=  0 cksum_err=0 hilang=0
+  t= 40.0s sampel=  9424 cacah_terakhir=   -21 gap_1s=  0 cksum_err=0 hilang=0
+  t= 42.0s sampel=  9920 cacah_terakhir=    35 gap_1s=  0 cksum_err=0 hilang=0
+  t= 43.9s sampel= 10416 cacah_terakhir=    -9 gap_1s=  0 cksum_err=0 hilang=0
+  t= 45.9s sampel= 10912 cacah_terakhir=   -64 gap_1s=  0 cksum_err=0 hilang=0
+  t= 47.9s sampel= 11408 cacah_terakhir=    16 gap_1s=  0 cksum_err=0 hilang=0
+  t= 49.9s sampel= 11904 cacah_terakhir=    26 gap_1s=  0 cksum_err=0 hilang=0
+  t= 51.9s sampel= 12400 cacah_terakhir=   -30 gap_1s=  0 cksum_err=0 hilang=0
+  t= 53.9s sampel= 12896 cacah_terakhir=    -6 gap_1s=  0 cksum_err=0 hilang=0
+  t= 55.8s sampel= 13392 cacah_terakhir=    20 gap_1s=  0 cksum_err=0 hilang=0
+  t= 57.8s sampel= 13888 cacah_terakhir=    -5 gap_1s=  0 cksum_err=0 hilang=0
+  t= 59.8s sampel= 14384 cacah_terakhir=   -15 gap_1s=  0 cksum_err=0 hilang=0
+  t= 61.8s sampel= 14880 cacah_terakhir=   -16 gap_1s=  0 cksum_err=0 hilang=0
+  t= 63.8s sampel= 15376 cacah_terakhir=    41 gap_1s=  0 cksum_err=0 hilang=0
+  t= 65.8s sampel= 15872 cacah_terakhir=   -38 gap_1s=  0 cksum_err=0 hilang=0
+  t= 67.7s sampel= 16368 cacah_terakhir=    87 gap_1s=  0 cksum_err=0 hilang=0
+  t= 69.7s sampel= 16864 cacah_terakhir=    41 gap_1s=  0 cksum_err=0 hilang=0
+  t= 71.7s sampel= 17360 cacah_terakhir=    12 gap_1s=  0 cksum_err=0 hilang=0
+  t= 73.7s sampel= 17856 cacah_terakhir=   -18 gap_1s=  0 cksum_err=0 hilang=0
+  t= 75.7s sampel= 18352 cacah_terakhir=   -92 gap_1s=  0 cksum_err=0 hilang=0
+  t= 77.7s sampel= 18848 cacah_terakhir=   -17 gap_1s=  0 cksum_err=0 hilang=0
+  t= 79.6s sampel= 19344 cacah_terakhir=    85 gap_1s=  0 cksum_err=0 hilang=0
+  t= 81.6s sampel= 19840 cacah_terakhir=   -10 gap_1s=  0 cksum_err=0 hilang=0
+  t= 83.6s sampel= 20336 cacah_terakhir=    -3 gap_1s=  0 cksum_err=0 hilang=0
+  t= 85.6s sampel= 20832 cacah_terakhir=    -1 gap_1s=  0 cksum_err=0 hilang=0
+  t= 87.6s sampel= 21328 cacah_terakhir=     1 gap_1s=  0 cksum_err=0 hilang=0
+  t= 89.6s sampel= 21824 cacah_terakhir=    -2 gap_1s=  0 cksum_err=0 hilang=0
+  t= 91.6s sampel= 22320 cacah_terakhir=    -2 gap_1s=  0 cksum_err=0 hilang=0
+  t= 93.5s sampel= 22816 cacah_terakhir=     0 gap_1s=  0 cksum_err=0 hilang=0
+  t= 95.5s sampel= 23312 cacah_terakhir=     7 gap_1s=  0 cksum_err=0 hilang=0
+  t= 97.5s sampel= 23808 cacah_terakhir=     0 gap_1s=  0 cksum_err=0 hilang=0
+  t= 99.5s sampel= 24304 cacah_terakhir=    -3 gap_1s=  0 cksum_err=0 hilang=0
+  t=101.5s sampel= 24800 cacah_terakhir=     1 gap_1s=  0 cksum_err=0 hilang=0
+  t=103.5s sampel= 25296 cacah_terakhir=     5 gap_1s=  0 cksum_err=0 hilang=0
+  t=105.4s sampel= 25792 cacah_terakhir=    -1 gap_1s=  0 cksum_err=0 hilang=0
+  t=107.4s sampel= 26288 cacah_terakhir=    -2 gap_1s=  0 cksum_err=0 hilang=0
+  t=109.4s sampel= 26784 cacah_terakhir=    -1 gap_1s=  0 cksum_err=0 hilang=0
+  t=111.4s sampel= 27280 cacah_terakhir=    -1 gap_1s=  0 cksum_err=0 hilang=0
+  t=113.4s sampel= 27776 cacah_terakhir=    -3 gap_1s=  0 cksum_err=0 hilang=0
+  t=115.4s sampel= 28272 cacah_terakhir=    -1 gap_1s=  0 cksum_err=0 hilang=0
+  t=117.3s sampel= 28768 cacah_terakhir=    -2 gap_1s=  0 cksum_err=0 hilang=0
+  t=119.3s sampel= 29264 cacah_terakhir=    12 gap_1s=  0 cksum_err=0 hilang=0
+  t=121.3s sampel= 29760 cacah_terakhir=    -3 gap_1s=  0 cksum_err=0 hilang=0
+  t=123.3s sampel= 30256 cacah_terakhir=     0 gap_1s=  0 cksum_err=0 hilang=0
+  t=125.3s sampel= 30752 cacah_terakhir=     5 gap_1s=  0 cksum_err=0 hilang=0
+  t=127.3s sampel= 31250 cacah_terakhir=    -3 gap_1s=  0 cksum_err=0 hilang=0
+  t=129.3s sampel= 31750 cacah_terakhir=    -2 gap_1s=  0 cksum_err=0 hilang=0
+  t=131.3s sampel= 32248 cacah_terakhir=    -4 gap_1s=  0 cksum_err=0 hilang=0
+  t=133.2s sampel= 32744 cacah_terakhir=    -3 gap_1s=  0 cksum_err=0 hilang=0
+  t=135.2s sampel= 33240 cacah_terakhir=     3 gap_1s=  0 cksum_err=0 hilang=0
+  t=137.2s sampel= 33736 cacah_terakhir=     6 gap_1s=  0 cksum_err=0 hilang=0
+  t=139.2s sampel= 34232 cacah_terakhir=     0 gap_1s=  0 cksum_err=0 hilang=0
+  t=141.2s sampel= 34728 cacah_terakhir=    -5 gap_1s=  0 cksum_err=0 hilang=0
+  t=143.2s sampel= 35224 cacah_terakhir=     4 gap_1s=  0 cksum_err=0 hilang=0
+  t=145.2s sampel= 35720 cacah_terakhir=    -3 gap_1s=  0 cksum_err=0 hilang=0
+  t=147.1s sampel= 36216 cacah_terakhir=    -5 gap_1s=  0 cksum_err=0 hilang=0
+  t=149.1s sampel= 36712 cacah_terakhir=    -5 gap_1s=  0 cksum_err=0 hilang=0
+  t=151.1s sampel= 37208 cacah_terakhir=    10 gap_1s=  0 cksum_err=0 hilang=0
+  t=153.1s sampel= 37704 cacah_terakhir=     7 gap_1s=  0 cksum_err=0 hilang=0
+  t=155.1s sampel= 38200 cacah_terakhir=     0 gap_1s=  0 cksum_err=0 hilang=0
+  t=157.1s sampel= 38696 cacah_terakhir=    -4 gap_1s=  0 cksum_err=0 hilang=0
+  t=159.0s sampel= 39192 cacah_terakhir=     2 gap_1s=  0 cksum_err=0 hilang=0
+  t=161.0s sampel= 39688 cacah_terakhir=    -8 gap_1s=  0 cksum_err=0 hilang=0
+  t=163.0s sampel= 40184 cacah_terakhir=    -2 gap_1s=  0 cksum_err=0 hilang=0
+  t=165.0s sampel= 40680 cacah_terakhir=    -3 gap_1s=  0 cksum_err=0 hilang=0
+  t=167.0s sampel= 41176 cacah_terakhir=     3 gap_1s=  0 cksum_err=0 hilang=0
+  t=169.0s sampel= 41672 cacah_terakhir=    -1 gap_1s=  0 cksum_err=0 hilang=0
+  t=170.9s sampel= 42168 cacah_terakhir=    -5 gap_1s=  0 cksum_err=0 hilang=0
+  t=172.9s sampel= 42664 cacah_terakhir=   -25 gap_1s=  0 cksum_err=0 hilang=0
+  t=174.9s sampel= 43160 cacah_terakhir=    -1 gap_1s=  0 cksum_err=0 hilang=0
+  t=176.9s sampel= 43656 cacah_terakhir=    33 gap_1s=  0 cksum_err=0 hilang=0
+  t=178.9s sampel= 44152 cacah_terakhir=    -4 gap_1s=  0 cksum_err=0 hilang=0
+  t=180.9s sampel= 44648 cacah_terakhir=   -36 gap_1s=  0 cksum_err=0 hilang=0
+  t=182.9s sampel= 45144 cacah_terakhir=    -4 gap_1s=  0 cksum_err=0 hilang=0
+  t=184.8s sampel= 45640 cacah_terakhir=    18 gap_1s=  0 cksum_err=0 hilang=0
+  t=186.8s sampel= 46136 cacah_terakhir=     9 gap_1s=  0 cksum_err=0 hilang=0
+  t=188.8s sampel= 46632 cacah_terakhir=   -38 gap_1s=  0 cksum_err=0 hilang=0
+  t=190.8s sampel= 47128 cacah_terakhir=   -23 gap_1s=  0 cksum_err=0 hilang=0
+  t=192.8s sampel= 47624 cacah_terakhir=    29 gap_1s=  0 cksum_err=0 hilang=0
+  t=194.8s sampel= 48120 cacah_terakhir=   -11 gap_1s=  0 cksum_err=0 hilang=0
+  t=196.7s sampel= 48616 cacah_terakhir=   236 gap_1s=  0 cksum_err=0 hilang=0
+  t=198.7s sampel= 49112 cacah_terakhir=   -31 gap_1s=  0 cksum_err=0 hilang=0
+  t=200.7s sampel= 49608 cacah_terakhir=    40 gap_1s=  0 cksum_err=0 hilang=0
+  t=202.7s sampel= 50104 cacah_terakhir=   -23 gap_1s=  0 cksum_err=0 hilang=0
+  t=204.7s sampel= 50600 cacah_terakhir=   -44 gap_1s=  0 cksum_err=0 hilang=0
+  t=206.7s sampel= 51096 cacah_terakhir=    -9 gap_1s=  0 cksum_err=0 hilang=0
+  t=208.6s sampel= 51592 cacah_terakhir=    12 gap_1s=  0 cksum_err=0 hilang=0
+  t=210.6s sampel= 52088 cacah_terakhir=   -24 gap_1s=  0 cksum_err=0 hilang=0
+  t=212.6s sampel= 52584 cacah_terakhir=   -33 gap_1s=  0 cksum_err=0 hilang=0
+  t=214.6s sampel= 53080 cacah_terakhir=     9 gap_1s=  0 cksum_err=0 hilang=0
+  t=216.6s sampel= 53576 cacah_terakhir=    31 gap_1s=  0 cksum_err=0 hilang=0
+  t=218.6s sampel= 54072 cacah_terakhir=   -21 gap_1s=  0 cksum_err=0 hilang=0
+  t=220.5s sampel= 54568 cacah_terakhir=   -41 gap_1s=  0 cksum_err=0 hilang=0
+  t=222.5s sampel= 55064 cacah_terakhir=   -26 gap_1s=  0 cksum_err=0 hilang=0
+  t=224.5s sampel= 55560 cacah_terakhir=    14 gap_1s=  0 cksum_err=0 hilang=0
+  t=226.5s sampel= 56056 cacah_terakhir=    33 gap_1s=  0 cksum_err=0 hilang=0
+  t=228.5s sampel= 56552 cacah_terakhir=     7 gap_1s=  0 cksum_err=0 hilang=0
+  t=230.5s sampel= 57048 cacah_terakhir=   -11 gap_1s=  0 cksum_err=0 hilang=0
+  t=232.4s sampel= 57544 cacah_terakhir=   -40 gap_1s=  0 cksum_err=0 hilang=0
+  t=234.4s sampel= 58040 cacah_terakhir=   -40 gap_1s=  0 cksum_err=0 hilang=0
+  t=236.4s sampel= 58536 cacah_terakhir=   -18 gap_1s=  0 cksum_err=0 hilang=0
+  t=238.4s sampel= 59032 cacah_terakhir=     7 gap_1s=  0 cksum_err=0 hilang=0
+  t=240.4s sampel= 59528 cacah_terakhir=    35 gap_1s=  0 cksum_err=0 hilang=0
+  t=242.4s sampel= 60024 cacah_terakhir=    11 gap_1s=  0 cksum_err=0 hilang=0
+  t=244.4s sampel= 60520 cacah_terakhir=    -1 gap_1s=  0 cksum_err=0 hilang=0
+  t=246.3s sampel= 61016 cacah_terakhir=    -5 gap_1s=  0 cksum_err=0 hilang=0
+  t=248.3s sampel= 61512 cacah_terakhir=   -29 gap_1s=  0 cksum_err=0 hilang=0
+  t=250.3s sampel= 62008 cacah_terakhir=   -12 gap_1s=  0 cksum_err=0 hilang=0
+  t=252.3s sampel= 62504 cacah_terakhir=   -37 gap_1s=  0 cksum_err=0 hilang=0
+  t=254.3s sampel= 63000 cacah_terakhir=   -39 gap_1s=  0 cksum_err=0 hilang=0
+  t=256.3s sampel= 63500 cacah_terakhir=   -32 gap_1s=  0 cksum_err=0 hilang=0
+  t=258.3s sampel= 64000 cacah_terakhir=   -42 gap_1s=  0 cksum_err=0 hilang=0
+  t=260.3s sampel= 64496 cacah_terakhir=   -54 gap_1s=  0 cksum_err=0 hilang=0
+  t=262.2s sampel= 64992 cacah_terakhir=   -41 gap_1s=  0 cksum_err=0 hilang=0
+  t=264.2s sampel= 65488 cacah_terakhir=   -18 gap_1s=  0 cksum_err=0 hilang=0
+  t=266.2s sampel= 65984 cacah_terakhir=    -8 gap_1s=  0 cksum_err=0 hilang=0
+  t=268.2s sampel= 66480 cacah_terakhir=    26 gap_1s=  0 cksum_err=0 hilang=0
+  t=270.2s sampel= 66976 cacah_terakhir=    58 gap_1s=  0 cksum_err=0 hilang=0
+  t=272.2s sampel= 67472 cacah_terakhir=     6 gap_1s=  0 cksum_err=0 hilang=0
+  t=274.1s sampel= 67968 cacah_terakhir=   -26 gap_1s=  0 cksum_err=0 hilang=0
+  t=276.1s sampel= 68464 cacah_terakhir=   -24 gap_1s=  0 cksum_err=0 hilang=0
+  t=278.1s sampel= 68960 cacah_terakhir=   -15 gap_1s=  0 cksum_err=0 hilang=0
+  t=280.1s sampel= 69456 cacah_terakhir=   -24 gap_1s=  0 cksum_err=0 hilang=0
+  t=282.1s sampel= 69952 cacah_terakhir=    24 gap_1s=  0 cksum_err=0 hilang=0
+  t=284.1s sampel= 70448 cacah_terakhir=    24 gap_1s=  0 cksum_err=0 hilang=0
+  t=286.0s sampel= 70944 cacah_terakhir=   -27 gap_1s=  0 cksum_err=0 hilang=0
+  t=288.0s sampel= 71440 cacah_terakhir=   -32 gap_1s=  0 cksum_err=0 hilang=0
+  t=290.0s sampel= 71936 cacah_terakhir=   -47 gap_1s=  0 cksum_err=0 hilang=0
+  t=292.0s sampel= 72432 cacah_terakhir=   -15 gap_1s=  0 cksum_err=0 hilang=0
+  t=294.0s sampel= 72928 cacah_terakhir=    -6 gap_1s=  0 cksum_err=0 hilang=0
+  t=296.0s sampel= 73424 cacah_terakhir=    19 gap_1s=  0 cksum_err=0 hilang=0
+  t=298.0s sampel= 73920 cacah_terakhir=    11 gap_1s=  0 cksum_err=0 hilang=0
+  t=299.9s sampel= 74416 cacah_terakhir=    14 gap_1s=  0 cksum_err=0 hilang=0
+  t=301.9s sampel= 74912 cacah_terakhir=   -22 gap_1s=  0 cksum_err=0 hilang=0
+  t=303.9s sampel= 75408 cacah_terakhir=   -42 gap_1s=  0 cksum_err=0 hilang=0
+  t=305.9s sampel= 75904 cacah_terakhir=   -22 gap_1s=  0 cksum_err=0 hilang=0
+  t=307.9s sampel= 76400 cacah_terakhir=    14 gap_1s=  0 cksum_err=0 hilang=0
+  t=309.9s sampel= 76896 cacah_terakhir=    35 gap_1s=  0 cksum_err=0 hilang=0
+  t=311.8s sampel= 77392 cacah_terakhir=   -15 gap_1s=  0 cksum_err=0 hilang=0
+  t=313.8s sampel= 77888 cacah_terakhir=   -46 gap_1s=  0 cksum_err=0 hilang=0
+  t=315.8s sampel= 78384 cacah_terakhir=   -15 gap_1s=  0 cksum_err=0 hilang=0
+  t=317.8s sampel= 78880 cacah_terakhir=    25 gap_1s=  0 cksum_err=0 hilang=0
+  t=319.8s sampel= 79376 cacah_terakhir=    -9 gap_1s=  0 cksum_err=0 hilang=0
+  t=321.8s sampel= 79872 cacah_terakhir=   -50 gap_1s=  0 cksum_err=0 hilang=0
+  t=323.7s sampel= 80368 cacah_terakhir=    -8 gap_1s=  0 cksum_err=0 hilang=0
+  t=325.7s sampel= 80864 cacah_terakhir=   -10 gap_1s=  0 cksum_err=0 hilang=0
+  t=327.7s sampel= 81360 cacah_terakhir=   -34 gap_1s=  0 cksum_err=0 hilang=0
+  t=329.7s sampel= 81856 cacah_terakhir=     3 gap_1s=  0 cksum_err=0 hilang=0
+  t=331.7s sampel= 82352 cacah_terakhir=    30 gap_1s=  0 cksum_err=0 hilang=0
+  t=333.7s sampel= 82848 cacah_terakhir=   -32 gap_1s=  0 cksum_err=0 hilang=0
+  t=335.6s sampel= 83344 cacah_terakhir=   -42 gap_1s=  0 cksum_err=0 hilang=0
+  t=337.6s sampel= 83840 cacah_terakhir=    38 gap_1s=  0 cksum_err=0 hilang=0
+  t=339.6s sampel= 84336 cacah_terakhir=   -32 gap_1s=  0 cksum_err=0 hilang=0
+  t=341.6s sampel= 84832 cacah_terakhir=   -51 gap_1s=  0 cksum_err=0 hilang=0
+  t=343.6s sampel= 85328 cacah_terakhir=    29 gap_1s=  0 cksum_err=0 hilang=0
+  t=345.6s sampel= 85824 cacah_terakhir=   -15 gap_1s=  0 cksum_err=0 hilang=0
+  t=347.6s sampel= 86320 cacah_terakhir=   -40 gap_1s=  0 cksum_err=0 hilang=0
+  t=349.5s sampel= 86816 cacah_terakhir=    24 gap_1s=  0 cksum_err=0 hilang=0
+  t=351.5s sampel= 87312 cacah_terakhir=   -25 gap_1s=  0 cksum_err=0 hilang=0
+  t=353.5s sampel= 87808 cacah_terakhir=   -54 gap_1s=  0 cksum_err=0 hilang=0
+  t=355.5s sampel= 88304 cacah_terakhir=    -8 gap_1s=  0 cksum_err=0 hilang=0
+  t=357.5s sampel= 88800 cacah_terakhir=    41 gap_1s=  0 cksum_err=0 hilang=0
+  t=359.5s sampel= 89296 cacah_terakhir=   -19 gap_1s=  0 cksum_err=0 hilang=0
+  t=361.4s sampel= 89792 cacah_terakhir=   -20 gap_1s=  0 cksum_err=0 hilang=0
+  t=363.4s sampel= 90288 cacah_terakhir=     5 gap_1s=  0 cksum_err=0 hilang=0
+  t=365.4s sampel= 90784 cacah_terakhir=    -9 gap_1s=  0 cksum_err=0 hilang=0
+  t=367.4s sampel= 91280 cacah_terakhir=   -54 gap_1s=  0 cksum_err=0 hilang=0
+  t=369.4s sampel= 91776 cacah_terakhir=     1 gap_1s=  0 cksum_err=0 hilang=0
+  t=371.4s sampel= 92272 cacah_terakhir=    16 gap_1s=  0 cksum_err=0 hilang=0
+  t=373.3s sampel= 92768 cacah_terakhir=   -21 gap_1s=  0 cksum_err=0 hilang=0
+  t=375.3s sampel= 93264 cacah_terakhir=   -13 gap_1s=  0 cksum_err=0 hilang=0
+  t=377.3s sampel= 93760 cacah_terakhir=    -1 gap_1s=  0 cksum_err=0 hilang=0
+  t=379.3s sampel= 94256 cacah_terakhir=    12 gap_1s=  0 cksum_err=0 hilang=0
+  t=381.3s sampel= 94752 cacah_terakhir=   -27 gap_1s=  0 cksum_err=0 hilang=0
+  t=383.3s sampel= 95250 cacah_terakhir=    35 gap_1s=  0 cksum_err=0 hilang=0
+  t=385.3s sampel= 95750 cacah_terakhir=    25 gap_1s=  0 cksum_err=0 hilang=0
+  t=387.3s sampel= 96248 cacah_terakhir=    24 gap_1s=  0 cksum_err=0 hilang=0
+  t=389.2s sampel= 96744 cacah_terakhir=    34 gap_1s=  0 cksum_err=0 hilang=0
+  t=391.2s sampel= 97240 cacah_terakhir=     8 gap_1s=  0 cksum_err=0 hilang=0
+  t=393.2s sampel= 97736 cacah_terakhir=   -11 gap_1s=  0 cksum_err=0 hilang=0
+  t=395.2s sampel= 98232 cacah_terakhir=   -58 gap_1s=  0 cksum_err=0 hilang=0
+  t=397.2s sampel= 98728 cacah_terakhir=    -2 gap_1s=  0 cksum_err=0 hilang=0
+  t=399.2s sampel= 99224 cacah_terakhir=    26 gap_1s=  0 cksum_err=0 hilang=0
+  t=401.2s sampel= 99720 cacah_terakhir=     4 gap_1s=  0 cksum_err=0 hilang=0
+  t=403.1s sampel=100216 cacah_terakhir=   -27 gap_1s=  0 cksum_err=0 hilang=0
+  t=405.1s sampel=100712 cacah_terakhir=   -35 gap_1s=  0 cksum_err=0 hilang=0
+  t=407.1s sampel=101208 cacah_terakhir=     1 gap_1s=  0 cksum_err=0 hilang=0
+  t=409.1s sampel=101704 cacah_terakhir=    11 gap_1s=  0 cksum_err=0 hilang=0
+  t=411.1s sampel=102200 cacah_terakhir=     7 gap_1s=  0 cksum_err=0 hilang=0
+  t=413.1s sampel=102696 cacah_terakhir=    -8 gap_1s=  0 cksum_err=0 hilang=0
+  t=415.0s sampel=103192 cacah_terakhir=   -36 gap_1s=  0 cksum_err=0 hilang=0
+  t=417.0s sampel=103688 cacah_terakhir=   -33 gap_1s=  0 cksum_err=0 hilang=0
+  t=419.0s sampel=104184 cacah_terakhir=   -19 gap_1s=  0 cksum_err=0 hilang=0
+  t=421.0s sampel=104680 cacah_terakhir=    -1 gap_1s=  0 cksum_err=0 hilang=0
+  t=423.0s sampel=105176 cacah_terakhir=    21 gap_1s=  0 cksum_err=0 hilang=0
+  t=425.0s sampel=105672 cacah_terakhir=    19 gap_1s=  0 cksum_err=0 hilang=0
+  t=426.9s sampel=106168 cacah_terakhir=    -1 gap_1s=  0 cksum_err=0 hilang=0
+  t=428.9s sampel=106664 cacah_terakhir=   -53 gap_1s=  0 cksum_err=0 hilang=0
+  t=430.9s sampel=107160 cacah_terakhir=   -24 gap_1s=  0 cksum_err=0 hilang=0
+  t=432.9s sampel=107656 cacah_terakhir=   -13 gap_1s=  0 cksum_err=0 hilang=0
+  t=434.9s sampel=108152 cacah_terakhir=    16 gap_1s=  0 cksum_err=0 hilang=0
+  t=436.9s sampel=108648 cacah_terakhir=    24 gap_1s=  0 cksum_err=0 hilang=0
+  t=438.8s sampel=109144 cacah_terakhir=    -4 gap_1s=  0 cksum_err=0 hilang=0
+  t=440.8s sampel=109640 cacah_terakhir=   -30 gap_1s=  0 cksum_err=0 hilang=0
+  t=442.8s sampel=110136 cacah_terakhir=   -17 gap_1s=  0 cksum_err=0 hilang=0
+  t=444.8s sampel=110632 cacah_terakhir=    -3 gap_1s=  0 cksum_err=0 hilang=0
+  t=446.8s sampel=111128 cacah_terakhir=    16 gap_1s=  0 cksum_err=0 hilang=0
+  t=448.8s sampel=111624 cacah_terakhir=     9 gap_1s=  0 cksum_err=0 hilang=0
+  t=450.8s sampel=112120 cacah_terakhir=   -35 gap_1s=  0 cksum_err=0 hilang=0
+  t=452.7s sampel=112616 cacah_terakhir=   -46 gap_1s=  0 cksum_err=0 hilang=0
+  t=454.7s sampel=113112 cacah_terakhir=    18 gap_1s=  0 cksum_err=0 hilang=0
+  t=456.7s sampel=113608 cacah_terakhir=    23 gap_1s=  0 cksum_err=0 hilang=0
+  t=458.7s sampel=114104 cacah_terakhir=    -7 gap_1s=  0 cksum_err=0 hilang=0
+  t=460.7s sampel=114600 cacah_terakhir=   -36 gap_1s=  0 cksum_err=0 hilang=0
+  t=462.7s sampel=115096 cacah_terakhir=   -26 gap_1s=  0 cksum_err=0 hilang=0
+  t=464.6s sampel=115592 cacah_terakhir=    14 gap_1s=  0 cksum_err=0 hilang=0
+  t=466.6s sampel=116088 cacah_terakhir=    11 gap_1s=  0 cksum_err=0 hilang=0
+  t=468.6s sampel=116584 cacah_terakhir=   -40 gap_1s=  0 cksum_err=0 hilang=0
+  t=470.6s sampel=117080 cacah_terakhir=   -37 gap_1s=  0 cksum_err=0 hilang=0
+  t=472.6s sampel=117576 cacah_terakhir=     8 gap_1s=  0 cksum_err=0 hilang=0
+  t=474.6s sampel=118072 cacah_terakhir=    29 gap_1s=  0 cksum_err=0 hilang=0
+  t=476.5s sampel=118568 cacah_terakhir=   -37 gap_1s=  0 cksum_err=0 hilang=0
+  t=478.5s sampel=119064 cacah_terakhir=   -44 gap_1s=  0 cksum_err=0 hilang=0
+  t=480.5s sampel=119560 cacah_terakhir=    41 gap_1s=  0 cksum_err=0 hilang=0
+  t=482.5s sampel=120056 cacah_terakhir=    19 gap_1s=  0 cksum_err=0 hilang=0
+  t=484.5s sampel=120552 cacah_terakhir=   -16 gap_1s=  0 cksum_err=0 hilang=0
+  t=486.5s sampel=121048 cacah_terakhir=   -35 gap_1s=  0 cksum_err=0 hilang=0
+  t=488.4s sampel=121544 cacah_terakhir=     2 gap_1s=  0 cksum_err=0 hilang=0
+  t=490.4s sampel=122040 cacah_terakhir=    14 gap_1s=  0 cksum_err=0 hilang=0
+  t=492.4s sampel=122536 cacah_terakhir=   -23 gap_1s=  0 cksum_err=0 hilang=0
+  t=494.4s sampel=123032 cacah_terakhir=     0 gap_1s=  0 cksum_err=0 hilang=0
+  t=496.4s sampel=123528 cacah_terakhir=    18 gap_1s=  0 cksum_err=0 hilang=0
+  t=498.4s sampel=124024 cacah_terakhir=   217 gap_1s=  0 cksum_err=0 hilang=0
+  t=500.4s sampel=124520 cacah_terakhir=   -40 gap_1s=  0 cksum_err=0 hilang=0
+  t=502.3s sampel=125016 cacah_terakhir=    13 gap_1s=  0 cksum_err=0 hilang=0
+  t=504.3s sampel=125512 cacah_terakhir=    66 gap_1s=  0 cksum_err=0 hilang=0
+  t=506.3s sampel=126008 cacah_terakhir=   -11 gap_1s=  0 cksum_err=0 hilang=0
+  t=508.3s sampel=126504 cacah_terakhir=   -42 gap_1s=  0 cksum_err=0 hilang=0
+  t=510.3s sampel=127000 cacah_terakhir=    27 gap_1s=  0 cksum_err=0 hilang=0
+  t=512.3s sampel=127500 cacah_terakhir=    12 gap_1s=  0 cksum_err=0 hilang=0
+  t=514.3s sampel=128000 cacah_terakhir=    34 gap_1s=  0 cksum_err=0 hilang=0
+  t=516.3s sampel=128496 cacah_terakhir=   -13 gap_1s=  0 cksum_err=0 hilang=0
+  t=518.2s sampel=128992 cacah_terakhir=   -58 gap_1s=  0 cksum_err=0 hilang=0
+  t=520.2s sampel=129488 cacah_terakhir=   -17 gap_1s=  0 cksum_err=0 hilang=0
+  t=522.2s sampel=129984 cacah_terakhir=    44 gap_1s=  0 cksum_err=0 hilang=0
+  t=524.2s sampel=130480 cacah_terakhir=    -6 gap_1s=  0 cksum_err=0 hilang=0
+  t=526.2s sampel=130976 cacah_terakhir=   -32 gap_1s=  0 cksum_err=0 hilang=0
+  t=528.2s sampel=131472 cacah_terakhir=   -43 gap_1s=  0 cksum_err=0 hilang=0
+  t=530.1s sampel=131968 cacah_terakhir=    11 gap_1s=  0 cksum_err=0 hilang=0
+  t=532.1s sampel=132464 cacah_terakhir=    47 gap_1s=  0 cksum_err=0 hilang=0
+  t=534.1s sampel=132960 cacah_terakhir=     0 gap_1s=  0 cksum_err=0 hilang=0
+  t=536.1s sampel=133456 cacah_terakhir=   -47 gap_1s=  0 cksum_err=0 hilang=0
+  t=538.1s sampel=133952 cacah_terakhir=   -19 gap_1s=  0 cksum_err=0 hilang=0
+  t=540.1s sampel=134448 cacah_terakhir=    31 gap_1s=  0 cksum_err=0 hilang=0
+  t=542.1s sampel=134944 cacah_terakhir=    18 gap_1s=  0 cksum_err=0 hilang=0
+  t=544.0s sampel=135440 cacah_terakhir=   -58 gap_1s=  0 cksum_err=0 hilang=0
+  t=546.0s sampel=135936 cacah_terakhir=   -42 gap_1s=  0 cksum_err=0 hilang=0
+  t=548.0s sampel=136432 cacah_terakhir=    38 gap_1s=  0 cksum_err=0 hilang=0
+  t=550.0s sampel=136928 cacah_terakhir=    15 gap_1s=  0 cksum_err=0 hilang=0
+  t=552.0s sampel=137424 cacah_terakhir=   -42 gap_1s=  0 cksum_err=0 hilang=0
+  t=554.0s sampel=137920 cacah_terakhir=   -33 gap_1s=  0 cksum_err=0 hilang=0
+  t=555.9s sampel=138416 cacah_terakhir=    32 gap_1s=  0 cksum_err=0 hilang=0
+  t=557.9s sampel=138912 cacah_terakhir=     8 gap_1s=  0 cksum_err=0 hilang=0
+  t=559.9s sampel=139408 cacah_terakhir=   -72 gap_1s=  0 cksum_err=0 hilang=0
+  t=561.9s sampel=139904 cacah_terakhir=    -6 gap_1s=  0 cksum_err=0 hilang=0
+  t=563.9s sampel=140400 cacah_terakhir=    39 gap_1s=  0 cksum_err=0 hilang=0
+  t=565.9s sampel=140896 cacah_terakhir=     6 gap_1s=  0 cksum_err=0 hilang=0
+  t=567.8s sampel=141392 cacah_terakhir=   -44 gap_1s=  0 cksum_err=0 hilang=0
+  t=569.8s sampel=141888 cacah_terakhir=   -66 gap_1s=  0 cksum_err=0 hilang=0
+  t=571.8s sampel=142384 cacah_terakhir=    51 gap_1s=  0 cksum_err=0 hilang=0
+  t=573.8s sampel=142880 cacah_terakhir=    28 gap_1s=  0 cksum_err=0 hilang=0
+  t=575.8s sampel=143376 cacah_terakhir=   -22 gap_1s=  0 cksum_err=0 hilang=0
+  t=577.8s sampel=143872 cacah_terakhir=    -7 gap_1s=  0 cksum_err=0 hilang=0
+  t=579.7s sampel=144368 cacah_terakhir=     3 gap_1s=  0 cksum_err=0 hilang=0
+  t=581.7s sampel=144864 cacah_terakhir=    39 gap_1s=  0 cksum_err=0 hilang=0
+  t=583.7s sampel=145360 cacah_terakhir=     2 gap_1s=  0 cksum_err=0 hilang=0
+  t=585.7s sampel=145856 cacah_terakhir=   -46 gap_1s=  0 cksum_err=0 hilang=0
+  t=587.7s sampel=146352 cacah_terakhir=   -35 gap_1s=  0 cksum_err=0 hilang=0
+  t=589.7s sampel=146848 cacah_terakhir=     5 gap_1s=  0 cksum_err=0 hilang=0
+  t=591.7s sampel=147344 cacah_terakhir=    25 gap_1s=  0 cksum_err=0 hilang=0
+  t=593.6s sampel=147840 cacah_terakhir=   -21 gap_1s=  0 cksum_err=0 hilang=0
+  t=595.6s sampel=148336 cacah_terakhir=   -40 gap_1s=  0 cksum_err=0 hilang=0
+  t=597.6s sampel=148832 cacah_terakhir=   -44 gap_1s=  0 cksum_err=0 hilang=0
+  t=599.6s sampel=149328 cacah_terakhir=    44 gap_1s=  0 cksum_err=0 hilang=0
+  t=601.6s sampel=149824 cacah_terakhir=    15 gap_1s=  0 cksum_err=0 hilang=0
+  t=603.6s sampel=150320 cacah_terakhir=   -26 gap_1s=  0 cksum_err=0 hilang=0
+  t=605.5s sampel=150816 cacah_terakhir=   -25 gap_1s=  0 cksum_err=0 hilang=0
+  t=607.5s sampel=151312 cacah_terakhir=    11 gap_1s=  0 cksum_err=0 hilang=0
+  t=609.5s sampel=151808 cacah_terakhir=    36 gap_1s=  0 cksum_err=0 hilang=0
+  t=611.5s sampel=152304 cacah_terakhir=   -40 gap_1s=  0 cksum_err=0 hilang=0
+  t=613.5s sampel=152800 cacah_terakhir=   -55 gap_1s=  0 cksum_err=0 hilang=0
+  t=615.5s sampel=153296 cacah_terakhir=   -31 gap_1s=  0 cksum_err=0 hilang=0
+  t=617.4s sampel=153792 cacah_terakhir=    57 gap_1s=  0 cksum_err=0 hilang=0
+  t=619.4s sampel=154288 cacah_terakhir=    -4 gap_1s=  0 cksum_err=0 hilang=0
+  t=621.4s sampel=154784 cacah_terakhir=   -40 gap_1s=  0 cksum_err=0 hilang=0
+  t=623.4s sampel=155280 cacah_terakhir=   -34 gap_1s=  0 cksum_err=0 hilang=0
+  t=625.4s sampel=155776 cacah_terakhir=    19 gap_1s=  0 cksum_err=0 hilang=0
+  t=627.4s sampel=156272 cacah_terakhir=    44 gap_1s=  0 cksum_err=0 hilang=0
+  t=629.3s sampel=156768 cacah_terakhir=   -25 gap_1s=  0 cksum_err=0 hilang=0
+  t=631.3s sampel=157264 cacah_terakhir=   -49 gap_1s=  0 cksum_err=0 hilang=0
+  t=633.3s sampel=157760 cacah_terakhir=   -21 gap_1s=  0 cksum_err=0 hilang=0
+  t=635.3s sampel=158256 cacah_terakhir=    46 gap_1s=  0 cksum_err=0 hilang=0
+  t=637.3s sampel=158752 cacah_terakhir=    17 gap_1s=  0 cksum_err=0 hilang=0
+  t=639.3s sampel=159250 cacah_terakhir=    35 gap_1s=  0 cksum_err=0 hilang=0
+  t=641.3s sampel=159750 cacah_terakhir=    50 gap_1s=  0 cksum_err=0 hilang=0
+  t=643.3s sampel=160248 cacah_terakhir=   149 gap_1s=  0 cksum_err=0 hilang=0
+  t=645.3s sampel=160744 cacah_terakhir=    -1 gap_1s=  0 cksum_err=0 hilang=0
+  t=647.2s sampel=161240 cacah_terakhir=    71 gap_1s=  0 cksum_err=0 hilang=0
+  t=649.2s sampel=161736 cacah_terakhir=    31 gap_1s=  0 cksum_err=0 hilang=0
+  t=651.2s sampel=162232 cacah_terakhir=   -28 gap_1s=  0 cksum_err=0 hilang=0
+  t=653.2s sampel=162728 cacah_terakhir=   -86 gap_1s=  0 cksum_err=0 hilang=0
+  t=655.2s sampel=163224 cacah_terakhir=    39 gap_1s=  0 cksum_err=0 hilang=0
+  t=657.2s sampel=163720 cacah_terakhir=    61 gap_1s=  0 cksum_err=0 hilang=0
+  t=659.1s sampel=164216 cacah_terakhir=   -49 gap_1s=  0 cksum_err=0 hilang=0
+  t=661.1s sampel=164712 cacah_terakhir=   -57 gap_1s=  0 cksum_err=0 hilang=0
+  t=663.1s sampel=165208 cacah_terakhir=     4 gap_1s=  0 cksum_err=0 hilang=0
+  t=665.1s sampel=165704 cacah_terakhir=   -11 gap_1s=  0 cksum_err=0 hilang=0
+  t=667.1s sampel=166200 cacah_terakhir=     2 gap_1s=  0 cksum_err=0 hilang=0
+  t=669.1s sampel=166696 cacah_terakhir=   -55 gap_1s=  0 cksum_err=0 hilang=0
+  t=671.0s sampel=167192 cacah_terakhir=   -70 gap_1s=  0 cksum_err=0 hilang=0
+  t=673.0s sampel=167688 cacah_terakhir=    44 gap_1s=  0 cksum_err=0 hilang=0
+  t=675.0s sampel=168184 cacah_terakhir=    76 gap_1s=  0 cksum_err=0 hilang=0
+  t=677.0s sampel=168680 cacah_terakhir=   -48 gap_1s=  0 cksum_err=0 hilang=0
+  t=679.0s sampel=169176 cacah_terakhir=   -61 gap_1s=  0 cksum_err=0 hilang=0
+  t=681.0s sampel=169672 cacah_terakhir=    14 gap_1s=  0 cksum_err=0 hilang=0
+  t=682.9s sampel=170168 cacah_terakhir=   269 gap_1s=  0 cksum_err=0 hilang=0
+  t=684.9s sampel=170664 cacah_terakhir=   -66 gap_1s=  0 cksum_err=0 hilang=0
+  t=686.9s sampel=171160 cacah_terakhir=   -35 gap_1s=  0 cksum_err=0 hilang=0
+  t=688.9s sampel=171656 cacah_terakhir=    53 gap_1s=  0 cksum_err=0 hilang=0
+  t=690.9s sampel=172152 cacah_terakhir=    -7 gap_1s=  0 cksum_err=0 hilang=0
+  t=692.9s sampel=172648 cacah_terakhir=    31 gap_1s=  0 cksum_err=0 hilang=0
+  t=694.8s sampel=173144 cacah_terakhir=   -14 gap_1s=  0 cksum_err=0 hilang=0
+  t=696.8s sampel=173640 cacah_terakhir=    59 gap_1s=  0 cksum_err=0 hilang=0
+  t=698.8s sampel=174136 cacah_terakhir=     5 gap_1s=  0 cksum_err=0 hilang=0
+  t=700.8s sampel=174632 cacah_terakhir=   -58 gap_1s=  0 cksum_err=0 hilang=0
+  t=702.8s sampel=175128 cacah_terakhir=   -28 gap_1s=  0 cksum_err=0 hilang=0
+  t=704.8s sampel=175624 cacah_terakhir=    70 gap_1s=  0 cksum_err=0 hilang=0
+  t=706.8s sampel=176120 cacah_terakhir=    15 gap_1s=  0 cksum_err=0 hilang=0
+  t=708.7s sampel=176616 cacah_terakhir=   -64 gap_1s=  0 cksum_err=0 hilang=0
+  t=710.7s sampel=177112 cacah_terakhir=   -42 gap_1s=  0 cksum_err=0 hilang=0
+  t=712.7s sampel=177608 cacah_terakhir=    59 gap_1s=  0 cksum_err=0 hilang=0
+  t=714.7s sampel=178104 cacah_terakhir=     0 gap_1s=  0 cksum_err=0 hilang=0
+  t=716.7s sampel=178600 cacah_terakhir=   -73 gap_1s=  0 cksum_err=0 hilang=0
+  t=718.7s sampel=179096 cacah_terakhir=   -46 gap_1s=  0 cksum_err=0 hilang=0
+  t=720.6s sampel=179592 cacah_terakhir=    57 gap_1s=  0 cksum_err=0 hilang=0
+  t=722.6s sampel=180088 cacah_terakhir=     8 gap_1s=  0 cksum_err=0 hilang=0
+  t=724.6s sampel=180584 cacah_terakhir=   -78 gap_1s=  0 cksum_err=0 hilang=0
+  t=726.6s sampel=181080 cacah_terakhir=   -25 gap_1s=  0 cksum_err=0 hilang=0
+  t=728.6s sampel=181576 cacah_terakhir=    63 gap_1s=  0 cksum_err=0 hilang=0
+  t=730.6s sampel=182072 cacah_terakhir=     8 gap_1s=  0 cksum_err=0 hilang=0
+  t=732.5s sampel=182568 cacah_terakhir=   -67 gap_1s=  0 cksum_err=0 hilang=0
+  t=734.5s sampel=183064 cacah_terakhir=   -20 gap_1s=  0 cksum_err=0 hilang=0
+  t=736.5s sampel=183560 cacah_terakhir=    58 gap_1s=  0 cksum_err=0 hilang=0
+  t=738.5s sampel=184056 cacah_terakhir=    -5 gap_1s=  0 cksum_err=0 hilang=0
+  t=740.5s sampel=184552 cacah_terakhir=   -62 gap_1s=  0 cksum_err=0 hilang=0
+  t=742.5s sampel=185048 cacah_terakhir=    -9 gap_1s=  0 cksum_err=0 hilang=0
+  t=744.4s sampel=185544 cacah_terakhir=    79 gap_1s=  0 cksum_err=0 hilang=0
+  t=746.4s sampel=186040 cacah_terakhir=   -27 gap_1s=  0 cksum_err=0 hilang=0
+  t=748.4s sampel=186536 cacah_terakhir=   -65 gap_1s=  0 cksum_err=0 hilang=0
+  t=750.4s sampel=187032 cacah_terakhir=     6 gap_1s=  0 cksum_err=0 hilang=0
+  t=752.4s sampel=187528 cacah_terakhir=    77 gap_1s=  0 cksum_err=0 hilang=0
+  t=754.4s sampel=188024 cacah_terakhir=   -32 gap_1s=  0 cksum_err=0 hilang=0
+  t=756.4s sampel=188520 cacah_terakhir=  -103 gap_1s=  0 cksum_err=0 hilang=0
+  t=758.3s sampel=189016 cacah_terakhir=    10 gap_1s=  0 cksum_err=0 hilang=0
+  t=760.3s sampel=189512 cacah_terakhir=    71 gap_1s=  0 cksum_err=0 hilang=0
+  t=762.3s sampel=190008 cacah_terakhir=   154 gap_1s=  0 cksum_err=0 hilang=0
+  t=764.3s sampel=190504 cacah_terakhir=   -78 gap_1s=  0 cksum_err=0 hilang=0
+  t=766.3s sampel=191000 cacah_terakhir=    -3 gap_1s=  0 cksum_err=0 hilang=0
+  t=768.3s sampel=191500 cacah_terakhir=    -2 gap_1s=  0 cksum_err=0 hilang=0
+  t=770.3s sampel=192000 cacah_terakhir=    40 gap_1s=  0 cksum_err=0 hilang=0
+  t=772.3s sampel=192496 cacah_terakhir=    70 gap_1s=  0 cksum_err=0 hilang=0
+  t=774.2s sampel=192992 cacah_terakhir=   -31 gap_1s=  0 cksum_err=0 hilang=0
+  t=776.2s sampel=193488 cacah_terakhir=   -76 gap_1s=  0 cksum_err=0 hilang=0
+  t=778.2s sampel=193984 cacah_terakhir=   -12 gap_1s=  0 cksum_err=0 hilang=0
+  t=780.2s sampel=194480 cacah_terakhir=    92 gap_1s=  0 cksum_err=0 hilang=0
+  t=782.2s sampel=194976 cacah_terakhir=    12 gap_1s=  0 cksum_err=0 hilang=0
+  t=784.2s sampel=195472 cacah_terakhir=   -75 gap_1s=  0 cksum_err=0 hilang=0
+  t=786.1s sampel=195968 cacah_terakhir=   -65 gap_1s=  0 cksum_err=0 hilang=0
+  t=788.1s sampel=196464 cacah_terakhir=    13 gap_1s=  0 cksum_err=0 hilang=0
+  t=790.1s sampel=196960 cacah_terakhir=    76 gap_1s=  0 cksum_err=0 hilang=0
+  t=792.1s sampel=197456 cacah_terakhir=   -17 gap_1s=  0 cksum_err=0 hilang=0
+  t=794.1s sampel=197952 cacah_terakhir=   -95 gap_1s=  0 cksum_err=0 hilang=0
+  t=796.1s sampel=198448 cacah_terakhir=   -45 gap_1s=  0 cksum_err=0 hilang=0
+  t=798.1s sampel=198944 cacah_terakhir=    69 gap_1s=  0 cksum_err=0 hilang=0
+  t=800.0s sampel=199440 cacah_terakhir=    34 gap_1s=  0 cksum_err=0 hilang=0
+  t=802.0s sampel=199936 cacah_terakhir=   -12 gap_1s=  0 cksum_err=0 hilang=0
+  t=804.0s sampel=200432 cacah_terakhir=   -58 gap_1s=  0 cksum_err=0 hilang=0
+  t=806.0s sampel=200928 cacah_terakhir=   -40 gap_1s=  0 cksum_err=0 hilang=0
+  t=808.0s sampel=201424 cacah_terakhir=    11 gap_1s=  0 cksum_err=0 hilang=0
+  t=810.0s sampel=201920 cacah_terakhir=    63 gap_1s=  0 cksum_err=0 hilang=0
+  t=811.9s sampel=202416 cacah_terakhir=    48 gap_1s=  0 cksum_err=0 hilang=0
+  t=813.9s sampel=202912 cacah_terakhir=   -40 gap_1s=  0 cksum_err=0 hilang=0
+  t=815.9s sampel=203408 cacah_terakhir=   -44 gap_1s=  0 cksum_err=0 hilang=0
+  t=817.9s sampel=203904 cacah_terakhir=   -61 gap_1s=  0 cksum_err=0 hilang=0
+  t=819.9s sampel=204400 cacah_terakhir=   -20 gap_1s=  0 cksum_err=0 hilang=0
+  t=821.9s sampel=204896 cacah_terakhir=    21 gap_1s=  0 cksum_err=0 hilang=0
+  t=823.8s sampel=205392 cacah_terakhir=    24 gap_1s=  0 cksum_err=0 hilang=0
+  t=825.8s sampel=205888 cacah_terakhir=    -6 gap_1s=  0 cksum_err=0 hilang=0
+  t=827.8s sampel=206384 cacah_terakhir=   -34 gap_1s=  0 cksum_err=0 hilang=0
+  t=829.8s sampel=206880 cacah_terakhir=   -37 gap_1s=  0 cksum_err=0 hilang=0
+  t=831.8s sampel=207376 cacah_terakhir=   -21 gap_1s=  0 cksum_err=0 hilang=0
+  t=833.8s sampel=207872 cacah_terakhir=     4 gap_1s=  0 cksum_err=0 hilang=0
+  t=835.7s sampel=208368 cacah_terakhir=   200 gap_1s=  0 cksum_err=0 hilang=0
+  t=837.7s sampel=208864 cacah_terakhir=     2 gap_1s=  0 cksum_err=0 hilang=0
+  t=839.7s sampel=209360 cacah_terakhir=   -33 gap_1s=  0 cksum_err=0 hilang=0
+  t=841.7s sampel=209856 cacah_terakhir=   -50 gap_1s=  0 cksum_err=0 hilang=0
+  t=843.7s sampel=210352 cacah_terakhir=    10 gap_1s=  0 cksum_err=0 hilang=0
+  t=845.7s sampel=210848 cacah_terakhir=    38 gap_1s=  0 cksum_err=0 hilang=0
+  t=847.7s sampel=211344 cacah_terakhir=   -18 gap_1s=  0 cksum_err=0 hilang=0
+  t=849.6s sampel=211840 cacah_terakhir=   -36 gap_1s=  0 cksum_err=0 hilang=0
+  t=851.6s sampel=212336 cacah_terakhir=    12 gap_1s=  0 cksum_err=0 hilang=0
+  t=853.6s sampel=212832 cacah_terakhir=    42 gap_1s=  0 cksum_err=0 hilang=0
+  t=855.6s sampel=213328 cacah_terakhir=   -19 gap_1s=  0 cksum_err=0 hilang=0
+  t=857.6s sampel=213824 cacah_terakhir=   -35 gap_1s=  0 cksum_err=0 hilang=0
+  t=859.6s sampel=214320 cacah_terakhir=    -2 gap_1s=  0 cksum_err=0 hilang=0
+  t=861.5s sampel=214816 cacah_terakhir=    35 gap_1s=  0 cksum_err=0 hilang=0
+  t=863.5s sampel=215312 cacah_terakhir=   -38 gap_1s=  0 cksum_err=0 hilang=0
+  t=865.5s sampel=215808 cacah_terakhir=   -42 gap_1s=  0 cksum_err=0 hilang=0
+  t=867.5s sampel=216304 cacah_terakhir=    17 gap_1s=  0 cksum_err=0 hilang=0
+  t=869.5s sampel=216800 cacah_terakhir=    19 gap_1s=  0 cksum_err=0 hilang=0
+  t=871.5s sampel=217296 cacah_terakhir=   -63 gap_1s=  0 cksum_err=0 hilang=0
+  t=873.4s sampel=217792 cacah_terakhir=   -22 gap_1s=  0 cksum_err=0 hilang=0
+  t=875.4s sampel=218288 cacah_terakhir=    25 gap_1s=  0 cksum_err=0 hilang=0
+  t=877.4s sampel=218784 cacah_terakhir=   -65 gap_1s=  0 cksum_err=0 hilang=0
+  t=879.4s sampel=219280 cacah_terakhir=     8 gap_1s=  0 cksum_err=0 hilang=0
+  t=881.4s sampel=219776 cacah_terakhir=    32 gap_1s=  0 cksum_err=0 hilang=0
+  t=883.4s sampel=220272 cacah_terakhir=   -46 gap_1s=  0 cksum_err=0 hilang=0
+  t=885.3s sampel=220768 cacah_terakhir=   247 gap_1s=  0 cksum_err=0 hilang=0
+  t=887.3s sampel=221264 cacah_terakhir=   132 gap_1s=  0 cksum_err=0 hilang=0
+  t=889.3s sampel=221760 cacah_terakhir=   -35 gap_1s=  0 cksum_err=0 hilang=0
+  t=891.3s sampel=222256 cacah_terakhir=   -25 gap_1s=  0 cksum_err=0 hilang=0
+  t=893.3s sampel=222752 cacah_terakhir=    30 gap_1s=  0 cksum_err=0 hilang=0
+  t=895.3s sampel=223250 cacah_terakhir=   -27 gap_1s=  0 cksum_err=0 hilang=0
+  t=897.3s sampel=223750 cacah_terakhir=    11 gap_1s=  0 cksum_err=0 hilang=0
+  t=899.3s sampel=224248 cacah_terakhir=   -14 gap_1s=  0 cksum_err=0 hilang=0
+  t=901.3s sampel=224744 cacah_terakhir=    25 gap_1s=  0 cksum_err=0 hilang=0
+  t=903.2s sampel=225240 cacah_terakhir=     1 gap_1s=  0 cksum_err=0 hilang=0
+  t=905.2s sampel=225736 cacah_terakhir=   -39 gap_1s=  0 cksum_err=0 hilang=0
+  t=907.2s sampel=226232 cacah_terakhir=   -13 gap_1s=  0 cksum_err=0 hilang=0
+  t=909.2s sampel=226728 cacah_terakhir=    22 gap_1s=  0 cksum_err=0 hilang=0
+  t=911.2s sampel=227224 cacah_terakhir=   -26 gap_1s=  0 cksum_err=0 hilang=0
+  t=913.2s sampel=227720 cacah_terakhir=   -22 gap_1s=  0 cksum_err=0 hilang=0
+  t=915.1s sampel=228216 cacah_terakhir=    53 gap_1s=  0 cksum_err=0 hilang=0
+  t=917.1s sampel=228712 cacah_terakhir=   -19 gap_1s=  0 cksum_err=0 hilang=0
+  t=919.1s sampel=229208 cacah_terakhir=   -37 gap_1s=  0 cksum_err=0 hilang=0
+  t=921.1s sampel=229704 cacah_terakhir=     5 gap_1s=  0 cksum_err=0 hilang=0
+  t=923.1s sampel=230200 cacah_terakhir=     4 gap_1s=  0 cksum_err=0 hilang=0
+  t=925.1s sampel=230696 cacah_terakhir=   -45 gap_1s=  0 cksum_err=0 hilang=0
+  t=927.0s sampel=231192 cacah_terakhir=    12 gap_1s=  0 cksum_err=0 hilang=0
+  t=929.0s sampel=231688 cacah_terakhir=    -3 gap_1s=  0 cksum_err=0 hilang=0
+  t=931.0s sampel=232184 cacah_terakhir=   -67 gap_1s=  0 cksum_err=0 hilang=0
+  t=933.0s sampel=232680 cacah_terakhir=    23 gap_1s=  0 cksum_err=0 hilang=0
+  t=935.0s sampel=233176 cacah_terakhir=    31 gap_1s=  0 cksum_err=0 hilang=0
+  t=937.0s sampel=233672 cacah_terakhir=   -37 gap_1s=  0 cksum_err=0 hilang=0
+  t=938.9s sampel=234168 cacah_terakhir=   -42 gap_1s=  0 cksum_err=0 hilang=0
+  t=940.9s sampel=234664 cacah_terakhir=    11 gap_1s=  0 cksum_err=0 hilang=0
+  t=942.9s sampel=235160 cacah_terakhir=   -23 gap_1s=  0 cksum_err=0 hilang=0
+  t=944.9s sampel=235656 cacah_terakhir=   -53 gap_1s=  0 cksum_err=0 hilang=0
+  t=946.9s sampel=236152 cacah_terakhir=     9 gap_1s=  0 cksum_err=0 hilang=0
+  t=948.9s sampel=236648 cacah_terakhir=    26 gap_1s=  0 cksum_err=0 hilang=0
+  t=950.9s sampel=237144 cacah_terakhir=   -33 gap_1s=  0 cksum_err=0 hilang=0
+  t=952.8s sampel=237640 cacah_terakhir=   -20 gap_1s=  0 cksum_err=0 hilang=0
+  t=954.8s sampel=238136 cacah_terakhir=    22 gap_1s=  0 cksum_err=0 hilang=0
+  t=956.8s sampel=238632 cacah_terakhir=   261 gap_1s=  0 cksum_err=0 hilang=0
+  t=958.8s sampel=239128 cacah_terakhir=   -47 gap_1s=  0 cksum_err=0 hilang=0
+  t=960.8s sampel=239624 cacah_terakhir=   -24 gap_1s=  0 cksum_err=0 hilang=0
+  t=962.8s sampel=240120 cacah_terakhir=    11 gap_1s=  0 cksum_err=0 hilang=0
+  t=964.7s sampel=240616 cacah_terakhir=    -5 gap_1s=  0 cksum_err=0 hilang=0
+  t=966.7s sampel=241112 cacah_terakhir=   -68 gap_1s=  0 cksum_err=0 hilang=0
+  t=968.7s sampel=241608 cacah_terakhir=    -9 gap_1s=  0 cksum_err=0 hilang=0
+  t=970.7s sampel=242104 cacah_terakhir=    30 gap_1s=  0 cksum_err=0 hilang=0
+  t=972.7s sampel=242600 cacah_terakhir=    -9 gap_1s=  0 cksum_err=0 hilang=0
+  t=974.7s sampel=243096 cacah_terakhir=   -65 gap_1s=  0 cksum_err=0 hilang=0
+  t=976.6s sampel=243592 cacah_terakhir=   -19 gap_1s=  0 cksum_err=0 hilang=0
+  t=978.6s sampel=244088 cacah_terakhir=    25 gap_1s=  0 cksum_err=0 hilang=0
+  t=980.6s sampel=244584 cacah_terakhir=    -1 gap_1s=  0 cksum_err=0 hilang=0
+  t=982.6s sampel=245080 cacah_terakhir=   -32 gap_1s=  0 cksum_err=0 hilang=0
+  t=984.6s sampel=245576 cacah_terakhir=   -30 gap_1s=  0 cksum_err=0 hilang=0
+  t=986.6s sampel=246072 cacah_terakhir=    13 gap_1s=  0 cksum_err=0 hilang=0
+  t=988.5s sampel=246568 cacah_terakhir=    30 gap_1s=  0 cksum_err=0 hilang=0
+  t=990.5s sampel=247064 cacah_terakhir=   -29 gap_1s=  0 cksum_err=0 hilang=0
+  t=992.5s sampel=247560 cacah_terakhir=   -44 gap_1s=  0 cksum_err=0 hilang=0
+  t=994.5s sampel=248056 cacah_terakhir=   267 gap_1s=  0 cksum_err=0 hilang=0
+  t=996.5s sampel=248552 cacah_terakhir=    36 gap_1s=  0 cksum_err=0 hilang=0
+  t=998.5s sampel=249048 cacah_terakhir=     2 gap_1s=  0 cksum_err=0 hilang=0
+  t=1000.5s sampel=249544 cacah_terakhir=   -75 gap_1s=  0 cksum_err=0 hilang=0
+  t=1002.4s sampel=250040 cacah_terakhir=   -69 gap_1s=  0 cksum_err=0 hilang=0
+  t=1004.4s sampel=250536 cacah_terakhir=    18 gap_1s=  0 cksum_err=0 hilang=0
+  t=1006.4s sampel=251032 cacah_terakhir=    80 gap_1s=  0 cksum_err=0 hilang=0
+  t=1008.4s sampel=251528 cacah_terakhir=   -24 gap_1s=  0 cksum_err=0 hilang=0
+  t=1010.4s sampel=252024 cacah_terakhir=   -93 gap_1s=  0 cksum_err=0 hilang=0
+  t=1012.4s sampel=252520 cacah_terakhir=    -1 gap_1s=  0 cksum_err=0 hilang=0
+  t=1014.3s sampel=253016 cacah_terakhir=    89 gap_1s=  0 cksum_err=0 hilang=0
+  t=1016.3s sampel=253512 cacah_terakhir=   -15 gap_1s=  0 cksum_err=0 hilang=0
+  t=1018.3s sampel=254008 cacah_terakhir=   -86 gap_1s=  0 cksum_err=0 hilang=0
+  t=1020.3s sampel=254504 cacah_terakhir=   -41 gap_1s=  0 cksum_err=0 hilang=0
+  t=1022.3s sampel=255000 cacah_terakhir=    80 gap_1s=  0 cksum_err=0 hilang=0
+  t=1024.3s sampel=255500 cacah_terakhir=    75 gap_1s=  0 cksum_err=0 hilang=0
+  t=1026.3s sampel=256000 cacah_terakhir=    80 gap_1s=  0 cksum_err=0 hilang=0
+  t=1028.3s sampel=256496 cacah_terakhir=     4 gap_1s=  0 cksum_err=0 hilang=0
+  t=1030.2s sampel=256992 cacah_terakhir=   -79 gap_1s=  0 cksum_err=0 hilang=0
+  t=1032.2s sampel=257488 cacah_terakhir=   -81 gap_1s=  0 cksum_err=0 hilang=0
+  t=1034.2s sampel=257984 cacah_terakhir=    86 gap_1s=  0 cksum_err=0 hilang=0
+  t=1036.2s sampel=258480 cacah_terakhir=    80 gap_1s=  0 cksum_err=0 hilang=0
+  t=1038.2s sampel=258976 cacah_terakhir=     6 gap_1s=  0 cksum_err=0 hilang=0
+  t=1040.2s sampel=259472 cacah_terakhir=   -97 gap_1s=  0 cksum_err=0 hilang=0
+  t=1042.1s sampel=259968 cacah_terakhir=   -93 gap_1s=  0 cksum_err=0 hilang=0
+  t=1044.1s sampel=260464 cacah_terakhir=    -6 gap_1s=  0 cksum_err=0 hilang=0
+  t=1046.1s sampel=260960 cacah_terakhir=   115 gap_1s=  0 cksum_err=0 hilang=0
+  t=1048.1s sampel=261456 cacah_terakhir=   265 gap_1s=  0 cksum_err=0 hilang=0
+  t=1050.1s sampel=261952 cacah_terakhir=   -43 gap_1s=  0 cksum_err=0 hilang=0
+  t=1052.1s sampel=262448 cacah_terakhir=   -99 gap_1s=  0 cksum_err=0 hilang=0
+  t=1054.1s sampel=262944 cacah_terakhir=   -13 gap_1s=  0 cksum_err=0 hilang=0
+  t=1056.0s sampel=263440 cacah_terakhir=    79 gap_1s=  0 cksum_err=0 hilang=0
+  t=1058.0s sampel=263936 cacah_terakhir=    89 gap_1s=  0 cksum_err=0 hilang=0
+  t=1060.0s sampel=264432 cacah_terakhir=   199 gap_1s=  0 cksum_err=0 hilang=0
+  t=1062.0s sampel=264928 cacah_terakhir=   123 gap_1s=  0 cksum_err=0 hilang=0
+  t=1064.0s sampel=265424 cacah_terakhir=    -9 gap_1s=  0 cksum_err=0 hilang=0
+  t=1066.0s sampel=265920 cacah_terakhir=    82 gap_1s=  0 cksum_err=0 hilang=0
+  t=1067.9s sampel=266416 cacah_terakhir=    25 gap_1s=  0 cksum_err=0 hilang=0
+  t=1069.9s sampel=266912 cacah_terakhir=   -65 gap_1s=  0 cksum_err=0 hilang=0
+  t=1071.9s sampel=267408 cacah_terakhir=    62 gap_1s=  0 cksum_err=0 hilang=0
+  t=1073.9s sampel=267904 cacah_terakhir=    34 gap_1s=  0 cksum_err=0 hilang=0
+  t=1075.9s sampel=268400 cacah_terakhir=    65 gap_1s=  0 cksum_err=0 hilang=0
+  t=1077.9s sampel=268896 cacah_terakhir=   -10 gap_1s=  0 cksum_err=0 hilang=0
+  t=1079.8s sampel=269392 cacah_terakhir=   -70 gap_1s=  0 cksum_err=0 hilang=0
+  t=1081.8s sampel=269888 cacah_terakhir=    14 gap_1s=  0 cksum_err=0 hilang=0
+  t=1083.8s sampel=270384 cacah_terakhir=    28 gap_1s=  0 cksum_err=0 hilang=0
+  t=1085.8s sampel=270880 cacah_terakhir=   -41 gap_1s=  0 cksum_err=0 hilang=0
+  t=1087.8s sampel=271376 cacah_terakhir=   -49 gap_1s=  0 cksum_err=0 hilang=0
+  t=1089.8s sampel=271872 cacah_terakhir=    46 gap_1s=  0 cksum_err=0 hilang=0
+  t=1091.7s sampel=272368 cacah_terakhir=    25 gap_1s=  0 cksum_err=0 hilang=0
+  t=1093.7s sampel=272864 cacah_terakhir=   -45 gap_1s=  0 cksum_err=0 hilang=0
+  t=1095.7s sampel=273360 cacah_terakhir=   -37 gap_1s=  0 cksum_err=0 hilang=0
+  t=1097.7s sampel=273856 cacah_terakhir=    45 gap_1s=  0 cksum_err=0 hilang=0
+  t=1099.7s sampel=274352 cacah_terakhir=     2 gap_1s=  0 cksum_err=0 hilang=0
+  t=1101.7s sampel=274848 cacah_terakhir=    72 gap_1s=  0 cksum_err=0 hilang=0
+  t=1103.7s sampel=275344 cacah_terakhir=   -52 gap_1s=  0 cksum_err=0 hilang=0
+  t=1105.6s sampel=275840 cacah_terakhir=    40 gap_1s=  0 cksum_err=0 hilang=0
+  t=1107.6s sampel=276336 cacah_terakhir=    29 gap_1s=  0 cksum_err=0 hilang=0
+  t=1109.6s sampel=276832 cacah_terakhir=   -49 gap_1s=  0 cksum_err=0 hilang=0
+  t=1111.6s sampel=277328 cacah_terakhir=   -42 gap_1s=  0 cksum_err=0 hilang=0
+  t=1113.6s sampel=277824 cacah_terakhir=    50 gap_1s=  0 cksum_err=0 hilang=0
+  t=1115.6s sampel=278320 cacah_terakhir=     3 gap_1s=  0 cksum_err=0 hilang=0
+  t=1117.5s sampel=278816 cacah_terakhir=   -54 gap_1s=  0 cksum_err=0 hilang=0
+  t=1119.5s sampel=279312 cacah_terakhir=     8 gap_1s=  0 cksum_err=0 hilang=0
+  t=1121.5s sampel=279808 cacah_terakhir=    49 gap_1s=  0 cksum_err=0 hilang=0
+  t=1123.5s sampel=280304 cacah_terakhir=   -43 gap_1s=  0 cksum_err=0 hilang=0
+  t=1125.5s sampel=280800 cacah_terakhir=   -48 gap_1s=  0 cksum_err=0 hilang=0
+  t=1127.5s sampel=281296 cacah_terakhir=    40 gap_1s=  0 cksum_err=0 hilang=0
+  t=1129.4s sampel=281792 cacah_terakhir=    -2 gap_1s=  0 cksum_err=0 hilang=0
+  t=1131.4s sampel=282288 cacah_terakhir=   -53 gap_1s=  0 cksum_err=0 hilang=0
+  t=1133.4s sampel=282784 cacah_terakhir=   -18 gap_1s=  0 cksum_err=0 hilang=0
+  t=1135.4s sampel=283280 cacah_terakhir=    56 gap_1s=  0 cksum_err=0 hilang=0
+  t=1137.4s sampel=283776 cacah_terakhir=   -14 gap_1s=  0 cksum_err=0 hilang=0
+  t=1139.4s sampel=284272 cacah_terakhir=   -50 gap_1s=  0 cksum_err=0 hilang=0
+  t=1141.3s sampel=284768 cacah_terakhir=    15 gap_1s=  0 cksum_err=0 hilang=0
+  t=1143.3s sampel=285264 cacah_terakhir=    47 gap_1s=  0 cksum_err=0 hilang=0
+  t=1145.3s sampel=285760 cacah_terakhir=   -45 gap_1s=  0 cksum_err=0 hilang=0
+  t=1147.3s sampel=286256 cacah_terakhir=   -58 gap_1s=  0 cksum_err=0 hilang=0
+  t=1149.3s sampel=286752 cacah_terakhir=    35 gap_1s=  0 cksum_err=0 hilang=0
+  t=1151.3s sampel=287250 cacah_terakhir=   -66 gap_1s=  0 cksum_err=0 hilang=0
+  t=1153.3s sampel=287750 cacah_terakhir=   166 gap_1s=  0 cksum_err=0 hilang=0
+  t=1155.3s sampel=288248 cacah_terakhir=   -19 gap_1s=  0 cksum_err=0 hilang=0
+  t=1157.3s sampel=288744 cacah_terakhir=   -73 gap_1s=  0 cksum_err=0 hilang=0
+  t=1159.2s sampel=289240 cacah_terakhir=     9 gap_1s=  0 cksum_err=0 hilang=0
+  t=1161.2s sampel=289736 cacah_terakhir=    58 gap_1s=  0 cksum_err=0 hilang=0
+  t=1163.2s sampel=290232 cacah_terakhir=   -21 gap_1s=  0 cksum_err=0 hilang=0
+  t=1165.2s sampel=290728 cacah_terakhir=   -81 gap_1s=  0 cksum_err=0 hilang=0
+  t=1167.2s sampel=291224 cacah_terakhir=   -33 gap_1s=  0 cksum_err=0 hilang=0
+  t=1169.2s sampel=291720 cacah_terakhir=    53 gap_1s=  0 cksum_err=0 hilang=0
+  t=1171.1s sampel=292216 cacah_terakhir=    -6 gap_1s=  0 cksum_err=0 hilang=0
+  t=1173.1s sampel=292712 cacah_terakhir=   -78 gap_1s=  0 cksum_err=0 hilang=0
+  t=1175.1s sampel=293208 cacah_terakhir=   -37 gap_1s=  0 cksum_err=0 hilang=0
+  t=1177.1s sampel=293704 cacah_terakhir=    41 gap_1s=  0 cksum_err=0 hilang=0
+  t=1179.1s sampel=294200 cacah_terakhir=    34 gap_1s=  0 cksum_err=0 hilang=0
+  t=1181.1s sampel=294696 cacah_terakhir=   -64 gap_1s=  0 cksum_err=0 hilang=0
+  t=1183.0s sampel=295192 cacah_terakhir=   -61 gap_1s=  0 cksum_err=0 hilang=0
+  t=1185.0s sampel=295688 cacah_terakhir=     9 gap_1s=  0 cksum_err=0 hilang=0
+  t=1187.0s sampel=296184 cacah_terakhir=    59 gap_1s=  0 cksum_err=0 hilang=0
+  t=1189.0s sampel=296680 cacah_terakhir=    28 gap_1s=  0 cksum_err=0 hilang=0
+  t=1191.0s sampel=297176 cacah_terakhir=   -32 gap_1s=  0 cksum_err=0 hilang=0
+  t=1193.0s sampel=297672 cacah_terakhir=   -67 gap_1s=  0 cksum_err=0 hilang=0
+  t=1194.9s sampel=298168 cacah_terakhir=   -39 gap_1s=  0 cksum_err=0 hilang=0
+  t=1196.9s sampel=298664 cacah_terakhir=    47 gap_1s=  0 cksum_err=0 hilang=0
+  t=1198.9s sampel=299160 cacah_terakhir=    57 gap_1s=  0 cksum_err=0 hilang=0
+  t=1200.9s sampel=299656 cacah_terakhir=   -19 gap_1s=  0 cksum_err=0 hilang=0
+  t=1202.9s sampel=300152 cacah_terakhir=    52 gap_1s=  0 cksum_err=0 hilang=0
+  t=1204.9s sampel=300648 cacah_terakhir=   -71 gap_1s=  0 cksum_err=0 hilang=0
+  t=1206.9s sampel=301144 cacah_terakhir=   -26 gap_1s=  0 cksum_err=0 hilang=0
+  t=1208.8s sampel=301640 cacah_terakhir=    97 gap_1s=  0 cksum_err=0 hilang=0
+  t=1210.8s sampel=302136 cacah_terakhir=    38 gap_1s=  0 cksum_err=0 hilang=0
+  t=1212.8s sampel=302632 cacah_terakhir=   -42 gap_1s=  0 cksum_err=0 hilang=0
+  t=1214.8s sampel=303128 cacah_terakhir=   -98 gap_1s=  0 cksum_err=0 hilang=0
+  t=1216.8s sampel=303624 cacah_terakhir=   -36 gap_1s=  0 cksum_err=0 hilang=0
+  t=1218.8s sampel=304120 cacah_terakhir=     3 gap_1s=  0 cksum_err=0 hilang=0
+  t=1220.7s sampel=304616 cacah_terakhir=    86 gap_1s=  0 cksum_err=0 hilang=0
+  t=1222.7s sampel=305112 cacah_terakhir=     7 gap_1s=  0 cksum_err=0 hilang=0
+  t=1224.7s sampel=305608 cacah_terakhir=    -7 gap_1s=  0 cksum_err=0 hilang=0
+  t=1226.7s sampel=306104 cacah_terakhir=   -57 gap_1s=  0 cksum_err=0 hilang=0
+  t=1228.7s sampel=306600 cacah_terakhir=   -26 gap_1s=  0 cksum_err=0 hilang=0
+  t=1230.7s sampel=307096 cacah_terakhir=   -19 gap_1s=  0 cksum_err=0 hilang=0
+  t=1232.6s sampel=307592 cacah_terakhir=    41 gap_1s=  0 cksum_err=0 hilang=0
+  t=1234.6s sampel=308088 cacah_terakhir=    -9 gap_1s=  0 cksum_err=0 hilang=0
+  t=1236.6s sampel=308584 cacah_terakhir=   -34 gap_1s=  0 cksum_err=0 hilang=0
+  t=1238.6s sampel=309080 cacah_terakhir=   -11 gap_1s=  0 cksum_err=0 hilang=0
+  t=1240.6s sampel=309576 cacah_terakhir=    38 gap_1s=  0 cksum_err=0 hilang=0
+  t=1242.6s sampel=310072 cacah_terakhir=    21 gap_1s=  0 cksum_err=0 hilang=0
+  t=1244.5s sampel=310568 cacah_terakhir=   -54 gap_1s=  0 cksum_err=0 hilang=0
+  t=1246.5s sampel=311064 cacah_terakhir=   -27 gap_1s=  0 cksum_err=0 hilang=0
+  t=1248.5s sampel=311560 cacah_terakhir=    53 gap_1s=  0 cksum_err=0 hilang=0
+  t=1250.5s sampel=312056 cacah_terakhir=    15 gap_1s=  0 cksum_err=0 hilang=0
+  t=1252.5s sampel=312552 cacah_terakhir=   -87 gap_1s=  0 cksum_err=0 hilang=0
+  t=1254.5s sampel=313048 cacah_terakhir=   -22 gap_1s=  0 cksum_err=0 hilang=0
+  t=1256.5s sampel=313544 cacah_terakhir=   269 gap_1s=  0 cksum_err=0 hilang=0
+  t=1258.4s sampel=314040 cacah_terakhir=   115 gap_1s=  0 cksum_err=0 hilang=0
+  t=1260.4s sampel=314536 cacah_terakhir=   -71 gap_1s=  0 cksum_err=0 hilang=0
+  t=1262.4s sampel=315032 cacah_terakhir=    44 gap_1s=  0 cksum_err=0 hilang=0
+  t=1264.4s sampel=315528 cacah_terakhir=     0 gap_1s=  0 cksum_err=0 hilang=0
+  t=1266.4s sampel=316024 cacah_terakhir=   -58 gap_1s=  0 cksum_err=0 hilang=0
+  t=1268.4s sampel=316520 cacah_terakhir=    20 gap_1s=  0 cksum_err=0 hilang=0
+  t=1270.3s sampel=317016 cacah_terakhir=    41 gap_1s=  0 cksum_err=0 hilang=0
+  t=1272.3s sampel=317512 cacah_terakhir=   -53 gap_1s=  0 cksum_err=0 hilang=0
+  t=1274.3s sampel=318008 cacah_terakhir=   -23 gap_1s=  0 cksum_err=0 hilang=0
+  t=1276.3s sampel=318504 cacah_terakhir=    57 gap_1s=  0 cksum_err=0 hilang=0
+  t=1278.3s sampel=319000 cacah_terakhir=   -30 gap_1s=  0 cksum_err=0 hilang=0
+  t=1280.3s sampel=319500 cacah_terakhir=   -82 gap_1s=  0 cksum_err=0 hilang=0
+  t=1282.3s sampel=320000 cacah_terakhir=   -77 gap_1s=  0 cksum_err=0 hilang=0
+  t=1284.3s sampel=320496 cacah_terakhir=    31 gap_1s=  0 cksum_err=0 hilang=0
+  t=1286.2s sampel=320992 cacah_terakhir=    46 gap_1s=  0 cksum_err=0 hilang=0
+  t=1288.2s sampel=321488 cacah_terakhir=   -73 gap_1s=  0 cksum_err=0 hilang=0
+  t=1290.2s sampel=321984 cacah_terakhir=   -11 gap_1s=  0 cksum_err=0 hilang=0
+  t=1292.2s sampel=322480 cacah_terakhir=    46 gap_1s=  0 cksum_err=0 hilang=0
+  t=1294.2s sampel=322976 cacah_terakhir=   -71 gap_1s=  0 cksum_err=0 hilang=0
+  t=1296.2s sampel=323472 cacah_terakhir=   -57 gap_1s=  0 cksum_err=0 hilang=0
+  t=1298.1s sampel=323968 cacah_terakhir=    80 gap_1s=  0 cksum_err=0 hilang=0
+  t=1300.1s sampel=324464 cacah_terakhir=   -31 gap_1s=  0 cksum_err=0 hilang=0
+  t=1302.1s sampel=324960 cacah_terakhir=   180 gap_1s=  0 cksum_err=0 hilang=0
+  t=1304.1s sampel=325456 cacah_terakhir=   111 gap_1s=  0 cksum_err=0 hilang=0
+  t=1306.1s sampel=325952 cacah_terakhir=     8 gap_1s=  0 cksum_err=0 hilang=0
+  t=1308.1s sampel=326448 cacah_terakhir=   -88 gap_1s=  0 cksum_err=0 hilang=0
+  t=1310.1s sampel=326944 cacah_terakhir=    -1 gap_1s=  0 cksum_err=0 hilang=0
+  t=1312.0s sampel=327440 cacah_terakhir=    49 gap_1s=  0 cksum_err=0 hilang=0
+  t=1314.0s sampel=327936 cacah_terakhir=   -85 gap_1s=  0 cksum_err=0 hilang=0
+  t=1316.0s sampel=328432 cacah_terakhir=   -22 gap_1s=  0 cksum_err=0 hilang=0
+  t=1318.0s sampel=328928 cacah_terakhir=    85 gap_1s=  0 cksum_err=0 hilang=0
+  t=1320.0s sampel=329424 cacah_terakhir=   -57 gap_1s=  0 cksum_err=0 hilang=0
+  t=1322.0s sampel=329920 cacah_terakhir=   -72 gap_1s=  0 cksum_err=0 hilang=0
+  t=1323.9s sampel=330416 cacah_terakhir=    74 gap_1s=  0 cksum_err=0 hilang=0
+  t=1325.9s sampel=330912 cacah_terakhir=    -5 gap_1s=  0 cksum_err=0 hilang=0
+  t=1327.9s sampel=331408 cacah_terakhir=  -113 gap_1s=  0 cksum_err=0 hilang=0
+  t=1329.9s sampel=331904 cacah_terakhir=    41 gap_1s=  0 cksum_err=0 hilang=0
+  t=1331.9s sampel=332400 cacah_terakhir=    48 gap_1s=  0 cksum_err=0 hilang=0
+  t=1333.9s sampel=332896 cacah_terakhir=   -65 gap_1s=  0 cksum_err=0 hilang=0
+  t=1335.8s sampel=333392 cacah_terakhir=   -62 gap_1s=  0 cksum_err=0 hilang=0
+  t=1337.8s sampel=333888 cacah_terakhir=   102 gap_1s=  0 cksum_err=0 hilang=0
+  t=1339.8s sampel=334384 cacah_terakhir=   -13 gap_1s=  0 cksum_err=0 hilang=0
+  t=1341.8s sampel=334880 cacah_terakhir=   -90 gap_1s=  0 cksum_err=0 hilang=0
+  t=1343.8s sampel=335376 cacah_terakhir=    39 gap_1s=  0 cksum_err=0 hilang=0
+  t=1345.8s sampel=335872 cacah_terakhir=    38 gap_1s=  0 cksum_err=0 hilang=0
+  t=1347.7s sampel=336368 cacah_terakhir=   -43 gap_1s=  0 cksum_err=0 hilang=0
+  t=1349.7s sampel=336864 cacah_terakhir=   -44 gap_1s=  0 cksum_err=0 hilang=0
+  t=1351.7s sampel=337360 cacah_terakhir=    73 gap_1s=  0 cksum_err=0 hilang=0
+  t=1353.7s sampel=337856 cacah_terakhir=   -35 gap_1s=  0 cksum_err=0 hilang=0
+  t=1355.7s sampel=338352 cacah_terakhir=   -92 gap_1s=  0 cksum_err=0 hilang=0
+  t=1357.7s sampel=338848 cacah_terakhir=    87 gap_1s=  0 cksum_err=0 hilang=0
+  t=1359.7s sampel=339344 cacah_terakhir=    37 gap_1s=  0 cksum_err=0 hilang=0
+  t=1361.6s sampel=339840 cacah_terakhir=   -85 gap_1s=  0 cksum_err=0 hilang=0
+  t=1363.6s sampel=340336 cacah_terakhir=   -24 gap_1s=  0 cksum_err=0 hilang=0
+  t=1365.6s sampel=340832 cacah_terakhir=    91 gap_1s=  0 cksum_err=0 hilang=0
+  t=1367.6s sampel=341328 cacah_terakhir=   -32 gap_1s=  0 cksum_err=0 hilang=0
+  t=1369.6s sampel=341824 cacah_terakhir=  -109 gap_1s=  0 cksum_err=0 hilang=0
+  t=1371.6s sampel=342320 cacah_terakhir=    30 gap_1s=  0 cksum_err=0 hilang=0
+  t=1373.5s sampel=342816 cacah_terakhir=   129 gap_1s=  0 cksum_err=0 hilang=0
+  t=1375.5s sampel=343312 cacah_terakhir=   -65 gap_1s=  0 cksum_err=0 hilang=0
+  t=1377.5s sampel=343808 cacah_terakhir=   -54 gap_1s=  0 cksum_err=0 hilang=0
+  t=1379.5s sampel=344304 cacah_terakhir=    89 gap_1s=  0 cksum_err=0 hilang=0
+  t=1381.5s sampel=344800 cacah_terakhir=    33 gap_1s=  0 cksum_err=0 hilang=0
+  t=1383.5s sampel=345296 cacah_terakhir=   -70 gap_1s=  0 cksum_err=0 hilang=0
+  t=1385.4s sampel=345792 cacah_terakhir=   -38 gap_1s=  0 cksum_err=0 hilang=0
+  t=1387.4s sampel=346288 cacah_terakhir=    82 gap_1s=  0 cksum_err=0 hilang=0
+  t=1389.4s sampel=346784 cacah_terakhir=    -8 gap_1s=  0 cksum_err=0 hilang=0
+  t=1391.4s sampel=347280 cacah_terakhir=   -91 gap_1s=  0 cksum_err=0 hilang=0
+  t=1393.4s sampel=347776 cacah_terakhir=   -18 gap_1s=  0 cksum_err=0 hilang=0
+  t=1395.4s sampel=348272 cacah_terakhir=    94 gap_1s=  0 cksum_err=0 hilang=0
+  t=1397.3s sampel=348768 cacah_terakhir=    11 gap_1s=  0 cksum_err=0 hilang=0
+  t=1399.3s sampel=349264 cacah_terakhir=   -69 gap_1s=  0 cksum_err=0 hilang=0
+  t=1401.3s sampel=349760 cacah_terakhir=   -24 gap_1s=  0 cksum_err=0 hilang=0
+  t=1403.3s sampel=350256 cacah_terakhir=    48 gap_1s=  0 cksum_err=0 hilang=0
+  t=1405.3s sampel=350752 cacah_terakhir=    54 gap_1s=  0 cksum_err=0 hilang=0
+  t=1407.3s sampel=351250 cacah_terakhir=   -29 gap_1s=  0 cksum_err=0 hilang=0
+  t=1409.3s sampel=351750 cacah_terakhir=   -24 gap_1s=  0 cksum_err=0 hilang=0
+  t=1411.3s sampel=352248 cacah_terakhir=   -23 gap_1s=  0 cksum_err=0 hilang=0
+  t=1413.3s sampel=352744 cacah_terakhir=   -87 gap_1s=  0 cksum_err=0 hilang=0
+  t=1415.2s sampel=353240 cacah_terakhir=   -54 gap_1s=  0 cksum_err=0 hilang=0
+  t=1417.2s sampel=353736 cacah_terakhir=    24 gap_1s=  0 cksum_err=0 hilang=0
+  t=1419.2s sampel=354232 cacah_terakhir=    79 gap_1s=  0 cksum_err=0 hilang=0
+  t=1421.2s sampel=354728 cacah_terakhir=    29 gap_1s=  0 cksum_err=0 hilang=0
+  t=1423.2s sampel=355224 cacah_terakhir=   -51 gap_1s=  0 cksum_err=0 hilang=0
+  t=1425.2s sampel=355720 cacah_terakhir=   -81 gap_1s=  0 cksum_err=0 hilang=0
+  t=1427.1s sampel=356216 cacah_terakhir=   -50 gap_1s=  0 cksum_err=0 hilang=0
+  t=1429.1s sampel=356712 cacah_terakhir=    39 gap_1s=  0 cksum_err=0 hilang=0
+  t=1431.1s sampel=357208 cacah_terakhir=    51 gap_1s=  0 cksum_err=0 hilang=0
+  t=1433.1s sampel=357704 cacah_terakhir=    27 gap_1s=  0 cksum_err=0 hilang=0
+  t=1435.1s sampel=358200 cacah_terakhir=   -41 gap_1s=  0 cksum_err=0 hilang=0
+  t=1437.1s sampel=358696 cacah_terakhir=  -105 gap_1s=  0 cksum_err=0 hilang=0
+  t=1439.0s sampel=359192 cacah_terakhir=   -85 gap_1s=  0 cksum_err=0 hilang=0
+  t=1441.0s sampel=359688 cacah_terakhir=   -19 gap_1s=  0 cksum_err=0 hilang=0
+  t=1443.0s sampel=360184 cacah_terakhir=    68 gap_1s=  0 cksum_err=0 hilang=0
+  t=1445.0s sampel=360680 cacah_terakhir=    79 gap_1s=  0 cksum_err=0 hilang=0
+  t=1447.0s sampel=361176 cacah_terakhir=     3 gap_1s=  0 cksum_err=0 hilang=0
+  t=1449.0s sampel=361672 cacah_terakhir=   -58 gap_1s=  0 cksum_err=0 hilang=0
+  t=1450.9s sampel=362168 cacah_terakhir=   -77 gap_1s=  0 cksum_err=0 hilang=0
+  t=1452.9s sampel=362664 cacah_terakhir=   -57 gap_1s=  0 cksum_err=0 hilang=0
+  t=1454.9s sampel=363160 cacah_terakhir=    -2 gap_1s=  0 cksum_err=0 hilang=0
+  t=1456.9s sampel=363656 cacah_terakhir=    68 gap_1s=  0 cksum_err=0 hilang=0
+  t=1458.9s sampel=364152 cacah_terakhir=   -35 gap_1s=  0 cksum_err=0 hilang=0
+  t=1460.9s sampel=364648 cacah_terakhir=   -53 gap_1s=  0 cksum_err=0 hilang=0
+  t=1462.9s sampel=365144 cacah_terakhir=   -34 gap_1s=  0 cksum_err=0 hilang=0
+  t=1464.8s sampel=365640 cacah_terakhir=    28 gap_1s=  0 cksum_err=0 hilang=0
+  t=1466.8s sampel=366136 cacah_terakhir=    49 gap_1s=  0 cksum_err=0 hilang=0
+  t=1468.8s sampel=366632 cacah_terakhir=   -63 gap_1s=  0 cksum_err=0 hilang=0
+  t=1470.8s sampel=367128 cacah_terakhir=   -40 gap_1s=  0 cksum_err=0 hilang=0
+  t=1472.8s sampel=367624 cacah_terakhir=    39 gap_1s=  0 cksum_err=0 hilang=0
+  t=1474.8s sampel=368120 cacah_terakhir=    18 gap_1s=  0 cksum_err=0 hilang=0
+  t=1476.7s sampel=368616 cacah_terakhir=   -56 gap_1s=  0 cksum_err=0 hilang=0
+  t=1478.7s sampel=369112 cacah_terakhir=   -37 gap_1s=  0 cksum_err=0 hilang=0
+  t=1480.7s sampel=369608 cacah_terakhir=    34 gap_1s=  0 cksum_err=0 hilang=0
+  t=1482.7s sampel=370104 cacah_terakhir=     7 gap_1s=  0 cksum_err=0 hilang=0
+  t=1484.7s sampel=370600 cacah_terakhir=   -53 gap_1s=  0 cksum_err=0 hilang=0
+  t=1486.7s sampel=371096 cacah_terakhir=   -28 gap_1s=  0 cksum_err=0 hilang=0
+  t=1488.6s sampel=371592 cacah_terakhir=    51 gap_1s=  0 cksum_err=0 hilang=0
+  t=1490.6s sampel=372088 cacah_terakhir=    20 gap_1s=  0 cksum_err=0 hilang=0
+  t=1492.6s sampel=372584 cacah_terakhir=   -66 gap_1s=  0 cksum_err=0 hilang=0
+  t=1494.6s sampel=373080 cacah_terakhir=   -32 gap_1s=  0 cksum_err=0 hilang=0
+  t=1496.6s sampel=373576 cacah_terakhir=    50 gap_1s=  0 cksum_err=0 hilang=0
+  t=1498.6s sampel=374072 cacah_terakhir=     0 gap_1s=  0 cksum_err=0 hilang=0
+  t=1500.5s sampel=374568 cacah_terakhir=   -61 gap_1s=  0 cksum_err=0 hilang=0
+  t=1502.5s sampel=375064 cacah_terakhir=   -15 gap_1s=  0 cksum_err=0 hilang=0
+  t=1504.5s sampel=375560 cacah_terakhir=    50 gap_1s=  0 cksum_err=0 hilang=0
+  t=1506.5s sampel=376056 cacah_terakhir=   -28 gap_1s=  0 cksum_err=0 hilang=0
+  t=1508.5s sampel=376552 cacah_terakhir=   -78 gap_1s=  0 cksum_err=0 hilang=0
+  t=1510.5s sampel=377048 cacah_terakhir=    12 gap_1s=  0 cksum_err=0 hilang=0
+  t=1512.5s sampel=377544 cacah_terakhir=    61 gap_1s=  0 cksum_err=0 hilang=0
+  t=1514.4s sampel=378040 cacah_terakhir=   -29 gap_1s=  0 cksum_err=0 hilang=0
+  t=1516.4s sampel=378536 cacah_terakhir=   -48 gap_1s=  0 cksum_err=0 hilang=0
+  t=1518.4s sampel=379032 cacah_terakhir=    11 gap_1s=  0 cksum_err=0 hilang=0
+  t=1520.4s sampel=379528 cacah_terakhir=    43 gap_1s=  0 cksum_err=0 hilang=0
+  t=1522.4s sampel=380024 cacah_terakhir=   -20 gap_1s=  0 cksum_err=0 hilang=0
+  t=1524.4s sampel=380520 cacah_terakhir=   -80 gap_1s=  0 cksum_err=0 hilang=0
+  t=1526.3s sampel=381016 cacah_terakhir=    33 gap_1s=  0 cksum_err=0 hilang=0
+  t=1528.3s sampel=381512 cacah_terakhir=    19 gap_1s=  0 cksum_err=0 hilang=0
+  t=1530.3s sampel=382008 cacah_terakhir=   -56 gap_1s=  0 cksum_err=0 hilang=0
+  t=1532.3s sampel=382504 cacah_terakhir=   -21 gap_1s=  0 cksum_err=0 hilang=0
+  t=1534.3s sampel=383000 cacah_terakhir=    40 gap_1s=  0 cksum_err=0 hilang=0
+  t=1536.3s sampel=383500 cacah_terakhir=     4 gap_1s=  0 cksum_err=0 hilang=0
+  t=1538.3s sampel=384000 cacah_terakhir=     1 gap_1s=  0 cksum_err=0 hilang=0
+  t=1540.3s sampel=384496 cacah_terakhir=   -33 gap_1s=  0 cksum_err=0 hilang=0
+  t=1542.2s sampel=384992 cacah_terakhir=   -12 gap_1s=  0 cksum_err=0 hilang=0
+  t=1544.2s sampel=385488 cacah_terakhir=     2 gap_1s=  0 cksum_err=0 hilang=0
+  t=1546.2s sampel=385984 cacah_terakhir=   -10 gap_1s=  0 cksum_err=0 hilang=0
+  t=1548.2s sampel=386480 cacah_terakhir=   -47 gap_1s=  0 cksum_err=0 hilang=0
+  t=1550.2s sampel=386976 cacah_terakhir=   -18 gap_1s=  0 cksum_err=0 hilang=0
+  t=1552.2s sampel=387472 cacah_terakhir=     6 gap_1s=  0 cksum_err=0 hilang=0
+  t=1554.1s sampel=387968 cacah_terakhir=    15 gap_1s=  0 cksum_err=0 hilang=0
+  t=1556.1s sampel=388464 cacah_terakhir=   -17 gap_1s=  0 cksum_err=0 hilang=0
+  t=1558.1s sampel=388960 cacah_terakhir=   -28 gap_1s=  0 cksum_err=0 hilang=0
+  t=1560.1s sampel=389456 cacah_terakhir=    -2 gap_1s=  0 cksum_err=0 hilang=0
+  t=1562.1s sampel=389952 cacah_terakhir=    28 gap_1s=  0 cksum_err=0 hilang=0
+  t=1564.1s sampel=390448 cacah_terakhir=    23 gap_1s=  0 cksum_err=0 hilang=0
+  t=1566.1s sampel=390944 cacah_terakhir=   -24 gap_1s=  0 cksum_err=0 hilang=0
+  t=1568.0s sampel=391440 cacah_terakhir=   -23 gap_1s=  0 cksum_err=0 hilang=0
+  t=1570.0s sampel=391936 cacah_terakhir=     4 gap_1s=  0 cksum_err=0 hilang=0
+  t=1572.0s sampel=392432 cacah_terakhir=    23 gap_1s=  0 cksum_err=0 hilang=0
+  t=1574.0s sampel=392928 cacah_terakhir=    26 gap_1s=  0 cksum_err=0 hilang=0
+  t=1576.0s sampel=393424 cacah_terakhir=   -51 gap_1s=  0 cksum_err=0 hilang=0
+  t=1578.0s sampel=393920 cacah_terakhir=   -50 gap_1s=  0 cksum_err=0 hilang=0
+  t=1579.9s sampel=394416 cacah_terakhir=   -21 gap_1s=  0 cksum_err=0 hilang=0
+  t=1581.9s sampel=394912 cacah_terakhir=     7 gap_1s=  0 cksum_err=0 hilang=0
+  t=1583.9s sampel=395408 cacah_terakhir=    -3 gap_1s=  0 cksum_err=0 hilang=0
+  t=1585.9s sampel=395904 cacah_terakhir=   -21 gap_1s=  0 cksum_err=0 hilang=0
+  t=1587.9s sampel=396400 cacah_terakhir=   -28 gap_1s=  0 cksum_err=0 hilang=0
+  t=1589.9s sampel=396896 cacah_terakhir=   -19 gap_1s=  0 cksum_err=0 hilang=0
+  t=1591.8s sampel=397392 cacah_terakhir=   -17 gap_1s=  0 cksum_err=0 hilang=0
+  t=1593.8s sampel=397888 cacah_terakhir=    -3 gap_1s=  0 cksum_err=0 hilang=0
+  t=1595.8s sampel=398384 cacah_terakhir=    -6 gap_1s=  0 cksum_err=0 hilang=0
+  t=1597.8s sampel=398880 cacah_terakhir=     4 gap_1s=  0 cksum_err=0 hilang=0
+  t=1599.8s sampel=399376 cacah_terakhir=   -17 gap_1s=  0 cksum_err=0 hilang=0
+  t=1601.8s sampel=399872 cacah_terakhir=    -7 gap_1s=  0 cksum_err=0 hilang=0
+  t=1603.7s sampel=400368 cacah_terakhir=   -30 gap_1s=  0 cksum_err=0 hilang=0
+  t=1605.7s sampel=400864 cacah_terakhir=   -14 gap_1s=  0 cksum_err=0 hilang=0
+  t=1607.7s sampel=401360 cacah_terakhir=   -25 gap_1s=  0 cksum_err=0 hilang=0
+  t=1609.7s sampel=401856 cacah_terakhir=   -30 gap_1s=  0 cksum_err=0 hilang=0
+  t=1611.7s sampel=402352 cacah_terakhir=    11 gap_1s=  0 cksum_err=0 hilang=0
+  t=1613.7s sampel=402848 cacah_terakhir=     0 gap_1s=  0 cksum_err=0 hilang=0
+  t=1615.7s sampel=403344 cacah_terakhir=     4 gap_1s=  0 cksum_err=0 hilang=0
+  t=1617.6s sampel=403840 cacah_terakhir=   -14 gap_1s=  0 cksum_err=0 hilang=0
+  t=1619.6s sampel=404336 cacah_terakhir=   -37 gap_1s=  0 cksum_err=0 hilang=0
+  t=1621.6s sampel=404832 cacah_terakhir=   -14 gap_1s=  0 cksum_err=0 hilang=0
+  t=1623.6s sampel=405328 cacah_terakhir=    -1 gap_1s=  0 cksum_err=0 hilang=0
+  t=1625.6s sampel=405824 cacah_terakhir=    25 gap_1s=  0 cksum_err=0 hilang=0
+  t=1627.6s sampel=406320 cacah_terakhir=     4 gap_1s=  0 cksum_err=0 hilang=0
+  t=1629.5s sampel=406816 cacah_terakhir=    -3 gap_1s=  0 cksum_err=0 hilang=0
+  t=1631.5s sampel=407312 cacah_terakhir=   -25 gap_1s=  0 cksum_err=0 hilang=0
+  t=1633.5s sampel=407808 cacah_terakhir=   -40 gap_1s=  0 cksum_err=0 hilang=0
+  t=1635.5s sampel=408304 cacah_terakhir=   -30 gap_1s=  0 cksum_err=0 hilang=0
+  t=1637.5s sampel=408800 cacah_terakhir=   -11 gap_1s=  0 cksum_err=0 hilang=0
+  t=1639.5s sampel=409296 cacah_terakhir=     6 gap_1s=  0 cksum_err=0 hilang=0
+  t=1641.4s sampel=409792 cacah_terakhir=    27 gap_1s=  0 cksum_err=0 hilang=0
+  t=1643.4s sampel=410288 cacah_terakhir=    -8 gap_1s=  0 cksum_err=0 hilang=0
+  t=1645.4s sampel=410784 cacah_terakhir=   -10 gap_1s=  0 cksum_err=0 hilang=0
+  t=1647.4s sampel=411280 cacah_terakhir=   -42 gap_1s=  0 cksum_err=0 hilang=0
+  t=1649.4s sampel=411776 cacah_terakhir=   -41 gap_1s=  0 cksum_err=0 hilang=0
+  t=1651.4s sampel=412272 cacah_terakhir=    -2 gap_1s=  0 cksum_err=0 hilang=0
+  t=1653.3s sampel=412768 cacah_terakhir=    -2 gap_1s=  0 cksum_err=0 hilang=0
+  t=1655.3s sampel=413264 cacah_terakhir=    17 gap_1s=  0 cksum_err=0 hilang=0
+  t=1657.3s sampel=413760 cacah_terakhir=    33 gap_1s=  0 cksum_err=0 hilang=0
+  t=1659.3s sampel=414256 cacah_terakhir=     6 gap_1s=  0 cksum_err=0 hilang=0
+  t=1661.3s sampel=414752 cacah_terakhir=   -18 gap_1s=  0 cksum_err=0 hilang=0
+  t=1663.3s sampel=415250 cacah_terakhir=     4 gap_1s=  0 cksum_err=0 hilang=0
+  t=1665.3s sampel=415750 cacah_terakhir=    11 gap_1s=  0 cksum_err=0 hilang=0
+  t=1667.3s sampel=416248 cacah_terakhir=   -35 gap_1s=  0 cksum_err=0 hilang=0
+  t=1669.3s sampel=416744 cacah_terakhir=   -21 gap_1s=  0 cksum_err=0 hilang=0
+  t=1671.2s sampel=417240 cacah_terakhir=    13 gap_1s=  0 cksum_err=0 hilang=0
+  t=1673.2s sampel=417736 cacah_terakhir=    14 gap_1s=  0 cksum_err=0 hilang=0
+  t=1675.2s sampel=418232 cacah_terakhir=   -26 gap_1s=  0 cksum_err=0 hilang=0
+  t=1677.2s sampel=418728 cacah_terakhir=   -23 gap_1s=  0 cksum_err=0 hilang=0
+  t=1679.2s sampel=419224 cacah_terakhir=    21 gap_1s=  0 cksum_err=0 hilang=0
+  t=1681.2s sampel=419720 cacah_terakhir=    16 gap_1s=  0 cksum_err=0 hilang=0
+  t=1683.1s sampel=420216 cacah_terakhir=   -28 gap_1s=  0 cksum_err=0 hilang=0
+  t=1685.1s sampel=420712 cacah_terakhir=   -39 gap_1s=  0 cksum_err=0 hilang=0
+  t=1687.1s sampel=421208 cacah_terakhir=    34 gap_1s=  0 cksum_err=0 hilang=0
+  t=1689.1s sampel=421704 cacah_terakhir=    -2 gap_1s=  0 cksum_err=0 hilang=0
+  t=1691.1s sampel=422200 cacah_terakhir=   -39 gap_1s=  0 cksum_err=0 hilang=0
+  t=1693.1s sampel=422696 cacah_terakhir=   -34 gap_1s=  0 cksum_err=0 hilang=0
+  t=1695.0s sampel=423192 cacah_terakhir=    49 gap_1s=  0 cksum_err=0 hilang=0
+  t=1697.0s sampel=423688 cacah_terakhir=     2 gap_1s=  0 cksum_err=0 hilang=0
+  t=1699.0s sampel=424184 cacah_terakhir=   -41 gap_1s=  0 cksum_err=0 hilang=0
+  t=1701.0s sampel=424680 cacah_terakhir=   -15 gap_1s=  0 cksum_err=0 hilang=0
+  t=1703.0s sampel=425176 cacah_terakhir=    30 gap_1s=  0 cksum_err=0 hilang=0
+  t=1705.0s sampel=425672 cacah_terakhir=     3 gap_1s=  0 cksum_err=0 hilang=0
+  t=1706.9s sampel=426168 cacah_terakhir=   -43 gap_1s=  0 cksum_err=0 hilang=0
+  t=1708.9s sampel=426664 cacah_terakhir=   -22 gap_1s=  0 cksum_err=0 hilang=0
+  t=1710.9s sampel=427160 cacah_terakhir=     2 gap_1s=  0 cksum_err=0 hilang=0
+  t=1712.9s sampel=427656 cacah_terakhir=    31 gap_1s=  0 cksum_err=0 hilang=0
+  t=1714.9s sampel=428152 cacah_terakhir=    17 gap_1s=  0 cksum_err=0 hilang=0
+  t=1716.9s sampel=428648 cacah_terakhir=   -21 gap_1s=  0 cksum_err=0 hilang=0
+  t=1718.9s sampel=429144 cacah_terakhir=   -53 gap_1s=  0 cksum_err=0 hilang=0
+  t=1720.8s sampel=429640 cacah_terakhir=   -39 gap_1s=  0 cksum_err=0 hilang=0
+  t=1722.8s sampel=430136 cacah_terakhir=    89 gap_1s=  0 cksum_err=0 hilang=0
+  t=1724.8s sampel=430632 cacah_terakhir=    37 gap_1s=  0 cksum_err=0 hilang=0
+  t=1726.8s sampel=431128 cacah_terakhir=    31 gap_1s=  0 cksum_err=0 hilang=0
+  t=1728.8s sampel=431624 cacah_terakhir=   -10 gap_1s=  0 cksum_err=0 hilang=0
+  t=1730.8s sampel=432120 cacah_terakhir=   -26 gap_1s=  0 cksum_err=0 hilang=0
+  t=1732.7s sampel=432616 cacah_terakhir=   -56 gap_1s=  0 cksum_err=0 hilang=0
+  t=1734.7s sampel=433112 cacah_terakhir=   -38 gap_1s=  0 cksum_err=0 hilang=0
+  t=1736.7s sampel=433608 cacah_terakhir=   -23 gap_1s=  0 cksum_err=0 hilang=0
+  t=1738.7s sampel=434104 cacah_terakhir=   -22 gap_1s=  0 cksum_err=0 hilang=0
+  t=1740.7s sampel=434600 cacah_terakhir=     7 gap_1s=  0 cksum_err=0 hilang=0
+  t=1742.7s sampel=435096 cacah_terakhir=    11 gap_1s=  0 cksum_err=0 hilang=0
+  t=1744.6s sampel=435592 cacah_terakhir=     0 gap_1s=  0 cksum_err=0 hilang=0
+  t=1746.6s sampel=436088 cacah_terakhir=     0 gap_1s=  0 cksum_err=0 hilang=0
+  t=1748.6s sampel=436584 cacah_terakhir=   -24 gap_1s=  0 cksum_err=0 hilang=0
+  t=1750.6s sampel=437080 cacah_terakhir=   -34 gap_1s=  0 cksum_err=0 hilang=0
+  t=1752.6s sampel=437576 cacah_terakhir=   -36 gap_1s=  0 cksum_err=0 hilang=0
+  t=1754.6s sampel=438072 cacah_terakhir=   -44 gap_1s=  0 cksum_err=0 hilang=0
+  t=1756.6s sampel=438568 cacah_terakhir=   -36 gap_1s=  0 cksum_err=0 hilang=0
+  t=1758.5s sampel=439064 cacah_terakhir=   -12 gap_1s=  0 cksum_err=0 hilang=0
+  t=1760.5s sampel=439560 cacah_terakhir=    13 gap_1s=  0 cksum_err=0 hilang=0
+  t=1762.5s sampel=440056 cacah_terakhir=    19 gap_1s=  0 cksum_err=0 hilang=0
+  t=1764.5s sampel=440552 cacah_terakhir=    34 gap_1s=  0 cksum_err=0 hilang=0
+  t=1766.5s sampel=441048 cacah_terakhir=   139 gap_1s=  0 cksum_err=0 hilang=0
+  t=1768.5s sampel=441544 cacah_terakhir=    12 gap_1s=  0 cksum_err=0 hilang=0
+  t=1770.4s sampel=442040 cacah_terakhir=    -5 gap_1s=  0 cksum_err=0 hilang=0
+  t=1772.4s sampel=442536 cacah_terakhir=   -27 gap_1s=  0 cksum_err=0 hilang=0
+  t=1774.4s sampel=443032 cacah_terakhir=   -61 gap_1s=  0 cksum_err=0 hilang=0
+  t=1776.4s sampel=443528 cacah_terakhir=   -66 gap_1s=  0 cksum_err=0 hilang=0
+  t=1778.4s sampel=444024 cacah_terakhir=   -59 gap_1s=  0 cksum_err=0 hilang=0
+  t=1780.4s sampel=444520 cacah_terakhir=   -26 gap_1s=  0 cksum_err=0 hilang=0
+  t=1782.3s sampel=445016 cacah_terakhir=     3 gap_1s=  0 cksum_err=0 hilang=0
+  t=1784.3s sampel=445512 cacah_terakhir=    32 gap_1s=  0 cksum_err=0 hilang=0
+  t=1786.3s sampel=446008 cacah_terakhir=    38 gap_1s=  0 cksum_err=0 hilang=0
+  t=1788.3s sampel=446504 cacah_terakhir=    19 gap_1s=  0 cksum_err=0 hilang=0
+  t=1790.3s sampel=447000 cacah_terakhir=    -9 gap_1s=  0 cksum_err=0 hilang=0
+  t=1792.3s sampel=447500 cacah_terakhir=    15 gap_1s=  0 cksum_err=0 hilang=0
+  t=1794.3s sampel=448000 cacah_terakhir=    27 gap_1s=  0 cksum_err=0 hilang=0
+  t=1796.3s sampel=448496 cacah_terakhir=     6 gap_1s=  0 cksum_err=0 hilang=0
+  t=1798.2s sampel=448992 cacah_terakhir=   230 gap_1s=  0 cksum_err=0 hilang=0
+  t=1800.2s sampel=449488 cacah_terakhir=    77 gap_1s=  0 cksum_err=0 hilang=0
+  t=1802.2s sampel=449984 cacah_terakhir=   -34 gap_1s=  0 cksum_err=0 hilang=0
+  t=1804.2s sampel=450480 cacah_terakhir=   -38 gap_1s=  0 cksum_err=0 hilang=0
+  t=1806.2s sampel=450976 cacah_terakhir=    29 gap_1s=  0 cksum_err=0 hilang=0
+  t=1808.2s sampel=451472 cacah_terakhir=    80 gap_1s=  0 cksum_err=0 hilang=0
+  t=1810.1s sampel=451968 cacah_terakhir=   252 gap_1s=  0 cksum_err=0 hilang=0
+  t=1812.1s sampel=452464 cacah_terakhir=   -32 gap_1s=  0 cksum_err=0 hilang=0
+  t=1814.1s sampel=452960 cacah_terakhir=   -92 gap_1s=  0 cksum_err=0 hilang=0
+  t=1816.1s sampel=453456 cacah_terakhir=   -77 gap_1s=  0 cksum_err=0 hilang=0
+  t=1818.1s sampel=453952 cacah_terakhir=    40 gap_1s=  0 cksum_err=0 hilang=0
+  t=1820.1s sampel=454448 cacah_terakhir=    87 gap_1s=  0 cksum_err=0 hilang=0
+  t=1822.1s sampel=454944 cacah_terakhir=    10 gap_1s=  0 cksum_err=0 hilang=0
+  t=1824.0s sampel=455440 cacah_terakhir=   -73 gap_1s=  0 cksum_err=0 hilang=0
+  t=1826.0s sampel=455936 cacah_terakhir=   -60 gap_1s=  0 cksum_err=0 hilang=0
+  t=1828.0s sampel=456432 cacah_terakhir=     5 gap_1s=  0 cksum_err=0 hilang=0
+  t=1830.0s sampel=456928 cacah_terakhir=    89 gap_1s=  0 cksum_err=0 hilang=0
+  t=1832.0s sampel=457424 cacah_terakhir=    18 gap_1s=  0 cksum_err=0 hilang=0
+{
+  "jumlah_sampel": 449924,
+  "durasi_s": 1799.696,
+  "header_firmware": {
+    "fw_version": 257,
+    "kit_gain": 1100,
+    "adc_full_scale_mv": 3100,
+    "sample_hz": 250,
+    "baseline_mv": 1674,
+    "counts_per_mv": 200,
+    "adc_source": 1,
+    "status": 3
+  },
+  "statistik_aliran": {
+    "bytes_in": 3778455,
+    "frames_ok": 457424,
+    "header_frames": 14640,
+    "checksum_errors": 0,
+    "bytes_skipped": 1943,
+    "lost_samples": 0,
+    "seq_breaks": 0
+  },
+  "ringkasan_sinyal": {
+    "cacah_min": -279,
+    "cacah_maks": 269,
+    "persen_gap": 0.0,
+    "persen_clamp": 1.102
+  }
+}
+berkas ditulis ke folder: D:\pio\ad8232_ecg_fw\data
